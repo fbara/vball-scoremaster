@@ -10,28 +10,10 @@
 
 @interface VolleyBallViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *labelPantherScore;
-@property (weak, nonatomic) IBOutlet UILabel *labelOtherTeamScore;
-
 @end
 
 @implementation VolleyBallViewController
 
-- (IBAction)btnPantherTouch:(UIButton *)sender forEvent:(UIEvent *)event
-{
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"Alert"
-                          message:@"Change Panther score!"
-                          delegate:nil
-                          cancelButtonTitle:@"Cancel"
-                          otherButtonTitles:@"OK", nil];
-    
-    [alert show];
-}
-- (IBAction)btnReset
-{
-    
-}
 
 - (void)viewDidLoad
 {
