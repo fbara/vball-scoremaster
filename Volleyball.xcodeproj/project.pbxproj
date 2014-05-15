@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9217E5161921A25E00B2E6F1 /* pantherScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9217E5151921A25E00B2E6F1 /* pantherScoreView.m */; };
+		9217E5CD1925380000B2E6F1 /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9217E5CB1925380000B2E6F1 /* ScoreViewController.m */; };
+		9217E5CE1925380000B2E6F1 /* ScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9217E5CC1925380000B2E6F1 /* ScoreViewController.xib */; };
 		92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A21916C2800037D405 /* Foundation.framework */; };
 		92AA42A51916C2800037D405 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A41916C2800037D405 /* CoreGraphics.framework */; };
 		92AA42A71916C2800037D405 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A61916C2800037D405 /* UIKit.framework */; };
@@ -35,8 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9217E5141921A25E00B2E6F1 /* pantherScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pantherScoreView.h; sourceTree = "<group>"; };
-		9217E5151921A25E00B2E6F1 /* pantherScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pantherScoreView.m; sourceTree = "<group>"; };
+		9217E5CA1925380000B2E6F1 /* ScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
+		9217E5CB1925380000B2E6F1 /* ScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
+		9217E5CC1925380000B2E6F1 /* ScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreViewController.xib; sourceTree = "<group>"; };
 		92AA429F1916C2800037D405 /* Volleyball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Volleyball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AA42A21916C2800037D405 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		92AA42A41916C2800037D405 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,11 +119,12 @@
 			children = (
 				92AA42B11916C2800037D405 /* VolleyBallAppDelegate.h */,
 				92AA42B21916C2800037D405 /* VolleyBallAppDelegate.m */,
-				92AA42B41916C2810037D405 /* Main.storyboard */,
 				92AA42B71916C2810037D405 /* VolleyBallViewController.h */,
 				92AA42B81916C2810037D405 /* VolleyBallViewController.m */,
-				9217E5141921A25E00B2E6F1 /* pantherScoreView.h */,
-				9217E5151921A25E00B2E6F1 /* pantherScoreView.m */,
+				9217E5CA1925380000B2E6F1 /* ScoreViewController.h */,
+				9217E5CB1925380000B2E6F1 /* ScoreViewController.m */,
+				9217E5CC1925380000B2E6F1 /* ScoreViewController.xib */,
+				92AA42B41916C2810037D405 /* Main.storyboard */,
 				92AA42BA1916C2810037D405 /* Images.xcassets */,
 				92AA42A91916C2800037D405 /* Supporting Files */,
 			);
@@ -237,6 +240,7 @@
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
 				92AA42B61916C2810037D405 /* Main.storyboard in Resources */,
+				9217E5CE1925380000B2E6F1 /* ScoreViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +261,8 @@
 			files = (
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
-				9217E5161921A25E00B2E6F1 /* pantherScoreView.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
+				9217E5CD1925380000B2E6F1 /* ScoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
