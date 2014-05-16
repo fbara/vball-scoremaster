@@ -28,7 +28,7 @@
 - (void)setScore:(int)aScore
 {
     score = aScore;
-    self.scoreLabel.text = [NSString stringWithFormat:@"%d", score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%d", aScore];
 }
 
 - (void)viewDidLoad

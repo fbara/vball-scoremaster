@@ -23,6 +23,9 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
 
 @implementation VolleyBallViewController
 
+
+#pragma mark - Setup Scores
+
 //Called first, before the main view controller is loaded
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -59,6 +62,7 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
                                           direction:UIPageViewControllerNavigationDirectionForward
                                            animated:YES
                                          completion:nil];
+    
 }
 
 - (void)initializeVisitorScore
@@ -77,13 +81,30 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
     //Create a new scoreViewController and initialize it with 'nil',
     //that will create one with a xib of the same name
     DefaultScoreViewController *newScoreViewController = [[DefaultScoreViewController alloc]
-                                                   initWithNibName:nil
+                                                   initWithNibName:@"DefaultScoreViewController"
                                                    bundle:nil];
     //Set the properties of the score view
-    newScoreViewController.view.backgroundColor = self.homeColor;
-    //newScoreViewController.score = score;
+    newScoreViewController.view.backgroundColor = color;
+    newScoreViewController.score = score;
     
     return newScoreViewController;
+}
+
+- (DefaultScoreViewController *)resetHomeScore:(DefaultScoreViewController *)homeScore
+{
+    //DefaultScoreViewController *homeScoreViewController = [[DefaultScoreViewController alloc] init];
+    
+    homeScore.view.backgroundColor = self.homeColor;
+    homeScore.score = 0;
+    
+    return homeScore;
+}
+
+#pragma mark - Reset Scores
+
+- (IBAction)reset
+{
+    
 }
 
 #pragma mark - UIPageViewControllerDataSource
@@ -116,7 +137,31 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    return viewController;
+    //Cast the viewController as a ScoreViewController so we can act on its properties
+    DefaultScoreViewController *oldViewController = (DefaultScoreViewController *)viewController;
+    
+    //Check the score, if it's 0, don't let the number get any lower
+    if (oldViewController.score == 0) {
+        return nil;
+    }
+    
+    //Setup the new view controller with the new, higher score
+    DefaultScoreViewController *newViewController = [self createViewControllersForScore:0
+                                                                              withColor:self.visitorColor];
+    
+    newViewController.score = oldViewController.score - 1;
+    
+    //Check to see which view controller we're updating so the background color can be set correctly
+    if (pageViewController == _homePageViewController) {
+        //Home team score changing
+        newViewController.view.backgroundColor = self.homeColor;
+    } else {
+        //Visitor team score changing
+        newViewController.view.backgroundColor = self.visitorColor;
+    }
+                                                     
+    
+    return newViewController;
 }
 
 
@@ -125,5 +170,6 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

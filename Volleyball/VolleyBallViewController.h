@@ -13,4 +13,5 @@
 @property UIColor *homeColor;
 @property UIColor *visitorColor;
 
+- (IBAction)reset;
 @end
