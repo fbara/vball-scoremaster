@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VolleyBallViewController : UIViewController <UIPageViewControllerDataSource>
+@interface VolleyBallViewController : UIViewController <UIPageViewControllerDataSource,UIAlertViewDelegate>
 
 @property UIColor *homeColor;
 @property UIColor *visitorColor;
+@property (weak, nonatomic) IBOutlet UILabel *gameNumber;
+@property (weak, nonatomic) IBOutlet UILabel *killNumber;
+@property (weak, nonatomic) IBOutlet UILabel *aceNumber;
 
-- (IBAction)reset;
+- (IBAction)newGame;
 @end

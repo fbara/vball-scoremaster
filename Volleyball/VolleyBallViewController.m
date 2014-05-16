@@ -19,6 +19,7 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
 
+
 @end
 
 @implementation VolleyBallViewController
@@ -81,7 +82,7 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
     //Create a new scoreViewController and initialize it with 'nil',
     //that will create one with a xib of the same name
     DefaultScoreViewController *newScoreViewController = [[DefaultScoreViewController alloc]
-                                                   initWithNibName:@"DefaultScoreViewController"
+                                                   initWithNibName:nil
                                                    bundle:nil];
     //Set the properties of the score view
     newScoreViewController.view.backgroundColor = color;
@@ -90,21 +91,25 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
     return newScoreViewController;
 }
 
-- (DefaultScoreViewController *)resetHomeScore:(DefaultScoreViewController *)homeScore
-{
-    //DefaultScoreViewController *homeScoreViewController = [[DefaultScoreViewController alloc] init];
-    
-    homeScore.view.backgroundColor = self.homeColor;
-    homeScore.score = 0;
-    
-    return homeScore;
-}
 
 #pragma mark - Reset Scores
 
-- (IBAction)reset
+- (IBAction)newGame
 {
-    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Game?"
+                                                        message:@"Reset all scores and start a new game?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"No"
+                                              otherButtonTitles:@"Yes", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != 0) {
+        [self initializeHomeScore];
+        [self initializeVisitorScore];
+    }
 }
 
 #pragma mark - UIPageViewControllerDataSource
