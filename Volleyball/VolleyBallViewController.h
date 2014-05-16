@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ScoreView.h"
 
-@interface VolleyBallViewController : UIViewController
+@interface VolleyBallViewController : UIViewController <UIPageViewControllerDataSource>
 
-@property (strong, nonatomic) IBOutlet ScoreView *homeScoreView;
-@property (strong, nonatomic) IBOutlet ScoreView *visitorScoreView;
+@property UIColor *homeColor;
+@property UIColor *visitorColor;
+
 @end
