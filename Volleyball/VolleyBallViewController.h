@@ -16,5 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *killNumber;
 @property (weak, nonatomic) IBOutlet UILabel *aceNumber;
 
-- (IBAction)newGame;
+- (IBAction)gamePressed;
+- (IBAction)killsPressed;
+- (IBAction)acePressed;
+
+- (IBAction)newMatch;
 @end

@@ -10,8 +10,11 @@
 #import "DefaultScoreViewController.h"
 
 //Constants for use when extending this to other sports
-NSString* const EMBED_HOME = @"embedHome";
-NSString* const EMBED_VISITOR = @"embedVisitor";
+NSString *const EMBED_HOME = @"embedHome";
+NSString *const EMBED_VISITOR = @"embedVisitor";
+NSString *const EMBED_GAME_NUMBER = @"1";
+NSString *const EMBED_KILL_NUMBER = @"0";
+NSString *const EMBED_ACE_NUMBER = @"0";
 
 
 @interface VolleyBallViewController ()
@@ -25,7 +28,7 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
 @implementation VolleyBallViewController
 
 
-#pragma mark - Setup Scores
+#pragma mark - Initialize Screen
 
 //Called first, before the main view controller is loaded
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -51,6 +54,7 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
     
     [self initializeHomeScore];
     [self initializeVisitorScore];
+    [self resetGameKillAce];
     
 }
 
@@ -91,13 +95,49 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
     return newScoreViewController;
 }
 
+- (void)resetGameKillAce
+{
+    //Resets Game, Kill, and Ace to 0
+    self.gameNumber.text = @"1";
+    self.killNumber.text = @"0";
+    self.aceNumber.text = @"0";
+}
 
-#pragma mark - Reset Scores
 
-- (IBAction)newGame
+#pragma mark - Button Presses
+
+- (IBAction)gamePressed
+{
+    //Grab the game number and add 1 but shouldn't be more than 3
+    if (![self.gameNumber.text isEqualToString:@"3"]) {
+        int lableNum = [self.gameNumber.text intValue];
+        lableNum = lableNum + 1;
+        self.gameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
+        
+        //Reset the scores to start a new game
+        [self initializeHomeScore];
+        [self initializeVisitorScore];
+    }
+}
+
+- (IBAction)killsPressed
+{
+    int lableNum = [self.killNumber.text intValue];
+    lableNum = lableNum + 1;
+    self.killNumber.text = [NSString stringWithFormat:@"%d", lableNum];
+}
+
+- (IBAction)acePressed
+{
+    int lableNum = [self.aceNumber.text intValue];
+    lableNum = lableNum + 1;
+    self.aceNumber.text = [NSString stringWithFormat:@"%d", lableNum];
+}
+
+- (IBAction)newMatch
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Game?"
-                                                        message:@"Reset all scores and start a new game?"
+                                                        message:@"Reset scores, ace's, and kill's and start a new match?"
                                                        delegate:self
                                               cancelButtonTitle:@"No"
                                               otherButtonTitles:@"Yes", nil];
@@ -109,6 +149,7 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
     if (buttonIndex != 0) {
         [self initializeHomeScore];
         [self initializeVisitorScore];
+        [self resetGameKillAce];
     }
 }
 
@@ -160,6 +201,7 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
     if (pageViewController == _homePageViewController) {
         //Home team score changing
         newViewController.view.backgroundColor = self.homeColor;
+        
     } else {
         //Visitor team score changing
         newViewController.view.backgroundColor = self.visitorColor;
@@ -168,6 +210,10 @@ NSString* const EMBED_VISITOR = @"embedVisitor";
     
     return newViewController;
 }
+
+#pragma mark - Screen Action Buttons
+
+
 
 
 - (void)didReceiveMemoryWarning
