@@ -7,12 +7,23 @@
 //
 
 #import "VolleyBallAppDelegate.h"
+#import "SettingsViewController.h"
 
 @implementation VolleyBallAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    //Initialize settings values
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //Check if defaults are already present
+    if (![defaults objectForKey:@"number_of_matches"])
+        [defaults setObject:@"matchesSetting" forKey:@"number_of_matches"];
+    if (![defaults objectForKey:@"opponent"])
+        [defaults setObject:@"opponentPicker" forKey:@"opponent"];
+    [defaults synchronize];
+    
     return YES;
 }
 							

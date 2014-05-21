@@ -49,8 +49,14 @@ NSInteger const EMBED_MAX_GAMES = 3;
 	// Do any additional setup after loading the view, typically from a nib.
     
     //Setup score background colors
-    self.homeColor = [UIColor blueColor];
-    self.visitorColor = [UIColor orangeColor];
+    self.homeColor = [UIColor colorWithRed:204
+                                     green:204
+                                      blue:155
+                                     alpha:0.4];
+    self.visitorColor = [UIColor colorWithRed:255
+                                        green:204
+                                         blue:153
+                                        alpha:0.4];
     
     [self initializeHomeScore];
     [self initializeVisitorScore];

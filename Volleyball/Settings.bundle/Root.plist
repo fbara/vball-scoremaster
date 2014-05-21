@@ -12,30 +12,6 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
-			<key>Title</key>
-			<string>User name</string>
-			<key>Key</key>
-			<string>user_name</string>
-			<key>DefaultValue</key>
-			<string>user name</string>
-			<key>AutocapitalizationType</key>
-			<string>None</string>
-			<key>AutocorrectionType</key>
-			<string>No</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
-			<key>Title</key>
-			<string>Password</string>
-			<key>Key</key>
-			<string>password</string>
-			<key>IsSecure</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>Type</key>
 			<string>PSMultiValueSpecifier</string>
 			<key>Title</key>
 			<string>Display distance</string>
@@ -54,6 +30,66 @@
 				<string>Miles</string>
 				<string>Feet</string>
 				<string>Kilometers</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Scoring Settings</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Number of matches</string>
+			<key>Key</key>
+			<string>number_of_matches</string>
+			<key>DefaultValue</key>
+			<string>3</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Add new opponent</string>
+			<key>Key</key>
+			<string>add_new_opponent</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Display opponent</string>
+			<key>Key</key>
+			<string>opponent</string>
+			<key>DefaultValue</key>
+			<string>Plainfield Central</string>
+			<key>Values</key>
+			<array>
+				<string>Plainfield North</string>
+				<string>Plainfield Central</string>
+				<string>Plainfield South</string>
+				<string>Minooka</string>
+				<string>Oswego East</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Plainfield North</string>
+				<string>Plainfield Central</string>
+				<string>Plainfield South</string>
+				<string>Minooka</string>
+				<string>Oswego East</string>
 			</array>
 		</dict>
 	</array>
