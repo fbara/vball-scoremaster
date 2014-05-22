@@ -79,6 +79,20 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:maxGamesSetting forKey:@"number_of_matches"];
     [defaults setObject:selectedOpponent forKey:@"opponent"];
+    
+    //Set the home team color
+    UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    colorHome = self.homeTeamColor.backgroundColor;
+    NSData *colorHomeData = [NSKeyedArchiver archivedDataWithRootObject:colorHome];
+    [defaults setObject:colorHomeData forKey:@"homeTeamColor"];
+    
+    //Set the visiting team color
+    UIColor *colorVisitor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    colorVisitor = self.visitingTeamColor.backgroundColor;
+    NSData *colorVisitorData = [NSKeyedArchiver archivedDataWithRootObject:colorVisitor];
+    [defaults setObject:colorVisitorData forKey:@"visitorTeamColor"];
+
+    //Make sure everything synchronized correctly
     if(![defaults synchronize]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Settings not saved"
                                                         message:nil
@@ -106,26 +120,31 @@
 
 - (IBAction)homeTeamBackgroundColor:(id)sender
 {
-    self.homeTeamColor.backgroundColor = [self getRandomColor];
+    //Change the button background color each time the button is clicked
+    UIColor *homeButtonColor;
+    homeButtonColor = [self getRandomColor];
 
+    self.homeTeamColor.backgroundColor = homeButtonColor;
 }
 
 - (IBAction)visitingTeamBackgroundColor:(id)sender
 {
-    self.visitingTeamColor.backgroundColor = [self getRandomColor];
+    UIColor *visitingButtonColor;
+    visitingButtonColor = [self getRandomColor];
+    
+    self.visitingTeamColor.backgroundColor = visitingButtonColor;
 
 }
 
 - (UIColor *)getRandomColor
 {
-    //Generate a random color each time the button is pushed
+    //Generate a random color and return it
     int r = arc4random() % 255;
     int g = arc4random() % 255;
     int b = arc4random() % 255;
     
     UIColor *color = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:1.0];
     return color;
-
 }
 
 - (IBAction)doneEditing:(id)sender
@@ -140,11 +159,27 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    //Set the max games segmented control
+    //Get the max games segmented control
     maxGamesSetting = [defaults objectForKey:@"number_of_matches"];
     self.gamesControl.selectedSegmentIndex = [maxGamesSetting intValue] - 1;
     
-    //Set the opponent
+    //Get home team background colors
+    UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    NSData *theHomeData = [[NSUserDefaults standardUserDefaults] dataForKey:@"homeTeamColor"];
+    if (theHomeData != nil) {
+        colorHome = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theHomeData];
+    }
+    self.homeTeamColor.backgroundColor = colorHome;
+    
+    //Get visiting team background colors
+    UIColor *colorVisitor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    NSData *theVisitorData = [[NSUserDefaults standardUserDefaults] dataForKey:@"visitorTeamColor"];
+    if (theVisitorData != nil) {
+        colorVisitor = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theVisitorData];
+    }
+    self.visitingTeamColor.backgroundColor = colorVisitor;
+    
+    //Get the opponent
     selectedOpponent = [[NSString alloc] initWithString:[defaults objectForKey:@"opponent"]];
     int selectedRow = [opponentNames indexOfObject:selectedOpponent];
     [self.opponentPicker selectRow:selectedRow
