@@ -13,15 +13,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
 @property (weak, nonatomic) IBOutlet UIButton *visitingTeamColor;
-@property (weak, nonatomic) IBOutlet UITextField *sendTextNumber;
-@property (weak, nonatomic) IBOutlet UISwitch *notificationSwitch;
-
-- (IBAction)sendTextNotification:(id)sender;
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;
 
-- (IBAction)doneEditing:(id)sender;
 - (IBAction)saveSettings:(id)sender;
 
 

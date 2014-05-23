@@ -42,12 +42,12 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    //Get Yes or No for notifications
-    if (self.notificationSwitch.on == 1) {
-        [defaults setObject:@"On" forKey:@"enableNotifications"];
-    } else {
-        [defaults setObject:@"Off" forKey:@"enableNotifications"];
-    }
+//    //Get Yes or No for notifications
+//    if (self.notificationSwitch.on == 1) {
+//        [defaults setObject:@"On" forKey:@"enableNotifications"];
+//    } else {
+//        [defaults setObject:@"Off" forKey:@"enableNotifications"];
+//    }
     
     //Set the home team color
     UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
@@ -157,27 +157,23 @@
     return color;
 }
 
-- (IBAction)doneEditing:(id)sender
-{
-    [sender resignFirstResponder];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
-        self.notificationSwitch.on = YES;
-    } else {
-        self.notificationSwitch.on = NO;
-    }
-    
+//    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
+//        self.notificationSwitch.on = YES;
+//    } else {
+//        self.notificationSwitch.on = NO;
+//    }
     //Get home team background colors
     UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
     NSData *theHomeData = [[NSUserDefaults standardUserDefaults] dataForKey:@"homeTeamColor"];
     if (theHomeData != nil) {
         colorHome = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theHomeData];
+    } else {
+        colorHome = [UIColor blueColor];
     }
     self.homeTeamColor.backgroundColor = colorHome;
     
@@ -186,6 +182,8 @@
     NSData *theVisitorData = [[NSUserDefaults standardUserDefaults] dataForKey:@"visitorTeamColor"];
     if (theVisitorData != nil) {
         colorVisitor = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theVisitorData];
+    } else {
+        colorVisitor = [UIColor orangeColor];
     }
     self.visitingTeamColor.backgroundColor = colorVisitor;
     [defaults synchronize];
@@ -198,14 +196,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 @end
