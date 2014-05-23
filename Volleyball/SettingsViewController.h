@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UITableViewController
+@interface SettingsViewController : UITableViewController <UITextFieldDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
 @property (weak, nonatomic) IBOutlet UIButton *visitingTeamColor;
 @property (weak, nonatomic) IBOutlet UITextField *sendTextNumber;
+@property (weak, nonatomic) IBOutlet UISwitch *notificationSwitch;
 
 - (IBAction)sendTextNotification:(id)sender;
 

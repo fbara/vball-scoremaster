@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Volleyball.xcodeproj">
+      location = "self:VBall ScoreMaster.xcodeproj">
    </FileRef>
 </Workspace>

@@ -36,17 +36,18 @@
 }
 
 #pragma mark - Controls -
-
-
-
 #pragma mark -Save Settings
 
 - (IBAction)saveSettings:(id)sender
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    //Get maximum number of games
-    [defaults setObject:maxGamesSetting forKey:@"number_of_matches"];
+    //Get Yes or No for notifications
+    if (self.notificationSwitch.on == 1) {
+        [defaults setObject:@"On" forKey:@"enableNotifications"];
+    } else {
+        [defaults setObject:@"Off" forKey:@"enableNotifications"];
+    }
     
     //Set the home team color
     UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
@@ -72,9 +73,60 @@
     
 }
 
+//Restrict phone textField to format 123-456-7890 and
+//it's automatically called whenever the user types a number into the text field
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+        // All digits entered
+        if (range.location == 14) {
+            return NO;
+        }
+        
+        // Reject appending non-digit characters
+        if (range.length == 0 &&
+            ![[NSCharacterSet decimalDigitCharacterSet] characterIsMember:[string characterAtIndex:0]]) {
+            return NO;
+        }
+        
+        // Auto-add hyphen and parentheses
+        if (range.length == 0 && range.location == 3 &&![[textField.text substringToIndex:1] isEqualToString:@"("]) {
+            textField.text = [NSString stringWithFormat:@"(%@)-%@", textField.text,string];
+            return NO;
+        }
+        if (range.length == 0 && range.location == 4 &&[[textField.text substringToIndex:1] isEqualToString:@"("]) {
+            textField.text = [NSString stringWithFormat:@"%@)-%@", textField.text,string];
+            return NO;
+        }
+        
+        // Auto-add 2nd hyphen
+        if (range.length == 0 && range.location == 9) {
+            textField.text = [NSString stringWithFormat:@"%@-%@", textField.text, string];
+            return NO;
+        }
+        
+        // Delete hyphen and parentheses when deleting its trailing digit
+        if (range.length == 1 &&
+            (range.location == 10 || range.location == 1)){
+            range.location--;
+            range.length = 2;
+            textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
+            return NO;
+        }
+        if (range.length == 1 && range.location == 6){
+            range.location=range.location-2;
+            range.length = 3;
+            textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
+            return NO;
+        }
+    return YES;
+}
+
+
 #pragma mark -Team Background Colors
 
-- (IBAction)sendTextNotification:(id)sender {
+- (IBAction)sendTextNotification:(id)sender
+{
+    
 }
 
 - (IBAction)homeTeamBackgroundColor:(id)sender
@@ -114,6 +166,13 @@
 {
     [super viewWillAppear:animated];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
+        self.notificationSwitch.on = YES;
+    } else {
+        self.notificationSwitch.on = NO;
+    }
+    
     //Get home team background colors
     UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
     NSData *theHomeData = [[NSUserDefaults standardUserDefaults] dataForKey:@"homeTeamColor"];
@@ -129,7 +188,7 @@
         colorVisitor = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theVisitorData];
     }
     self.visitingTeamColor.backgroundColor = colorVisitor;
-    
+    [defaults synchronize];
 }
 
 

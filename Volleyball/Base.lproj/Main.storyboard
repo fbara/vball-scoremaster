@@ -194,7 +194,7 @@
                         <sections>
                             <tableViewSection id="avY-9M-PZ2">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XDl-ge-Kl9">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XDl-ge-Kl9">
                                         <rect key="frame" x="0.0" y="99" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XDl-ge-Kl9" id="bgS-8V-cpy">
@@ -227,7 +227,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="svl-e3-b2R">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="svl-e3-b2R">
                                         <rect key="frame" x="0.0" y="143" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="svl-e3-b2R" id="GSx-SD-XXm">
@@ -319,6 +319,7 @@
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" returnKeyType="done"/>
                                                     <connections>
                                                         <action selector="doneEditing:" destination="Uby-De-d7L" eventType="editingDidEnd" id="mmW-cb-mqf"/>
+                                                        <outlet property="delegate" destination="Uby-De-d7L" id="qLJ-IZ-osu"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -342,6 +343,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="homeTeamColor" destination="xCJ-AX-kKe" id="vos-LN-FJr"/>
+                        <outlet property="notificationSwitch" destination="fwP-Mf-nZi" id="Kun-Uf-J8b"/>
                         <outlet property="sendTextNumber" destination="Ppx-CV-K2x" id="hEx-u0-SBW"/>
                         <outlet property="visitingTeamColor" destination="44D-ms-jTS" id="H1I-sI-6z4"/>
                     </connections>

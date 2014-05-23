@@ -13,7 +13,7 @@
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";
 NSString *const EMBED_VISITOR = @"embedVisitor";
-NSInteger const EMBED_MAX_GAMES = 3;
+int const EMBED_MAX_GAMES = 3;
 
 
 @interface VolleyBallViewController ()
@@ -41,6 +41,7 @@ NSInteger const EMBED_MAX_GAMES = 3;
     if ([segue.identifier isEqualToString:EMBED_VISITOR]) {
         self.visitorPageViewController = segue.destinationViewController;
     }
+    
 }
 
 //Called second, after the segue's are setup
@@ -104,6 +105,8 @@ NSInteger const EMBED_MAX_GAMES = 3;
     NSData *theHomeData = [[NSUserDefaults standardUserDefaults] dataForKey:@"homeTeamColor"];
     if (theHomeData != nil) {
         colorHome = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theHomeData];
+    } else {
+        colorHome = [UIColor blueColor];
     }
     return colorHome;
 }
@@ -115,6 +118,8 @@ NSInteger const EMBED_MAX_GAMES = 3;
     NSData *theVisitorData = [[NSUserDefaults standardUserDefaults] dataForKey:@"visitorTeamColor"];
     if (theVisitorData != nil) {
         colorVisitor = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theVisitorData];
+    } else {
+        colorVisitor = [UIColor orangeColor];
     }
     return colorVisitor;
 }

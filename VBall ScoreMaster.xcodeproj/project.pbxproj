@@ -187,9 +187,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		92AA429E1916C2800037D405 /* Volleyball */ = {
+		92AA429E1916C2800037D405 /* VBall ScoreMaster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 92AA42D11916C2810037D405 /* Build configuration list for PBXNativeTarget "Volleyball" */;
+			buildConfigurationList = 92AA42D11916C2810037D405 /* Build configuration list for PBXNativeTarget "VBall ScoreMaster" */;
 			buildPhases = (
 				92AA429B1916C2800037D405 /* Sources */,
 				92AA429C1916C2800037D405 /* Frameworks */,
@@ -199,14 +199,14 @@
 			);
 			dependencies = (
 			);
-			name = Volleyball;
+			name = "VBall ScoreMaster";
 			productName = Volleyball;
 			productReference = 92AA429F1916C2800037D405 /* Volleyball.app */;
 			productType = "com.apple.product-type.application";
 		};
-		92AA42BF1916C2810037D405 /* VolleyballTests */ = {
+		92AA42BF1916C2810037D405 /* VBall ScoreMasterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 92AA42D41916C2810037D405 /* Build configuration list for PBXNativeTarget "VolleyballTests" */;
+			buildConfigurationList = 92AA42D41916C2810037D405 /* Build configuration list for PBXNativeTarget "VBall ScoreMasterTests" */;
 			buildPhases = (
 				92AA42BC1916C2810037D405 /* Sources */,
 				92AA42BD1916C2810037D405 /* Frameworks */,
@@ -217,7 +217,7 @@
 			dependencies = (
 				92AA42C61916C2810037D405 /* PBXTargetDependency */,
 			);
-			name = VolleyballTests;
+			name = "VBall ScoreMasterTests";
 			productName = VolleyballTests;
 			productReference = 92AA42C01916C2810037D405 /* VolleyballTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -237,7 +237,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 92AA429A1916C2800037D405 /* Build configuration list for PBXProject "Volleyball" */;
+			buildConfigurationList = 92AA429A1916C2800037D405 /* Build configuration list for PBXProject "VBall ScoreMaster" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -250,8 +250,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				92AA429E1916C2800037D405 /* Volleyball */,
-				92AA42BF1916C2810037D405 /* VolleyballTests */,
+				92AA429E1916C2800037D405 /* VBall ScoreMaster */,
+				92AA42BF1916C2810037D405 /* VBall ScoreMasterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,7 +305,7 @@
 /* Begin PBXTargetDependency section */
 		92AA42C61916C2810037D405 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 92AA429E1916C2800037D405 /* Volleyball */;
+			target = 92AA429E1916C2800037D405 /* VBall ScoreMaster */;
 			targetProxy = 92AA42C51916C2810037D405 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -477,7 +477,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		92AA429A1916C2800037D405 /* Build configuration list for PBXProject "Volleyball" */ = {
+		92AA429A1916C2800037D405 /* Build configuration list for PBXProject "VBall ScoreMaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				92AA42CF1916C2810037D405 /* Debug */,
@@ -486,7 +486,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		92AA42D11916C2810037D405 /* Build configuration list for PBXNativeTarget "Volleyball" */ = {
+		92AA42D11916C2810037D405 /* Build configuration list for PBXNativeTarget "VBall ScoreMaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				92AA42D21916C2810037D405 /* Debug */,
@@ -495,7 +495,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		92AA42D41916C2810037D405 /* Build configuration list for PBXNativeTarget "VolleyballTests" */ = {
+		92AA42D41916C2810037D405 /* Build configuration list for PBXNativeTarget "VBall ScoreMasterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				92AA42D51916C2810037D405 /* Debug */,

@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "92AA429E1916C2800037D405"
                BuildableName = "Volleyball.app"
-               BlueprintName = "Volleyball"
-               ReferencedContainer = "container:Volleyball.xcodeproj">
+               BlueprintName = "VBall ScoreMaster"
+               ReferencedContainer = "container:VBall ScoreMaster.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "92AA42BF1916C2810037D405"
                BuildableName = "VolleyballTests.xctest"
-               BlueprintName = "VolleyballTests"
-               ReferencedContainer = "container:Volleyball.xcodeproj">
+               BlueprintName = "VBall ScoreMasterTests"
+               ReferencedContainer = "container:VBall ScoreMaster.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "92AA429E1916C2800037D405"
             BuildableName = "Volleyball.app"
-            BlueprintName = "Volleyball"
-            ReferencedContainer = "container:Volleyball.xcodeproj">
+            BlueprintName = "VBall ScoreMaster"
+            ReferencedContainer = "container:VBall ScoreMaster.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "92AA429E1916C2800037D405"
             BuildableName = "Volleyball.app"
-            BlueprintName = "Volleyball"
-            ReferencedContainer = "container:Volleyball.xcodeproj">
+            BlueprintName = "VBall ScoreMaster"
+            ReferencedContainer = "container:VBall ScoreMaster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "92AA429E1916C2800037D405"
             BuildableName = "Volleyball.app"
-            BlueprintName = "Volleyball"
-            ReferencedContainer = "container:Volleyball.xcodeproj">
+            BlueprintName = "VBall ScoreMaster"
+            ReferencedContainer = "container:VBall ScoreMaster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

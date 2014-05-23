@@ -12,17 +12,33 @@
 		</dict>
 		<dict>
 			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Enable text notifications?</string>
+			<key>Key</key>
+			<string>enableNotifications</string>
+			<key>DefaultValue</key>
+			<true/>
+			<key>FalseValue</key>
+			<string>Off</string>
+			<key>TrueValue</key>
+			<string>On</string>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Number of matches</string>
+			<string>Notification #:</string>
 			<key>Key</key>
-			<string>number_of_matches</string>
-			<key>DefaultValue</key>
-			<string>3</string>
-			<key>AutocapitalizationType</key>
-			<string>None</string>
-			<key>KeyboardType</key>
-			<string>NumberPad</string>
+			<string>notificationNumber</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Player name:</string>
+			<key>Key</key>
+			<string>playerName</string>
 		</dict>
 	</array>
 	<key>StringsTable</key>
