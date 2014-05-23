@@ -17,11 +17,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *gameNumber;
 @property (weak, nonatomic) IBOutlet UILabel *killNumber;
 @property (weak, nonatomic) IBOutlet UILabel *aceNumber;
-@property (weak, nonatomic) IBOutlet UITextField *otherTeamName;
+@property (weak, nonatomic) IBOutlet UILabel *homeTeamName;
+@property (weak, nonatomic) IBOutlet UILabel *visitorTeamName;
+
 
 - (IBAction)gamePressed;
 - (IBAction)killsPressed;
 - (IBAction)acePressed;
-
 - (IBAction)newMatch;
 @end

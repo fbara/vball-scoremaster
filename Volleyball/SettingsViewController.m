@@ -46,7 +46,9 @@
     
 }
 
-#pragma mark - PickerView Settings
+#pragma mark - Controls -
+
+#pragma mark -PickerView Settings
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
@@ -72,7 +74,7 @@
     return 1;
 }
 
-#pragma mark - Controls
+#pragma mark -Save Settings
 
 - (IBAction)saveSettings:(id)sender
 {
@@ -104,6 +106,8 @@
     
 }
 
+#pragma mark -Game Segment
+
 - (IBAction)numberOfGamesSegment:(id)sender
 {
     if (self.gamesControl.selectedSegmentIndex == 0) {
@@ -118,20 +122,21 @@
     }
 }
 
+#pragma mark -Team Background Colors
+
 - (IBAction)homeTeamBackgroundColor:(id)sender
 {
-    //Change the button background color each time the button is clicked
+    //Change the button background color each time the button is tapped
     UIColor *homeButtonColor;
     homeButtonColor = [self getRandomColor];
-
     self.homeTeamColor.backgroundColor = homeButtonColor;
 }
 
 - (IBAction)visitingTeamBackgroundColor:(id)sender
 {
+    //Change the button background color each time the button is tapped
     UIColor *visitingButtonColor;
     visitingButtonColor = [self getRandomColor];
-    
     self.visitingTeamColor.backgroundColor = visitingButtonColor;
 
 }
@@ -152,10 +157,9 @@
     [sender resignFirstResponder];
 }
 
-
-
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
@@ -187,6 +191,8 @@
                           animated:YES];
     
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {

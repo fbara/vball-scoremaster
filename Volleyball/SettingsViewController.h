@@ -11,11 +11,10 @@
 @interface SettingsViewController : UIViewController <UIPickerViewDelegate,UIPickerViewDataSource>
 
 
-@property (weak, nonatomic) IBOutlet UIPickerView *opponentPicker;
-@property (weak, nonatomic) IBOutlet UITextField *addNewOpponent;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gamesControl;
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
 @property (weak, nonatomic) IBOutlet UIButton *visitingTeamColor;
+
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;

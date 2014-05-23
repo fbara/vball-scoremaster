@@ -49,20 +49,9 @@ NSInteger const EMBED_MAX_GAMES = 3;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    //Setup score background colors
-//    self.homeColor = [UIColor colorWithRed:204
-//                                     green:204
-//                                      blue:155
-//                                     alpha:0.4];
-//    self.visitorColor = [UIColor colorWithRed:255
-//                                        green:204
-//                                         blue:153
-//                                        alpha:0.4];
-//    
     [self initializeHomeScore];
     [self initializeVisitorScore];
     [self resetGameKillAce];
-    [self initializePanGesture];
     
 //    ADBannerView *adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
 //    [self.view addSubview:adView];
@@ -71,6 +60,7 @@ NSInteger const EMBED_MAX_GAMES = 3;
 
 - (void)initializeHomeScore
 {
+    self.homeColor = [self colorHomeScoreView];
     DefaultScoreViewController *homeScoreViewController = [self createViewControllersForScore:0
                                                                              withColor:self.homeColor];
     self.homePageViewController.dataSource = self;
@@ -83,6 +73,7 @@ NSInteger const EMBED_MAX_GAMES = 3;
 
 - (void)initializeVisitorScore
 {
+    self.visitorColor = [self colorVisitorScoreView];
     DefaultScoreViewController *visitorScoreViewController = [self createViewControllersForScore:0
                                                                                 withColor:self.visitorColor];
     self.visitorPageViewController.dataSource = self;
@@ -106,6 +97,28 @@ NSInteger const EMBED_MAX_GAMES = 3;
     return newScoreViewController;
 }
 
+- (UIColor *)colorHomeScoreView
+{
+    //Get home team background colors
+    UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    NSData *theHomeData = [[NSUserDefaults standardUserDefaults] dataForKey:@"homeTeamColor"];
+    if (theHomeData != nil) {
+        colorHome = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theHomeData];
+    }
+    return colorHome;
+}
+
+- (UIColor *)colorVisitorScoreView
+{
+    //Get visiting team background colors
+    UIColor *colorVisitor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    NSData *theVisitorData = [[NSUserDefaults standardUserDefaults] dataForKey:@"visitorTeamColor"];
+    if (theVisitorData != nil) {
+        colorVisitor = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theVisitorData];
+    }
+    return colorVisitor;
+}
+
 - (void)resetGameKillAce
 {
     //Resets Game, Kill, and Ace to 0
@@ -114,6 +127,18 @@ NSInteger const EMBED_MAX_GAMES = 3;
     self.aceNumber.text = @"0";
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *selectedOpponent = [[NSString alloc] initWithString:[defaults objectForKey:@"opponent"]];
+
+    self.homePageViewController.view.backgroundColor = [self colorHomeScoreView];
+    self.visitorPageViewController.view.backgroundColor = [self colorVisitorScoreView];
+    self.visitorTeamName.text = selectedOpponent;
+    [self.view setNeedsDisplay];
+}
 
 #pragma mark - Button Presses
 
@@ -220,13 +245,6 @@ NSInteger const EMBED_MAX_GAMES = 3;
         [self presentViewController:textComposer
                            animated:YES
                          completion:nil];
-//    } else {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to send message"
-//                                                        message:nil
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"Ok"
-//                                              otherButtonTitles:nil];
-//        [alert show];
         
     }
 }
@@ -235,28 +253,28 @@ NSInteger const EMBED_MAX_GAMES = 3;
 
 - (void)initializePanGesture
 {
-    self.homePanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self.homePageViewController
-                                                                        action:@selector(homeHandlePan:)];
-    self.visitorPanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self.visitorPageViewController
-                                                                     action:@selector(visitorHandlePan:)];
-
-    self.homePanGesture.minimumNumberOfTouches = 1;
-    self.visitorPanGesture.minimumNumberOfTouches = 1;
-    self.homePanGesture.delegate = self;
-    self.visitorPanGesture.delegate = self;
-    [self.view addGestureRecognizer:self.homePanGesture];
-    [self.view addGestureRecognizer:self.visitorPanGesture];
-
-}
-
-- (void)homeHandlePan:(UIPanGestureRecognizer *)sender
-{
-    NSLog(@"Home pan!");
-}
-
-- (void)visitorHandlePan:(UIPanGestureRecognizer *)sender
-{
-    NSLog(@"Visitor pan!");
+//    self.homePanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self.homePageViewController
+//                                                                        action:@selector(homeHandlePan:)];
+//    self.visitorPanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self.visitorPageViewController
+//                                                                     action:@selector(visitorHandlePan:)];
+//
+//    self.homePanGesture.minimumNumberOfTouches = 1;
+//    self.visitorPanGesture.minimumNumberOfTouches = 1;
+//    self.homePanGesture.delegate = self;
+//    self.visitorPanGesture.delegate = self;
+//    [self.view addGestureRecognizer:self.homePanGesture];
+//    [self.view addGestureRecognizer:self.visitorPanGesture];
+//
+//}
+//
+//- (void)homeHandlePan:(UIPanGestureRecognizer *)sender
+//{
+//    NSLog(@"Home pan!");
+//}
+//
+//- (void)visitorHandlePan:(UIPanGestureRecognizer *)sender
+//{
+//    NSLog(@"Visitor pan!");
 }
 
 #pragma mark - Pan Gesture Recognizer
@@ -265,8 +283,8 @@ NSInteger const EMBED_MAX_GAMES = 3;
 
 #pragma mark - Other Team Picker
 
-//- (void)initializeOtherTeamPicker
-//{
+- (void)initializeOtherTeamPicker
+{
 //    self.otherTeamName.delegate = self;
 //    self.otherTeamPicker.delegate = self;
 //    self.otherTeamPicker.dataSource = self;
@@ -300,7 +318,7 @@ NSInteger const EMBED_MAX_GAMES = 3;
 //{
 //    //Let's print in the console what the user had chosen;
 //    NSLog(@"Chosen item: %@", [self.otherTeams objectAtIndex:row]);
-//}
+}
 
 #pragma mark - UIPageViewControllerDataSource
 
