@@ -8,35 +8,7 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>My Sample App Settings</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSMultiValueSpecifier</string>
-			<key>Title</key>
-			<string>Display distance</string>
-			<key>Key</key>
-			<string>distance</string>
-			<key>DefaultValue</key>
-			<string>miles</string>
-			<key>Values</key>
-			<array>
-				<string>Miles</string>
-				<string>Feet</string>
-				<string>Kilometers</string>
-			</array>
-			<key>Titles</key>
-			<array>
-				<string>Miles</string>
-				<string>Feet</string>
-				<string>Kilometers</string>
-			</array>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string>Scoring Settings</string>
+			<string>Volleyball ScoreMaster</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -51,46 +23,6 @@
 			<string>None</string>
 			<key>KeyboardType</key>
 			<string>NumberPad</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
-			<key>Title</key>
-			<string>Add new opponent</string>
-			<key>Key</key>
-			<string>add_new_opponent</string>
-			<key>DefaultValue</key>
-			<string></string>
-			<key>KeyboardType</key>
-			<string>Alphabet</string>
-			<key>AutocorrectionType</key>
-			<string>No</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSMultiValueSpecifier</string>
-			<key>Title</key>
-			<string>Display opponent</string>
-			<key>Key</key>
-			<string>opponent</string>
-			<key>DefaultValue</key>
-			<string>Plainfield Central</string>
-			<key>Values</key>
-			<array>
-				<string>Plainfield North</string>
-				<string>Plainfield Central</string>
-				<string>Plainfield South</string>
-				<string>Minooka</string>
-				<string>Oswego East</string>
-			</array>
-			<key>Titles</key>
-			<array>
-				<string>Plainfield North</string>
-				<string>Plainfield Central</string>
-				<string>Plainfield South</string>
-				<string>Minooka</string>
-				<string>Oswego East</string>
-			</array>
 		</dict>
 	</array>
 	<key>StringsTable</key>

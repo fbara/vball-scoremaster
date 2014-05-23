@@ -8,19 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController <UIPickerViewDelegate,UIPickerViewDataSource>
+@interface SettingsViewController : UITableViewController
 
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *gamesControl;
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
 @property (weak, nonatomic) IBOutlet UIButton *visitingTeamColor;
+@property (weak, nonatomic) IBOutlet UITextField *sendTextNumber;
 
+- (IBAction)sendTextNotification:(id)sender;
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;
 
 - (IBAction)doneEditing:(id)sender;
 - (IBAction)saveSettings:(id)sender;
-- (IBAction)numberOfGamesSegment:(id)sender;
+
 
 @end

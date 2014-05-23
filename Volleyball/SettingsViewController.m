@@ -14,8 +14,6 @@
 
 @implementation SettingsViewController
 {
-    NSMutableArray *opponentNames;
-    NSString *selectedOpponent;
     NSString *maxGamesSetting;
 
 }
@@ -32,55 +30,23 @@
 
 - (void)viewDidLoad
 {
-    opponentNames = [[NSMutableArray alloc] init];
-    [opponentNames addObject:@"Plainfield North"];
-    [opponentNames addObject:@"Plainfield Central"];
-    [opponentNames addObject:@"Plainfield South"];
-    [opponentNames addObject:@"Minooka"];
-    [opponentNames addObject:@"Oswego East"];
-    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-    
+  
 }
 
 #pragma mark - Controls -
 
-#pragma mark -PickerView Settings
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    selectedOpponent = [opponentNames objectAtIndex:row];
-}
-
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    //Populates pickerview
-    return [opponentNames objectAtIndex:row];
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    //Number of items
-    return [opponentNames count];
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    //Number of components
-    return 1;
-}
 
 #pragma mark -Save Settings
 
 - (IBAction)saveSettings:(id)sender
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    //Get maximum number of games
     [defaults setObject:maxGamesSetting forKey:@"number_of_matches"];
-    [defaults setObject:selectedOpponent forKey:@"opponent"];
     
     //Set the home team color
     UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
@@ -106,23 +72,10 @@
     
 }
 
-#pragma mark -Game Segment
-
-- (IBAction)numberOfGamesSegment:(id)sender
-{
-    if (self.gamesControl.selectedSegmentIndex == 0) {
-        maxGamesSetting = @"1";
-        
-    } else if (self.gamesControl.selectedSegmentIndex == 1) {
-        maxGamesSetting = @"2";
-
-    } else if (self.gamesControl.selectedSegmentIndex == 2) {
-        maxGamesSetting = @"3";
-
-    }
-}
-
 #pragma mark -Team Background Colors
+
+- (IBAction)sendTextNotification:(id)sender {
+}
 
 - (IBAction)homeTeamBackgroundColor:(id)sender
 {
@@ -161,12 +114,6 @@
 {
     [super viewWillAppear:animated];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-    //Get the max games segmented control
-    maxGamesSetting = [defaults objectForKey:@"number_of_matches"];
-    self.gamesControl.selectedSegmentIndex = [maxGamesSetting intValue] - 1;
-    
     //Get home team background colors
     UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
     NSData *theHomeData = [[NSUserDefaults standardUserDefaults] dataForKey:@"homeTeamColor"];
@@ -182,13 +129,6 @@
         colorVisitor = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theVisitorData];
     }
     self.visitingTeamColor.backgroundColor = colorVisitor;
-    
-    //Get the opponent
-    selectedOpponent = [[NSString alloc] initWithString:[defaults objectForKey:@"opponent"]];
-    int selectedRow = [opponentNames indexOfObject:selectedOpponent];
-    [self.opponentPicker selectRow:selectedRow
-                       inComponent:0
-                          animated:YES];
     
 }
 
