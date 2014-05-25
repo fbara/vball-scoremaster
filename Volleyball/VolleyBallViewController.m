@@ -20,9 +20,8 @@ int const EMBED_MAX_GAMES = 3;
 
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
-@property (strong, nonatomic)NSMutableArray *otherTeams;
-@property (strong, nonatomic)UIPanGestureRecognizer *homePanGesture;
-@property (strong, nonatomic)UIPanGestureRecognizer *visitorPanGesture;
+@property (weak, nonatomic)UITextField *activeField;
+
 
 @end
 
@@ -53,6 +52,7 @@ int const EMBED_MAX_GAMES = 3;
     [self initializeHomeScore];
     [self initializeVisitorScore];
     [self resetGameKillAce];
+   
     
 //    ADBannerView *adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
 //    [self.view addSubview:adView];
@@ -136,17 +136,15 @@ int const EMBED_MAX_GAMES = 3;
 {
     [super viewWillAppear:animated];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *selectedOpponent = [[NSString alloc] initWithString:[defaults objectForKey:@"opponent"]];
-
     self.homePageViewController.view.backgroundColor = [self colorHomeScoreView];
     self.visitorPageViewController.view.backgroundColor = [self colorVisitorScoreView];
-    self.visitorTeamName.text = selectedOpponent;
-    [self.view setNeedsDisplay];
+    
 }
 
 #pragma mark - Button Presses
-
+/*!
+ *  What happens when 'Game' is pressed
+ */
 - (IBAction)gamePressed
 {
     //Grab the game number and add 1 but shouldn't be more than 3
@@ -254,77 +252,6 @@ int const EMBED_MAX_GAMES = 3;
     }
 }
 
-#pragma mark - Pan Gestures
-
-- (void)initializePanGesture
-{
-//    self.homePanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self.homePageViewController
-//                                                                        action:@selector(homeHandlePan:)];
-//    self.visitorPanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self.visitorPageViewController
-//                                                                     action:@selector(visitorHandlePan:)];
-//
-//    self.homePanGesture.minimumNumberOfTouches = 1;
-//    self.visitorPanGesture.minimumNumberOfTouches = 1;
-//    self.homePanGesture.delegate = self;
-//    self.visitorPanGesture.delegate = self;
-//    [self.view addGestureRecognizer:self.homePanGesture];
-//    [self.view addGestureRecognizer:self.visitorPanGesture];
-//
-//}
-//
-//- (void)homeHandlePan:(UIPanGestureRecognizer *)sender
-//{
-//    NSLog(@"Home pan!");
-//}
-//
-//- (void)visitorHandlePan:(UIPanGestureRecognizer *)sender
-//{
-//    NSLog(@"Visitor pan!");
-}
-
-#pragma mark - Pan Gesture Recognizer
-
-
-
-#pragma mark - Other Team Picker
-
-- (void)initializeOtherTeamPicker
-{
-//    self.otherTeamName.delegate = self;
-//    self.otherTeamPicker.delegate = self;
-//    self.otherTeamPicker.dataSource = self;
-//    //[self.otherTeamName setInputView:self.otherTeamPicker];
-//    
-//    self.otherTeams = [[NSMutableArray alloc] initWithObjects:@"Plainfield North", @"Plainfied Central", @"Plainfied South", @"Minooka", @"Oswego East", nil];
-//}
-//
-//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-//{
-//    return [self.otherTeams count];
-//}
-//
-//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-//{
-//    return 1;
-//}
-//
-//- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
-//{
-//    return 30.0;
-//}
-//
-//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-//{
-//    return [self.otherTeams objectAtIndex:row];
-//}
-//
-////If the user chooses from the pickerview, it calls this function;
-//- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-//{
-//    //Let's print in the console what the user had chosen;
-//    NSLog(@"Chosen item: %@", [self.otherTeams objectAtIndex:row]);
-}
-
 #pragma mark - UIPageViewControllerDataSource
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
@@ -383,8 +310,7 @@ int const EMBED_MAX_GAMES = 3;
     return newViewController;
 }
 
-#pragma mark - Screen Action Buttons
-
+#pragma mark - UITextFieldDelegate
 
 
 

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "92AA429E1916C2800037D405"
-               BuildableName = "Volleyball.app"
+               BuildableName = "VBall ScoreMaster.app"
                BlueprintName = "VBall ScoreMaster"
                ReferencedContainer = "container:VBall ScoreMaster.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "92AA42BF1916C2810037D405"
-               BuildableName = "VolleyballTests.xctest"
+               BuildableName = "VBall ScoreMasterTests.xctest"
                BlueprintName = "VBall ScoreMasterTests"
                ReferencedContainer = "container:VBall ScoreMaster.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "92AA429E1916C2800037D405"
-            BuildableName = "Volleyball.app"
+            BuildableName = "VBall ScoreMaster.app"
             BlueprintName = "VBall ScoreMaster"
             ReferencedContainer = "container:VBall ScoreMaster.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "92AA429E1916C2800037D405"
-            BuildableName = "Volleyball.app"
+            BuildableName = "VBall ScoreMaster.app"
             BlueprintName = "VBall ScoreMaster"
             ReferencedContainer = "container:VBall ScoreMaster.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "92AA429E1916C2800037D405"
-            BuildableName = "Volleyball.app"
+            BuildableName = "VBall ScoreMaster.app"
             BlueprintName = "VBall ScoreMaster"
             ReferencedContainer = "container:VBall ScoreMaster.xcodeproj">
          </BuildableReference>

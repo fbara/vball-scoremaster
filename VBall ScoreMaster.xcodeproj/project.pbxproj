@@ -48,7 +48,7 @@
 		9244799C192C022D0031C1F6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Volleyball/Settings.bundle; sourceTree = "<group>"; };
 		9244799E192C2CDC0031C1F6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		9244799F192C2CDC0031C1F6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		92AA429F1916C2800037D405 /* Volleyball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Volleyball.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92AA429F1916C2800037D405 /* VBall ScoreMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VBall ScoreMaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AA42A21916C2800037D405 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		92AA42A41916C2800037D405 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		92AA42A61916C2800037D405 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -62,7 +62,7 @@
 		92AA42B71916C2810037D405 /* VolleyBallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolleyBallViewController.h; sourceTree = "<group>"; };
 		92AA42B81916C2810037D405 /* VolleyBallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolleyBallViewController.m; sourceTree = "<group>"; };
 		92AA42BA1916C2810037D405 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		92AA42C01916C2810037D405 /* VolleyballTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VolleyballTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92AA42C01916C2810037D405 /* VolleyballTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VolleyballTests.xctest; path = "VBall ScoreMasterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AA42C11916C2810037D405 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		92AA42C91916C2810037D405 /* VolleyballTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VolleyballTests-Info.plist"; sourceTree = "<group>"; };
 		92AA42CB1916C2810037D405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		92AA42A01916C2800037D405 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				92AA429F1916C2800037D405 /* Volleyball.app */,
+				92AA429F1916C2800037D405 /* VBall ScoreMaster.app */,
 				92AA42C01916C2810037D405 /* VolleyballTests.xctest */,
 			);
 			name = Products;
@@ -201,7 +201,7 @@
 			);
 			name = "VBall ScoreMaster";
 			productName = Volleyball;
-			productReference = 92AA429F1916C2800037D405 /* Volleyball.app */;
+			productReference = 92AA429F1916C2800037D405 /* VBall ScoreMaster.app */;
 			productType = "com.apple.product-type.application";
 		};
 		92AA42BF1916C2810037D405 /* VBall ScoreMasterTests */ = {
@@ -413,6 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
@@ -426,6 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
