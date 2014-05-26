@@ -183,6 +183,26 @@
             </objects>
             <point key="canvasLocation" x="1332" y="-471"/>
         </scene>
+        <!--In App Settings View Controller - InAppSettings-->
+        <scene sceneID="PEE-wJ-19T">
+            <objects>
+                <viewController title="InAppSettings" id="PZy-kj-bRc" customClass="InAppSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VOn-cs-Gw0"/>
+                        <viewControllerLayoutGuide type="bottom" id="uMe-kD-6Ek"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mtI-cG-KkG">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pqC-qf-8jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="577" y="-955"/>
+        </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="36K-KY-cef">
             <objects>

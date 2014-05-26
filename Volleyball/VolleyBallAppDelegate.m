@@ -8,6 +8,7 @@
 
 #import "VolleyBallAppDelegate.h"
 #import "SettingsViewController.h"
+#import "InAppSettingsViewController.h"
 
 @implementation VolleyBallAppDelegate
 
@@ -23,6 +24,16 @@
     if (![defaults objectForKey:@"opponent"])
         [defaults setObject:@"opponentPicker" forKey:@"opponent"];
     [defaults synchronize];
+    
+     InAppSettingsViewController *settingsViewController;
+    // settingsViewController = [[SettingsViewController alloc] initWithTabBar];
+    settingsViewController = [[InAppSettingsKit/IASKAppSettingsViewController alloc] initWithNibName:@"IASKAppSettingsView" bundle:nil];
+    settingsViewController.delegate = self;
+    localNavigationController = [[UINavigationController alloc]
+                                 initWithRootViewController:settingsViewController];
+    [localControllersArray addObject:localNavigationController];
+    [localNavigationController release];
+    [settingsViewController release];
     
     return YES;
 }
