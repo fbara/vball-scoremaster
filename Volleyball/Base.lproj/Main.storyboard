@@ -16,26 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YlA-8h-1fv">
-                                <rect key="frame" x="-4" y="65" width="575" height="255"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </scrollView>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-DE-Ouq" userLabel="Home Container View">
-                                <rect key="frame" x="356" y="91" width="192" height="191"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Visiting Team Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gzx-4p-5vy">
+                                <rect key="frame" x="20" y="65" width="192" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <segue destination="UDW-Id-wMZ" kind="embed" identifier="embedHome" id="59m-cp-cyl"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="rPx-ck-UCe"/>
                                 </connections>
-                            </containerView>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdD-WX-kLc" userLabel="Visitor Container View">
-                                <rect key="frame" x="20" y="92" width="192" height="190"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Home Team Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KgW-hz-5sq">
+                                <rect key="frame" x="356" y="65" width="192" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99919813871383667" green="0.91378588178597819" blue="0.59092180193538546" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <segue destination="xOM-Jn-cof" kind="embed" identifier="embedVisitor" id="32b-31-xme"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Gy2-c3-JW9"/>
                                 </connections>
-                            </containerView>
+                            </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jML-Et-saV">
                                 <rect key="frame" x="259" y="65" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -117,30 +119,29 @@
                                     <action selector="gamePressed" destination="vXZ-lx-hvc" eventType="touchUpInside" id="91k-vB-ZZN"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Visiting Team Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gzx-4p-5vy">
-                                <rect key="frame" x="20" y="65" width="192" height="30"/>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-DE-Ouq" userLabel="Home Container View">
+                                <rect key="frame" x="356" y="89" width="192" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="doneEditing:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="uh0-gW-VFD"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="rPx-ck-UCe"/>
+                                    <segue destination="UDW-Id-wMZ" kind="embed" identifier="embedHome" id="59m-cp-cyl"/>
                                 </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Home Team Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KgW-hz-5sq">
-                                <rect key="frame" x="356" y="65" width="192" height="30"/>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdD-WX-kLc" userLabel="Visitor Container View">
+                                <rect key="frame" x="20" y="90" width="192" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <color key="backgroundColor" red="0.99919813871383667" green="0.91378588178597819" blue="0.59092180193538546" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="doneEditing:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="rKv-Rt-lPE"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Gy2-c3-JW9"/>
+                                    <segue destination="xOM-Jn-cof" kind="embed" identifier="embedVisitor" id="32b-31-xme"/>
                                 </connections>
-                            </textField>
+                            </containerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Serving" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="761-l2-1g5">
+                                <rect key="frame" x="255" y="205" width="58" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -164,7 +165,6 @@
                         <outlet property="gameNumber" destination="O6P-Lx-PJG" id="hEm-tI-Usd"/>
                         <outlet property="homeTeamName" destination="KgW-hz-5sq" id="rYn-cJ-0vR"/>
                         <outlet property="killNumber" destination="V3G-uq-fca" id="vol-bF-cyO"/>
-                        <outlet property="scrollView" destination="YlA-8h-1fv" id="0b7-gO-r7V"/>
                         <outlet property="visitingTeamName" destination="Gzx-4p-5vy" id="RcM-Y9-NgA"/>
                     </connections>
                 </viewController>

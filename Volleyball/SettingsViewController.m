@@ -73,8 +73,16 @@
     
 }
 
-//Restrict phone textField to format 123-456-7890 and
-//it's automatically called whenever the user types a number into the text field
+
+/*!
+ * @discussion Restrict the textFiled to a phone number format: ex. 555-555-5555
+ * @param textField The text field that the user is typing in and that should be a phone number.
+ * @param range The length of the phone number.
+ * @param string Takes the numbers the user is entering and converts them to the phone.
+ * number format
+ * @return BOOL Returns whether or not the conversion to the phone number 
+ * format was successful or not.
+ */
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
         // All digits entered
@@ -124,11 +132,10 @@
 
 #pragma mark -Team Background Colors
 
-- (IBAction)sendTextNotification:(id)sender
-{
-    
-}
-
+/*!
+ * @discussion The background color of the home team's score
+ * @param sender This param is not used.
+ */
 - (IBAction)homeTeamBackgroundColor:(id)sender
 {
     //Change the button background color each time the button is tapped
@@ -137,6 +144,10 @@
     self.homeTeamColor.backgroundColor = homeButtonColor;
 }
 
+/*!
+ * @discussion The background color of the visiting team's score
+ * @param sender This param is not used.
+ */
 - (IBAction)visitingTeamBackgroundColor:(id)sender
 {
     //Change the button background color each time the button is tapped
@@ -146,9 +157,12 @@
 
 }
 
+/*!
+ * @discussion Generate and return a random color
+ * @return UIColor This color will be different each time the function is called
+ */
 - (UIColor *)getRandomColor
 {
-    //Generate a random color and return it
     int r = arc4random() % 255;
     int g = arc4random() % 255;
     int b = arc4random() % 255;
@@ -157,10 +171,15 @@
     return color;
 }
 
+/*!
+ * @discussion During viewWillAppear, grab the latest settings in case they were updated
+ * @param animated Animate the view when it appears
+ */
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 //    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
 //        self.notificationSwitch.on = YES;

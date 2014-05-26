@@ -52,10 +52,8 @@ int const EMBED_MAX_GAMES = 3;
     [self initializeHomeScore];
     [self initializeVisitorScore];
     [self resetGameKillAce];
-   
-    
-//    ADBannerView *adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
-//    [self.view addSubview:adView];
+    self.visitingTeamName.delegate = self;
+    self.homeTeamName.delegate = self;
 }
 
 
@@ -312,7 +310,24 @@ int const EMBED_MAX_GAMES = 3;
 
 #pragma mark - UITextFieldDelegate
 
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+}
 
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
+}
 
 - (void)didReceiveMemoryWarning
 {
