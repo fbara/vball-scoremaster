@@ -18,7 +18,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *aceNumber;
 @property (weak, nonatomic) IBOutlet UITextField *visitingTeamName;
 @property (weak, nonatomic) IBOutlet UITextField *homeTeamName;
+@property (weak, nonatomic) IBOutlet UIImageView *teamServingArrow;
+@property (weak, nonatomic) IBOutlet UIView *homeTeamContainer;
+@property (weak, nonatomic) IBOutlet UIView *vistingTeamContainer;
+@property UISwipeGestureRecognizer *homeSwipeGesture;
+@property UISwipeGestureRecognizer *visitingSwipeGesture;
 
+- (IBAction)swap:(id)sender;
+
+- (IBAction)teamServingDirection;
 - (IBAction)gamePressed;
 - (IBAction)killsPressed;
 - (IBAction)acePressed;

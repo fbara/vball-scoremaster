@@ -21,6 +21,11 @@ int const EMBED_MAX_GAMES = 3;
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
 @property (weak, nonatomic)UITextField *activeField;
+@property (weak, nonatomic) IBOutlet UILabel *gameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *spikeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *aceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *servingLabel;
+
 
 
 @end
@@ -54,6 +59,18 @@ int const EMBED_MAX_GAMES = 3;
     [self resetGameKillAce];
     self.visitingTeamName.delegate = self;
     self.homeTeamName.delegate = self;
+
+    
+    _homeSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    _homeSwipeGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+
+    _visitingSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    _visitingSwipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
+
+    [_homeTeamContainer addGestureRecognizer:_homeSwipeGesture];
+    [_vistingTeamContainer addGestureRecognizer:_visitingSwipeGesture];
+    
+    
 }
 
 
@@ -67,6 +84,7 @@ int const EMBED_MAX_GAMES = 3;
                                           direction:UIPageViewControllerNavigationDirectionForward
                                            animated:YES
                                          completion:nil];
+
     
 }
 
@@ -80,6 +98,7 @@ int const EMBED_MAX_GAMES = 3;
                                              direction:UIPageViewControllerNavigationDirectionForward
                                               animated:YES
                                             completion:nil];
+    
 }
 
 - (DefaultScoreViewController *)createViewControllersForScore:(int)score withColor:(UIColor *)color
@@ -94,6 +113,11 @@ int const EMBED_MAX_GAMES = 3;
     newScoreViewController.score = score;
     
     return newScoreViewController;
+}
+
+- (void)moveScoreView:(id)sender
+{
+    NSLog(@"Moving: %@", sender);
 }
 
 - (UIColor *)colorHomeScoreView
@@ -139,6 +163,54 @@ int const EMBED_MAX_GAMES = 3;
     
 }
 
+#pragma mark - UIPanGestureRecognizers
+
+- (IBAction)handleSwipe:(UISwipeGestureRecognizer *)recognizer
+{
+//    if (UIGestureRecognizerStateBegan == recognizer.state) {
+//
+//        
+    NSLog(@"handleSwipe:");
+    //Get the center of each score view container
+    CGPoint targetHomeCenter = _vistingTeamContainer.center;
+    CGPoint targetVisitorCenter = _homeTeamContainer.center;
+    CGPoint targetHomeNameCenter = _visitingTeamName.center;
+    CGPoint targetVisitorNameCenter = _homeTeamName.center;
+    
+    
+        [UIView animateWithDuration:0.5f
+                              delay:0.0f
+             usingSpringWithDamping:0.5f
+              initialSpringVelocity:1.0f
+                            options:0
+                         animations:^(){
+                             [self hideUI:YES];
+                             _homeTeamContainer.center = targetHomeCenter;
+                             _homeTeamName.center = targetHomeNameCenter;
+                             _vistingTeamContainer.center = targetVisitorCenter;
+                             _visitingTeamName.center = targetVisitorNameCenter;
+                             [self hideUI:NO];
+                         }
+                         completion:nil];
+//    }
+
+    _homeSwipeGesture.direction = (_homeSwipeGesture.direction == UISwipeGestureRecognizerDirectionLeft) ? UISwipeGestureRecognizerDirectionRight : UISwipeGestureRecognizerDirectionLeft;
+    _visitingSwipeGesture.direction = (_visitingSwipeGesture.direction == UISwipeGestureRecognizerDirectionLeft) ? UISwipeGestureRecognizerDirectionRight : UISwipeGestureRecognizerDirectionLeft;
+    
+}
+
+- (void)hideUI:(BOOL)hide
+{
+    self.gameNumber.hidden = hide;
+    self.killNumber.hidden = hide;
+    self.aceNumber.hidden = hide;
+    self.teamServingArrow.hidden = hide;
+    self.gameLabel.hidden = hide;
+    self.aceLabel.hidden = hide;
+    self.spikeLabel.hidden = hide;
+    self.servingLabel.hidden = hide;
+}
+
 #pragma mark - Button Presses
 /*!
  *  What happens when 'Game' is pressed
@@ -175,7 +247,7 @@ int const EMBED_MAX_GAMES = 3;
     lableNum = lableNum + 1;
     self.killNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     
-    [self sendSMS:@"Kill's" action:lableNum];
+//    [self sendSMS:@"Kill's" action:lableNum];
     
 //    //Send the SMS message
 //    MFMessageComposeViewController *textComposer = [[MFMessageComposeViewController alloc] init];
@@ -203,6 +275,35 @@ int const EMBED_MAX_GAMES = 3;
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)swap:(id)sender
+{
+    CGPoint targetHomeCenter = _vistingTeamContainer.center;
+    CGPoint targetVisitorCenter = _homeTeamContainer.center;
+    CGPoint targetHomeNameCenter = _visitingTeamName.center;
+    CGPoint targetVisitorNameCenter = _homeTeamName.center;
+    
+    
+    [UIView animateWithDuration:0.5f
+                          delay:0.0f
+         usingSpringWithDamping:0.5f
+          initialSpringVelocity:1.0f
+                        options:0
+                     animations:^(){
+                         [self hideUI:YES];
+                         _homeTeamContainer.center = targetHomeCenter;
+                         _homeTeamName.center = targetHomeNameCenter;
+                         _vistingTeamContainer.center = targetVisitorCenter;
+                         _visitingTeamName.center = targetVisitorNameCenter;
+                         [self hideUI:NO];
+                     }
+                     completion:nil];
+}
+
+- (IBAction)teamServingDirection
+{
+    
 }
 
 - (IBAction)acePressed
@@ -312,6 +413,7 @@ int const EMBED_MAX_GAMES = 3;
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    [self.view endEditing:YES];
     [textField resignFirstResponder];
 }
 

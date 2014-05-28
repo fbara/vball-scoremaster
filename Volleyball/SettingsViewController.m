@@ -157,6 +157,9 @@
 
 }
 
+- (IBAction)notificationControl:(id)sender {
+}
+
 /*!
  * @discussion Generate and return a random color
  * @return UIColor This color will be different each time the function is called
