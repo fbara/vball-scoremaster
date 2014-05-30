@@ -62,7 +62,7 @@
 		92AA42B71916C2810037D405 /* VolleyBallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolleyBallViewController.h; sourceTree = "<group>"; };
 		92AA42B81916C2810037D405 /* VolleyBallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolleyBallViewController.m; sourceTree = "<group>"; };
 		92AA42BA1916C2810037D405 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		92AA42C01916C2810037D405 /* VolleyballTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VolleyballTests.xctest; path = "VBall ScoreMasterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92AA42C01916C2810037D405 /* VBall ScoreMasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VBall ScoreMasterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AA42C11916C2810037D405 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		92AA42C91916C2810037D405 /* VolleyballTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VolleyballTests-Info.plist"; sourceTree = "<group>"; };
 		92AA42CB1916C2810037D405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				92AA429F1916C2800037D405 /* VBall ScoreMaster.app */,
-				92AA42C01916C2810037D405 /* VolleyballTests.xctest */,
+				92AA42C01916C2810037D405 /* VBall ScoreMasterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,7 +219,7 @@
 			);
 			name = "VBall ScoreMasterTests";
 			productName = VolleyballTests;
-			productReference = 92AA42C01916C2810037D405 /* VolleyballTests.xctest */;
+			productReference = 92AA42C01916C2810037D405 /* VBall ScoreMasterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */

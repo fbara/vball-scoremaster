@@ -123,10 +123,6 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backwardArrow" translatesAutoresizingMaskIntoConstraints="NO" id="LCK-0P-VLz" userLabel="Image View - TeamServing">
-                                <rect key="frame" x="259" y="221" width="49" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMZ-LK-KDH" userLabel="screenActionServing">
                                 <rect key="frame" x="259" y="221" width="49" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -150,14 +146,19 @@
                                     <segue destination="xOM-Jn-cof" kind="embed" identifier="embedVisitor" id="32b-31-xme"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8n-PS-KjO">
-                                <rect key="frame" x="275" y="283" width="46" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backwardArrow" translatesAutoresizingMaskIntoConstraints="NO" id="hhg-u6-kUZ">
+                                <rect key="frame" x="254" y="217" width="60" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVD-nr-RAD">
+                                <rect key="frame" x="254" y="217" width="60" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" image="forwardArrow"/>
                                 <connections>
-                                    <action selector="swap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6m1-Ld-ZGa"/>
+                                    <action selector="teamServingArrowDirection:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vkA-kE-ilf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -186,9 +187,9 @@
                         <outlet property="homeTeamContainer" destination="Acd-DE-Ouq" id="2Va-1T-JQ2"/>
                         <outlet property="homeTeamName" destination="KgW-hz-5sq" id="rYn-cJ-0vR"/>
                         <outlet property="killNumber" destination="V3G-uq-fca" id="vol-bF-cyO"/>
+                        <outlet property="serveDirectionArrow" destination="hhg-u6-kUZ" id="UNm-NI-Rec"/>
                         <outlet property="servingLabel" destination="761-l2-1g5" id="vaD-N6-JNZ"/>
                         <outlet property="spikeLabel" destination="tX3-rT-g7M" id="72b-4A-CVA"/>
-                        <outlet property="teamServingArrow" destination="LCK-0P-VLz" id="aJ6-h2-0N6"/>
                         <outlet property="visitingTeamName" destination="Gzx-4p-5vy" id="RcM-Y9-NgA"/>
                         <outlet property="vistingTeamContainer" destination="JdD-WX-kLc" id="LyJ-Gf-UgW"/>
                     </connections>
@@ -436,6 +437,7 @@
     </scenes>
     <resources>
         <image name="backwardArrow" width="128" height="128"/>
+        <image name="forwardArrow" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

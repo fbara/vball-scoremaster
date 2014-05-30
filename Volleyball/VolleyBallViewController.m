@@ -59,16 +59,23 @@ int const EMBED_MAX_GAMES = 3;
     [self resetGameKillAce];
     self.visitingTeamName.delegate = self;
     self.homeTeamName.delegate = self;
-
     
-    _homeSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    _homeSwipeGesture.direction = UISwipeGestureRecognizerDirectionLeft;
-
-    _visitingSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    _visitingSwipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
-
-    [_homeTeamContainer addGestureRecognizer:_homeSwipeGesture];
-    [_vistingTeamContainer addGestureRecognizer:_visitingSwipeGesture];
+    // Create Home swipe gesture and add it to the home container view.
+    // Set this controller as the delegate to allow simultaneous gestures in the PageViewController's container view
+    UISwipeGestureRecognizer *homeSwipeGesture = [[UISwipeGestureRecognizer alloc]
+                                                  initWithTarget:self
+                                                  action:@selector(handleSwipe:)];
+    homeSwipeGesture.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
+    homeSwipeGesture.delegate = self;
+    [_homeTeamContainer addGestureRecognizer:homeSwipeGesture];
+    
+    //Create the same thing for the visitor team container
+    UISwipeGestureRecognizer *visitorSwipeGesture = [[UISwipeGestureRecognizer alloc]
+                                                     initWithTarget:self
+                                                     action:@selector(handleSwipe:)];
+    visitorSwipeGesture.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
+    visitorSwipeGesture.delegate = self;
+    [_vistingTeamContainer addGestureRecognizer:visitorSwipeGesture];
     
     
 }
@@ -167,48 +174,33 @@ int const EMBED_MAX_GAMES = 3;
 
 - (IBAction)handleSwipe:(UISwipeGestureRecognizer *)recognizer
 {
-//    if (UIGestureRecognizerStateBegan == recognizer.state) {
-//
-//        
-    NSLog(@"handleSwipe:");
     //Get the center of each score view container
     CGPoint targetHomeCenter = _vistingTeamContainer.center;
     CGPoint targetVisitorCenter = _homeTeamContainer.center;
     CGPoint targetHomeNameCenter = _visitingTeamName.center;
     CGPoint targetVisitorNameCenter = _homeTeamName.center;
     
-    
-        [UIView animateWithDuration:0.5f
-                              delay:0.0f
-             usingSpringWithDamping:0.5f
-              initialSpringVelocity:1.0f
-                            options:0
-                         animations:^(){
-                             [self hideUI:YES];
-                             _homeTeamContainer.center = targetHomeCenter;
-                             _homeTeamName.center = targetHomeNameCenter;
-                             _vistingTeamContainer.center = targetVisitorCenter;
-                             _visitingTeamName.center = targetVisitorNameCenter;
-                             [self hideUI:NO];
-                         }
-                         completion:nil];
-//    }
-
-    _homeSwipeGesture.direction = (_homeSwipeGesture.direction == UISwipeGestureRecognizerDirectionLeft) ? UISwipeGestureRecognizerDirectionRight : UISwipeGestureRecognizerDirectionLeft;
-    _visitingSwipeGesture.direction = (_visitingSwipeGesture.direction == UISwipeGestureRecognizerDirectionLeft) ? UISwipeGestureRecognizerDirectionRight : UISwipeGestureRecognizerDirectionLeft;
-    
+    //Create the animation and swap positions of the score controllers
+    [UIView animateWithDuration:0.5f
+                          delay:0.0f
+         usingSpringWithDamping:0.5f
+          initialSpringVelocity:1.0f
+                        options:0
+                     animations:^(){
+                         _homeTeamContainer.center = targetHomeCenter;
+                         _homeTeamName.center = targetHomeNameCenter;
+                         _vistingTeamContainer.center = targetVisitorCenter;
+                         _visitingTeamName.center = targetVisitorNameCenter;
+                     }
+                     completion:nil];
 }
 
-- (void)hideUI:(BOOL)hide
+#pragma mark - UIGestureRecognizer Delegate Methods
+
+// Force all gestures to be handled simultaneously.  This will allow the Swipes and PageViewController's Pan/Tap gestures to coexsist and function correctly.
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-    self.gameNumber.hidden = hide;
-    self.killNumber.hidden = hide;
-    self.aceNumber.hidden = hide;
-    self.teamServingArrow.hidden = hide;
-    self.gameLabel.hidden = hide;
-    self.aceLabel.hidden = hide;
-    self.spikeLabel.hidden = hide;
-    self.servingLabel.hidden = hide;
+    return YES;
 }
 
 #pragma mark - Button Presses
@@ -277,31 +269,7 @@ int const EMBED_MAX_GAMES = 3;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)swap:(id)sender
-{
-    CGPoint targetHomeCenter = _vistingTeamContainer.center;
-    CGPoint targetVisitorCenter = _homeTeamContainer.center;
-    CGPoint targetHomeNameCenter = _visitingTeamName.center;
-    CGPoint targetVisitorNameCenter = _homeTeamName.center;
-    
-    
-    [UIView animateWithDuration:0.5f
-                          delay:0.0f
-         usingSpringWithDamping:0.5f
-          initialSpringVelocity:1.0f
-                        options:0
-                     animations:^(){
-                         [self hideUI:YES];
-                         _homeTeamContainer.center = targetHomeCenter;
-                         _homeTeamName.center = targetHomeNameCenter;
-                         _vistingTeamContainer.center = targetVisitorCenter;
-                         _visitingTeamName.center = targetVisitorNameCenter;
-                         [self hideUI:NO];
-                     }
-                     completion:nil];
-}
-
-- (IBAction)teamServingDirection
+- (IBAction)teamServingArrowDirection:(id)sender
 {
     
 }
