@@ -13,7 +13,13 @@
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";
 NSString *const EMBED_VISITOR = @"embedVisitor";
+BOOL ROTATED = NO;
+BOOL SWIPED = NO;
 int const EMBED_MAX_GAMES = 3;
+//define PI
+#define M_PI   3.14159265358979323846264338327950288
+//Conversion definition
+#define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
 
 
 @interface VolleyBallViewController ()
@@ -25,7 +31,6 @@ int const EMBED_MAX_GAMES = 3;
 @property (weak, nonatomic) IBOutlet UILabel *spikeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *aceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *servingLabel;
-
 
 
 @end
@@ -174,6 +179,7 @@ int const EMBED_MAX_GAMES = 3;
 
 - (IBAction)handleSwipe:(UISwipeGestureRecognizer *)recognizer
 {
+    SWIPED = YES;
     //Get the center of each score view container
     CGPoint targetHomeCenter = _vistingTeamContainer.center;
     CGPoint targetVisitorCenter = _homeTeamContainer.center;
@@ -181,11 +187,11 @@ int const EMBED_MAX_GAMES = 3;
     CGPoint targetVisitorNameCenter = _homeTeamName.center;
     
     //Create the animation and swap positions of the score controllers
-    [UIView animateWithDuration:0.5f
+    [UIView animateWithDuration:0.8f
                           delay:0.0f
-         usingSpringWithDamping:0.5f
-          initialSpringVelocity:1.0f
-                        options:0
+         usingSpringWithDamping:0.8f
+          initialSpringVelocity:0.9f
+                        options:UIViewAnimationOptionCurveEaseInOut
                      animations:^(){
                          _homeTeamContainer.center = targetHomeCenter;
                          _homeTeamName.center = targetHomeNameCenter;
@@ -193,6 +199,7 @@ int const EMBED_MAX_GAMES = 3;
                          _visitingTeamName.center = targetVisitorNameCenter;
                      }
                      completion:nil];
+    SWIPED = NO;
 }
 
 #pragma mark - UIGestureRecognizer Delegate Methods
@@ -269,11 +276,6 @@ int const EMBED_MAX_GAMES = 3;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)teamServingArrowDirection:(id)sender
-{
-    
-}
-
 - (IBAction)acePressed
 {
     int lableNum = [self.aceNumber.text intValue];
@@ -297,6 +299,58 @@ int const EMBED_MAX_GAMES = 3;
         [self initializeHomeScore];
         [self initializeVisitorScore];
         [self resetGameKillAce];
+        SWIPED = NO;
+    }
+}
+
+/*!
+ * @discussion Takes in an image and rotates it by the given degrees.
+ * @param image The image that will be rotated.
+ * @param duration How long the animation should take.
+ * @param curve UIAnimation type.
+ * @param degrees How many degrees the image should be rotated.
+ * @warning You can't send a negative number to 'degrees', must be positive value.
+ */
+- (void)rotateImage:(UIImageView *)image duration:(NSTimeInterval)duration
+              curve:(int)curve degrees:(CGFloat)degrees
+{
+    // Setup the animation
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:duration];
+    [UIView setAnimationCurve:curve];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    
+    // The transform matrix
+    CGAffineTransform transform =
+    CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(degrees));
+    image.transform = transform;
+    
+    // Commit the changes
+    [UIView commitAnimations];
+}
+
+/*!
+ * @discussion Checks the current rotation of the team serving arrow and rotates it.
+ */
+- (IBAction)teamServingDirection
+{
+    /*!
+     *  Checks the current rotation of the team serving arrow.
+     *  Rotate it every time this button is pressed.
+     */
+    if (!ROTATED) {
+
+    [self rotateImage:self.serveDirectionArrow
+            duration:0.5
+               curve:UIViewAnimationOptionRepeat
+             degrees:180];
+        ROTATED = YES;
+    } else {
+    [self rotateImage:self.serveDirectionArrow
+             duration:0.5
+                curve:UIViewAnimationOptionCurveEaseIn
+              degrees:360];
+        ROTATED = NO;
     }
 }
 
@@ -323,27 +377,33 @@ int const EMBED_MAX_GAMES = 3;
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    //Cast the viewController as a ScoreViewController so we can act on its properties
-    DefaultScoreViewController *oldViewController = (DefaultScoreViewController *)viewController;
     
-    //Check the score, if it's more than 99, don't let the number get any higher
-    if (oldViewController.score == 99) {
-        return nil;
-    }
+        
+        //Cast the viewController as a ScoreViewController so we can act on its properties
+        DefaultScoreViewController *oldViewController = (DefaultScoreViewController *)viewController;
+        
+        //Check the score, if it's more than 99, don't let the number get any higher
+        if (SWIPED || oldViewController.score == 99) {
+            SWIPED = NO;
+            return nil;
+        }
+        
+        //Setup the new view controller with the new, higher score
+        DefaultScoreViewController *newViewController = [self createViewControllersForScore:0
+                                                                           withColor:[UIColor clearColor]];
+        newViewController.score = oldViewController.score + 1;
+        
+        //Check to see which view controller we're updating so the background color can be set correctly
+        if (pageViewController == _homePageViewController) {
+            //Home team score changing
+            newViewController.view.backgroundColor = self.homeColor;
+            
+        } else {
+            //Visitor team score changing
+            newViewController.view.backgroundColor = self.visitorColor;
+        }
     
-    //Setup the new view controller with the new, higher score
-    DefaultScoreViewController *newViewController = [self createViewControllersForScore:0
-                                                                       withColor:[UIColor clearColor]];
-    newViewController.score = oldViewController.score + 1;
-    
-    //Check to see which view controller we're updating so the background color can be set correctly
-    if (pageViewController == _homePageViewController) {
-        //Home team score changing
-        newViewController.view.backgroundColor = self.homeColor;
-    } else {
-        //Visitor team score changing
-        newViewController.view.backgroundColor = self.visitorColor;
-    }
+    SWIPED = NO;
     return newViewController;
 }
 
@@ -353,7 +413,8 @@ int const EMBED_MAX_GAMES = 3;
     DefaultScoreViewController *oldViewController = (DefaultScoreViewController *)viewController;
     
     //Check the score, if it's 0, don't let the number get any lower
-    if (oldViewController.score == 0) {
+    if (SWIPED || oldViewController.score == 0) {
+        SWIPED = NO;
         return nil;
     }
     
@@ -373,7 +434,7 @@ int const EMBED_MAX_GAMES = 3;
         newViewController.view.backgroundColor = self.visitorColor;
     }
                                                      
-    
+    SWIPED = NO;
     return newViewController;
 }
 

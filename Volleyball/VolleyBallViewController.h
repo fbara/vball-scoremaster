@@ -24,7 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIView *vistingTeamContainer;
 @property UISwipeGestureRecognizer *homeSwipeGesture;
 @property UISwipeGestureRecognizer *visitingSwipeGesture;
-- (IBAction)teamServingArrowDirection:(id)sender;
 
 - (IBAction)teamServingDirection;
 - (IBAction)gamePressed;
