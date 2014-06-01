@@ -90,7 +90,6 @@ NSString *msgVisitor;
     
 }
 
-
 - (void)initializeHomeScore
 {
     self.homeColor = [self colorHomeScoreView];
@@ -204,7 +203,7 @@ NSString *msgVisitor;
                      completion:NULL];
 }
 
-#pragma mark - UIGestureRecognizer Delegate Methods
+#pragma mark - UIGestureRecognizer Delegate Method
 
 // Force all gestures to be handled simultaneously.  This will allow the Swipes and PageViewController's Pan/Tap gestures to coexsist and function correctly.
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
@@ -214,7 +213,7 @@ NSString *msgVisitor;
 
 #pragma mark - Button Presses
 /*!
- *  What happens when 'Game' is pressed
+ *  What happens when 'Game' number is touched
  */
 - (IBAction)gamePressed
 {
@@ -231,6 +230,9 @@ NSString *msgVisitor;
     
 }
 
+/*!
+ *  What happens when 'Spike' number is touched
+ */
 - (IBAction)killsPressed
 {
     //Get the number currently displayed for kills and add 1
@@ -248,8 +250,12 @@ NSString *msgVisitor;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/*!
+ *  What happens when 'Ace' number is touched
+ */
 - (IBAction)acePressed
 {
+    //Get current number and add 1
     int lableNum = [self.aceNumber.text intValue];
     lableNum = lableNum + 1;
     self.aceNumber.text = [NSString stringWithFormat:@"%d", lableNum];
@@ -258,6 +264,9 @@ NSString *msgVisitor;
     [self sendSMS];
 }
 
+/*!
+ *  What happens when 'New Match' button is touched
+ */
 - (IBAction)newMatch
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Match?"
