@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UITableViewController <UITextFieldDelegate>
+@interface SettingsViewController : UIViewController <UITextFieldDelegate>
+{
+    IBOutlet UIScrollView *settingsScrollView;
+}
 
 
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
@@ -16,11 +19,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *notificationName;
 @property (weak, nonatomic) IBOutlet UISwitch *notificationSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *nameOfPlayer;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *notificationLabels;
+@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *notificationTextEntries;
+
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;
 - (IBAction)notificationControl:(id)sender;
-
-- (IBAction)saveSettings:(id)sender;
+- (IBAction)saveSettings;
 
 @end

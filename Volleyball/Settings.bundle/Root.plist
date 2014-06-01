@@ -8,7 +8,7 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Volleyball ScoreMaster</string>
+			<string>Vball ScoreMaster</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -18,7 +18,7 @@
 			<key>Key</key>
 			<string>enableNotifications</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 			<key>FalseValue</key>
 			<string>Off</string>
 			<key>TrueValue</key>

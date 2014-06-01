@@ -127,11 +127,6 @@ int const EMBED_MAX_GAMES = 3;
     return newScoreViewController;
 }
 
-- (void)moveScoreView:(id)sender
-{
-    NSLog(@"Moving: %@", sender);
-}
-
 - (UIColor *)colorHomeScoreView
 {
     //Get home team background colors
@@ -168,10 +163,10 @@ int const EMBED_MAX_GAMES = 3;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    
     self.homePageViewController.view.backgroundColor = [self colorHomeScoreView];
     self.visitorPageViewController.view.backgroundColor = [self colorVisitorScoreView];
+    
+    [super viewWillAppear:animated];
     
 }
 
@@ -187,10 +182,10 @@ int const EMBED_MAX_GAMES = 3;
     CGPoint targetVisitorNameCenter = _homeTeamName.center;
     
     //Create the animation and swap positions of the score controllers
-    [UIView animateWithDuration:0.8f
+    [UIView animateWithDuration:0.7f
                           delay:0.0f
-         usingSpringWithDamping:0.8f
-          initialSpringVelocity:0.9f
+         usingSpringWithDamping:0.7f
+          initialSpringVelocity:0.5f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^(){
                          _homeTeamContainer.center = targetHomeCenter;
@@ -198,7 +193,7 @@ int const EMBED_MAX_GAMES = 3;
                          _vistingTeamContainer.center = targetVisitorCenter;
                          _visitingTeamName.center = targetVisitorNameCenter;
                      }
-                     completion:nil];
+                     completion:NULL];
     SWIPED = NO;
 }
 
@@ -307,52 +302,49 @@ int const EMBED_MAX_GAMES = 3;
  * @discussion Takes in an image and rotates it by the given degrees.
  * @param image The image that will be rotated.
  * @param duration How long the animation should take.
- * @param curve UIAnimation type.
  * @param degrees How many degrees the image should be rotated.
  * @warning You can't send a negative number to 'degrees', must be positive value.
  */
 - (void)rotateImage:(UIImageView *)image duration:(NSTimeInterval)duration
-              curve:(int)curve degrees:(CGFloat)degrees
+            degrees:(CGFloat)degrees
 {
-    // Setup the animation
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:duration];
-    [UIView setAnimationCurve:curve];
-    [UIView setAnimationBeginsFromCurrentState:YES];
     
-    // The transform matrix
-    CGAffineTransform transform =
-    CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(degrees));
-    image.transform = transform;
+    [UIView animateWithDuration:duration
+                          delay:0.0f
+         usingSpringWithDamping:0.8f
+          initialSpringVelocity:0.9f
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^(){
+                         CGAffineTransform transform =
+                         CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(degrees));
+                         image.transform = transform;
+                     }
+                     completion:NULL];
     
-    // Commit the changes
-    [UIView commitAnimations];
 }
 
 /*!
  * @discussion Checks the current rotation of the team serving arrow and rotates it.
  */
-- (IBAction)teamServingDirection
-{
-    /*!
-     *  Checks the current rotation of the team serving arrow.
-     *  Rotate it every time this button is pressed.
-     */
-    if (!ROTATED) {
-
-    [self rotateImage:self.serveDirectionArrow
-            duration:0.5
-               curve:UIViewAnimationOptionRepeat
-             degrees:180];
-        ROTATED = YES;
-    } else {
-    [self rotateImage:self.serveDirectionArrow
-             duration:0.5
-                curve:UIViewAnimationOptionCurveEaseIn
-              degrees:360];
-        ROTATED = NO;
-    }
-}
+//- (IBAction)teamServingDirection
+//{
+//    /*!
+//     *  Checks the current rotation of the team serving arrow.
+//     *  Rotate it every time this button is pressed.
+//     */
+//    if (!ROTATED) {
+//
+//    [self rotateImage:self.serveDirectionArrow
+//            duration:0.4
+//             degrees:180];
+//        ROTATED = YES;
+//    } else {
+//    [self rotateImage:self.serveDirectionArrow
+//             duration:0.4
+//              degrees:360];
+//        ROTATED = NO;
+//    }
+//}
 
 - (void)sendSMS:(NSString *)name action:(int)number
 {

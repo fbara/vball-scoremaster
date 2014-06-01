@@ -14,8 +14,7 @@
 
 @implementation SettingsViewController
 {
-    NSString *maxGamesSetting;
-
+    BOOL sendNotifications;
 }
 
 #pragma mark - Initialize Settings
@@ -32,22 +31,33 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  
+    [settingsScrollView setScrollEnabled:YES];
+    [settingsScrollView setContentSize:CGSizeMake(568, 350)];
+    self.nameOfPlayer.delegate = self;
+    self.notificationName.delegate = self;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 }
 
 #pragma mark - Controls -
 #pragma mark -Save Settings
 
-- (IBAction)saveSettings:(id)sender
+- (IBAction)saveSettings
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-//    //Get Yes or No for notifications
-//    if (self.notificationSwitch.on == 1) {
-//        [defaults setObject:@"On" forKey:@"enableNotifications"];
-//    } else {
-//        [defaults setObject:@"Off" forKey:@"enableNotifications"];
-//    }
+    //Get Yes or No for notifications
+    if (sendNotifications) {
+        [defaults setObject:@"On" forKey:@"enableNotifications"];
+        [self setNotificationFields:YES];
+    } else {
+        [defaults setObject:@"Off" forKey:@"enableNotifications"];
+        [self setNotificationFields:FALSE];
+    }
+    
+
     
     //Set the home team color
     UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
@@ -73,6 +83,38 @@
     
 }
 
+#pragma mark - TextField Methods
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    CGPoint scrollPoint = CGPointMake(0, textField.frame.origin.y);
+    [settingsScrollView setContentOffset:scrollPoint animated:YES];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+//    [self.view endEditing:YES];
+    [textField resignFirstResponder];
+    [settingsScrollView setContentOffset:CGPointZero animated:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
+}
+
+- (void)dismissKeyboard
+{
+    [self.notificationName resignFirstResponder];
+    [self.nameOfPlayer resignFirstResponder];
+}
 
 /*!
  * @discussion Restrict the textFiled to a phone number format: ex. 555-555-5555
@@ -85,49 +127,77 @@
  */
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-        // All digits entered
-        if (range.location == 14) {
-            return NO;
-        }
-        
-        // Reject appending non-digit characters
-        if (range.length == 0 &&
-            ![[NSCharacterSet decimalDigitCharacterSet] characterIsMember:[string characterAtIndex:0]]) {
-            return NO;
-        }
-        
-        // Auto-add hyphen and parentheses
-        if (range.length == 0 && range.location == 3 &&![[textField.text substringToIndex:1] isEqualToString:@"("]) {
-            textField.text = [NSString stringWithFormat:@"(%@)-%@", textField.text,string];
-            return NO;
-        }
-        if (range.length == 0 && range.location == 4 &&[[textField.text substringToIndex:1] isEqualToString:@"("]) {
-            textField.text = [NSString stringWithFormat:@"%@)-%@", textField.text,string];
-            return NO;
-        }
-        
-        // Auto-add 2nd hyphen
-        if (range.length == 0 && range.location == 9) {
-            textField.text = [NSString stringWithFormat:@"%@-%@", textField.text, string];
-            return NO;
-        }
-        
-        // Delete hyphen and parentheses when deleting its trailing digit
-        if (range.length == 1 &&
-            (range.location == 10 || range.location == 1)){
-            range.location--;
-            range.length = 2;
-            textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
-            return NO;
-        }
-        if (range.length == 1 && range.location == 6){
-            range.location=range.location-2;
-            range.length = 3;
-            textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
-            return NO;
-        }
+    if (textField.tag == 1) {
+        return YES;
+    }
+
+    // All digits entered
+    if (range.location == 14) {
+        return NO;
+    }
+    
+    // Reject appending non-digit characters
+    if (range.length == 0 &&
+        ![[NSCharacterSet decimalDigitCharacterSet] characterIsMember:[string characterAtIndex:0]]) {
+        return NO;
+    }
+    
+    // Auto-add hyphen and parentheses
+    if (range.length == 0 && range.location == 3 &&![[textField.text substringToIndex:1] isEqualToString:@"("]) {
+        textField.text = [NSString stringWithFormat:@"(%@)-%@", textField.text,string];
+        return NO;
+    }
+    if (range.length == 0 && range.location == 4 &&[[textField.text substringToIndex:1] isEqualToString:@"("]) {
+        textField.text = [NSString stringWithFormat:@"%@)-%@", textField.text,string];
+        return NO;
+    }
+    
+    // Auto-add 2nd hyphen
+    if (range.length == 0 && range.location == 9) {
+        textField.text = [NSString stringWithFormat:@"%@-%@", textField.text, string];
+        return NO;
+    }
+    
+    // Delete hyphen and parentheses when deleting its trailing digit
+    if (range.length == 1 &&
+        (range.location == 10 || range.location == 1)){
+        range.location--;
+        range.length = 2;
+        textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
+        return NO;
+    }
+    if (range.length == 1 && range.location == 6){
+        range.location=range.location-2;
+        range.length = 3;
+        textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
+        return NO;
+    }
     return YES;
 }
+
+#pragma mark - Enable/Disable Text Fields
+
+- (void)setNotificationFields:(BOOL)enable
+{
+    for (UILabel *labels in self.notificationLabels) {
+        labels.enabled = enable;
+    }
+    for (UITextField *textField in self.notificationTextEntries) {
+        textField.enabled = enable;
+    }
+}
+
+- (IBAction)notificationControl:(id)sender;
+{
+    if ([sender isOn]) {
+        sendNotifications = YES;
+        [self setNotificationFields:YES];
+    } else {
+        sendNotifications = NO;
+        [self setNotificationFields:FALSE];
+    }
+}
+
 
 
 #pragma mark -Team Background Colors
@@ -157,9 +227,6 @@
 
 }
 
-- (IBAction)notificationControl:(id)sender {
-}
-
 /*!
  * @discussion Generate and return a random color
  * @return UIColor This color will be different each time the function is called
@@ -184,11 +251,12 @@
     
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
-//        self.notificationSwitch.on = YES;
-//    } else {
-//        self.notificationSwitch.on = NO;
-//    }
+    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
+        self.notificationSwitch.on = YES;
+    } else {
+        self.notificationSwitch.on = NO;
+    }
+    
     //Get home team background colors
     UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
     NSData *theHomeData = [[NSUserDefaults standardUserDefaults] dataForKey:@"homeTeamColor"];
