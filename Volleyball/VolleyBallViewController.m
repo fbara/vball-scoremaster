@@ -87,7 +87,37 @@ NSString *msgVisitor;
     visitorSwipeGesture.delegate = self;
     [_vistingTeamContainer addGestureRecognizer:visitorSwipeGesture];
     
+    /*! Loop through all the gesture recognizers on each of the pageview controllers,
+     *  and when you locate either the tap or pan recognizers, set them to require the
+     *  appropriate swipe gesture to fail before they'll recognize their gesture.
+     */
     
+    for (UIGestureRecognizer *gesture in _homePageViewController.view.gestureRecognizers)
+	{
+		if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
+		{
+			[gesture requireGestureRecognizerToFail:homeSwipeGesture];
+		}
+        
+		if ([gesture isKindOfClass:[UITapGestureRecognizer class]])
+		{
+			[gesture requireGestureRecognizerToFail:homeSwipeGesture];
+		}
+	}
+    
+	for (UIGestureRecognizer *gesture in _visitorPageViewController.view.gestureRecognizers)
+	{
+		if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
+		{
+			[gesture requireGestureRecognizerToFail:visitorSwipeGesture];
+		}
+        
+		if ([gesture isKindOfClass:[UITapGestureRecognizer class]])
+		{
+			[gesture requireGestureRecognizerToFail:visitorSwipeGesture];
+		}
+	}
+
 }
 
 - (void)initializeHomeScore
@@ -176,6 +206,13 @@ NSString *msgVisitor;
     
     [super viewWillAppear:animated];
     
+}
+
+#pragma mark - UI Elements
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - UIPanGestureRecognizers

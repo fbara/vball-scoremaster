@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameOfPlayer;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *notificationLabels;
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *notificationTextEntries;
+@property (weak, nonatomic) IBOutlet UILabel *settingsSavedNotification;
 
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;

@@ -48,6 +48,13 @@
     startingPoint = (CGPointMake(size.origin.x, size.origin.y));
 }
 
+#pragma mark - UI Elements
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - Controls -
 #pragma mark -Save Settings
 
@@ -92,10 +99,24 @@
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil];
         [alert show];
+    } else {
+        //Show a message that the settings have been saved
+        self.settingsSavedNotification.hidden = NO;
+        [self performSelector:@selector(hideSaveNotification)
+                   withObject:nil
+                   afterDelay:5.0];
+        
     }
     // Get the starting point of the scroll view so we can return there after text entry
     CGRect size = settingsScrollView.frame;
     startingPoint = (CGPointMake(size.origin.x, size.origin.y));
+    
+    
+}
+
+- (void)hideSaveNotification
+{
+    self.settingsSavedNotification.hidden = YES;
 }
 
 #pragma mark - TextField Methods
