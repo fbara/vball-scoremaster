@@ -13,13 +13,19 @@
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";
 NSString *const EMBED_VISITOR = @"embedVisitor";
-BOOL ROTATED = NO;
-BOOL SWIPED = NO;
-int const EMBED_MAX_GAMES = 3;
-//define PI
-#define M_PI   3.14159265358979323846264338327950288
-//Conversion definition
-#define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
+int currHomeScore = 0;
+int currVisitorScore = 0;
+int currKill = 0;
+int currAce = 0;
+NSString *msgHome;
+NSString *msgVisitor;
+
+//BOOL ROTATED = NO;
+//BOOL SWIPED = NO;
+////define PI
+//#define M_PI   3.14159265358979323846264338327950288
+////Conversion definition
+//#define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
 
 
 @interface VolleyBallViewController ()
@@ -30,7 +36,6 @@ int const EMBED_MAX_GAMES = 3;
 @property (weak, nonatomic) IBOutlet UILabel *gameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *spikeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *aceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *servingLabel;
 
 
 @end
@@ -159,6 +164,10 @@ int const EMBED_MAX_GAMES = 3;
     self.gameNumber.text = @"1";
     self.killNumber.text = @"0";
     self.aceNumber.text = @"0";
+    currAce = 0;
+    currKill = 0;
+    currHomeScore = 0;
+    currVisitorScore = 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -174,7 +183,6 @@ int const EMBED_MAX_GAMES = 3;
 
 - (IBAction)handleSwipe:(UISwipeGestureRecognizer *)recognizer
 {
-    SWIPED = YES;
     //Get the center of each score view container
     CGPoint targetHomeCenter = _vistingTeamContainer.center;
     CGPoint targetVisitorCenter = _homeTeamContainer.center;
@@ -194,7 +202,6 @@ int const EMBED_MAX_GAMES = 3;
                          _visitingTeamName.center = targetVisitorNameCenter;
                      }
                      completion:NULL];
-    SWIPED = NO;
 }
 
 #pragma mark - UIGestureRecognizer Delegate Methods
@@ -211,59 +218,29 @@ int const EMBED_MAX_GAMES = 3;
  */
 - (IBAction)gamePressed
 {
-    //Grab the game number and add 1 but shouldn't be more than 3
+    //Grab the game number and add 1
     int lableNum = [self.gameNumber.text intValue];
+
+    lableNum = lableNum + 1;
+    self.gameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     
-    if (!(lableNum == EMBED_MAX_GAMES)) {
-        lableNum = lableNum + 1;
-        self.gameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
-        
-        //Reset the scores to start a new game
-        [self initializeHomeScore];
-        [self initializeVisitorScore];
-    } else {
-        //Reached the maximum number of games for this sport
-        NSString *maxGameLimit = [NSString stringWithFormat:@"The maximum number of games for this sport is %d", EMBED_MAX_GAMES];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Max game limit reached"
-                                                        message:maxGameLimit
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
+    //Reset the scores to start a new game
+    [self initializeHomeScore];
+    [self initializeVisitorScore];
     
     
 }
 
 - (IBAction)killsPressed
 {
+    //Get the number currently displayed for kills and add 1
     int lableNum = [self.killNumber.text intValue];
     lableNum = lableNum + 1;
     self.killNumber.text = [NSString stringWithFormat:@"%d", lableNum];
+    currKill = lableNum;
     
-//    [self sendSMS:@"Kill's" action:lableNum];
-    
-//    //Send the SMS message
-//    MFMessageComposeViewController *textComposer = [[MFMessageComposeViewController alloc] init];
-//    [textComposer setMessageComposeDelegate:self];
-//    
-//    if ([MFMessageComposeViewController canSendText]) {
-//        NSString *killNum = [NSString stringWithFormat:@"Shane has %d kills!", lableNum];
-//        [textComposer setRecipients:[NSArray arrayWithObjects:@"6305449503", nil]];
-//        
-//        [textComposer setBody:killNum];
-//        [self presentViewController:textComposer
-//                           animated:YES
-//                         completion:nil];
-//    } else {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to send message"
-//                                                        message:nil
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"Ok"
-//                                              otherButtonTitles:nil];
-//        [alert show];
-//
-//    }
+    //Send text message
+    [self sendSMS];
 }
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
@@ -276,12 +253,15 @@ int const EMBED_MAX_GAMES = 3;
     int lableNum = [self.aceNumber.text intValue];
     lableNum = lableNum + 1;
     self.aceNumber.text = [NSString stringWithFormat:@"%d", lableNum];
+    currAce = lableNum;
+    
+    [self sendSMS];
 }
 
 - (IBAction)newMatch
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Game?"
-                                                        message:@"Reset scores, ace's, and kill's and start a new match?"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Match?"
+                                                        message:@"Reset scores, ace's, spike's and start a new match?"
                                                        delegate:self
                                               cancelButtonTitle:@"No"
                                               otherButtonTitles:@"Yes", nil];
@@ -294,7 +274,7 @@ int const EMBED_MAX_GAMES = 3;
         [self initializeHomeScore];
         [self initializeVisitorScore];
         [self resetGameKillAce];
-        SWIPED = NO;
+
     }
 }
 
@@ -305,23 +285,23 @@ int const EMBED_MAX_GAMES = 3;
  * @param degrees How many degrees the image should be rotated.
  * @warning You can't send a negative number to 'degrees', must be positive value.
  */
-- (void)rotateImage:(UIImageView *)image duration:(NSTimeInterval)duration
-            degrees:(CGFloat)degrees
-{
-    
-    [UIView animateWithDuration:duration
-                          delay:0.0f
-         usingSpringWithDamping:0.8f
-          initialSpringVelocity:0.9f
-                        options:UIViewAnimationOptionBeginFromCurrentState
-                     animations:^(){
-                         CGAffineTransform transform =
-                         CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(degrees));
-                         image.transform = transform;
-                     }
-                     completion:NULL];
-    
-}
+//- (void)rotateImage:(UIImageView *)image duration:(NSTimeInterval)duration
+//            degrees:(CGFloat)degrees
+//{
+//    
+//    [UIView animateWithDuration:duration
+//                          delay:0.0f
+//         usingSpringWithDamping:0.8f
+//          initialSpringVelocity:0.9f
+//                        options:UIViewAnimationOptionBeginFromCurrentState
+//                     animations:^(){
+//                         CGAffineTransform transform =
+//                         CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(degrees));
+//                         image.transform = transform;
+//                     }
+//                     completion:NULL];
+//    
+//}
 
 /*!
  * @discussion Checks the current rotation of the team serving arrow and rotates it.
@@ -346,23 +326,30 @@ int const EMBED_MAX_GAMES = 3;
 //    }
 //}
 
-- (void)sendSMS:(NSString *)name action:(int)number
+- (void)sendSMS
 {
-    //Send the SMS message
-    MFMessageComposeViewController *textComposer = [[MFMessageComposeViewController alloc] init];
-    [textComposer setMessageComposeDelegate:self];
-    
-    if ([MFMessageComposeViewController canSendText]) {
-        //NSString *killNum = [NSString stringWithFormat:@"Shane has %d kills!", lableNum];
-        [textComposer setRecipients:[NSArray arrayWithObjects:@"6305449503", nil]];
-        NSString *message = [NSString stringWithFormat:@"Shane has %d %@!", number, name];
-
-        [textComposer setBody:message];
-        [self presentViewController:textComposer
-                           animated:YES
-                         completion:nil];
+    // Check if text messages should be sent
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
         
-    }
+        //Send the SMS message
+        //If it can't be sent, iOS will pop up an alert so we don't have to do that
+        MFMessageComposeViewController *textComposer = [[MFMessageComposeViewController alloc] init];
+        [textComposer setMessageComposeDelegate:self];
+        
+        if ([MFMessageComposeViewController canSendText]) {
+            NSString *playerName = [defaults stringForKey:@"playerNameForNotifications"];
+            NSString *notificationNumber = [defaults stringForKey:@"phoneNumberForNotification"];
+            
+            NSString *killNum = [NSString stringWithFormat:@"%@ has %d spikes and %d aces!\nThe score is now %@ %d - %@ %d.", playerName ,currKill, currAce, msgVisitor, currVisitorScore, msgHome, currHomeScore];
+            [textComposer setRecipients:[NSArray arrayWithObjects:notificationNumber, nil]];
+            
+            [textComposer setBody:killNum];
+            [self presentViewController:textComposer
+                               animated:YES
+                             completion:nil];
+        }
+    }//No messages to be sent, exit
 }
 
 #pragma mark - UIPageViewControllerDataSource
@@ -375,8 +362,7 @@ int const EMBED_MAX_GAMES = 3;
         DefaultScoreViewController *oldViewController = (DefaultScoreViewController *)viewController;
         
         //Check the score, if it's more than 99, don't let the number get any higher
-        if (SWIPED || oldViewController.score == 99) {
-            SWIPED = NO;
+        if (oldViewController.score == 99) {
             return nil;
         }
         
@@ -389,13 +375,18 @@ int const EMBED_MAX_GAMES = 3;
         if (pageViewController == _homePageViewController) {
             //Home team score changing
             newViewController.view.backgroundColor = self.homeColor;
+            currHomeScore = newViewController.score;
+            msgHome = [NSString stringWithString:self.homeTeamName.text];
+
             
         } else {
             //Visitor team score changing
             newViewController.view.backgroundColor = self.visitorColor;
+            currVisitorScore = newViewController.score;
+            msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
+
         }
     
-    SWIPED = NO;
     return newViewController;
 }
 
@@ -405,8 +396,7 @@ int const EMBED_MAX_GAMES = 3;
     DefaultScoreViewController *oldViewController = (DefaultScoreViewController *)viewController;
     
     //Check the score, if it's 0, don't let the number get any lower
-    if (SWIPED || oldViewController.score == 0) {
-        SWIPED = NO;
+    if (oldViewController.score == 0) {
         return nil;
     }
     
@@ -420,13 +410,16 @@ int const EMBED_MAX_GAMES = 3;
     if (pageViewController == _homePageViewController) {
         //Home team score changing
         newViewController.view.backgroundColor = self.homeColor;
+        currHomeScore = newViewController.score;
+        msgHome = [NSString stringWithString:self.homeTeamName.text];
         
     } else {
         //Visitor team score changing
         newViewController.view.backgroundColor = self.visitorColor;
+        currVisitorScore = newViewController.score;
+        msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
     }
-                                                     
-    SWIPED = NO;
+    
     return newViewController;
 }
 

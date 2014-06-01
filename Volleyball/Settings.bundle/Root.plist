@@ -30,7 +30,9 @@
 			<key>Title</key>
 			<string>Notification #:</string>
 			<key>Key</key>
-			<string>notificationNumber</string>
+			<string>phoneNumberForNotification</string>
+			<key>DefaultValue</key>
+			<string>5555555555</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -38,7 +40,13 @@
 			<key>Title</key>
 			<string>Player name:</string>
 			<key>Key</key>
-			<string>playerName</string>
+			<string>playerNameForNotifications</string>
+			<key>DefaultValue</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>Default</string>
+			<key>AutocapitalizationType</key>
+			<string>Words</string>
 		</dict>
 	</array>
 	<key>StringsTable</key>

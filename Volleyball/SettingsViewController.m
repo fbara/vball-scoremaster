@@ -15,6 +15,7 @@
 @implementation SettingsViewController
 {
     BOOL sendNotifications;
+    CGPoint startingPoint;
 }
 
 #pragma mark - Initialize Settings
@@ -30,15 +31,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Setup the scroll view
     [settingsScrollView setScrollEnabled:YES];
     [settingsScrollView setContentSize:CGSizeMake(568, 350)];
+    // Set the delegate of the text fields
     self.nameOfPlayer.delegate = self;
     self.notificationName.delegate = self;
+    // Create a tap recognizer to dismiss the keyboard when the user taps
+    // outside the text fields
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    // Get the starting point of the scroll view so we can return there after text entry
+    CGRect size = settingsScrollView.frame;
+    startingPoint = (CGPointMake(size.origin.x, size.origin.y));
 }
 
 #pragma mark - Controls -
@@ -70,7 +77,13 @@
     colorVisitor = self.visitingTeamColor.backgroundColor;
     NSData *colorVisitorData = [NSKeyedArchiver archivedDataWithRootObject:colorVisitor];
     [defaults setObject:colorVisitorData forKey:@"visitorTeamColor"];
-
+    
+    //Set the player name, if entered
+    [defaults setObject:self.nameOfPlayer.text forKey:@"playerNameForNotifications"];
+    
+    //Set the notification phone number
+    [defaults setObject:self.notificationName.text forKey:@"phoneNumberForNotification"];
+    
     //Make sure everything synchronized correctly
     if(![defaults synchronize]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Settings not saved"
@@ -80,7 +93,9 @@
                                               otherButtonTitles:nil];
         [alert show];
     }
-    
+    // Get the starting point of the scroll view so we can return there after text entry
+    CGRect size = settingsScrollView.frame;
+    startingPoint = (CGPointMake(size.origin.x, size.origin.y));
 }
 
 #pragma mark - TextField Methods
@@ -93,9 +108,9 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-//    [self.view endEditing:YES];
-    [textField resignFirstResponder];
-    [settingsScrollView setContentOffset:CGPointZero animated:YES];
+    [self.view endEditing:YES];
+    //[settingsScrollView setContentOffset:CGPointZero animated:YES];
+    [settingsScrollView setContentOffset:CGPointMake(0, -40)];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -127,6 +142,7 @@
  */
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+    //If this isn't a phone number entry field, return YES to exit
     if (textField.tag == 1) {
         return YES;
     }
@@ -198,8 +214,6 @@
     }
 }
 
-
-
 #pragma mark -Team Background Colors
 
 /*!
@@ -247,15 +261,31 @@
  */
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
         self.notificationSwitch.on = YES;
+        for (UILabel *label in self.notificationLabels) {
+            label.enabled = YES;
+        }
+        for (UITextField *text in self.notificationTextEntries) {
+            text.enabled = YES;
+        }
     } else {
         self.notificationSwitch.on = NO;
+        for (UILabel *label in self.notificationLabels) {
+            label.enabled = NO;
+        }
+        for (UITextField *text in self.notificationTextEntries) {
+            text.enabled = NO;
+        }
     }
+    
+    //Get the name of the player
+    self.nameOfPlayer.text = [defaults stringForKey:@"playerNameForNotifications"];
+    
+    //Get the phone number of the person to notify
+    self.notificationName.text = [defaults stringForKey:@"phoneNumberForNotification"];
     
     //Get home team background colors
     UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
@@ -276,7 +306,17 @@
         colorVisitor = [UIColor orangeColor];
     }
     self.visitingTeamColor.backgroundColor = colorVisitor;
-    [defaults synchronize];
+    //[defaults synchronize];
+    if(![defaults synchronize]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Settings could not be saved"
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
+    [super viewWillAppear:animated];
 }
 
 
