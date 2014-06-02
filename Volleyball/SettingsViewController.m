@@ -48,14 +48,78 @@
     startingPoint = (CGPointMake(size.origin.x, size.origin.y));
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    //Check the user settings and set UI elements accordingly
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
+        //User wants notifications so set switch to ON and enable all text & label fields
+        [self.notificationSwitch setOn:YES];
+        for (UILabel *label in self.notificationLabels) {
+            label.enabled = YES;
+        }
+        for (UITextField *text in self.notificationTextEntries) {
+            text.enabled = YES;
+        }
+    } else {
+        //User doesn't want notifications so set switch to OFF and disable notification fields
+        [self.notificationSwitch setOn:NO];
+        for (UILabel *label in self.notificationLabels) {
+            label.enabled = NO;
+        }
+        for (UITextField *text in self.notificationTextEntries) {
+            text.enabled = NO;
+        }
+    }
+    
+    //Get the name of the player
+    self.nameOfPlayer.text = [defaults stringForKey:@"playerNameForNotifications"];
+    
+    //Get the phone number of the person to notify
+    self.notificationName.text = [defaults stringForKey:@"phoneNumberForNotification"];
+    
+    //Get home team background colors
+    UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    NSData *theHomeData = [[NSUserDefaults standardUserDefaults] dataForKey:@"homeTeamColor"];
+    if (theHomeData != nil) {
+        colorHome = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theHomeData];
+    } else {
+        colorHome = [UIColor blueColor];
+    }
+    self.homeTeamColor.backgroundColor = colorHome;
+    
+    //Get visiting team background colors
+    UIColor *colorVisitor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    NSData *theVisitorData = [[NSUserDefaults standardUserDefaults] dataForKey:@"visitorTeamColor"];
+    if (theVisitorData != nil) {
+        colorVisitor = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theVisitorData];
+    } else {
+        colorVisitor = [UIColor orangeColor];
+    }
+    self.visitingTeamColor.backgroundColor = colorVisitor;
+    //[defaults synchronize];
+    if(![defaults synchronize]) {
+        //Synchronize could't happen; show user alert and exit
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Settings could not be saved"
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
+    [super viewWillAppear:animated];
+}
+
 #pragma mark - UI Elements
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
+    //Set the UINavigation color
     return UIStatusBarStyleLightContent;
 }
 
-#pragma mark - Controls -
+#pragma mark - Controls -eeeeeeeee
 #pragma mark -Save Settings
 
 - (IBAction)saveSettings
@@ -104,7 +168,7 @@
         self.settingsSavedNotification.hidden = NO;
         [self performSelector:@selector(hideSaveNotification)
                    withObject:nil
-                   afterDelay:5.0];
+                   afterDelay:3.0];
         
     }
     // Get the starting point of the scroll view so we can return there after text entry
@@ -123,7 +187,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    CGPoint scrollPoint = CGPointMake(0, textField.frame.origin.y);
+    CGPoint scrollPoint = CGPointMake(0, textField.frame.origin.y + 25);
     [settingsScrollView setContentOffset:scrollPoint animated:YES];
 }
 
@@ -131,7 +195,7 @@
 {
     [self.view endEditing:YES];
     //[settingsScrollView setContentOffset:CGPointZero animated:YES];
-    [settingsScrollView setContentOffset:CGPointMake(0, -40)];
+    [settingsScrollView setContentOffset:CGPointMake(0, -40) animated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -275,72 +339,6 @@
     UIColor *color = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:1.0];
     return color;
 }
-
-/*!
- * @discussion During viewWillAppear, grab the latest settings in case they were updated
- * @param animated Animate the view when it appears
- */
-- (void)viewWillAppear:(BOOL)animated
-{
-
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
-        self.notificationSwitch.on = YES;
-        for (UILabel *label in self.notificationLabels) {
-            label.enabled = YES;
-        }
-        for (UITextField *text in self.notificationTextEntries) {
-            text.enabled = YES;
-        }
-    } else {
-        self.notificationSwitch.on = NO;
-        for (UILabel *label in self.notificationLabels) {
-            label.enabled = NO;
-        }
-        for (UITextField *text in self.notificationTextEntries) {
-            text.enabled = NO;
-        }
-    }
-    
-    //Get the name of the player
-    self.nameOfPlayer.text = [defaults stringForKey:@"playerNameForNotifications"];
-    
-    //Get the phone number of the person to notify
-    self.notificationName.text = [defaults stringForKey:@"phoneNumberForNotification"];
-    
-    //Get home team background colors
-    UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
-    NSData *theHomeData = [[NSUserDefaults standardUserDefaults] dataForKey:@"homeTeamColor"];
-    if (theHomeData != nil) {
-        colorHome = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theHomeData];
-    } else {
-        colorHome = [UIColor blueColor];
-    }
-    self.homeTeamColor.backgroundColor = colorHome;
-    
-    //Get visiting team background colors
-    UIColor *colorVisitor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
-    NSData *theVisitorData = [[NSUserDefaults standardUserDefaults] dataForKey:@"visitorTeamColor"];
-    if (theVisitorData != nil) {
-        colorVisitor = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theVisitorData];
-    } else {
-        colorVisitor = [UIColor orangeColor];
-    }
-    self.visitingTeamColor.backgroundColor = colorVisitor;
-    //[defaults synchronize];
-    if(![defaults synchronize]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Settings could not be saved"
-                                                        message:nil
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-    
-    [super viewWillAppear:animated];
-}
-
-
 
 - (void)didReceiveMemoryWarning
 {

@@ -17,8 +17,8 @@ int currHomeScore = 0;
 int currVisitorScore = 0;
 int currKill = 0;
 int currAce = 0;
-NSString *msgHome;
-NSString *msgVisitor;
+NSString *msgHome = @"HOME";
+NSString *msgVisitor = @"VISITOR";
 
 //BOOL ROTATED = NO;
 //BOOL SWIPED = NO;
@@ -29,6 +29,7 @@ NSString *msgVisitor;
 
 
 @interface VolleyBallViewController ()
+
 
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
@@ -64,8 +65,8 @@ NSString *msgVisitor;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [self initializeHomeScore];
-    [self initializeVisitorScore];
+    [self initializeHomeScore:currHomeScore];
+    [self initializeVisitorScore:currVisitorScore];
     [self resetGameKillAce];
     self.visitingTeamName.delegate = self;
     self.homeTeamName.delegate = self;
@@ -120,29 +121,29 @@ NSString *msgVisitor;
 
 }
 
-- (void)initializeHomeScore
+- (void)initializeHomeScore:(int)score
 {
     self.homeColor = [self colorHomeScoreView];
-    DefaultScoreViewController *homeScoreViewController = [self createViewControllersForScore:0
+    DefaultScoreViewController *homeScoreViewController = [self createViewControllersForScore:score
                                                                              withColor:self.homeColor];
     self.homePageViewController.dataSource = self;
     [self.homePageViewController setViewControllers:@[homeScoreViewController]
                                           direction:UIPageViewControllerNavigationDirectionForward
-                                           animated:YES
+                                           animated:NO
                                          completion:nil];
 
     
 }
 
-- (void)initializeVisitorScore
+- (void)initializeVisitorScore:(int)score
 {
     self.visitorColor = [self colorVisitorScoreView];
-    DefaultScoreViewController *visitorScoreViewController = [self createViewControllersForScore:0
+    DefaultScoreViewController *visitorScoreViewController = [self createViewControllersForScore:score
                                                                                 withColor:self.visitorColor];
     self.visitorPageViewController.dataSource = self;
     [self.visitorPageViewController setViewControllers:@[visitorScoreViewController]
                                              direction:UIPageViewControllerNavigationDirectionForward
-                                              animated:YES
+                                              animated:NO
                                             completion:nil];
     
 }
@@ -199,13 +200,19 @@ NSString *msgVisitor;
     currVisitorScore = 0;
 }
 
+/*!
+ * @discussion Refresh the screen immediately before app is visible
+ * @param animated Bool value to indicate if animations should be used
+ */
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.homePageViewController.view.backgroundColor = [self colorHomeScoreView];
-    self.visitorPageViewController.view.backgroundColor = [self colorVisitorScoreView];
-    
     [super viewWillAppear:animated];
-    
+
+    /*!
+     *  Update the scoreview's colors in case they were changed in Settings
+     */
+    [self initializeVisitorScore:currVisitorScore];
+    [self initializeHomeScore:currHomeScore];
 }
 
 #pragma mark - UI Elements
@@ -217,6 +224,10 @@ NSString *msgVisitor;
 
 #pragma mark - UIPanGestureRecognizers
 
+/*!
+ * @discussion Handle the swipe gesture to swap positions of scoreviews
+ * @param recognizer UIGestureRecognizer to indicate what type of gesture is being sent
+ */
 - (IBAction)handleSwipe:(UISwipeGestureRecognizer *)recognizer
 {
     //Get the center of each score view container
@@ -242,7 +253,8 @@ NSString *msgVisitor;
 
 #pragma mark - UIGestureRecognizer Delegate Method
 
-// Force all gestures to be handled simultaneously.  This will allow the Swipes and PageViewController's Pan/Tap gestures to coexsist and function correctly.
+// Force all gestures to be handled simultaneously.
+//This will allow the Swipes and PageViewController's Pan/Tap gestures to coexsist and function correctly.
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     return YES;
@@ -261,8 +273,8 @@ NSString *msgVisitor;
     self.gameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     
     //Reset the scores to start a new game
-    [self initializeHomeScore];
-    [self initializeVisitorScore];
+    [self initializeHomeScore:0];
+    [self initializeVisitorScore:0];
     
     
 }
@@ -317,8 +329,8 @@ NSString *msgVisitor;
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex != 0) {
-        [self initializeHomeScore];
-        [self initializeVisitorScore];
+        [self initializeHomeScore:0];
+        [self initializeVisitorScore:0];
         [self resetGameKillAce];
 
     }
@@ -402,8 +414,6 @@ NSString *msgVisitor;
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    
-        
         //Cast the viewController as a ScoreViewController so we can act on its properties
         DefaultScoreViewController *oldViewController = (DefaultScoreViewController *)viewController;
         
@@ -423,13 +433,14 @@ NSString *msgVisitor;
             newViewController.view.backgroundColor = self.homeColor;
             currHomeScore = newViewController.score;
             msgHome = [NSString stringWithString:self.homeTeamName.text];
-
+            msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
             
         } else {
             //Visitor team score changing
             newViewController.view.backgroundColor = self.visitorColor;
             currVisitorScore = newViewController.score;
             msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
+            msgHome = [NSString stringWithString:self.homeTeamName.text];
 
         }
     
@@ -457,6 +468,7 @@ NSString *msgVisitor;
         //Home team score changing
         newViewController.view.backgroundColor = self.homeColor;
         currHomeScore = newViewController.score;
+        msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
         msgHome = [NSString stringWithString:self.homeTeamName.text];
         
     } else {
@@ -464,6 +476,7 @@ NSString *msgVisitor;
         newViewController.view.backgroundColor = self.visitorColor;
         currVisitorScore = newViewController.score;
         msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
+        msgHome = [NSString stringWithString:self.homeTeamName.text];
     }
     
     return newViewController;
@@ -476,8 +489,6 @@ NSString *msgVisitor;
     [self.view endEditing:YES];
     [textField resignFirstResponder];
 }
-
-
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
