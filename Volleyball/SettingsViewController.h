@@ -23,7 +23,8 @@
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *notificationTextEntries;
 @property (weak, nonatomic) IBOutlet UILabel *settingsSavedNotification;
 
-
+- (IBAction)dismissKeyboard:(id)sender;
+//- (void)dismissKeyboard;
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;
 - (IBAction)notificationControl:(id)sender;

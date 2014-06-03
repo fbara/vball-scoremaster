@@ -18,6 +18,7 @@
     CGPoint startingPoint;
 }
 
+
 #pragma mark - Initialize Settings
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,16 +38,11 @@
     // Set the delegate of the text fields
     self.nameOfPlayer.delegate = self;
     self.notificationName.delegate = self;
-    // Create a tap recognizer to dismiss the keyboard when the user taps
-    // outside the text fields
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
-    // Get the starting point of the scroll view so we can return there after text entry
-    CGRect size = settingsScrollView.frame;
-    startingPoint = (CGPointMake(size.origin.x, size.origin.y));
+    
+    startingPoint = CGPointMake(self.view.frame.origin.x, self.view.frame.origin.y + 88);
+
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -119,11 +115,6 @@
     return UIStatusBarStyleLightContent;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    if (scrollView.contentOffset.x > 0)
-        scrollView.contentOffset = CGPointMake(0, scrollView.contentOffset.y);
-}
 
 #pragma mark - Controls
 #pragma mark -Save Settings
@@ -178,10 +169,9 @@
         
     }
     // Get the starting point of the scroll view so we can return there after text entry
-    CGRect size = settingsScrollView.frame;
-    startingPoint = (CGPointMake(size.origin.x, size.origin.y));
-    
-    
+//    CGRect size = settingsScrollView.frame;
+//    startingPoint = (CGPointMake(size.origin.x, self.view.frame.origin.y + 88));
+//    settingsScrollView.contentOffset = startingPoint;
 }
 
 - (void)hideSaveNotification
@@ -191,35 +181,17 @@
 
 #pragma mark - TextField Methods
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    CGPoint scrollPoint = CGPointMake(0, textField.frame.origin.y + 25);
-    [settingsScrollView setContentOffset:scrollPoint animated:YES];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    [self.view endEditing:YES];
-    //[settingsScrollView setContentOffset:CGPointZero animated:YES];
-    [settingsScrollView setContentOffset:CGPointMake(0, -40) animated:YES];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
-}
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     [self.view endEditing:YES];
+    settingsScrollView.contentOffset = CGPointMake(self.view.bounds.origin.x, self.view.bounds.origin.y);
     [super touchesBegan:touches withEvent:event];
 }
 
-- (void)dismissKeyboard
+- (IBAction)dismissKeyboard:(id)sender
 {
-    [self.notificationName resignFirstResponder];
-    [self.nameOfPlayer resignFirstResponder];
+    settingsScrollView.contentOffset = CGPointMake(self.view.bounds.origin.x, self.view.bounds.origin.y);
+    [sender resignFirstResponder];
 }
 
 /*!
