@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */; };
 		9217E5D51926377700B2E6F1 /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9217E5D31926377700B2E6F1 /* DefaultScoreViewController.xib */; };
-		92447967192AB9EF0031C1F6 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92447966192AB9EF0031C1F6 /* iAd.framework */; };
 		92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92447968192AD7A10031C1F6 /* MessageUI.framework */; };
 		9244799D192C022D0031C1F6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9244799C192C022D0031C1F6 /* Settings.bundle */; };
 		924479A0192C2CDC0031C1F6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244799F192C2CDC0031C1F6 /* SettingsViewController.m */; };
@@ -30,6 +29,15 @@
 		92D318F9193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D318F8193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.m */; };
 		92D318FC193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		92D318FE193E3E9900F5A942 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */; };
+		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
+		92D31906193E7CC300F5A942 /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D31903193E7CC300F5A942 /* MYIntroductionPanel.m */; };
+		92D31907193E7CC300F5A942 /* MYBlurIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D31905193E7CC300F5A942 /* MYBlurIntroductionView.m */; };
+		92D3190E193E815300F5A942 /* CheckMarkWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D3190A193E815300F5A942 /* CheckMarkWhite.png */; };
+		92D3190F193E815300F5A942 /* ForkImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D3190B193E815300F5A942 /* ForkImage.png */; };
+		92D31910193E815300F5A942 /* HeaderImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D3190C193E815300F5A942 /* HeaderImage.png */; };
+		92D31911193E815300F5A942 /* Toronto, ON.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92D3190D193E815300F5A942 /* Toronto, ON.jpg */; };
+		92D31914193E83FA00F5A942 /* TestHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D31912193E83FA00F5A942 /* TestHeader.xib */; };
+		92D31915193E83FA00F5A942 /* TestPanel3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D31913193E83FA00F5A942 /* TestPanel3.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +54,6 @@
 		9217E5D11926377700B2E6F1 /* DefaultScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultScoreViewController.h; sourceTree = "<group>"; };
 		9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultScoreViewController.m; sourceTree = "<group>"; };
 		9217E5D31926377700B2E6F1 /* DefaultScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultScoreViewController.xib; sourceTree = "<group>"; };
-		92447966192AB9EF0031C1F6 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		92447968192AD7A10031C1F6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9244799C192C022D0031C1F6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Volleyball/Settings.bundle; sourceTree = "<group>"; };
 		9244799E192C2CDC0031C1F6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -75,6 +82,17 @@
 		92D318FA193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
+		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		92D31902193E7CC300F5A942 /* MYIntroductionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionPanel.h; sourceTree = "<group>"; };
+		92D31903193E7CC300F5A942 /* MYIntroductionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionPanel.m; sourceTree = "<group>"; };
+		92D31904193E7CC300F5A942 /* MYBlurIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBlurIntroductionView.h; sourceTree = "<group>"; };
+		92D31905193E7CC300F5A942 /* MYBlurIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBlurIntroductionView.m; sourceTree = "<group>"; };
+		92D3190A193E815300F5A942 /* CheckMarkWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckMarkWhite.png; sourceTree = "<group>"; };
+		92D3190B193E815300F5A942 /* ForkImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ForkImage.png; sourceTree = "<group>"; };
+		92D3190C193E815300F5A942 /* HeaderImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderImage.png; sourceTree = "<group>"; };
+		92D3190D193E815300F5A942 /* Toronto, ON.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Toronto, ON.jpg"; sourceTree = "<group>"; };
+		92D31912193E83FA00F5A942 /* TestHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestHeader.xib; sourceTree = "<group>"; };
+		92D31913193E83FA00F5A942 /* TestPanel3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestPanel3.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */,
 				92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */,
-				92447967192AB9EF0031C1F6 /* iAd.framework in Frameworks */,
 				92AA42A51916C2800037D405 /* CoreGraphics.framework in Frameworks */,
 				92AA42A71916C2800037D405 /* UIKit.framework in Frameworks */,
 				92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */,
@@ -135,8 +153,8 @@
 		92AA42A11916C2800037D405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92D318FF193E7C0B00F5A942 /* QuartzCore.framework */,
 				92447968192AD7A10031C1F6 /* MessageUI.framework */,
-				92447966192AB9EF0031C1F6 /* iAd.framework */,
 				92AA42A21916C2800037D405 /* Foundation.framework */,
 				92AA42A41916C2800037D405 /* CoreGraphics.framework */,
 				92AA42A61916C2800037D405 /* UIKit.framework */,
@@ -148,10 +166,6 @@
 		92AA42A81916C2800037D405 /* Volleyball */ = {
 			isa = PBXGroup;
 			children = (
-				92D318FA193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
-				92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
-				92D318F7193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.h */,
-				92D318F8193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.m */,
 				92AA42B71916C2810037D405 /* VolleyBallViewController.h */,
 				92AA42B81916C2810037D405 /* VolleyBallViewController.m */,
 				9217E5D11926377700B2E6F1 /* DefaultScoreViewController.h */,
@@ -161,6 +175,8 @@
 				92AA42B41916C2810037D405 /* Main.storyboard */,
 				9217E5D31926377700B2E6F1 /* DefaultScoreViewController.xib */,
 				92AA42BA1916C2810037D405 /* Images.xcassets */,
+				92D31908193E7CCF00F5A942 /* MYBlurIntroductionView */,
+				92D31901193E7C6600F5A942 /* TPKeyboardAvoidingScrollView */,
 				92AA42A91916C2800037D405 /* Supporting Files */,
 			);
 			path = Volleyball;
@@ -169,6 +185,7 @@
 		92AA42A91916C2800037D405 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				92D31909193E812000F5A942 /* Images */,
 				92AA42B11916C2800037D405 /* VolleyBallAppDelegate.h */,
 				92AA42B21916C2800037D405 /* VolleyBallAppDelegate.m */,
 				92AA42AA1916C2800037D405 /* Volleyball-Info.plist */,
@@ -195,6 +212,41 @@
 				92AA42CA1916C2810037D405 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92D31901193E7C6600F5A942 /* TPKeyboardAvoidingScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				92D318FA193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				92D318F7193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.h */,
+				92D318F8193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.m */,
+			);
+			name = TPKeyboardAvoidingScrollView;
+			sourceTree = "<group>";
+		};
+		92D31908193E7CCF00F5A942 /* MYBlurIntroductionView */ = {
+			isa = PBXGroup;
+			children = (
+				92D31912193E83FA00F5A942 /* TestHeader.xib */,
+				92D31913193E83FA00F5A942 /* TestPanel3.xib */,
+				92D31902193E7CC300F5A942 /* MYIntroductionPanel.h */,
+				92D31903193E7CC300F5A942 /* MYIntroductionPanel.m */,
+				92D31904193E7CC300F5A942 /* MYBlurIntroductionView.h */,
+				92D31905193E7CC300F5A942 /* MYBlurIntroductionView.m */,
+			);
+			name = MYBlurIntroductionView;
+			sourceTree = "<group>";
+		};
+		92D31909193E812000F5A942 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				92D3190A193E815300F5A942 /* CheckMarkWhite.png */,
+				92D3190B193E815300F5A942 /* ForkImage.png */,
+				92D3190C193E815300F5A942 /* HeaderImage.png */,
+				92D3190D193E815300F5A942 /* Toronto, ON.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,9 +327,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
+				92D31914193E83FA00F5A942 /* TestHeader.xib in Resources */,
+				92D31915193E83FA00F5A942 /* TestPanel3.xib in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
+				92D31911193E815300F5A942 /* Toronto, ON.jpg in Resources */,
 				9244799D192C022D0031C1F6 /* Settings.bundle in Resources */,
+				92D31910193E815300F5A942 /* HeaderImage.png in Resources */,
+				92D3190E193E815300F5A942 /* CheckMarkWhite.png in Resources */,
 				92AA42B61916C2810037D405 /* Main.storyboard in Resources */,
+				92D3190F193E815300F5A942 /* ForkImage.png in Resources */,
 				92D318FE193E3E9900F5A942 /* Default-Landscape@2x.png in Resources */,
 				9217E5D51926377700B2E6F1 /* DefaultScoreViewController.xib in Resources */,
 			);
@@ -298,9 +356,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D31906193E7CC300F5A942 /* MYIntroductionPanel.m in Sources */,
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
 				924479A0192C2CDC0031C1F6 /* SettingsViewController.m in Sources */,
+				92D31907193E7CC300F5A942 /* MYBlurIntroductionView.m in Sources */,
 				92D318FC193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				92D318F9193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
@@ -433,6 +493,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -447,6 +508,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

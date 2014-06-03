@@ -9,6 +9,7 @@
 #import "VolleyBallViewController.h"
 #import "DefaultScoreViewController.h"
 #import "SettingsViewController.h"
+#import "MYBlurIntroductionView.h"
 
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";
@@ -118,6 +119,9 @@ NSString *msgVisitor = @"VISITOR";
 			[gesture requireGestureRecognizerToFail:visitorSwipeGesture];
 		}
 	}
+    
+    //Calling this methods builds the intro and adds it to the screen
+    [self buildIntro];
 
 }
 
@@ -213,6 +217,11 @@ NSString *msgVisitor = @"VISITOR";
      */
     [self initializeVisitorScore:currVisitorScore];
     [self initializeHomeScore:currHomeScore];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    
 }
 
 #pragma mark - UI Elements
@@ -507,6 +516,34 @@ NSString *msgVisitor = @"VISITOR";
 
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
+}
+
+#pragma mark - Introduction Screens
+
+- (void)buildIntro
+{
+    //Create stock panel with header
+    UIView *headerView = [[NSBundle mainBundle] loadNibNamed:@"TestHeader" owner:nil options:nil][0];
+    MYIntroductionPanel *panel1 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Welcome to MYBlurIntroductionView" description:@"MYBlurIntroductionView is a powerful platform for building app introductions and tutorials. Built on the MYIntroductionView core, this revamped version has been reengineered for beauty and greater developer control." image:[UIImage imageNamed:@"HeaderImage.png"] header:headerView];
+    
+    //Create Stock Panel With Image
+    MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Automated Stock Panels" description:@"Need a quick-and-dirty solution for your app introduction? MYBlurIntroductionView comes with customizable stock panels that make writing an introduction a walk in the park. Stock panels come with optional blurring (iOS 7) and background image. A full panel is just one method away!" image:[UIImage imageNamed:@"ForkImage.png"]];
+    
+    //Add panels to an array
+    NSArray *panels = @[panel1, panel2];
+    
+    //Create the introduction view and set its delegate
+    MYBlurIntroductionView *introductionView = [[MYBlurIntroductionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    introductionView.delegate = self;
+    introductionView.BackgroundImageView.image = [UIImage imageNamed:@"Toronto, ON.jpg"];
+    [introductionView setBackgroundColor:[UIColor colorWithRed:90.0f/255.0f green:175.0f/255.0f blue:113.0f/255.0f alpha:0.65]];
+    
+    //Build the introduction with desired panels
+    [introductionView buildIntroductionWithPanels:panels];
+    
+    //Add the introduction to your view
+    [self.view addSubview:introductionView];
+
 }
 
 - (void)didReceiveMemoryWarning
