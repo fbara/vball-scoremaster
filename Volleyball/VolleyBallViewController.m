@@ -266,15 +266,22 @@ NSString *msgVisitor = @"VISITOR";
  */
 - (IBAction)gamePressed
 {
-    //Grab the game number and add 1
+    //Grab the game number
     int lableNum = [self.gameNumber.text intValue];
 
     lableNum = lableNum + 1;
-    self.gameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     
-    //Reset the scores to start a new game
-    [self initializeHomeScore:0];
-    [self initializeVisitorScore:0];
+    if (lableNum <= 7) {
+        self.gameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
+        
+        //Reset the scores to start a new game
+        [self initializeHomeScore:0];
+        [self initializeVisitorScore:0];
+    } else {
+        self.gameNumber.text = [NSString stringWithFormat:@"%d", 0];
+
+    }
+    
     
     
 }

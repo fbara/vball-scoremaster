@@ -119,7 +119,13 @@
     return UIStatusBarStyleLightContent;
 }
 
-#pragma mark - Controls -eeeeeeeee
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.x > 0)
+        scrollView.contentOffset = CGPointMake(0, scrollView.contentOffset.y);
+}
+
+#pragma mark - Controls
 #pragma mark -Save Settings
 
 - (IBAction)saveSettings
