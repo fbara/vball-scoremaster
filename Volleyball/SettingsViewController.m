@@ -43,9 +43,10 @@
 
 }
 
-
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     //Check the user settings and set UI elements accordingly
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
@@ -93,7 +94,7 @@
         colorVisitor = [UIColor orangeColor];
     }
     self.visitingTeamColor.backgroundColor = colorVisitor;
-    //[defaults synchronize];
+    //Save settings
     if(![defaults synchronize]) {
         //Synchronize could't happen; show user alert and exit
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Settings could not be saved"
@@ -103,8 +104,6 @@
                                               otherButtonTitles:nil];
         [alert show];
     }
-    
-    [super viewWillAppear:animated];
 }
 
 #pragma mark - UI Elements
@@ -126,25 +125,11 @@
     //Get Yes or No for notifications
     if (sendNotifications) {
         [defaults setObject:@"On" forKey:@"enableNotifications"];
-        [self setNotificationFields:YES];
     } else {
         [defaults setObject:@"Off" forKey:@"enableNotifications"];
-        [self setNotificationFields:FALSE];
     }
     
-
-    
-    //Set the home team color
-    UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
-    colorHome = self.homeTeamColor.backgroundColor;
-    NSData *colorHomeData = [NSKeyedArchiver archivedDataWithRootObject:colorHome];
-    [defaults setObject:colorHomeData forKey:@"homeTeamColor"];
-    
-    //Set the visiting team color
-    UIColor *colorVisitor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
-    colorVisitor = self.visitingTeamColor.backgroundColor;
-    NSData *colorVisitorData = [NSKeyedArchiver archivedDataWithRootObject:colorVisitor];
-    [defaults setObject:colorVisitorData forKey:@"visitorTeamColor"];
+    [self saveScoreColors];
     
     //Set the player name, if entered
     [defaults setObject:self.nameOfPlayer.text forKey:@"playerNameForNotifications"];
@@ -174,10 +159,63 @@
 //    settingsScrollView.contentOffset = startingPoint;
 }
 
+- (void)saveScoreColors
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    //Set the home team color
+    UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    colorHome = self.homeTeamColor.backgroundColor;
+    NSData *colorHomeData = [NSKeyedArchiver archivedDataWithRootObject:colorHome];
+    [defaults setObject:colorHomeData forKey:@"homeTeamColor"];
+    
+    //Set the visiting team color
+    UIColor *colorVisitor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    colorVisitor = self.visitingTeamColor.backgroundColor;
+    NSData *colorVisitorData = [NSKeyedArchiver archivedDataWithRootObject:colorVisitor];
+    [defaults setObject:colorVisitorData forKey:@"visitorTeamColor"];
+
+}
+
 - (void)hideSaveNotification
 {
     self.settingsSavedNotification.hidden = YES;
 }
+
+#pragma mark - Action Sheet Notifications
+
+//- (void)showNormalActionSheet
+//{
+//    //If user tries to save settings but left text fields blank, provide them with options
+//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"One or more text fields are empty"
+//                                                             delegate:self
+//                                                    cancelButtonTitle:@"Go back and I'll fix it"
+//                                               destructiveButtonTitle:@"Disregard all changes & go back to score"
+//                                                    otherButtonTitles:@"I'll add them when I send the message", nil];
+//    [actionSheet showInView:self.view];
+//}
+//
+//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//    //User tried to save settings changes without a Player Name or Notification Number.
+//    //Determine which button the user pressed.
+//    switch (buttonIndex) {
+//        case 0:
+//            //Disregard all changes & go to main screen
+//            [self.navigationController popViewControllerAnimated:YES];
+//            break;
+//         case 1:
+//            //Save changes & user will add the name & text number later
+//            NSLog(@"%d",buttonIndex);
+//            break;
+//         case 2:
+//            //Go back to Settings to fix the mistakes
+//            NSLog(@"%d",buttonIndex);
+//        default:
+//            break;
+//    }
+//   
+//}
 
 #pragma mark - TextField Methods
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController <UITextFieldDelegate,UIScrollViewDelegate>
+@interface SettingsViewController : UIViewController <UITextFieldDelegate,UIScrollViewDelegate,UIActionSheetDelegate>
 {
     IBOutlet UIScrollView *settingsScrollView;
 }
