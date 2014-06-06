@@ -179,7 +179,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <gestureRecognizers/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="VBall ScoreMaster" id="idF-JM-YX7">
+                    <navigationItem key="navigationItem" title="VBall ScoreMaster©" id="idF-JM-YX7">
+                        <barButtonItem key="backBarButtonItem" title="Scoring" id="BAT-Tm-Bjn"/>
                         <barButtonItem key="leftBarButtonItem" title="New match" id="blf-CM-yV6">
                             <connections>
                                 <action selector="newMatch" destination="vXZ-lx-hvc" id="lGO-TA-Ge9"/>
