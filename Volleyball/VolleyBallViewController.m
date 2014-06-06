@@ -3,7 +3,7 @@
 //  Volleyball
 //
 //  Created by AppleAir on 5/4/14.
-//  Copyright (c) 2014 BaraTech. All rights reserved.
+//  Copyright (c) 2014 BaraLabs, LLC. All rights reserved.
 //
 
 #import "VolleyBallViewController.h"
@@ -411,10 +411,10 @@ NSString *msgVisitor = @"VISITOR";
             NSString *playerName = [defaults stringForKey:@"playerNameForNotifications"];
             NSString *notificationNumber = [defaults stringForKey:@"phoneNumberForNotification"];
             
-            NSString *killNum = [NSString stringWithFormat:@"%@ has %d spikes and %d aces!\nThe score is now %@ %d - %@ %d.", playerName ,currKill, currAce, msgVisitor, currVisitorScore, msgHome, currHomeScore];
+            NSString *textMessage = [NSString stringWithFormat:@"%@ has %d spikes and %d aces!\nThe score is now %@ %d - %@ %d.", playerName ,currKill, currAce, msgVisitor, currVisitorScore, msgHome, currHomeScore];
             [textComposer setRecipients:[NSArray arrayWithObjects:notificationNumber, nil]];
             
-            [textComposer setBody:killNum];
+            [textComposer setBody:textMessage];
             [self presentViewController:textComposer
                                animated:YES
                              completion:nil];

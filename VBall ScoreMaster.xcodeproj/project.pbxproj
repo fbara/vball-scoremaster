@@ -12,6 +12,7 @@
 		92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92447968192AD7A10031C1F6 /* MessageUI.framework */; };
 		9244799D192C022D0031C1F6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9244799C192C022D0031C1F6 /* Settings.bundle */; };
 		924479A0192C2CDC0031C1F6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244799F192C2CDC0031C1F6 /* SettingsViewController.m */; };
+		9273CB041940990200696E8E /* SupportInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273CB031940990200696E8E /* SupportInstructionsViewController.m */; };
 		92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A21916C2800037D405 /* Foundation.framework */; };
 		92AA42A51916C2800037D405 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A41916C2800037D405 /* CoreGraphics.framework */; };
 		92AA42A71916C2800037D405 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A61916C2800037D405 /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 		9244799C192C022D0031C1F6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Volleyball/Settings.bundle; sourceTree = "<group>"; };
 		9244799E192C2CDC0031C1F6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		9244799F192C2CDC0031C1F6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		9273CB021940990200696E8E /* SupportInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportInstructionsViewController.h; sourceTree = "<group>"; };
+		9273CB031940990200696E8E /* SupportInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportInstructionsViewController.m; sourceTree = "<group>"; };
 		92AA429F1916C2800037D405 /* VBall ScoreMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VBall ScoreMaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AA42A21916C2800037D405 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		92AA42A41916C2800037D405 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -154,6 +157,8 @@
 				9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */,
 				9244799E192C2CDC0031C1F6 /* SettingsViewController.h */,
 				9244799F192C2CDC0031C1F6 /* SettingsViewController.m */,
+				9273CB021940990200696E8E /* SupportInstructionsViewController.h */,
+				9273CB031940990200696E8E /* SupportInstructionsViewController.m */,
 				92AA42B41916C2810037D405 /* Main.storyboard */,
 				9217E5D31926377700B2E6F1 /* DefaultScoreViewController.xib */,
 				92AA42BA1916C2810037D405 /* Images.xcassets */,
@@ -251,8 +256,11 @@
 			attributes = {
 				CLASSPREFIX = VolleyBall;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = BaraTech;
+				ORGANIZATIONNAME = "BaraLabs, LLC";
 				TargetAttributes = {
+					92AA429E1916C2800037D405 = {
+						DevelopmentTeam = CF655ESNGC;
+					};
 					92AA42BF1916C2810037D405 = {
 						TestTargetID = 92AA429E1916C2800037D405;
 					};
@@ -313,6 +321,7 @@
 				92D318F9193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
+				9273CB041940990200696E8E /* SupportInstructionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,11 +447,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -453,11 +465,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
