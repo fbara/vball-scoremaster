@@ -38,7 +38,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"swipe" object:self];
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"swipe" object:self];
 }
 
 - (void)didReceiveMemoryWarning

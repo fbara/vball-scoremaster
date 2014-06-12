@@ -330,11 +330,11 @@ NSString *msgVisitor = @"VISITOR";
  */
 - (IBAction)newMatch
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Match?"
-                                                        message:@"Reset scores, ace's, spike's and start a new match?"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"New Match?", nil)
+                                                        message:NSLocalizedString(@"Reset scores, ace's, spike's and start a new match?", nil)
                                                        delegate:self
-                                              cancelButtonTitle:@"No"
-                                              otherButtonTitles:@"Yes", nil];
+                                              cancelButtonTitle:NSLocalizedString(@"No", nil)
+                                              otherButtonTitles:NSLocalizedString(@"Yes", nil), nil];
     [alert show];
 }
 

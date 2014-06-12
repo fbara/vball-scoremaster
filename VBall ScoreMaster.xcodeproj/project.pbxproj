@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */; };
-		9217E5D51926377700B2E6F1 /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9217E5D31926377700B2E6F1 /* DefaultScoreViewController.xib */; };
 		92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92447968192AD7A10031C1F6 /* MessageUI.framework */; };
 		9244799D192C022D0031C1F6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9244799C192C022D0031C1F6 /* Settings.bundle */; };
 		924479A0192C2CDC0031C1F6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244799F192C2CDC0031C1F6 /* SettingsViewController.m */; };
@@ -31,6 +30,8 @@
 		92D318FC193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		92D318FE193E3E9900F5A942 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */; };
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
+		AD999EB719490DFB00285864 /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */; };
+		AD999EC119492CC000285864 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD999EC319492CC000285864 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +47,6 @@
 /* Begin PBXFileReference section */
 		9217E5D11926377700B2E6F1 /* DefaultScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultScoreViewController.h; sourceTree = "<group>"; };
 		9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultScoreViewController.m; sourceTree = "<group>"; };
-		9217E5D31926377700B2E6F1 /* DefaultScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		92447968192AD7A10031C1F6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9244799C192C022D0031C1F6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Volleyball/Settings.bundle; sourceTree = "<group>"; };
 		9244799E192C2CDC0031C1F6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -78,6 +78,18 @@
 		92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AD999EB119490B8D00285864 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AD999EB219490B8D00285864 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		AD999EB319490B8D00285864 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AD999EB419490DB700285864 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		AD999EB519490DB700285864 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		AD999EB619490DB700285864 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		AD999EB819490DFB00285864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
+		AD999EBB19490E5200285864 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DefaultScoreViewController.strings; sourceTree = "<group>"; };
+		AD999EBD19490E5400285864 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DefaultScoreViewController.strings"; sourceTree = "<group>"; };
+		AD999EC219492CC000285864 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD999EC419492CDC00285864 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD999EC519492CDD00285864 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +171,6 @@
 				9244799F192C2CDC0031C1F6 /* SettingsViewController.m */,
 				9273CB021940990200696E8E /* SupportInstructionsViewController.h */,
 				9273CB031940990200696E8E /* SupportInstructionsViewController.m */,
-				92AA42B41916C2810037D405 /* Main.storyboard */,
-				9217E5D31926377700B2E6F1 /* DefaultScoreViewController.xib */,
 				92AA42BA1916C2810037D405 /* Images.xcassets */,
 				92D31901193E7C6600F5A942 /* TPKeyboardAvoidingScrollView */,
 				92AA42A91916C2800037D405 /* Supporting Files */,
@@ -171,10 +181,13 @@
 		92AA42A91916C2800037D405 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD999EC0194910EC00285864 /* zh-Hans.lproj */,
+				AD999EBF194910D000285864 /* es.lproj */,
+				AD999EBE19490FE200285864 /* en.lproj */,
+				AD999EC319492CC000285864 /* Localizable.strings */,
 				92AA42B11916C2800037D405 /* VolleyBallAppDelegate.h */,
 				92AA42B21916C2800037D405 /* VolleyBallAppDelegate.m */,
 				92AA42AA1916C2800037D405 /* Volleyball-Info.plist */,
-				92AA42AB1916C2800037D405 /* InfoPlist.strings */,
 				92AA42AE1916C2800037D405 /* main.m */,
 				92AA42B01916C2800037D405 /* Volleyball-Prefix.pch */,
 			);
@@ -208,6 +221,30 @@
 				92D318F8193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.m */,
 			);
 			name = TPKeyboardAvoidingScrollView;
+			sourceTree = "<group>";
+		};
+		AD999EBE19490FE200285864 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				92AA42AB1916C2800037D405 /* InfoPlist.strings */,
+				AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */,
+				92AA42B41916C2810037D405 /* Main.storyboard */,
+			);
+			name = en.lproj;
+			sourceTree = "<group>";
+		};
+		AD999EBF194910D000285864 /* es.lproj */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = es.lproj;
+			sourceTree = "<group>";
+		};
+		AD999EC0194910EC00285864 /* zh-Hans.lproj */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "zh-Hans.lproj";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +310,8 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				"zh-Hans",
 			);
 			mainGroup = 92AA42961916C2800037D405;
 			productRefGroup = 92AA42A01916C2800037D405 /* Products */;
@@ -293,9 +332,10 @@
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
 				9244799D192C022D0031C1F6 /* Settings.bundle in Resources */,
+				AD999EC119492CC000285864 /* Localizable.strings in Resources */,
 				92AA42B61916C2810037D405 /* Main.storyboard in Resources */,
 				92D318FE193E3E9900F5A942 /* Default-Landscape@2x.png in Resources */,
-				9217E5D51926377700B2E6F1 /* DefaultScoreViewController.xib in Resources */,
+				AD999EB719490DFB00285864 /* DefaultScoreViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +388,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				92AA42AC1916C2800037D405 /* en */,
+				AD999EB119490B8D00285864 /* es */,
+				AD999EB519490DB700285864 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -356,6 +398,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				92AA42B51916C2810037D405 /* Base */,
+				AD999EB219490B8D00285864 /* es */,
+				AD999EB419490DB700285864 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -364,8 +408,30 @@
 			isa = PBXVariantGroup;
 			children = (
 				92AA42CB1916C2810037D405 /* en */,
+				AD999EB319490B8D00285864 /* es */,
+				AD999EB619490DB700285864 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD999EB819490DFB00285864 /* Base */,
+				AD999EBB19490E5200285864 /* es */,
+				AD999EBD19490E5400285864 /* zh-Hans */,
+			);
+			name = DefaultScoreViewController.xib;
+			sourceTree = "<group>";
+		};
+		AD999EC319492CC000285864 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD999EC219492CC000285864 /* en */,
+				AD999EC419492CDC00285864 /* es */,
+				AD999EC519492CDD00285864 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

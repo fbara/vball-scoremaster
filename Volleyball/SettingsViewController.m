@@ -97,10 +97,10 @@
     //Save settings
     if(![defaults synchronize]) {
         //Synchronize could't happen; show user alert and exit
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Settings could not be saved"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Settings could not be saved", nil)
                                                         message:nil
                                                        delegate:nil
-                                              cancelButtonTitle:@"Ok"
+                                              cancelButtonTitle:NSLocalizedString(@"Ok", nil)
                                               otherButtonTitles:nil];
         [alert show];
     }
@@ -139,10 +139,10 @@
     
     //Make sure everything synchronized correctly
     if(![defaults synchronize]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Settings not saved"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Settings not saved", nil)
                                                         message:nil
                                                        delegate:nil
-                                              cancelButtonTitle:@"Ok"
+                                              cancelButtonTitle:NSLocalizedString(@"Ok", nil)
                                               otherButtonTitles:nil];
         [alert show];
     } else {
