@@ -241,56 +241,56 @@
  * @return BOOL Returns whether or not the conversion to the phone number 
  * format was successful or not.
  */
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    //If this isn't a phone number entry field, return YES to exit
-    if (textField.tag == 1) {
-        return YES;
-    }
-
-    // All digits entered
-    if (range.location == 14) {
-        return NO;
-    }
-    
-    // Reject appending non-digit characters
-    if (range.length == 0 &&
-        ![[NSCharacterSet decimalDigitCharacterSet] characterIsMember:[string characterAtIndex:0]]) {
-        return NO;
-    }
-    
-    // Auto-add hyphen and parentheses
-    if (range.length == 0 && range.location == 3 &&![[textField.text substringToIndex:1] isEqualToString:@"("]) {
-        textField.text = [NSString stringWithFormat:@"(%@)-%@", textField.text,string];
-        return NO;
-    }
-    if (range.length == 0 && range.location == 4 &&[[textField.text substringToIndex:1] isEqualToString:@"("]) {
-        textField.text = [NSString stringWithFormat:@"%@)-%@", textField.text,string];
-        return NO;
-    }
-    
-    // Auto-add 2nd hyphen
-    if (range.length == 0 && range.location == 9) {
-        textField.text = [NSString stringWithFormat:@"%@-%@", textField.text, string];
-        return NO;
-    }
-    
-    // Delete hyphen and parentheses when deleting its trailing digit
-    if (range.length == 1 &&
-        (range.location == 10 || range.location == 1)){
-        range.location--;
-        range.length = 2;
-        textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
-        return NO;
-    }
-    if (range.length == 1 && range.location == 6){
-        range.location=range.location-2;
-        range.length = 3;
-        textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
-        return NO;
-    }
-    return YES;
-}
+//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+//{
+//    //If this isn't a phone number entry field, return YES to exit
+//    if (textField.tag == 1) {
+//        return YES;
+//    }
+//
+//    // All digits entered
+//    if (range.location == 14) {
+//        return NO;
+//    }
+//    
+//    // Reject appending non-digit characters
+//    if (range.length == 0 &&
+//        ![[NSCharacterSet decimalDigitCharacterSet] characterIsMember:[string characterAtIndex:0]]) {
+//        return NO;
+//    }
+//    
+//    // Auto-add hyphen and parentheses
+//    if (range.length == 0 && range.location == 3 &&![[textField.text substringToIndex:1] isEqualToString:@"("]) {
+//        textField.text = [NSString stringWithFormat:@"(%@)-%@", textField.text,string];
+//        return NO;
+//    }
+//    if (range.length == 0 && range.location == 4 &&[[textField.text substringToIndex:1] isEqualToString:@"("]) {
+//        textField.text = [NSString stringWithFormat:@"%@)-%@", textField.text,string];
+//        return NO;
+//    }
+//    
+//    // Auto-add 2nd hyphen
+//    if (range.length == 0 && range.location == 9) {
+//        textField.text = [NSString stringWithFormat:@"%@-%@", textField.text, string];
+//        return NO;
+//    }
+//    
+//    // Delete hyphen and parentheses when deleting its trailing digit
+//    if (range.length == 1 &&
+//        (range.location == 10 || range.location == 1)){
+//        range.location--;
+//        range.length = 2;
+//        textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
+//        return NO;
+//    }
+//    if (range.length == 1 && range.location == 6){
+//        range.location=range.location-2;
+//        range.length = 3;
+//        textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
+//        return NO;
+//    }
+//    return YES;
+//}
 
 #pragma mark - Enable/Disable Text Fields
 

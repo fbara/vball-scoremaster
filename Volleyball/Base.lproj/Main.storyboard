@@ -16,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView appearanceType="aqua" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="volleyball big spike" translatesAutoresizingMaskIntoConstraints="NO" id="vnp-C1-4VN">
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" translatesAutoresizingMaskIntoConstraints="NO" id="vnp-C1-4VN">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOt-an-CIE" userLabel="Text View - Instructions">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOt-an-CIE" userLabel="Text View - Instructions">
                                 <rect key="frame" x="20" y="56" width="528" height="208"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -31,6 +31,16 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cOt-an-CIE" firstAttribute="centerY" secondItem="vnp-C1-4VN" secondAttribute="centerY" id="3dK-br-crp"/>
+                            <constraint firstItem="vnp-C1-4VN" firstAttribute="top" secondItem="Yua-kG-eOG" secondAttribute="top" id="Abg-cx-mrc"/>
+                            <constraint firstItem="vnp-C1-4VN" firstAttribute="leading" secondItem="Yua-kG-eOG" secondAttribute="leading" id="Ag6-w5-W7x"/>
+                            <constraint firstAttribute="trailing" secondItem="cOt-an-CIE" secondAttribute="trailing" constant="20" symbolic="YES" id="Dhn-pB-WR6"/>
+                            <constraint firstItem="cOt-an-CIE" firstAttribute="leading" secondItem="Yua-kG-eOG" secondAttribute="leading" constant="20" symbolic="YES" id="aiC-aO-989"/>
+                            <constraint firstItem="ADZ-jg-J1A" firstAttribute="top" secondItem="cOt-an-CIE" secondAttribute="bottom" constant="7" id="uTq-JP-ULe"/>
+                            <constraint firstItem="vnp-C1-4VN" firstAttribute="centerX" secondItem="cOt-an-CIE" secondAttribute="centerX" id="vcM-Fm-cx7"/>
+                            <constraint firstAttribute="bottom" secondItem="vnp-C1-4VN" secondAttribute="bottom" id="xyB-Rl-ozM"/>
+                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -56,7 +66,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="rPx-ck-UCe"/>
@@ -67,14 +77,14 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="Gy2-c3-JW9"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jML-Et-saV">
-                                <rect key="frame" x="251" y="65" width="64" height="26"/>
+                                <rect key="frame" x="214" y="63" width="140" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,7 +99,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SPIKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tX3-rT-g7M" userLabel="Label - SPIKE">
-                                <rect key="frame" x="250" y="223" width="66" height="21"/>
+                                <rect key="frame" x="251" y="223" width="66" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -104,7 +114,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ3-D6-TK5">
-                                <rect key="frame" x="254" y="144" width="56" height="21"/>
+                                <rect key="frame" x="256" y="143" width="56" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -235,43 +245,40 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <rect key="frame" x="0.0" y="64" width="568" height="256"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="FyP-PC-3ed" customClass="TPKeyboardAvoidingScrollView">
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="FyP-PC-3ed" customClass="TPKeyboardAvoidingScrollView">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="256"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4el-Ha-Uua" userLabel="Switch - NotificationControl">
-                                        <rect key="frame" x="338" y="88" width="51" height="31"/>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4el-Ha-Uua" userLabel="Switch - NotificationControl">
+                                        <rect key="frame" x="336" y="88" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="notificationControl:" destination="gPi-EO-bZs" eventType="valueChanged" id="xZ2-bU-nU1"/>
                                         </connections>
                                     </switch>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address for text notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mv-nu-sSk">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number for text message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mv-nu-sSk" userLabel="Label - Number for text message">
                                         <rect key="frame" x="20" y="177" width="221" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Spike &amp; Ace Notifications?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ion-1V-C9T">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send Spike &amp; Ace Message?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ion-1V-C9T">
                                         <rect key="frame" x="20" y="93" width="248" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name for text notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPE-0T-yE7">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name for text message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPE-0T-yE7">
                                         <rect key="frame" x="20" y="133" width="203" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tI-ZY-l7d" userLabel="Button VisitingTeamColor">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tI-ZY-l7d" userLabel="Button VisitingTeamColor">
                                         <rect key="frame" x="20" y="29" width="256" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="256" id="yb0-3y-RYY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Visitor">
                                             <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -280,18 +287,15 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             <action selector="visitingTeamBackgroundColor:" destination="gPi-EO-bZs" eventType="touchUpInside" id="37D-2o-aDa"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If sending a notification, enter the recipient phone number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRd-LT-TC0">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipient phone number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRd-LT-TC0">
                                         <rect key="frame" x="20" y="192" width="271" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number (optional)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GaT-SP-GIp">
-                                        <rect key="frame" x="338" y="174" width="211" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(optional)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GaT-SP-GIp">
+                                        <rect key="frame" x="335" y="174" width="211" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="211" id="Lxt-xk-8DO"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
@@ -299,17 +303,14 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             <outlet property="delegate" destination="gPi-EO-bZs" id="Wl1-vf-7S6"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on to send text message whenever a spike or ace happens" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xz6-UF-0Q9">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="On to send text message for a spike or ace" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xz6-UF-0Q9">
                                         <rect key="frame" x="20" y="104" width="322" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="322" id="aP2-BQ-7gX"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of player (optional)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VmW-pT-DCt">
-                                        <rect key="frame" x="338" y="133" width="211" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(optional)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VmW-pT-DCt">
+                                        <rect key="frame" x="336" y="133" width="211" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -318,17 +319,17 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             <outlet property="delegate" destination="gPi-EO-bZs" id="d8h-yh-OzC"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Players name that will be included in the text notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfA-8o-OpC">
-                                        <rect key="frame" x="20" y="144" width="272" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" fixedFrame="YES" text="Players name for text message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfA-8o-OpC">
+                                        <rect key="frame" x="20" y="144" width="270" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZv-4e-spu" userLabel="Button HomeTeamColor">
-                                        <rect key="frame" x="292" y="29" width="256" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZv-4e-spu" userLabel="Button HomeTeamColor">
+                                        <rect key="frame" x="292" y="29" width="254" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Home">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -337,21 +338,15 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             <action selector="homeTeamBackgroundColor:" destination="gPi-EO-bZs" eventType="touchUpInside" id="baP-Kd-2ON"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change team colors:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncc-kc-TQ2">
-                                        <rect key="frame" x="20" y="5" width="170" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change team colors:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncc-kc-TQ2">
+                                        <rect key="frame" x="20" y="5" width="256" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="170" id="XXo-Uq-Evi"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings have been saved" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHS-oY-RvX">
-                                        <rect key="frame" x="350" y="0.0" width="198" height="21"/>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings have been saved" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHS-oY-RvX">
+                                        <rect key="frame" x="292" y="0.0" width="256" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="198" id="d1J-3v-Cev"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -369,54 +364,9 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="xRd-LT-TC0" firstAttribute="top" secondItem="JfA-8o-OpC" secondAttribute="bottom" constant="27" id="3kY-MT-kfr"/>
-                                    <constraint firstItem="8tI-ZY-l7d" firstAttribute="top" secondItem="Ncc-kc-TQ2" secondAttribute="bottom" constant="3" id="442-TY-6V7"/>
-                                    <constraint firstItem="GaT-SP-GIp" firstAttribute="height" secondItem="VmW-pT-DCt" secondAttribute="height" id="5s0-CF-mh6"/>
-                                    <constraint firstItem="Ncc-kc-TQ2" firstAttribute="leading" secondItem="8tI-ZY-l7d" secondAttribute="leading" id="6eQ-qp-eyf"/>
-                                    <constraint firstItem="pZv-4e-spu" firstAttribute="leading" secondItem="8tI-ZY-l7d" secondAttribute="trailing" constant="16" id="6iY-RT-cgQ"/>
-                                    <constraint firstItem="GaT-SP-GIp" firstAttribute="leading" secondItem="xRd-LT-TC0" secondAttribute="trailing" constant="47" id="7mh-YW-Iw9"/>
-                                    <constraint firstItem="MPE-0T-yE7" firstAttribute="leading" secondItem="xz6-UF-0Q9" secondAttribute="leading" id="7tY-CM-pu3"/>
-                                    <constraint firstItem="4el-Ha-Uua" firstAttribute="top" secondItem="pZv-4e-spu" secondAttribute="bottom" constant="19" id="At0-rB-wbo"/>
-                                    <constraint firstItem="VmW-pT-DCt" firstAttribute="leading" secondItem="4el-Ha-Uua" secondAttribute="leading" id="DR2-Ge-GtD"/>
-                                    <constraint firstItem="MPE-0T-yE7" firstAttribute="centerY" secondItem="FyP-PC-3ed" secondAttribute="centerY" constant="15.5" id="EBg-vn-4jr"/>
-                                    <constraint firstItem="VmW-pT-DCt" firstAttribute="top" secondItem="xz6-UF-0Q9" secondAttribute="bottom" constant="8" symbolic="YES" id="GDL-kh-H94"/>
-                                    <constraint firstAttribute="trailing" secondItem="oHS-oY-RvX" secondAttribute="trailing" constant="20" symbolic="YES" id="KDk-tj-jRg"/>
-                                    <constraint firstItem="7Mv-nu-sSk" firstAttribute="leading" secondItem="JfA-8o-OpC" secondAttribute="leading" id="My5-YO-L3g"/>
-                                    <constraint firstItem="ion-1V-C9T" firstAttribute="centerY" secondItem="4el-Ha-Uua" secondAttribute="centerY" id="NR8-Yb-3SI"/>
-                                    <constraint firstItem="ion-1V-C9T" firstAttribute="leading" secondItem="xz6-UF-0Q9" secondAttribute="leading" id="Qz7-nU-JyP"/>
-                                    <constraint firstItem="MPE-0T-yE7" firstAttribute="top" secondItem="xz6-UF-0Q9" secondAttribute="bottom" constant="8" symbolic="YES" id="Rdx-7b-9zU"/>
-                                    <constraint firstItem="Ncc-kc-TQ2" firstAttribute="leading" secondItem="FyP-PC-3ed" secondAttribute="leading" constant="20" symbolic="YES" id="Ukc-og-48v"/>
-                                    <constraint firstItem="GaT-SP-GIp" firstAttribute="trailing" secondItem="VmW-pT-DCt" secondAttribute="trailing" id="Wso-JE-gIF"/>
-                                    <constraint firstAttribute="bottom" secondItem="xRd-LT-TC0" secondAttribute="bottom" constant="52" id="X7k-sh-w3d"/>
-                                    <constraint firstItem="JfA-8o-OpC" firstAttribute="leading" secondItem="MPE-0T-yE7" secondAttribute="leading" id="YqL-7s-2Wx"/>
-                                    <constraint firstItem="xz6-UF-0Q9" firstAttribute="top" secondItem="pZv-4e-spu" secondAttribute="bottom" constant="35" id="cW3-Sj-oVT"/>
-                                    <constraint firstItem="pZv-4e-spu" firstAttribute="top" secondItem="oHS-oY-RvX" secondAttribute="bottom" constant="8" symbolic="YES" id="cih-A1-baB"/>
-                                    <constraint firstItem="GaT-SP-GIp" firstAttribute="leading" secondItem="VmW-pT-DCt" secondAttribute="leading" id="fch-DR-NOu"/>
-                                    <constraint firstItem="VmW-pT-DCt" firstAttribute="top" secondItem="4el-Ha-Uua" secondAttribute="bottom" constant="14" id="gJh-Lb-t9D"/>
-                                    <constraint firstItem="JfA-8o-OpC" firstAttribute="top" secondItem="xz6-UF-0Q9" secondAttribute="bottom" constant="19" id="iFV-ha-a7T"/>
-                                    <constraint firstItem="VmW-pT-DCt" firstAttribute="leading" secondItem="JfA-8o-OpC" secondAttribute="trailing" constant="46" id="jZg-Hy-DiD"/>
-                                    <constraint firstItem="GaT-SP-GIp" firstAttribute="top" secondItem="VmW-pT-DCt" secondAttribute="bottom" constant="11" id="m2B-ap-6vq"/>
-                                    <constraint firstItem="oHS-oY-RvX" firstAttribute="top" secondItem="FyP-PC-3ed" secondAttribute="top" id="mTE-yS-c71"/>
-                                    <constraint firstItem="GaT-SP-GIp" firstAttribute="width" secondItem="VmW-pT-DCt" secondAttribute="width" id="o4U-b1-a9E"/>
-                                    <constraint firstItem="pZv-4e-spu" firstAttribute="top" secondItem="8tI-ZY-l7d" secondAttribute="top" id="poC-3R-TBg"/>
-                                    <constraint firstItem="8tI-ZY-l7d" firstAttribute="bottom" secondItem="pZv-4e-spu" secondAttribute="bottom" id="s1F-Nn-stJ"/>
-                                    <constraint firstItem="7Mv-nu-sSk" firstAttribute="baseline" secondItem="GaT-SP-GIp" secondAttribute="baseline" id="sR1-1H-l8f"/>
-                                    <constraint firstItem="ion-1V-C9T" firstAttribute="leading" secondItem="8tI-ZY-l7d" secondAttribute="leading" id="svL-OG-xyT"/>
-                                    <constraint firstItem="pZv-4e-spu" firstAttribute="trailing" secondItem="GaT-SP-GIp" secondAttribute="trailing" constant="-1" id="vjw-mK-PzG"/>
-                                    <constraint firstItem="xRd-LT-TC0" firstAttribute="leading" secondItem="7Mv-nu-sSk" secondAttribute="leading" id="wu7-aH-yvL"/>
-                                    <constraint firstItem="pZv-4e-spu" firstAttribute="trailing" secondItem="oHS-oY-RvX" secondAttribute="trailing" id="x4b-jw-ND8"/>
-                                    <constraint firstItem="7Mv-nu-sSk" firstAttribute="top" secondItem="JfA-8o-OpC" secondAttribute="bottom" constant="12" id="y3M-AQ-2zT"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="FyP-PC-3ed" secondAttribute="trailing" id="3MG-h4-2lz"/>
-                            <constraint firstAttribute="bottom" secondItem="FyP-PC-3ed" secondAttribute="bottom" id="JJs-Vx-hu8"/>
-                            <constraint firstItem="FyP-PC-3ed" firstAttribute="top" secondItem="JgG-fd-yQn" secondAttribute="top" id="ial-Hs-yPY"/>
-                            <constraint firstItem="FyP-PC-3ed" firstAttribute="leading" secondItem="JgG-fd-yQn" secondAttribute="leading" id="om4-9k-Ff3"/>
-                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -472,20 +422,30 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView appearanceType="aqua" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="volleyball big spike" translatesAutoresizingMaskIntoConstraints="NO" id="Uf2-uV-EXE">
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" translatesAutoresizingMaskIntoConstraints="NO" id="Uf2-uV-EXE">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cqV-Nu-RC0">
+                            <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cqV-Nu-RC0">
                                 <rect key="frame" x="20" y="60" width="528" height="218"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Thank you for using VBall ScoreMaster©.  There is Help text on the main page if you need assistance in using this app.  As with all apps, your reviews on the App Store will help with the continued development and improvement of VBall ScoreMaster©.  Please consider leaving a review, it helps other people who are looking for a scoring app.     For support requests or to submit ideas for this app, please contact support@baralabs.com.</string>
+                                <mutableString key="text">Thank you for using VBall ScoreMaster©.  There is Help text on the main page if you need assistance in using this app.  This app could not have been created without the help of Paul Dolce.  Thank you, Paul!  As with all apps, your reviews on the App Store will help with the continued development and improvement of VBall ScoreMaster©.  Please consider leaving a review, it helps other people who are looking for a scoring app.     For support requests or to submit ideas for this app, please contact support@baralabs.com.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cqV-Nu-RC0" secondAttribute="trailing" constant="20" symbolic="YES" id="0ty-V6-hLb"/>
+                            <constraint firstItem="Uf2-uV-EXE" firstAttribute="leading" secondItem="T7D-fM-nFz" secondAttribute="leading" id="2df-hr-i7o"/>
+                            <constraint firstAttribute="bottom" secondItem="cqV-Nu-RC0" secondAttribute="bottom" constant="42" id="8JS-bH-T4I"/>
+                            <constraint firstItem="Uf2-uV-EXE" firstAttribute="top" secondItem="T7D-fM-nFz" secondAttribute="top" id="Ena-S3-rqi"/>
+                            <constraint firstItem="cqV-Nu-RC0" firstAttribute="top" secondItem="T7D-fM-nFz" secondAttribute="top" constant="60" id="JHC-iM-qd2"/>
+                            <constraint firstItem="cqV-Nu-RC0" firstAttribute="leading" secondItem="T7D-fM-nFz" secondAttribute="leading" constant="20" symbolic="YES" id="fdb-fu-b9T"/>
+                            <constraint firstAttribute="bottom" secondItem="Uf2-uV-EXE" secondAttribute="bottom" id="p2x-lw-Dk8"/>
+                            <constraint firstItem="Uf2-uV-EXE" firstAttribute="centerX" secondItem="cqV-Nu-RC0" secondAttribute="centerX" id="s8e-kS-V3k"/>
+                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>

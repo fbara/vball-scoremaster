@@ -1,182 +1,181 @@
 
-/* Class = "IBUILabel"; text = "Address for text notifications"; ObjectID = "7Mv-nu-sSk"; */
-"7Mv-nu-sSk.text" = "Address for text notifications";
+/* Class = "IBUILabel"; text = "Number for text message"; ObjectID = "7Mv-nu-sSk"; */
+"7Mv-nu-sSk.text" = "Número de mensajes de texto";
 
 /* Class = "IBUIButton"; normalTitle = "Visitor"; ObjectID = "8tI-ZY-l7d"; */
-"8tI-ZY-l7d.normalTitle" = "Visitor";
+"8tI-ZY-l7d.normalTitle" = "Equipo visitante";
 
 /* Class = "IBUIBarButtonItem"; title = "Scoring"; ObjectID = "BAT-Tm-Bjn"; */
-"BAT-Tm-Bjn.title" = "Scoring";
+"BAT-Tm-Bjn.title" = "Puntuación";
 
-/* Class = "IBUITextField"; placeholder = "Phone number (optional)"; ObjectID = "GaT-SP-GIp"; */
-"GaT-SP-GIp.placeholder" = "Phone number (optional)";
+/* Class = "IBUITextField"; placeholder = "(optional)"; ObjectID = "GaT-SP-GIp"; */
+"GaT-SP-GIp.placeholder" = "(opcional)";
 
 /* Class = "IBUITextField"; placeholder = "Visiting Team Name"; ObjectID = "Gzx-4p-5vy"; */
-"Gzx-4p-5vy.placeholder" = "Visiting Team Name";
+"Gzx-4p-5vy.placeholder" = "Nombre del equipo visitante";
 
-/* Class = "IBUILabel"; text = "Players name that will be included in the text notifications"; ObjectID = "JfA-8o-OpC"; */
-"JfA-8o-OpC.text" = "Players name that will be included in the text notifications";
+/* Class = "IBUILabel"; text = "Players name for text message"; ObjectID = "JfA-8o-OpC"; */
+"JfA-8o-OpC.text" = "Nombre de los jugadores por mensaje de texto";
 
 /* Class = "IBUITextField"; placeholder = "Home Team Name"; ObjectID = "KgW-hz-5sq"; */
-"KgW-hz-5sq.placeholder" = "Home Team Name";
+"KgW-hz-5sq.placeholder" = "Nombre del equipo de casa";
 
-/* Class = "IBUILabel"; text = "Name for text notifications"; ObjectID = "MPE-0T-yE7"; */
-"MPE-0T-yE7.text" = "Name for text notifications";
+/* Class = "IBUILabel"; text = "Name for text message"; ObjectID = "MPE-0T-yE7"; */
+"MPE-0T-yE7.text" = "Nombre para mensajes de texto";
 
 /* Class = "IBUILabel"; text = "ACE"; ObjectID = "NQ3-D6-TK5"; */
-"NQ3-D6-TK5.text" = "ACE";
+"NQ3-D6-TK5.text" = "AS";
 
 /* Class = "IBUILabel"; text = "Change team colors:"; ObjectID = "Ncc-kc-TQ2"; */
-"Ncc-kc-TQ2.text" = "Change team colors:";
+"Ncc-kc-TQ2.text" = "Cambiar los colores del equipo:";
 
-/* Class = "IBUIPageViewController"; title = "Home Page View Controller"; ObjectID = "UDW-Id-wMZ"; */
-"UDW-Id-wMZ.title" = "Home Page View Controller";
-
-/* Class = "IBUITextField"; placeholder = "Name of player (optional)"; ObjectID = "VmW-pT-DCt"; */
-"VmW-pT-DCt.placeholder" = "Name of player (optional)";
+/* Class = "IBUITextField"; placeholder = "(optional)"; ObjectID = "VmW-pT-DCt"; */
+"VmW-pT-DCt.placeholder" = "(opcional)";
 
 /* Class = "IBUIBarButtonItem"; title = "Save"; ObjectID = "Ydx-Fd-OyM"; */
-"Ydx-Fd-OyM.title" = "Save";
+"Ydx-Fd-OyM.title" = "Guardar";
 
 /* Class = "IBUIBarButtonItem"; title = "New match"; ObjectID = "blf-CM-yV6"; */
-"blf-CM-yV6.title" = "New match";
+"blf-CM-yV6.title" = "Nuevo partido";
 
-/* Class = "IBUITextView"; text = "VBall ScoreMaster© is very easy to use.  Instructions are below and you can return these instructions at any time.  Thank you for using VBall ScoreMaster!
-\nMAIN SCREEN
-To add or change the name of the teams:
-1. Tap in the team name text box above the score
-2. Type in the name of the team
-3. When done, tap on the 'Done' button
-
-To change the score:
-1. Either tap or swipe the score with your finger
-2. Swiping UP or tapping the TOP of the score will add 1
-3. Swiping DOWN or tapping the BOTTOM of the score to subtract 1 (continued)
-
-To change sides
-1. Swipe either score box and they will both move, swapping locations
-2. This is good to do each time time the teams change sides
-3. Swiping the score boxes will not change the score unless you accidentally swipe up/down at the same time.  If that happens, just swipe the score up or down to return to the correct number.
-
-To change to a new game:
-1. Tapping on the Game number will add a new game
-2. New games will change both scores to 0
-3. Team names will stay the same, so will Ace and Spike numbers
-4. Maximum number of Games is 7
-5. To reset Games back to 1, touch the number several times until it goes back to 1
-
-To start a New Match:
-1. Matches are made up of several Games.  Tap New Match in the top left corner to start a new match.
-2. A new match will reset both scores as well as the Game, Spike, and Ace numbers
-3. Once you agree to start a new match, it can't be undone
-
-SETTINGS
-Change team colors:
-1. Tap the box of the team whose color you want to change
-2. Each tap will change the box to a random color
-3. You can change one or both colors before you save
-4. Tap the Save button on the top right to save your colors.  Color changes take effect immediately.
-
-Send text message (SMS or iMessage):
-1. Change the Notifications switch to ON if you want to send a text message after each Spike and Ace
-2. Enter the name of the player that will be included in the pre-formed text message.  This part is optional but it will make the text message more personable.
-3. Enter the phone number to where you want the messages sent.  You can only enter 1 phone number here but you can add additional numbers to each message prior to sending them out.
-4. Tap the Save button to save your changes.  A red message will show to indicate your changes were successfuly saved.
-**If you don't tap the Save button before you leave the Settings page, your changes will not be saved.**
-5. After you do this, each time you touch the Ace or Spike numbers, VBall ScoreMaster will generate a text message formatted with the name you entered, the number of Ace's and Spike's, and the current score.  The message will automatically be addressed to the recipient you indicated.
-6. Because Apple prevents apps from sending background text messages (for your own protection), you must hit the Send button to send the message.  If you change your mind, just tap Cancel.
+/* Class = "IBUITextView"; text = "VBall ScoreMaster© is very easy to use.  Instructions are below and you can return these instructions at any time.  Thank you for using VBall ScoreMaster©!
+ \nMAIN SCREEN
+ To add or change the name of the teams:
+ 1. Tap in the team name text box above the score
+ 2. Type in the name of the team
+ 3. When done, tap on the 'Done' button
+ 
+ To change the score:
+ 1. Either tap or swipe the score with your finger
+ 2. Swiping UP or tapping the TOP of the score will add 1
+ 3. Swiping DOWN or tapping the BOTTOM of the score to subtract 1 (continued)
+ 
+ To change sides
+ 1. Swipe either score box and they will both move, swapping locations
+ 2. This is good to do each time time the teams change sides
+ 3. Swiping the score boxes will not change the score unless you accidentally swipe up/down at the same time.  If that happens, just swipe the score up or down to return to the correct number.
+ 
+ To change to a new game:
+ 1. Tapping on the Game number will add a new game
+ 2. New games will change both scores to 0
+ 3. Team names will stay the same, so will Ace and Spike numbers
+ 4. Maximum number of Games is 7
+ 5. To reset Games back to 1, touch the number several times until it goes back to 1
+ 
+ To start a New Match:
+ 1. Matches are made up of several Games.  Tap New Match in the top left corner to start a new match.
+ 2. A new match will reset both scores as well as the Game, Spike, and Ace numbers
+ 3. Once you agree to start a new match, it can't be undone
+ 
+ SETTINGS
+ Change team colors:
+ 1. Tap the box of the team whose color you want to change
+ 2. Each tap will change the box to a random color
+ 3. You can change one or both colors before you save
+ 4. Tap the Save button on the top right to save your colors.  Color changes take effect immediately.
+ 
+ Send text message (SMS or iMessage):
+ 1. Change the Notifications switch to ON if you want to send a text message after each Spike and Ace
+ 2. Enter the name of the player that will be included in the pre-formed text message.  This part is optional but it will make the text message more personable.
+ 3. Enter the phone number to where you want the messages sent.  You can only enter 1 phone number here but you can add additional numbers to each message prior to sending them out.
+ 4. Tap the Save button to save your changes.  A red message will show to indicate your changes were successfuly saved.
+ **If you don't tap the Save button before you leave the Settings page, your changes will not be saved.**
+ 5. After you do this, each time you touch the Ace or Spike numbers, VBall ScoreMaster will generate a text message formatted with the name you entered, the number of Ace's and Spike's, and the current score.  The message will automatically be addressed to the recipient you indicated.
+ 6. Because Apple prevents apps from sending background text messages (for your own protection), you must hit the Send button to send the message.  If you change your mind, just tap Cancel.
 
 PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT I CAN CONTINUE DEVELOPMENT OF THIS APP."; ObjectID = "cOt-an-CIE"; */
-"cOt-an-CIE.text" = "VBall ScoreMaster© is very easy to use.  Instructions are below and you can return these instructions at any time.  Thank you for using VBall ScoreMaster!
-\nMAIN SCREEN
-To add or change the name of the teams:
-1. Tap in the team name text box above the score
-2. Type in the name of the team
-3. When done, tap on the 'Done' button
+"cOt-an-CIE.text" = "VBall ScoreMaster© es muy fácil de usar. Las instrucciones están por debajo y estas instrucciones puede volver en cualquier momento. Gracias por usar VBall ScoreMaster©!
+\nPANTALLA PRINCIPAL
+Para agregar o cambiar el nombre de los equipos:
+1. Toque en el cuadro de texto nombre de equipo por encima de la puntuación
+2. Escriba el nombre del equipo
+3. Cuando termine, pulse el botón 'Done'
 
-To change the score:
-1. Either tap or swipe the score with your finger
-2. Swiping UP or tapping the TOP of the score will add 1
-3. Swiping DOWN or tapping the BOTTOM of the score to subtract 1 (continued)
+Para cambiar la puntuación:
+1. Toque o pase la partitura con el dedo
+2. Deslizar arriba o golpeando ligeramente la parte superior de la partitura agregará 1
+3. Deslizar hacia abajo o golpeando ligeramente la parte inferior de la partitura para restar 1 (continuada)
 
-To change sides
-1. Swipe either score box and they will both move, swapping locations
-2. This is good to do each time time the teams change sides
-3. Swiping the score boxes will not change the score unless you accidentally swipe up/down at the same time.  If that happens, just swipe the score up or down to return to the correct number.
+Para cambiar de bando
+1. Pase de cualquier cuadro de puntuación y lo harán tanto movimiento, intercambiando lugares
+2. Esto es bueno para hacer cada vez los equipos cambian de bando
+3. Deslizar las cajas de puntuación no cambiará el resultado a menos que usted accidentalmente deslizar arriba/abajo al mismo tiempo. Si eso ocurre, simplemente pase el puntaje arriba o abajo para retomar el número correcto.
 
-To change to a new game:
-1. Tapping on the Game number will add a new game
-2. New games will change both scores to 0
-3. Team names will stay the same, so will Ace and Spike numbers
-4. Maximum number of Games is 7
-5. To reset Games back to 1, touch the number several times until it goes back to 1
+Para cambiar a un nuevo juego:
+1. Golpecitos en el juego número agregará un nuevo juego
+2. Nuevos juegos cambiará ambas puntuaciones a 0
+3. Nombres de equipo seguirá igual, igual que Ace y Spike números
+4. Número máximo de juegos es 7
+5. Para restablecer juegos a 1, toque el número varias veces hasta que se remonta a 1
 
-To start a New Match:
-1. Matches are made up of several Games.  Tap New Match in the top left corner to start a new match.
-2. A new match will reset both scores as well as the Game, Spike, and Ace numbers
-3. Once you agree to start a new match, it can't be undone
+Para iniciar a un nuevo partido:
+1. Los partidos se componen de varios juegos. Grifo nuevo partido en la esquina superior izquierda para empezar a una nueva partida.
+2. Una nueva partida restablecerá partituras tanto como los números de juego, Spike y Ace
+3. Una vez que accedes a empezar a una nueva partida, puede deshacer
 
-SETTINGS
-Change team colors:
-1. Tap the box of the team whose color you want to change
-2. Each tap will change the box to a random color
-3. You can change one or both colors before you save
-4. Tap the Save button on the top right to save your colors.  Color changes take effect immediately.
+CONFIGURACIÒN
+Cambiar los colores del equipo:
+1. Toque en la caja del equipo cuyo color desea cambiar
+2. Cada golpecito cambiará el cuadro a un color aleatorio
+3. Puede cambiar uno o dos colores antes de guardar
+4. Pulse el botón guardar en la parte superior derecha para salvar a sus colores. Cambios de color en vigor inmediatamente.
 
-Send text message (SMS or iMessage):
-1. Change the Notifications switch to ON if you want to send a text message after each Spike and Ace
-2. Enter the name of the player that will be included in the pre-formed text message.  This part is optional but it will make the text message more personable.
-3. Enter the phone number to where you want the messages sent.  You can only enter 1 phone number here but you can add additional numbers to each message prior to sending them out.
-4. Tap the Save button to save your changes.  A red message will show to indicate your changes were successfuly saved.
-**If you don't tap the Save button before you leave the Settings page, your changes will not be saved.**
-5. After you do this, each time you touch the Ace or Spike numbers, VBall ScoreMaster will generate a text message formatted with the name you entered, the number of Ace's and Spike's, and the current score.  The message will automatically be addressed to the recipient you indicated.
-6. Because Apple prevents apps from sending background text messages (for your own protection), you must hit the Send button to send the message.  If you change your mind, just tap Cancel.
+Enviar mensaje de texto (SMS o iMessage):
+1. Cambie el interruptor notificaciones on si desea enviar un mensaje de texto después de cada espiga y Ace
+2. Introduzca el nombre del jugador que será incluido en el mensaje de texto preformadas. Esta parte es opcional, pero lo hará más atractivo el mensaje de texto.
+3. Ingrese el número telefónico a donde quieres los mensajes enviados. Sólo puede entrar 1 número de teléfono aquí pero puede agregar números adicionales a cada mensaje antes de enviarlos hacia fuera.
+4. Pulse el botón guardar para guardar los cambios. Se mostrará un mensaje en rojo para indicar que los cambios se salvaron con éxito.
+** Si no toca el botón guardar antes de salir de la página de configuración, los cambios no serán saved.* *
+5. Después de hacer esto, cada vez que tocas los números as o Spike, VBall ScoreMaster generará un mensaje de texto formateado con el nombre ingresado, el número de Ace y de Spike y la puntuación actual. Automáticamente se abordará el mensaje al destinatario que indica.
+6. Debido a que Apple impide que aplicaciones enviar mensajes de texto (para su propia protección) a fondo, debe golpear el botón 'enviar' para enviar el mensaje. Si cambias de opinión, simplemente pulse Cancelar.
 
-PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT I CAN CONTINUE DEVELOPMENT OF THIS APP.";
+POR FAVOR CONSIDERE DEJAR LA REGENERACIÓN EN LA APP STORE PARA QUE PUEDA CONTINUAR EL DESARROLLO DE ESTA APLICACIÓN.";
 
 /* Class = "IBUITextView"; text = "Thank you for using VBall ScoreMaster©.  There is Help text on the main page if you need assistance in using this app.
+ 
+ This app could not have been created without the help of Paul Dolce.  Thank you, Paul!
+ 
+ As with all apps, your reviews on the App Store will help with the continued development and improvement of VBall ScoreMaster©.  Please consider leaving a review, it helps other people who are looking for a scoring app.
+ 
+ For support requests or to submit ideas for this app, please contact support@baralabs.com."; ObjectID = "cqV-Nu-RC0"; */
+"cqV-Nu-RC0.text" = "Gracias por usar VBall ScoreMaster © usted. Hay un texto de ayuda en la página principal si necesita asistencia para utilizar esta aplicación.
 
-As with all apps, your reviews on the App Store will help with the continued development and improvement of VBall ScoreMaster©.  Please consider leaving a review, it helps other people who are looking for a scoring app. 
-  
-For support requests or to submit ideas for this app, please contact support@baralabs.com."; ObjectID = "cqV-Nu-RC0"; */
-"cqV-Nu-RC0.text" = "Thank you for using VBall ScoreMaster©.  There is Help text on the main page if you need assistance in using this app.
+Esta aplicación no pudo haber sido creado sin la ayuda de Paul Dolce. Gracias, Paul!
 
-As with all apps, your reviews on the App Store will help with the continued development and improvement of VBall ScoreMaster©.  Please consider leaving a review, it helps other people who are looking for a scoring app. 
-  
-For support requests or to submit ideas for this app, please contact support@baralabs.com.";
+Al igual que con todas las aplicaciones, sus revisiones en el App Store le ayudará con el desarrollo continuo y la mejora de VBall ScoreMaster ©. Por favor considere dejar un comentario, que ayuda a otras personas que están buscando una aplicación de puntuación. Para solicitudes de soporte o que presenten ideas para esta aplicación, por favor póngase en contacto con support@baralabs.com.";
 
 /* Class = "IBUINavigationItem"; title = "Settings"; ObjectID = "ddJ-1O-YFI"; */
-"ddJ-1O-YFI.title" = "Settings";
+"ddJ-1O-YFI.title" = "Configuración";
 
 /* Class = "IBUINavigationItem"; title = "VBall ScoreMaster©"; ObjectID = "idF-JM-YX7"; */
 "idF-JM-YX7.title" = "VBall ScoreMaster©";
 
-/* Class = "IBUILabel"; text = "Send Spike & Ace Notifications?"; ObjectID = "ion-1V-C9T"; */
-"ion-1V-C9T.text" = "Send Spike & Ace Notifications?";
+/* Class = "IBUILabel"; text = "Send Spike & Ace Message?"; ObjectID = "ion-1V-C9T"; */
+"ion-1V-C9T.text" = "¿Enviar Spike & mensaje Ace?";
 
 /* Class = "IBUILabel"; text = "GAME"; ObjectID = "jML-Et-saV"; */
-"jML-Et-saV.text" = "GAME";
+"jML-Et-saV.text" = "JUEGO";
 
 /* Class = "IBUILabel"; text = "Settings have been saved"; ObjectID = "oHS-oY-RvX"; */
-"oHS-oY-RvX.text" = "Settings have been saved";
+"oHS-oY-RvX.text" = "Ajustes se han salvado";
 
 /* Class = "IBUIButton"; normalTitle = "Home"; ObjectID = "pZv-4e-spu"; */
-"pZv-4e-spu.normalTitle" = "Home";
+"pZv-4e-spu.normalTitle" = "Equipo de casa";
 
 /* Class = "IBUIBarButtonItem"; title = "Settings"; ObjectID = "q6F-Yn-OBd"; */
-"q6F-Yn-OBd.title" = "Settings";
+"q6F-Yn-OBd.title" = "Configuración";
 
 /* Class = "IBUILabel"; text = "SPIKE"; ObjectID = "tX3-rT-g7M"; */
 "tX3-rT-g7M.text" = "SPIKE";
 
 /* Class = "IBUIViewController"; title = "Instructions"; ObjectID = "vSD-dS-WPV"; */
-"vSD-dS-WPV.title" = "Instructions";
+"vSD-dS-WPV.title" = "Instrucciones";
 
 /* Class = "IBUIViewController"; title = "Support"; ObjectID = "xFW-fG-MpV"; */
-"xFW-fG-MpV.title" = "Support";
+"xFW-fG-MpV.title" = "Apoyo";
 
-/* Class = "IBUILabel"; text = "If sending a notification, enter the recipient phone number"; ObjectID = "xRd-LT-TC0"; */
-"xRd-LT-TC0.text" = "If sending a notification, enter the recipient phone number";
+/* Class = "IBUILabel"; text = "Recipient phone number"; ObjectID = "xRd-LT-TC0"; */
+"xRd-LT-TC0.text" = "Número de teléfono del destinatario";
 
-/* Class = "IBUILabel"; text = "Turn on to send text message whenever a spike or ace happens"; ObjectID = "xz6-UF-0Q9"; */
-"xz6-UF-0Q9.text" = "Turn on to send text message whenever a spike or ace happens";
+/* Class = "IBUILabel"; text = "On to send text message for a spike or ace"; ObjectID = "xz6-UF-0Q9"; */
+"xz6-UF-0Q9.text" = "Al enviar mensajes de texto por un punto o as";
