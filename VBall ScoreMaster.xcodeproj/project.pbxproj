@@ -30,6 +30,7 @@
 		92D318FC193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		92D318FE193E3E9900F5A942 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */; };
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
+		AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C8100194A5FD70028179B /* InstructionsViewController.m */; };
 		AD999EB719490DFB00285864 /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */; };
 		AD999EC119492CC000285864 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD999EC319492CC000285864 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,8 @@
 		92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AD1C80FF194A5FD70028179B /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
+		AD1C8100194A5FD70028179B /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsViewController.m; sourceTree = "<group>"; };
 		AD999EB119490B8D00285864 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD999EB219490B8D00285864 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		AD999EB319490B8D00285864 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */,
 				9244799E192C2CDC0031C1F6 /* SettingsViewController.h */,
 				9244799F192C2CDC0031C1F6 /* SettingsViewController.m */,
+				AD1C80FF194A5FD70028179B /* InstructionsViewController.h */,
+				AD1C8100194A5FD70028179B /* InstructionsViewController.m */,
 				9273CB021940990200696E8E /* SupportInstructionsViewController.h */,
 				9273CB031940990200696E8E /* SupportInstructionsViewController.m */,
 				92AA42BA1916C2810037D405 /* Images.xcassets */,
@@ -362,6 +367,7 @@
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
 				9273CB041940990200696E8E /* SupportInstructionsViewController.m in Sources */,
+				AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

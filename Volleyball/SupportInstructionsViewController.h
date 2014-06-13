@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SupportInstructionsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *supportText;
 
 - (IBAction)return:(id)sender;
 

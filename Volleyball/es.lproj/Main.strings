@@ -39,7 +39,8 @@
 "blf-CM-yV6.title" = "Nuevo partido";
 
 /* Class = "IBUITextView"; text = "VBall ScoreMaster© is very easy to use.  Instructions are below and you can return these instructions at any time.  Thank you for using VBall ScoreMaster©!
- \nMAIN SCREEN
+ 
+ MAIN SCREEN
  To add or change the name of the teams:
  1. Tap in the team name text box above the score
  2. Type in the name of the team
@@ -85,7 +86,8 @@
 
 PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT I CAN CONTINUE DEVELOPMENT OF THIS APP."; ObjectID = "cOt-an-CIE"; */
 "cOt-an-CIE.text" = "VBall ScoreMaster© es muy fácil de usar. Las instrucciones están por debajo y estas instrucciones puede volver en cualquier momento. Gracias por usar VBall ScoreMaster©!
-\nPANTALLA PRINCIPAL
+
+PANTALLA PRINCIPAL
 Para agregar o cambiar el nombre de los equipos:
 1. Toque en el cuadro de texto nombre de equipo por encima de la puntuación
 2. Escriba el nombre del equipo
@@ -131,14 +133,12 @@ Enviar mensaje de texto (SMS o iMessage):
 
 POR FAVOR CONSIDERE DEJAR LA REGENERACIÓN EN LA APP STORE PARA QUE PUEDA CONTINUAR EL DESARROLLO DE ESTA APLICACIÓN.";
 
-/* Class = "IBUITextView"; text = "Thank you for using VBall ScoreMaster©.  There is Help text on the main page if you need assistance in using this app.
+/* Class = "IBUITextView"; text = "Thank you for using VBall ScoreMaster©.  There is Help text on the main page if you need assistance in using this app.  
  
- This app could not have been created without the help of Paul Dolce.  Thank you, Paul!
+ This app could not have been created without the help of Paul Dolce.  Thank you, Paul!  
  
- As with all apps, your reviews on the App Store will help with the continued development and improvement of VBall ScoreMaster©.  Please consider leaving a review, it helps other people who are looking for a scoring app.
- 
- For support requests or to submit ideas for this app, please contact support@baralabs.com."; ObjectID = "cqV-Nu-RC0"; */
-"cqV-Nu-RC0.text" = "Gracias por usar VBall ScoreMaster © usted. Hay un texto de ayuda en la página principal si necesita asistencia para utilizar esta aplicación.
+ As with all apps, your reviews on the App Store will help with the continued development and improvement of VBall ScoreMaster©.  Please consider leaving a review, it helps other people who are looking for a scoring app.  For support requests or to submit ideas for this app, please contact support@baralabs.com."; ObjectID = "cqV-Nu-RC0"; */
+"cqV-Nu-RC0.text" = "Gracias por usar VBall ScoreMaster © usted. Hay un texto de ayuda en la página principal si necesita asistencia para utilizar esta aplicación.  
 
 Esta aplicación no pudo haber sido creado sin la ayuda de Paul Dolce. Gracias, Paul!
 
