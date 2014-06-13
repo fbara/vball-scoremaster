@@ -11,13 +11,13 @@
 /* Class = "IBUITextField"; placeholder = "(optional)"; ObjectID = "GaT-SP-GIp"; */
 "GaT-SP-GIp.placeholder" = "(opcional)";
 
-/* Class = "IBUITextField"; placeholder = "Visiting Team Name"; ObjectID = "Gzx-4p-5vy"; */
-"Gzx-4p-5vy.placeholder" = "Nombre del equipo visitante";
+/* Class = "IBUITextField"; placeholder = "Visiting Team"; ObjectID = "Gzx-4p-5vy"; */
+"Gzx-4p-5vy.placeholder" = "Visitar Equipo";
 
 /* Class = "IBUILabel"; text = "Players name for text message"; ObjectID = "JfA-8o-OpC"; */
 "JfA-8o-OpC.text" = "Nombre de los jugadores por mensaje de texto";
 
-/* Class = "IBUITextField"; placeholder = "Home Team Name"; ObjectID = "KgW-hz-5sq"; */
+/* Class = "IBUITextField"; placeholder = "Equipo Local"; ObjectID = "KgW-hz-5sq"; */
 "KgW-hz-5sq.placeholder" = "Nombre del equipo de casa";
 
 /* Class = "IBUILabel"; text = "Name for text message"; ObjectID = "MPE-0T-yE7"; */

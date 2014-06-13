@@ -11,14 +11,14 @@
 /* Class = "IBUITextField"; placeholder = "(optional)"; ObjectID = "GaT-SP-GIp"; */
 "GaT-SP-GIp.placeholder" = "(可选)";
 
-/* Class = "IBUITextField"; placeholder = "Visiting Team Name"; ObjectID = "Gzx-4p-5vy"; */
-"Gzx-4p-5vy.placeholder" = "前往团队名称";
+/* Class = "IBUITextField"; placeholder = "Visiting Team"; ObjectID = "Gzx-4p-5vy"; */
+"Gzx-4p-5vy.placeholder" = "客队";
 
 /* Class = "IBUILabel"; text = "Players name for text message"; ObjectID = "JfA-8o-OpC"; */
 "JfA-8o-OpC.text" = "文本消息的玩家名称";
 
-/* Class = "IBUITextField"; placeholder = "Home Team Name"; ObjectID = "KgW-hz-5sq"; */
-"KgW-hz-5sq.placeholder" = "首页团队名称";
+/* Class = "IBUITextField"; placeholder = "Home Team"; ObjectID = "KgW-hz-5sq"; */
+"KgW-hz-5sq.placeholder" = "主队";
 
 /* Class = "IBUILabel"; text = "Name for text message"; ObjectID = "MPE-0T-yE7"; */
 "MPE-0T-yE7.text" = "文本消息的名称";

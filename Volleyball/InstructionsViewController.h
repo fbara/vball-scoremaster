@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface InstructionsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *instructionsText;
 
 @end
