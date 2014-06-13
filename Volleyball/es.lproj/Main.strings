@@ -17,8 +17,8 @@
 /* Class = "IBUILabel"; text = "Players name for text message"; ObjectID = "JfA-8o-OpC"; */
 "JfA-8o-OpC.text" = "Nombre de los jugadores por mensaje de texto";
 
-/* Class = "IBUITextField"; placeholder = "Equipo Local"; ObjectID = "KgW-hz-5sq"; */
-"KgW-hz-5sq.placeholder" = "Nombre del equipo de casa";
+/* Class = "IBUITextField"; placeholder = "Home Team"; ObjectID = "KgW-hz-5sq"; */
+"KgW-hz-5sq.placeholder" = "Equipo Local";
 
 /* Class = "IBUILabel"; text = "Name for text message"; ObjectID = "MPE-0T-yE7"; */
 "MPE-0T-yE7.text" = "Nombre para mensajes de texto";
