@@ -281,9 +281,7 @@ NSString *msgVisitor = @"VISITOR";
         self.gameNumber.text = [NSString stringWithFormat:@"%d", 0];
 
     }
-    
-    
-    
+ 
 }
 
 /*!
@@ -293,7 +291,11 @@ NSString *msgVisitor = @"VISITOR";
 {
     //Get the number currently displayed for kills and add 1
     int lableNum = [self.killNumber.text intValue];
-    lableNum = lableNum + 1;
+    if (lableNum == 99) {
+        lableNum = 0;
+    } else {
+        lableNum = lableNum + 1;
+    }
     self.killNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     currKill = lableNum;
     
@@ -313,10 +315,15 @@ NSString *msgVisitor = @"VISITOR";
 {
     //Get current number and add 1
     int lableNum = [self.aceNumber.text intValue];
-    lableNum = lableNum + 1;
+    if (lableNum == 99) {
+        lableNum = 0;
+    } else {
+        lableNum = lableNum + 1;
+    }
     self.aceNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     currAce = lableNum;
     
+    //Send the text message
     [self sendSMS];
 }
 
