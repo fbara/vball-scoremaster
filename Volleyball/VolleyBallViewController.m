@@ -215,11 +215,6 @@ NSString *msgVisitor = @"VISITOR";
     [self initializeHomeScore:currHomeScore];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    
-}
-
 #pragma mark - UI Elements
 
 -(UIStatusBarStyle)preferredStatusBarStyle

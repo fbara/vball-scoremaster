@@ -133,12 +133,12 @@ Enviar mensaje de texto (SMS o iMessage):
 
 POR FAVOR CONSIDERE DEJAR LA REGENERACIÓN EN LA APP STORE PARA QUE PUEDA CONTINUAR EL DESARROLLO DE ESTA APLICACIÓN.";
 
-/* Class = "IBUITextView"; text = "Thank you for using VBall ScoreMaster©.  There is Help text on the main page if you need assistance in using this app.  
+/* Class = "IBUITextView"; text = "Thank you for using VBall ScoreMaster©, v1.0.1.  There is Help text on the main page if you need assistance in using this app.
  
  This app could not have been created without the help of Paul Dolce.  Thank you, Paul!  
  
  As with all apps, your reviews on the App Store will help with the continued development and improvement of VBall ScoreMaster©.  Please consider leaving a review, it helps other people who are looking for a scoring app.  For support requests or to submit ideas for this app, please contact support@baralabs.com."; ObjectID = "cqV-Nu-RC0"; */
-"cqV-Nu-RC0.text" = "Gracias por usar VBall ScoreMaster © usted. Hay un texto de ayuda en la página principal si necesita asistencia para utilizar esta aplicación.  
+"cqV-Nu-RC0.text" = "Gracias por usar VBall ScoreMaster ©, v1.0.1. Hay un texto de ayuda en la página principal si necesita asistencia para utilizar esta aplicación.
 
 Esta aplicación no pudo haber sido creado sin la ayuda de Paul Dolce. Gracias, Paul!
 

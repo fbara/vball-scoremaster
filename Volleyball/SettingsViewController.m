@@ -16,6 +16,7 @@
 {
     BOOL sendNotifications;
     CGPoint startingPoint;
+    BOOL changesMade;
 }
 
 
@@ -33,11 +34,13 @@
 {
     [super viewDidLoad];
     // Setup the scroll view
-    [settingsScrollView setScrollEnabled:YES];
-    [settingsScrollView setContentSize:CGSizeMake(568, 350)];
+    //[settingsScrollView setScrollEnabled:YES];
+    //[settingsScrollView setContentSize:CGSizeMake(568, 350)];
     // Set the delegate of the text fields
     self.nameOfPlayer.delegate = self;
     self.notificationName.delegate = self;
+    changesMade = FALSE;
+    self.saveButton.enabled = FALSE;
     
     startingPoint = CGPointMake(self.view.frame.origin.x, self.view.frame.origin.y + 88);
 
@@ -97,13 +100,18 @@
     //Save settings
     if(![defaults synchronize]) {
         //Synchronize could't happen; show user alert and exit
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Settings could not be saved", nil)
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Settings could not be retrieved", nil)
                                                         message:nil
                                                        delegate:nil
                                               cancelButtonTitle:NSLocalizedString(@"Ok", nil)
                                               otherButtonTitles:nil];
         [alert show];
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    
 }
 
 #pragma mark - UI Elements
@@ -124,20 +132,21 @@
     
     //Get Yes or No for notifications
     if (sendNotifications) {
+        //Turn switch On
         [defaults setObject:@"On" forKey:@"enableNotifications"];
     } else {
+        //Notifications are turned off so we don't the player's name or phone number.
         [defaults setObject:@"Off" forKey:@"enableNotifications"];
     }
     
-    [self saveScoreColors];
-    
     //Set the player name, if entered
     [defaults setObject:self.nameOfPlayer.text forKey:@"playerNameForNotifications"];
-    
     //Set the notification phone number
     [defaults setObject:self.notificationName.text forKey:@"phoneNumberForNotification"];
+    //Save the colors the user chose
+    [self saveScoreColors];
     
-    //Make sure everything synchronized correctly
+    //Sync and make sure everything synchronized correctly
     if(![defaults synchronize]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Settings not saved", nil)
                                                         message:nil
@@ -153,10 +162,9 @@
                    afterDelay:3.0];
         
     }
-    // Get the starting point of the scroll view so we can return there after text entry
-//    CGRect size = settingsScrollView.frame;
-//    startingPoint = (CGPointMake(size.origin.x, self.view.frame.origin.y + 88));
-//    settingsScrollView.contentOffset = startingPoint;
+    
+    //Saving is done, disable the Save button
+    self.saveButton.enabled = FALSE;
 }
 
 - (void)saveScoreColors
@@ -187,7 +195,7 @@
 //- (void)showNormalActionSheet
 //{
 //    //If user tries to save settings but left text fields blank, provide them with options
-//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"One or more text fields are empty"
+//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"One or more text message fields are empty"
 //                                                             delegate:self
 //                                                    cancelButtonTitle:@"Go back and I'll fix it"
 //                                               destructiveButtonTitle:@"Disregard all changes & go back to score"
@@ -241,56 +249,70 @@
  * @return BOOL Returns whether or not the conversion to the phone number 
  * format was successful or not.
  */
-//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-//{
-//    //If this isn't a phone number entry field, return YES to exit
-//    if (textField.tag == 1) {
-//        return YES;
-//    }
-//
-//    // All digits entered
-//    if (range.location == 14) {
-//        return NO;
-//    }
-//    
-//    // Reject appending non-digit characters
-//    if (range.length == 0 &&
-//        ![[NSCharacterSet decimalDigitCharacterSet] characterIsMember:[string characterAtIndex:0]]) {
-//        return NO;
-//    }
-//    
-//    // Auto-add hyphen and parentheses
-//    if (range.length == 0 && range.location == 3 &&![[textField.text substringToIndex:1] isEqualToString:@"("]) {
-//        textField.text = [NSString stringWithFormat:@"(%@)-%@", textField.text,string];
-//        return NO;
-//    }
-//    if (range.length == 0 && range.location == 4 &&[[textField.text substringToIndex:1] isEqualToString:@"("]) {
-//        textField.text = [NSString stringWithFormat:@"%@)-%@", textField.text,string];
-//        return NO;
-//    }
-//    
-//    // Auto-add 2nd hyphen
-//    if (range.length == 0 && range.location == 9) {
-//        textField.text = [NSString stringWithFormat:@"%@-%@", textField.text, string];
-//        return NO;
-//    }
-//    
-//    // Delete hyphen and parentheses when deleting its trailing digit
-//    if (range.length == 1 &&
-//        (range.location == 10 || range.location == 1)){
-//        range.location--;
-//        range.length = 2;
-//        textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
-//        return NO;
-//    }
-//    if (range.length == 1 && range.location == 6){
-//        range.location=range.location-2;
-//        range.length = 3;
-//        textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
-//        return NO;
-//    }
-//    return YES;
-//}
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    self.saveButton.enabled = YES;
+    //Get the current language
+    NSString *language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+        
+        //If this isn't a phone number entry field, return YES to exit
+        if (textField.tag == 1) {
+            return YES;
+        }
+        
+        //If the language isn't set for English, return YES to exit
+        if (![language isEqualToString:@"en"]) {
+            return YES;
+        }
+        
+        if (range.location == 13) {
+            self.saveButton.enabled = YES;
+            return YES;
+        }
+
+        // All digits entered
+        if (range.location == 14) {
+            return NO;
+        }
+        
+        // Reject appending non-digit characters
+        if (range.length == 0 &&
+            ![[NSCharacterSet decimalDigitCharacterSet] characterIsMember:[string characterAtIndex:0]]) {
+            return NO;
+        }
+        
+        // Auto-add hyphen and parentheses
+        if (range.length == 0 && range.location == 3 &&![[textField.text substringToIndex:1] isEqualToString:@"("]) {
+            textField.text = [NSString stringWithFormat:@"(%@)-%@", textField.text,string];
+            return NO;
+        }
+        if (range.length == 0 && range.location == 4 &&[[textField.text substringToIndex:1] isEqualToString:@"("]) {
+            textField.text = [NSString stringWithFormat:@"%@)-%@", textField.text,string];
+            return NO;
+        }
+        
+        // Auto-add 2nd hyphen
+        if (range.length == 0 && range.location == 9) {
+            textField.text = [NSString stringWithFormat:@"%@-%@", textField.text, string];
+            return NO;
+        }
+        
+        // Delete hyphen and parentheses when deleting its trailing digit
+        if (range.length == 1 &&
+            (range.location == 10 || range.location == 1)){
+            range.location--;
+            range.length = 2;
+            textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
+            return NO;
+        }
+        if (range.length == 1 && range.location == 6){
+            range.location=range.location-2;
+            range.length = 3;
+            textField.text = [textField.text stringByReplacingCharactersInRange:range withString:@""];
+            return NO;
+        }
+        return YES;
+}
 
 #pragma mark - Enable/Disable Text Fields
 
@@ -309,10 +331,13 @@
     if ([sender isOn]) {
         sendNotifications = YES;
         [self setNotificationFields:YES];
+        changesMade = YES;
     } else {
         sendNotifications = NO;
         [self setNotificationFields:FALSE];
+        changesMade = NO;
     }
+    self.saveButton.enabled = TRUE;
 }
 
 #pragma mark -Team Background Colors
@@ -327,6 +352,9 @@
     UIColor *homeButtonColor;
     homeButtonColor = [self getRandomColor];
     self.homeTeamColor.backgroundColor = homeButtonColor;
+    
+    //Enable Save button
+    self.saveButton.enabled = TRUE;
 }
 
 /*!
@@ -340,6 +368,8 @@
     visitingButtonColor = [self getRandomColor];
     self.visitingTeamColor.backgroundColor = visitingButtonColor;
 
+    //Enable Save button
+    self.saveButton.enabled = TRUE;
 }
 
 /*!

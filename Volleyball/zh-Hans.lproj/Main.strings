@@ -133,14 +133,14 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT I CAN CONTINUE DEVELOP
 
 请考虑在 APP STORE 上留下的反馈，这样我可以继续这个应用程序的开发。";
 
-/* Class = "IBUITextView"; text = "Thank you for using VBall ScoreMaster©.  There is Help text on the main page if you need assistance in using this app.
+/* Class = "IBUITextView"; text = "Thank you for using VBall ScoreMaster©, v1.0.1.  There is Help text on the main page if you need assistance in using this app.
  
  This app could not have been created without the help of Paul Dolce.  Thank you, Paul!
  
  As with all apps, your reviews on the App Store will help with the continued development and improvement of VBall ScoreMaster©.  Please consider leaving a review, it helps other people who are looking for a scoring app.
  
  For support requests or to submit ideas for this app, please contact support@baralabs.com."; ObjectID = "cqV-Nu-RC0"; */
-"cqV-Nu-RC0.text" = "感谢您使用VBall ScoreMaster©。如果你需要在使用这个程序的援助还有就是主页上的说明文字。
+"cqV-Nu-RC0.text" = "感谢您使用VBall ScoreMaster©, v1.0.1。如果你需要在使用这个程序的援助还有就是主页上的说明文字。
 
 已经不能创建这个应用程序不保杜的帮助。谢谢你，保罗！
 

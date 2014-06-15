@@ -14,6 +14,7 @@
 }
 
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
 @property (weak, nonatomic) IBOutlet UIButton *visitingTeamColor;
 @property (weak, nonatomic) IBOutlet UITextField *notificationName;
