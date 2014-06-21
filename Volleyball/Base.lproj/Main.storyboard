@@ -134,23 +134,27 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e73-U3-5CU" userLabel="screenActionKills">
                                 <rect key="frame" x="247" y="244" width="72" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="killsPressed" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MkL-me-XoS"/>
+                                    <outletCollection property="gestureRecognizers" destination="qAC-a6-aQ8" appends="YES" id="m98-IJ-dzl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZs-Ny-2Iw" userLabel="screenActionAce">
                                 <rect key="frame" x="247" y="159" width="72" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="acePressed" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KmC-lC-53R"/>
+                                    <outletCollection property="gestureRecognizers" destination="00j-HW-7Gn" appends="YES" id="FVH-z6-ZkN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLM-eS-SXb" userLabel="screenActionGame">
@@ -222,6 +226,16 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" id="baw-HX-dbF"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1" id="00j-HW-7Gn">
+                    <connections>
+                        <action selector="topActionLongPress:" destination="vXZ-lx-hvc" id="FEn-KV-frH"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.99999999999999989" id="qAC-a6-aQ8">
+                    <connections>
+                        <action selector="bottomActionLongPress:" destination="vXZ-lx-hvc" id="g8I-JN-0yU"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="600" y="-530"/>
         </scene>

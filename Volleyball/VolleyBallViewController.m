@@ -251,6 +251,67 @@ NSString *msgVisitor = @"VISITOR";
                      completion:NULL];
 }
 
+#pragma mark - UILongPressGestureRecognizers
+
+- (IBAction)topActionLongPress:(UILongPressGestureRecognizer *)recognizer
+{
+    [self.aceNumber canBecomeFirstResponder];
+    
+    UIMenuItem *yes = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetTopToZero)];
+    UIMenuItem *no = [[UIMenuItem alloc] initWithTitle:@"Leave as is" action:@selector(leaveNumberAsIs)];
+    UIMenuItem *cancel = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
+    
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    [menu setMenuItems:[NSArray arrayWithObjects:yes, no, cancel, nil]];
+    [menu setTargetRect:self.aceNumber.frame inView:self.view];
+    [menu setMenuVisible:YES animated:YES];
+}
+
+- (IBAction)bottomActionLongPress:(UILongPressGestureRecognizer *)recognizer
+{
+    [self.killNumber canBecomeFirstResponder];
+    
+    UIMenuItem *yes = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetBottomToZero)];
+    UIMenuItem *no = [[UIMenuItem alloc] initWithTitle:@"Leave as is" action:@selector(leaveNumberAsIs)];
+    UIMenuItem *cancel = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
+    
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    [menu setMenuItems:[NSArray arrayWithObjects:yes, no, cancel, nil]];
+    [menu setTargetRect:self.killNumber.frame inView:self.view];
+    [menu setMenuVisible:YES animated:YES];}
+
+
+- (void)resetTopToZero
+{
+    self.aceNumber.text = @"0";
+}
+
+- (void)resetBottomToZero
+{
+    self.killNumber.text = @"0";
+}
+
+- (void)leaveNumberAsIs
+{
+    //Dummy method to allow UIMenuItem to be visible
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+//- (void)resetTopNumbersActionSheet
+//{
+//    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+//                                  initWithTitle:@"Reset back to 0?"
+//                                  delegate:nil
+//                                  cancelButtonTitle:@"No"
+//                                  destructiveButtonTitle:@"Yes"
+//                                  otherButtonTitles:nil];
+//    [actionSheet showInView:self.view];
+//}
+
+
 #pragma mark - UIGestureRecognizer Delegate Method
 
 // Force all gestures to be handled simultaneously.

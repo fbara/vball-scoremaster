@@ -24,7 +24,8 @@
 @property UISwipeGestureRecognizer *homeSwipeGesture;
 @property UISwipeGestureRecognizer *visitingSwipeGesture;
 
-
+- (IBAction)topActionLongPress:(UILongPressGestureRecognizer *)recognizer;
+- (IBAction)bottomActionLongPress:(UILongPressGestureRecognizer *)recognizer;
 - (IBAction)gamePressed;
 - (IBAction)killsPressed;
 - (IBAction)acePressed;
