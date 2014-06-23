@@ -98,6 +98,7 @@ NSString *msgVisitor = @"VISITOR";
 		if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
 		{
 			[gesture requireGestureRecognizerToFail:homeSwipeGesture];
+            
 		}
         
 		if ([gesture isKindOfClass:[UITapGestureRecognizer class]])
@@ -118,6 +119,7 @@ NSString *msgVisitor = @"VISITOR";
 			[gesture requireGestureRecognizerToFail:visitorSwipeGesture];
 		}
 	}
+
 
 }
 
@@ -206,13 +208,11 @@ NSString *msgVisitor = @"VISITOR";
  */
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-
-    /*!
-     *  Update the scoreview's colors in case they were changed in Settings
-     */
+    //Update the scoreview's colors in case they were changed in Settings
     [self initializeVisitorScore:currVisitorScore];
     [self initializeHomeScore:currHomeScore];
+    
+    [super viewWillAppear:animated];
 }
 
 #pragma mark - UI Elements
@@ -251,13 +251,30 @@ NSString *msgVisitor = @"VISITOR";
                      completion:NULL];
 }
 
+#pragma mark - UIGestureRecognizer Delegate Method
+
+// Force all gestures to be handled simultaneously.
+//This will allow the Swipes and PageViewController's Pan/Tap gestures to coexsist and function correctly.
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
 #pragma mark - UILongPressGestureRecognizers
 
 - (IBAction)topActionLongPress:(UILongPressGestureRecognizer *)recognizer
 {
+    //On a long press, show popup menu with selections to reset the number to zero or not
+    
     [self.aceNumber canBecomeFirstResponder];
     
     UIMenuItem *yes = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetTopToZero)];
+    //"Leave as is" and "Cance" both do the same thing, nothing right now.
     UIMenuItem *no = [[UIMenuItem alloc] initWithTitle:@"Leave as is" action:@selector(leaveNumberAsIs)];
     UIMenuItem *cancel = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
     
@@ -269,9 +286,12 @@ NSString *msgVisitor = @"VISITOR";
 
 - (IBAction)bottomActionLongPress:(UILongPressGestureRecognizer *)recognizer
 {
+    //On a long press, show popup menu with selections to reset the number to zero or not
+    
     [self.killNumber canBecomeFirstResponder];
     
     UIMenuItem *yes = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetBottomToZero)];
+    //"Leave as is" and "Cance" both do the same thing, nothing right now.
     UIMenuItem *no = [[UIMenuItem alloc] initWithTitle:@"Leave as is" action:@selector(leaveNumberAsIs)];
     UIMenuItem *cancel = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
     
@@ -293,7 +313,7 @@ NSString *msgVisitor = @"VISITOR";
 
 - (void)leaveNumberAsIs
 {
-    //Dummy method to allow UIMenuItem to be visible
+    //Dummy method to allow UIMenuItems to be visible
 }
 
 - (BOOL)canBecomeFirstResponder
@@ -310,16 +330,6 @@ NSString *msgVisitor = @"VISITOR";
 //                                  otherButtonTitles:nil];
 //    [actionSheet showInView:self.view];
 //}
-
-
-#pragma mark - UIGestureRecognizer Delegate Method
-
-// Force all gestures to be handled simultaneously.
-//This will allow the Swipes and PageViewController's Pan/Tap gestures to coexsist and function correctly.
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    return YES;
-}
 
 #pragma mark - Button Presses
 /*!
@@ -524,6 +534,14 @@ NSString *msgVisitor = @"VISITOR";
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
+
+    for (UIGestureRecognizer *gesture in pageViewController.view.gestureRecognizers) {
+        if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
+		{
+			return nil;
+		}
+    }
+    
     //Cast the viewController as a ScoreViewController so we can act on its properties
     DefaultScoreViewController *oldViewController = (DefaultScoreViewController *)viewController;
     

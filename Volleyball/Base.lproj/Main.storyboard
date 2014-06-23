@@ -171,7 +171,6 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-DE-Ouq" userLabel="Home Container View">
                                 <rect key="frame" x="356" y="95" width="192" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="UDW-Id-wMZ" kind="embed" identifier="embedHome" id="OXj-vc-u2c"/>
                                 </connections>
@@ -179,7 +178,6 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdD-WX-kLc" userLabel="Visitor Container View">
                                 <rect key="frame" x="20" y="95" width="192" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99919813871383667" green="0.91378588178597819" blue="0.59092180193538546" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="xOM-Jn-cof" kind="embed" identifier="embedVisitor" id="32b-31-xme"/>
                                 </connections>
@@ -225,7 +223,6 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" id="baw-HX-dbF"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1" id="00j-HW-7Gn">
                     <connections>
                         <action selector="topActionLongPress:" destination="vXZ-lx-hvc" id="FEn-KV-frH"/>
@@ -242,7 +239,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
         <!--Home Page View Controller-->
         <scene sceneID="dEb-Ol-WBp">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" title="Home Page View Controller" transitionStyle="pageCurl" navigationOrientation="vertical" spineLocation="min" id="UDW-Id-wMZ" userLabel="Home Page View Controller" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" title="Home Page View Controller" modalTransitionStyle="flipHorizontal" transitionStyle="pageCurl" navigationOrientation="vertical" spineLocation="min" id="UDW-Id-wMZ" userLabel="Home Page View Controller" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="200" height="200"/>
                 </pageViewController>
@@ -420,7 +417,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
         <!--Visitor Page View Controller-->
         <scene sceneID="c6u-WJ-yVv">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" title="Visitor Page View Controller" transitionStyle="pageCurl" navigationOrientation="vertical" spineLocation="min" id="xOM-Jn-cof" userLabel="Visitor Page View Controller" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" title="Visitor Page View Controller" modalTransitionStyle="flipHorizontal" transitionStyle="pageCurl" navigationOrientation="vertical" spineLocation="min" id="xOM-Jn-cof" userLabel="Visitor Page View Controller" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="200" height="200"/>
                 </pageViewController>
