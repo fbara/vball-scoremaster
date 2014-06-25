@@ -17,6 +17,7 @@
     BOOL sendNotifications;
     CGPoint startingPoint;
     BOOL changesMade;
+    UIBarButtonItem *saveButton;
 }
 
 
@@ -40,15 +41,42 @@
     self.nameOfPlayer.delegate = self;
     self.notificationName.delegate = self;
     changesMade = FALSE;
-    self.saveButton.enabled = FALSE;
     
     startingPoint = CGPointMake(self.view.frame.origin.x, self.view.frame.origin.y + 88);
+    
+    //Create bar button items and add them to the navigation bar
+    saveButton = [[UIBarButtonItem alloc]
+                  initWithTitle:@"Save"
+                  style:UIBarButtonItemStyleBordered
+                  target:self
+                  action:@selector(saveSettings)];
+    
+    UIImage *image = [UIImage imageNamed:@"info.png"];
+    
+    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
+                                   initWithImage:image
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(showSupportView)];
+    
+    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                   target:self
+                                   action:nil];
+    fixedSpace.width = 20.0f;
+    NSArray *barButtonItems = @[saveButton, fixedSpace, infoButton];
+    self.navigationItem.rightBarButtonItems = barButtonItems;
+    
+    //Hide the Save button for now because nothing needs to be saved
+    self.navigationItem.rightBarButtonItem = nil;
 
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    
     
     //Check the user settings and set UI elements accordingly
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -116,6 +144,12 @@
 
 #pragma mark - UI Elements
 
+- (void)showSupportView
+{
+    //Show the Support view
+    [self performSegueWithIdentifier:@"supportView" sender:self];
+}
+
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
     //Set the UINavigation color
@@ -164,7 +198,9 @@
     }
     
     //Saving is done, disable the Save button
-    self.saveButton.enabled = FALSE;
+    //self.saveButton.enabled = FALSE;
+    self.navigationItem.rightBarButtonItem = nil;
+
 }
 
 - (void)saveScoreColors
@@ -251,7 +287,8 @@
  */
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    self.saveButton.enabled = YES;
+    self.navigationItem.rightBarButtonItem = saveButton;
+
     //Get the current language
     NSString *language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
         
@@ -266,7 +303,7 @@
         }
         
         if (range.location == 13) {
-            self.saveButton.enabled = YES;
+            self.navigationItem.rightBarButtonItem = saveButton;
             return YES;
         }
 
@@ -337,7 +374,7 @@
         [self setNotificationFields:FALSE];
         changesMade = NO;
     }
-    self.saveButton.enabled = TRUE;
+    self.navigationItem.rightBarButtonItem = saveButton;
 }
 
 #pragma mark -Team Background Colors
@@ -354,7 +391,8 @@
     self.homeTeamColor.backgroundColor = homeButtonColor;
     
     //Enable Save button
-    self.saveButton.enabled = TRUE;
+    self.navigationItem.rightBarButtonItem = saveButton;
+
 }
 
 /*!
@@ -369,7 +407,8 @@
     self.visitingTeamColor.backgroundColor = visitingButtonColor;
 
     //Enable Save button
-    self.saveButton.enabled = TRUE;
+    self.navigationItem.rightBarButtonItem = saveButton;
+
 }
 
 /*!

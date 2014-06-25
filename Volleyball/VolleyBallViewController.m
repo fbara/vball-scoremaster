@@ -71,6 +71,27 @@ NSString *msgVisitor = @"VISITOR";
     self.visitingTeamName.delegate = self;
     self.homeTeamName.delegate = self;
     
+    //Create bar button items and add them to the navigation bar
+    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc]
+                                       initWithTitle:@"Settings"
+                                       style:UIBarButtonItemStyleBordered
+                                       target:self
+                                       action:@selector(goToSettings)];
+    UIImage *image = [UIImage imageNamed:@"info.png"];
+    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
+                                   initWithImage:image
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(showInfoView)];
+    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc]
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                   target:self
+                                   action:nil];
+    fixedSpace.width = 20.0f;
+    NSArray *barButtonItems = @[settingsButton,fixedSpace, infoButton];
+    self.navigationItem.rightBarButtonItems = barButtonItems;
+    
+    
     // Create Home swipe gesture and add it to the home container view.
     // Set this controller as the delegate to allow simultaneous gestures in the PageViewController's container view
     UISwipeGestureRecognizer *homeSwipeGesture = [[UISwipeGestureRecognizer alloc]
@@ -95,13 +116,13 @@ NSString *msgVisitor = @"VISITOR";
     
     for (UIGestureRecognizer *gesture in _homePageViewController.view.gestureRecognizers)
 	{
-		if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
+//		if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
 		{
 			[gesture requireGestureRecognizerToFail:homeSwipeGesture];
             
 		}
         
-		if ([gesture isKindOfClass:[UITapGestureRecognizer class]])
+//		if ([gesture isKindOfClass:[UITapGestureRecognizer class]])
 		{
 			[gesture requireGestureRecognizerToFail:homeSwipeGesture];
 		}
@@ -109,18 +130,30 @@ NSString *msgVisitor = @"VISITOR";
     
 	for (UIGestureRecognizer *gesture in _visitorPageViewController.view.gestureRecognizers)
 	{
-		if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
+//		if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
 		{
 			[gesture requireGestureRecognizerToFail:visitorSwipeGesture];
 		}
         
-		if ([gesture isKindOfClass:[UITapGestureRecognizer class]])
+//		if ([gesture isKindOfClass:[UITapGestureRecognizer class]])
 		{
 			[gesture requireGestureRecognizerToFail:visitorSwipeGesture];
 		}
 	}
 
 
+}
+
+- (void)goToSettings
+{
+    //Segue to Settings View
+    [self performSegueWithIdentifier:@"settingsView" sender:self];
+
+}
+
+- (void)showInfoView
+{
+    [self performSegueWithIdentifier:@"infoView" sender:self];
 }
 
 - (void)initializeHomeScore:(int)score
@@ -202,10 +235,6 @@ NSString *msgVisitor = @"VISITOR";
     currVisitorScore = 0;
 }
 
-/*!
- * @discussion Refresh the screen immediately before app is visible
- * @param animated Bool value to indicate if animations should be used
- */
 - (void)viewWillAppear:(BOOL)animated
 {
     //Update the scoreview's colors in case they were changed in Settings
@@ -260,11 +289,6 @@ NSString *msgVisitor = @"VISITOR";
     return YES;
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    return YES;
-}
-
 #pragma mark - UILongPressGestureRecognizers
 
 - (IBAction)topActionLongPress:(UILongPressGestureRecognizer *)recognizer
@@ -275,11 +299,11 @@ NSString *msgVisitor = @"VISITOR";
     
     UIMenuItem *yes = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetTopToZero)];
     //"Leave as is" and "Cance" both do the same thing, nothing right now.
-    UIMenuItem *no = [[UIMenuItem alloc] initWithTitle:@"Leave as is" action:@selector(leaveNumberAsIs)];
+    //UIMenuItem *no = [[UIMenuItem alloc] initWithTitle:@"Leave as is" action:@selector(leaveNumberAsIs)];
     UIMenuItem *cancel = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
     
     UIMenuController *menu = [UIMenuController sharedMenuController];
-    [menu setMenuItems:[NSArray arrayWithObjects:yes, no, cancel, nil]];
+    [menu setMenuItems:[NSArray arrayWithObjects:yes, cancel, nil]];
     [menu setTargetRect:self.aceNumber.frame inView:self.view];
     [menu setMenuVisible:YES animated:YES];
 }
@@ -292,11 +316,11 @@ NSString *msgVisitor = @"VISITOR";
     
     UIMenuItem *yes = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetBottomToZero)];
     //"Leave as is" and "Cance" both do the same thing, nothing right now.
-    UIMenuItem *no = [[UIMenuItem alloc] initWithTitle:@"Leave as is" action:@selector(leaveNumberAsIs)];
+    //UIMenuItem *no = [[UIMenuItem alloc] initWithTitle:@"Leave as is" action:@selector(leaveNumberAsIs)];
     UIMenuItem *cancel = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
     
     UIMenuController *menu = [UIMenuController sharedMenuController];
-    [menu setMenuItems:[NSArray arrayWithObjects:yes, no, cancel, nil]];
+    [menu setMenuItems:[NSArray arrayWithObjects:yes, cancel, nil]];
     [menu setTargetRect:self.killNumber.frame inView:self.view];
     [menu setMenuVisible:YES animated:YES];}
 
@@ -320,16 +344,6 @@ NSString *msgVisitor = @"VISITOR";
 {
     return YES;
 }
-//- (void)resetTopNumbersActionSheet
-//{
-//    UIActionSheet *actionSheet = [[UIActionSheet alloc]
-//                                  initWithTitle:@"Reset back to 0?"
-//                                  delegate:nil
-//                                  cancelButtonTitle:@"No"
-//                                  destructiveButtonTitle:@"Yes"
-//                                  otherButtonTitles:nil];
-//    [actionSheet showInView:self.view];
-//}
 
 #pragma mark - Button Presses
 /*!
@@ -350,9 +364,7 @@ NSString *msgVisitor = @"VISITOR";
         [self initializeVisitorScore:0];
     } else {
         self.gameNumber.text = [NSString stringWithFormat:@"%d", 0];
-
     }
- 
 }
 
 /*!
@@ -535,13 +547,6 @@ NSString *msgVisitor = @"VISITOR";
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
 
-    for (UIGestureRecognizer *gesture in pageViewController.view.gestureRecognizers) {
-        if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
-		{
-			return nil;
-		}
-    }
-    
     //Cast the viewController as a ScoreViewController so we can act on its properties
     DefaultScoreViewController *oldViewController = (DefaultScoreViewController *)viewController;
     
@@ -552,7 +557,7 @@ NSString *msgVisitor = @"VISITOR";
     
     //Setup the new view controller with the new, higher score
     DefaultScoreViewController *newViewController = [self createViewControllersForScore:0
-                                                                              withColor:self.visitorColor];
+                                                                              withColor:self.visitorColor   ];
     
     newViewController.score = oldViewController.score - 1;
     
@@ -594,8 +599,6 @@ NSString *msgVisitor = @"VISITOR";
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {

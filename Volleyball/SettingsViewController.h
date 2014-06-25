@@ -2,8 +2,8 @@
 //  SettingsViewController.h
 //  Volleyball
 //
-//  Created by AppleAir on 5/20/14.
-//  Copyright (c) 2014 BaraTech. All rights reserved.
+//  Created by BaraLabs on 5/20/14.
+//  Copyright (c) 2014 BaraLabs. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,7 +14,6 @@
 }
 
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
 @property (weak, nonatomic) IBOutlet UIButton *visitingTeamColor;
 @property (weak, nonatomic) IBOutlet UITextField *notificationName;
@@ -29,6 +28,5 @@
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;
 - (IBAction)notificationControl:(id)sender;
-- (IBAction)saveSettings;
 
 @end
