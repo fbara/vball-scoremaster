@@ -30,14 +30,9 @@ NSString *msgVisitor = @"VISITOR";
 
 @interface VolleyBallViewController ()
 
-
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
 @property (weak, nonatomic)UITextField *activeField;
-@property (weak, nonatomic) IBOutlet UILabel *gameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *spikeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *aceLabel;
-
 
 @end
 
@@ -251,7 +246,16 @@ NSString *msgVisitor = @"VISITOR";
     return UIStatusBarStyleLightContent;
 }
 
-#pragma mark - UIPanGestureRecognizers
+#pragma mark - UIGestureRecognizer Delegate Method
+
+// Force all gestures to be handled simultaneously.
+//This will allow the Swipes and PageViewController's Pan/Tap gestures to coexsist and function correctly.
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+#pragma mark - UISwipeGestureRecognizers
 
 /*!
  * @discussion Handle the swipe gesture to swap positions of scoreviews
@@ -280,16 +284,8 @@ NSString *msgVisitor = @"VISITOR";
                      completion:NULL];
 }
 
-#pragma mark - UIGestureRecognizer Delegate Method
-
-// Force all gestures to be handled simultaneously.
-//This will allow the Swipes and PageViewController's Pan/Tap gestures to coexsist and function correctly.
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    return YES;
-}
-
 #pragma mark - UILongPressGestureRecognizers
+#pragma mark - Reset Numbers to 0
 
 - (IBAction)topActionLongPress:(UILongPressGestureRecognizer *)recognizer
 {
@@ -297,13 +293,11 @@ NSString *msgVisitor = @"VISITOR";
     
     [self.aceNumber canBecomeFirstResponder];
     
-    UIMenuItem *yes = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetTopToZero)];
-    //"Leave as is" and "Cance" both do the same thing, nothing right now.
-    //UIMenuItem *no = [[UIMenuItem alloc] initWithTitle:@"Leave as is" action:@selector(leaveNumberAsIs)];
-    UIMenuItem *cancel = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
+    UIMenuItem *resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetTopToZero)];
+    UIMenuItem *cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
     
     UIMenuController *menu = [UIMenuController sharedMenuController];
-    [menu setMenuItems:[NSArray arrayWithObjects:yes, cancel, nil]];
+    [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
     [menu setTargetRect:self.aceNumber.frame inView:self.view];
     [menu setMenuVisible:YES animated:YES];
 }
@@ -314,13 +308,11 @@ NSString *msgVisitor = @"VISITOR";
     
     [self.killNumber canBecomeFirstResponder];
     
-    UIMenuItem *yes = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetBottomToZero)];
-    //"Leave as is" and "Cance" both do the same thing, nothing right now.
-    //UIMenuItem *no = [[UIMenuItem alloc] initWithTitle:@"Leave as is" action:@selector(leaveNumberAsIs)];
-    UIMenuItem *cancel = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
+    UIMenuItem *resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetBottomToZero)];
+    UIMenuItem *cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
     
     UIMenuController *menu = [UIMenuController sharedMenuController];
-    [menu setMenuItems:[NSArray arrayWithObjects:yes, cancel, nil]];
+    [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
     [menu setTargetRect:self.killNumber.frame inView:self.view];
     [menu setMenuVisible:YES animated:YES];}
 
@@ -340,10 +332,11 @@ NSString *msgVisitor = @"VISITOR";
     //Dummy method to allow UIMenuItems to be visible
 }
 
-- (BOOL)canBecomeFirstResponder
-{
-    return YES;
-}
+- (BOOL)canBecomeFirstResponder { return YES; }
+
+#pragma mark - Change Labels
+
+
 
 #pragma mark - Button Presses
 /*!
@@ -386,11 +379,6 @@ NSString *msgVisitor = @"VISITOR";
     [self sendSMS];
 }
 
-- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 /*!
  *  What happens when 'Ace' number is touched
  */
@@ -421,6 +409,13 @@ NSString *msgVisitor = @"VISITOR";
                                               cancelButtonTitle:NSLocalizedString(@"No", nil)
                                               otherButtonTitles:NSLocalizedString(@"Yes", nil), nil];
     [alert show];
+}
+
+#pragma mark - Text Messages & Alerts
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

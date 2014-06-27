@@ -18,14 +18,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *aceNumber;
 @property (weak, nonatomic) IBOutlet UITextField *visitingTeamName;
 @property (weak, nonatomic) IBOutlet UITextField *homeTeamName;
+@property (weak, nonatomic) IBOutlet UILabel *topActionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bottomActionLabel;
+
+
 
 @property (weak, nonatomic) IBOutlet UIView *homeTeamContainer;
 @property (weak, nonatomic) IBOutlet UIView *vistingTeamContainer;
 @property UISwipeGestureRecognizer *homeSwipeGesture;
 @property UISwipeGestureRecognizer *visitingSwipeGesture;
 
+
 - (IBAction)topActionLongPress:(UILongPressGestureRecognizer *)recognizer;
 - (IBAction)bottomActionLongPress:(UILongPressGestureRecognizer *)recognizer;
+
 - (IBAction)gamePressed;
 - (IBAction)killsPressed;
 - (IBAction)acePressed;

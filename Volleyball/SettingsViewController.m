@@ -156,9 +156,7 @@
     return UIStatusBarStyleLightContent;
 }
 
-
-#pragma mark - Controls
-#pragma mark -Save Settings
+#pragma mark - Save Settings & Colors
 
 - (IBAction)saveSettings
 {
@@ -226,7 +224,7 @@
     self.settingsSavedNotification.hidden = YES;
 }
 
-#pragma mark - Action Sheet Notifications
+//#pragma mark - Action Sheet Notifications
 
 //- (void)showNormalActionSheet
 //{
@@ -377,7 +375,7 @@
     self.navigationItem.rightBarButtonItem = saveButton;
 }
 
-#pragma mark -Team Background Colors
+#pragma mark - Team Background Colors
 
 /*!
  * @discussion The background color of the home team's score
