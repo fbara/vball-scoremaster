@@ -33,6 +33,7 @@ NSString *msgVisitor = @"VISITOR";
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
 @property (weak, nonatomic)UITextField *activeField;
+@property SettingsViewController *settings;
 
 @end
 
@@ -65,6 +66,10 @@ NSString *msgVisitor = @"VISITOR";
     [self resetGameKillAce];
     self.visitingTeamName.delegate = self;
     self.homeTeamName.delegate = self;
+    self.visitorPageViewController.dataSource = self;
+    self.visitorPageViewController.delegate = self;
+    self.homePageViewController.dataSource = self;
+    self.homePageViewController.delegate = self;
     
     //Create bar button items and add them to the navigation bar
     UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc]
@@ -521,19 +526,19 @@ NSString *msgVisitor = @"VISITOR";
         
         //Check to see which view controller we're updating so the background color can be set correctly
         if (pageViewController == _homePageViewController) {
-            //Home team score changing
+//            //Home team score changing
             newViewController.view.backgroundColor = self.homeColor;
-            currHomeScore = newViewController.score;
-            msgHome = [NSString stringWithString:self.homeTeamName.text];
-            msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
-            
+//            currHomeScore = newViewController.score;
+//            msgHome = [NSString stringWithString:self.homeTeamName.text];
+//            msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
+//            
         } else {
-            //Visitor team score changing
+//            //Visitor team score changing
             newViewController.view.backgroundColor = self.visitorColor;
-            currVisitorScore = newViewController.score;
-            msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
-            msgHome = [NSString stringWithString:self.homeTeamName.text];
-
+//            currVisitorScore = newViewController.score;
+//            msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
+//            msgHome = [NSString stringWithString:self.homeTeamName.text];
+//
         }
     
     return newViewController;
@@ -552,27 +557,56 @@ NSString *msgVisitor = @"VISITOR";
     
     //Setup the new view controller with the new, higher score
     DefaultScoreViewController *newViewController = [self createViewControllersForScore:0
-                                                                              withColor:self.visitorColor   ];
+                                                                              withColor:[UIColor clearColor]];
     
     newViewController.score = oldViewController.score - 1;
     
     //Check to see which view controller we're updating so the background color can be set correctly
     if (pageViewController == _homePageViewController) {
-        //Home team score changing
+//        //Home team score changing
         newViewController.view.backgroundColor = self.homeColor;
-        currHomeScore = newViewController.score;
-        msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
-        msgHome = [NSString stringWithString:self.homeTeamName.text];
-        
+//        currHomeScore = newViewController.score;
+//        msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
+//        msgHome = [NSString stringWithString:self.homeTeamName.text];
+//        
     } else {
-        //Visitor team score changing
+//        //Visitor team score changing
         newViewController.view.backgroundColor = self.visitorColor;
-        currVisitorScore = newViewController.score;
-        msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
-        msgHome = [NSString stringWithString:self.homeTeamName.text];
+//        currVisitorScore = newViewController.score;
+//        msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
+//        msgHome = [NSString stringWithString:self.homeTeamName.text];
     }
     
     return newViewController;
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    // If animation hasn't completed, exit; do not adjust score
+	if (completed == NO)
+	{
+		return;
+	}
+    
+	//	int previousScore = ((ScoreViewController*)previousViewControllers.firstObject).score;
+	NSInteger currentScore = ((DefaultScoreViewController*)pageViewController.viewControllers.firstObject).score;
+    
+	if (pageViewController == _homePageViewController)
+	{
+		_homePageViewController.view.backgroundColor = self.homeColor;
+        currHomeScore = currentScore;
+        
+	}
+	
+	if (pageViewController == _visitorPageViewController)
+	{
+		_visitorPageViewController.view.backgroundColor = self.visitorColor;
+        currVisitorScore = currentScore;
+	}
+    
+    msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
+    msgHome = [NSString stringWithString:self.homeTeamName.text];
+
 }
 
 #pragma mark - UITextFieldDelegate

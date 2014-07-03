@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dBP-CD-akZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dBP-CD-akZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -210,7 +210,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <outlet property="visitingTeamName" destination="Gzx-4p-5vy" id="RcM-Y9-NgA"/>
                         <outlet property="vistingTeamContainer" destination="JdD-WX-kLc" id="LyJ-Gf-UgW"/>
                         <segue destination="vSD-dS-WPV" kind="push" identifier="infoView" id="KBw-Ku-jMI"/>
-                        <segue destination="a0m-2Y-xPI" kind="push" identifier="settingsView" id="9Jy-gO-bNp"/>
+                        <segue destination="gPi-EO-bZs" kind="push" identifier="settingsView" id="Vvt-YS-b9t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -236,7 +236,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGO-83-1Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1450" y="-575"/>
+            <point key="canvasLocation" x="1450" y="-541"/>
         </scene>
         <!--Settings Table View Controller - Settings-->
         <scene sceneID="otW-Gt-R6L">
@@ -251,7 +251,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <tableViewSection headerTitle="Score Color" id="ERf-97-eJz">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="2" indentationWidth="0.0" id="nRt-gg-jDH">
-                                        <rect key="frame" x="0.0" y="86" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nRt-gg-jDH" id="X29-6Z-Ju7">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
@@ -283,7 +283,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <tableViewSection headerTitle="Notifications" id="1mT-lA-xdu">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="p1P-iK-j6O">
-                                        <rect key="frame" x="0.0" y="152" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="88" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p1P-iK-j6O" id="FtU-AJ-cMp">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
@@ -291,7 +291,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="jI9-8r-nbZ">
-                                        <rect key="frame" x="0.0" y="196" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="132" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jI9-8r-nbZ" id="PKo-PI-McV">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
@@ -299,7 +299,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ZKV-p7-W0Q">
-                                        <rect key="frame" x="0.0" y="240" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZKV-p7-W0Q" id="UR6-mS-Yaj">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
@@ -311,7 +311,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <tableViewSection headerTitle="Action Labels" id="oZi-p9-jt2">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0zC-sI-GP1">
-                                        <rect key="frame" x="0.0" y="306" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="242" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0zC-sI-GP1" id="8BC-K7-jyW">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
@@ -319,7 +319,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Fwc-3f-dvV">
-                                        <rect key="frame" x="0.0" y="350" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="286" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fwc-3f-dvV" id="oDj-Wa-txO">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
@@ -327,7 +327,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rzj-WY-2aB">
-                                        <rect key="frame" x="0.0" y="394" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="330" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rzj-WY-2aB" id="QPS-YL-k1U">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
@@ -347,7 +347,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6X-og-RAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="-1129"/>
+            <point key="canvasLocation" x="699" y="-1191"/>
         </scene>
         <!--Settings View Controller - settingsView-->
         <scene sceneID="PYb-Qg-hyL">
@@ -358,11 +358,11 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <viewControllerLayoutGuide type="bottom" id="6Jo-5F-Ts7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JgG-fd-yQn">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="380"/>
+                        <rect key="frame" x="0.0" y="64" width="568" height="316"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="FyP-PC-3ed" customClass="TPKeyboardAvoidingScrollView">
-                                <rect key="frame" x="20" y="0.0" width="528" height="462"/>
+                                <rect key="frame" x="20" y="0.0" width="528" height="398"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <userGuides>
                                     <userLayoutGuide location="128" affinity="minY"/>
