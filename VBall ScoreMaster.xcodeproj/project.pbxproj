@@ -189,9 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				92AA42B71916C2810037D405 /* VolleyBallViewController.h */,
+				92AA42B81916C2810037D405 /* VolleyBallViewController.m */,
 				AD1C816B195C43A30028179B /* SettingsTableViewController.h */,
 				AD1C816C195C43A30028179B /* SettingsTableViewController.m */,
-				92AA42B81916C2810037D405 /* VolleyBallViewController.m */,
 				9217E5D11926377700B2E6F1 /* DefaultScoreViewController.h */,
 				9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */,
 				9244799E192C2CDC0031C1F6 /* SettingsViewController.h */,

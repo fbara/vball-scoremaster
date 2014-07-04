@@ -13,6 +13,10 @@
 @end
 
 @implementation SettingsTableViewController
+{
+    UIBarButtonItem *saveButton;
+    
+}
 
 - (void)viewDidLoad
 {
@@ -23,7 +27,95 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //Create bar button items and add them to the navigation bar
+    saveButton = [[UIBarButtonItem alloc]
+                  initWithTitle:@"Save"
+                  style:UIBarButtonItemStyleBordered
+                  target:self
+                  action:@selector(saveSettings)];
+    
+    UIImage *image = [UIImage imageNamed:@"info.png"];
+    
+    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
+                                   initWithImage:image
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(showSupportView)];
+    
+    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                   target:self
+                                   action:nil];
+    fixedSpace.width = 20.0f;
+    NSArray *barButtonItems = @[saveButton, fixedSpace, infoButton];
+    self.navigationItem.rightBarButtonItems = barButtonItems;
+    
+    //Hide the Save button for now because nothing needs to be saved
+    self.navigationItem.rightBarButtonItem = nil;
 }
+
+- (void)saveSettings
+{
+    
+}
+
+- (void)showSupportView
+{
+    //Show the Support view
+    [self performSegueWithIdentifier:@"supportView" sender:self];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    //Set the UINavigation color
+    return UIStatusBarStyleLightContent;
+}
+
+#pragma mark - Score Background Color Methods
+
+/*!
+ * @discussion The background color of the home team's score
+ * @param sender This param is not used.
+ */
+- (IBAction)homeTeamBackgroundColor:(id)sender
+{
+    //Change the button background color each time the button is tapped
+    UIColor *homeButtonColor;
+    homeButtonColor = [self getRandomColor];
+    self.homeTeamColor.backgroundColor = homeButtonColor;
+    
+    //Enable Save button
+    self.navigationItem.rightBarButtonItem = saveButton;
+    
+}
+
+/*!
+ * @discussion The background color of the visiting team's score
+ * @param sender This param is not used.
+ */
+- (IBAction)visitingTeamBackgroundColor:(id)sender
+{
+    //Change the button background color each time the button is tapped
+    UIColor *visitingButtonColor;
+    visitingButtonColor = [self getRandomColor];
+    self.visitingTeamColor.backgroundColor = visitingButtonColor;
+    
+    //Enable Save button
+    self.navigationItem.rightBarButtonItem = saveButton;
+    
+}
+
+- (UIColor *)getRandomColor
+{
+    int r = arc4random() % 255;
+    int g = arc4random() % 255;
+    int b = arc4random() % 255;
+    
+    UIColor *color = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:1.0];
+    return color;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -31,21 +123,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+//#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//#warning Potentially incomplete method implementation.
+//    // Return the number of sections.
+//    return 4;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//#warning Incomplete method implementation.
+//    // Return the number of rows in the section.
+//    return 2;
+//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

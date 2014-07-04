@@ -33,7 +33,6 @@ NSString *msgVisitor = @"VISITOR";
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
 @property (weak, nonatomic)UITextField *activeField;
-@property SettingsViewController *settings;
 
 @end
 
@@ -64,6 +63,8 @@ NSString *msgVisitor = @"VISITOR";
     [self initializeHomeScore:currHomeScore];
     [self initializeVisitorScore:currVisitorScore];
     [self resetGameKillAce];
+    
+    //Set Delegate's and DataSource's
     self.visitingTeamName.delegate = self;
     self.homeTeamName.delegate = self;
     self.visitorPageViewController.dataSource = self;
@@ -166,8 +167,6 @@ NSString *msgVisitor = @"VISITOR";
                                           direction:UIPageViewControllerNavigationDirectionForward
                                            animated:NO
                                          completion:nil];
-
-    
 }
 
 - (void)initializeVisitorScore:(int)score
@@ -237,11 +236,12 @@ NSString *msgVisitor = @"VISITOR";
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     //Update the scoreview's colors in case they were changed in Settings
     [self initializeVisitorScore:currVisitorScore];
     [self initializeHomeScore:currHomeScore];
-    
-    [super viewWillAppear:animated];
+  
 }
 
 #pragma mark - UI Elements
@@ -287,7 +287,10 @@ NSString *msgVisitor = @"VISITOR";
                          _visitingTeamName.center = targetVisitorNameCenter;
                      }
                      completion:NULL];
+    
 }
+
+
 
 #pragma mark - UILongPressGestureRecognizers
 #pragma mark - Reset Numbers to 0
@@ -526,19 +529,12 @@ NSString *msgVisitor = @"VISITOR";
         
         //Check to see which view controller we're updating so the background color can be set correctly
         if (pageViewController == _homePageViewController) {
-//            //Home team score changing
+            //Home team score changing
             newViewController.view.backgroundColor = self.homeColor;
-//            currHomeScore = newViewController.score;
-//            msgHome = [NSString stringWithString:self.homeTeamName.text];
-//            msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
-//            
+            
         } else {
-//            //Visitor team score changing
+           //Visitor team score changing
             newViewController.view.backgroundColor = self.visitorColor;
-//            currVisitorScore = newViewController.score;
-//            msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
-//            msgHome = [NSString stringWithString:self.homeTeamName.text];
-//
         }
     
     return newViewController;
@@ -563,18 +559,12 @@ NSString *msgVisitor = @"VISITOR";
     
     //Check to see which view controller we're updating so the background color can be set correctly
     if (pageViewController == _homePageViewController) {
-//        //Home team score changing
+       //Home team score changing
         newViewController.view.backgroundColor = self.homeColor;
-//        currHomeScore = newViewController.score;
-//        msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
-//        msgHome = [NSString stringWithString:self.homeTeamName.text];
-//        
+       
     } else {
-//        //Visitor team score changing
+        //Visitor team score changing
         newViewController.view.backgroundColor = self.visitorColor;
-//        currVisitorScore = newViewController.score;
-//        msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
-//        msgHome = [NSString stringWithString:self.homeTeamName.text];
     }
     
     return newViewController;
@@ -594,14 +584,13 @@ NSString *msgVisitor = @"VISITOR";
 	if (pageViewController == _homePageViewController)
 	{
 		_homePageViewController.view.backgroundColor = self.homeColor;
-        currHomeScore = currentScore;
-        
+        currHomeScore = (int)currentScore;
 	}
 	
 	if (pageViewController == _visitorPageViewController)
 	{
 		_visitorPageViewController.view.backgroundColor = self.visitorColor;
-        currVisitorScore = currentScore;
+        currVisitorScore = (int)currentScore;
 	}
     
     msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
