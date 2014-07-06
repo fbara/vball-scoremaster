@@ -283,7 +283,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <sections>
                             <tableViewSection headerTitle="score colors" id="f8O-Jl-JOa">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="MLh-NU-1KR" userLabel="Table View Cell -Visitor color">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="MLh-NU-1KR" userLabel="Table View Cell -Visitor color">
                                         <rect key="frame" x="0.0" y="119" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="MLh-NU-1KR" id="vPk-ef-ZBV">
@@ -300,7 +300,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxM-8M-OkD">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxM-8M-OkD">
                                                     <rect key="frame" x="20" y="6" width="220" height="32"/>
                                                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="VISITOR">
@@ -314,7 +314,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KeT-Dd-A7O" userLabel="Table View Cell - Home color">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KeT-Dd-A7O" userLabel="Table View Cell - Home color">
                                         <rect key="frame" x="0.0" y="163" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="KeT-Dd-A7O" id="Tz1-OK-GHs">
@@ -331,7 +331,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43Z-fe-naI">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43Z-fe-naI">
                                                     <rect key="frame" x="20" y="6" width="220" height="32"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="HOME">
@@ -422,12 +422,23 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="6h4-mo-Fgp">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="pWa-Hl-suk"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="pWa-Hl-suk">
+                            <connections>
+                                <action selector="saveSettings:" destination="JoG-uN-Xre" id="Xf2-MR-gKB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="editSettingsButton" destination="pWa-Hl-suk" id="fZd-Ff-av7"/>
                         <outlet property="homeTeamColor" destination="43Z-fe-naI" id="lUH-3F-cvE"/>
                         <outlet property="visitingTeamColor" destination="CxM-8M-OkD" id="k0Q-s4-wFg"/>
+                        <outletCollection property="settingsButtons" destination="CxM-8M-OkD" id="vEs-nj-a4w"/>
+                        <outletCollection property="settingsButtons" destination="43Z-fe-naI" id="Sva-C6-yfT"/>
+                        <outletCollection property="settingsLabels" destination="14N-xf-D4v" id="4f0-ls-yYQ"/>
+                        <outletCollection property="settingsLabels" destination="J6y-1U-ePh" id="ffM-N5-WOq"/>
+                        <outletCollection property="settingsLabels" destination="j4T-AC-mQX" id="cu7-qn-bCm"/>
+                        <outletCollection property="settingsLabels" destination="fBV-qb-ViF" id="NJg-H7-viH"/>
                         <segue destination="xFW-fG-MpV" kind="push" identifier="supportView" id="g0N-S6-mdr"/>
                     </connections>
                 </tableViewController>
