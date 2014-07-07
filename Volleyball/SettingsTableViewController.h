@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface SettingsTableViewController : UITableViewController <UITableViewDelegate>
+@interface SettingsTableViewController : UITableViewController <UITableViewDelegate,ABPeoplePickerNavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editSettingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
@@ -20,9 +21,13 @@
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *notificationTextEntries;
 @property (weak, nonatomic) IBOutletCollection(UIButton) NSArray *settingsButtons;
 @property (weak, nonatomic) IBOutlet UILabel *settingsSavedNotification;
+@property (weak, nonatomic) IBOutlet UIButton *addPhoneNumberButton;
+@property (weak, nonatomic) IBOutlet UILabel *firstActionNameSelected;
+@property (weak, nonatomic) IBOutlet UILabel *secondActionNameSelected;
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;
 - (IBAction)saveSettings:(id)sender;
+- (IBAction)getPhoneNumberFromAddressBook:(id)sender;
 
 @end

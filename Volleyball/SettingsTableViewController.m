@@ -56,28 +56,29 @@
     //Load the saved settings
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
-        //User wants notifications so set switch to ON and enable all text & label fields
-        [self.notificationSwitch setOn:YES];
-        for (UILabel *label in self.settingsLabels) {
-            label.enabled = YES;
-        }
-        for (UITextField *text in self.notificationTextEntries) {
-            text.enabled = YES;
-        }
-    } else {
-        //User doesn't want notifications so set switch to OFF and disable notification fields
-        [self.notificationSwitch setOn:NO];
-        for (UITextField *text in self.notificationTextEntries) {
-            text.enabled = NO;
-        }
-    }
+//    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
+//        //User wants notifications so set switch to ON and enable all text & label fields
+//        [self.notificationSwitch setOn:YES];
+//        for (UILabel *label in self.settingsLabels) {
+//            label.enabled = YES;
+//        }
+//        for (UITextField *text in self.notificationTextEntries) {
+//            text.enabled = YES;
+//        }
+//    } else {
+//        //User doesn't want notifications so set switch to OFF and disable notification fields
+//        [self.notificationSwitch setOn:NO];
+//        for (UITextField *text in self.notificationTextEntries) {
+//            text.enabled = NO;
+//        }
+//    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
+    //Get the saved score background colors
     self.homeTeamColor.backgroundColor = [self getSavedScoreColors:@"homeTeamColor"];
     self.visitingTeamColor.backgroundColor = [self getSavedScoreColors:@"visitorTeamColor"];
 }
@@ -222,6 +223,53 @@
     return color;
 }
 
+#pragma mark - People Picker Methods
+
+- (IBAction)getPhoneNumberFromAddressBook:(id)sender
+{
+    ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
+    
+    picker.peoplePickerDelegate = self;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+    
+}
+
+- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person
+{
+    [self displayPerson:person];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    return NO;
+}
+
+- (void)displayPerson:(ABRecordRef)person
+{
+    NSString *phone = nil;
+    
+    ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
+    
+    if (ABMultiValueGetCount(phoneNumbers) > 1) {
+        phone = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phoneNumbers, 1);
+    } else {
+        phone = @"None";
+    }
+    
+    self.notificationName.text = phone;
+    
+    CFRelease(phoneNumbers);
+
+}
+
+- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
+{
+    return NO;
+}
 
 - (void)didReceiveMemoryWarning
 {
