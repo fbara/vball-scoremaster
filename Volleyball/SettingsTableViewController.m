@@ -56,6 +56,18 @@
     //Load the saved settings
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    //Get the action labels.
+    //If none are selected, use default values of Ace and Spike
+    self.firstActionNameSelected = (UILabel *)[defaults stringForKey:@"firstActionName"];
+    if ([self.firstActionNameSelected.text length] < 1) {
+        self.firstActionNameSelected.text = @"ACE";
+    }
+    self.secondActionNameSelected = (UILabel *)[defaults stringForKey:@"secondActionName"];
+    if ([self.secondActionNameSelected.text length] < 1) {
+        self.secondActionNameSelected.text = @"SPIKE";
+    }
+    
+    
 //    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
 //        //User wants notifications so set switch to ON and enable all text & label fields
 //        [self.notificationSwitch setOn:YES];
@@ -106,7 +118,6 @@
     return teamColor;
 }
 
-
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
     //Set the UINavigation color
@@ -136,12 +147,13 @@
         
         //Hide left 'back' button so they can't back out without hitting
         //'done' button first
-        self.navigationItem.leftBarButtonItem.enabled = nil;
+        [self.navigationItem setHidesBackButton:YES animated:YES];
         
         
     } else {
         //No longer in editing mode
         editingMode = NO;
+        changesMade = NO;
         
         //Put button label back to 'Edit'
         editSettingsButton.title = @"Edit";
@@ -154,7 +166,7 @@
         [self saveScoreColors];
         
         //Show the 'back' button again so they can leave this screen
-        self.navigationItem.leftBarButtonItem.enabled = YES;
+        [self.navigationItem setHidesBackButton:NO animated:YES];
 
     }
 
@@ -198,6 +210,8 @@
     homeButtonColor = [self getRandomColor];
     self.homeTeamColor.backgroundColor = homeButtonColor;
     
+    //Indicate changes were made
+    changesMade = YES;
 }
 
 /*!
@@ -210,6 +224,9 @@
     UIColor *visitingButtonColor;
     visitingButtonColor = [self getRandomColor];
     self.visitingTeamColor.backgroundColor = visitingButtonColor;
+    
+    //Indicate changes were made
+    changesMade = YES;
   
 }
 
@@ -218,8 +235,9 @@
     int r = arc4random() % 255;
     int g = arc4random() % 255;
     int b = arc4random() % 255;
+    int a = arc4random() % 255;
     
-    UIColor *color = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:1.0];
+    UIColor *color = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:a/1.0];
     return color;
 }
 
@@ -343,27 +361,29 @@
 */
 
 
-//#pragma mark - Table view delegate
-//
-//// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-////    // Navigation logic may go here, for example:
-////    // Create the next view controller.
-////    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-////    
-////    // Pass the selected object to the new view controller.
-////    
-////    // Push the view controller.
-////    [self.navigationController pushViewController:detailViewController animated:YES];
+#pragma mark - Table view delegate
+
+// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    // Navigation logic may go here, for example:
+//    // Create the next view controller.
+//    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
 //    
-//    //Change the selected row color so the entire row doesn't become gray when it's touched
-//    if (!editingMode) {
-//        [[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
-//
-//    }
-//
-//}
+//    // Pass the selected object to the new view controller.
+//    
+//    // Push the view controller.
+//    [self.navigationController pushViewController:detailViewController animated:YES];
+    
+    //Change the selected row color so the entire row doesn't become gray when it's touched
+    if (!editingMode) {
+        [[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
+
+    }
+    
+    
+
+}
 
 
 @end

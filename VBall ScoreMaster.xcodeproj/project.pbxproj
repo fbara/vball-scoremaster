@@ -30,6 +30,7 @@
 		92D318FC193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		92D318FE193E3E9900F5A942 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */; };
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
+		AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */; };
 		AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C8100194A5FD70028179B /* InstructionsViewController.m */; };
 		AD1C810B194A81450028179B /* DefaultScoreViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD1C8103194A81450028179B /* DefaultScoreViewController.strings */; };
 		AD1C810C194A81450028179B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD1C8105194A81450028179B /* InfoPlist.strings */; };
@@ -90,6 +91,8 @@
 		92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabelTableViewController.h; sourceTree = "<group>"; };
+		AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionLabelTableViewController.m; sourceTree = "<group>"; };
 		AD1C80FF194A5FD70028179B /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
 		AD1C8100194A5FD70028179B /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsViewController.m; sourceTree = "<group>"; };
 		AD1C8104194A81450028179B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = DefaultScoreViewController.strings; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 			children = (
 				92AA42B71916C2810037D405 /* VolleyBallViewController.h */,
 				92AA42B81916C2810037D405 /* VolleyBallViewController.m */,
+				AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */,
+				AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */,
 				AD1C816B195C43A30028179B /* SettingsTableViewController.h */,
 				AD1C816C195C43A30028179B /* SettingsTableViewController.m */,
 				9217E5D11926377700B2E6F1 /* DefaultScoreViewController.h */,
@@ -409,6 +414,7 @@
 			files = (
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
+				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
 				924479A0192C2CDC0031C1F6 /* SettingsViewController.m in Sources */,
 				92D318FC193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,

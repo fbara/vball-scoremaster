@@ -8,7 +8,8 @@
 
 #import "VolleyBallViewController.h"
 #import "DefaultScoreViewController.h"
-#import "SettingsViewController.h"
+//#import "SettingsViewController.h"
+#import "SettingsTableViewController.h"
 
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";
@@ -33,6 +34,7 @@ NSString *msgVisitor = @"VISITOR";
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
 @property (weak, nonatomic)UITextField *activeField;
+@property SettingsTableViewController *settingsVC;
 
 @end
 
@@ -71,6 +73,9 @@ NSString *msgVisitor = @"VISITOR";
     self.visitorPageViewController.delegate = self;
     self.homePageViewController.dataSource = self;
     self.homePageViewController.delegate = self;
+    
+    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor redColor];
+    self.view.tintColor = [UIColor redColor];
     
     //Create bar button items and add them to the navigation bar
     UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc]
@@ -251,6 +256,11 @@ NSString *msgVisitor = @"VISITOR";
     return UIStatusBarStyleLightContent;
 }
 
+- (void)loadActionNames
+{
+    
+}
+
 #pragma mark - UIGestureRecognizer Delegate Method
 
 // Force all gestures to be handled simultaneously.
@@ -371,6 +381,7 @@ NSString *msgVisitor = @"VISITOR";
 /*!
  *  What happens when 'Spike' number is touched
  */
+//TODO: Method needs to be changed because I don't show Kill anymore
 - (IBAction)killsPressed
 {
     //Get the number currently displayed for kills and add 1
@@ -390,6 +401,7 @@ NSString *msgVisitor = @"VISITOR";
 /*!
  *  What happens when 'Ace' number is touched
  */
+//TODO: Method needs to be changed because I don't use Ace anymore
 - (IBAction)acePressed
 {
     //Get current number and add 1
@@ -616,6 +628,12 @@ NSString *msgVisitor = @"VISITOR";
 
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
+}
+
+- (IBAction)unwindFromDetailViewController:(UIStoryboardSegue *)segue
+{
+    // UIViewController *detailViewController = [segue sourceViewController];
+    NSLog(@"%@", segue.identifier);
 }
 
 - (void)didReceiveMemoryWarning

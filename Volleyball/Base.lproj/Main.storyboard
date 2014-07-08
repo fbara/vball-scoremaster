@@ -271,10 +271,10 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
             </objects>
             <point key="canvasLocation" x="611" y="-525"/>
         </scene>
-        <!--Table View Controller - Action Names-->
+        <!--Action Label Table View Controller - Action Names-->
         <scene sceneID="S82-Dd-kqz">
             <objects>
-                <tableViewController title="Action Names" id="47K-Gk-dz7" sceneMemberID="viewController">
+                <tableViewController title="Action Names" id="47K-Gk-dz7" customClass="ActionLabelTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aoN-G2-Kxd">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,8 +283,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <sections>
                             <tableViewSection headerTitle="Action Name" footerTitle="Select an action you would like to track" id="Iv3-Kd-mBc">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" editingAccessoryType="checkmark" textLabel="IEc-eP-Hpp" rowHeight="30" style="IBUITableViewCellStyleDefault" id="hX2-1v-W6W">
-                                        <rect key="frame" x="0.0" y="119" width="568" height="30"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="IEc-eP-Hpp" rowHeight="30" style="IBUITableViewCellStyleDefault" id="hX2-1v-W6W">
+                                        <rect key="frame" x="0.0" y="55" width="568" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hX2-1v-W6W" id="qzH-iC-3hs">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="29"/>
@@ -300,8 +300,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="eLC-Xd-g0A" rowHeight="30" style="IBUITableViewCellStyleDefault" id="6bC-Hd-7yt">
-                                        <rect key="frame" x="0.0" y="149" width="568" height="30"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="eLC-Xd-g0A" rowHeight="30" style="IBUITableViewCellStyleDefault" id="6bC-Hd-7yt">
+                                        <rect key="frame" x="0.0" y="85" width="568" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6bC-Hd-7yt" id="vMO-Hp-LPe">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="29"/>
@@ -317,8 +317,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="gCM-Vw-h76" rowHeight="30" style="IBUITableViewCellStyleDefault" id="l3A-rd-2dQ">
-                                        <rect key="frame" x="0.0" y="179" width="568" height="30"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="gCM-Vw-h76" rowHeight="30" style="IBUITableViewCellStyleDefault" id="l3A-rd-2dQ">
+                                        <rect key="frame" x="0.0" y="115" width="568" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l3A-rd-2dQ" id="cdw-KN-5lP">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="29"/>
@@ -334,8 +334,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="K29-kJ-HWA" rowHeight="30" style="IBUITableViewCellStyleDefault" id="HAj-Rx-rcZ">
-                                        <rect key="frame" x="0.0" y="209" width="568" height="30"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="K29-kJ-HWA" rowHeight="30" style="IBUITableViewCellStyleDefault" id="HAj-Rx-rcZ">
+                                        <rect key="frame" x="0.0" y="145" width="568" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HAj-Rx-rcZ" id="EKp-dP-9s7">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="29"/>
@@ -351,8 +351,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="mvD-s6-uQ8" rowHeight="30" style="IBUITableViewCellStyleDefault" id="PCJ-Yu-UqP">
-                                        <rect key="frame" x="0.0" y="239" width="568" height="30"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="mvD-s6-uQ8" rowHeight="30" style="IBUITableViewCellStyleDefault" id="PCJ-Yu-UqP">
+                                        <rect key="frame" x="0.0" y="175" width="568" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PCJ-Yu-UqP" id="TyD-Xz-r5N">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="29"/>
@@ -381,7 +381,45 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqx-uR-HLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397" y="-1515"/>
+            <point key="canvasLocation" x="1381" y="-1405"/>
+        </scene>
+        <!--Action Label Table View Controller - Action Name Selection-->
+        <scene sceneID="jVw-Gg-l15">
+            <objects>
+                <tableViewController title="Action Name Selection" id="xTr-Ie-6PV" customClass="ActionLabelTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0wv-3e-I5F">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="fRy-Ss-KcR">
+                                <rect key="frame" x="0.0" y="86" width="568" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fRy-Ss-KcR" id="tbH-xK-c8b">
+                                    <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xTr-Ie-6PV" id="RrS-K2-Dbg"/>
+                            <outlet property="delegate" destination="xTr-Ie-6PV" id="Rpo-ZU-p7B"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Action Name Selection" id="RdV-gB-aWg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="b6g-Bc-Bce">
+                            <connections>
+                                <segue destination="7u2-9q-bDR" kind="unwind" unwindAction="unwindFromDetailViewController:" id="lkz-tM-JB9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gHW-pr-RUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7u2-9q-bDR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1381" y="-1794"/>
         </scene>
         <!--Settings Table View Controller - Settings-->
         <scene sceneID="dge-Dz-h61">
@@ -555,44 +593,14 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             </tableViewSection>
                             <tableViewSection headerTitle="action names" footerTitle="Actions are included in the text message" id="xIz-3d-pId">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pV1-NB-k5F" userLabel="Table View Cell - Top action name">
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J4e-OQ-jDI" userLabel="Table View Cell - Bottom action name">
                                         <rect key="frame" x="0.0" y="435" width="568" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pV1-NB-k5F" id="mRh-61-D29">
-                                            <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSw-dk-YzJ">
-                                                    <rect key="frame" x="20" y="2" width="255" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select an action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaC-CZ-gRE">
-                                                    <rect key="frame" x="20" y="22" width="296" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMB-Bx-x8A">
-                                                    <rect key="frame" x="324" y="11" width="191" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="47K-Gk-dz7" kind="push" identifier="firstActionNameView" id="SrK-DV-OGb"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J4e-OQ-jDI" userLabel="Table View Cell - Bottom action name">
-                                        <rect key="frame" x="0.0" y="479" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J4e-OQ-jDI" id="FlS-Sr-d5G">
                                             <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2s-UN-oRu">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2s-UN-oRu">
                                                     <rect key="frame" x="20" y="1" width="255" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
@@ -602,24 +610,44 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nu4-MK-4ha">
-                                                    <rect key="frame" x="324" y="11" width="191" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.64999999999999969" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SPIKE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nb-0K-3R7" userLabel="Label - First selected Action">
+                                                    <rect key="frame" x="388" y="11" width="127" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="47K-Gk-dz7" kind="push" identifier="secondActionNameView" id="mHp-9x-aVO"/>
-                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rZn-jg-JqB" userLabel="Table View Cell - Bottom action name">
+                                        <rect key="frame" x="0.0" y="479" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rZn-jg-JqB" id="c7A-GY-0Su">
+                                            <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikm-us-vX0">
+                                                    <rect key="frame" x="20" y="1" width="255" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select an action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fV6-jS-A2Y">
+                                                    <rect key="frame" x="20" y="21" width="296" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.64999999999999969" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4s-lv-LRm" userLabel="Label - Second selected Action">
+                                                    <rect key="frame" x="388" y="11" width="127" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="team names" id="n6v-nC-EkW">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ksk-Bx-1wj" userLabel="Table View Cell - Home team name">
+                                    <tableViewCell tag="3" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ksk-Bx-1wj" userLabel="Table View Cell - Home team name">
                                         <rect key="frame" x="0.0" y="598" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ksk-Bx-1wj" id="6xS-mn-pI1">
@@ -627,7 +655,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="t1c-SZ-3Zc" userLabel="Table View Cell - Visiting team name">
+                                    <tableViewCell tag="4" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="t1c-SZ-3Zc" userLabel="Table View Cell - Visiting team name">
                                         <rect key="frame" x="0.0" y="642" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t1c-SZ-3Zc" id="e63-QO-g8h">
@@ -654,11 +682,11 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                     <connections>
                         <outlet property="addPhoneNumberButton" destination="lFP-xW-h2H" id="Niy-39-MKK"/>
                         <outlet property="editSettingsButton" destination="pWa-Hl-suk" id="fZd-Ff-av7"/>
-                        <outlet property="firstActionNameSelected" destination="nMB-Bx-x8A" id="MO7-s1-geB"/>
+                        <outlet property="firstActionNameSelected" destination="8Nb-0K-3R7" id="Ajf-jt-PnE"/>
                         <outlet property="homeTeamColor" destination="43Z-fe-naI" id="lUH-3F-cvE"/>
                         <outlet property="nameOfPlayer" destination="Yyj-Dn-sH1" id="Zya-XT-o96"/>
                         <outlet property="notificationName" destination="CH8-S5-jc8" id="mG5-nM-XGf"/>
-                        <outlet property="secondActionNameSelected" destination="Nu4-MK-4ha" id="0KP-y3-XvB"/>
+                        <outlet property="secondActionNameSelected" destination="v4s-lv-LRm" id="8jL-Zd-aag"/>
                         <outlet property="visitingTeamColor" destination="CxM-8M-OkD" id="k0Q-s4-wFg"/>
                         <outletCollection property="settingsButtons" destination="CxM-8M-OkD" id="vEs-nj-a4w"/>
                         <outletCollection property="settingsButtons" destination="43Z-fe-naI" id="Sva-C6-yfT"/>
@@ -669,6 +697,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <outletCollection property="notificationTextEntries" destination="Yyj-Dn-sH1" id="wOk-nI-eLd"/>
                         <outletCollection property="notificationTextEntries" destination="CH8-S5-jc8" id="AZL-vl-1RX"/>
                         <segue destination="xFW-fG-MpV" kind="push" identifier="supportView" id="g0N-S6-mdr"/>
+                        <segue destination="xTr-Ie-6PV" kind="push" identifier="actionNameView" id="kCH-BV-Q4s"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c88-HG-OSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -942,7 +971,4 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="mHp-9x-aVO"/>
-    </inferredMetricsTieBreakers>
 </document>
