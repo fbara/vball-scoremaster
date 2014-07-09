@@ -78,8 +78,8 @@ NSString *const SECOND_ACTION = @"secondActionName";
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryNone;
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    cell.accessoryType = UITableViewCellAccessoryNone;
     
 }
 
@@ -100,6 +100,9 @@ NSString *const SECOND_ACTION = @"secondActionName";
     // keep track of the last selected cell
     self.lastSelected = indexPath;
     self.selectedActionName = cell.textLabel.text;
+    
+    //Perform a segue to go back to the SettingsTableViewController, passing the row selected
+    //[self performSegueWithIdentifier:@"actionSelected" sender:self.selectedActionName];
 }
 
 /*

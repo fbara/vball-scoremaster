@@ -16,8 +16,8 @@ NSString *const EMBED_HOME = @"embedHome";
 NSString *const EMBED_VISITOR = @"embedVisitor";
 int currHomeScore = 0;
 int currVisitorScore = 0;
-int currKill = 0;
-int currAce = 0;
+int currSecondAction = 0;
+int currFirstAction = 0;
 NSString *msgHome = @"HOME";
 NSString *msgVisitor = @"VISITOR";
 
@@ -64,7 +64,7 @@ NSString *msgVisitor = @"VISITOR";
     
     [self initializeHomeScore:currHomeScore];
     [self initializeVisitorScore:currVisitorScore];
-    [self resetGameKillAce];
+    [self resetGameAndNames];
     
     //Set Delegate's and DataSource's
     self.visitingTeamName.delegate = self;
@@ -146,7 +146,9 @@ NSString *msgVisitor = @"VISITOR";
 			[gesture requireGestureRecognizerToFail:visitorSwipeGesture];
 		}
 	}
-
+    
+    //Get the Action Names
+    [self loadActionNames];
 
 }
 
@@ -227,14 +229,14 @@ NSString *msgVisitor = @"VISITOR";
     return colorVisitor;
 }
 
-- (void)resetGameKillAce
+- (void)resetGameAndNames
 {
-    //Resets Game, Kill, and Ace to 0
+    //Resets Game and Action Name values to 0
     self.gameNumber.text = @"1";
-    self.killNumber.text = @"0";
-    self.aceNumber.text = @"0";
-    currAce = 0;
-    currKill = 0;
+    self.secondActionName.text = @"0";
+    self.firstActionName.text = @"0";
+    currFirstAction = 0;
+    currSecondAction = 0;
     currHomeScore = 0;
     currVisitorScore = 0;
 }
@@ -246,6 +248,9 @@ NSString *msgVisitor = @"VISITOR";
     //Update the scoreview's colors in case they were changed in Settings
     [self initializeVisitorScore:currVisitorScore];
     [self initializeHomeScore:currHomeScore];
+    
+    //Get the Action Names
+    [self loadActionNames];
   
 }
 
@@ -258,7 +263,24 @@ NSString *msgVisitor = @"VISITOR";
 
 - (void)loadActionNames
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    NSString *tempName;
+    tempName = [defaults stringForKey:@"firstActionName"];
+    
+    if ([tempName length] < 1) {
+        self.topActionLabel.text = @"SPIKE";
+    } else {
+        self.topActionLabel.text = [defaults stringForKey:@"firstActionName"];
+    }
+    
+    tempName = [defaults stringForKey:@"secondActionName"];
+    
+    if ([tempName length] < 1) {
+        self.bottomActionLabel.text = @"ACE";
+    } else {
+        self.bottomActionLabel.text = [defaults stringForKey:@"secondActionName"];
+    }
 }
 
 #pragma mark - UIGestureRecognizer Delegate Method
@@ -309,14 +331,14 @@ NSString *msgVisitor = @"VISITOR";
 {
     //On a long press, show popup menu with selections to reset the number to zero or not
     
-    [self.aceNumber canBecomeFirstResponder];
+    [self.firstActionName canBecomeFirstResponder];
     
     UIMenuItem *resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetTopToZero)];
     UIMenuItem *cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
     
     UIMenuController *menu = [UIMenuController sharedMenuController];
     [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
-    [menu setTargetRect:self.aceNumber.frame inView:self.view];
+    [menu setTargetRect:self.firstActionName.frame inView:self.view];
     [menu setMenuVisible:YES animated:YES];
 }
 
@@ -324,25 +346,25 @@ NSString *msgVisitor = @"VISITOR";
 {
     //On a long press, show popup menu with selections to reset the number to zero or not
     
-    [self.killNumber canBecomeFirstResponder];
+    [self.secondActionName canBecomeFirstResponder];
     
     UIMenuItem *resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetBottomToZero)];
     UIMenuItem *cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
     
     UIMenuController *menu = [UIMenuController sharedMenuController];
     [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
-    [menu setTargetRect:self.killNumber.frame inView:self.view];
+    [menu setTargetRect:self.secondActionName.frame inView:self.view];
     [menu setMenuVisible:YES animated:YES];}
 
 
 - (void)resetTopToZero
 {
-    self.aceNumber.text = @"0";
+    self.firstActionName.text = @"0";
 }
 
 - (void)resetBottomToZero
 {
-    self.killNumber.text = @"0";
+    self.secondActionName.text = @"0";
 }
 
 - (void)leaveNumberAsIs
@@ -381,18 +403,17 @@ NSString *msgVisitor = @"VISITOR";
 /*!
  *  What happens when 'Spike' number is touched
  */
-//TODO: Method needs to be changed because I don't show Kill anymore
-- (IBAction)killsPressed
+- (IBAction)firstActionPressed
 {
-    //Get the number currently displayed for kills and add 1
-    int lableNum = [self.killNumber.text intValue];
+    //Get the number currently displayed for second Action Name and add 1
+    int lableNum = [self.secondActionName.text intValue];
     if (lableNum == 99) {
         lableNum = 0;
     } else {
         lableNum = lableNum + 1;
     }
-    self.killNumber.text = [NSString stringWithFormat:@"%d", lableNum];
-    currKill = lableNum;
+    self.secondActionName.text = [NSString stringWithFormat:@"%d", lableNum];
+    currSecondAction = lableNum;
     
     //Send text message
     [self sendSMS];
@@ -401,18 +422,17 @@ NSString *msgVisitor = @"VISITOR";
 /*!
  *  What happens when 'Ace' number is touched
  */
-//TODO: Method needs to be changed because I don't use Ace anymore
-- (IBAction)acePressed
+- (IBAction)secondActionPressed
 {
     //Get current number and add 1
-    int lableNum = [self.aceNumber.text intValue];
+    int lableNum = [self.firstActionName.text intValue];
     if (lableNum == 99) {
         lableNum = 0;
     } else {
         lableNum = lableNum + 1;
     }
-    self.aceNumber.text = [NSString stringWithFormat:@"%d", lableNum];
-    currAce = lableNum;
+    self.firstActionName.text = [NSString stringWithFormat:@"%d", lableNum];
+    currFirstAction = lableNum;
     
     //Send the text message
     [self sendSMS];
@@ -424,7 +444,7 @@ NSString *msgVisitor = @"VISITOR";
 - (IBAction)newMatch
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"New Match?", nil)
-                                                        message:NSLocalizedString(@"Reset scores, ace's, spike's and start a new match?", nil)
+                                                        message:NSLocalizedString(@"Reset scores, action names, and start a new match?", nil)
                                                        delegate:self
                                               cancelButtonTitle:NSLocalizedString(@"No", nil)
                                               otherButtonTitles:NSLocalizedString(@"Yes", nil), nil];
@@ -443,7 +463,7 @@ NSString *msgVisitor = @"VISITOR";
     if (buttonIndex != 0) {
         [self initializeHomeScore:0];
         [self initializeVisitorScore:0];
-        [self resetGameKillAce];
+        [self resetGameAndNames];
 
     }
 }
@@ -510,8 +530,10 @@ NSString *msgVisitor = @"VISITOR";
         if ([MFMessageComposeViewController canSendText]) {
             NSString *playerName = [defaults stringForKey:@"playerNameForNotifications"];
             NSString *notificationNumber = [defaults stringForKey:@"phoneNumberForNotification"];
+
+//TODO: Get Action Name values from Settings and put in this VC
             
-            NSString *textMessage = [NSString stringWithFormat:@"%@ has %d spikes and %d aces!\nThe score is now %@ %d - %@ %d.", playerName ,currKill, currAce, msgVisitor, currVisitorScore, msgHome, currHomeScore];
+            NSString *textMessage = [NSString stringWithFormat:@"%@ has %d %@'s and %d %@'s!\nThe score is now %@ %d - %@ %d.", playerName ,currSecondAction, self.bottomActionLabel.text, currFirstAction, self.topActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
             [textComposer setRecipients:[NSArray arrayWithObjects:notificationNumber, nil]];
             
             [textComposer setBody:textMessage];
@@ -628,12 +650,6 @@ NSString *msgVisitor = @"VISITOR";
 
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
-}
-
-- (IBAction)unwindFromDetailViewController:(UIStoryboardSegue *)segue
-{
-    // UIViewController *detailViewController = [segue sourceViewController];
-    NSLog(@"%@", segue.identifier);
 }
 
 - (void)didReceiveMemoryWarning

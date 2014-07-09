@@ -14,8 +14,8 @@
 @property UIColor *homeColor;
 @property UIColor *visitorColor;
 @property (weak, nonatomic) IBOutlet UILabel *gameNumber;
-@property (weak, nonatomic) IBOutlet UILabel *killNumber;
-@property (weak, nonatomic) IBOutlet UILabel *aceNumber;
+@property (weak, nonatomic) IBOutlet UILabel *secondActionName;
+@property (weak, nonatomic) IBOutlet UILabel *firstActionName;
 @property (weak, nonatomic) IBOutlet UITextField *visitingTeamName;
 @property (weak, nonatomic) IBOutlet UITextField *homeTeamName;
 @property (weak, nonatomic) IBOutlet UILabel *topActionLabel;
@@ -33,7 +33,7 @@
 - (IBAction)bottomActionLongPress:(UILongPressGestureRecognizer *)recognizer;
 
 - (IBAction)gamePressed;
-- (IBAction)killsPressed;
-- (IBAction)acePressed;
+- (IBAction)firstActionPressed;
+- (IBAction)secondActionPressed;
 - (IBAction)newMatch;
 @end

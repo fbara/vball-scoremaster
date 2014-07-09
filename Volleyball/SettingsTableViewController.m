@@ -7,6 +7,7 @@
 //
 
 #import "SettingsTableViewController.h"
+#import "ActionLabelTableViewController.h"
 
 @interface SettingsTableViewController ()
 
@@ -15,10 +16,16 @@
 
 @implementation SettingsTableViewController
 {
-    UIBarButtonItem *editSettingsButton;
+    //UIBarButtonItem *editSettingsButton;
     BOOL editingMode;
     BOOL changesMade;
     
+}
+
+- (IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
+    [self.view endEditing:TRUE];
 }
 
 #pragma mark - View Methods
@@ -27,7 +34,7 @@
 {
     [super viewDidLoad];
     
-    editSettingsButton = [[UIBarButtonItem alloc]
+    self.editSettingsButton = [[UIBarButtonItem alloc]
                   initWithTitle:@"Edit"
                   style:UIBarButtonItemStyleBordered
                   target:self
@@ -46,26 +53,19 @@
                                    target:self
                                    action:nil];
     fixedSpace.width = 20.0f;
-    NSArray *barButtonItems = @[editSettingsButton, fixedSpace, infoButton];
+    NSArray *barButtonItems = @[self.editSettingsButton, fixedSpace, infoButton];
     self.navigationItem.rightBarButtonItems = barButtonItems;
+    
+    //Set the switch if messages will be sent
+    if ([[self getSendNotifications] isEqualToString:@"On"]) {
+        [self.sendNotificationSwitch setSelectedSegmentIndex:0];
+    } else {
+        [self.sendNotificationSwitch setSelectedSegmentIndex:1];
+    }
     
     //When the screen loads, we're not in editing mode nor have changes been made
     editingMode = NO;
     changesMade = NO;
-    
-    //Load the saved settings
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    //Get the action labels.
-    //If none are selected, use default values of Ace and Spike
-    self.firstActionNameSelected = (UILabel *)[defaults stringForKey:@"firstActionName"];
-    if ([self.firstActionNameSelected.text length] < 1) {
-        self.firstActionNameSelected.text = @"ACE";
-    }
-    self.secondActionNameSelected = (UILabel *)[defaults stringForKey:@"secondActionName"];
-    if ([self.secondActionNameSelected.text length] < 1) {
-        self.secondActionNameSelected.text = @"SPIKE";
-    }
     
     
 //    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
@@ -93,8 +93,164 @@
     //Get the saved score background colors
     self.homeTeamColor.backgroundColor = [self getSavedScoreColors:@"homeTeamColor"];
     self.visitingTeamColor.backgroundColor = [self getSavedScoreColors:@"visitorTeamColor"];
+    
+    //Get the Action names
+    [self getActionNames];
+    
+    //Get the player name and notification number
+    [self getPlayerNameAndNumber];
+    
+    //Set selected segment for messages
+    if ([[self getSendNotifications] isEqualToString:@"On"]) {
+        [self.sendNotificationSwitch setSelectedSegmentIndex:0];
+    } else {
+        [self.sendNotificationSwitch setSelectedSegmentIndex:1];
+    }
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    //Set the UINavigation color
+    return UIStatusBarStyleLightContent;
+}
+
+#pragma mark - Save Settings
+
+/*!
+ *  Save the settings
+ *
+ *  @param sender The param is not used
+ */
+- (IBAction)saveSettings:(id)sender
+{
+    if (!editingMode) {
+        //Indicate we're now in editing mode
+        editingMode = YES;
+        
+        //Button starts out as 'Edit' and should be changed to 'Done'
+        self.editSettingsButton.title = @"Done";
+
+        //Enable UI elements
+        [self enableUIObjects];
+        
+        //Hide left 'back' button so they can't back out without hitting
+        //'done' button first
+        [self.navigationItem setHidesBackButton:YES animated:YES];
+        
+        
+    } else {
+        //No longer in editing mode
+        editingMode = NO;
+        changesMade = NO;
+        
+        //Put button label back to 'Edit'
+        self.editSettingsButton.title = @"Edit";
+        
+        //Disable UI elements
+        [self disableUIObjects];
+        
+        //Save the colors regardless if they were changed or not
+        [self saveScoreColors];
+        //Save Action names
+        [self saveActionNames:self.firstActionNameSelected.text
+                   secondName:self.secondActionNameSelected.text];
+        //Save player name and SMS number
+        [self savePlayerName:self.nameOfPlayer.text
+             saveNotifyPhone:self.notificationName.text];
+
+        //Show the 'back' button again so they can leave this screen
+        [self.navigationItem setHidesBackButton:NO animated:YES];
+
+    }
+}
+
+#pragma mark - Save/Load Player Name
+/*!
+ *  Saves the name of the player and the phone number for SMS message.
+ *
+ *  @param playerName   Name of the player
+ *  @param notifyNumber Phone number, in (555)555-5555 format, that will be sent 
+ *                      SMS messages
+ */
+- (void)savePlayerName:(NSString *)playerName saveNotifyPhone:(NSString *)notifyNumber
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([playerName length] > 1) {
+        [defaults setObject:playerName forKey:@"playerNameForNotifications"];
+    } else {
+        [defaults setObject:@" " forKey:@"playerNameForNotifications"];
+    }
+    
+    if ([notifyNumber length] > 1) {
+        [defaults setObject:notifyNumber forKey:@"phoneNumberForNotification"];
+    } else {
+        [defaults setObject:@" " forKey:@"phoneNumberForNotification"];
+    }
+}
+
+- (void)getPlayerNameAndNumber
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    self.nameOfPlayer.text = [defaults stringForKey:@"playerNameForNotifications"];
+    self.notificationName.text = [defaults stringForKey:@"phoneNumberForNotification"];
+}
+
+#pragma mark - Save/Load Action Name
+/*!
+ *  Saves the top and bottom Action Names that are displayed and included in SMS messages.
+ *
+ *  @param firstActionName  The top Action name
+ *  @param secondActionName The bottom Action name
+ */
+- (void)saveActionNames:(NSString *)firstActionName secondName:(NSString *)secondActionName
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([firstActionName length] > 1) {
+        
+        [defaults setObject:firstActionName forKey:@"firstActionName"];
+    } else {
+        [defaults setObject:@"SPIKE" forKey:@"firstActionName"];
+    }
+    
+    if ([secondActionName length] > 1) {
+        
+        [defaults setObject:secondActionName forKey:@"secondActionName"];
+    } else {
+        [defaults setObject:@"ACE" forKey:@"secondActionName"];
+    }
+
+}
+
+/*!
+ *  Returns the Action names from user defaults
+ *  and populates the labels on the main screen
+ */
+- (void)getActionNames
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *tempName;
+    tempName = [defaults stringForKey:@"firstActionName"];
+    
+    if ([tempName length] < 1) {
+        self.firstActionNameSelected.text = @"SPIKE";
+    } else {
+        self.firstActionNameSelected.text = [defaults stringForKey:@"firstActionName"];
+    }
+    
+    tempName = [defaults stringForKey:@"secondActionName"];
+    
+    if ([tempName length] < 1) {
+        self.secondActionNameSelected.text = @"ACE";
+    } else {
+        self.secondActionNameSelected.text = [defaults stringForKey:@"secondActionName"];
+    }
+}
+
+#pragma mark - Save/Load Score Background Colors
 /*!
  *  Gets the background score color and returns it
  *
@@ -118,60 +274,6 @@
     return teamColor;
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    //Set the UINavigation color
-    return UIStatusBarStyleLightContent;
-}
-
-#pragma mark - Save Settings
-
-/*!
- *  Save the settings
- *
- *  @param sender The param is not used
- */
-- (IBAction)saveSettings:(id)sender
-{
-    if (!editingMode) {
-        //Indicate we're now in editing mode
-        editingMode = YES;
-        
-        //Button starts out as 'Edit' and should be changed to 'Done'
-        editSettingsButton.title = @"Done";
-
-        //Enable UI elements
-        self.homeTeamColor.enabled = TRUE;
-        self.visitingTeamColor.enabled = TRUE;
-        
-        
-        //Hide left 'back' button so they can't back out without hitting
-        //'done' button first
-        [self.navigationItem setHidesBackButton:YES animated:YES];
-        
-        
-    } else {
-        //No longer in editing mode
-        editingMode = NO;
-        changesMade = NO;
-        
-        //Put button label back to 'Edit'
-        editSettingsButton.title = @"Edit";
-        
-        //Disable UI elements
-        self.homeTeamColor.enabled = FALSE;
-        self.visitingTeamColor.enabled = FALSE;
-        
-        //Save the colors regardless if they were changed or not
-        [self saveScoreColors];
-        
-        //Show the 'back' button again so they can leave this screen
-        [self.navigationItem setHidesBackButton:NO animated:YES];
-
-    }
-
-}
-
 - (void)saveScoreColors
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -189,13 +291,6 @@
     [defaults setObject:colorVisitorData forKey:@"visitorTeamColor"];
     
 }
-
-- (void)showSupportView
-{
-    //Show the Support view
-    [self performSegueWithIdentifier:@"supportView" sender:self];
-}
-
 
 #pragma mark - Score Background Color Methods
 
@@ -227,7 +322,7 @@
     
     //Indicate changes were made
     changesMade = YES;
-  
+    
 }
 
 - (UIColor *)getRandomColor
@@ -241,6 +336,61 @@
     return color;
 }
 
+#pragma mark - Enable/Disable UI
+
+- (void)enableUIObjects
+{
+    self.homeTeamColor.enabled = TRUE;
+    self.visitingTeamColor.enabled = TRUE;
+    self.sendNotificationSwitch.enabled = TRUE;
+    self.addPhoneNumberButton.enabled = TRUE;
+    self.firstActionNameSelected.enabled = TRUE;
+    self.secondActionNameSelected.enabled = TRUE;
+    self.nameOfPlayer.enabled = TRUE;
+    self.notificationName.enabled = TRUE;
+
+}
+
+- (void)disableUIObjects
+{
+    self.homeTeamColor.enabled = FALSE;
+    self.visitingTeamColor.enabled = FALSE;
+    self.sendNotificationSwitch.enabled = FALSE;
+    self.addPhoneNumberButton.enabled = FALSE;
+    self.firstActionNameSelected.enabled = FALSE;
+    self.secondActionNameSelected.enabled = FALSE;
+    self.nameOfPlayer.enabled = FALSE;
+    self.notificationName.enabled = FALSE;
+
+}
+
+#pragma mark - Notificaion Switch
+- (IBAction)notificationSwitch:(id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
+    
+    //Save the segmented value
+    switch (selectedSegmentIndex) {
+        case 0:
+            //Send SMS messages
+            [defaults setObject:@"On" forKey:@"enableNotifications"];
+            break;
+        case 1:
+            //Don't send SMS messagees
+            [defaults setObject:@"Off" forKey:@"enableNotifications"];
+        default:
+            break;
+    }
+}
+
+- (NSString *)getSendNotifications
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    return [defaults stringForKey:@"enableNotifications"];
+}
+
 #pragma mark - People Picker Methods
 
 - (IBAction)getPhoneNumberFromAddressBook:(id)sender
@@ -252,6 +402,7 @@
     [self presentViewController:picker animated:YES completion:nil];
     
 }
+
 
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker
 {
@@ -287,6 +438,12 @@
 - (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
 {
     return NO;
+}
+
+- (void)showSupportView
+{
+    //Show the Support view
+    [self performSegueWithIdentifier:@"supportView" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -363,6 +520,16 @@
 
 #pragma mark - Table view delegate
 
+//- (IBAction)unwindFromModalViewController:(UIStoryboardSegue *)segue
+//{
+//    if ([segue.sourceViewController isKindOfClass:[ActionLabelTableViewController class]]) {
+//        ActionLabelTableViewController *actionNameTVC = segue.sourceViewController;
+//        NSString *tempString = actionNameTVC.selectedActionName;
+//        
+//        self.firstActionNameSelected = (UILabel *)tempString;
+//    }
+//}
+
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -381,7 +548,7 @@
 
     }
     
-    
+    [self performSegueWithIdentifier:@"actionNameView" sender:nil];
 
 }
 
