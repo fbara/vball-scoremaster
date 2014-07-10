@@ -19,7 +19,6 @@
     //UIBarButtonItem *editSettingsButton;
     BOOL editingMode;
     BOOL changesMade;
-    
 }
 
 - (IBAction)textFieldReturn:(id)sender
@@ -66,24 +65,6 @@
     //When the screen loads, we're not in editing mode nor have changes been made
     editingMode = NO;
     changesMade = NO;
-    
-    
-//    if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
-//        //User wants notifications so set switch to ON and enable all text & label fields
-//        [self.notificationSwitch setOn:YES];
-//        for (UILabel *label in self.settingsLabels) {
-//            label.enabled = YES;
-//        }
-//        for (UITextField *text in self.notificationTextEntries) {
-//            text.enabled = YES;
-//        }
-//    } else {
-//        //User doesn't want notifications so set switch to OFF and disable notification fields
-//        [self.notificationSwitch setOn:NO];
-//        for (UITextField *text in self.notificationTextEntries) {
-//            text.enabled = NO;
-//        }
-//    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -446,6 +427,24 @@
     [self performSegueWithIdentifier:@"supportView" sender:self];
 }
 
+#pragma mark - Seque Methods
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"actionNameView"]) {
+        //We need to do this because we're wrapped in a Navigation Controller
+        //UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        //ActionLabelTableViewController *actionNameTVC = (ActionLabelTableViewController *)navController.topViewController;
+        ActionLabelTableViewController *actionNameTVC = (ActionLabelTableViewController *)segue.destinationViewController;
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        actionNameTVC.selectedActionRow = (int)indexPath;
+        
+        
+//        [segue.destinationViewController setSelectedActionRow:(int)self.tableView.indexPathForSelectedRow];
+//        [segue.destinationViewController setSelectedActionName:self.firstActionNameSelected.text];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -533,22 +532,13 @@
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    // Navigation logic may go here, for example:
-//    // Create the next view controller.
-//    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-//    
-//    // Pass the selected object to the new view controller.
-//    
-//    // Push the view controller.
-//    [self.navigationController pushViewController:detailViewController animated:YES];
-    
     //Change the selected row color so the entire row doesn't become gray when it's touched
     if (!editingMode) {
         [[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
 
     }
     
-    [self performSegueWithIdentifier:@"actionNameView" sender:nil];
+    [self performSegueWithIdentifier:@"actionNameView" sender:self];
 
 }
 

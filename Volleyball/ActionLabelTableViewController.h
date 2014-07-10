@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic)NSString *firstActionName;
 @property (weak, nonatomic)NSString *secondActionName;
-@property (weak, nonatomic)IBOutlet NSString *selectedActionName;
+@property (strong, nonatomic)IBOutlet NSString *selectedActionName;
+@property NSInteger selectedActionRow;
 
 @end
