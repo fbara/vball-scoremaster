@@ -26,8 +26,6 @@
 		92AA42C41916C2810037D405 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A61916C2800037D405 /* UIKit.framework */; };
 		92AA42CC1916C2810037D405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92AA42CA1916C2810037D405 /* InfoPlist.strings */; };
 		92AA42CE1916C2810037D405 /* VolleyballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42CD1916C2810037D405 /* VolleyballTests.m */; };
-		92D318F9193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D318F8193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.m */; };
-		92D318FC193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		92D318FE193E3E9900F5A942 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */; };
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
 		AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */; };
@@ -85,10 +83,6 @@
 		92AA42C91916C2810037D405 /* VolleyballTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VolleyballTests-Info.plist"; sourceTree = "<group>"; };
 		92AA42CB1916C2810037D405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92AA42CD1916C2810037D405 /* VolleyballTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolleyballTests.m; sourceTree = "<group>"; };
-		92D318F7193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
-		92D318F8193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		92D318FA193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
-		92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabelTableViewController.h; sourceTree = "<group>"; };
@@ -214,7 +208,6 @@
 				9273CB021940990200696E8E /* SupportInstructionsViewController.h */,
 				9273CB031940990200696E8E /* SupportInstructionsViewController.m */,
 				92AA42BA1916C2810037D405 /* Images.xcassets */,
-				92D31901193E7C6600F5A942 /* TPKeyboardAvoidingScrollView */,
 				92AA42A91916C2800037D405 /* Supporting Files */,
 			);
 			path = Volleyball;
@@ -252,17 +245,6 @@
 				92AA42CA1916C2810037D405 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		92D31901193E7C6600F5A942 /* TPKeyboardAvoidingScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				92D318FA193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
-				92D318FB193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
-				92D318F7193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.h */,
-				92D318F8193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.m */,
-			);
-			name = TPKeyboardAvoidingScrollView;
 			sourceTree = "<group>";
 		};
 		AD1C8102194A81450028179B /* es.lproj */ = {
@@ -434,8 +416,6 @@
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
 				924479A0192C2CDC0031C1F6 /* SettingsViewController.m in Sources */,
-				92D318FC193E3C6900F5A942 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
-				92D318F9193E3BDF00F5A942 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
 				9273CB041940990200696E8E /* SupportInstructionsViewController.m in Sources */,

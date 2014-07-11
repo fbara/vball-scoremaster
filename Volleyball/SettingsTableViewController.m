@@ -11,7 +11,7 @@
 
 @interface SettingsTableViewController ()
 
-
+@property int actionRow;
 @end
 
 @implementation SettingsTableViewController
@@ -27,11 +27,30 @@
     [self.view endEditing:TRUE];
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self.view endEditing:YES];
+    [textField resignFirstResponder];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 #pragma mark - View Methods
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.delegate = self;
     
     self.editSettingsButton = [[UIBarButtonItem alloc]
                   initWithTitle:@"Edit"
@@ -69,7 +88,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
     
     //Get the saved score background colors
     self.homeTeamColor.backgroundColor = [self getSavedScoreColors:@"homeTeamColor"];
@@ -87,6 +105,17 @@
     } else {
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
+    
+    [super viewWillAppear:animated];
+    [self.view setNeedsDisplay];
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    //Save our settings before the scene goes away
+    [self saveUserDefaults];
+    [super viewWillDisappear:animated];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -94,6 +123,8 @@
     //Set the UINavigation color
     return UIStatusBarStyleLightContent;
 }
+
+- (BOOL)canBecomeFirstResponder { return YES; }
 
 #pragma mark - Save Settings
 
@@ -109,7 +140,7 @@
         editingMode = YES;
         
         //Button starts out as 'Edit' and should be changed to 'Done'
-        self.editSettingsButton.title = @"Done";
+        self.editSettingsButton.title = @"Save";
 
         //Enable UI elements
         [self enableUIObjects];
@@ -219,7 +250,8 @@
     if ([tempName length] < 1) {
         self.firstActionNameSelected.text = @"SPIKE";
     } else {
-        self.firstActionNameSelected.text = [defaults stringForKey:@"firstActionName"];
+       //tempName = [defaults stringForKey:@"firstActionName"];
+        self.firstActionNameSelected.text = tempName;
     }
     
     tempName = [defaults stringForKey:@"secondActionName"];
@@ -227,7 +259,8 @@
     if ([tempName length] < 1) {
         self.secondActionNameSelected.text = @"ACE";
     } else {
-        self.secondActionNameSelected.text = [defaults stringForKey:@"secondActionName"];
+        //tempName = [defaults stringForKey:@"secondActionName"];
+        self.secondActionNameSelected.text = tempName;
     }
 }
 
@@ -325,8 +358,8 @@
     self.visitingTeamColor.enabled = TRUE;
     self.sendNotificationSwitch.enabled = TRUE;
     self.addPhoneNumberButton.enabled = TRUE;
-    self.firstActionNameSelected.enabled = TRUE;
-    self.secondActionNameSelected.enabled = TRUE;
+//    self.firstActionNameSelected.enabled = TRUE;
+//    self.secondActionNameSelected.enabled = TRUE;
     self.nameOfPlayer.enabled = TRUE;
     self.notificationName.enabled = TRUE;
 
@@ -338,8 +371,8 @@
     self.visitingTeamColor.enabled = FALSE;
     self.sendNotificationSwitch.enabled = FALSE;
     self.addPhoneNumberButton.enabled = FALSE;
-    self.firstActionNameSelected.enabled = FALSE;
-    self.secondActionNameSelected.enabled = FALSE;
+//    self.firstActionNameSelected.enabled = FALSE;
+//    self.secondActionNameSelected.enabled = FALSE;
     self.nameOfPlayer.enabled = FALSE;
     self.notificationName.enabled = FALSE;
 
@@ -427,21 +460,18 @@
     [self performSegueWithIdentifier:@"supportView" sender:self];
 }
 
-#pragma mark - Seque Methods
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)saveUserDefaults
 {
-    if ([segue.identifier isEqualToString:@"actionNameView"]) {
-        //We need to do this because we're wrapped in a Navigation Controller
-        //UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
-        //ActionLabelTableViewController *actionNameTVC = (ActionLabelTableViewController *)navController.topViewController;
-        ActionLabelTableViewController *actionNameTVC = (ActionLabelTableViewController *)segue.destinationViewController;
-        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-        actionNameTVC.selectedActionRow = (int)indexPath;
-        
-        
-//        [segue.destinationViewController setSelectedActionRow:(int)self.tableView.indexPathForSelectedRow];
-//        [segue.destinationViewController setSelectedActionName:self.firstActionNameSelected.text];
+    //Save settings
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(![defaults synchronize]) {
+        //Synchronize could't happen; show user alert and exit
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Settings could not be saved", nil)
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"Ok", nil)
+                                              otherButtonTitles:nil];
+        [alert show];
     }
 }
 
@@ -519,26 +549,64 @@
 
 #pragma mark - Table view delegate
 
-//- (IBAction)unwindFromModalViewController:(UIStoryboardSegue *)segue
-//{
-//    if ([segue.sourceViewController isKindOfClass:[ActionLabelTableViewController class]]) {
-//        ActionLabelTableViewController *actionNameTVC = segue.sourceViewController;
-//        NSString *tempString = actionNameTVC.selectedActionName;
-//        
-//        self.firstActionNameSelected = (UILabel *)tempString;
-//    }
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"actionNameView"]) {
+        ActionLabelTableViewController *actionTVC = (ActionLabelTableViewController *)segue.destinationViewController;
+        actionTVC.selectedActionRow = self.actionRow;
+    }
+}
+
+- (IBAction)unwindFromModalViewController:(UIStoryboardSegue *)segue
+{
+    if ([segue.sourceViewController isKindOfClass:[ActionLabelTableViewController class]]) {
+        //Unwinding from Action Name VC
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+        ActionLabelTableViewController *actionNameTVC = segue.sourceViewController;
+        NSString *tempString = actionNameTVC.selectedActionName;
+        //Determine which Action Name row was selected prior to the segue
+        if (self.actionRow == 1) {
+            //self.firstActionNameSelected = (UILabel *)tempString;
+            [defaults setObject:tempString forKey:@"firstActionName"];
+        } else {
+            //self.secondActionNameSelected = (UILabel *)tempString;
+            [defaults setObject:tempString forKey:@"secondActionName"];
+        }
+        //Remove the row number from actionRow
+        self.actionRow = 0;
+        
+        [self saveUserDefaults];
+    }
+}
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //Change the selected row color so the entire row doesn't become gray when it's touched
-    if (!editingMode) {
+    if (editingMode) {
         [[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
-
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        int actionTag = cell.tag;
+        
+        if (actionTag == 1 || actionTag == 2) {
+            if (actionTag == 1) {
+                //The first Action Name row was selected
+                self.actionRow = 1;
+            } else {
+                //The second Action Name row was selected
+                self.actionRow = 2;
+            }
+        } else {
+            //Exit because the row was not for Action Name
+            return;
+        }
+        //Action Name row was selected so segue to that VC
+        [self performSegueWithIdentifier:@"actionNameView" sender:self];
+    } else {
+        return;
     }
-    
-    [self performSegueWithIdentifier:@"actionNameView" sender:self];
+
 
 }
 

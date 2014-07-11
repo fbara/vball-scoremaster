@@ -32,7 +32,7 @@
 			<key>Key</key>
 			<string>phoneNumberForNotification</string>
 			<key>DefaultValue</key>
-			<string>5555555555</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -42,7 +42,7 @@
 			<key>Key</key>
 			<string>playerNameForNotifications</string>
 			<key>DefaultValue</key>
-			<string>None</string>
+			<string></string>
 			<key>AutocorrectionType</key>
 			<string>Default</string>
 			<key>AutocapitalizationType</key>

@@ -137,9 +137,19 @@
     }
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (void)saveUserDefaults
 {
-    
+    //Save settings
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(![defaults synchronize]) {
+        //Synchronize could't happen; show user alert and exit
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Settings could not be saved", nil)
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"Ok", nil)
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 #pragma mark - UI Elements

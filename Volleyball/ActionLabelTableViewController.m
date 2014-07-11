@@ -8,9 +8,6 @@
 
 #import "ActionLabelTableViewController.h"
 
-NSString *const FIRST_ACTION = @"firstActionName";
-NSString *const SECOND_ACTION = @"secondActionName";
-
 @interface ActionLabelTableViewController ()
 
 @property (retain) NSIndexPath *lastSelected;
@@ -31,7 +28,10 @@ NSString *const SECOND_ACTION = @"secondActionName";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    _firstActionName = self.firstActionName;
+    _secondActionName = self.secondActionName;
+    _selectedActionRow = self.selectedActionRow;
+    _selectedActionName = self.selectedActionName;
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,8 +70,8 @@ NSString *const SECOND_ACTION = @"secondActionName";
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    cell.accessoryType = UITableViewCellAccessoryNone;
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
 }
 
