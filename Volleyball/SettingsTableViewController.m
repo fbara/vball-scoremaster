@@ -547,7 +547,7 @@
 */
 
 
-#pragma mark - Table view delegate
+#pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -580,6 +580,8 @@
     }
 }
 
+#pragma mark - UITableView Delegate
+
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -587,7 +589,7 @@
     if (editingMode) {
         [[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        int actionTag = cell.tag;
+        int actionTag = (int)cell.tag;
         
         if (actionTag == 1 || actionTag == 2) {
             if (actionTag == 1) {
@@ -606,8 +608,6 @@
     } else {
         return;
     }
-
-
 }
 
 
