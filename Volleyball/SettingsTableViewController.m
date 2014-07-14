@@ -58,7 +58,7 @@
                   target:self
                   action:@selector(saveSettings:)];
     
-    UIImage *image = [UIImage imageNamed:@"info.png"];
+    UIImage *image = [UIImage imageNamed:@"Info44.png"];
     
     UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
                                    initWithImage:image

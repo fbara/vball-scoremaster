@@ -63,75 +63,76 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Visiting Team" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gzx-4p-5vy">
-                                <rect key="frame" x="20" y="68" width="192" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av1-K7-XUr" userLabel="Button - Volleyball">
+                                <rect key="frame" x="241" y="149" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="VBall image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Visiting Team" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gzx-4p-5vy">
+                                <rect key="frame" x="62" y="71" width="168" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="rPx-ck-UCe"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Home Team" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KgW-hz-5sq">
-                                <rect key="frame" x="356" y="68" width="192" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Home Team" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KgW-hz-5sq">
+                                <rect key="frame" x="333" y="71" width="168" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="Gy2-c3-JW9"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jML-Et-saV">
-                                <rect key="frame" x="214" y="63" width="140" height="26"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jML-Et-saV">
+                                <rect key="frame" x="238" y="72" width="87" height="26"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6P-Lx-PJG" userLabel="GameNumber">
-                                <rect key="frame" x="246" y="84" width="72" height="56"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6P-Lx-PJG" userLabel="GameNumber">
+                                <rect key="frame" x="246" y="100" width="76" height="41"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPIKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tX3-rT-g7M" userLabel="Label - Second Action Name">
-                                <rect key="frame" x="220" y="228" width="128" height="25"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SPIKE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tX3-rT-g7M" userLabel="Label - Second Action Name">
+                                <rect key="frame" x="333" y="255" width="150" height="25"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="yXA-d2-HgF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3G-uq-fca" userLabel="KillsNumber">
-                                <rect key="frame" x="247" y="248" width="72" height="52"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3G-uq-fca" userLabel="KillsNumber">
+                                <rect key="frame" x="326" y="272" width="71" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ3-D6-TK5" userLabel="Label - First Action Name">
-                                <rect key="frame" x="220" y="146" width="128" height="25"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ3-D6-TK5" userLabel="Label - First Action Name">
+                                <rect key="frame" x="80" y="255" width="150" height="25"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Jva-SM-7OQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="991-IZ-vz3" userLabel="AceNumber">
-                                <rect key="frame" x="247" y="165" width="72" height="60"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="991-IZ-vz3" userLabel="AceNumber">
+                                <rect key="frame" x="171" y="272" width="71" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e73-U3-5CU" userLabel="screenActionKills">
-                                <rect key="frame" x="264" y="266" width="41" height="33"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e73-U3-5CU" userLabel="screenActionKills">
+                                <rect key="frame" x="341" y="272" width="41" height="33"/>
                                 <gestureRecognizers/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -142,13 +143,10 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                     <outletCollection property="gestureRecognizers" destination="qAC-a6-aQ8" appends="YES" id="m98-IJ-dzl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZs-Ny-2Iw" userLabel="screenActionAce">
-                                <rect key="frame" x="264" y="179" width="41" height="41"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZs-Ny-2Iw" userLabel="screenActionAce">
+                                <rect key="frame" x="186" y="268" width="41" height="41"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="Vu7-bE-6gp"/>
-                                </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -157,13 +155,9 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                     <outletCollection property="gestureRecognizers" destination="00j-HW-7Gn" appends="YES" id="FVH-z6-ZkN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLM-eS-SXb" userLabel="screenActionGame">
-                                <rect key="frame" x="264" y="91" width="41" height="41"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLM-eS-SXb" userLabel="screenActionGame">
+                                <rect key="frame" x="238" y="100" width="87" height="41"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="jqH-RP-Ict"/>
-                                    <constraint firstAttribute="height" constant="41" id="xgm-EE-jYJ"/>
-                                </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -171,67 +165,63 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                     <action selector="gamePressed" destination="vXZ-lx-hvc" eventType="touchUpInside" id="91k-vB-ZZN"/>
                                 </connections>
                             </button>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-DE-Ouq" userLabel="Home Container View">
-                                <rect key="frame" x="356" y="95" width="192" height="190"/>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-DE-Ouq" userLabel="Home Container View">
+                                <rect key="frame" x="333" y="97" width="168" height="150"/>
                                 <connections>
                                     <segue destination="UDW-Id-wMZ" kind="embed" identifier="embedHome" id="OXj-vc-u2c"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JdD-WX-kLc" userLabel="Visitor Container View">
-                                <rect key="frame" x="20" y="95" width="192" height="190"/>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdD-WX-kLc" userLabel="Visitor Container View">
+                                <rect key="frame" x="62" y="97" width="168" height="150"/>
                                 <connections>
                                     <segue destination="xOM-Jn-cof" kind="embed" identifier="embedVisitor" id="32b-31-xme"/>
                                 </connections>
                             </containerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="m1P-eG-o39" userLabel="Label - Home1">
+                                <rect key="frame" x="508" y="157" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="HOT-d2-W5V" userLabel="Label - Home2">
+                                <rect key="frame" x="508" y="185" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="iJA-mX-JWA" userLabel="Label - Home3">
+                                <rect key="frame" x="508" y="215" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="Sad-Nf-jjb" userLabel="Label - Visit1">
+                                <rect key="frame" x="14" y="157" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="i1f-B7-MYb" userLabel="Label - Visit2">
+                                <rect key="frame" x="14" y="185" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="mi0-YI-UNY" userLabel="Label - Visit3">
+                                <rect key="frame" x="14" y="215" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="JdD-WX-kLc" firstAttribute="top" secondItem="RTh-mM-zf8" secondAttribute="bottom" constant="31" id="12h-vK-vUz"/>
-                            <constraint firstItem="991-IZ-vz3" firstAttribute="leading" secondItem="JdD-WX-kLc" secondAttribute="trailing" constant="35" id="4Zc-X1-ir1"/>
-                            <constraint firstItem="O6P-Lx-PJG" firstAttribute="leading" secondItem="JdD-WX-kLc" secondAttribute="trailing" constant="34" id="5ep-G8-Q7d"/>
-                            <constraint firstItem="tX3-rT-g7M" firstAttribute="top" secondItem="991-IZ-vz3" secondAttribute="bottom" constant="3" id="90o-TM-nyY"/>
-                            <constraint firstAttribute="bottom" secondItem="JdD-WX-kLc" secondAttribute="bottom" constant="35" id="9eO-7r-iDH"/>
-                            <constraint firstItem="O6P-Lx-PJG" firstAttribute="top" secondItem="RTh-mM-zf8" secondAttribute="bottom" constant="20" id="C89-nj-NiY"/>
-                            <constraint firstItem="zLM-eS-SXb" firstAttribute="centerX" secondItem="jML-Et-saV" secondAttribute="centerX" id="GQH-8r-zqZ"/>
-                            <constraint firstAttribute="bottom" secondItem="V3G-uq-fca" secondAttribute="bottom" constant="20" symbolic="YES" id="GjF-Sa-paf"/>
-                            <constraint firstItem="Acd-DE-Ouq" firstAttribute="leading" secondItem="tX3-rT-g7M" secondAttribute="trailing" constant="8" symbolic="YES" id="HiE-CB-MXK"/>
-                            <constraint firstItem="NZs-Ny-2Iw" firstAttribute="leading" secondItem="zLM-eS-SXb" secondAttribute="leading" id="Icn-r0-J1P"/>
-                            <constraint firstAttribute="trailing" secondItem="KgW-hz-5sq" secondAttribute="trailing" constant="20" symbolic="YES" id="Jq3-Xs-5qf"/>
-                            <constraint firstItem="NZs-Ny-2Iw" firstAttribute="top" secondItem="NQ3-D6-TK5" secondAttribute="bottom" constant="8" symbolic="YES" id="Lyk-Ek-NEu"/>
-                            <constraint firstItem="JdD-WX-kLc" firstAttribute="trailing" secondItem="Gzx-4p-5vy" secondAttribute="trailing" id="MCH-7R-4fb"/>
-                            <constraint firstItem="zLM-eS-SXb" firstAttribute="top" secondItem="jML-Et-saV" secondAttribute="bottom" constant="2" id="McX-vw-Uxh"/>
-                            <constraint firstItem="e73-U3-5CU" firstAttribute="top" secondItem="tX3-rT-g7M" secondAttribute="bottom" constant="13" id="PSL-Af-2ML"/>
-                            <constraint firstItem="V3G-uq-fca" firstAttribute="top" secondItem="991-IZ-vz3" secondAttribute="bottom" constant="23" id="Ps8-hA-OqK"/>
-                            <constraint firstItem="991-IZ-vz3" firstAttribute="trailing" secondItem="V3G-uq-fca" secondAttribute="trailing" id="R2k-I0-Vyp"/>
-                            <constraint firstItem="NZs-Ny-2Iw" firstAttribute="trailing" secondItem="e73-U3-5CU" secondAttribute="trailing" id="S9Z-Le-769"/>
-                            <constraint firstItem="NQ3-D6-TK5" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="TIn-Vx-IF3"/>
-                            <constraint firstItem="Acd-DE-Ouq" firstAttribute="leading" secondItem="NQ3-D6-TK5" secondAttribute="trailing" constant="8" symbolic="YES" id="Tvf-gi-K4c"/>
-                            <constraint firstItem="NZs-Ny-2Iw" firstAttribute="trailing" secondItem="zLM-eS-SXb" secondAttribute="trailing" id="WZe-0o-BUJ"/>
-                            <constraint firstItem="KgW-hz-5sq" firstAttribute="leading" secondItem="Acd-DE-Ouq" secondAttribute="leading" id="XAp-aE-Ze7"/>
-                            <constraint firstItem="Gzx-4p-5vy" firstAttribute="leading" secondItem="JdD-WX-kLc" secondAttribute="leading" id="YNr-Wo-rqP"/>
-                            <constraint firstItem="e73-U3-5CU" firstAttribute="leading" secondItem="NZs-Ny-2Iw" secondAttribute="leading" id="cGi-Ka-8UN"/>
-                            <constraint firstItem="NZs-Ny-2Iw" firstAttribute="centerX" secondItem="NQ3-D6-TK5" secondAttribute="centerX" id="cIz-kS-sCI"/>
-                            <constraint firstItem="tX3-rT-g7M" firstAttribute="leading" secondItem="JdD-WX-kLc" secondAttribute="trailing" constant="8" symbolic="YES" id="dus-ZO-FXO"/>
-                            <constraint firstItem="tX3-rT-g7M" firstAttribute="top" secondItem="NZs-Ny-2Iw" secondAttribute="bottom" constant="8" id="dx3-Cd-Epw"/>
-                            <constraint firstItem="991-IZ-vz3" firstAttribute="leading" secondItem="V3G-uq-fca" secondAttribute="leading" id="eVd-1n-J5i"/>
-                            <constraint firstItem="Acd-DE-Ouq" firstAttribute="trailing" secondItem="KgW-hz-5sq" secondAttribute="trailing" id="fcg-C1-2Je"/>
-                            <constraint firstItem="NQ3-D6-TK5" firstAttribute="leading" secondItem="JdD-WX-kLc" secondAttribute="trailing" constant="8" symbolic="YES" id="g1k-SY-Zxk"/>
-                            <constraint firstItem="jML-Et-saV" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="63" id="m0f-cD-BX0"/>
-                            <constraint firstItem="Acd-DE-Ouq" firstAttribute="leading" secondItem="991-IZ-vz3" secondAttribute="trailing" constant="37" id="ng3-Xa-Sgl"/>
-                            <constraint firstItem="Acd-DE-Ouq" firstAttribute="leading" secondItem="O6P-Lx-PJG" secondAttribute="trailing" constant="38" id="pDo-gD-59K"/>
-                            <constraint firstItem="NQ3-D6-TK5" firstAttribute="top" secondItem="O6P-Lx-PJG" secondAttribute="bottom" constant="6" id="pcM-yN-IAh"/>
-                            <constraint firstAttribute="bottom" secondItem="e73-U3-5CU" secondAttribute="bottom" constant="21" id="qES-qy-bn0"/>
-                            <constraint firstItem="Gzx-4p-5vy" firstAttribute="top" secondItem="RTh-mM-zf8" secondAttribute="bottom" constant="4" id="qx9-6q-s8o"/>
-                            <constraint firstItem="Gzx-4p-5vy" firstAttribute="baseline" secondItem="KgW-hz-5sq" secondAttribute="baseline" id="rN3-gr-zi5"/>
-                            <constraint firstItem="991-IZ-vz3" firstAttribute="top" secondItem="O6P-Lx-PJG" secondAttribute="bottom" constant="25" id="rak-eF-t1e"/>
-                            <constraint firstItem="Acd-DE-Ouq" firstAttribute="leading" secondItem="zLM-eS-SXb" secondAttribute="trailing" constant="51" id="sJs-pl-TZj"/>
-                            <constraint firstItem="NQ3-D6-TK5" firstAttribute="top" secondItem="zLM-eS-SXb" secondAttribute="bottom" constant="14" id="t37-lb-oCO"/>
-                            <constraint firstItem="jML-Et-saV" firstAttribute="leading" secondItem="Gzx-4p-5vy" secondAttribute="trailing" constant="2" id="xDK-Th-2k8"/>
-                            <constraint firstItem="Gzx-4p-5vy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="xHM-7h-iSa"/>
-                            <constraint firstItem="Acd-DE-Ouq" firstAttribute="bottom" secondItem="JdD-WX-kLc" secondAttribute="bottom" id="yMJ-KL-DXA"/>
-                            <constraint firstItem="Acd-DE-Ouq" firstAttribute="top" secondItem="JdD-WX-kLc" secondAttribute="top" id="zme-hO-sKG"/>
-                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="VBall ScoreMaster" id="idF-JM-YX7">
@@ -247,12 +237,26 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <outlet property="bottomActionLabel" destination="tX3-rT-g7M" id="way-gT-sQw"/>
                         <outlet property="firstActionName" destination="991-IZ-vz3" id="Lko-Pf-Px5"/>
                         <outlet property="gameNumber" destination="O6P-Lx-PJG" id="hEm-tI-Usd"/>
+                        <outlet property="homeGame1" destination="m1P-eG-o39" id="JRe-DD-YSl"/>
+                        <outlet property="homeGame2" destination="HOT-d2-W5V" id="kvi-8l-e4N"/>
+                        <outlet property="homeGame3" destination="iJA-mX-JWA" id="YC9-Qu-zCX"/>
                         <outlet property="homeTeamContainer" destination="Acd-DE-Ouq" id="2Va-1T-JQ2"/>
                         <outlet property="homeTeamName" destination="KgW-hz-5sq" id="rYn-cJ-0vR"/>
                         <outlet property="secondActionName" destination="V3G-uq-fca" id="16P-Ae-YhH"/>
+                        <outlet property="sendInstantMessage" destination="av1-K7-XUr" id="15h-EF-Af9"/>
+                        <outlet property="sendInstantMessageImage" destination="av1-K7-XUr" id="3gy-KW-wAz"/>
                         <outlet property="topActionLabel" destination="NQ3-D6-TK5" id="wGF-nq-bXf"/>
+                        <outlet property="visitGame1" destination="Sad-Nf-jjb" id="GUq-Dx-1Ot"/>
+                        <outlet property="visitGame2" destination="i1f-B7-MYb" id="uBm-x9-n3g"/>
+                        <outlet property="visitGame3" destination="mi0-YI-UNY" id="25X-Vj-kI0"/>
                         <outlet property="visitingTeamName" destination="Gzx-4p-5vy" id="RcM-Y9-NgA"/>
                         <outlet property="vistingTeamContainer" destination="JdD-WX-kLc" id="LyJ-Gf-UgW"/>
+                        <outletCollection property="pastScoreCollection" destination="m1P-eG-o39" id="6pg-9N-GBt"/>
+                        <outletCollection property="pastScoreCollection" destination="HOT-d2-W5V" id="I77-9c-wnq"/>
+                        <outletCollection property="pastScoreCollection" destination="iJA-mX-JWA" id="DnU-Eh-y2O"/>
+                        <outletCollection property="pastScoreCollection" destination="Sad-Nf-jjb" id="0Zo-AE-AOO"/>
+                        <outletCollection property="pastScoreCollection" destination="i1f-B7-MYb" id="nJv-VO-kWS"/>
+                        <outletCollection property="pastScoreCollection" destination="mi0-YI-UNY" id="Tw4-My-X3t"/>
                         <segue destination="vSD-dS-WPV" kind="push" identifier="infoView" id="KBw-Ku-jMI"/>
                         <segue destination="JoG-uN-Xre" kind="push" identifier="settingsView" id="KRB-WR-gub"/>
                     </connections>
@@ -804,6 +808,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
         </scene>
     </scenes>
     <resources>
+        <image name="VBall image" width="296" height="274"/>
         <image name="volleyball big spike" width="284" height="213"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

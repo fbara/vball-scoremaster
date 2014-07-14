@@ -34,7 +34,6 @@ NSString *msgVisitor = @"VISITOR";
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
 @property (weak, nonatomic)UITextField *activeField;
-@property SettingsTableViewController *settingsVC;
 
 @end
 
@@ -74,16 +73,13 @@ NSString *msgVisitor = @"VISITOR";
     self.homePageViewController.dataSource = self;
     self.homePageViewController.delegate = self;
     
-    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor redColor];
-    self.view.tintColor = [UIColor redColor];
-    
     //Create bar button items and add them to the navigation bar
     UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc]
                                        initWithTitle:@"Settings"
                                        style:UIBarButtonItemStyleBordered
                                        target:self
                                        action:@selector(goToSettings)];
-    UIImage *image = [UIImage imageNamed:@"info.png"];
+    UIImage *image = [UIImage imageNamed:@"Info44.png"];
     UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
                                    initWithImage:image
                                    style:UIBarButtonItemStyleBordered
@@ -162,6 +158,11 @@ NSString *msgVisitor = @"VISITOR";
 - (void)showInfoView
 {
     [self performSegueWithIdentifier:@"infoView" sender:self];
+}
+
+- (void)initializePastGames
+{
+    
 }
 
 - (void)initializeHomeScore:(int)score
@@ -327,6 +328,9 @@ NSString *msgVisitor = @"VISITOR";
 #pragma mark - UILongPressGestureRecognizers
 #pragma mark - Reset Numbers to 0
 
+- (IBAction)sendInstantMessage {
+}
+
 - (IBAction)topActionLongPress:(UILongPressGestureRecognizer *)recognizer
 {
     //On a long press, show popup menu with selections to reset the number to zero or not
@@ -389,12 +393,13 @@ NSString *msgVisitor = @"VISITOR";
 
     lableNum = lableNum + 1;
     
-    if (lableNum <= 7) {
+    if (lableNum <= 4) {
         self.gameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
         
         //Reset the scores to start a new game
         [self initializeHomeScore:0];
         [self initializeVisitorScore:0];
+
     } else {
         self.gameNumber.text = [NSString stringWithFormat:@"%d", 0];
     }
