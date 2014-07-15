@@ -312,6 +312,14 @@ NSString *msgVisitor = @"VISITOR";
     CGPoint targetVisitorCenter = _homeTeamContainer.center;
     CGPoint targetHomeNameCenter = _visitingTeamName.center;
     CGPoint targetVisitorNameCenter = _homeTeamName.center;
+    //Get the center of each past score label
+    CGPoint targetHomeGame1 = self.visitGame1.center;
+    CGPoint targetHomeGame2 = self.visitGame2.center;
+    CGPoint targetHomeGame3 = self.visitGame3.center;
+    CGPoint targetVisitGame1 = self.homeGame1.center;
+    CGPoint targetVisitGame2 = self.homeGame2.center;
+    CGPoint targetVisitGame3 = self.homeGame3.center;
+
     
     //Create the animation and swap positions of the score controllers
     [UIView animateWithDuration:0.7f
@@ -320,13 +328,22 @@ NSString *msgVisitor = @"VISITOR";
           initialSpringVelocity:0.5f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^(){
+                         //Move the score containers
                          _homeTeamContainer.center = targetHomeCenter;
                          _homeTeamName.center = targetHomeNameCenter;
                          _vistingTeamContainer.center = targetVisitorCenter;
                          _visitingTeamName.center = targetVisitorNameCenter;
+                         
+                         //Now move the past scores
+                         self.homeGame1.center = targetHomeGame1;
+                         self.homeGame2.center = targetHomeGame2;
+                         self.homeGame3.center = targetHomeGame3;
+                         self.visitGame1.center = targetVisitGame1;
+                         self.visitGame2.center = targetVisitGame2;
+                         self.visitGame3.center = targetVisitGame3;
+                        
                      }
                      completion:NULL];
-    
 }
 
 
@@ -337,6 +354,7 @@ NSString *msgVisitor = @"VISITOR";
 - (IBAction)sendInstantMessage
 {
 //TODO: Add code to send instant message
+    [self sendSMS];
 }
 
 - (IBAction)topActionLongPress:(UILongPressGestureRecognizer *)recognizer
@@ -398,7 +416,7 @@ NSString *msgVisitor = @"VISITOR";
 {
     //Grab the game number
     int lableNum = [self.gameNumber.text intValue];
-//TODO: Continue updating Switch
+    //Update the past scores, set the winner in red text
     switch (lableNum) {
         case 1:
             self.homeGame1.text = [NSString stringWithFormat:@"%d", currHomeScore];
@@ -435,7 +453,7 @@ NSString *msgVisitor = @"VISITOR";
         default:
             break;
     }
-
+    //Increase the game number by 1 but don't let it go more than 4
     lableNum = lableNum + 1;
     
     if (lableNum <= 4) {
@@ -588,8 +606,6 @@ NSString *msgVisitor = @"VISITOR";
         if ([MFMessageComposeViewController canSendText]) {
             NSString *playerName = [defaults stringForKey:@"playerNameForNotifications"];
             NSString *notificationNumber = [defaults stringForKey:@"phoneNumberForNotification"];
-
-//TODO: Get Action Name values from Settings and put in this VC
             
             NSString *textMessage = [NSString stringWithFormat:@"%@ has %d %@'s and %d %@'s!\nThe score is now %@ %d - %@ %d.", playerName ,currSecondAction, self.rightActionLabel.text, currFirstAction, self.leftActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
             [textComposer setRecipients:[NSArray arrayWithObjects:notificationNumber, nil]];
