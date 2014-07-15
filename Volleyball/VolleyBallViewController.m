@@ -162,7 +162,12 @@ NSString *msgVisitor = @"VISITOR";
 
 - (void)initializePastGames
 {
-    
+    //There are 3 home & 3 visitor past scores that need to be reset to '00'
+    for (UILabel *score in self.pastScoreCollection) {
+        score.text = @"00";
+        [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
+        score.textColor = [UIColor blackColor];
+    }
 }
 
 - (void)initializeHomeScore:(int)score
@@ -240,6 +245,7 @@ NSString *msgVisitor = @"VISITOR";
     currSecondAction = 0;
     currHomeScore = 0;
     currVisitorScore = 0;
+    [self initializePastGames];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -270,17 +276,17 @@ NSString *msgVisitor = @"VISITOR";
     tempName = [defaults stringForKey:@"firstActionName"];
     
     if ([tempName length] < 1) {
-        self.topActionLabel.text = @"SPIKE";
+        self.leftActionLabel.text = @"SPIKE";
     } else {
-        self.topActionLabel.text = [defaults stringForKey:@"firstActionName"];
+        self.leftActionLabel.text = [defaults stringForKey:@"firstActionName"];
     }
     
     tempName = [defaults stringForKey:@"secondActionName"];
     
     if ([tempName length] < 1) {
-        self.bottomActionLabel.text = @"ACE";
+        self.rightActionLabel.text = @"ACE";
     } else {
-        self.bottomActionLabel.text = [defaults stringForKey:@"secondActionName"];
+        self.rightActionLabel.text = [defaults stringForKey:@"secondActionName"];
     }
 }
 
@@ -328,7 +334,9 @@ NSString *msgVisitor = @"VISITOR";
 #pragma mark - UILongPressGestureRecognizers
 #pragma mark - Reset Numbers to 0
 
-- (IBAction)sendInstantMessage {
+- (IBAction)sendInstantMessage
+{
+//TODO: Add code to send instant message
 }
 
 - (IBAction)topActionLongPress:(UILongPressGestureRecognizer *)recognizer
@@ -390,25 +398,69 @@ NSString *msgVisitor = @"VISITOR";
 {
     //Grab the game number
     int lableNum = [self.gameNumber.text intValue];
+//TODO: Continue updating Switch
+    switch (lableNum) {
+        case 1:
+            self.homeGame1.text = [NSString stringWithFormat:@"%d", currHomeScore];
+            self.visitGame1.text = [NSString stringWithFormat:@"%d", currVisitorScore];
+            if (currHomeScore > currVisitorScore) {
+                self.homeGame1.textColor = [UIColor redColor];
+                [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+            } else {
+                self.visitGame1.textColor = [UIColor redColor];
+                [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+            }
+            break;
+        case 2:
+            self.homeGame2.text = [NSString stringWithFormat:@"%d", currHomeScore];
+            self.visitGame2.text = [NSString stringWithFormat:@"%d", currVisitorScore];
+            if (currHomeScore > currVisitorScore) {
+                self.homeGame2.textColor = [UIColor redColor];
+                [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:20]];
+            } else {
+                self.visitGame2.textColor = [UIColor redColor];
+                [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:20]];
+            }
+            break;
+        case 3:
+            self.homeGame3.text = [NSString stringWithFormat:@"%d", currHomeScore];
+            self.visitGame3.text = [NSString stringWithFormat:@"%d", currVisitorScore];
+            if (currHomeScore > currVisitorScore) {
+                self.homeGame3.textColor = [UIColor redColor];
+                [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:20]];
+            } else {
+                self.visitGame3.textColor = [UIColor redColor];
+                [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:20]];
+            }
+        default:
+            break;
+    }
 
     lableNum = lableNum + 1;
     
     if (lableNum <= 4) {
         self.gameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
-        
         //Reset the scores to start a new game
         [self initializeHomeScore:0];
         [self initializeVisitorScore:0];
-
+        
     } else {
         self.gameNumber.text = [NSString stringWithFormat:@"%d", 0];
+        //Reset the past game fonts back to default
+        for (UILabel *score in self.pastScoreCollection) {
+            score.text = @"00";
+            [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
+            score.textColor = [UIColor blackColor];
+        }
     }
+    currVisitorScore = 0;
+    currHomeScore = 0;
 }
 
 /*!
  *  What happens when 'Spike' number is touched
  */
-- (IBAction)firstActionPressed
+- (IBAction)rightActionPressed
 {
     //Get the number currently displayed for second Action Name and add 1
     int lableNum = [self.secondActionName.text intValue];
@@ -427,7 +479,7 @@ NSString *msgVisitor = @"VISITOR";
 /*!
  *  What happens when 'Ace' number is touched
  */
-- (IBAction)secondActionPressed
+- (IBAction)leftActionPressed
 {
     //Get current number and add 1
     int lableNum = [self.firstActionName.text intValue];
@@ -469,6 +521,7 @@ NSString *msgVisitor = @"VISITOR";
         [self initializeHomeScore:0];
         [self initializeVisitorScore:0];
         [self resetGameAndNames];
+        [self initializePastGames];
 
     }
 }
@@ -538,7 +591,7 @@ NSString *msgVisitor = @"VISITOR";
 
 //TODO: Get Action Name values from Settings and put in this VC
             
-            NSString *textMessage = [NSString stringWithFormat:@"%@ has %d %@'s and %d %@'s!\nThe score is now %@ %d - %@ %d.", playerName ,currSecondAction, self.bottomActionLabel.text, currFirstAction, self.topActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
+            NSString *textMessage = [NSString stringWithFormat:@"%@ has %d %@'s and %d %@'s!\nThe score is now %@ %d - %@ %d.", playerName ,currSecondAction, self.rightActionLabel.text, currFirstAction, self.leftActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
             [textComposer setRecipients:[NSArray arrayWithObjects:notificationNumber, nil]];
             
             [textComposer setBody:textMessage];

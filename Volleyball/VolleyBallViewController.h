@@ -18,8 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *firstActionName;
 @property (weak, nonatomic) IBOutlet UITextField *visitingTeamName;
 @property (weak, nonatomic) IBOutlet UITextField *homeTeamName;
-@property (weak, nonatomic) IBOutlet UILabel *topActionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bottomActionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *leftActionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rightActionLabel;
 @property (weak, nonatomic) IBOutlet UIView *homeTeamContainer;
 @property (weak, nonatomic) IBOutlet UIView *vistingTeamContainer;
 @property (weak, nonatomic) IBOutlet UILabel *homeGame1;
@@ -28,7 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *visitGame1;
 @property (weak, nonatomic) IBOutlet UILabel *visitGame2;
 @property (weak, nonatomic) IBOutlet UILabel *visitGame3;
-@property (weak, nonatomic) IBOutlet UIButton *sendInstantMessageImage;
+@property (weak, nonatomic) IBOutlet UIButton *sendMessageImage;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *pastScoreCollection;
 
 
@@ -41,8 +41,8 @@
 - (IBAction)bottomActionLongPress:(UILongPressGestureRecognizer *)recognizer;
 
 - (IBAction)gamePressed;
-- (IBAction)firstActionPressed;
-- (IBAction)secondActionPressed;
+- (IBAction)rightActionPressed;
+- (IBAction)leftActionPressed;
 - (IBAction)newMatch;
 - (IBAction)sendInstantMessage;
 @end
