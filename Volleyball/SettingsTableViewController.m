@@ -15,11 +15,6 @@
 @end
 
 @implementation SettingsTableViewController
-{
-    //UIBarButtonItem *editSettingsButton;
-    BOOL editingMode;
-    BOOL changesMade;
-}
 
 - (IBAction)textFieldReturn:(id)sender
 {
@@ -52,12 +47,6 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     
-    self.editSettingsButton = [[UIBarButtonItem alloc]
-                  initWithTitle:@"Edit"
-                  style:UIBarButtonItemStyleBordered
-                  target:self
-                  action:@selector(saveSettings:)];
-    
     UIImage *image = [UIImage imageNamed:@"Info44.png"];
     
     UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
@@ -65,13 +54,8 @@
                                    style:UIBarButtonItemStyleBordered
                                    target:self
                                    action:@selector(showSupportView)];
-    
-    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc]
-                                   initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                   target:self
-                                   action:nil];
-    fixedSpace.width = 20.0f;
-    NSArray *barButtonItems = @[self.editSettingsButton, fixedSpace, infoButton];
+
+    NSArray *barButtonItems = @[infoButton];
     self.navigationItem.rightBarButtonItems = barButtonItems;
     
     //Set the switch if messages will be sent
@@ -80,10 +64,6 @@
     } else {
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
-    
-    //When the screen loads, we're not in editing mode nor have changes been made
-    editingMode = NO;
-    changesMade = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -107,14 +87,17 @@
     }
     
     [super viewWillAppear:animated];
-    [self.view setNeedsDisplay];
 
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     //Save our settings before the scene goes away
-    [self saveUserDefaults];
+    [self saveScoreColors];
+    [self savePlayerName:self.nameOfPlayer.text saveNotifyPhone:self.notificationName.text];
+    [self saveActionNames:self.firstActionNameSelected.text secondName:self.secondActionNameSelected.text];
+    [self notificationSwitch:self.sendNotificationSwitch];
+
     [super viewWillDisappear:animated];
 }
 
@@ -125,56 +108,6 @@
 }
 
 - (BOOL)canBecomeFirstResponder { return YES; }
-
-#pragma mark - Save Settings
-
-/*!
- *  Save the settings
- *
- *  @param sender The param is not used
- */
-- (IBAction)saveSettings:(id)sender
-{
-    if (!editingMode) {
-        //Indicate we're now in editing mode
-        editingMode = YES;
-        
-        //Button starts out as 'Edit' and should be changed to 'Done'
-        self.editSettingsButton.title = @"Save";
-
-        //Enable UI elements
-        [self enableUIObjects];
-        
-        //Hide left 'back' button so they can't back out without hitting
-        //'done' button first
-        [self.navigationItem setHidesBackButton:YES animated:YES];
-        
-        
-    } else {
-        //No longer in editing mode
-        editingMode = NO;
-        changesMade = NO;
-        
-        //Put button label back to 'Edit'
-        self.editSettingsButton.title = @"Edit";
-        
-        //Disable UI elements
-        [self disableUIObjects];
-        
-        //Save the colors regardless if they were changed or not
-        [self saveScoreColors];
-        //Save Action names
-        [self saveActionNames:self.firstActionNameSelected.text
-                   secondName:self.secondActionNameSelected.text];
-        //Save player name and SMS number
-        [self savePlayerName:self.nameOfPlayer.text
-             saveNotifyPhone:self.notificationName.text];
-
-        //Show the 'back' button again so they can leave this screen
-        [self.navigationItem setHidesBackButton:NO animated:YES];
-
-    }
-}
 
 #pragma mark - Save/Load Player Name
 /*!
@@ -199,6 +132,8 @@
     } else {
         [defaults setObject:@" " forKey:@"phoneNumberForNotification"];
     }
+    
+    [self saveUserDefaults];
 }
 
 - (void)getPlayerNameAndNumber
@@ -233,7 +168,8 @@
     } else {
         [defaults setObject:@"ACE" forKey:@"secondActionName"];
     }
-
+    
+    [self saveUserDefaults];
 }
 
 /*!
@@ -250,7 +186,6 @@
     if ([tempName length] < 1) {
         self.firstActionNameSelected.text = @"SPIKE";
     } else {
-       //tempName = [defaults stringForKey:@"firstActionName"];
         self.firstActionNameSelected.text = tempName;
     }
     
@@ -259,7 +194,6 @@
     if ([tempName length] < 1) {
         self.secondActionNameSelected.text = @"ACE";
     } else {
-        //tempName = [defaults stringForKey:@"secondActionName"];
         self.secondActionNameSelected.text = tempName;
     }
 }
@@ -304,6 +238,7 @@
     NSData *colorVisitorData = [NSKeyedArchiver archivedDataWithRootObject:colorVisitor];
     [defaults setObject:colorVisitorData forKey:@"visitorTeamColor"];
     
+    [self saveUserDefaults];
 }
 
 #pragma mark - Score Background Color Methods
@@ -318,9 +253,6 @@
     UIColor *homeButtonColor;
     homeButtonColor = [self getRandomColor];
     self.homeTeamColor.backgroundColor = homeButtonColor;
-    
-    //Indicate changes were made
-    changesMade = YES;
 }
 
 /*!
@@ -333,10 +265,6 @@
     UIColor *visitingButtonColor;
     visitingButtonColor = [self getRandomColor];
     self.visitingTeamColor.backgroundColor = visitingButtonColor;
-    
-    //Indicate changes were made
-    changesMade = YES;
-    
 }
 
 - (UIColor *)getRandomColor
@@ -348,34 +276,6 @@
     
     UIColor *color = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:a/1.0];
     return color;
-}
-
-#pragma mark - Enable/Disable UI
-
-- (void)enableUIObjects
-{
-    self.homeTeamColor.enabled = TRUE;
-    self.visitingTeamColor.enabled = TRUE;
-    self.sendNotificationSwitch.enabled = TRUE;
-    self.addPhoneNumberButton.enabled = TRUE;
-//    self.firstActionNameSelected.enabled = TRUE;
-//    self.secondActionNameSelected.enabled = TRUE;
-    self.nameOfPlayer.enabled = TRUE;
-    self.notificationName.enabled = TRUE;
-
-}
-
-- (void)disableUIObjects
-{
-    self.homeTeamColor.enabled = FALSE;
-    self.visitingTeamColor.enabled = FALSE;
-    self.sendNotificationSwitch.enabled = FALSE;
-    self.addPhoneNumberButton.enabled = FALSE;
-//    self.firstActionNameSelected.enabled = FALSE;
-//    self.secondActionNameSelected.enabled = FALSE;
-    self.nameOfPlayer.enabled = FALSE;
-    self.notificationName.enabled = FALSE;
-
 }
 
 #pragma mark - Notificaion Switch
@@ -396,6 +296,7 @@
         default:
             break;
     }
+    [self saveUserDefaults];
 }
 
 - (NSString *)getSendNotifications
@@ -481,72 +382,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-//#pragma mark - Table view data source
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 4;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 2;
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -586,28 +421,25 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //Change the selected row color so the entire row doesn't become gray when it's touched
-    if (editingMode) {
-        [[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        int actionTag = (int)cell.tag;
-        
-        if (actionTag == 1 || actionTag == 2) {
-            if (actionTag == 1) {
-                //The first Action Name row was selected
-                self.actionRow = 1;
-            } else {
-                //The second Action Name row was selected
-                self.actionRow = 2;
-            }
+    [[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    int actionTag = (int)cell.tag;
+    
+    if (actionTag == 1 || actionTag == 2) {
+        if (actionTag == 1) {
+            //The first Action Name row was selected
+            self.actionRow = 1;
         } else {
-            //Exit because the row was not for Action Name
-            return;
+            //The second Action Name row was selected
+            self.actionRow = 2;
         }
-        //Action Name row was selected so segue to that VC
-        [self performSegueWithIdentifier:@"actionNameView" sender:self];
     } else {
+        //Exit because the row was not for Action Name
         return;
     }
+    //Action Name row was selected so segue to that VC
+    [self performSegueWithIdentifier:@"actionNameView" sender:self];
+
 }
 
 

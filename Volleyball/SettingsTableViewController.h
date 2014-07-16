@@ -11,7 +11,7 @@
 
 @interface SettingsTableViewController : UITableViewController <UITableViewDelegate,ABPeoplePickerNavigationControllerDelegate,UITextViewDelegate,UITextFieldDelegate>
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *editSettingsButton;
+//@property (strong, nonatomic) IBOutlet UIBarButtonItem *editSettingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
 @property (weak, nonatomic) IBOutlet UIButton *visitingTeamColor;
 @property (weak, nonatomic) IBOutlet UITextField *notificationName;
@@ -25,7 +25,7 @@
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;
-- (IBAction)saveSettings:(id)sender;
+//- (IBAction)saveSettings:(id)sender;
 - (IBAction)getPhoneNumberFromAddressBook:(id)sender;
 - (IBAction)notificationSwitch:(id)sender;
 - (IBAction)textFieldReturn:(id)sender;

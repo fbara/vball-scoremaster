@@ -8,7 +8,6 @@
 
 #import "VolleyBallViewController.h"
 #import "DefaultScoreViewController.h"
-//#import "SettingsViewController.h"
 #import "SettingsTableViewController.h"
 
 //Constants for use when extending this to other sports
