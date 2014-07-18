@@ -12,6 +12,10 @@
 @interface SettingsTableViewController ()
 
 @property int actionRow;
+@property int myTextFieldSemaphore;
+@property NSString *myLocale; //@"us"
+@property PhoneNumberFormatter *myPhoneNumberFormatter;
+
 @end
 
 @implementation SettingsTableViewController
@@ -40,12 +44,30 @@
     return YES;
 }
 
+- (void)autoFormatTextField:(id)sender
+{
+    if (self.myTextFieldSemaphore) return;
+    
+    self.myTextFieldSemaphore = 1;
+    self.myLocale = [[NSLocale currentLocale] displayNameForKey:NSLocaleIdentifier
+                                                          value:[[NSLocale currentLocale] localeIdentifier]];
+    PhoneNumberFormatter *myPhoneNumberFormatter = [[PhoneNumberFormatter alloc] init];
+    self.notificationName.text = [myPhoneNumberFormatter format:self.notificationName.text
+                                                          withLocale:self.myLocale];
+    self.myTextFieldSemaphore = 0;
+    
+}
+
 #pragma mark - View Methods
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.tableView.delegate = self;
+    self.myTextFieldSemaphore = 0;
+    [self.notificationName addTarget:self
+                              action:@selector(autoFormatTextField:)
+                    forControlEvents:UIControlEventEditingChanged];
     
     UIImage *image = [UIImage imageNamed:@"Info44.png"];
     

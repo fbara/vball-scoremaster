@@ -10,10 +10,12 @@
 
 @interface ActionLabelTableViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource>
 
+
 @property (weak, nonatomic)NSString *firstActionName;
 @property (weak, nonatomic)NSString *secondActionName;
 @property (strong, nonatomic)IBOutlet NSString *selectedActionName;
 @property NSInteger selectedActionRow;
+
 
 
 @end

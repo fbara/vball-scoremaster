@@ -531,6 +531,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="textFieldReturn:" destination="JoG-uN-Xre" eventType="editingDidEnd" id="u44-Fl-EHY"/>
+                                                        <outlet property="delegate" destination="JoG-uN-Xre" id="bkG-V4-Nyt"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -550,6 +551,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="textFieldReturn:" destination="JoG-uN-Xre" eventType="editingDidEnd" id="22Q-CG-XlK"/>
+                                                        <outlet property="delegate" destination="JoG-uN-Xre" id="x7l-Ao-jba"/>
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number for message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H3O-dK-ACP">

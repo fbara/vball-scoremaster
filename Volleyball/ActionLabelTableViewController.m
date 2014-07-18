@@ -10,8 +10,6 @@
 
 @interface ActionLabelTableViewController ()
 
-@property (retain) NSIndexPath *lastSelected;
-
 @end
 
 @implementation ActionLabelTableViewController
@@ -42,6 +40,8 @@
     return indexPath;
 }
 
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -49,36 +49,13 @@
 }
 
 #pragma mark - Table view data source
-
-//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    cell.accessoryType = UITableViewCellAccessoryNone;
-//
-//}
-
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if (self.lastSelected==indexPath) return; // nothing to do
-//    
-//    // deselect old
-//    UITableViewCell *old = [self.tableView cellForRowAtIndexPath:self.lastSelected];
-//    old.accessoryType = UITableViewCellAccessoryNone;
-//    [old setSelected:FALSE animated:TRUE];
-//    
-//    // select new
+  
+   // select new
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-//    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    [cell setSelected:TRUE animated:TRUE];
-//    
-//    // keep track of the last selected cell
-//    self.lastSelected = indexPath;
     self.selectedActionName = cell.textLabel.text;
-    
-    //Perform a segue to go back to the SettingsTableViewController, passing the row selected
-    //[self performSegueWithIdentifier:@"actionSelected" sender:self.selectedActionName];
+
 }
 
 @end

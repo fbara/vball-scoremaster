@@ -35,6 +35,7 @@
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
 		AD999EB719490DFB00285864 /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */; };
 		AD999EC119492CC000285864 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD999EC319492CC000285864 /* Localizable.strings */; };
+		ADD034CD197842A10039567E /* PhoneNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD034CC197842A10039567E /* PhoneNumberFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		AD999EB819490DFB00285864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		AD999EC219492CC000285864 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ADD034CB197842A10039567E /* PhoneNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumberFormatter.h; sourceTree = "<group>"; };
+		ADD034CC197842A10039567E /* PhoneNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				92AA42AA1916C2800037D405 /* Volleyball-Info.plist */,
 				92AA42AE1916C2800037D405 /* main.m */,
 				92AA42B01916C2800037D405 /* Volleyball-Prefix.pch */,
+				ADD034CB197842A10039567E /* PhoneNumberFormatter.h */,
+				ADD034CC197842A10039567E /* PhoneNumberFormatter.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
 				924479A0192C2CDC0031C1F6 /* SettingsViewController.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
+				ADD034CD197842A10039567E /* PhoneNumberFormatter.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
 				9273CB041940990200696E8E /* SupportInstructionsViewController.m in Sources */,
 				AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */,
