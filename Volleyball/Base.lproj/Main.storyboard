@@ -530,8 +530,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
+                                                        <action selector="textFieldReturn:" destination="JoG-uN-Xre" eventType="editingDidEndOnExit" id="Uj3-8S-IUt"/>
                                                         <action selector="textFieldReturn:" destination="JoG-uN-Xre" eventType="editingDidEnd" id="u44-Fl-EHY"/>
-                                                        <outlet property="delegate" destination="JoG-uN-Xre" id="bkG-V4-Nyt"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -550,7 +550,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
-                                                        <action selector="textFieldReturn:" destination="JoG-uN-Xre" eventType="editingDidEnd" id="22Q-CG-XlK"/>
+                                                        <action selector="textFieldReturn:" destination="JoG-uN-Xre" eventType="editingDidEndOnExit" id="j4n-JS-kPd"/>
                                                         <outlet property="delegate" destination="JoG-uN-Xre" id="x7l-Ao-jba"/>
                                                     </connections>
                                                 </textField>

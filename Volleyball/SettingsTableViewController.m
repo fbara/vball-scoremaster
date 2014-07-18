@@ -12,51 +12,12 @@
 @interface SettingsTableViewController ()
 
 @property int actionRow;
-@property int myTextFieldSemaphore;
-@property NSString *myLocale; //@"us"
-@property PhoneNumberFormatter *myPhoneNumberFormatter;
 
 @end
 
 @implementation SettingsTableViewController
 
-- (IBAction)textFieldReturn:(id)sender
-{
-    [sender resignFirstResponder];
-    [self.view endEditing:TRUE];
-}
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    [self.view endEditing:YES];
-    [textField resignFirstResponder];
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    [self.view endEditing:YES];
-    [super touchesBegan:touches withEvent:event];
-}
-
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
-}
-
-- (void)autoFormatTextField:(id)sender
-{
-    if (self.myTextFieldSemaphore) return;
-    
-    self.myTextFieldSemaphore = 1;
-    self.myLocale = [[NSLocale currentLocale] displayNameForKey:NSLocaleIdentifier
-                                                          value:[[NSLocale currentLocale] localeIdentifier]];
-    PhoneNumberFormatter *myPhoneNumberFormatter = [[PhoneNumberFormatter alloc] init];
-    self.notificationName.text = [myPhoneNumberFormatter format:self.notificationName.text
-                                                          withLocale:self.myLocale];
-    self.myTextFieldSemaphore = 0;
-    
-}
 
 #pragma mark - View Methods
 
@@ -64,11 +25,7 @@
 {
     [super viewDidLoad];
     self.tableView.delegate = self;
-    self.myTextFieldSemaphore = 0;
-    [self.notificationName addTarget:self
-                              action:@selector(autoFormatTextField:)
-                    forControlEvents:UIControlEventEditingChanged];
-    
+        
     UIImage *image = [UIImage imageNamed:@"Info44.png"];
     
     UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
@@ -462,6 +419,88 @@
     //Action Name row was selected so segue to that VC
     [self performSegueWithIdentifier:@"actionNameView" sender:self];
 
+}
+
+#pragma mark - UITextField Phone Formatting
+
+- (IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
+    [self.view endEditing:TRUE];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self.view endEditing:YES];
+    [textField resignFirstResponder];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    //calculate new length
+    NSInteger moddedLength = textField.text.length-(range.length-string.length);
+    
+    // max size.
+    if (moddedLength >= 13) {
+        return NO;
+    }
+    
+    // Reject non-number characters
+    if (range.length == 0 &&![[NSCharacterSet decimalDigitCharacterSet] characterIsMember:[string characterAtIndex:0]]) {
+        return NO;
+    }
+    
+    // Auto-add hyphen before appending 4rd or 7th digit
+    if ([self range:range ContainsLocation:3] || [self range:range ContainsLocation:7]) {
+        textField.text = [self formatPhoneString:[textField.text stringByReplacingCharactersInRange:range withString:string]];
+        return NO;
+    }
+    
+    return YES;
+}
+
+#pragma mark Phone Formatting Helpers
+
+-(NSString*) formatPhoneString:(NSString*) preFormatted
+{
+    //delegate only allows numbers to be entered, so '-' is the only non-legal char.
+    NSString* workingString = [preFormatted stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    
+    //insert first '-'
+    if(workingString.length > 3)
+    {
+        workingString = [workingString stringByReplacingCharactersInRange:NSMakeRange(3, 0) withString:@"-"];
+    }
+    
+    //insert second '-'
+    if(workingString.length > 7)
+    {
+        workingString = [workingString stringByReplacingCharactersInRange:NSMakeRange(7, 0) withString:@"-"];
+    }
+    
+    return workingString;
+    
+}
+
+-(bool) range:(NSRange) range ContainsLocation:(NSInteger) location
+{
+    if(range.location <= location && range.location+range.length >= location)
+    {
+        return true;
+    }
+    
+    return false;
 }
 
 
