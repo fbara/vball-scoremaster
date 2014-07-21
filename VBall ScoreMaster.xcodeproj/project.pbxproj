@@ -26,7 +26,6 @@
 		92AA42C41916C2810037D405 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A61916C2800037D405 /* UIKit.framework */; };
 		92AA42CC1916C2810037D405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92AA42CA1916C2810037D405 /* InfoPlist.strings */; };
 		92AA42CE1916C2810037D405 /* VolleyballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42CD1916C2810037D405 /* VolleyballTests.m */; };
-		92D318FE193E3E9900F5A942 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */; };
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
 		AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */; };
 		AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C8100194A5FD70028179B /* InstructionsViewController.m */; };
@@ -35,6 +34,7 @@
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
 		AD999EB719490DFB00285864 /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */; };
 		AD999EC119492CC000285864 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD999EC319492CC000285864 /* Localizable.strings */; };
+		ADD034CF19794C370039567E /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD034CE19794C370039567E /* Default-Landscape@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,13 +75,11 @@
 		92AA42C91916C2810037D405 /* VolleyballTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VolleyballTests-Info.plist"; sourceTree = "<group>"; };
 		92AA42CB1916C2810037D405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92AA42CD1916C2810037D405 /* VolleyballTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolleyballTests.m; sourceTree = "<group>"; };
-		92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabelTableViewController.h; sourceTree = "<group>"; };
 		AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionLabelTableViewController.m; sourceTree = "<group>"; };
 		AD1C80FF194A5FD70028179B /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
 		AD1C8100194A5FD70028179B /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsViewController.m; sourceTree = "<group>"; };
-		AD1C811D194A8BED0028179B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		AD1C811E1955E6FC0028179B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		AD1C816B195C43A30028179B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		AD1C816C195C43A30028179B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
@@ -89,7 +87,8 @@
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		AD999EB819490DFB00285864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
-		AD999EC219492CC000285864 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ADD034CE19794C370039567E /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
+		ADFD37D71979CF2E00C86D83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +122,7 @@
 		9244799B192C01830031C1F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				92D318FD193E3E9900F5A942 /* Default-Landscape@2x.png */,
+				ADD034CE19794C370039567E /* Default-Landscape@2x.png */,
 				9244799C192C022D0031C1F6 /* Settings.bundle */,
 			);
 			name = Resources;
@@ -191,7 +190,9 @@
 		92AA42A91916C2800037D405 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AD999EBE19490FE200285864 /* en.lproj */,
+				92AA42AB1916C2800037D405 /* InfoPlist.strings */,
+				AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */,
+				92AA42B41916C2810037D405 /* Main.storyboard */,
 				AD999EC319492CC000285864 /* Localizable.strings */,
 				92AA42B11916C2800037D405 /* VolleyBallAppDelegate.h */,
 				92AA42B21916C2800037D405 /* VolleyBallAppDelegate.m */,
@@ -218,16 +219,6 @@
 				92AA42CA1916C2810037D405 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AD999EBE19490FE200285864 /* en.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				92AA42AB1916C2800037D405 /* InfoPlist.strings */,
-				AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */,
-				92AA42B41916C2810037D405 /* Main.storyboard */,
-			);
-			name = en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,10 +306,10 @@
 			files = (
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
+				ADD034CF19794C370039567E /* Default-Landscape@2x.png in Resources */,
 				9244799D192C022D0031C1F6 /* Settings.bundle in Resources */,
 				AD999EC119492CC000285864 /* Localizable.strings in Resources */,
 				92AA42B61916C2810037D405 /* Main.storyboard in Resources */,
-				92D318FE193E3E9900F5A942 /* Default-Landscape@2x.png in Resources */,
 				AD999EB719490DFB00285864 /* DefaultScoreViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,7 +388,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				92AA42B51916C2810037D405 /* Base */,
-				AD1C811D194A8BED0028179B /* en */,
+				ADFD37D71979CF2E00C86D83 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -421,7 +412,6 @@
 		AD999EC319492CC000285864 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AD999EC219492CC000285864 /* en */,
 				AD6A50941975DD2400135CB9 /* Base */,
 			);
 			name = Localizable.strings;

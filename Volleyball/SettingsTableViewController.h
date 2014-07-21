@@ -21,8 +21,8 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *settingsLabels;
 @property (weak, nonatomic) IBOutletCollection(UIButton) NSArray *settingsButtons;
 @property (weak, nonatomic) IBOutlet UIButton *addPhoneNumberButton;
-@property (strong, nonatomic) IBOutlet UILabel *firstActionNameSelected;
-@property (strong, nonatomic) IBOutlet UILabel *secondActionNameSelected;
+@property (strong, nonatomic) IBOutlet UILabel *leftActionNameSelected;
+@property (strong, nonatomic) IBOutlet UILabel *rightActionNameSelected;
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;

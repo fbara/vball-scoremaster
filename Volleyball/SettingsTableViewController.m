@@ -12,10 +12,15 @@
 @interface SettingsTableViewController ()
 
 @property int actionRow;
+@property NSString *existingRightActionName;
+@property NSString *existingLeftActionName;
 
 @end
 
 @implementation SettingsTableViewController
+{
+    NSString *firstStartTime;
+}
 
 
 
@@ -43,14 +48,26 @@
     } else {
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     
-    //Get the saved score background colors
-    self.homeTeamColor.backgroundColor = [self getSavedScoreColors:@"homeTeamColor"];
-    self.visitingTeamColor.backgroundColor = [self getSavedScoreColors:@"visitorTeamColor"];
+    //Is this the first time running this VC?
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    firstStartTime = [defaults stringForKey:@"firstStartTime"];
+    
+    if ([firstStartTime length] < 1) {
+        //First time starting this VC. Set initial score background colors
+        self.homeTeamColor.backgroundColor = [UIColor blueColor];
+        self.visitingTeamColor.backgroundColor = [UIColor orangeColor];
+        [defaults setObject:@"No" forKey:@"firstStartTime"];
+    } else {
+        //Get the saved score background colors
+        self.homeTeamColor.backgroundColor = [self getSavedScoreColors:@"homeTeamColor"];
+        self.visitingTeamColor.backgroundColor = [self getSavedScoreColors:@"visitorTeamColor"];
+    }
     
     //Get the Action names
     [self getActionNames];
@@ -74,7 +91,7 @@
     //Save our settings before the scene goes away
     [self saveScoreColors];
     [self savePlayerName:self.nameOfPlayer.text saveNotifyPhone:self.notificationName.text];
-    [self saveActionNames:self.firstActionNameSelected.text secondName:self.secondActionNameSelected.text];
+    [self saveActionNames:self.leftActionNameSelected.text secondName:self.rightActionNameSelected.text];
     [self notificationSwitch:self.sendNotificationSwitch];
 
     [super viewWillDisappear:animated];
@@ -127,25 +144,25 @@
 /*!
  *  Saves the top and bottom Action Names that are displayed and included in SMS messages.
  *
- *  @param firstActionName  The top Action name
- *  @param secondActionName The bottom Action name
+ *  @param leftActionName  The top Action name
+ *  @param rightActionName The bottom Action name
  */
-- (void)saveActionNames:(NSString *)firstActionName secondName:(NSString *)secondActionName
+- (void)saveActionNames:(NSString *)leftActionName secondName:(NSString *)rightActionName
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if ([firstActionName length] > 1) {
+    if ([leftActionName length] > 1) {
         
-        [defaults setObject:firstActionName forKey:@"firstActionName"];
+        [defaults setObject:leftActionName forKey:@"leftActionName"];
     } else {
-        [defaults setObject:@"SPIKE" forKey:@"firstActionName"];
+        [defaults setObject:@"SPIKE" forKey:@"leftActionName"];
     }
     
-    if ([secondActionName length] > 1) {
+    if ([rightActionName length] > 1) {
         
-        [defaults setObject:secondActionName forKey:@"secondActionName"];
+        [defaults setObject:rightActionName forKey:@"rightActionName"];
     } else {
-        [defaults setObject:@"ACE" forKey:@"secondActionName"];
+        [defaults setObject:@"ACE" forKey:@"rightActionName"];
     }
     
     [self saveUserDefaults];
@@ -160,20 +177,20 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSString *tempName;
-    tempName = [defaults stringForKey:@"firstActionName"];
+    tempName = [defaults stringForKey:@"leftActionName"];
     
     if ([tempName length] < 1) {
-        self.firstActionNameSelected.text = @"SPIKE";
+        self.leftActionNameSelected.text = @"SPIKE";
     } else {
-        self.firstActionNameSelected.text = tempName;
+        self.leftActionNameSelected.text = tempName;
     }
     
-    tempName = [defaults stringForKey:@"secondActionName"];
+    tempName = [defaults stringForKey:@"rightActionName"];
     
     if ([tempName length] < 1) {
-        self.secondActionNameSelected.text = @"ACE";
+        self.rightActionNameSelected.text = @"ACE";
     } else {
-        self.secondActionNameSelected.text = tempName;
+        self.rightActionNameSelected.text = tempName;
     }
 }
 
@@ -381,11 +398,9 @@
         NSString *tempString = actionNameTVC.selectedActionName;
         //Determine which Action Name row was selected prior to the segue
         if (self.actionRow == 1) {
-            //self.firstActionNameSelected = (UILabel *)tempString;
-            [defaults setObject:tempString forKey:@"firstActionName"];
+            [defaults setObject:tempString forKey:@"leftActionName"];
         } else {
-            //self.secondActionNameSelected = (UILabel *)tempString;
-            [defaults setObject:tempString forKey:@"secondActionName"];
+            [defaults setObject:tempString forKey:@"rightActionName"];
         }
         //Remove the row number from actionRow
         self.actionRow = 0;
@@ -405,6 +420,8 @@
     int actionTag = (int)cell.tag;
     
     if (actionTag == 1 || actionTag == 2) {
+        self.existingLeftActionName = self.leftActionNameSelected.text;
+        self.existingRightActionName = self.rightActionNameSelected.text;
         if (actionTag == 1) {
             //The first Action Name row was selected
             self.actionRow = 1;

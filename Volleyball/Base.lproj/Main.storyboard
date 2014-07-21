@@ -12,14 +12,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView appearanceType="aqua" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" id="vnp-C1-4VN">
+                            <imageView appearanceType="aqua" multipleTouchEnabled="YES" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" id="vnp-C1-4VN">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="cOt-an-CIE" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" id="cOt-an-CIE" userLabel="Text View - Instructions">
-                                <rect key="frame" x="20" y="65" width="528" height="208"/>
+                            <textView clipsSubviews="YES" contentMode="scaleAspectFit" restorationIdentifier="cOt-an-CIE" directionalLockEnabled="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" indicatorStyle="black" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" id="cOt-an-CIE" userLabel="Text View - Instructions">
+                                <rect key="frame" x="0.0" y="63" width="568" height="257"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">VBall ScoreMaster© is very easy to use.  Instructions are below and you can return these instructions at any time.  Thank you for using VBall ScoreMaster! 
-MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name text box above the score 2. Type in the name of the team 3. When done, tap on the 'Done' button  To change the score: 1. Either tap or swipe the score with your finger 2. Swiping UP or tapping the TOP of the score will add 1 3. Swiping DOWN or tapping the BOTTOM of the score to subtract 1 (continued)  To change sides 1. Swipe either score box and they will both move, swapping locations 2. This is good to do each time time the teams change sides 3. Swiping the score boxes will not change the score unless you accidentally swipe up/down at the same time.  If that happens, just swipe the score up or down to return to the correct number.  To change to a new game: 1. Tapping on the Game number will add a new game 2. New games will change both scores to 0 3. Team names will stay the same, so will Ace and Spike numbers 4. Maximum number of Games is 7 5. To reset Games back to 1, touch the number several times until it goes back to 1  To start a New Match: 1. Matches are made up of several Games.  Tap New Match in the top left corner to start a new match. 2. A new match will reset both scores as well as the Game, Spike, and Ace numbers 3. Once you agree to start a new match, it can't be undone  SETTINGS Change team colors: 1. Tap the box of the team whose color you want to change 2. Each tap will change the box to a random color 3. You can change one or both colors before you save 4. Tap the Save button on the top right to save your colors.  Color changes take effect immediately.  Send text message (SMS or iMessage): 1. Change the Notifications switch to ON if you want to send a text message after each Spike and Ace 2. Enter the name of the player that will be included in the pre-formed text message.  This part is optional but it will make the text message more personable. 3. Enter the phone number to where you want the messages sent.  You can only enter 1 phone number here but you can add additional numbers to each message prior to sending them out. 4. Tap the Save button to save your changes.  A red message will show to indicate your changes were successfuly saved. **If you don't tap the Save button before you leave the Settings page, your changes will not be saved.** 5. After you do this, each time you touch the Ace or Spike numbers, VBall ScoreMaster will generate a text message formatted with the name you entered, the number of Ace's and Spike's, and the current score.  The message will automatically be addressed to the recipient you indicated. 6. Because Apple prevents apps from sending background text messages (for your own protection), you must hit the Send button to send the message.  If you change your mind, just tap Cancel.  PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT I CAN CONTINUE DEVELOPMENT OF THIS APP.</string>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                </accessibility>
+                                <string key="text">VBall ScoreMaster is very easy to use.  Instructions are below and you can return these instructions at any time.  I don't send pop-ups to block your activity and remind you to please rate this app on the App Store, but I would appreciate it if you would take a few minutes and leave a review.  Here's how you use VBall ScoreMaster! 
+MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name text box above the score 2. Type in the name of the team 3. When done, tap on the 'Done' button  To change the score: 1. Either tap or swipe the score with your finger 2. Swiping UP or tapping the BOTTOM of the score will add 1 3. Swiping DOWN or tapping the TOP of the score to subtract 1  To change sides 1. Swipe either score box and they will both move, swapping locations 2. This is good to do each time time the teams change sides 3. The final scores of the last 3 games are kept next to their score box.  The winner's score is in red.  To change to a new game: 1. Tapping on the Game number will add a new game 2. New games will change both scores to 0 and will move the existing scores to the past score numbers 3. Team names will stay the same, so will the numbers under the Action Names 4. Maximum number of Games is 4  Action Names! Action Names allow you to track up to 2 statistics for an individual player. 1. Choose your Action Names from the Settings screen 2. To reset, touch and hold a number and you will get a menu with options 3. Action Name numbers are not stored anywhere so if you choose different Action Names, you'll won't have access to the count that was previously there  Send a text message There are 2 ways to send a text message: 1. If sending messages is turned on in Settings, every touch of an Action Name will format a text message for you to send, or 2. Touching the volleyball in the center will bring up a text message formatted for you to send  To start a New Match: 1. Matches are made up of several Games.  Tap New Match in the top left corner to start a new match. 2. A new match will reset both scores as well as the Game and Action numbers 3. Once you agree to start a new match, it can't be undone  SETTINGS Changes take effect immediately. Change team colors: 1. Tap the box of the team whose color you want to change 2. Each tap will change the box to a random color 3. You can change one or both colors.  Color changes take effect immediately.  Send text message (SMS or iMessage): 1. Change the Notifications switch to ON if you want to send a text message after each Action 2. Enter the name of the player that will be included in the pre-formed text message.  This part is optional but it will make the text message more personable. 3. Enter the phone number to where you want the messages sent.  You can also tap the + button to bring up your contacts.  You can only enter 1 phone number here but you can add additional numbers to each message prior to sending them out. 4. Because Apple prevents apps from sending background text messages (for your own protection), you must hit the Send button to send the message.  If you change your mind, just tap Cancel.  PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS APP CAN CONTINUE.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
@@ -27,7 +30,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Tjk-bY-piu"/>
+                    <navigationItem key="navigationItem" title="Instructions" id="Tjk-bY-piu"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="instructionsText" destination="cOt-an-CIE" id="L1O-0w-4W6"/>
@@ -35,7 +38,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Trs-gv-wjz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1431" y="145"/>
+            <point key="canvasLocation" x="1431" y="148"/>
         </scene>
         <!--Volley Ball View Controller - mainView-->
         <scene sceneID="ufC-wZ-h7g">
@@ -89,36 +92,36 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RIGHT ACTION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tX3-rT-g7M" userLabel="Label - Right Action Name">
-                                <rect key="frame" x="333" y="255" width="150" height="25"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RIGHT ACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tX3-rT-g7M" userLabel="Label - Right Action Name">
+                                <rect key="frame" x="333" y="255" width="168" height="25"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V3G-uq-fca" userLabel="KillsNumber">
-                                <rect key="frame" x="326" y="272" width="71" height="33"/>
+                                <rect key="frame" x="382" y="272" width="71" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEFT ACTION" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NQ3-D6-TK5" userLabel="Label - Left Action Name">
-                                <rect key="frame" x="80" y="255" width="150" height="25"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEFT ACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NQ3-D6-TK5" userLabel="Label - Left Action Name">
+                                <rect key="frame" x="52" y="255" width="168" height="25"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="991-IZ-vz3" userLabel="AceNumber">
-                                <rect key="frame" x="171" y="272" width="71" height="33"/>
+                                <rect key="frame" x="111" y="272" width="71" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="e73-U3-5CU" userLabel="screenActionKills">
-                                <rect key="frame" x="341" y="272" width="41" height="33"/>
+                                <rect key="frame" x="389" y="272" width="56" height="33"/>
                                 <gestureRecognizers/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -130,7 +133,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NZs-Ny-2Iw" userLabel="screenActionAce">
-                                <rect key="frame" x="186" y="268" width="41" height="41"/>
+                                <rect key="frame" x="118" y="268" width="56" height="41"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <state key="normal">
@@ -407,11 +410,6 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <label key="tableFooterView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send notification messages?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5bu-kn-GgI">
-                            <rect key="frame" x="0.0" y="696" width="568" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <sections>
                             <tableViewSection headerTitle="score colors" id="f8O-Jl-JOa">
                                 <cells>
@@ -500,13 +498,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                     </connections>
                                                 </segmentedControl>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send notification messages?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ffm-OY-yny">
-                                                    <rect key="frame" x="20" y="2" width="255" height="21"/>
+                                                    <rect key="frame" x="20" y="9" width="255" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on to send to send a text message when an Action occurs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KdX-P9-2Gi">
-                                                    <rect key="frame" x="20" y="22" width="296" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -519,7 +512,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N1L-8j-CIK">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player's name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N1L-8j-CIK">
                                                     <rect key="frame" x="20" y="11" width="255" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
@@ -554,14 +547,14 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                         <outlet property="delegate" destination="JoG-uN-Xre" id="x7l-Ao-jba"/>
                                                     </connections>
                                                 </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number for message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H3O-dK-ACP">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send message to number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H3O-dK-ACP">
                                                     <rect key="frame" x="20" y="1" width="255" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use '+' or enter number manually" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zyb-1D-rAm">
                                                     <rect key="frame" x="20" y="21" width="296" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="lFP-xW-h2H">
@@ -579,7 +572,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="action names" footerTitle="Actions are included in the text message" id="xIz-3d-pId">
+                            <tableViewSection headerTitle="action names" footerTitle="Action Names are included in the text message" id="xIz-3d-pId">
                                 <cells>
                                     <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J4e-OQ-jDI" userLabel="Table View Cell - Bottom action name">
                                         <rect key="frame" x="0.0" y="435" width="568" height="44"/>
@@ -588,12 +581,12 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g2s-UN-oRu">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left side Action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g2s-UN-oRu">
                                                     <rect key="frame" x="20" y="1" width="255" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7hq-2P-tSW">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an Action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7hq-2P-tSW">
                                                     <rect key="frame" x="20" y="21" width="296" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="highlightedColor"/>
@@ -613,12 +606,12 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ikm-us-vX0">
-                                                    <rect key="frame" x="20" y="1" width="255" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right side Action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ikm-us-vX0">
+                                                    <rect key="frame" x="20" y="2" width="255" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fV6-jS-A2Y">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an Action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fV6-jS-A2Y">
                                                     <rect key="frame" x="20" y="21" width="296" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="highlightedColor"/>
@@ -629,26 +622,6 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="team names" id="n6v-nC-EkW">
-                                <cells>
-                                    <tableViewCell tag="3" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ksk-Bx-1wj" userLabel="Table View Cell - Home team name">
-                                        <rect key="frame" x="0.0" y="598" width="568" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ksk-Bx-1wj" id="6xS-mn-pI1">
-                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell tag="4" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="t1c-SZ-3Zc" userLabel="Table View Cell - Visiting team name">
-                                        <rect key="frame" x="0.0" y="642" width="568" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t1c-SZ-3Zc" id="e63-QO-g8h">
-                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -666,11 +639,11 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                     </refreshControl>
                     <connections>
                         <outlet property="addPhoneNumberButton" destination="lFP-xW-h2H" id="Niy-39-MKK"/>
-                        <outlet property="firstActionNameSelected" destination="8Nb-0K-3R7" id="Ajf-jt-PnE"/>
                         <outlet property="homeTeamColor" destination="43Z-fe-naI" id="lUH-3F-cvE"/>
+                        <outlet property="leftActionNameSelected" destination="8Nb-0K-3R7" id="bFa-Fg-WDN"/>
                         <outlet property="nameOfPlayer" destination="Yyj-Dn-sH1" id="Zya-XT-o96"/>
                         <outlet property="notificationName" destination="CH8-S5-jc8" id="mG5-nM-XGf"/>
-                        <outlet property="secondActionNameSelected" destination="v4s-lv-LRm" id="8jL-Zd-aag"/>
+                        <outlet property="rightActionNameSelected" destination="v4s-lv-LRm" id="9EP-sW-Wao"/>
                         <outlet property="sendNotificationSwitch" destination="oqR-8N-8Ny" id="pfC-fk-VZI"/>
                         <outlet property="visitingTeamColor" destination="CxM-8M-OkD" id="k0Q-s4-wFg"/>
                         <outletCollection property="settingsButtons" destination="CxM-8M-OkD" id="vEs-nj-a4w"/>
@@ -717,13 +690,13 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView appearanceType="aqua" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" id="Uf2-uV-EXE">
+                            <imageView appearanceType="aqua" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" id="Uf2-uV-EXE">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                             </imageView>
                             <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="cqV-Nu-RC0" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" editable="NO" id="cqV-Nu-RC0">
                                 <rect key="frame" x="20" y="60" width="528" height="218"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Thank you for using VBall ScoreMaster©, v2.  There is Help text on the main page if you need assistance in using this app.  
+                                <string key="text">Thank you for using VBall ScoreMaster© v2.  There is Help text on the main page if you need assistance in using this app.  
  
  This app could not have been created without the help of Paul Dolce.  Thank you, Paul!  
  
