@@ -352,7 +352,7 @@ NSString *msgVisitor = @"VISITOR";
 
 - (IBAction)sendInstantMessage
 {
-//TODO: Add code to send instant message
+    //Send a text message without changing the Action numbers
     [self sendSMS];
 }
 

@@ -22,8 +22,6 @@
     NSString *firstStartTime;
 }
 
-
-
 #pragma mark - View Methods
 
 - (void)viewDidLoad
@@ -336,15 +334,19 @@
     
     if (ABMultiValueGetCount(phoneNumbers) > 1) {
         phone = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phoneNumbers, 1);
+       //If they pick a contact, save that number
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:phone forKey:@"phoneNumberForNotification"]; 
     } else {
-        phone = @"None";
+        //Contact didn't have a phone number on their contact.  Send alert to tell user.
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Phone Number Error"
+                                                        message:@"The contact either doesn't have a valid phone number or the app can't access the phone number.  Please select a different contact."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
     }
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:phone forKey:@"phoneNumberForNotification"];
-    
     CFRelease(phoneNumbers);
-
 }
 
 - (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
