@@ -340,7 +340,7 @@
     } else {
         //Contact didn't have a phone number on their contact.  Send alert to tell user.
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Phone Number Error"
-                                                        message:@"The contact either doesn't have a valid phone number or the app can't access the phone number.  Please select a different contact."
+                                                        message:@"The contact either doesn't have a valid phone number or the app can't access the phone number.\nPlease select a different contact."
                                                        delegate:nil
                                               cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [alert show];
