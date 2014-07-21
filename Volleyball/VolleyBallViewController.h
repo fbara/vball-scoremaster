@@ -30,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *visitGame3;
 @property (weak, nonatomic) IBOutlet UIButton *sendMessageImage;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *pastScoreCollection;
+@property (weak, nonatomic) IBOutlet UILabel *rightActionNameNumber;
+@property (weak, nonatomic) IBOutlet UILabel *leftActionNameNumber;
 
 
 
@@ -37,8 +39,8 @@
 @property UISwipeGestureRecognizer *visitingSwipeGesture;
 
 
-- (IBAction)topActionLongPress:(UILongPressGestureRecognizer *)recognizer;
-- (IBAction)bottomActionLongPress:(UILongPressGestureRecognizer *)recognizer;
+- (IBAction)leftActionLongPress:(UILongPressGestureRecognizer *)recognizer;
+- (IBAction)rightActionLongPress:(UILongPressGestureRecognizer *)recognizer;
 
 - (IBAction)gamePressed;
 - (IBAction)rightActionPressed;

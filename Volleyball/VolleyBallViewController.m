@@ -238,8 +238,8 @@ NSString *msgVisitor = @"VISITOR";
 {
     //Resets Game and Action Name values to 0
     self.gameNumber.text = @"1";
-    self.rightActionLabel.text = @"0";
-    self.leftActionLabel.text = @"0";
+    self.rightActionNameNumber.text = @"0";
+    self.leftActionNameNumber.text = @"0";
     currFirstAction = 0;
     currSecondAction = 0;
     currHomeScore = 0;
@@ -356,44 +356,58 @@ NSString *msgVisitor = @"VISITOR";
     [self sendSMS];
 }
 
-- (IBAction)topActionLongPress:(UILongPressGestureRecognizer *)recognizer
+- (IBAction)leftActionLongPress:(UILongPressGestureRecognizer *)recognizer
 {
     //On a long press, show popup menu with selections to reset the number to zero or not
     
-    [self.rightActionLabel canBecomeFirstResponder];
+    [self.rightActionNameNumber canBecomeFirstResponder];
     
-    UIMenuItem *resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetTopToZero)];
-    UIMenuItem *cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
-    
-    UIMenuController *menu = [UIMenuController sharedMenuController];
-    [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
-    [menu setTargetRect:self.leftActionLabel.frame inView:self.view];
-    [menu setMenuVisible:YES animated:YES];
+    //Check if the number is not a zero
+    if ([self.leftActionNameNumber.text isEqualToString:@"0"]) {
+        //Equal to zero so don't show the popup menu
+        return;
+    } else {
+        //Number is not a zero, show popup menu
+        UIMenuItem *resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetTopToZero)];
+        UIMenuItem *cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
+        
+        UIMenuController *menu = [UIMenuController sharedMenuController];
+        [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
+        [menu setTargetRect:self.leftActionNameNumber.frame inView:self.view];
+        [menu setMenuVisible:YES animated:YES];
+    }
 }
 
-- (IBAction)bottomActionLongPress:(UILongPressGestureRecognizer *)recognizer
+- (IBAction)rightActionLongPress:(UILongPressGestureRecognizer *)recognizer
 {
     //On a long press, show popup menu with selections to reset the number to zero or not
     
-    [self.rightActionLabel canBecomeFirstResponder];
+    [self.rightActionNameNumber canBecomeFirstResponder];
     
-    UIMenuItem *resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetBottomToZero)];
-    UIMenuItem *cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
-    
-    UIMenuController *menu = [UIMenuController sharedMenuController];
-    [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
-    [menu setTargetRect:self.rightActionLabel.frame inView:self.view];
-    [menu setMenuVisible:YES animated:YES];}
-
+    //Check if the number is not a zero
+    if ([self.rightActionNameNumber.text isEqualToString:@"0"]) {
+        //Equal to zero so don't show the popup menu
+        return;
+    } else {
+        //Number is not a zero, show popup menu
+        UIMenuItem *resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetBottomToZero)];
+        UIMenuItem *cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
+        
+        UIMenuController *menu = [UIMenuController sharedMenuController];
+        [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
+        [menu setTargetRect:self.rightActionNameNumber.frame inView:self.view];
+        [menu setMenuVisible:YES animated:YES];
+    }
+}
 
 - (void)resetTopToZero
 {
-    self.leftActionLabel.text = @"0";
+    self.leftActionNameNumber.text = @"0";
 }
 
 - (void)resetBottomToZero
 {
-    self.rightActionLabel.text = @"0";
+    self.rightActionNameNumber.text = @"0";
 }
 
 - (void)leaveNumberAsIs
@@ -402,10 +416,6 @@ NSString *msgVisitor = @"VISITOR";
 }
 
 - (BOOL)canBecomeFirstResponder { return YES; }
-
-#pragma mark - Change Labels
-
-
 
 #pragma mark - Button Presses
 /*!
@@ -480,13 +490,13 @@ NSString *msgVisitor = @"VISITOR";
 - (IBAction)rightActionPressed
 {
     //Get the number currently displayed for second Action Name and add 1
-    int lableNum = [self.rightActionLabel.text intValue];
+    int lableNum = [self.rightActionNameNumber.text intValue];
     if (lableNum == 99) {
         lableNum = 0;
     } else {
         lableNum = lableNum + 1;
     }
-    self.rightActionLabel.text = [NSString stringWithFormat:@"%d", lableNum];
+    self.rightActionNameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     currSecondAction = lableNum;
     
     //Send text message
@@ -499,13 +509,13 @@ NSString *msgVisitor = @"VISITOR";
 - (IBAction)leftActionPressed
 {
     //Get current number and add 1
-    int lableNum = [self.leftActionLabel.text intValue];
+    int lableNum = [self.leftActionNameNumber.text intValue];
     if (lableNum == 99) {
         lableNum = 0;
     } else {
         lableNum = lableNum + 1;
     }
-    self.leftActionLabel.text = [NSString stringWithFormat:@"%d", lableNum];
+    self.leftActionNameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     currFirstAction = lableNum;
     
     //Send the text message

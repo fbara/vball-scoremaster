@@ -340,7 +340,8 @@
         phone = @"None";
     }
     
-    self.notificationName.text = phone;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:phone forKey:@"phoneNumberForNotification"];
     
     CFRelease(phoneNumbers);
 
