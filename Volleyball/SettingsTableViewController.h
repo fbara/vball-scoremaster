@@ -12,7 +12,7 @@
 
 @interface SettingsTableViewController : UITableViewController <UITableViewDelegate,ABPeoplePickerNavigationControllerDelegate,UITextViewDelegate,UITextFieldDelegate>
 
-//@property (strong, nonatomic) IBOutlet UIBarButtonItem *editSettingsButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
 @property (weak, nonatomic) IBOutlet UIButton *visitingTeamColor;
 @property (weak, nonatomic) IBOutlet UITextField *notificationName;

@@ -7,7 +7,8 @@
 //
 
 #import "VolleyBallAppDelegate.h"
-#import "SettingsViewController.h"
+#import "GBVersionTracking.h"
+
 
 @implementation VolleyBallAppDelegate
 
@@ -15,10 +16,12 @@
 {
     // Override point for customization after application launch.
     
+    [GBVersionTracking track];
+    
     [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
-
+    
     
     return YES;
 }

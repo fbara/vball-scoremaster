@@ -9,6 +9,7 @@
 #import "VolleyBallViewController.h"
 #import "DefaultScoreViewController.h"
 #import "SettingsTableViewController.h"
+#import "GBVersionTracking.h"
 
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";
@@ -60,6 +61,14 @@ NSString *msgVisitor = @"VISITOR";
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //Check if this is the first time the app has run.
+    //If so, run tutorial.  If not, don't run turorial.
+//FIXME: Remove comments when done ---------------------->
+    //if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
+        [self performSegueWithIdentifier:@"showTutorial" sender:self];
+   // }
+    
+    //Initiaize all the UI elements
     [self initializeHomeScore:currHomeScore];
     [self initializeVisitorScore:currVisitorScore];
     [self resetGameAndNames];
@@ -257,7 +266,7 @@ NSString *msgVisitor = @"VISITOR";
     
     //Get the Action Names
     [self loadActionNames];
-  
+    
 }
 
 #pragma mark - UI Elements

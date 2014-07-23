@@ -27,9 +27,13 @@
 		92AA42CC1916C2810037D405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92AA42CA1916C2810037D405 /* InfoPlist.strings */; };
 		92AA42CE1916C2810037D405 /* VolleyballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42CD1916C2810037D405 /* VolleyballTests.m */; };
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
+		AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */; };
 		AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */; };
 		AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C8100194A5FD70028179B /* InstructionsViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
+		AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968C197F390E00767D1C /* TutorialViewController.m */; };
+		AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968F197F458E00767D1C /* WSCoachMarksView.m */; };
+		AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD529692197F45DD00767D1C /* GBVersionTracking.m */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
 		AD999EB719490DFB00285864 /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */; };
@@ -76,6 +80,8 @@
 		92AA42CB1916C2810037D405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92AA42CD1916C2810037D405 /* VolleyballTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolleyballTests.m; sourceTree = "<group>"; };
 		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AD082E31198061AE00A997CE /* TutorialSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialSettingsViewController.h; sourceTree = "<group>"; };
+		AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialSettingsViewController.m; sourceTree = "<group>"; };
 		AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabelTableViewController.h; sourceTree = "<group>"; };
 		AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionLabelTableViewController.m; sourceTree = "<group>"; };
 		AD1C80FF194A5FD70028179B /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
@@ -83,6 +89,12 @@
 		AD1C811E1955E6FC0028179B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		AD1C816B195C43A30028179B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		AD1C816C195C43A30028179B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		AD52968B197F390E00767D1C /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialViewController.h; path = Volleyball/TutorialViewController.h; sourceTree = "<group>"; };
+		AD52968C197F390E00767D1C /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialViewController.m; path = Volleyball/TutorialViewController.m; sourceTree = "<group>"; };
+		AD52968E197F458E00767D1C /* WSCoachMarksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSCoachMarksView.h; path = Volleyball/WSCoachMarksView.h; sourceTree = "<group>"; };
+		AD52968F197F458E00767D1C /* WSCoachMarksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSCoachMarksView.m; path = Volleyball/WSCoachMarksView.m; sourceTree = "<group>"; };
+		AD529691197F45DD00767D1C /* GBVersionTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBVersionTracking.h; sourceTree = "<group>"; };
+		AD529692197F45DD00767D1C /* GBVersionTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBVersionTracking.m; sourceTree = "<group>"; };
 		AD6A50941975DD2400135CB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -131,6 +143,9 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
+				AD529694197F45E500767D1C /* GBVersionTracking */,
+				AD52968A197F38E100767D1C /* Tutorial */,
+				AD52967F197ED75200767D1C /* WSCoachMarks */,
 				92AA42A81916C2800037D405 /* Volleyball */,
 				9244799B192C01830031C1F6 /* Resources */,
 				92AA42C71916C2810037D405 /* VolleyballTests */,
@@ -219,6 +234,36 @@
 				92AA42CA1916C2810037D405 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD52967F197ED75200767D1C /* WSCoachMarks */ = {
+			isa = PBXGroup;
+			children = (
+				AD52968E197F458E00767D1C /* WSCoachMarksView.h */,
+				AD52968F197F458E00767D1C /* WSCoachMarksView.m */,
+			);
+			name = WSCoachMarks;
+			sourceTree = "<group>";
+		};
+		AD52968A197F38E100767D1C /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				AD52968B197F390E00767D1C /* TutorialViewController.h */,
+				AD52968C197F390E00767D1C /* TutorialViewController.m */,
+				AD082E31198061AE00A997CE /* TutorialSettingsViewController.h */,
+				AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
+		AD529694197F45E500767D1C /* GBVersionTracking */ = {
+			isa = PBXGroup;
+			children = (
+				AD529691197F45DD00767D1C /* GBVersionTracking.h */,
+				AD529692197F45DD00767D1C /* GBVersionTracking.m */,
+			);
+			name = GBVersionTracking;
+			path = Volleyball;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,10 +390,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */,
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
+				AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */,
+				AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */,
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
+				AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */,
 				924479A0192C2CDC0031C1F6 /* SettingsViewController.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
