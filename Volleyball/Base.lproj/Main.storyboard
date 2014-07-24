@@ -22,7 +22,7 @@
                                     <accessibilityTraits key="traits" none="YES" staticText="YES"/>
                                 </accessibility>
                                 <mutableString key="text">VBall ScoreMaster is very easy to use.  Instructions are below and you can return these instructions at any time.  I don't send pop-ups to block your activity and remind you to please rate this app on the App Store, but I would appreciate it if you would take a few minutes and leave a review.  Here's how you use VBall ScoreMaster! 
-MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name text box above the score 2. Type in the name of the team 3. When done, tap on the 'Done' button  To change the score: 1. Either tap or swipe the score with your finger 2. Swiping UP or tapping the BOTTOM of the score will add 1 3. Swiping DOWN or tapping the TOP of the score to subtract 1  To change sides 1. Swipe either score box and they will both move, swapping locations 2. This is good to do each time time the teams change sides 3. The final scores of the last 3 games are kept next to their score box.  The winner's score is in red.  To change to a new game: 1. Tapping on the Game number will add a new game 2. New games will change both scores to 0 and will move the existing scores to the past score numbers 3. Team names will stay the same, so will the numbers under the Action Names 4. Maximum number of Games is 4  Action Names! Action Names allow you to track up to 2 statistics for an individual player. 1. Choose your Action Names from the Settings screen 2. To reset, touch and hold a number and you will get a menu with options 3. Action Name numbers are not stored anywhere so if you choose different Action Names, you'll won't have access to the count that was previously there  Send a text message There are 2 ways to send a text message: 1. If sending messages is turned on in Settings, every touch of an Action Number will format a text message for you to send, or 2. Touching the VBall in the center will bring up a text message formatted for you to send  To start a New Match: 1. Matches are made up of several Games.  Tap New Match in the top left corner to start a new match. 2. A new match will reset both scores as well as the Game and Action numbers 3. Once you agree to start a new match, it can't be undone  SETTINGS Changes take effect immediately. Change team colors: 1. Tap the box of the team whose color you want to change 2. Each tap will change the box to a random color 3. You can change one or both colors.  Color changes take effect immediately.  Send text message (SMS or iMessage): 1. Change the Notifications switch to ON if you want to send a text message after each Action or with the VBall 2. Enter the name of the player that will be included in the pre-formed text message.  This part is optional but it will make the text message more personable. 3. Enter the phone number to where you want the messages sent.  You can also tap the + button to bring up your contacts.  You can only enter 1 phone number here but you can add additional numbers to each message prior to sending them out. 4. Because Apple prevents apps from sending background text messages (for your own protection), you must hit the Send button to send the message.  If you change your mind, just tap Cancel.  Action Name Tap on an Action Name to bring up a table of common   PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS APP CAN CONTINUE.</mutableString>
+MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name text box above the score 2. Type in the name of the team 3. When done, tap on the 'Done' button  To change the score: 1. Either tap or swipe the score with your finger 2. Swiping UP or tapping the BOTTOM of the score will add 1 3. Swiping DOWN or tapping the TOP of the score to subtract 1  To change sides 1. Swipe either score box and they will both move, swapping locations 2. This is good to do each time time the teams change sides 3. The final scores of the last 3 games are kept next to their score box.  The winner's score is in red.  To change to a new game: 1. Tapping on the Game number will add a new game 2. New games will change both scores to 0 and will move the existing scores to the past score numbers 3. Team names will stay the same, so will the numbers under the Action Names 4. Maximum number of Games is 4  Action Names! Action Names allow you to track up to 2 statistics for an individual player. 1. Choose your Action Names from the Settings screen 2. To reset, touch and hold a number and you will get a menu with options 3. Action Name numbers are not stored anywhere so if you choose different Action Names, you'll won't have access to the count that was previously there  Send a text message There are 2 ways to send a text message: 1. If sending messages is turned on in Settings, every touch of an Action Number will format a text message for you to send, or 2. Touching the VBall in the center will bring up a text message formatted for you to send  To start a New Match: 1. Matches are made up of several Games.  Tap New Match in the top left corner to start a new match. 2. A new match will reset both scores as well as the Game and Action numbers 3. Once you agree to start a new match, it can't be undone  SETTINGS Changes take effect immediately. Change team colors: 1. Tap the box of the team whose color you want to change 2. Each tap will change the box to a random color 3. You can change one or both colors.  Color changes take effect immediately.  Send text message (SMS or iMessage): 1. Change the Notifications switch to ON if you want to send a text message after each Action or with the VBall 2. Enter the name of the player that will be included in the pre-formed text message.  This part is optional but it will make the text message more personable. 3. Enter the phone number to where you want the messages sent.  You can also tap the + button to bring up your contacts.  You can only enter 1 phone number here but you can add additional numbers to each message prior to sending them out. 4. Because Apple prevents apps from sending background text messages (for your own protection), you must hit the Send button to send the message.  If you change your mind, just tap Cancel.  Action Name 1. Tap on an Action Name to bring up a table of common volleyball actions that you can track.  2. There are 2 actions you can track, if you don't select one then the default action will be shown.  These Action Names will automatically be included on the text messages you send.  PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS APP CAN CONTINUE.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
@@ -62,6 +62,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Visiting Team" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Gzx-4p-5vy">
                                 <rect key="frame" x="62" y="71" width="168" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -72,6 +73,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Home Team" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="KgW-hz-5sq">
                                 <rect key="frame" x="333" y="71" width="168" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -460,13 +462,13 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
         <scene sceneID="dge-Dz-h61">
             <objects>
                 <tableViewController title="Settings" id="JoG-uN-Xre" customClass="SettingsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="OsV-V0-0Jc">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="OsV-V0-0Jc">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
-                            <tableViewSection headerTitle="score colors" id="f8O-Jl-JOa">
+                            <tableViewSection headerTitle="score colors" footerTitle="Each tap changes to a random color" id="f8O-Jl-JOa">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="MLh-NU-1KR" userLabel="Table View Cell -Visitor color">
                                         <rect key="frame" x="0.0" y="119" width="568" height="44"/>
@@ -476,18 +478,14 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visiting team background color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="14N-xf-D4v">
-                                                    <rect key="frame" x="20" y="5" width="255" height="21"/>
+                                                    <rect key="frame" x="20" y="10" width="255" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Each tap changes the color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J6y-1U-ePh">
-                                                    <rect key="frame" x="20" y="22" width="255" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CxM-8M-OkD">
                                                     <rect key="frame" x="328" y="5" width="220" height="32"/>
                                                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Changes background color of the score for the home team." label="Visitor team color"/>
                                                     <state key="normal" title="VISITOR">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -507,18 +505,14 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home team background color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j4T-AC-mQX">
-                                                    <rect key="frame" x="20" y="2" width="255" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="255" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Each tap changes the color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fBV-qb-ViF">
-                                                    <rect key="frame" x="20" y="22" width="255" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="43Z-fe-naI">
                                                     <rect key="frame" x="328" y="6" width="220" height="32"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Changes background color of the score for the home team." label="Home team color"/>
                                                     <state key="normal" title="HOME">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -535,7 +529,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <tableViewSection headerTitle="notifications" id="AEf-DS-lJV">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JUD-k1-dHv" userLabel="Table View Cell - Send switch">
-                                        <rect key="frame" x="0.0" y="255" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="282" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JUD-k1-dHv" id="2F5-gu-tbJ">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
@@ -561,7 +555,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Xy2-mz-t2F" userLabel="Table View Cell - Player name">
-                                        <rect key="frame" x="0.0" y="299" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="326" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xy2-mz-t2F" id="Wg2-Ec-tBI">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
@@ -575,6 +569,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(optional)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Yyj-Dn-sH1">
                                                     <rect key="frame" x="334" y="7" width="214" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Name of player to track" label="Player's name"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -586,7 +582,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tYo-kp-FcY" userLabel="Table View Cell - Notify number">
-                                        <rect key="frame" x="0.0" y="343" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="370" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="tYo-kp-FcY" id="fgS-4K-kJq">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
@@ -595,8 +591,10 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(optional)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="CH8-S5-jc8">
                                                     <rect key="frame" x="337" y="7" width="211" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Who should be sent the text message." label="Notification phone number"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="textFieldReturn:" destination="JoG-uN-Xre" eventType="editingDidEndOnExit" id="j4n-JS-kPd"/>
                                                         <outlet property="delegate" destination="JoG-uN-Xre" id="x7l-Ao-jba"/>
@@ -615,6 +613,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="lFP-xW-h2H">
                                                     <rect key="frame" x="307" y="11" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Access contact list to choose a contact to send text messages." label="Access contact list"/>
                                                     <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -630,7 +629,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <tableViewSection headerTitle="action names" footerTitle="Action Names are included in the text message" id="xIz-3d-pId">
                                 <cells>
                                     <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J4e-OQ-jDI" userLabel="Table View Cell - Bottom action name">
-                                        <rect key="frame" x="0.0" y="435" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="462" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J4e-OQ-jDI" id="FlS-Sr-d5G">
                                             <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
@@ -648,6 +647,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPIKE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Nb-0K-3R7" userLabel="Label - First selected Action">
                                                     <rect key="frame" x="388" y="11" width="127" height="21"/>
+                                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Player action being tracked." label="Left-side Action name"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -655,7 +656,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rZn-jg-JqB" userLabel="Table View Cell - Bottom action name">
-                                        <rect key="frame" x="0.0" y="479" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="506" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rZn-jg-JqB" id="c7A-GY-0Su">
                                             <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
@@ -673,6 +674,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v4s-lv-LRm" userLabel="Label - Second selected Action">
                                                     <rect key="frame" x="388" y="11" width="127" height="21"/>
+                                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Player action being tracked." label="Right-side Action name"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -688,10 +691,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="6h4-mo-Fgp"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="NPF-ge-PHY">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </refreshControl>
                     <connections>
                         <outlet property="addPhoneNumberButton" destination="lFP-xW-h2H" id="Niy-39-MKK"/>
                         <outlet property="homeTeamColor" destination="43Z-fe-naI" id="lUH-3F-cvE"/>
@@ -704,9 +705,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <outletCollection property="settingsButtons" destination="CxM-8M-OkD" id="vEs-nj-a4w"/>
                         <outletCollection property="settingsButtons" destination="43Z-fe-naI" id="Sva-C6-yfT"/>
                         <outletCollection property="settingsLabels" destination="14N-xf-D4v" id="4f0-ls-yYQ"/>
-                        <outletCollection property="settingsLabels" destination="J6y-1U-ePh" id="ffM-N5-WOq"/>
                         <outletCollection property="settingsLabels" destination="j4T-AC-mQX" id="cu7-qn-bCm"/>
-                        <outletCollection property="settingsLabels" destination="fBV-qb-ViF" id="NJg-H7-viH"/>
                         <segue destination="xFW-fG-MpV" kind="push" identifier="supportView" id="g0N-S6-mdr"/>
                         <segue destination="47K-Gk-dz7" kind="push" identifier="actionNameView" id="dFo-TN-btU"/>
                     </connections>
@@ -797,6 +796,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
         <image name="VBall image" width="296" height="274"/>
         <image name="volleyball big spike" width="284" height="213"/>
     </resources>
+    <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -91,8 +91,6 @@
     //If it's greater than the index of the last mark, segue to the Settings
     if (index > 7) {
         [self performSegueWithIdentifier:@"showTutorialSettings" sender:self];
-        //then dismiss
-        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
