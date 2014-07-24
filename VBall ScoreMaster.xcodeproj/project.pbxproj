@@ -18,7 +18,6 @@
 		92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92AA42AB1916C2800037D405 /* InfoPlist.strings */; };
 		92AA42AF1916C2800037D405 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42AE1916C2800037D405 /* main.m */; };
 		92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42B21916C2800037D405 /* VolleyBallAppDelegate.m */; };
-		92AA42B61916C2810037D405 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AA42B41916C2810037D405 /* Main.storyboard */; };
 		92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42B81916C2810037D405 /* VolleyBallViewController.m */; };
 		92AA42BB1916C2810037D405 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92AA42BA1916C2810037D405 /* Images.xcassets */; };
 		92AA42C21916C2810037D405 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42C11916C2810037D405 /* XCTest.framework */; };
@@ -28,6 +27,7 @@
 		92AA42CE1916C2810037D405 /* VolleyballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42CD1916C2810037D405 /* VolleyballTests.m */; };
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
 		AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */; };
+		AD082E3619817E5C00A997CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD082E3419817E5C00A997CE /* Main.storyboard */; };
 		AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */; };
 		AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C8100194A5FD70028179B /* InstructionsViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
@@ -36,8 +36,6 @@
 		AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD529692197F45DD00767D1C /* GBVersionTracking.m */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
-		AD999EB719490DFB00285864 /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */; };
-		AD999EC119492CC000285864 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD999EC319492CC000285864 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +67,6 @@
 		92AA42B01916C2800037D405 /* Volleyball-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volleyball-Prefix.pch"; sourceTree = "<group>"; };
 		92AA42B11916C2800037D405 /* VolleyBallAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolleyBallAppDelegate.h; sourceTree = "<group>"; };
 		92AA42B21916C2800037D405 /* VolleyBallAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolleyBallAppDelegate.m; sourceTree = "<group>"; };
-		92AA42B51916C2810037D405 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92AA42B71916C2810037D405 /* VolleyBallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolleyBallViewController.h; sourceTree = "<group>"; };
 		92AA42B81916C2810037D405 /* VolleyBallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolleyBallViewController.m; sourceTree = "<group>"; };
 		92AA42BA1916C2810037D405 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -81,6 +78,7 @@
 		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD082E31198061AE00A997CE /* TutorialSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialSettingsViewController.h; sourceTree = "<group>"; };
 		AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialSettingsViewController.m; sourceTree = "<group>"; };
+		AD082E3519817E5C00A997CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = Volleyball/en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabelTableViewController.h; sourceTree = "<group>"; };
 		AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionLabelTableViewController.m; sourceTree = "<group>"; };
 		AD1C80FF194A5FD70028179B /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
@@ -94,10 +92,8 @@
 		AD52968F197F458E00767D1C /* WSCoachMarksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSCoachMarksView.m; path = Volleyball/WSCoachMarksView.m; sourceTree = "<group>"; };
 		AD529691197F45DD00767D1C /* GBVersionTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBVersionTracking.h; sourceTree = "<group>"; };
 		AD529692197F45DD00767D1C /* GBVersionTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBVersionTracking.m; sourceTree = "<group>"; };
-		AD6A50941975DD2400135CB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		AD999EB819490DFB00285864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,10 +197,8 @@
 		92AA42A91916C2800037D405 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD082E3419817E5C00A997CE /* Main.storyboard */,
 				92AA42AB1916C2800037D405 /* InfoPlist.strings */,
-				AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */,
-				92AA42B41916C2810037D405 /* Main.storyboard */,
-				AD999EC319492CC000285864 /* Localizable.strings */,
 				92AA42B11916C2800037D405 /* VolleyBallAppDelegate.h */,
 				92AA42B21916C2800037D405 /* VolleyBallAppDelegate.m */,
 				92AA42AA1916C2800037D405 /* Volleyball-Info.plist */,
@@ -348,9 +342,7 @@
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
 				9244799D192C022D0031C1F6 /* Settings.bundle in Resources */,
-				AD999EC119492CC000285864 /* Localizable.strings in Resources */,
-				92AA42B61916C2810037D405 /* Main.storyboard in Resources */,
-				AD999EB719490DFB00285864 /* DefaultScoreViewController.xib in Resources */,
+				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,14 +420,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		92AA42B41916C2810037D405 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92AA42B51916C2810037D405 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		92AA42CA1916C2810037D405 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,20 +428,13 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */ = {
+		AD082E3419817E5C00A997CE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AD999EB819490DFB00285864 /* Base */,
+				AD082E3519817E5C00A997CE /* en */,
 			);
-			name = DefaultScoreViewController.xib;
-			sourceTree = "<group>";
-		};
-		AD999EC319492CC000285864 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD6A50941975DD2400135CB9 /* Base */,
-			);
-			name = Localizable.strings;
+			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

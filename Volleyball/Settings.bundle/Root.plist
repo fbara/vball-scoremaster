@@ -48,16 +48,6 @@
 			<key>AutocapitalizationType</key>
 			<string>Words</string>
 		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Run tutorial at startup?</string>
-			<key>Key</key>
-			<string>runTutorialAtStartup</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
 	</array>
 	<key>StringsTable</key>
 	<string>Root</string>
