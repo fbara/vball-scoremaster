@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */; };
 		92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92447968192AD7A10031C1F6 /* MessageUI.framework */; };
-		9244799D192C022D0031C1F6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9244799C192C022D0031C1F6 /* Settings.bundle */; };
 		924479A0192C2CDC0031C1F6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244799F192C2CDC0031C1F6 /* SettingsViewController.m */; };
 		9273CB041940990200696E8E /* SupportInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273CB031940990200696E8E /* SupportInstructionsViewController.m */; };
 		92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A21916C2800037D405 /* Foundation.framework */; };
@@ -28,6 +27,7 @@
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
 		AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */; };
 		AD082E3619817E5C00A997CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD082E3419817E5C00A997CE /* Main.storyboard */; };
+		AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD082E37198182E800A997CE /* DefaultScoreViewController.xib */; };
 		AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */; };
 		AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C8100194A5FD70028179B /* InstructionsViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
@@ -36,6 +36,7 @@
 		AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD529692197F45DD00767D1C /* GBVersionTracking.m */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
+		ADCC1396198185D6001DC9B6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADCC1395198185D6001DC9B6 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,6 @@
 		9217E5D11926377700B2E6F1 /* DefaultScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultScoreViewController.h; sourceTree = "<group>"; };
 		9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultScoreViewController.m; sourceTree = "<group>"; };
 		92447968192AD7A10031C1F6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		9244799C192C022D0031C1F6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Volleyball/Settings.bundle; sourceTree = "<group>"; };
 		9244799E192C2CDC0031C1F6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		9244799F192C2CDC0031C1F6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9273CB021940990200696E8E /* SupportInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportInstructionsViewController.h; sourceTree = "<group>"; };
@@ -78,7 +78,6 @@
 		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD082E31198061AE00A997CE /* TutorialSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialSettingsViewController.h; sourceTree = "<group>"; };
 		AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialSettingsViewController.m; sourceTree = "<group>"; };
-		AD082E3519817E5C00A997CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = Volleyball/en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabelTableViewController.h; sourceTree = "<group>"; };
 		AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionLabelTableViewController.m; sourceTree = "<group>"; };
 		AD1C80FF194A5FD70028179B /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
@@ -94,6 +93,10 @@
 		AD529692197F45DD00767D1C /* GBVersionTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBVersionTracking.m; sourceTree = "<group>"; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		ADCC1395198185D6001DC9B6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Volleyball/Settings.bundle; sourceTree = "<group>"; };
+		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
+		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ADCC139A1981B588001DC9B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +130,7 @@
 		9244799B192C01830031C1F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9244799C192C022D0031C1F6 /* Settings.bundle */,
+				ADCC1395198185D6001DC9B6 /* Settings.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -197,12 +200,13 @@
 		92AA42A91916C2800037D405 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD082E37198182E800A997CE /* DefaultScoreViewController.xib */,
 				AD082E3419817E5C00A997CE /* Main.storyboard */,
 				92AA42AB1916C2800037D405 /* InfoPlist.strings */,
 				92AA42B11916C2800037D405 /* VolleyBallAppDelegate.h */,
 				92AA42B21916C2800037D405 /* VolleyBallAppDelegate.m */,
-				92AA42AA1916C2800037D405 /* Volleyball-Info.plist */,
 				92AA42AE1916C2800037D405 /* main.m */,
+				92AA42AA1916C2800037D405 /* Volleyball-Info.plist */,
 				92AA42B01916C2800037D405 /* Volleyball-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -339,10 +343,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */,
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
-				9244799D192C022D0031C1F6 /* Settings.bundle in Resources */,
 				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
+				ADCC1396198185D6001DC9B6 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,10 +436,19 @@
 		AD082E3419817E5C00A997CE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AD082E3519817E5C00A997CE /* en */,
+				ADCC13981981B527001DC9B6 /* Base */,
+				ADCC139A1981B588001DC9B6 /* en */,
 			);
 			name = Main.storyboard;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		AD082E37198182E800A997CE /* DefaultScoreViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADCC13971981B527001DC9B6 /* Base */,
+			);
+			name = DefaultScoreViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -433,6 +433,7 @@ NSString *msgVisitor = @"VISITOR";
     //Grab the game number
     int lableNum = [self.gameNumber.text intValue];
     //Update the past scores, set the winner in red text
+    //For a tie, both get plain black
     switch (lableNum) {
         case 1:
             self.homeGame1.text = [NSString stringWithFormat:@"%d", currHomeScore];
@@ -440,9 +441,12 @@ NSString *msgVisitor = @"VISITOR";
             if (currHomeScore > currVisitorScore) {
                 self.homeGame1.textColor = [UIColor redColor];
                 [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:20]];
-            } else {
+            } else if (currHomeScore < currVisitorScore) {
                 self.visitGame1.textColor = [UIColor redColor];
                 [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+            } else {
+                self.visitGame1.textColor = [UIColor blackColor];
+                self.homeGame1.textColor = [UIColor blackColor];
             }
             break;
         case 2:
@@ -451,9 +455,12 @@ NSString *msgVisitor = @"VISITOR";
             if (currHomeScore > currVisitorScore) {
                 self.homeGame2.textColor = [UIColor redColor];
                 [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:20]];
-            } else {
+            } else if (currHomeScore < currVisitorScore) {
                 self.visitGame2.textColor = [UIColor redColor];
                 [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:20]];
+            }else {
+                self.visitGame2.textColor = [UIColor blackColor];
+                self.homeGame2.textColor = [UIColor blackColor];
             }
             break;
         case 3:
@@ -462,9 +469,12 @@ NSString *msgVisitor = @"VISITOR";
             if (currHomeScore > currVisitorScore) {
                 self.homeGame3.textColor = [UIColor redColor];
                 [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:20]];
-            } else {
+            } else if (currHomeScore < currVisitorScore) {
                 self.visitGame3.textColor = [UIColor redColor];
                 [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:20]];
+            } else {
+                self.visitGame3.textColor = [UIColor blackColor];
+                self.homeGame3.textColor = [UIColor blackColor];
             }
         default:
             break;

@@ -12,13 +12,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView appearanceType="aqua" multipleTouchEnabled="YES" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" id="vnp-C1-4VN">
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" id="vnp-C1-4VN">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                             </imageView>
                             <textView clipsSubviews="YES" contentMode="scaleAspectFit" restorationIdentifier="cOt-an-CIE" directionalLockEnabled="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" indicatorStyle="black" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" id="cOt-an-CIE" userLabel="Text View - Instructions">
                                 <rect key="frame" x="0.0" y="63" width="568" height="257"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
+                                <accessibility key="accessibilityConfiguration" hint="This field contains significant info on how to use this app." label="Text for how to use the app">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES"/>
                                 </accessibility>
                                 <string key="text">VBall ScoreMaster is very easy to use.  Instructions are below and you can return these instructions at any time.  I don't send pop-ups to block your activity and remind you to please rate this app on the App Store, but I would appreciate it if you would take a few minutes and leave a review.  Here's how you use VBall ScoreMaster! 
@@ -51,6 +51,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="av1-K7-XUr" userLabel="Button - Volleyball">
                                 <rect key="frame" x="241" y="149" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button that resembles a volleyball"/>
                                 <size key="titleShadowOffset" width="3" height="3"/>
                                 <state key="normal" image="VBall image">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,6 +64,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <rect key="frame" x="62" y="71" width="168" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" hint="User enters the name of the visiting team." label="Text entry"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -74,6 +76,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <rect key="frame" x="333" y="71" width="168" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" hint="User enters the name of the home team." label="Text entry"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -83,6 +86,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jML-Et-saV">
                                 <rect key="frame" x="238" y="72" width="87" height="26"/>
+                                <accessibility key="accessibilityConfiguration" hint="None" label="Game label"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -124,6 +128,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             </label>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="e73-U3-5CU" userLabel="rightScreenActionButton">
                                 <rect key="frame" x="389" y="277" width="56" height="33"/>
+                                <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button with a label that contains a number"/>
                                 <gestureRecognizers/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -137,6 +142,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NZs-Ny-2Iw" userLabel="leftScreenActionButton">
                                 <rect key="frame" x="118" y="277" width="56" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button with a label that contains a number"/>
                                 <gestureRecognizers/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -149,6 +155,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zLM-eS-SXb" userLabel="screenActionGame">
                                 <rect key="frame" x="238" y="100" width="87" height="41"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" hint="Tapping this will add 1 to the game number and change the scores for both sides to 0 to start a new game." label="Button that shows the game number"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -171,6 +178,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" id="m1P-eG-o39" userLabel="Label - Home1">
                                 <rect key="frame" x="508" y="157" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -178,6 +186,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" id="HOT-d2-W5V" userLabel="Label - Home2">
                                 <rect key="frame" x="508" y="185" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -185,6 +194,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" id="iJA-mX-JWA" userLabel="Label - Home3">
                                 <rect key="frame" x="508" y="215" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -192,6 +202,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" id="Sad-Nf-jjb" userLabel="Label - Visit1">
                                 <rect key="frame" x="14" y="157" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -199,6 +210,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" id="i1f-B7-MYb" userLabel="Label - Visit2">
                                 <rect key="frame" x="14" y="185" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -206,6 +218,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" id="mi0-YI-UNY" userLabel="Label - Visit3">
                                 <rect key="frame" x="14" y="215" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -744,7 +757,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView appearanceType="aqua" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" id="Uf2-uV-EXE">
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" alpha="0.15000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" id="Uf2-uV-EXE">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                             </imageView>
                             <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="cqV-Nu-RC0" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" editable="NO" id="cqV-Nu-RC0">
