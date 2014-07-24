@@ -32,7 +32,6 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *pastScoreCollection;
 @property (weak, nonatomic) IBOutlet UILabel *rightActionNameNumber;
 @property (weak, nonatomic) IBOutlet UILabel *leftActionNameNumber;
-@property (weak, nonatomic) IBOutlet UIImageView *tutorialImage;
 
 
 

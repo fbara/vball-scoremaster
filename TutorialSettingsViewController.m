@@ -44,7 +44,7 @@
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{299.0f,145.0f},{249.0f,30.0f}}],
-                @"caption": @"...choose from your list of contacts."
+                @"caption": @"...and you can choose from your list of contacts."
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{14.0f,232.0f},{191.0f,80.0f}}],
@@ -56,7 +56,7 @@
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
-                @"caption": @"Tap the screen to begin using VBall ScoreMaster!"
+                @"caption": @"Thanks for using VBall ScoreMaster!\n(tap to begin)"
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{280.0f,0.0f},{0.0f,0.0f}}],
@@ -77,7 +77,6 @@
     //Check the index of the last shown coach mark.  It will be equal to the next mark
     //to be shown.  If it is >, we're done so exit from the view controller
     //If it's greater than the index of the last mark, segue to the Settings
-    NSLog(@"Index: %lu", (unsigned long)index);
     if (index > 4) {
         [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
     }

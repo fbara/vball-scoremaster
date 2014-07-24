@@ -37,7 +37,7 @@
 {
     [super viewWillAppear:animated];
     
-    //Show coachMarks
+    //Create coachMarks
     NSArray *coachMarks = @[
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
@@ -49,7 +49,7 @@
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,97.0f},{439.0f,150.0f}}],
-            @"caption": @"...tap to change the score and swipe to switch sides, and..."
+            @"caption": @"...tap and swipe the scores, and..."
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{118.0f,275.0f},{327.0f,30.0f}}],
@@ -69,20 +69,12 @@
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,255.0f},{439.0f,25.0f}}],
-            @"caption": @"...and choose the Actions YOU want to track."
+            @"caption": @"...and choose the player Actions YOU want to track."
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{280.0f,0.0f},{0.0f,0.0f}}],
             @"caption": @""
             }
-//        @{
-//            @"rect": [NSValue valueWithCGRect:(CGRect){{320.0f,284.0f},{0.0f,0.0f}}],
-//            @"caption": @""
-//            },
-//        @{
-//            @"rect": [NSValue valueWithCGRect:(CGRect){{10.0f,119.0f},{300.0f,56.0f}}],
-//            @"caption": @"Tap the screen to begin using VBall ScoreMaster!"
-//            }
         ];
     //Array of marks is created, now show them
     WSCoachMarksView *coachMarksView = [[WSCoachMarksView alloc] initWithFrame:self.view.bounds coachMarks:coachMarks];
@@ -97,9 +89,9 @@
     //Check the index of the last shown coach mark.  It will be equal to the next mark
     //to be shown.  If it is >, we're done so exit from the view controller
     //If it's greater than the index of the last mark, segue to the Settings
-    NSLog(@"Index: %lu", (unsigned long)index);
     if (index > 7) {
         [self performSegueWithIdentifier:@"showTutorialSettings" sender:self];
+        //then dismiss
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

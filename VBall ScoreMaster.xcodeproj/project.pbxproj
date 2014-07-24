@@ -38,7 +38,6 @@
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
 		AD999EB719490DFB00285864 /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD999EB919490DFB00285864 /* DefaultScoreViewController.xib */; };
 		AD999EC119492CC000285864 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD999EC319492CC000285864 /* Localizable.strings */; };
-		ADD034CF19794C370039567E /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD034CE19794C370039567E /* Default-Landscape@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +98,6 @@
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		AD999EB819490DFB00285864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
-		ADD034CE19794C370039567E /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		ADFD37D71979CF2E00C86D83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +132,6 @@
 		9244799B192C01830031C1F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				ADD034CE19794C370039567E /* Default-Landscape@2x.png */,
 				9244799C192C022D0031C1F6 /* Settings.bundle */,
 			);
 			name = Resources;
@@ -351,7 +348,6 @@
 			files = (
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
-				ADD034CF19794C370039567E /* Default-Landscape@2x.png in Resources */,
 				9244799D192C022D0031C1F6 /* Settings.bundle in Resources */,
 				AD999EC119492CC000285864 /* Localizable.strings in Resources */,
 				92AA42B61916C2810037D405 /* Main.storyboard in Resources */,

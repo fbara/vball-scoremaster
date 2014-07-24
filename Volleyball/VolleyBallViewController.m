@@ -33,7 +33,6 @@ NSString *msgVisitor = @"VISITOR";
 
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
-@property (weak, nonatomic)UITextField *activeField;
 
 @end
 
@@ -63,10 +62,9 @@ NSString *msgVisitor = @"VISITOR";
     
     //Check if this is the first time the app has run.
     //If so, run tutorial.  If not, don't run turorial.
-//FIXME: Remove comments when done ---------------------->
-    //if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
+    if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
         [self performSegueWithIdentifier:@"showTutorial" sender:self];
-   // }
+    }
     
     //Initiaize all the UI elements
     [self initializeHomeScore:currHomeScore];
