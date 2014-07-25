@@ -15,7 +15,7 @@
                             <imageView appearanceType="aqua" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" id="vnp-C1-4VN">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                             </imageView>
-                            <textView clipsSubviews="YES" contentMode="scaleAspectFit" restorationIdentifier="cOt-an-CIE" directionalLockEnabled="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" indicatorStyle="black" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" id="cOt-an-CIE" userLabel="Text View - Instructions">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" restorationIdentifier="cOt-an-CIE" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" id="cOt-an-CIE" userLabel="Text View - Instructions">
                                 <rect key="frame" x="0.0" y="63" width="568" height="257"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" hint="This field contains significant info on how to use this app." label="Text for how to use the app">
