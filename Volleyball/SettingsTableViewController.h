@@ -23,12 +23,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *addPhoneNumberButton;
 @property (strong, nonatomic) IBOutlet UILabel *leftActionNameSelected;
 @property (strong, nonatomic) IBOutlet UILabel *rightActionNameSelected;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *analyticsSwitch;
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;
-//- (IBAction)saveSettings:(id)sender;
 - (IBAction)getPhoneNumberFromAddressBook:(id)sender;
 - (IBAction)notificationSwitch:(id)sender;
 - (IBAction)textFieldReturn:(id)sender;
+- (IBAction)sendAnalytics:(UISegmentedControl *)sender;
 
 @end

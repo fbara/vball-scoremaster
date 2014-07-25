@@ -10,6 +10,7 @@
 #import "DefaultScoreViewController.h"
 #import "SettingsTableViewController.h"
 #import "GBVersionTracking.h"
+#import "GAIDictionaryBuilder.h"
 
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";
@@ -60,11 +61,16 @@ NSString *msgVisitor = @"VISITOR";
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    
+    
     //Check if this is the first time the app has run.
     //If so, run tutorial.  If not, don't run turorial.
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
         [self performSegueWithIdentifier:@"showTutorial" sender:self];
     }
+    
+    //Set the Google Analytics Screen name
+    self.screenName = @"Scoring";
     
     //Initiaize all the UI elements
     [self initializeHomeScore:currHomeScore];
@@ -296,6 +302,21 @@ NSString *msgVisitor = @"VISITOR";
     }
 }
 
+#pragma mark - Google Analytics
+
+- (void)logButtonPress:(UIButton *)button
+{
+    //Logs button presses, gets the title text of the button, and sends it
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"Scoring"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+                                                          action:@"touch"
+                                                           label:[button.titleLabel text]
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
+}
+
 #pragma mark - UIGestureRecognizer Delegate Method
 
 // Force all gestures to be handled simultaneously.
@@ -359,6 +380,9 @@ NSString *msgVisitor = @"VISITOR";
 
 - (IBAction)sendInstantMessage
 {
+    //Log the button press for analytics
+    //[self logButtonPress:(UIButton *)sender];
+    
     //Send a text message without changing the Action numbers
     [self sendSMS];
 }
@@ -430,6 +454,9 @@ NSString *msgVisitor = @"VISITOR";
  */
 - (IBAction)gamePressed
 {
+    //Log the button press for analytics
+    //[self logButtonPress:(UIButton *)sender];
+    
     //Grab the game number
     int lableNum = [self.gameNumber.text intValue];
     //Update the past scores, set the winner in red text
@@ -502,10 +529,13 @@ NSString *msgVisitor = @"VISITOR";
 }
 
 /*!
- *  What happens when 'Spike' number is touched
+ *  What happens when right Action number is touched
  */
 - (IBAction)rightActionPressed
 {
+    //Log the button press for analytics
+    //[self logButtonPress:(UIButton *)sender];
+    
     //Get the number currently displayed for second Action Name and add 1
     int lableNum = [self.rightActionNameNumber.text intValue];
     if (lableNum == 99) {
@@ -521,10 +551,13 @@ NSString *msgVisitor = @"VISITOR";
 }
 
 /*!
- *  What happens when 'Ace' number is touched
+ *  What happens when left Action number is touched
  */
 - (IBAction)leftActionPressed
 {
+    //Log the button press for analytics
+    //[self logButtonPress:(UIButton *)sender];
+    
     //Get current number and add 1
     int lableNum = [self.leftActionNameNumber.text intValue];
     if (lableNum == 99) {
@@ -544,6 +577,7 @@ NSString *msgVisitor = @"VISITOR";
  */
 - (IBAction)newMatch
 {
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"New Match?", nil)
                                                         message:NSLocalizedString(@"Reset scores, action names, and start a new match?", nil)
                                                        delegate:self

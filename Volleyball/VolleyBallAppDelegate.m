@@ -12,6 +12,9 @@
 
 @implementation VolleyBallAppDelegate
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-variable"
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -22,8 +25,36 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
     
+    //Google Analytics setup for the app
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
+    [GAI sharedInstance].dispatchInterval = 20;
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+    
+    if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Google Analytics" message:@"With your permission usage information will be collected to improve the application.\n\nNo personal information will be collected and you can opt out at any time from Settings." delegate:self cancelButtonTitle:@"Opt Out" otherButtonTitles:@"Opt In", nil];
+        [av show];
+    }
+    
     
     return YES;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    switch (buttonIndex) {
+        case 0:
+            [[GAI sharedInstance] setOptOut:YES];
+            [defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
+            break;
+        case 1:
+            [[GAI sharedInstance] setOptOut:NO];
+            [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
+            break;
+        default:
+            break;
+    }
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -52,5 +83,7 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma clang diagnostic pop
 
 @end
