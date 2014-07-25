@@ -27,8 +27,8 @@
     
     //Google Analytics setup for the app
     [GAI sharedInstance].trackUncaughtExceptions = YES;
-    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
-    [GAI sharedInstance].dispatchInterval = 20;
+    [[GAI sharedInstance].logger setLogLevel:kGAINetworkError];
+    [GAI sharedInstance].dispatchInterval = 120;
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
     
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {

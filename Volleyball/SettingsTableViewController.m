@@ -312,6 +312,7 @@
         default:
             break;
     }
+    [self saveUserDefaults];
 }
 
 - (NSString *)getAnalytics

@@ -317,6 +317,19 @@ NSString *msgVisitor = @"VISITOR";
     [tracker set:kGAIScreenName value:nil];
 }
 
+- (void)logMessagesSent
+{
+    //Logs that a text message was sent
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"Scoring"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+                                                          action:@"message"
+                                                           label:@"message sent"
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
+}
+
 #pragma mark - UIGestureRecognizer Delegate Method
 
 // Force all gestures to be handled simultaneously.
@@ -378,10 +391,10 @@ NSString *msgVisitor = @"VISITOR";
 #pragma mark - UILongPressGestureRecognizers
 #pragma mark - Reset Numbers to 0
 
-- (IBAction)sendInstantMessage
+- (IBAction)sendInstantMessage:(UIButton *)sender
 {
     //Log the button press for analytics
-    //[self logButtonPress:(UIButton *)sender];
+    [self logButtonPress:(UIButton *)sender];
     
     //Send a text message without changing the Action numbers
     [self sendSMS];
@@ -452,10 +465,10 @@ NSString *msgVisitor = @"VISITOR";
 /*!
  *  What happens when 'Game' number is touched
  */
-- (IBAction)gamePressed
+- (IBAction)gamePressed:(UIButton *)sender
 {
     //Log the button press for analytics
-    //[self logButtonPress:(UIButton *)sender];
+    [self logButtonPress:(UIButton *)sender];
     
     //Grab the game number
     int lableNum = [self.gameNumber.text intValue];
@@ -531,10 +544,10 @@ NSString *msgVisitor = @"VISITOR";
 /*!
  *  What happens when right Action number is touched
  */
-- (IBAction)rightActionPressed
+- (IBAction)rightActionPressed:(UIButton *)sender
 {
     //Log the button press for analytics
-    //[self logButtonPress:(UIButton *)sender];
+    [self logButtonPress:(UIButton *)sender];
     
     //Get the number currently displayed for second Action Name and add 1
     int lableNum = [self.rightActionNameNumber.text intValue];
@@ -553,10 +566,10 @@ NSString *msgVisitor = @"VISITOR";
 /*!
  *  What happens when left Action number is touched
  */
-- (IBAction)leftActionPressed
+- (IBAction)leftActionPressed:(UIButton *)sender
 {
     //Log the button press for analytics
-    //[self logButtonPress:(UIButton *)sender];
+    [self logButtonPress:(UIButton *)sender];
     
     //Get current number and add 1
     int lableNum = [self.leftActionNameNumber.text intValue];
@@ -575,9 +588,8 @@ NSString *msgVisitor = @"VISITOR";
 /*!
  *  What happens when 'New Match' button is touched
  */
-- (IBAction)newMatch
+- (IBAction)newMatch:(UIBarButtonItem *)sender
 {
-    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"New Match?", nil)
                                                         message:NSLocalizedString(@"Reset scores, action names, and start a new match?", nil)
                                                        delegate:self
@@ -674,6 +686,7 @@ NSString *msgVisitor = @"VISITOR";
             [self presentViewController:textComposer
                                animated:YES
                              completion:nil];
+            [self logMessagesSent];
         }
     }//No messages to be sent, exit
 }
