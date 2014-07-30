@@ -426,10 +426,10 @@
         self.existingLeftActionName = self.leftActionNameSelected.text;
         self.existingRightActionName = self.rightActionNameSelected.text;
         if (actionTag == 1) {
-            //The first Action Name row was selected
+            //The left Action Name row was selected
             self.actionRow = 1;
         } else {
-            //The second Action Name row was selected
+            //The right Action Name row was selected
             self.actionRow = 2;
         }
     } else {
