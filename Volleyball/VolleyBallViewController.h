@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import "GAITrackedViewController.h"
 
-@interface VolleyBallViewController : UIViewController <UIPageViewControllerDataSource,UIAlertViewDelegate,UITextFieldDelegate, MFMessageComposeViewControllerDelegate,UIGestureRecognizerDelegate,UIPageViewControllerDelegate>
+@interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource,UIAlertViewDelegate,UITextFieldDelegate, MFMessageComposeViewControllerDelegate,UIGestureRecognizerDelegate,UIPageViewControllerDelegate>
 
 @property UIColor *homeColor;
 @property UIColor *visitorColor;
@@ -42,9 +43,9 @@
 - (IBAction)leftActionLongPress:(UILongPressGestureRecognizer *)recognizer;
 - (IBAction)rightActionLongPress:(UILongPressGestureRecognizer *)recognizer;
 
-- (IBAction)gamePressed;
-- (IBAction)rightActionPressed;
-- (IBAction)leftActionPressed;
-- (IBAction)newMatch;
-- (IBAction)sendInstantMessage;
+- (IBAction)gamePressed:(UIButton *)sender;
+- (IBAction)rightActionPressed:(UIButton *)sender;
+- (IBAction)leftActionPressed:(UIButton *)sender;
+- (IBAction)newMatch:(UIBarButtonItem *)sender;
+- (IBAction)sendInstantMessage:(UIButton *)sender;
 @end

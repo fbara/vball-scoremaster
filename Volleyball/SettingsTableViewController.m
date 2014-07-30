@@ -8,6 +8,7 @@
 
 #import "SettingsTableViewController.h"
 #import "ActionLabelTableViewController.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface SettingsTableViewController ()
 
@@ -49,6 +50,17 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    //Setup Google Analytics tracker for this screen
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Settings"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     
@@ -78,6 +90,13 @@
         [self.sendNotificationSwitch setSelectedSegmentIndex:0];
     } else {
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
+    }
+    
+    //Set selected segment for messages
+    if ([[self getAnalytics] isEqualToString:@"Opt out"]) {
+        [self.analyticsSwitch setSelectedSegmentIndex:0];
+    } else {
+        [self.analyticsSwitch setSelectedSegmentIndex:1];
     }
     
     [super viewWillAppear:animated];
@@ -270,6 +289,37 @@
     
     UIColor *color = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:a/1.0];
     return color;
+}
+
+#pragma mark - Analytics Opt Out
+- (IBAction)sendAnalytics:(UISegmentedControl *)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
+    
+    //Save the value of the opt out
+    switch (selectedSegmentIndex) {
+        case 0:
+            //Do not track
+            [[GAI sharedInstance] setOptOut:YES];
+            [defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
+            break;
+        case 1:
+            //Ok to track
+            [[GAI sharedInstance] setOptOut:NO];
+            [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
+            break;
+        default:
+            break;
+    }
+    [self saveUserDefaults];
+}
+
+- (NSString *)getAnalytics
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    return [defaults stringForKey:@"analyticsChoice"];
 }
 
 #pragma mark - Notificaion Switch

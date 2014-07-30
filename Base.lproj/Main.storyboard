@@ -15,7 +15,7 @@
                             <imageView appearanceType="aqua" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" id="vnp-C1-4VN">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                             </imageView>
-                            <textView clipsSubviews="YES" contentMode="scaleAspectFit" restorationIdentifier="cOt-an-CIE" directionalLockEnabled="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" indicatorStyle="black" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" id="cOt-an-CIE" userLabel="Text View - Instructions">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" restorationIdentifier="cOt-an-CIE" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" id="cOt-an-CIE" userLabel="Text View - Instructions">
                                 <rect key="frame" x="0.0" y="63" width="568" height="257"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" hint="This field contains significant info on how to use this app." label="Text for how to use the app">
@@ -52,12 +52,14 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <rect key="frame" x="241" y="149" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button that resembles a volleyball"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                 <size key="titleShadowOffset" width="3" height="3"/>
-                                <state key="normal" image="VBall image">
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="VBall" image="VBall image">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="sendInstantMessage" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Yhb-WK-39d"/>
+                                    <action selector="sendInstantMessage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SRV-0g-Q7o"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Visiting Team" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Gzx-4p-5vy">
@@ -130,12 +132,13 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <rect key="frame" x="389" y="277" width="56" height="33"/>
                                 <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button with a label that contains a number"/>
                                 <gestureRecognizers/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="Right Action">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="rightActionPressed" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SaV-FV-mwz"/>
+                                    <action selector="rightActionPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="luN-cL-ztm"/>
                                     <outletCollection property="gestureRecognizers" destination="qAC-a6-aQ8" appends="YES" id="m98-IJ-dzl"/>
                                 </connections>
                             </button>
@@ -144,11 +147,13 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button with a label that contains a number"/>
                                 <gestureRecognizers/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="Left Action">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="leftActionPressed" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MVA-YV-NtJ"/>
+                                    <action selector="leftActionPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="l97-uH-zXB"/>
                                     <outletCollection property="gestureRecognizers" destination="00j-HW-7Gn" appends="YES" id="FVH-z6-ZkN"/>
                                 </connections>
                             </button>
@@ -156,11 +161,13 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <rect key="frame" x="238" y="100" width="87" height="41"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" hint="Tapping this will add 1 to the game number and change the scores for both sides to 0 to start a new game." label="Button that shows the game number"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="gamePressed" destination="vXZ-lx-hvc" eventType="touchUpInside" id="91k-vB-ZZN"/>
+                                    <action selector="gamePressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="k89-S0-azd"/>
                                 </connections>
                             </button>
                             <containerView contentMode="scaleToFill" id="Acd-DE-Ouq" userLabel="Home Container View">
@@ -231,7 +238,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                     <navigationItem key="navigationItem" title="VBall ScoreMaster" id="idF-JM-YX7">
                         <barButtonItem key="leftBarButtonItem" title="New match" id="blf-CM-yV6">
                             <connections>
-                                <action selector="newMatch" destination="vXZ-lx-hvc" id="lGO-TA-Ge9"/>
+                                <action selector="newMatch:" destination="vXZ-lx-hvc" id="8nb-fa-F9f"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -388,7 +395,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
             <objects>
                 <tableViewController title="Settings" id="JoG-uN-Xre" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="OsV-V0-0Jc">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="345"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -609,6 +616,37 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Google Analytics" footerTitle="You may change this at any time" id="0QR-Ch-Txb">
+                                <cells>
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OzG-l1-da3" userLabel="Table View Cell - Bottom action name">
+                                        <rect key="frame" x="0.0" y="625" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OzG-l1-da3" id="Mcu-Zn-JMg">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send analytics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Mk-gv-JkQ">
+                                                    <rect key="frame" x="20" y="11" width="255" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" id="cJh-JK-IIJ">
+                                                    <rect key="frame" x="334" y="8" width="214" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <segments>
+                                                        <segment title="Opt out"/>
+                                                        <segment title="Opt in"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="notificationSwitch:" destination="JoG-uN-Xre" eventType="valueChanged" id="AFW-tg-yrS"/>
+                                                        <action selector="sendAnalytics:" destination="JoG-uN-Xre" eventType="valueChanged" id="8ja-hD-r1b"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="JoG-uN-Xre" id="Hyz-Wy-oQh"/>
@@ -618,8 +656,11 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                     <navigationItem key="navigationItem" title="Settings" id="6h4-mo-Fgp"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="568" height="345"/>
                     <connections>
                         <outlet property="addPhoneNumberButton" destination="lFP-xW-h2H" id="Niy-39-MKK"/>
+                        <outlet property="analyticsSwitch" destination="cJh-JK-IIJ" id="J0R-e0-QE6"/>
                         <outlet property="homeTeamColor" destination="43Z-fe-naI" id="lUH-3F-cvE"/>
                         <outlet property="leftActionNameSelected" destination="8Nb-0K-3R7" id="bFa-Fg-WDN"/>
                         <outlet property="nameOfPlayer" destination="Yyj-Dn-sH1" id="Zya-XT-o96"/>
@@ -637,7 +678,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c88-HG-OSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1387" y="-1082"/>
+            <point key="canvasLocation" x="1368" y="-1074"/>
         </scene>
         <!--Home Page View Controller-->
         <scene sceneID="dEb-Ol-WBp">
@@ -666,14 +707,14 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
             <objects>
                 <viewController title="Support" id="xFW-fG-MpV" customClass="SupportInstructionsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T7D-fM-nFz">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="345"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView appearanceType="aqua" userInteractionEnabled="NO" alpha="0.15000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volleyball big spike" id="Uf2-uV-EXE">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="13" width="568" height="320"/>
                             </imageView>
                             <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="cqV-Nu-RC0" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" editable="NO" id="cqV-Nu-RC0">
-                                <rect key="frame" x="20" y="60" width="528" height="218"/>
+                                <rect key="frame" x="20" y="75" width="528" height="218"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Thank you for using VBall ScoreMaster© v2.  There is Help text on the main page if you need assistance in using this app.  
  
