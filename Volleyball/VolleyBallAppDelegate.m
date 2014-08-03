@@ -8,6 +8,7 @@
 
 #import "VolleyBallAppDelegate.h"
 #import "GBVersionTracking.h"
+#import "GAI.h"
 
 
 @implementation VolleyBallAppDelegate

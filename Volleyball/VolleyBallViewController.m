@@ -11,6 +11,8 @@
 #import "SettingsTableViewController.h"
 #import "GBVersionTracking.h"
 #import "GAIDictionaryBuilder.h"
+#import "GAI.h"
+#import "GAIFields.h"
 
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";

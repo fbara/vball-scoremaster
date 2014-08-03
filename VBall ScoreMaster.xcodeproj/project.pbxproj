@@ -29,6 +29,7 @@
 		AD082E3619817E5C00A997CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD082E3419817E5C00A997CE /* Main.storyboard */; };
 		AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD082E37198182E800A997CE /* DefaultScoreViewController.xib */; };
 		AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */; };
+		AD144BA6198D27DE0049EFF8 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD144BA5198D27DE0049EFF8 /* libGoogleAnalyticsServices.a */; };
 		AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C8100194A5FD70028179B /* InstructionsViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
 		AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968C197F390E00767D1C /* TutorialViewController.m */; };
@@ -36,6 +37,9 @@
 		AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD529692197F45DD00767D1C /* GBVersionTracking.m */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
+		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
+		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
+		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
 		ADCC1396198185D6001DC9B6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADCC1395198185D6001DC9B6 /* Settings.bundle */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 /* End PBXBuildFile section */
@@ -81,6 +85,13 @@
 		AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialSettingsViewController.m; sourceTree = "<group>"; };
 		AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabelTableViewController.h; sourceTree = "<group>"; };
 		AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionLabelTableViewController.m; sourceTree = "<group>"; };
+		AD144BA0198D27DE0049EFF8 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		AD144BA1198D27DE0049EFF8 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		AD144BA2198D27DE0049EFF8 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		AD144BA3198D27DE0049EFF8 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		AD144BA4198D27DE0049EFF8 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		AD144BA5198D27DE0049EFF8 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = Volleyball/libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		AD144BA7198D286F0049EFF8 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		AD1C80FF194A5FD70028179B /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
 		AD1C8100194A5FD70028179B /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsViewController.m; sourceTree = "<group>"; };
 		AD1C811E1955E6FC0028179B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -94,6 +105,9 @@
 		AD529692197F45DD00767D1C /* GBVersionTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBVersionTracking.m; sourceTree = "<group>"; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		ADCC1395198185D6001DC9B6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Volleyball/Settings.bundle; sourceTree = "<group>"; };
 		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,13 +120,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADCC13A91981CED5001DC9B6 /* libz.dylib in Frameworks */,
-				ADCC13A71981CEC6001DC9B6 /* SystemConfiguration.framework in Frameworks */,
-				ADCC13A51981CEB9001DC9B6 /* CoreData.framework in Frameworks */,
+				AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */,
+				AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */,
+				AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */,
 				AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */,
 				AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */,
 				92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */,
-				ADCC13A31981CE93001DC9B6 /* libGoogleAnalyticsServices.a in Frameworks */,
+				AD144BA6198D27DE0049EFF8 /* libGoogleAnalyticsServices.a in Frameworks */,
 				92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */,
 				92AA42A51916C2800037D405 /* CoreGraphics.framework in Frameworks */,
 				92AA42A71916C2800037D405 /* UIKit.framework in Frameworks */,
@@ -169,10 +183,10 @@
 		92AA42A11916C2800037D405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ADCC13A21981CE93001DC9B6 /* libGoogleAnalyticsServices.a */,
-				ADCC13A81981CED5001DC9B6 /* libz.dylib */,
-				ADCC13A61981CEC6001DC9B6 /* SystemConfiguration.framework */,
-				ADCC13A41981CEB9001DC9B6 /* CoreData.framework */,
+				AD80C7F7198EFC0800C03C2E /* libz.dylib */,
+				AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */,
+				AD80C7F3198EFBD200C03C2E /* CoreData.framework */,
+				AD144BA5198D27DE0049EFF8 /* libGoogleAnalyticsServices.a */,
 				AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */,
 				AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */,
 				AD1C811E1955E6FC0028179B /* Accelerate.framework */,
@@ -275,15 +289,12 @@
 		ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				ADCC13AA1981DB26001DC9B6 /* GAIEcommerceProduct.h */,
-				ADCC13AB1981DB26001DC9B6 /* GAIEcommerceProductAction.h */,
-				ADCC13AC1981DB26001DC9B6 /* GAIEcommercePromotion.h */,
-				ADCC139B1981CE15001DC9B6 /* GAI.h */,
-				ADCC139C1981CE15001DC9B6 /* GAIDictionaryBuilder.h */,
-				ADCC139D1981CE15001DC9B6 /* GAIFields.h */,
-				ADCC139E1981CE15001DC9B6 /* GAILogger.h */,
-				ADCC139F1981CE15001DC9B6 /* GAITrackedViewController.h */,
-				ADCC13A01981CE15001DC9B6 /* GAITracker.h */,
+				AD144BA7198D286F0049EFF8 /* GAI.h */,
+				AD144BA0198D27DE0049EFF8 /* GAIDictionaryBuilder.h */,
+				AD144BA1198D27DE0049EFF8 /* GAIFields.h */,
+				AD144BA2198D27DE0049EFF8 /* GAILogger.h */,
+				AD144BA3198D27DE0049EFF8 /* GAITrackedViewController.h */,
+				AD144BA4198D27DE0049EFF8 /* GAITracker.h */,
 			);
 			name = GoogleAnalytics;
 			path = Volleyball;
