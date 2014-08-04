@@ -40,6 +40,8 @@
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
 		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
 		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
+		AD92790D198FB55100D79338 /* CHColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD92790C198FB55100D79338 /* CHColorPickerView.m */; };
+		AD927910198FB72C00D79338 /* UIColor+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD92790F198FB72C00D79338 /* UIColor+extensions.m */; };
 		ADCC1396198185D6001DC9B6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADCC1395198185D6001DC9B6 /* Settings.bundle */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 /* End PBXBuildFile section */
@@ -108,6 +110,10 @@
 		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AD92790B198FB55100D79338 /* CHColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHColorPickerView.h; sourceTree = "<group>"; };
+		AD92790C198FB55100D79338 /* CHColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHColorPickerView.m; sourceTree = "<group>"; };
+		AD92790E198FB72C00D79338 /* UIColor+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+extensions.h"; sourceTree = "<group>"; };
+		AD92790F198FB72C00D79338 /* UIColor+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+extensions.m"; sourceTree = "<group>"; };
 		ADCC1395198185D6001DC9B6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Volleyball/Settings.bundle; sourceTree = "<group>"; };
 		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
+				AD92790A198FB51900D79338 /* CHColorPickerView */,
 				ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */,
 				AD529694197F45E500767D1C /* GBVersionTracking */,
 				AD52968A197F38E100767D1C /* Tutorial */,
@@ -284,6 +291,17 @@
 			);
 			name = GBVersionTracking;
 			path = Volleyball;
+			sourceTree = "<group>";
+		};
+		AD92790A198FB51900D79338 /* CHColorPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				AD92790E198FB72C00D79338 /* UIColor+extensions.h */,
+				AD92790F198FB72C00D79338 /* UIColor+extensions.m */,
+				AD92790B198FB55100D79338 /* CHColorPickerView.h */,
+				AD92790C198FB55100D79338 /* CHColorPickerView.m */,
+			);
+			name = CHColorPickerView;
 			sourceTree = "<group>";
 		};
 		ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */ = {
@@ -424,9 +442,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */,
+				AD92790D198FB55100D79338 /* CHColorPickerView.m in Sources */,
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
 				AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */,
+				AD927910198FB72C00D79338 /* UIColor+extensions.m in Sources */,
 				AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */,
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,

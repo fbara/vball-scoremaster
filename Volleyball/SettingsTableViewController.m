@@ -9,6 +9,10 @@
 #import "SettingsTableViewController.h"
 #import "ActionLabelTableViewController.h"
 #import "GAIDictionaryBuilder.h"
+#import "GAI.h"
+#import "GAITracker.h"
+#import "GAIFields.h"
+#import "UIColor+extensions.h"
 
 @interface SettingsTableViewController ()
 
@@ -29,6 +33,7 @@
 {
     [super viewDidLoad];
     self.tableView.delegate = self;
+    
         
     UIImage *image = [UIImage imageNamed:@"Info44.png"];
     
@@ -47,6 +52,19 @@
     } else {
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
+    
+    //Setup color picker
+    colorPicker = [[CHColorPickerView alloc] init];
+    colorPicker.delegate = self;
+    colorPicker.colorsPerRow = 16;
+    colorPicker.colorCellPadding = 2.0;
+    colorPicker.highlightSelection = YES;
+    colorPicker.selectionBorderColor = [UIColor whiteColor];
+    //Set colors that should be available as an NSArray
+    [colorPicker setColors:[self createPickerColor]];
+    //Set background styling
+    colorPicker.backgroundColor = [UIColor colorWithHexString:@"1d2225"];
+
     
 }
 
@@ -112,6 +130,13 @@
     [self notificationSwitch:self.sendNotificationSwitch];
 
     [super viewWillDisappear:animated];
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    colorPicker.frame = self.view.bounds;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -262,10 +287,12 @@
  */
 - (IBAction)homeTeamBackgroundColor:(id)sender
 {
-    //Change the button background color each time the button is tapped
-    UIColor *homeButtonColor;
-    homeButtonColor = [self getRandomColor];
-    self.homeTeamColor.backgroundColor = homeButtonColor;
+//    //Change the button background color each time the button is tapped
+//    UIColor *homeButtonColor;
+//    homeButtonColor = [self getRandomColor];
+//    self.homeTeamColor.backgroundColor = homeButtonColor;
+    //Add to view hierachy
+    [self.view addSubview:colorPicker];
 }
 
 /*!
@@ -274,22 +301,67 @@
  */
 - (IBAction)visitingTeamBackgroundColor:(id)sender
 {
-    //Change the button background color each time the button is tapped
-    UIColor *visitingButtonColor;
-    visitingButtonColor = [self getRandomColor];
-    self.visitingTeamColor.backgroundColor = visitingButtonColor;
+//    //Change the button background color each time the button is tapped
+//    UIColor *visitingButtonColor;
+//    visitingButtonColor = [self getRandomColor];
+//    self.visitingTeamColor.backgroundColor = visitingButtonColor;
+    
+    //Add to view hierachy
+    [self.view addSubview:colorPicker];
 }
 
-- (UIColor *)getRandomColor
+-(NSArray *)createPickerColor
 {
-    int r = arc4random() % 255;
-    int g = arc4random() % 255;
-    int b = arc4random() % 255;
-    int a = arc4random() % 255;
     
-    UIColor *color = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:a/1.0];
-    return color;
+    NSMutableArray *colors = [[NSMutableArray alloc] init];
+    
+    NSInteger colorCount = 256;
+    NSInteger createdColors = 0;
+    CGFloat hueStep = 0.5/colorCount;
+    
+    CGFloat currentHue = 0.0;
+    
+    while (createdColors < colorCount) {
+        
+        int r = arc4random() % 255;
+        int g = arc4random() % 255;
+        int b = arc4random() % 255;
+        int a = arc4random() % 255;
+        
+        //UIColor *tmpColor = [UIColor colorWithHue:currentHue saturation:1.0 brightness:1.0 alpha:1.0];
+        UIColor *clrColor = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:a/1.0];
+        //[colors addObject:tmpColor];
+        [colors addObject:clrColor];
+        currentHue+=hueStep;
+        
+        createdColors++;
+    }
+    
+    return colors;
+    
 }
+
+- (void)colorPickerView:(CHColorPickerView *)colorPickerView didSelectColor:(UIColor *)color
+{
+    //Delegate method for the colorPicker
+    //self.homeTeamColor.backgroundColor = color;
+    
+    selectedColor = color;
+    
+    //Remove the color picker from view
+    [colorPickerView removeFromSuperview];
+}
+
+//- (UIColor *)getRandomColor
+//{
+//    int r = arc4random() % 255;
+//    int g = arc4random() % 255;
+//    int b = arc4random() % 255;
+//    int a = arc4random() % 255;
+//    
+//    UIColor *color = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:a/1.0];
+//    return color;
+//}
 
 #pragma mark - Analytics Opt Out
 - (IBAction)sendAnalytics:(UISegmentedControl *)sender

@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import "PhoneNumberFormatter.h"
+#import "CHColorPickerView.h"
 
-@interface SettingsTableViewController : UITableViewController <UITableViewDelegate,ABPeoplePickerNavigationControllerDelegate,UITextViewDelegate,UITextFieldDelegate>
+@interface SettingsTableViewController : UITableViewController <UITableViewDelegate,ABPeoplePickerNavigationControllerDelegate,UITextViewDelegate,UITextFieldDelegate,CHColorPickerViewDelegate>
+{
+    @private
+    CHColorPickerView *colorPicker;
+    UIColor *selectedColor;
+}
 
 
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
