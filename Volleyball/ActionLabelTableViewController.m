@@ -42,6 +42,7 @@
     [self.tableView cellForRowAtIndexPath:oldIndex].accessoryType = UITableViewCellAccessoryNone;
     [self.tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
     [self.tableView cellForRowAtIndexPath:indexPath].highlighted = NO;
+    
     return indexPath;
 }
 
@@ -91,6 +92,8 @@
     }
 }
 
+#pragma mark - UITableView Delegate Methods
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger count = [self.actionNames count];
@@ -106,6 +109,7 @@
                                       reuseIdentifier:cellIdentifier];
     }
     cell.textLabel.text = [self.actionNames objectAtIndex:indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
@@ -117,6 +121,22 @@
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     self.selectedActionName = cell.textLabel.text;
 
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    //Set the header of the table with instructions to save changes
+    UILabel *sectionHeader = [[UILabel alloc] initWithFrame:CGRectNull] ;
+    sectionHeader.backgroundColor = [UIColor clearColor];
+    sectionHeader.font = [UIFont systemFontOfSize:14];
+    sectionHeader.textColor = [UIColor darkGrayColor];
+    sectionHeader.text = @"   SELECT AN ACTION NAME THEN TAP 'SAVE'";
+    return sectionHeader;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40;
 }
 
 - (void)didReceiveMemoryWarning
