@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import "PhoneNumberFormatter.h"
+#import "WEPopoverController.h"
+#import "ColorViewController.h"
 
-@interface SettingsTableViewController : UITableViewController <UITableViewDelegate,ABPeoplePickerNavigationControllerDelegate,UITextViewDelegate,UITextFieldDelegate>
+@interface SettingsTableViewController : UITableViewController <UITableViewDelegate,ABPeoplePickerNavigationControllerDelegate,UITextViewDelegate,UITextFieldDelegate,WEPopoverControllerDelegate,ColorViewControllerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
@@ -24,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *leftActionNameSelected;
 @property (strong, nonatomic) IBOutlet UILabel *rightActionNameSelected;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *analyticsSwitch;
+@property (strong, nonatomic)WEPopoverController *colorPicker;
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;

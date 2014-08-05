@@ -9,6 +9,8 @@
 #import "SettingsTableViewController.h"
 #import "ActionLabelTableViewController.h"
 #import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
+#import "GAI.h"
 
 @interface SettingsTableViewController ()
 
@@ -274,11 +276,47 @@
  */
 - (IBAction)visitingTeamBackgroundColor:(id)sender
 {
-    //Change the button background color each time the button is tapped
-    UIColor *visitingButtonColor;
-    visitingButtonColor = [self getRandomColor];
-    self.visitingTeamColor.backgroundColor = visitingButtonColor;
+//    //Change the button background color each time the button is tapped
+//    UIColor *visitingButtonColor;
+//    visitingButtonColor = [self getRandomColor];
+//    self.visitingTeamColor.backgroundColor = visitingButtonColor;
+    
+    if (!self.colorPicker) {
+		
+		ColorViewController *contentViewController = [[ColorViewController alloc] init];
+        contentViewController.delegate = self;
+		self.colorPicker = [[WEPopoverController alloc] initWithContentViewController:contentViewController];
+		self.colorPicker.delegate = self;
+		self.colorPicker.passthroughViews = [NSArray arrayWithObject:self.navigationController.navigationBar];
+		
+		[self.colorPicker presentPopoverFromRect:self.visitingTeamColor.frame
+                                                  inView:self.view
+                                permittedArrowDirections:(UIPopoverArrowDirectionRight)
+                                                animated:YES];
+        
+	} else {
+		[self.colorPicker dismissPopoverAnimated:YES];
+		self.colorPicker = nil;
+	}
 }
+
+- (void)colorPopoverControllerDidSelectColor:(NSString *)hexColor
+{
+    NSLog(@"Selected: %@", [GzColors colorFromHex:hexColor]);
+}
+
+- (BOOL)popoverControllerShouldDismissPopover:(WEPopoverController *)popoverController
+{
+    //The popover is automatically dismissed if you click outside it, unless you return NO here
+	return YES;
+}
+
+- (void)popoverControllerDidDismissPopover:(WEPopoverController *)popoverController
+{
+    //Safe to release the popover here
+    self.colorPicker = nil;
+}
+
 
 - (UIColor *)getRandomColor
 {

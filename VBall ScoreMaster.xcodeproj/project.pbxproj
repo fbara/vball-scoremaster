@@ -37,6 +37,31 @@
 		AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD529692197F45DD00767D1C /* GBVersionTracking.m */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
+		AD7FF52D1990442A009DA09B /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FF50A1990442A009DA09B /* ColorButton.m */; };
+		AD7FF52E1990442A009DA09B /* ColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FF50C1990442A009DA09B /* ColorViewController.m */; };
+		AD7FF52F1990442A009DA09B /* ColorPopoverLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF50D1990442A009DA09B /* ColorPopoverLocalizable.strings */; };
+		AD7FF5301990442A009DA09B /* GzColors.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FF5101990442A009DA09B /* GzColors.m */; };
+		AD7FF5311990442A009DA09B /* UIBarButtonItem+WEPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FF5131990442A009DA09B /* UIBarButtonItem+WEPopover.m */; };
+		AD7FF5321990442A009DA09B /* WEPopoverContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FF5151990442A009DA09B /* WEPopoverContainerView.m */; };
+		AD7FF5331990442A009DA09B /* WEPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FF5171990442A009DA09B /* WEPopoverController.m */; };
+		AD7FF5341990442A009DA09B /* WETouchableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FF51A1990442A009DA09B /* WETouchableView.m */; };
+		AD7FF5351990442A009DA09B /* cache2.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF51C1990442A009DA09B /* cache2.png */; };
+		AD7FF5361990442A009DA09B /* popoverArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF51D1990442A009DA09B /* popoverArrowDown.png */; };
+		AD7FF5371990442A009DA09B /* popoverArrowDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF51E1990442A009DA09B /* popoverArrowDown@2x.png */; };
+		AD7FF5381990442A009DA09B /* popoverArrowDownSimple.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF51F1990442A009DA09B /* popoverArrowDownSimple.png */; };
+		AD7FF5391990442A009DA09B /* popoverArrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF5201990442A009DA09B /* popoverArrowLeft.png */; };
+		AD7FF53A1990442A009DA09B /* popoverArrowLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF5211990442A009DA09B /* popoverArrowLeft@2x.png */; };
+		AD7FF53B1990442A009DA09B /* popoverArrowLeftSimple.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF5221990442A009DA09B /* popoverArrowLeftSimple.png */; };
+		AD7FF53C1990442A009DA09B /* popoverArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF5231990442A009DA09B /* popoverArrowRight.png */; };
+		AD7FF53D1990442A009DA09B /* popoverArrowRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF5241990442A009DA09B /* popoverArrowRight@2x.png */; };
+		AD7FF53E1990442A009DA09B /* popoverArrowRightSimple.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF5251990442A009DA09B /* popoverArrowRightSimple.png */; };
+		AD7FF53F1990442A009DA09B /* popoverArrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF5261990442A009DA09B /* popoverArrowUp.png */; };
+		AD7FF5401990442A009DA09B /* popoverArrowUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF5271990442A009DA09B /* popoverArrowUp@2x.png */; };
+		AD7FF5411990442A009DA09B /* popoverArrowUpSimple.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF5281990442A009DA09B /* popoverArrowUpSimple.png */; };
+		AD7FF5421990442A009DA09B /* popoverBg.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF5291990442A009DA09B /* popoverBg.png */; };
+		AD7FF5431990442A009DA09B /* popoverBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF52A1990442A009DA09B /* popoverBg@2x.png */; };
+		AD7FF5441990442A009DA09B /* popoverBgSimple.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF52B1990442A009DA09B /* popoverBgSimple.png */; };
+		AD7FF5451990442A009DA09B /* README in Resources */ = {isa = PBXBuildFile; fileRef = AD7FF52C1990442A009DA09B /* README */; };
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
 		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
 		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
@@ -105,6 +130,39 @@
 		AD529692197F45DD00767D1C /* GBVersionTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBVersionTracking.m; sourceTree = "<group>"; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		AD7FF5091990442A009DA09B /* ColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
+		AD7FF50A1990442A009DA09B /* ColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
+		AD7FF50B1990442A009DA09B /* ColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorViewController.h; sourceTree = "<group>"; };
+		AD7FF50C1990442A009DA09B /* ColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorViewController.m; sourceTree = "<group>"; };
+		AD7FF50E1990442A009DA09B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ColorPopoverLocalizable.strings; sourceTree = "<group>"; };
+		AD7FF50F1990442A009DA09B /* GzColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GzColors.h; sourceTree = "<group>"; };
+		AD7FF5101990442A009DA09B /* GzColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GzColors.m; sourceTree = "<group>"; };
+		AD7FF5121990442A009DA09B /* UIBarButtonItem+WEPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WEPopover.h"; sourceTree = "<group>"; };
+		AD7FF5131990442A009DA09B /* UIBarButtonItem+WEPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WEPopover.m"; sourceTree = "<group>"; };
+		AD7FF5141990442A009DA09B /* WEPopoverContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEPopoverContainerView.h; sourceTree = "<group>"; };
+		AD7FF5151990442A009DA09B /* WEPopoverContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WEPopoverContainerView.m; sourceTree = "<group>"; };
+		AD7FF5161990442A009DA09B /* WEPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEPopoverController.h; sourceTree = "<group>"; };
+		AD7FF5171990442A009DA09B /* WEPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WEPopoverController.m; sourceTree = "<group>"; };
+		AD7FF5181990442A009DA09B /* WEPopoverParentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEPopoverParentView.h; sourceTree = "<group>"; };
+		AD7FF5191990442A009DA09B /* WETouchableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WETouchableView.h; sourceTree = "<group>"; };
+		AD7FF51A1990442A009DA09B /* WETouchableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WETouchableView.m; sourceTree = "<group>"; };
+		AD7FF51C1990442A009DA09B /* cache2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cache2.png; sourceTree = "<group>"; };
+		AD7FF51D1990442A009DA09B /* popoverArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverArrowDown.png; sourceTree = "<group>"; };
+		AD7FF51E1990442A009DA09B /* popoverArrowDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popoverArrowDown@2x.png"; sourceTree = "<group>"; };
+		AD7FF51F1990442A009DA09B /* popoverArrowDownSimple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverArrowDownSimple.png; sourceTree = "<group>"; };
+		AD7FF5201990442A009DA09B /* popoverArrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverArrowLeft.png; sourceTree = "<group>"; };
+		AD7FF5211990442A009DA09B /* popoverArrowLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popoverArrowLeft@2x.png"; sourceTree = "<group>"; };
+		AD7FF5221990442A009DA09B /* popoverArrowLeftSimple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverArrowLeftSimple.png; sourceTree = "<group>"; };
+		AD7FF5231990442A009DA09B /* popoverArrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverArrowRight.png; sourceTree = "<group>"; };
+		AD7FF5241990442A009DA09B /* popoverArrowRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popoverArrowRight@2x.png"; sourceTree = "<group>"; };
+		AD7FF5251990442A009DA09B /* popoverArrowRightSimple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverArrowRightSimple.png; sourceTree = "<group>"; };
+		AD7FF5261990442A009DA09B /* popoverArrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverArrowUp.png; sourceTree = "<group>"; };
+		AD7FF5271990442A009DA09B /* popoverArrowUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popoverArrowUp@2x.png"; sourceTree = "<group>"; };
+		AD7FF5281990442A009DA09B /* popoverArrowUpSimple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverArrowUpSimple.png; sourceTree = "<group>"; };
+		AD7FF5291990442A009DA09B /* popoverBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverBg.png; sourceTree = "<group>"; };
+		AD7FF52A1990442A009DA09B /* popoverBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popoverBg@2x.png"; sourceTree = "<group>"; };
+		AD7FF52B1990442A009DA09B /* popoverBgSimple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverBgSimple.png; sourceTree = "<group>"; };
+		AD7FF52C1990442A009DA09B /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -159,6 +217,7 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
+				AD7FF5081990442A009DA09B /* ColorPopover */,
 				ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */,
 				AD529694197F45E500767D1C /* GBVersionTracking */,
 				AD52968A197F38E100767D1C /* Tutorial */,
@@ -286,6 +345,62 @@
 			path = Volleyball;
 			sourceTree = "<group>";
 		};
+		AD7FF5081990442A009DA09B /* ColorPopover */ = {
+			isa = PBXGroup;
+			children = (
+				AD7FF5091990442A009DA09B /* ColorButton.h */,
+				AD7FF50A1990442A009DA09B /* ColorButton.m */,
+				AD7FF50B1990442A009DA09B /* ColorViewController.h */,
+				AD7FF50C1990442A009DA09B /* ColorViewController.m */,
+				AD7FF50D1990442A009DA09B /* ColorPopoverLocalizable.strings */,
+				AD7FF50F1990442A009DA09B /* GzColors.h */,
+				AD7FF5101990442A009DA09B /* GzColors.m */,
+				AD7FF5111990442A009DA09B /* Popover */,
+				AD7FF51B1990442A009DA09B /* popoverImages */,
+			);
+			path = ColorPopover;
+			sourceTree = "<group>";
+		};
+		AD7FF5111990442A009DA09B /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				AD7FF5121990442A009DA09B /* UIBarButtonItem+WEPopover.h */,
+				AD7FF5131990442A009DA09B /* UIBarButtonItem+WEPopover.m */,
+				AD7FF5141990442A009DA09B /* WEPopoverContainerView.h */,
+				AD7FF5151990442A009DA09B /* WEPopoverContainerView.m */,
+				AD7FF5161990442A009DA09B /* WEPopoverController.h */,
+				AD7FF5171990442A009DA09B /* WEPopoverController.m */,
+				AD7FF5181990442A009DA09B /* WEPopoverParentView.h */,
+				AD7FF5191990442A009DA09B /* WETouchableView.h */,
+				AD7FF51A1990442A009DA09B /* WETouchableView.m */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
+		AD7FF51B1990442A009DA09B /* popoverImages */ = {
+			isa = PBXGroup;
+			children = (
+				AD7FF51C1990442A009DA09B /* cache2.png */,
+				AD7FF51D1990442A009DA09B /* popoverArrowDown.png */,
+				AD7FF51E1990442A009DA09B /* popoverArrowDown@2x.png */,
+				AD7FF51F1990442A009DA09B /* popoverArrowDownSimple.png */,
+				AD7FF5201990442A009DA09B /* popoverArrowLeft.png */,
+				AD7FF5211990442A009DA09B /* popoverArrowLeft@2x.png */,
+				AD7FF5221990442A009DA09B /* popoverArrowLeftSimple.png */,
+				AD7FF5231990442A009DA09B /* popoverArrowRight.png */,
+				AD7FF5241990442A009DA09B /* popoverArrowRight@2x.png */,
+				AD7FF5251990442A009DA09B /* popoverArrowRightSimple.png */,
+				AD7FF5261990442A009DA09B /* popoverArrowUp.png */,
+				AD7FF5271990442A009DA09B /* popoverArrowUp@2x.png */,
+				AD7FF5281990442A009DA09B /* popoverArrowUpSimple.png */,
+				AD7FF5291990442A009DA09B /* popoverBg.png */,
+				AD7FF52A1990442A009DA09B /* popoverBg@2x.png */,
+				AD7FF52B1990442A009DA09B /* popoverBgSimple.png */,
+				AD7FF52C1990442A009DA09B /* README */,
+			);
+			path = popoverImages;
+			sourceTree = "<group>";
+		};
 		ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,12 +498,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7FF5411990442A009DA09B /* popoverArrowUpSimple.png in Resources */,
+				AD7FF53F1990442A009DA09B /* popoverArrowUp.png in Resources */,
+				AD7FF5371990442A009DA09B /* popoverArrowDown@2x.png in Resources */,
+				AD7FF5441990442A009DA09B /* popoverBgSimple.png in Resources */,
+				AD7FF5361990442A009DA09B /* popoverArrowDown.png in Resources */,
 				AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */,
+				AD7FF52F1990442A009DA09B /* ColorPopoverLocalizable.strings in Resources */,
+				AD7FF53B1990442A009DA09B /* popoverArrowLeftSimple.png in Resources */,
+				AD7FF53C1990442A009DA09B /* popoverArrowRight.png in Resources */,
+				AD7FF5391990442A009DA09B /* popoverArrowLeft.png in Resources */,
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
+				AD7FF5351990442A009DA09B /* cache2.png in Resources */,
+				AD7FF5451990442A009DA09B /* README in Resources */,
+				AD7FF5421990442A009DA09B /* popoverBg.png in Resources */,
+				AD7FF5401990442A009DA09B /* popoverArrowUp@2x.png in Resources */,
+				AD7FF53D1990442A009DA09B /* popoverArrowRight@2x.png in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
 				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
 				ADCC1396198185D6001DC9B6 /* Settings.bundle in Resources */,
 				ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */,
+				AD7FF5381990442A009DA09B /* popoverArrowDownSimple.png in Resources */,
+				AD7FF5431990442A009DA09B /* popoverBg@2x.png in Resources */,
+				AD7FF53A1990442A009DA09B /* popoverArrowLeft@2x.png in Resources */,
+				AD7FF53E1990442A009DA09B /* popoverArrowRightSimple.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,17 +556,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7FF5321990442A009DA09B /* WEPopoverContainerView.m in Sources */,
 				AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */,
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
 				AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */,
 				AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */,
+				AD7FF5341990442A009DA09B /* WETouchableView.m in Sources */,
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
 				AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */,
+				AD7FF5301990442A009DA09B /* GzColors.m in Sources */,
+				AD7FF5311990442A009DA09B /* UIBarButtonItem+WEPopover.m in Sources */,
 				924479A0192C2CDC0031C1F6 /* SettingsViewController.m in Sources */,
+				AD7FF52D1990442A009DA09B /* ColorButton.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
+				AD7FF52E1990442A009DA09B /* ColorViewController.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
+				AD7FF5331990442A009DA09B /* WEPopoverController.m in Sources */,
 				9273CB041940990200696E8E /* SupportInstructionsViewController.m in Sources */,
 				AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */,
 			);
@@ -490,6 +630,14 @@
 				ADCC13971981B527001DC9B6 /* Base */,
 			);
 			name = DefaultScoreViewController.xib;
+			sourceTree = "<group>";
+		};
+		AD7FF50D1990442A009DA09B /* ColorPopoverLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD7FF50E1990442A009DA09B /* en */,
+			);
+			name = ColorPopoverLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
