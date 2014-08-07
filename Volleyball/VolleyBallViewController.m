@@ -11,8 +11,6 @@
 #import "SettingsTableViewController.h"
 #import "GBVersionTracking.h"
 #import "GAIDictionaryBuilder.h"
-#import "GAI.h"
-#import "GAIFields.h"
 
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";
@@ -36,6 +34,9 @@ NSString *msgVisitor = @"VISITOR";
 
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
+@property (nonatomic, strong) UIView *containerView;
+
+@property (nonatomic, assign) BOOL didSetupConstraints;
 
 @end
 
@@ -63,7 +64,11 @@ NSString *msgVisitor = @"VISITOR";
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+#pragma mark Begin Layout Constraints
     
+    
+    
+#pragma mark End Layout Constraints
     
     //Check if this is the first time the app has run.
     //If so, run tutorial.  If not, don't run turorial.
@@ -799,6 +804,17 @@ NSString *msgVisitor = @"VISITOR";
 
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
+}
+
+#pragma mark Property Accessors
+
+- (UIView *)containerView
+{
+    if (!_containerView) {
+        _containerView = [UIView newAutoLayoutView];
+        _containerView.backgroundColor = [UIColor colorWithWhite:0.2 alpha:1];
+    }
+    return _containerView;
 }
 
 - (void)didReceiveMemoryWarning

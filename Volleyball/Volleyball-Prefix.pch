@@ -15,4 +15,5 @@
     #import <Foundation/Foundation.h>
     #import "GAI.h"
     #import "GAIFields.h"
+    #import "PureLayout.h"
 #endif

@@ -9,8 +9,7 @@
 #import "SettingsTableViewController.h"
 #import "ActionLabelTableViewController.h"
 #import "GAIDictionaryBuilder.h"
-#import "GAI.h"
-#import "GAIFields.h"
+
 
 @interface SettingsTableViewController ()
 

@@ -40,6 +40,9 @@
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
 		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
 		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
+		ADCACDC419924EEA000D3BB1 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCACDBC19924EEA000D3BB1 /* ALView+PureLayout.m */; };
+		ADCACDC519924EEA000D3BB1 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCACDBE19924EEA000D3BB1 /* NSArray+PureLayout.m */; };
+		ADCACDC619924EEA000D3BB1 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCACDC019924EEA000D3BB1 /* NSLayoutConstraint+PureLayout.m */; };
 		ADCC1396198185D6001DC9B6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADCC1395198185D6001DC9B6 /* Settings.bundle */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 /* End PBXBuildFile section */
@@ -108,6 +111,15 @@
 		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		ADCACDBB19924EEA000D3BB1 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
+		ADCACDBC19924EEA000D3BB1 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
+		ADCACDBD19924EEA000D3BB1 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		ADCACDBE19924EEA000D3BB1 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		ADCACDBF19924EEA000D3BB1 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		ADCACDC019924EEA000D3BB1 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		ADCACDC119924EEA000D3BB1 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
+		ADCACDC219924EEA000D3BB1 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
+		ADCACDC319924EEA000D3BB1 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
 		ADCC1395198185D6001DC9B6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Volleyball/Settings.bundle; sourceTree = "<group>"; };
 		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,6 +171,7 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
+				ADCACDBA19924EAA000D3BB1 /* PureLayout */,
 				ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */,
 				AD529694197F45E500767D1C /* GBVersionTracking */,
 				AD52968A197F38E100767D1C /* Tutorial */,
@@ -284,6 +297,22 @@
 			);
 			name = GBVersionTracking;
 			path = Volleyball;
+			sourceTree = "<group>";
+		};
+		ADCACDBA19924EAA000D3BB1 /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				ADCACDBB19924EEA000D3BB1 /* ALView+PureLayout.h */,
+				ADCACDBC19924EEA000D3BB1 /* ALView+PureLayout.m */,
+				ADCACDBD19924EEA000D3BB1 /* NSArray+PureLayout.h */,
+				ADCACDBE19924EEA000D3BB1 /* NSArray+PureLayout.m */,
+				ADCACDBF19924EEA000D3BB1 /* NSLayoutConstraint+PureLayout.h */,
+				ADCACDC019924EEA000D3BB1 /* NSLayoutConstraint+PureLayout.m */,
+				ADCACDC119924EEA000D3BB1 /* PureLayout.h */,
+				ADCACDC219924EEA000D3BB1 /* PureLayout+Internal.h */,
+				ADCACDC319924EEA000D3BB1 /* PureLayoutDefines.h */,
+			);
+			name = PureLayout;
 			sourceTree = "<group>";
 		};
 		ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */ = {
@@ -426,6 +455,9 @@
 				AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */,
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
+				ADCACDC619924EEA000D3BB1 /* NSLayoutConstraint+PureLayout.m in Sources */,
+				ADCACDC419924EEA000D3BB1 /* ALView+PureLayout.m in Sources */,
+				ADCACDC519924EEA000D3BB1 /* NSArray+PureLayout.m in Sources */,
 				AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */,
 				AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */,
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
