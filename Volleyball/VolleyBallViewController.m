@@ -273,6 +273,11 @@ NSString *msgVisitor = @"VISITOR";
     //Get the Action Names
     [self loadActionNames];
     
+    //Load social media sharing
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        
+    }
+    
 }
 
 #pragma mark - UI Elements
