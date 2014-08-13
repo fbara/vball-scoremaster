@@ -50,7 +50,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="av1-K7-XUr" userLabel="Button - Volleyball">
                                 <rect key="frame" x="241" y="149" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button that resembles a volleyball"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
@@ -480,7 +480,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                         <action selector="notificationSwitch:" destination="JoG-uN-Xre" eventType="valueChanged" id="8eo-p6-LEB"/>
                                                     </connections>
                                                 </segmentedControl>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send notification messages?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ffm-OY-yny">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send text notification messages?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ffm-OY-yny">
                                                     <rect key="frame" x="20" y="9" width="255" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
@@ -534,7 +534,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                                         <outlet property="delegate" destination="JoG-uN-Xre" id="x7l-Ao-jba"/>
                                                     </connections>
                                                 </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send message to number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H3O-dK-ACP">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send text message to number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H3O-dK-ACP">
                                                     <rect key="frame" x="20" y="1" width="255" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
@@ -558,12 +558,66 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cQH-cE-Igb" userLabel="Table View Cell - Notify number">
+                                        <rect key="frame" x="0.0" y="414" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="cQH-cE-Igb" id="RUq-NY-ey1">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send with Twitter?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EGJ-de-dCm">
+                                                    <rect key="frame" x="20" y="11" width="255" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" id="nD5-SW-TxO">
+                                                    <rect key="frame" x="334" y="8" width="214" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <segments>
+                                                        <segment title="Send"/>
+                                                        <segment title="Don't send"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="notificationSwitch:" destination="JoG-uN-Xre" eventType="valueChanged" id="dVD-cz-ksZ"/>
+                                                        <action selector="sendWithTwitter:" destination="JoG-uN-Xre" eventType="valueChanged" id="Vyw-sy-get"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pC3-Cg-T2A" userLabel="Table View Cell - Notify number">
+                                        <rect key="frame" x="0.0" y="458" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="pC3-Cg-T2A" id="WgE-dG-0A6">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send with Facebook?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AZj-pN-HeB">
+                                                    <rect key="frame" x="20" y="11" width="255" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" id="ZF0-ya-JCr">
+                                                    <rect key="frame" x="334" y="10" width="214" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <segments>
+                                                        <segment title="Send"/>
+                                                        <segment title="Don't send"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="notificationSwitch:" destination="JoG-uN-Xre" eventType="valueChanged" id="RWS-3s-4XL"/>
+                                                        <action selector="sendWithFacebook:" destination="JoG-uN-Xre" eventType="valueChanged" id="DEN-uf-9j2"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="action names" footerTitle="Action Names are included in the text message" id="xIz-3d-pId">
                                 <cells>
                                     <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J4e-OQ-jDI" userLabel="Table View Cell - Bottom action name">
-                                        <rect key="frame" x="0.0" y="462" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="550" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J4e-OQ-jDI" id="FlS-Sr-d5G">
                                             <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
@@ -590,7 +644,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rZn-jg-JqB" userLabel="Table View Cell - Bottom action name">
-                                        <rect key="frame" x="0.0" y="506" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="594" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rZn-jg-JqB" id="c7A-GY-0Su">
                                             <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
@@ -621,7 +675,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <tableViewSection headerTitle="Google Analytics" footerTitle="You may change this at any time" id="0QR-Ch-Txb">
                                 <cells>
                                     <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OzG-l1-da3" userLabel="Table View Cell - Bottom action name">
-                                        <rect key="frame" x="0.0" y="625" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="713" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OzG-l1-da3" id="Mcu-Zn-JMg">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
@@ -663,12 +717,14 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                     <connections>
                         <outlet property="addPhoneNumberButton" destination="lFP-xW-h2H" id="Niy-39-MKK"/>
                         <outlet property="analyticsSwitch" destination="cJh-JK-IIJ" id="J0R-e0-QE6"/>
+                        <outlet property="facebookSwitch" destination="ZF0-ya-JCr" id="31F-8E-4tq"/>
                         <outlet property="homeTeamColor" destination="43Z-fe-naI" id="lUH-3F-cvE"/>
                         <outlet property="leftActionNameSelected" destination="8Nb-0K-3R7" id="bFa-Fg-WDN"/>
                         <outlet property="nameOfPlayer" destination="Yyj-Dn-sH1" id="Zya-XT-o96"/>
                         <outlet property="notificationName" destination="CH8-S5-jc8" id="mG5-nM-XGf"/>
                         <outlet property="rightActionNameSelected" destination="v4s-lv-LRm" id="9EP-sW-Wao"/>
                         <outlet property="sendNotificationSwitch" destination="oqR-8N-8Ny" id="pfC-fk-VZI"/>
+                        <outlet property="twitterSwitch" destination="nD5-SW-TxO" id="aou-ra-8Zu"/>
                         <outlet property="visitingTeamColor" destination="CxM-8M-OkD" id="k0Q-s4-wFg"/>
                         <outletCollection property="settingsButtons" destination="CxM-8M-OkD" id="vEs-nj-a4w"/>
                         <outletCollection property="settingsButtons" destination="43Z-fe-naI" id="Sva-C6-yfT"/>

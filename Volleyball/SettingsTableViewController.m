@@ -50,6 +50,20 @@
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
     
+    //Set the Twitter switch if messages will be sent
+    if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
+        [self.twitterSwitch setSelectedSegmentIndex:0];
+    } else {
+        [self.twitterSwitch setSelectedSegmentIndex:1];
+    }
+    
+    //Set the Facebook switch if messages will be sent
+    if ([[self getFacebookNotifications] isEqualToString:@"On"]) {
+        [self.facebookSwitch setSelectedSegmentIndex:0];
+    } else {
+        [self.facebookSwitch setSelectedSegmentIndex:1];
+    }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -324,7 +338,7 @@
     return [defaults stringForKey:@"analyticsChoice"];
 }
 
-#pragma mark - Notificaion Switch
+#pragma mark - Text Notificaion Switch
 - (IBAction)notificationSwitch:(id)sender
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -350,6 +364,62 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     return [defaults stringForKey:@"enableNotifications"];
+}
+
+#pragma mark - Social Sharing Switches
+
+- (IBAction)sendWithTwitter:(UISegmentedControl *)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
+    
+    //Save the segmented value
+    switch (selectedSegmentIndex) {
+        case 0:
+            //Send Twitter messages
+            [defaults setObject:@"On" forKey:@"enableTwitter"];
+            break;
+          case 1:
+            //Don't send Twitter messages
+            [defaults setObject:@"Off" forKey:@"enableTwitter"];
+        default:
+            break;
+    }
+    [self saveUserDefaults];
+}
+
+- (IBAction)sendWithFacebook:(UISegmentedControl *)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
+    
+    //Save the segmented value
+    switch (selectedSegmentIndex) {
+        case 0:
+            //Send Facebook messages
+            [defaults setObject:@"On" forKey:@"enableFacebook"];
+            break;
+        case 1:
+            //Don't send Facebook messages
+            [defaults setObject:@"Off" forKey:@"enableFacebook"];
+        default:
+            break;
+    }
+    [self saveUserDefaults];
+}
+
+- (NSString *)getTwitterNotifications
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    return [defaults stringForKey:@"enableTwitter"];
+}
+
+- (NSString *)getFacebookNotifications
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    return [defaults stringForKey:@"enableFacebook"];
 }
 
 #pragma mark - People Picker Methods

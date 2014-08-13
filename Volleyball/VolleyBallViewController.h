@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 #import "GAITrackedViewController.h"
+#import "SocialSharing.h"
 
 @interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource,UIAlertViewDelegate,UITextFieldDelegate, MFMessageComposeViewControllerDelegate,UIGestureRecognizerDelegate,UIPageViewControllerDelegate>
 
 @property UIColor *homeColor;
 @property UIColor *visitorColor;
+
 @property (weak, nonatomic) IBOutlet UILabel *gameNumber;
 @property (weak, nonatomic) IBOutlet UILabel *secondActionName;
 @property (weak, nonatomic) IBOutlet UILabel *firstActionName;

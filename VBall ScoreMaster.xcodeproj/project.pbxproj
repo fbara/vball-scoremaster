@@ -32,6 +32,8 @@
 		AD144BA6198D27DE0049EFF8 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD144BA5198D27DE0049EFF8 /* libGoogleAnalyticsServices.a */; };
 		AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C8100194A5FD70028179B /* InstructionsViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
+		AD4B54C0199A40D500770580 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B54BF199A40D500770580 /* Social.framework */; };
+		AD4B54C4199A8ADE00770580 /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4B54C3199A8ADE00770580 /* SocialSharing.m */; };
 		AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968C197F390E00767D1C /* TutorialViewController.m */; };
 		AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968F197F458E00767D1C /* WSCoachMarksView.m */; };
 		AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD529692197F45DD00767D1C /* GBVersionTracking.m */; };
@@ -40,6 +42,7 @@
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
 		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
 		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
+		AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9A21A8199BDB10009CEE31 /* Accounts.framework */; };
 		ADCC1396198185D6001DC9B6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADCC1395198185D6001DC9B6 /* Settings.bundle */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 /* End PBXBuildFile section */
@@ -97,6 +100,9 @@
 		AD1C811E1955E6FC0028179B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		AD1C816B195C43A30028179B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		AD1C816C195C43A30028179B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		AD4B54BF199A40D500770580 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		AD4B54C2199A8ADE00770580 /* SocialSharing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialSharing.h; sourceTree = "<group>"; };
+		AD4B54C3199A8ADE00770580 /* SocialSharing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialSharing.m; sourceTree = "<group>"; };
 		AD52968B197F390E00767D1C /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialViewController.h; path = Volleyball/TutorialViewController.h; sourceTree = "<group>"; };
 		AD52968C197F390E00767D1C /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialViewController.m; path = Volleyball/TutorialViewController.m; sourceTree = "<group>"; };
 		AD52968E197F458E00767D1C /* WSCoachMarksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSCoachMarksView.h; path = Volleyball/WSCoachMarksView.h; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AD9A21A8199BDB10009CEE31 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		ADCC1395198185D6001DC9B6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Volleyball/Settings.bundle; sourceTree = "<group>"; };
 		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */,
+				AD4B54C0199A40D500770580 /* Social.framework in Frameworks */,
 				AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */,
 				AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */,
 				AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */,
@@ -183,6 +192,8 @@
 		92AA42A11916C2800037D405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD9A21A8199BDB10009CEE31 /* Accounts.framework */,
+				AD4B54BF199A40D500770580 /* Social.framework */,
 				AD80C7F7198EFC0800C03C2E /* libz.dylib */,
 				AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */,
 				AD80C7F3198EFBD200C03C2E /* CoreData.framework */,
@@ -205,6 +216,8 @@
 			children = (
 				92AA42B71916C2810037D405 /* VolleyBallViewController.h */,
 				92AA42B81916C2810037D405 /* VolleyBallViewController.m */,
+				AD4B54C2199A8ADE00770580 /* SocialSharing.h */,
+				AD4B54C3199A8ADE00770580 /* SocialSharing.m */,
 				AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */,
 				AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */,
 				AD1C816B195C43A30028179B /* SettingsTableViewController.h */,
@@ -424,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */,
+				AD4B54C4199A8ADE00770580 /* SocialSharing.m in Sources */,
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
 				AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */,

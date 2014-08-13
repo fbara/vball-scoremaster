@@ -36,6 +36,9 @@ NSString *msgVisitor = @"VISITOR";
 
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
+@property (weak, nonatomic)SLComposeViewController *twitterAccount;
+@property (weak, nonatomic)SLComposeViewController *facebookAccount;
+
 
 @end
 
@@ -600,6 +603,12 @@ NSString *msgVisitor = @"VISITOR";
     [alert show];
 }
 
+#pragma mark - Social Accounts
+
+// TODO: Add social account methods
+
+
+
 #pragma mark - Text Messages & Alerts
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
@@ -670,6 +679,7 @@ NSString *msgVisitor = @"VISITOR";
 {
     // Check if text messages should be sent
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
         
         //Send the SMS message
@@ -689,8 +699,15 @@ NSString *msgVisitor = @"VISITOR";
                                animated:YES
                              completion:nil];
             [self logMessagesSent];
+            
+// TODO: Adding Twitter test
+            
+            
+            
+            
         }
     }//No messages to be sent, exit
+
 }
 
 #pragma mark - UIPageViewControllerDataSource
