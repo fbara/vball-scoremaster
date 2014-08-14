@@ -232,6 +232,26 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="N5W-5Y-GSc">
+                                <rect key="frame" x="287" y="271" width="34" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendTwitter:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JBR-Xg-hhX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="o7g-pR-XeM">
+                                <rect key="frame" x="238" y="273" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendFacebook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hIN-Tq-Ugr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -247,6 +267,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="facebookButton" destination="o7g-pR-XeM" id="v6a-EI-cAT"/>
                         <outlet property="firstActionName" destination="991-IZ-vz3" id="Lko-Pf-Px5"/>
                         <outlet property="gameNumber" destination="O6P-Lx-PJG" id="hEm-tI-Usd"/>
                         <outlet property="homeGame1" destination="m1P-eG-o39" id="JRe-DD-YSl"/>
@@ -260,6 +281,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <outlet property="rightActionNameNumber" destination="V3G-uq-fca" id="vPg-z4-4ZO"/>
                         <outlet property="secondActionName" destination="V3G-uq-fca" id="16P-Ae-YhH"/>
                         <outlet property="sendMessageImage" destination="av1-K7-XUr" id="oGR-yt-gkX"/>
+                        <outlet property="twitterButton" destination="N5W-5Y-GSc" id="6kp-LP-DWa"/>
                         <outlet property="visitGame1" destination="Sad-Nf-jjb" id="GUq-Dx-1Ot"/>
                         <outlet property="visitGame2" destination="i1f-B7-MYb" id="uBm-x9-n3g"/>
                         <outlet property="visitGame3" destination="mi0-YI-UNY" id="25X-Vj-kI0"/>
@@ -818,6 +840,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
     </scenes>
     <resources>
         <image name="VBall image" width="296" height="274"/>
+        <image name="facebook" width="602" height="600"/>
+        <image name="twitter" width="489" height="489"/>
         <image name="volleyball big spike" width="284" height="213"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>

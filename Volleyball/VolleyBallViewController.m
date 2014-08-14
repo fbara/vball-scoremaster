@@ -11,8 +11,6 @@
 #import "SettingsTableViewController.h"
 #import "GBVersionTracking.h"
 #import "GAIDictionaryBuilder.h"
-#import "GAI.h"
-#import "GAIFields.h"
 
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";
@@ -23,6 +21,9 @@ int currSecondAction = 0;
 int currFirstAction = 0;
 NSString *msgHome = @"HOME";
 NSString *msgVisitor = @"VISITOR";
+NSString *textMessage;
+UIImage *screenImage;
+
 
 //BOOL ROTATED = NO;
 //BOOL SWIPED = NO;
@@ -36,8 +37,12 @@ NSString *msgVisitor = @"VISITOR";
 
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
-@property (weak, nonatomic)SLComposeViewController *twitterAccount;
-@property (weak, nonatomic)SLComposeViewController *facebookAccount;
+@property (weak, nonatomic)SLComposeViewController *twitterController;
+@property (weak, nonatomic)SLComposeViewController *facebookController;
+@property (weak, nonatomic)NSURL *baralabsURL;
+@property (weak, nonatomic) IBOutlet UIButton *twitterButton;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+- (IBAction)sendFacebook:(UIButton *)sender;
 
 
 @end
@@ -66,6 +71,8 @@ NSString *msgVisitor = @"VISITOR";
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //Set home URL for Twitter and Facebook messages
+    self.baralabsURL = [NSURL URLWithString:@"www.baralabs.com"];
     
     
     //Check if this is the first time the app has run.
@@ -331,6 +338,32 @@ NSString *msgVisitor = @"VISITOR";
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
                                                           action:@"message"
                                                            label:@"message sent"
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
+}
+
+- (void)logTwitterSent
+{
+    //Logs that a Twitter message was sent
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"Twitter"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+                                                          action:@"social"
+                                                           label:@"twitter sent"
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
+}
+
+- (void)logFacebookSent
+{
+    //Logs that a Twitter message was sent
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"Facebook"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+                                                          action:@"social"
+                                                           label:@"facebook sent"
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
 }
@@ -605,8 +638,64 @@ NSString *msgVisitor = @"VISITOR";
 
 #pragma mark - Social Accounts
 
-// TODO: Add social account methods
+- (BOOL)userHasAccessToTwitter
+{
+    return [SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter];
+}
 
+- (IBAction)sendTwitter:(UIButton *)sender;
+{
+    // Check if text messages should be sent
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([[defaults stringForKey:@"enableTwitter"] isEqualToString:@"On"]) {
+        if ([self userHasAccessToTwitter]) {
+            self.twitterController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            
+            //        self.twitterController.completionHandler = ^(SLComposeViewControllerResult result){
+            //            // Sets the completion handler.  Note that we don't know which thread the
+            //            // block will be called on, so we need to ensure that any required UI
+            //            // updates occur on the main queue
+            //            switch (result) {
+            //                    //This means the user cancelled without sending tweet
+            //                case SLComposeViewControllerResultCancelled:
+            //                    break;
+            //                    //This means the user hit 'Send'
+            //                case SLComposeViewControllerResultDone:
+            //                default:
+            //                    break;
+            //                }
+            //            };
+            
+            [self.twitterController setInitialText:textMessage];
+            //[self.twitterController addImage:sendImage];
+            [self.twitterController addURL:self.baralabsURL];
+            
+            [self presentViewController:self.twitterController
+                               animated:YES
+                             completion:nil];
+        } else {
+            //User either doesn't have Twitter or denied our access
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't access Twitter"
+                                                            message:@"Either you don't have a Twitter account or this app has been denied access to your Twitter account."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+
+    }
+}
+
+- (BOOL)userHasAccessToFacebook
+{
+    return [SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook];
+}
+
+- (IBAction)sendFacebook:(UIButton *)sender
+{
+    
+}
 
 
 #pragma mark - Text Messages & Alerts
@@ -691,7 +780,7 @@ NSString *msgVisitor = @"VISITOR";
             NSString *playerName = [defaults stringForKey:@"playerNameForNotifications"];
             NSString *notificationNumber = [defaults stringForKey:@"phoneNumberForNotification"];
             
-            NSString *textMessage = [NSString stringWithFormat:@"%@ has %d %@'s and %d %@'s!\nThe score is now %@ %d - %@ %d.", playerName ,currSecondAction, self.rightActionLabel.text, currFirstAction, self.leftActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
+            textMessage = [NSString stringWithFormat:@"%@ has %d %@'s and %d %@'s!\nThe score is now %@ %d - %@ %d.", playerName ,currSecondAction, self.rightActionLabel.text, currFirstAction, self.leftActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
             [textComposer setRecipients:[NSArray arrayWithObjects:notificationNumber, nil]];
             
             [textComposer setBody:textMessage];
@@ -699,12 +788,6 @@ NSString *msgVisitor = @"VISITOR";
                                animated:YES
                              completion:nil];
             [self logMessagesSent];
-            
-// TODO: Adding Twitter test
-            
-            
-            
-            
         }
     }//No messages to be sent, exit
 
@@ -823,6 +906,5 @@ NSString *msgVisitor = @"VISITOR";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 #import "GAITrackedViewController.h"
-#import "SocialSharing.h"
 
 @interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource,UIAlertViewDelegate,UITextFieldDelegate, MFMessageComposeViewControllerDelegate,UIGestureRecognizerDelegate,UIPageViewControllerDelegate>
 
@@ -35,7 +34,6 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *pastScoreCollection;
 @property (weak, nonatomic) IBOutlet UILabel *rightActionNameNumber;
 @property (weak, nonatomic) IBOutlet UILabel *leftActionNameNumber;
-
 
 
 @property UISwipeGestureRecognizer *homeSwipeGesture;

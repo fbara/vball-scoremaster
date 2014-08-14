@@ -115,6 +115,20 @@
         [self.analyticsSwitch setSelectedSegmentIndex:1];
     }
     
+    //Set the Twitter switch if messages will be sent
+    if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
+        [self.twitterSwitch setSelectedSegmentIndex:0];
+    } else {
+        [self.twitterSwitch setSelectedSegmentIndex:1];
+    }
+    
+    //Set the Facebook switch if messages will be sent
+    if ([[self getFacebookNotifications] isEqualToString:@"On"]) {
+        [self.facebookSwitch setSelectedSegmentIndex:0];
+    } else {
+        [self.facebookSwitch setSelectedSegmentIndex:1];
+    }
+    
     [super viewWillAppear:animated];
 
 }
@@ -126,6 +140,8 @@
     [self savePlayerName:self.nameOfPlayer.text saveNotifyPhone:self.notificationName.text];
     [self saveActionNames:self.leftActionNameSelected.text secondName:self.rightActionNameSelected.text];
     [self notificationSwitch:self.sendNotificationSwitch];
+    [self sendWithFacebook:self.facebookSwitch];
+    [self sendWithTwitter:self.twitterSwitch];
 
     [super viewWillDisappear:animated];
 }
