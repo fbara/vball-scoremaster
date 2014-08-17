@@ -11,6 +11,8 @@
 #import "SettingsTableViewController.h"
 #import "GBVersionTracking.h"
 #import "GAIDictionaryBuilder.h"
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";
@@ -283,6 +285,9 @@ UIImage *screenImage;
     //Get the Action Names
     [self loadActionNames];
     
+    [self formatVBallButton];
+    [self enableSocialButtons];
+    
 }
 
 #pragma mark - UI Elements
@@ -500,6 +505,16 @@ UIImage *screenImage;
 - (BOOL)canBecomeFirstResponder { return YES; }
 
 #pragma mark - Button Presses
+
+//Format the VBall button
+- (void)formatVBallButton
+{
+    self.sendMessageImage.frame = CGRectMake(240.0, 140.0, 80.0, 80.0);
+    self.sendMessageImage.clipsToBounds = YES;
+    self.sendMessageImage.layer.cornerRadius = 40;
+    self.sendMessageImage.layer.masksToBounds = YES;
+}
+
 /*!
  *  What happens when 'Game' number is touched
  */
@@ -636,7 +651,80 @@ UIImage *screenImage;
     [alert show];
 }
 
+#pragma mark - Screen Image
+
+/*!
+ *  Takes a snapshot of the screen with the scores, prior
+ *  to when the message or social screens take over the view
+ *
+ *  @return UIImage of the screen
+ */
+- (UIImage *)getScreenImage
+{
+    //Iterates thru every view on the screen, capturing and assemblying them to form an image
+    CGSize imageSize = [[UIScreen mainScreen] bounds].size;
+    if (NULL != UIGraphicsBeginImageContextWithOptions)
+        UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
+    else
+        UIGraphicsBeginImageContext(imageSize);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // Iterate over every window from back to front
+    for (UIWindow *window in [[UIApplication sharedApplication] windows])
+    {
+        if (![window respondsToSelector:@selector(screen)] || [window screen] == [UIScreen mainScreen])
+        {
+            // -renderInContext: renders in the coordinate space of the layer,
+            // so we must first apply the layer's geometry to the graphics context
+            CGContextSaveGState(context);
+            // Center the context around the window's anchor point
+            CGContextTranslateCTM(context, [window center].x, [window center].y);
+            // Apply the window's transform about the anchor point
+            CGContextConcatCTM(context, [window transform]);
+            // Offset by the portion of the bounds left of and above the anchor point
+            CGContextTranslateCTM(context,
+                                  -[window bounds].size.width * [[window layer] anchorPoint].x,
+                                  -[window bounds].size.height * [[window layer] anchorPoint].y);
+            
+            // Render the layer hierarchy to the current context
+            [[window layer] renderInContext:context];
+            
+            // Restore the context
+            CGContextRestoreGState(context);
+        }
+    }
+    
+    // Retrieve the screenshot image
+    screenImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return screenImage;
+}
+
 #pragma mark - Social Accounts
+
+/*!
+ *  Enables or Disables Social Sharing buttons based on user settings
+ */
+- (void)enableSocialButtons
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([[defaults stringForKey:@"enableTwitter"] isEqualToString:@"On"]) {
+        self.mainPageTwitterButton.enabled = TRUE;
+    } else {
+        self.mainPageTwitterButton.enabled = FALSE;
+    }
+    
+    if ([[defaults stringForKey:@"enableFacebook"] isEqualToString:@"On"]) {
+        self.mainPageFacebookButton.enabled = TRUE;
+    } else {
+        self.mainPageFacebookButton.enabled = FALSE;
+    }
+
+}
 
 - (BOOL)userHasAccessToTwitter
 {
@@ -645,46 +733,42 @@ UIImage *screenImage;
 
 - (IBAction)sendTwitter:(UIButton *)sender;
 {
-    // Check if text messages should be sent
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if ([[defaults stringForKey:@"enableTwitter"] isEqualToString:@"On"]) {
-        if ([self userHasAccessToTwitter]) {
-            self.twitterController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-            
-            //        self.twitterController.completionHandler = ^(SLComposeViewControllerResult result){
-            //            // Sets the completion handler.  Note that we don't know which thread the
-            //            // block will be called on, so we need to ensure that any required UI
-            //            // updates occur on the main queue
-            //            switch (result) {
-            //                    //This means the user cancelled without sending tweet
-            //                case SLComposeViewControllerResultCancelled:
-            //                    break;
-            //                    //This means the user hit 'Send'
-            //                case SLComposeViewControllerResultDone:
-            //                default:
-            //                    break;
-            //                }
-            //            };
-            
-            [self.twitterController setInitialText:textMessage];
-            //[self.twitterController addImage:sendImage];
-            [self.twitterController addURL:self.baralabsURL];
-            
-            [self presentViewController:self.twitterController
-                               animated:YES
-                             completion:nil];
-        } else {
-            //User either doesn't have Twitter or denied our access
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't access Twitter"
-                                                            message:@"Either you don't have a Twitter account or this app has been denied access to your Twitter account."
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-            [alert show];
+    // Check if text messages should be sent
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
+        if ([[defaults stringForKey:@"enableTwitter"] isEqualToString:@"On"]) {
+            if ([self userHasAccessToTwitter]) {
+                self.twitterController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+                
+                NSString *newMessage, *tempStr1, *tempStr2;
+                tempStr1 = [self createMessageToSend];
+                tempStr2 = @"\n#vballscoremaster";
+                newMessage = [tempStr1 stringByAppendingString:tempStr2];
+                
+                [self.twitterController setInitialText:newMessage];
+                [self.twitterController addImage:[self getScreenImage]];
+     
+                //Show Twitter screen
+                [self presentViewController:self.twitterController
+                                   animated:YES
+                                 completion:nil];
+                
+                //Clear screen shot from memory
+                screenImage = nil;
+                
+                //Log the button press for analytics
+                [self logButtonPress:(UIButton *)sender];
+            } else {
+                //User either doesn't have Twitter or denied our access
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't access Twitter"
+                                                                message:@"Either you don't have a Twitter account or this app has been denied access to your Twitter account."
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
         }
-
-    }
 }
 
 - (BOOL)userHasAccessToFacebook
@@ -694,7 +778,41 @@ UIImage *screenImage;
 
 - (IBAction)sendFacebook:(UIButton *)sender
 {
+    // Check if text messages should be sent
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    if ([[defaults stringForKey:@"enableFacebook"] isEqualToString:@"On"]) {
+        if ([self userHasAccessToFacebook]) {
+            self.facebookController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+            
+            NSString *newMessage, *tempStr1, *tempStr2;
+            tempStr1 = [self createMessageToSend];
+            tempStr2 = @"\n#vballscoremaster";
+            newMessage = [tempStr1 stringByAppendingString:tempStr2];
+            
+            [self.facebookController setInitialText:newMessage];
+            [self.facebookController addImage:[self getScreenImage]];
+            
+            //Show Facebook screen
+            [self presentViewController:self.facebookController
+                               animated:YES
+                             completion:nil];
+            
+            //Clear screen shot from memory
+            screenImage = nil;
+            
+            //Log the button press for analytics
+            [self logButtonPress:(UIButton *)sender];
+        } else {
+            //User either doesn't have Facebook or denied our access
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't access Facebook"
+                                                            message:@"Either you don't have a Facebook account or this app has been denied access to your Facebook account."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+            [alert show];
+       }
+    }
 }
 
 
@@ -777,20 +895,40 @@ UIImage *screenImage;
         [textComposer setMessageComposeDelegate:self];
         
         if ([MFMessageComposeViewController canSendText]) {
-            NSString *playerName = [defaults stringForKey:@"playerNameForNotifications"];
             NSString *notificationNumber = [defaults stringForKey:@"phoneNumberForNotification"];
             
-            textMessage = [NSString stringWithFormat:@"%@ has %d %@'s and %d %@'s!\nThe score is now %@ %d - %@ %d.", playerName ,currSecondAction, self.rightActionLabel.text, currFirstAction, self.leftActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
             [textComposer setRecipients:[NSArray arrayWithObjects:notificationNumber, nil]];
-            
-            [textComposer setBody:textMessage];
+            //Create new message
+            NSString *smsMessage;
+            smsMessage = [self createMessageToSend];
+            [textComposer setBody:smsMessage];
+            //Show text message screen
             [self presentViewController:textComposer
                                animated:YES
                              completion:nil];
+            //Log to analytics that a message was sent
             [self logMessagesSent];
         }
     }//No messages to be sent, exit
 
+}
+
+- (NSString *)createMessageToSend
+{
+    //Clear the contents of the text message before creating a new one
+    textMessage = @"";
+    
+    //Get the player name
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *playerName = [defaults stringForKey:@"playerNameForNotifications"];
+    
+    msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
+    msgHome = [NSString stringWithString:self.homeTeamName.text];
+    
+    //Format the text message
+    textMessage = [NSString stringWithFormat:@"%@ has %d %@'s and %d %@'s!\nThe score is now %@ %d - %@ %d.", playerName ,currSecondAction, self.rightActionLabel.text, currFirstAction, self.leftActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
+    
+    return textMessage;
 }
 
 #pragma mark - UIPageViewControllerDataSource
@@ -875,9 +1013,6 @@ UIImage *screenImage;
 		_visitorPageViewController.view.backgroundColor = self.visitorColor;
         currVisitorScore = (int)currentScore;
 	}
-    
-    msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
-    msgHome = [NSString stringWithString:self.homeTeamName.text];
 
 }
 
@@ -885,6 +1020,11 @@ UIImage *screenImage;
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    //After entering team name, on either side, and tapping 'Done' or
+    //anywhere else to dismiss keyboard, capture the names for the text msgs.
+//    msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
+//    msgHome = [NSString stringWithString:self.homeTeamName.text];
+    
     [self.view endEditing:YES];
     [textField resignFirstResponder];
 }

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import "PhoneNumberFormatter.h"
-#import "SocialSharing.h"
 
 @interface SettingsTableViewController : UITableViewController <UITableViewDelegate,ABPeoplePickerNavigationControllerDelegate,UITextViewDelegate,UITextFieldDelegate>
 

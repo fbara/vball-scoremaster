@@ -48,8 +48,8 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="av1-K7-XUr" userLabel="Button - Volleyball">
-                                <rect key="frame" x="241" y="149" width="80" height="80"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="av1-K7-XUr" userLabel="Button - Volleyball">
+                                <rect key="frame" x="240" y="140" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button that resembles a volleyball"/>
@@ -232,7 +232,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="N5W-5Y-GSc">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="N5W-5Y-GSc">
                                 <rect key="frame" x="287" y="271" width="34" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="twitter">
@@ -242,7 +242,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                     <action selector="sendTwitter:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JBR-Xg-hhX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="o7g-pR-XeM">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="o7g-pR-XeM">
                                 <rect key="frame" x="238" y="273" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="facebook">
@@ -267,7 +267,6 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="facebookButton" destination="o7g-pR-XeM" id="v6a-EI-cAT"/>
                         <outlet property="firstActionName" destination="991-IZ-vz3" id="Lko-Pf-Px5"/>
                         <outlet property="gameNumber" destination="O6P-Lx-PJG" id="hEm-tI-Usd"/>
                         <outlet property="homeGame1" destination="m1P-eG-o39" id="JRe-DD-YSl"/>
@@ -277,11 +276,12 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <outlet property="homeTeamName" destination="KgW-hz-5sq" id="rYn-cJ-0vR"/>
                         <outlet property="leftActionLabel" destination="NQ3-D6-TK5" id="tfi-QH-n7J"/>
                         <outlet property="leftActionNameNumber" destination="991-IZ-vz3" id="onM-1L-EEq"/>
+                        <outlet property="mainPageFacebookButton" destination="o7g-pR-XeM" id="w3A-mS-FPu"/>
+                        <outlet property="mainPageTwitterButton" destination="N5W-5Y-GSc" id="SuM-jT-xpZ"/>
                         <outlet property="rightActionLabel" destination="tX3-rT-g7M" id="MeM-Q9-oUT"/>
                         <outlet property="rightActionNameNumber" destination="V3G-uq-fca" id="vPg-z4-4ZO"/>
                         <outlet property="secondActionName" destination="V3G-uq-fca" id="16P-Ae-YhH"/>
                         <outlet property="sendMessageImage" destination="av1-K7-XUr" id="oGR-yt-gkX"/>
-                        <outlet property="twitterButton" destination="N5W-5Y-GSc" id="6kp-LP-DWa"/>
                         <outlet property="visitGame1" destination="Sad-Nf-jjb" id="GUq-Dx-1Ot"/>
                         <outlet property="visitGame2" destination="i1f-B7-MYb" id="uBm-x9-n3g"/>
                         <outlet property="visitGame3" destination="mi0-YI-UNY" id="25X-Vj-kI0"/>
@@ -482,7 +482,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="notifications" id="AEf-DS-lJV">
+                            <tableViewSection headerTitle="Sharing" footerTitle="Send text messages or use your favorite sharing site" id="AEf-DS-lJV">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JUD-k1-dHv" userLabel="Table View Cell - Send switch">
                                         <rect key="frame" x="0.0" y="282" width="568" height="44"/>
@@ -639,7 +639,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <tableViewSection headerTitle="action names" footerTitle="Action Names are included in the text message" id="xIz-3d-pId">
                                 <cells>
                                     <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J4e-OQ-jDI" userLabel="Table View Cell - Bottom action name">
-                                        <rect key="frame" x="0.0" y="550" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="577" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J4e-OQ-jDI" id="FlS-Sr-d5G">
                                             <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
@@ -666,7 +666,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rZn-jg-JqB" userLabel="Table View Cell - Bottom action name">
-                                        <rect key="frame" x="0.0" y="594" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="621" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rZn-jg-JqB" id="c7A-GY-0Su">
                                             <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
@@ -697,7 +697,7 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                             <tableViewSection headerTitle="Google Analytics" footerTitle="You may change this at any time" id="0QR-Ch-Txb">
                                 <cells>
                                     <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OzG-l1-da3" userLabel="Table View Cell - Bottom action name">
-                                        <rect key="frame" x="0.0" y="713" width="568" height="44"/>
+                                        <rect key="frame" x="0.0" y="740" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OzG-l1-da3" id="Mcu-Zn-JMg">
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>

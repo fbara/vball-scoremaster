@@ -10,6 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import "GAITrackedViewController.h"
 
+
 @interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource,UIAlertViewDelegate,UITextFieldDelegate, MFMessageComposeViewControllerDelegate,UIGestureRecognizerDelegate,UIPageViewControllerDelegate>
 
 @property UIColor *homeColor;
@@ -34,6 +35,8 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *pastScoreCollection;
 @property (weak, nonatomic) IBOutlet UILabel *rightActionNameNumber;
 @property (weak, nonatomic) IBOutlet UILabel *leftActionNameNumber;
+@property (weak, nonatomic) IBOutlet UIButton *mainPageTwitterButton;
+@property (weak, nonatomic) IBOutlet UIButton *mainPageFacebookButton;
 
 
 @property UISwipeGestureRecognizer *homeSwipeGesture;

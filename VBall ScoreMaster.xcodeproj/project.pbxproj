@@ -33,7 +33,6 @@
 		AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C8100194A5FD70028179B /* InstructionsViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
 		AD4B54C0199A40D500770580 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B54BF199A40D500770580 /* Social.framework */; };
-		AD4B54C4199A8ADE00770580 /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4B54C3199A8ADE00770580 /* SocialSharing.m */; };
 		AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968C197F390E00767D1C /* TutorialViewController.m */; };
 		AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968F197F458E00767D1C /* WSCoachMarksView.m */; };
 		AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD529692197F45DD00767D1C /* GBVersionTracking.m */; };
@@ -101,8 +100,6 @@
 		AD1C816B195C43A30028179B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		AD1C816C195C43A30028179B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		AD4B54BF199A40D500770580 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		AD4B54C2199A8ADE00770580 /* SocialSharing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialSharing.h; sourceTree = "<group>"; };
-		AD4B54C3199A8ADE00770580 /* SocialSharing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialSharing.m; sourceTree = "<group>"; };
 		AD52968B197F390E00767D1C /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialViewController.h; path = Volleyball/TutorialViewController.h; sourceTree = "<group>"; };
 		AD52968C197F390E00767D1C /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialViewController.m; path = Volleyball/TutorialViewController.m; sourceTree = "<group>"; };
 		AD52968E197F458E00767D1C /* WSCoachMarksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSCoachMarksView.h; path = Volleyball/WSCoachMarksView.h; sourceTree = "<group>"; };
@@ -216,8 +213,6 @@
 			children = (
 				92AA42B71916C2810037D405 /* VolleyBallViewController.h */,
 				92AA42B81916C2810037D405 /* VolleyBallViewController.m */,
-				AD4B54C2199A8ADE00770580 /* SocialSharing.h */,
-				AD4B54C3199A8ADE00770580 /* SocialSharing.m */,
 				AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */,
 				AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */,
 				AD1C816B195C43A30028179B /* SettingsTableViewController.h */,
@@ -437,7 +432,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */,
-				AD4B54C4199A8ADE00770580 /* SocialSharing.m in Sources */,
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
 				AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */,

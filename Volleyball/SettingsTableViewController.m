@@ -11,6 +11,7 @@
 #import "GAIDictionaryBuilder.h"
 #import "GAI.h"
 #import "GAIFields.h"
+#import "VolleyBallViewController.h"
 
 @interface SettingsTableViewController ()
 
@@ -83,6 +84,9 @@
     //Is this the first time running this VC?
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     firstStartTime = [defaults stringForKey:@"firstStartTime"];
+    
+    //Get handle to main page for enabling/disabling social icons
+    VolleyBallViewController *volleyVC = [[VolleyBallViewController alloc] init];
     
     if ([firstStartTime length] < 1) {
         //First time starting this VC. Set initial score background colors
@@ -388,16 +392,20 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
+    VolleyBallViewController *volleyVC = [[VolleyBallViewController alloc] init];
+
     
     //Save the segmented value
     switch (selectedSegmentIndex) {
         case 0:
             //Send Twitter messages
-            [defaults setObject:@"On" forKey:@"enableTwitter"];
+        {[defaults setObject:@"On" forKey:@"enableTwitter"];
+            volleyVC.mainPageTwitterButton.enabled = TRUE;}
             break;
           case 1:
             //Don't send Twitter messages
-            [defaults setObject:@"Off" forKey:@"enableTwitter"];
+        {[defaults setObject:@"Off" forKey:@"enableTwitter"];
+            volleyVC.mainPageTwitterButton.enabled = FALSE;}
         default:
             break;
     }
@@ -408,16 +416,20 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
+    VolleyBallViewController *volleyVC = [[VolleyBallViewController alloc] init];
+
     
     //Save the segmented value
     switch (selectedSegmentIndex) {
         case 0:
-            //Send Facebook messages
+        {//Send Facebook messages
             [defaults setObject:@"On" forKey:@"enableFacebook"];
+            volleyVC.mainPageFacebookButton.enabled = TRUE;}
             break;
         case 1:
-            //Don't send Facebook messages
+        {//Don't send Facebook messages
             [defaults setObject:@"Off" forKey:@"enableFacebook"];
+            volleyVC.mainPageFacebookButton.enabled = FALSE;}
         default:
             break;
     }
