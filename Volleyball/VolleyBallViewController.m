@@ -13,6 +13,7 @@
 #import "GAIDictionaryBuilder.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
+#import "EATutorialViewController.h"
 
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";
@@ -80,7 +81,9 @@ UIImage *screenImage;
     //Check if this is the first time the app has run.
     //If so, run tutorial.  If not, don't run turorial.
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
-        [self performSegueWithIdentifier:@"showTutorial" sender:self];
+        //[self performSegueWithIdentifier:@"showTutorial" sender:self];
+        [self performSegueWithIdentifier:@"showEAtutorial" sender:self];
+
     }
     
     //Set the Google Analytics Screen name
@@ -321,6 +324,7 @@ UIImage *screenImage;
 
 #pragma mark - Google Analytics
 
+///
 - (void)logButtonPress:(UIButton *)button
 {
     //Logs button presses, gets the title text of the button, and sends it
@@ -759,6 +763,8 @@ UIImage *screenImage;
                 
                 //Log the button press for analytics
                 [self logButtonPress:(UIButton *)sender];
+                [self logTwitterSent];
+                
             } else {
                 //User either doesn't have Twitter or denied our access
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't access Twitter"
@@ -803,6 +809,8 @@ UIImage *screenImage;
             
             //Log the button press for analytics
             [self logButtonPress:(UIButton *)sender];
+            [self logFacebookSent];
+            
         } else {
             //User either doesn't have Facebook or denied our access
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't access Facebook"
