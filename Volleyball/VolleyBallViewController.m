@@ -13,7 +13,6 @@
 #import "GAIDictionaryBuilder.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
-#import "EATutorialViewController.h"
 
 //Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";

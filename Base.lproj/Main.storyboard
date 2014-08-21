@@ -296,7 +296,6 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <segue destination="vSD-dS-WPV" kind="push" identifier="infoView" id="KBw-Ku-jMI"/>
                         <segue destination="JoG-uN-Xre" kind="push" identifier="settingsView" id="KRB-WR-gub"/>
                         <segue destination="TO8-Ip-hl0" kind="modal" identifier="showTutorial" modalTransitionStyle="coverVertical" id="BdP-S3-kPV"/>
-                        <segue destination="QTk-g4-wFz" kind="modal" identifier="showEAtutorial" modalTransitionStyle="coverVertical" id="TBk-yG-RTw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -837,23 +836,6 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IIb-5r-EWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-149" y="-525"/>
-        </scene>
-        <!--Tutorial View Controller - EATutorial-->
-        <scene sceneID="Em6-pZ-wlP">
-            <objects>
-                <viewController title="EATutorial" id="QTk-g4-wFz" customClass="EATutorialViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mag-KS-lEs">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="fiu-Gz-6NC"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F9E-mZ-oPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-56" y="18"/>
         </scene>
     </scenes>
     <resources>
