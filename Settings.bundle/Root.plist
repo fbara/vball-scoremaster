@@ -52,51 +52,17 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Social Sharing</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Post to Twitter?</string>
-			<key>Key</key>
-			<string>enableTwitter</string>
-			<key>DefaultValue</key>
-			<false/>
-			<key>TrueValue</key>
-			<string>On</string>
-			<key>FalseValue</key>
-			<string>Off</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Post to Facebook?</string>
-			<key>Key</key>
-			<string>enableFacebook</string>
-			<key>DefaultValue</key>
-			<false/>
-			<key>TrueValue</key>
-			<string>On</string>
-			<key>FalseValue</key>
-			<string>Off</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
 			<string>Analytics to improve app</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Allow analytics?</string>
+			<string>Allow gathering analytics?</string>
 			<key>Key</key>
 			<string>analyticsChoice</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 			<key>TrueValue</key>
 			<string>Opt in</string>
 			<key>FalseValue</key>

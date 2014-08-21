@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 #import "GAITrackedViewController.h"
+#import "ABXPromptView.h"
 
-
-@interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource,UIAlertViewDelegate,UITextFieldDelegate, MFMessageComposeViewControllerDelegate,UIGestureRecognizerDelegate,UIPageViewControllerDelegate>
+@interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource,UIAlertViewDelegate,UITextFieldDelegate, MFMessageComposeViewControllerDelegate,UIGestureRecognizerDelegate,UIPageViewControllerDelegate,ABXPromptViewDelegate>
 
 @property UIColor *homeColor;
 @property UIColor *visitorColor;
@@ -35,8 +35,9 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *pastScoreCollection;
 @property (weak, nonatomic) IBOutlet UILabel *rightActionNameNumber;
 @property (weak, nonatomic) IBOutlet UILabel *leftActionNameNumber;
-@property (weak, nonatomic) IBOutlet UIButton *mainPageTwitterButton;
-@property (weak, nonatomic) IBOutlet UIButton *mainPageFacebookButton;
+//??? Hide Social code for this version
+//@property (weak, nonatomic) IBOutlet UIButton *mainPageTwitterButton;
+//@property (weak, nonatomic) IBOutlet UIButton *mainPageFacebookButton;
 
 
 @property UISwipeGestureRecognizer *homeSwipeGesture;

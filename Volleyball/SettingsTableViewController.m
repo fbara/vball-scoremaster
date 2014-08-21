@@ -51,6 +51,8 @@
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
     
+//??? Hide Social code for this version
+/*
     //Set the Twitter switch if messages will be sent
     if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
         [self.twitterSwitch setSelectedSegmentIndex:0];
@@ -64,6 +66,7 @@
     } else {
         [self.facebookSwitch setSelectedSegmentIndex:1];
     }
+*/
     
 }
 
@@ -84,9 +87,6 @@
     //Is this the first time running this VC?
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     firstStartTime = [defaults stringForKey:@"firstStartTime"];
-    
-    //Get handle to main page for enabling/disabling social icons
-    VolleyBallViewController *volleyVC = [[VolleyBallViewController alloc] init];
     
     if ([firstStartTime length] < 1) {
         //First time starting this VC. Set initial score background colors
@@ -118,7 +118,9 @@
     } else {
         [self.analyticsSwitch setSelectedSegmentIndex:1];
     }
-    
+
+//???  Removing Social code for this version
+/*
     //Set the Twitter switch if messages will be sent
     if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
         [self.twitterSwitch setSelectedSegmentIndex:0];
@@ -132,6 +134,7 @@
     } else {
         [self.facebookSwitch setSelectedSegmentIndex:1];
     }
+*/
     
     [super viewWillAppear:animated];
 
@@ -144,8 +147,10 @@
     [self savePlayerName:self.nameOfPlayer.text saveNotifyPhone:self.notificationName.text];
     [self saveActionNames:self.leftActionNameSelected.text secondName:self.rightActionNameSelected.text];
     [self notificationSwitch:self.sendNotificationSwitch];
-    [self sendWithFacebook:self.facebookSwitch];
-    [self sendWithTwitter:self.twitterSwitch];
+    [self sendAnalytics:self.analyticsSwitch];
+//??? Remove Social code for this version, to be added as IAP
+//    [self sendWithFacebook:self.facebookSwitch];
+//    [self sendWithTwitter:self.twitterSwitch];
 
     [super viewWillDisappear:animated];
 }
@@ -327,6 +332,17 @@
     return color;
 }
 
+#pragma mark - FAQ
+
+- (IBAction)getFAQ:(UIButton *)sender
+{
+    [ABXFAQsViewController showFromController:self
+                            hideContactButton:NO
+                              contactMetaData:nil
+                                initialSearch:nil];
+}
+
+
 #pragma mark - Analytics Opt Out
 - (IBAction)sendAnalytics:(UISegmentedControl *)sender
 {
@@ -387,6 +403,8 @@
 }
 
 #pragma mark - Social Sharing Switches
+//??? Hide Social code for this version
+/*
 
 - (IBAction)sendWithTwitter:(UISegmentedControl *)sender
 {
@@ -449,6 +467,7 @@
     
     return [defaults stringForKey:@"enableFacebook"];
 }
+*/
 
 #pragma mark - People Picker Methods
 

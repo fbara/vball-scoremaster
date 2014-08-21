@@ -14,7 +14,6 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 
-//Constants for use when extending this to other sports
 NSString *const EMBED_HOME = @"embedHome";
 NSString *const EMBED_VISITOR = @"embedVisitor";
 int currHomeScore = 0;
@@ -25,14 +24,7 @@ NSString *msgHome = @"HOME";
 NSString *msgVisitor = @"VISITOR";
 NSString *textMessage;
 UIImage *screenImage;
-
-
-//BOOL ROTATED = NO;
-//BOOL SWIPED = NO;
-////define PI
-//#define M_PI   3.14159265358979323846264338327950288
-////Conversion definition
-//#define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
+static NSString* const kiTunesID = @"886670213";
 
 
 @interface VolleyBallViewController ()
@@ -42,15 +34,11 @@ UIImage *screenImage;
 @property (weak, nonatomic)SLComposeViewController *twitterController;
 @property (weak, nonatomic)SLComposeViewController *facebookController;
 @property (weak, nonatomic)NSURL *baralabsURL;
-@property (weak, nonatomic) IBOutlet UIButton *twitterButton;
-@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
-- (IBAction)sendFacebook:(UIButton *)sender;
-
+@property (strong, nonatomic) ABXPromptView *promptView;
 
 @end
 
 @implementation VolleyBallViewController
-
 
 #pragma mark - Initialize Screen
 
@@ -80,7 +68,8 @@ UIImage *screenImage;
     //Check if this is the first time the app has run.
     //If so, run tutorial.  If not, don't run turorial.
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
-        [self performSegueWithIdentifier:@"showTutorial" sender:self];
+//TODO Put tutorial back in
+        //[self performSegueWithIdentifier:@"showTutorial" sender:self];
     }
     
     //Set the Google Analytics Screen name
@@ -171,6 +160,21 @@ UIImage *screenImage;
     
     //Get the Action Names
     [self loadActionNames];
+    
+    if (![ABXPromptView hasHadInteractionForCurrentVersion]) {
+//TODO Only show this after user has launched it 5 times
+        //Hide the Twitter and Facebook images so the user can read the Appbotx text
+//??? Hide Social for now, to be added to IAP later
+//        self.mainPageTwitterButton.hidden = TRUE;
+//        self.mainPageFacebookButton.hidden = TRUE;
+        self.promptView = [[ABXPromptView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
+        self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+        self.promptView.backgroundColor = [UIColor cyanColor];
+        [self.view addSubview:self.promptView];
+        self.promptView.delegate = self;
+        
+    }
+    
 
 }
 
@@ -284,11 +288,15 @@ UIImage *screenImage;
     
     //Get the Action Names
     [self loadActionNames];
-    
+
+//??? Hide Social code for this version
+/*
     [self formatVBallButton];
     [self enableSocialButtons];
+*/
     
 }
+
 
 #pragma mark - UI Elements
 
@@ -346,6 +354,9 @@ UIImage *screenImage;
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
 }
+    
+//??? Hide Social code for this version
+/*
 
 - (void)logTwitterSent
 {
@@ -360,6 +371,7 @@ UIImage *screenImage;
     [tracker set:kGAIScreenName value:nil];
 }
 
+
 - (void)logFacebookSent
 {
     //Logs that a Twitter message was sent
@@ -372,7 +384,8 @@ UIImage *screenImage;
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
 }
-
+*/
+    
 #pragma mark - UIGestureRecognizer Delegate Method
 
 // Force all gestures to be handled simultaneously.
@@ -704,10 +717,9 @@ UIImage *screenImage;
 }
 
 #pragma mark - Social Accounts
+//??? Hide Social code for this version
+/*
 
-/*!
- *  Enables or Disables Social Sharing buttons based on user settings
- */
 - (void)enableSocialButtons
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -814,6 +826,30 @@ UIImage *screenImage;
        }
     }
 }
+*/
+
+#pragma mark - AppbotX
+
+- (void)appbotPromptForReview
+{
+    [ABXAppStore openAppStoreReviewForApp:kiTunesID];
+    self.promptView.hidden = YES;
+}
+
+- (void)appbotPromptForFeedback
+{
+    [ABXFeedbackViewController showFromController:self placeholder:nil];
+    self.promptView.hidden = YES;
+}
+
+- (void)appbotPromptClose
+{
+    self.promptView.hidden = YES;
+    //self.mainPageFacebookButton.hidden = FALSE;
+    //self.mainPageTwitterButton.hidden = FALSE;
+}
+    
+
 
 
 #pragma mark - Text Messages & Alerts
@@ -833,54 +869,6 @@ UIImage *screenImage;
 
     }
 }
-
-/*!
- * @discussion Takes in an image and rotates it by the given degrees.
- * @param image The image that will be rotated.
- * @param duration How long the animation should take.
- * @param degrees How many degrees the image should be rotated.
- * @warning You can't send a negative number to 'degrees', must be positive value.
- */
-//- (void)rotateImage:(UIImageView *)image duration:(NSTimeInterval)duration
-//            degrees:(CGFloat)degrees
-//{
-//    
-//    [UIView animateWithDuration:duration
-//                          delay:0.0f
-//         usingSpringWithDamping:0.8f
-//          initialSpringVelocity:0.9f
-//                        options:UIViewAnimationOptionBeginFromCurrentState
-//                     animations:^(){
-//                         CGAffineTransform transform =
-//                         CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(degrees));
-//                         image.transform = transform;
-//                     }
-//                     completion:NULL];
-//    
-//}
-
-/*!
- * @discussion Checks the current rotation of the team serving arrow and rotates it.
- */
-//- (IBAction)teamServingDirection
-//{
-//    /*!
-//     *  Checks the current rotation of the team serving arrow.
-//     *  Rotate it every time this button is pressed.
-//     */
-//    if (!ROTATED) {
-//
-//    [self rotateImage:self.serveDirectionArrow
-//            duration:0.4
-//             degrees:180];
-//        ROTATED = YES;
-//    } else {
-//    [self rotateImage:self.serveDirectionArrow
-//             duration:0.4
-//              degrees:360];
-//        ROTATED = NO;
-//    }
-//}
 
 - (void)sendSMS
 {
@@ -1022,9 +1010,6 @@ UIImage *screenImage;
 {
     //After entering team name, on either side, and tapping 'Done' or
     //anywhere else to dismiss keyboard, capture the names for the text msgs.
-//    msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
-//    msgHome = [NSString stringWithString:self.homeTeamName.text];
-    
     [self.view endEditing:YES];
     [textField resignFirstResponder];
 }
