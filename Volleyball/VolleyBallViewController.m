@@ -11,8 +11,9 @@
 #import "SettingsTableViewController.h"
 #import "GBVersionTracking.h"
 #import "GAIDictionaryBuilder.h"
-#import <Accounts/Accounts.h>
-#import <Social/Social.h>
+//??? Hide Social code for this version
+//#import <Accounts/Accounts.h>
+//#import <Social/Social.h>
 
 NSString *const EMBED_HOME = @"embedHome";
 NSString *const EMBED_VISITOR = @"embedVisitor";
@@ -31,6 +32,7 @@ static NSString* const kiTunesID = @"886670213";
 
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
+//??? Hide Social code for this version
 //@property (weak, nonatomic)SLComposeViewController *twitterController;
 //@property (weak, nonatomic)SLComposeViewController *facebookController;
 @property (weak, nonatomic)NSURL *baralabsURL;

@@ -39,15 +39,21 @@ static NSString* const kiTunesID = @"886670213";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+#pragma mark - Appbotx methods
+
 - (void)appbotPromptClose
 {
     self.promptView.hidden = YES;
 }
 
-- (void)didReceiveMemoryWarning
+- (void)appbotPromptForFeedback
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+}
+
+- (void)appbotPromptForReview
+{
+    
 }
 
 #pragma mark - Table view delegate
@@ -57,7 +63,7 @@ static NSString* const kiTunesID = @"886670213";
     switch (indexPath.row) {
         case 0:
             //Show version info
-            
+            [ABXVersionsViewController showFromController:self];
             break;
         case 1:
             //Show FAQ
@@ -96,6 +102,14 @@ static NSString* const kiTunesID = @"886670213";
     // Return the number of rows in the section.
     return 3;
 }
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
