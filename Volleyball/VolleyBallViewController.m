@@ -31,8 +31,8 @@ static NSString* const kiTunesID = @"886670213";
 
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
-@property (weak, nonatomic)SLComposeViewController *twitterController;
-@property (weak, nonatomic)SLComposeViewController *facebookController;
+//@property (weak, nonatomic)SLComposeViewController *twitterController;
+//@property (weak, nonatomic)SLComposeViewController *facebookController;
 @property (weak, nonatomic)NSURL *baralabsURL;
 @property (strong, nonatomic) ABXPromptView *promptView;
 

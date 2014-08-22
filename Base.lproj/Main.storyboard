@@ -238,9 +238,6 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <state key="normal" image="twitter">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="sendTwitter:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JBR-Xg-hhX"/>
-                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="o7g-pR-XeM">
                                 <rect key="frame" x="238" y="273" width="32" height="32"/>
@@ -248,9 +245,6 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                                 <state key="normal" image="facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="sendFacebook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hIN-Tq-Ugr"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -276,8 +270,6 @@ MAIN SCREEN To add or change the name of the teams: 1. Tap in the team name 
                         <outlet property="homeTeamName" destination="KgW-hz-5sq" id="rYn-cJ-0vR"/>
                         <outlet property="leftActionLabel" destination="NQ3-D6-TK5" id="tfi-QH-n7J"/>
                         <outlet property="leftActionNameNumber" destination="991-IZ-vz3" id="onM-1L-EEq"/>
-                        <outlet property="mainPageFacebookButton" destination="o7g-pR-XeM" id="w3A-mS-FPu"/>
-                        <outlet property="mainPageTwitterButton" destination="N5W-5Y-GSc" id="SuM-jT-xpZ"/>
                         <outlet property="rightActionLabel" destination="tX3-rT-g7M" id="MeM-Q9-oUT"/>
                         <outlet property="rightActionNameNumber" destination="V3G-uq-fca" id="vPg-z4-4ZO"/>
                         <outlet property="secondActionName" destination="V3G-uq-fca" id="16P-Ae-YhH"/>
