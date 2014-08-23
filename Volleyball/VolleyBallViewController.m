@@ -294,6 +294,10 @@ static NSString* const kiTunesID = @"886670213";
     //Format the circular button around the VBall
     [self formatVBallButton];
 
+    //Create button circle around VBall
+    [self formatVBallButton];
+
+
 //??? Hide Social code for this version
 /*
     [self enableSocialButtons];

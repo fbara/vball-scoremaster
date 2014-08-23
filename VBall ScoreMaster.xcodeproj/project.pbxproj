@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */; };
 		92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92447968192AD7A10031C1F6 /* MessageUI.framework */; };
-		924479A0192C2CDC0031C1F6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244799F192C2CDC0031C1F6 /* SettingsViewController.m */; };
 		9273CB041940990200696E8E /* SupportInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273CB031940990200696E8E /* SupportInstructionsViewController.m */; };
 		92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A21916C2800037D405 /* Foundation.framework */; };
 		92AA42A51916C2800037D405 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A41916C2800037D405 /* CoreGraphics.framework */; };
@@ -91,8 +90,6 @@
 		9217E5D11926377700B2E6F1 /* DefaultScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultScoreViewController.h; sourceTree = "<group>"; };
 		9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultScoreViewController.m; sourceTree = "<group>"; };
 		92447968192AD7A10031C1F6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		9244799E192C2CDC0031C1F6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		9244799F192C2CDC0031C1F6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9273CB021940990200696E8E /* SupportInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportInstructionsViewController.h; sourceTree = "<group>"; };
 		9273CB031940990200696E8E /* SupportInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportInstructionsViewController.m; sourceTree = "<group>"; };
 		92AA429F1916C2800037D405 /* VBall ScoreMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VBall ScoreMaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,8 +311,6 @@
 				AD1C816C195C43A30028179B /* SettingsTableViewController.m */,
 				9217E5D11926377700B2E6F1 /* DefaultScoreViewController.h */,
 				9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */,
-				9244799E192C2CDC0031C1F6 /* SettingsViewController.h */,
-				9244799F192C2CDC0031C1F6 /* SettingsViewController.m */,
 				AD1C80FF194A5FD70028179B /* InstructionsViewController.h */,
 				AD1C8100194A5FD70028179B /* InstructionsViewController.m */,
 				9273CB021940990200696E8E /* SupportInstructionsViewController.h */,
@@ -653,7 +648,6 @@
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
 				ADFB426119A372B900ADBE9F /* ABXNavigationController.m in Sources */,
 				AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */,
-				924479A0192C2CDC0031C1F6 /* SettingsViewController.m in Sources */,
 				ADFB426A19A372B900ADBE9F /* ABXFAQTableViewCell.m in Sources */,
 				ADFB426419A372B900ADBE9F /* ABXAttachment.m in Sources */,
 				ADFB425419A372B900ADBE9F /* ABXApiClient.m in Sources */,
