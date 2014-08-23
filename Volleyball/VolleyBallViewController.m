@@ -290,10 +290,12 @@ static NSString* const kiTunesID = @"886670213";
     
     //Get the Action Names
     [self loadActionNames];
+    
+    //Format the circular button around the VBall
+    [self formatVBallButton];
 
 //??? Hide Social code for this version
 /*
-    [self formatVBallButton];
     [self enableSocialButtons];
 */
     
