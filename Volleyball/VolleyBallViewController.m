@@ -530,10 +530,19 @@ static NSString* const kiTunesID = @"886670213";
 //Format the VBall button
 - (void)formatVBallButton
 {
-    self.sendMessageImage.frame = CGRectMake(240.0, 140.0, 80.0, 80.0);
-    self.sendMessageImage.clipsToBounds = YES;
-    self.sendMessageImage.layer.cornerRadius = 40;
-    self.sendMessageImage.layer.masksToBounds = YES;
+    //If running on iPad, use these settings
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.sendMessageImage.frame = CGRectMake(452.0, 302.0, 100.0, 100.0);
+        self.sendMessageImage.clipsToBounds = YES;
+        self.sendMessageImage.layer.cornerRadius = 80;
+        self.sendMessageImage.layer.masksToBounds = YES;
+    } else {
+        //Running on iPhone or iPod
+        self.sendMessageImage.frame = CGRectMake(240.0, 140.0, 80.0, 80.0);
+        self.sendMessageImage.clipsToBounds = YES;
+        self.sendMessageImage.layer.cornerRadius = 40;
+        self.sendMessageImage.layer.masksToBounds = YES;
+    }
 }
 
 /*!
