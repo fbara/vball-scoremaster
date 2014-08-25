@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dBP-CD-akZ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Instructions View Controller - Instructions-->
+        <scene sceneID="0GH-Er-Ppm">
+            <objects>
+                <viewController title="Instructions" id="vSD-dS-WPV" customClass="InstructionsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nzP-7a-lPa"/>
+                        <viewControllerLayoutGuide type="bottom" id="EcX-5o-Hga"/>
+                    </layoutGuides>
+                    <view key="view" tag="1" contentMode="scaleToFill" id="Yua-kG-eOG" userLabel="View - Instructions">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="volleyball big spike" translatesAutoresizingMaskIntoConstraints="NO" id="vnp-C1-4VN">
+                                <rect key="frame" x="0.0" y="224" width="568" height="320"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" restorationIdentifier="cOt-an-CIE" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOt-an-CIE" userLabel="Text View - Instructions">
+                                <rect key="frame" x="0.0" y="511" width="568" height="257"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" hint="This field contains significant info on how to use this app." label="Text for how to use the app">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                </accessibility>
+                                <string key="text">VBall ScoreMaster is very easy to use.  Instructions are below and you can return these instructions at any time.  I don't send pop-ups to block your activity and remind you to please rate this app on the App Store, but I would appreciate it if you would take a few minutes and leave a review.  Here's how you use VBall ScoreMaster!
+
+MAIN SCREEN
+To add or change the name of the teams:
+1. Tap in the team name text box above the score
+2. Type in the name of the team
+3. When done, tap on the 'Done' button
+
+To change the score:
+1. Either tap or swipe the score with your finger
+2. Swiping UP or tapping the BOTTOM of the score will add 1
+3. Swiping DOWN or tapping the TOP of the score to subtract 1
+
+To change sides
+1. Swipe either score box and they will both move, swapping locations
+2. This is good to do each time time the teams change sides
+3. The final scores of the last 3 games are kept next to their score box.  The winner's score is in red.
+
+To change to a new game:
+1. Tapping on the Game number will add a new game
+2. New games will change both scores to 0 and will move the existing scores to the past score numbers
+3. Team names will stay the same, so will the numbers under the Action Names
+4. Maximum number of Games is 4
+
+Action Names!
+Action Names allow you to track up to 2 statistics for an individual player.
+1. Choose your Action Names from the Settings screen
+2. To reset, touch and hold a number and you will get a menu with options
+3. Action Name numbers are not stored anywhere so if you choose different Action Names, you'll won't have access to the count that was previously there
+
+Send a text message
+There are 2 ways to send a text message:
+1. If sending messages is turned on in Settings, every touch of an Action Number will format a text message for you to send, or
+2. Touching the VBall in the center will bring up a text message formatted for you to send
+
+To start a New Match:
+1. Matches are made up of several Games.  Tap New Match in the top left corner to start a new match.
+2. A new match will reset both scores as well as the Game and Action numbers
+3. Once you agree to start a new match, it can't be undone
+
+SETTINGS
+Changes take effect immediately.
+Change team colors:
+1. Tap the box of the team whose color you want to change
+2. Each tap will change the box to a random color
+3. You can change one or both colors.  Color changes take effect immediately.
+
+Send text message (SMS or iMessage):
+1. Change the Notifications switch to ON if you want to send a text message after each Action or with the VBall
+2. Enter the name of the player that will be included in the pre-formed text message.  This part is optional but it will make the text message more personable.
+3. Enter the phone number to where you want the messages sent.  You can also tap the + button to bring up your contacts.  You can only enter 1 phone number here but you can add additional numbers to each message prior to sending them out.
+4. Because Apple prevents apps from sending background text messages (for your own protection), you must hit the Send button to send the message.  If you change your mind, just tap Cancel.
+
+Action Name
+1. Tap on an Action Name to bring up a table of common volleyball actions that you can track. 
+2. There are 2 actions you can track, if you don't select one then the default action will be shown.  These Action Names will automatically be included on the text messages you send.
+
+PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS APP CAN CONTINUE.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Instructions" id="Tjk-bY-piu"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="instructionsText" destination="cOt-an-CIE" id="L1O-0w-4W6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Trs-gv-wjz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1759" y="-180"/>
+        </scene>
+        <!--Volley Ball View Controller - mainView-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController title="mainView" id="vXZ-lx-hvc" customClass="VolleyBallViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TBf-AC-bZW"/>
+                        <viewControllerLayoutGuide type="bottom" id="CtS-6M-owo"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av1-K7-XUr" userLabel="Button - Volleyball">
+                                <rect key="frame" x="432" y="262" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button that resembles a volleyball"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <size key="titleShadowOffset" width="3" height="3"/>
+                                <state key="normal" title="VBall" image="VBall image">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendInstantMessage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SRV-0g-Q7o"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Visiting Team" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gzx-4p-5vy">
+                                <rect key="frame" x="88" y="147" width="272" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" hint="User enters the name of the visiting team." label="Text entry"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="rPx-ck-UCe"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Home Team" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KgW-hz-5sq">
+                                <rect key="frame" x="664" y="147" width="272" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" hint="User enters the name of the home team." label="Text entry"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Gy2-c3-JW9"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jML-Et-saV">
+                                <rect key="frame" x="437" y="103" width="151" height="56"/>
+                                <accessibility key="accessibilityConfiguration" hint="None" label="Game label"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6P-Lx-PJG" userLabel="GameNumber">
+                                <rect key="frame" x="472" y="167" width="80" height="67"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="52"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RIGHT ACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tX3-rT-g7M" userLabel="Label - Right Action Name">
+                                <rect key="frame" x="664" y="507" width="272" height="31"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3G-uq-fca" userLabel="rightActionNameNumber">
+                                <rect key="frame" x="751" y="546" width="98" height="53"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="44"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LEFT ACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ3-D6-TK5" userLabel="Label - Left Action Name">
+                                <rect key="frame" x="88" y="507" width="272" height="31"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="991-IZ-vz3" userLabel="leftActionNameNumber">
+                                <rect key="frame" x="175" y="546" width="98" height="53"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="44"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e73-U3-5CU" userLabel="rightScreenActionButton">
+                                <rect key="frame" x="751" y="546" width="98" height="53"/>
+                                <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button with a label that contains a number"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="Right Action">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rightActionPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="luN-cL-ztm"/>
+                                    <outletCollection property="gestureRecognizers" destination="qAC-a6-aQ8" appends="YES" id="m98-IJ-dzl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZs-Ny-2Iw" userLabel="leftScreenActionButton">
+                                <rect key="frame" x="175" y="546" width="98" height="53"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button with a label that contains a number"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="Left Action">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="leftActionPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="l97-uH-zXB"/>
+                                    <outletCollection property="gestureRecognizers" destination="00j-HW-7Gn" appends="YES" id="FVH-z6-ZkN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLM-eS-SXb" userLabel="screenActionGame">
+                                <rect key="frame" x="472" y="167" width="87" height="67"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" hint="Tapping this will add 1 to the game number and change the scores for both sides to 0 to start a new game." label="Button that shows the game number"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="gamePressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="k89-S0-azd"/>
+                                </connections>
+                            </button>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-DE-Ouq" userLabel="Home Container View">
+                                <rect key="frame" x="664" y="185" width="272" height="314"/>
+                                <connections>
+                                    <segue destination="UDW-Id-wMZ" kind="embed" identifier="embedHome" id="OXj-vc-u2c"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdD-WX-kLc" userLabel="Visitor Container View">
+                                <rect key="frame" x="88" y="185" width="272" height="314"/>
+                                <connections>
+                                    <segue destination="xOM-Jn-cof" kind="embed" identifier="embedVisitor" id="32b-31-xme"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="m1P-eG-o39" userLabel="Label - Home1">
+                                <rect key="frame" x="944" y="363" width="60" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="HOT-d2-W5V" userLabel="Label - Home2">
+                                <rect key="frame" x="944" y="411" width="60" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="iJA-mX-JWA" userLabel="Label - Home3">
+                                <rect key="frame" x="944" y="459" width="60" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="Sad-Nf-jjb" userLabel="Label - Visit1">
+                                <rect key="frame" x="20" y="363" width="60" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="i1f-B7-MYb" userLabel="Label - Visit2">
+                                <rect key="frame" x="20" y="411" width="60" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="mi0-YI-UNY" userLabel="Label - Visit3">
+                                <rect key="frame" x="20" y="459" width="60" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5W-5Y-GSc">
+                                <rect key="frame" x="606" y="668" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7g-pR-XeM">
+                                <rect key="frame" x="368" y="668" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="VBall ScoreMaster" id="idF-JM-YX7">
+                        <barButtonItem key="leftBarButtonItem" title="New match" id="blf-CM-yV6">
+                            <connections>
+                                <action selector="newMatch:" destination="vXZ-lx-hvc" id="8nb-fa-F9f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="firstActionName" destination="991-IZ-vz3" id="Lko-Pf-Px5"/>
+                        <outlet property="gameNumber" destination="O6P-Lx-PJG" id="hEm-tI-Usd"/>
+                        <outlet property="homeGame1" destination="m1P-eG-o39" id="JRe-DD-YSl"/>
+                        <outlet property="homeGame2" destination="HOT-d2-W5V" id="kvi-8l-e4N"/>
+                        <outlet property="homeGame3" destination="iJA-mX-JWA" id="YC9-Qu-zCX"/>
+                        <outlet property="homeTeamContainer" destination="Acd-DE-Ouq" id="2Va-1T-JQ2"/>
+                        <outlet property="homeTeamName" destination="KgW-hz-5sq" id="rYn-cJ-0vR"/>
+                        <outlet property="leftActionLabel" destination="NQ3-D6-TK5" id="tfi-QH-n7J"/>
+                        <outlet property="leftActionNameNumber" destination="991-IZ-vz3" id="onM-1L-EEq"/>
+                        <outlet property="rightActionLabel" destination="tX3-rT-g7M" id="MeM-Q9-oUT"/>
+                        <outlet property="rightActionNameNumber" destination="V3G-uq-fca" id="vPg-z4-4ZO"/>
+                        <outlet property="secondActionName" destination="V3G-uq-fca" id="16P-Ae-YhH"/>
+                        <outlet property="sendMessageImage" destination="av1-K7-XUr" id="oGR-yt-gkX"/>
+                        <outlet property="visitGame1" destination="Sad-Nf-jjb" id="GUq-Dx-1Ot"/>
+                        <outlet property="visitGame2" destination="i1f-B7-MYb" id="uBm-x9-n3g"/>
+                        <outlet property="visitGame3" destination="mi0-YI-UNY" id="25X-Vj-kI0"/>
+                        <outlet property="visitingTeamName" destination="Gzx-4p-5vy" id="RcM-Y9-NgA"/>
+                        <outlet property="vistingTeamContainer" destination="JdD-WX-kLc" id="LyJ-Gf-UgW"/>
+                        <outletCollection property="pastScoreCollection" destination="m1P-eG-o39" id="6pg-9N-GBt"/>
+                        <outletCollection property="pastScoreCollection" destination="HOT-d2-W5V" id="I77-9c-wnq"/>
+                        <outletCollection property="pastScoreCollection" destination="iJA-mX-JWA" id="DnU-Eh-y2O"/>
+                        <outletCollection property="pastScoreCollection" destination="Sad-Nf-jjb" id="0Zo-AE-AOO"/>
+                        <outletCollection property="pastScoreCollection" destination="i1f-B7-MYb" id="nJv-VO-kWS"/>
+                        <outletCollection property="pastScoreCollection" destination="mi0-YI-UNY" id="Tw4-My-X3t"/>
+                        <segue destination="vSD-dS-WPV" kind="push" identifier="infoView" id="KBw-Ku-jMI"/>
+                        <segue destination="JoG-uN-Xre" kind="popover" identifier="settingsView" popoverAnchorView="jML-Et-saV" id="KRB-WR-gub">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                        <segue destination="TO8-Ip-hl0" kind="modal" identifier="showTutorial" modalTransitionStyle="coverVertical" id="BdP-S3-kPV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1" id="00j-HW-7Gn" userLabel="Long Press Gesture Recognizer - Reset Ace Number">
+                    <connections>
+                        <action selector="leftActionLongPress:" destination="vXZ-lx-hvc" id="cip-2J-zST"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.99999999999999989" id="qAC-a6-aQ8" userLabel="Long Press Gesture Recognizer - Reset Spike Number">
+                    <connections>
+                        <action selector="rightActionLongPress:" destination="vXZ-lx-hvc" id="CsU-sd-Riv"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="152" y="-937"/>
+        </scene>
+        <!--Tutorial View Controller - Tutorial Main-->
+        <scene sceneID="o0h-Xb-kwA">
+            <objects>
+                <viewController title="Tutorial Main" id="TO8-Ip-hl0" customClass="TutorialViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k3p-sY-6iK"/>
+                        <viewControllerLayoutGuide type="bottom" id="laj-sD-Tr1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n66-8q-n8m">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CXz-uX-uVj">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="tutorialImage" destination="CXz-uX-uVj" id="HjT-Ge-C0E"/>
+                        <segue destination="MY6-dP-SYW" kind="modal" identifier="showTutorialSettings" modalTransitionStyle="crossDissolve" id="uBM-y4-fVr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rKj-pX-ycy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152" y="82"/>
+        </scene>
+        <!--Tutorial Settings View Controller - Tutorial Settings-->
+        <scene sceneID="d5V-gg-hJE">
+            <objects>
+                <viewController title="Tutorial Settings" id="MY6-dP-SYW" customClass="TutorialSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LMd-7n-NHd"/>
+                        <viewControllerLayoutGuide type="bottom" id="79H-5c-lvB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HuN-Xr-R2D">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fjo-UL-Ypc">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="65m-uP-DJL"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="tutorialImage" destination="fjo-UL-Ypc" id="hU0-8t-4dB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10C-oQ-JCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="1107"/>
+        </scene>
+        <!--Action Label Table View Controller - Action Names-->
+        <scene sceneID="S82-Dd-kqz">
+            <objects>
+                <tableViewController title="Action Names" id="47K-Gk-dz7" customClass="ActionLabelTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="40" sectionHeaderHeight="5" sectionFooterHeight="10" id="aoN-G2-Kxd">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="345"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="IEc-eP-Hpp" rowHeight="40" style="IBUITableViewCellStyleDefault" id="hX2-1v-W6W">
+                                <rect key="frame" x="0.0" y="55" width="568" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hX2-1v-W6W" id="qzH-iC-3hs">
+                                    <rect key="frame" x="0.0" y="0.0" width="568" height="39"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IEc-eP-Hpp">
+                                            <rect key="frame" x="15" y="0.0" width="538" height="39"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="47K-Gk-dz7" id="ttd-Id-UVy"/>
+                            <outlet property="delegate" destination="47K-Gk-dz7" id="jVG-D3-9Mm"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Action Name Selection" id="KHW-54-sUv">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="pHw-Ek-xjD">
+                            <connections>
+                                <segue destination="ZIU-kI-E0M" kind="unwind" unwindAction="unwindFromModalViewController:" id="3ae-Fq-mwt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mqx-uR-HLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ZIU-kI-E0M" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2515" y="-2061"/>
+        </scene>
+        <!--Settings Table View Controller - Settings-->
+        <scene sceneID="dge-Dz-h61">
+            <objects>
+                <tableViewController title="Settings" id="JoG-uN-Xre" customClass="SettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="OsV-V0-0Jc">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="345"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <sections>
+                            <tableViewSection headerTitle="score colors" footerTitle="Each tap changes to a random color" id="f8O-Jl-JOa">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="MLh-NU-1KR" userLabel="Table View Cell -Visitor color">
+                                        <rect key="frame" x="0.0" y="55" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="MLh-NU-1KR" id="vPk-ef-ZBV">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Visiting team background color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14N-xf-D4v">
+                                                    <rect key="frame" x="20" y="7" width="255" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="255" id="uYG-WN-s6H"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxM-8M-OkD">
+                                                    <rect key="frame" x="528" y="3" width="220" height="32"/>
+                                                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Changes background color of the score for the home team." label="Visitor team color"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="220" id="0Nc-ZJ-BND"/>
+                                                    </constraints>
+                                                    <state key="normal" title="VISITOR">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="visitingTeamBackgroundColor:" destination="JoG-uN-Xre" eventType="touchUpInside" id="sJB-LJ-Ccx"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KeT-Dd-A7O" userLabel="Table View Cell - Home color">
+                                        <rect key="frame" x="0.0" y="99" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="KeT-Dd-A7O" id="Tz1-OK-GHs">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Home team background color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4T-AC-mQX">
+                                                    <rect key="frame" x="20" y="10" width="255" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="255" id="H16-fF-nEd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43Z-fe-naI">
+                                                    <rect key="frame" x="528" y="4" width="220" height="32"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Changes background color of the score for the home team." label="Home team color"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="220" id="om4-7k-meS"/>
+                                                    </constraints>
+                                                    <state key="normal" title="HOME">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="homeTeamBackgroundColor:" destination="JoG-uN-Xre" eventType="touchUpInside" id="l6B-GU-1ei"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Sharing" footerTitle="Send text messages or use your favorite sharing site" id="AEf-DS-lJV">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JUD-k1-dHv" userLabel="Table View Cell - Send switch">
+                                        <rect key="frame" x="0.0" y="218" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JUD-k1-dHv" id="2F5-gu-tbJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="oqR-8N-8Ny">
+                                                    <rect key="frame" x="534" y="8" width="214" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="214" id="6IX-6T-xHF"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="Send"/>
+                                                        <segment title="Don't send"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="notificationSwitch:" destination="JoG-uN-Xre" eventType="valueChanged" id="8eo-p6-LEB"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send text notification messages?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffm-OY-yny">
+                                                    <rect key="frame" x="20" y="11" width="255" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Xy2-mz-t2F" userLabel="Table View Cell - Player name">
+                                        <rect key="frame" x="0.0" y="262" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xy2-mz-t2F" id="Wg2-Ec-tBI">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player's name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1L-8j-CIK">
+                                                    <rect key="frame" x="20" y="10" width="255" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(optional)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Yyj-Dn-sH1">
+                                                    <rect key="frame" x="534" y="6" width="214" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Name of player to track" label="Player's name"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="214" id="jsq-Db-52g"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="textFieldReturn:" destination="JoG-uN-Xre" eventType="editingDidEndOnExit" id="Uj3-8S-IUt"/>
+                                                        <action selector="textFieldReturn:" destination="JoG-uN-Xre" eventType="editingDidEnd" id="u44-Fl-EHY"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tYo-kp-FcY" userLabel="Table View Cell - Notify number">
+                                        <rect key="frame" x="0.0" y="306" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="tYo-kp-FcY" id="fgS-4K-kJq">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(optional)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CH8-S5-jc8">
+                                                    <rect key="frame" x="537" y="7" width="211" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Who should be sent the text message." label="Notification phone number"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="211" id="7np-IX-3wd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="textFieldReturn:" destination="JoG-uN-Xre" eventType="editingDidEndOnExit" id="j4n-JS-kPd"/>
+                                                        <outlet property="delegate" destination="JoG-uN-Xre" id="x7l-Ao-jba"/>
+                                                    </connections>
+                                                </textField>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send text message to number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-dK-ACP">
+                                                    <rect key="frame" x="20" y="4" width="255" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use '+' or enter number manually" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyb-1D-rAm">
+                                                    <rect key="frame" x="20" y="20" width="296" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFP-xW-h2H">
+                                                    <rect key="frame" x="507" y="11" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Access contact list to choose a contact to send text messages." label="Access contact list"/>
+                                                    <state key="normal">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="getPhoneNumberFromAddressBook:" destination="JoG-uN-Xre" eventType="touchUpInside" id="Dzd-0Z-3Bm"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="action names" footerTitle="Action Names are included in the text message" id="xIz-3d-pId">
+                                <cells>
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J4e-OQ-jDI" userLabel="Table View Cell - Bottom action name">
+                                        <rect key="frame" x="0.0" y="425" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J4e-OQ-jDI" id="FlS-Sr-d5G">
+                                            <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Left side Action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2s-UN-oRu">
+                                                    <rect key="frame" x="20" y="1" width="255" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Select an Action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hq-2P-tSW">
+                                                    <rect key="frame" x="20" y="20" width="296" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SPIKE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nb-0K-3R7" userLabel="Label - First selected Action">
+                                                    <rect key="frame" x="588" y="12" width="127" height="19"/>
+                                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Player action being tracked." label="Left-side Action name"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7hq-2P-tSW" firstAttribute="width" secondItem="g2s-UN-oRu" secondAttribute="width" id="LVM-pO-ZHm"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Nb-0K-3R7" secondAttribute="trailing" constant="20" id="Mwm-6q-QId"/>
+                                                <constraint firstAttribute="bottom" secondItem="7hq-2P-tSW" secondAttribute="bottom" constant="4" id="OdF-wV-LmC"/>
+                                                <constraint firstItem="8Nb-0K-3R7" firstAttribute="top" secondItem="FlS-Sr-d5G" secondAttribute="top" constant="12" id="P44-ye-XNl"/>
+                                                <constraint firstItem="7hq-2P-tSW" firstAttribute="leading" secondItem="g2s-UN-oRu" secondAttribute="leading" id="WdM-ED-T6F"/>
+                                                <constraint firstItem="g2s-UN-oRu" firstAttribute="top" secondItem="FlS-Sr-d5G" secondAttribute="top" constant="1" id="aQj-Q6-XWm"/>
+                                                <constraint firstItem="7hq-2P-tSW" firstAttribute="leading" secondItem="FlS-Sr-d5G" secondAttribute="leading" constant="20" id="ahs-al-GTT"/>
+                                                <constraint firstItem="g2s-UN-oRu" firstAttribute="leading" secondItem="FlS-Sr-d5G" secondAttribute="leading" constant="20" id="kKI-zi-kAm"/>
+                                                <constraint firstAttribute="trailing" secondItem="g2s-UN-oRu" secondAttribute="trailing" constant="460" id="okJ-IH-6EP"/>
+                                                <constraint firstItem="7hq-2P-tSW" firstAttribute="top" secondItem="g2s-UN-oRu" secondAttribute="bottom" id="wxO-2t-gS0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rZn-jg-JqB" userLabel="Table View Cell - Bottom action name">
+                                        <rect key="frame" x="0.0" y="469" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rZn-jg-JqB" id="c7A-GY-0Su">
+                                            <rect key="frame" x="0.0" y="0.0" width="535" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Right side Action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikm-us-vX0">
+                                                    <rect key="frame" x="20" y="1" width="255" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select an Action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fV6-jS-A2Y">
+                                                    <rect key="frame" x="20" y="19" width="296" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4s-lv-LRm" userLabel="Label - Second selected Action">
+                                                    <rect key="frame" x="588" y="12" width="127" height="20"/>
+                                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Player action being tracked." label="Right-side Action name"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Analytics" footerTitle="You may change this setting at any time" id="0QR-Ch-Txb">
+                                <cells>
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0ez-mJ-3n6" userLabel="Table View Cell - Bottom action name">
+                                        <rect key="frame" x="0.0" y="588" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0ez-mJ-3n6" id="liE-gc-JR2">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send analytics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fj-bS-bnD">
+                                                    <rect key="frame" x="20" y="9" width="255" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="rnr-Qi-g1k">
+                                                    <rect key="frame" x="469" y="8" width="214" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <segments>
+                                                        <segment title="Opt out"/>
+                                                        <segment title="Opt in"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="sendAnalytics:" destination="JoG-uN-Xre" eventType="valueChanged" id="hWH-sZ-Ypm"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="JoG-uN-Xre" id="Hyz-Wy-oQh"/>
+                            <outlet property="delegate" destination="JoG-uN-Xre" id="uEg-9Z-ead"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="6h4-mo-Fgp"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <size key="freeformSize" width="568" height="345"/>
+                    <connections>
+                        <outlet property="addPhoneNumberButton" destination="lFP-xW-h2H" id="Niy-39-MKK"/>
+                        <outlet property="analyticsSwitch" destination="rnr-Qi-g1k" id="odP-UT-ML1"/>
+                        <outlet property="homeTeamColor" destination="43Z-fe-naI" id="lUH-3F-cvE"/>
+                        <outlet property="leftActionNameSelected" destination="8Nb-0K-3R7" id="bFa-Fg-WDN"/>
+                        <outlet property="nameOfPlayer" destination="Yyj-Dn-sH1" id="Zya-XT-o96"/>
+                        <outlet property="notificationName" destination="CH8-S5-jc8" id="mG5-nM-XGf"/>
+                        <outlet property="rightActionNameSelected" destination="v4s-lv-LRm" id="9EP-sW-Wao"/>
+                        <outlet property="sendNotificationSwitch" destination="oqR-8N-8Ny" id="pfC-fk-VZI"/>
+                        <outlet property="visitingTeamColor" destination="CxM-8M-OkD" id="k0Q-s4-wFg"/>
+                        <outletCollection property="settingsButtons" destination="CxM-8M-OkD" id="vEs-nj-a4w"/>
+                        <outletCollection property="settingsButtons" destination="43Z-fe-naI" id="Sva-C6-yfT"/>
+                        <outletCollection property="settingsLabels" destination="14N-xf-D4v" id="4f0-ls-yYQ"/>
+                        <outletCollection property="settingsLabels" destination="j4T-AC-mQX" id="cu7-qn-bCm"/>
+                        <segue destination="47K-Gk-dz7" kind="push" identifier="actionNameView" id="dFo-TN-btU"/>
+                        <segue destination="h9W-pw-aPc" kind="push" identifier="supportView" id="6hc-xD-JBH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c88-HG-OSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1298" y="-2061"/>
+        </scene>
+        <!--Home Page View Controller-->
+        <scene sceneID="dEb-Ol-WBp">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" title="Home Page View Controller" modalTransitionStyle="flipHorizontal" transitionStyle="pageCurl" navigationOrientation="vertical" spineLocation="min" id="UDW-Id-wMZ" userLabel="Home Page View Controller" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="200" height="200"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGO-83-1Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1450" y="-909"/>
+        </scene>
+        <!--Visitor Page View Controller-->
+        <scene sceneID="c6u-WJ-yVv">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" title="Visitor Page View Controller" modalTransitionStyle="flipHorizontal" transitionStyle="pageCurl" navigationOrientation="vertical" spineLocation="min" id="xOM-Jn-cof" userLabel="Visitor Page View Controller" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="200" height="200"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v6O-LZ-YFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1450" y="-581"/>
+        </scene>
+        <!--Support Table View Controller - Support-->
+        <scene sceneID="DB9-3u-827">
+            <objects>
+                <tableViewController title="Support" id="h9W-pw-aPc" customClass="SupportTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="jM8-Dj-Evr">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="345"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <sections>
+                            <tableViewSection headerTitle="Support &amp; Feedback" footerTitle="Requires an internet connection" id="a5D-5H-Up0">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="J0J-vH-Fuf" style="IBUITableViewCellStyleDefault" id="dkP-Ri-RZF">
+                                        <rect key="frame" x="0.0" y="55" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dkP-Ri-RZF" id="Vjy-l5-hqk">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Version Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J0J-vH-Fuf">
+                                                    <rect key="frame" x="15" y="0.0" width="538" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="LgS-7H-MQ7" style="IBUITableViewCellStyleDefault" id="NW3-4a-CXK">
+                                        <rect key="frame" x="0.0" y="99" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NW3-4a-CXK" id="TpY-1q-TlU">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="FAQ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LgS-7H-MQ7">
+                                                    <rect key="frame" x="15" y="0.0" width="538" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Hrn-1f-vNp" style="IBUITableViewCellStyleDefault" id="y7S-ze-bNf">
+                                        <rect key="frame" x="0.0" y="143" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y7S-ze-bNf" id="v9n-1N-NcD">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hrn-1f-vNp">
+                                                    <rect key="frame" x="15" y="0.0" width="538" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="hei-AC-AsN" style="IBUITableViewCellStyleDefault" id="e5J-bK-tGg">
+                                        <rect key="frame" x="0.0" y="187" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e5J-bK-tGg" id="Bp1-X8-ZZw">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Acknowledgements" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hei-AC-AsN">
+                                                    <rect key="frame" x="15" y="0.0" width="538" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="h9W-pw-aPc" id="1TM-b4-qBG"/>
+                            <outlet property="delegate" destination="h9W-pw-aPc" id="Y5c-Hw-3Ji"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BNV-Hv-UO8"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTi-Ye-IZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2539" y="-1110"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dxk-2S-oBG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dBP-CD-akZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <navigationBar key="navigationBar" alpha="0.79999999999999982" contentMode="scaleToFill" barStyle="black" id="CHS-xg-ngr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="XQu-LM-n16"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IIb-5r-EWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1145" y="-937"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="VBall image" width="296" height="274"/>
+        <image name="facebook" width="602" height="600"/>
+        <image name="twitter" width="489" height="489"/>
+        <image name="volleyball big spike" width="284" height="213"/>
+    </resources>
+    <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

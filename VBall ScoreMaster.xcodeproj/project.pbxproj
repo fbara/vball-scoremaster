@@ -43,6 +43,7 @@
 		AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9A21A8199BDB10009CEE31 /* Accounts.framework */; };
 		AD9B665C199D2754002C5145 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD9B665B199D2754002C5145 /* Settings.bundle */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
+		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB425319A372B900ADBE9F /* AppbotX.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADFB421419A372B900ADBE9F /* AppbotX.bundle */; };
 		ADFB425419A372B900ADBE9F /* ABXApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB421719A372B900ADBE9F /* ABXApiClient.m */; };
 		ADFB425519A372B900ADBE9F /* ABXAppStore.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB421919A372B900ADBE9F /* ABXAppStore.m */; };
@@ -145,6 +146,7 @@
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADCC139A1981B588001DC9B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		ADEB992E1986ECB70009B3F5 /* ActionNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ActionNames.plist; sourceTree = "<group>"; };
+		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB421319A372B900ADBE9F /* ABX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABX.h; sourceTree = "<group>"; };
 		ADFB421419A372B900ADBE9F /* AppbotX.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AppbotX.bundle; sourceTree = "<group>"; };
 		ADFB421619A372B900ADBE9F /* ABXApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXApiClient.h; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 		92AA42A91916C2800037D405 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */,
 				AD082E37198182E800A997CE /* DefaultScoreViewController.xib */,
 				AD082E3419817E5C00A997CE /* Main.storyboard */,
 				92AA42AB1916C2800037D405 /* InfoPlist.strings */,
@@ -592,6 +595,7 @@
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
 				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
+				ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */,
 				AD9B665C199D2754002C5145 /* Settings.bundle in Resources */,
 				ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */,
 			);
@@ -814,14 +818,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1F3397D5-91AD-4B91-83E4-907D2FD9F486";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -837,14 +841,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8B885CD4-199D-4A36-B59A-C0FE4AF3441D";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -934,14 +938,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8B885CD4-199D-4A36-B59A-C0FE4AF3441D";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Distribution;
