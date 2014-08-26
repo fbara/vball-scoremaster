@@ -16,4 +16,5 @@
     #import "GAI.h"
     #import "GAIFields.h"
     #import "ABX.h"
+    #import "Chameleon.h"
 #endif

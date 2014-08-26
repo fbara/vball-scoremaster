@@ -31,14 +31,18 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"%d", aScore];
 }
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     //[[NSNotificationCenter defaultCenter] postNotificationName:@"swipe" object:self];
+}
+
+- (void)setScoreNumberSize:(CGFloat)numberSize
+{
+    [self.scoreLabel setFont:[UIFont fontWithName:@"Trebuchet MS" size:numberSize]];
+    
 }
 
 - (void)didReceiveMemoryWarning

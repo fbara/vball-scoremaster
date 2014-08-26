@@ -42,6 +42,11 @@
 		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
 		AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9A21A8199BDB10009CEE31 /* Accounts.framework */; };
 		AD9B665C199D2754002C5145 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD9B665B199D2754002C5145 /* Settings.bundle */; };
+		ADAEAC5719ACB47B00519A20 /* ChameleonStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAEAC4E19ACB47B00519A20 /* ChameleonStatusBar.m */; };
+		ADAEAC5819ACB47B00519A20 /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAEAC5019ACB47B00519A20 /* NSArray+Chameleon.m */; };
+		ADAEAC5919ACB47B00519A20 /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAEAC5219ACB47B00519A20 /* UIColor+Chameleon.m */; };
+		ADAEAC5A19ACB47B00519A20 /* UIColor+CIELAB.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAEAC5419ACB47B00519A20 /* UIColor+CIELAB.m */; };
+		ADAEAC5B19ACB47B00519A20 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAEAC5619ACB47B00519A20 /* UIViewController+Chameleon.m */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB425319A372B900ADBE9F /* AppbotX.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADFB421419A372B900ADBE9F /* AppbotX.bundle */; };
@@ -142,6 +147,18 @@
 		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AD9A21A8199BDB10009CEE31 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		AD9B665B199D2754002C5145 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		ADAEAC4B19ACB47B00519A20 /* Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chameleon.h; path = Volleyball/Chameleon.h; sourceTree = "<group>"; };
+		ADAEAC4C19ACB47B00519A20 /* ChameleonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChameleonMacros.h; path = Volleyball/ChameleonMacros.h; sourceTree = "<group>"; };
+		ADAEAC4D19ACB47B00519A20 /* ChameleonStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChameleonStatusBar.h; path = Volleyball/ChameleonStatusBar.h; sourceTree = "<group>"; };
+		ADAEAC4E19ACB47B00519A20 /* ChameleonStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChameleonStatusBar.m; path = Volleyball/ChameleonStatusBar.m; sourceTree = "<group>"; };
+		ADAEAC4F19ACB47B00519A20 /* NSArray+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Chameleon.h"; path = "Volleyball/NSArray+Chameleon.h"; sourceTree = "<group>"; };
+		ADAEAC5019ACB47B00519A20 /* NSArray+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Chameleon.m"; path = "Volleyball/NSArray+Chameleon.m"; sourceTree = "<group>"; };
+		ADAEAC5119ACB47B00519A20 /* UIColor+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Chameleon.h"; path = "Volleyball/UIColor+Chameleon.h"; sourceTree = "<group>"; };
+		ADAEAC5219ACB47B00519A20 /* UIColor+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Chameleon.m"; path = "Volleyball/UIColor+Chameleon.m"; sourceTree = "<group>"; };
+		ADAEAC5319ACB47B00519A20 /* UIColor+CIELAB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CIELAB.h"; path = "Volleyball/UIColor+CIELAB.h"; sourceTree = "<group>"; };
+		ADAEAC5419ACB47B00519A20 /* UIColor+CIELAB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CIELAB.m"; path = "Volleyball/UIColor+CIELAB.m"; sourceTree = "<group>"; };
+		ADAEAC5519ACB47B00519A20 /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "Volleyball/UIViewController+Chameleon.h"; sourceTree = "<group>"; };
+		ADAEAC5619ACB47B00519A20 /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "Volleyball/UIViewController+Chameleon.m"; sourceTree = "<group>"; };
 		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADCC139A1981B588001DC9B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -257,6 +274,7 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
+				ADAEAC4A19ACB42D00519A20 /* Chameleon */,
 				ADFB421219A3729600ADBE9F /* AppbotX */,
 				ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */,
 				AD529694197F45E500767D1C /* GBVersionTracking */,
@@ -385,6 +403,25 @@
 			);
 			name = GBVersionTracking;
 			path = Volleyball;
+			sourceTree = "<group>";
+		};
+		ADAEAC4A19ACB42D00519A20 /* Chameleon */ = {
+			isa = PBXGroup;
+			children = (
+				ADAEAC4B19ACB47B00519A20 /* Chameleon.h */,
+				ADAEAC4C19ACB47B00519A20 /* ChameleonMacros.h */,
+				ADAEAC4D19ACB47B00519A20 /* ChameleonStatusBar.h */,
+				ADAEAC4E19ACB47B00519A20 /* ChameleonStatusBar.m */,
+				ADAEAC4F19ACB47B00519A20 /* NSArray+Chameleon.h */,
+				ADAEAC5019ACB47B00519A20 /* NSArray+Chameleon.m */,
+				ADAEAC5119ACB47B00519A20 /* UIColor+Chameleon.h */,
+				ADAEAC5219ACB47B00519A20 /* UIColor+Chameleon.m */,
+				ADAEAC5319ACB47B00519A20 /* UIColor+CIELAB.h */,
+				ADAEAC5419ACB47B00519A20 /* UIColor+CIELAB.m */,
+				ADAEAC5519ACB47B00519A20 /* UIViewController+Chameleon.h */,
+				ADAEAC5619ACB47B00519A20 /* UIViewController+Chameleon.m */,
+			);
+			name = Chameleon;
 			sourceTree = "<group>";
 		};
 		ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */ = {
@@ -641,10 +678,12 @@
 				AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */,
 				ADFB425B19A372B900ADBE9F /* NSString+ABXURLEncoding.m in Sources */,
 				ADFB425C19A372B900ADBE9F /* UIViewController+ABXScreenshot.m in Sources */,
+				ADAEAC5A19ACB47B00519A20 /* UIColor+CIELAB.m in Sources */,
 				ADFB425719A372B900ADBE9F /* NSDictionary+ABXNSNullAsNull.m in Sources */,
 				ADFB426619A372B900ADBE9F /* ABXIssue.m in Sources */,
 				AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */,
 				ADFB426919A372B900ADBE9F /* ABXVersion.m in Sources */,
+				ADAEAC5719ACB47B00519A20 /* ChameleonStatusBar.m in Sources */,
 				ADFB426D19A372B900ADBE9F /* ABXPromptView.m in Sources */,
 				ADFB427019A372B900ADBE9F /* ABXVersionTableViewCell.m in Sources */,
 				ADFB426019A372B900ADBE9F /* ABXFeedbackViewController.m in Sources */,
@@ -660,6 +699,8 @@
 				ADFB425E19A372B900ADBE9F /* ABXFAQsViewController.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
 				ADFB426E19A372B900ADBE9F /* ABXTextView.m in Sources */,
+				ADAEAC5B19ACB47B00519A20 /* UIViewController+Chameleon.m in Sources */,
+				ADAEAC5819ACB47B00519A20 /* NSArray+Chameleon.m in Sources */,
 				9273CB041940990200696E8E /* SupportInstructionsViewController.m in Sources */,
 				ADFB426C19A372B900ADBE9F /* ABXNotificationView.m in Sources */,
 				ADFB425819A372B900ADBE9F /* NSDictionary+ABXQueryString.m in Sources */,
@@ -669,6 +710,7 @@
 				ADFB426819A372B900ADBE9F /* ABXNotification.m in Sources */,
 				AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */,
 				ADFB425D19A372B900ADBE9F /* ABXBaseListViewController.m in Sources */,
+				ADAEAC5919ACB47B00519A20 /* UIColor+Chameleon.m in Sources */,
 				ADFB425919A372B900ADBE9F /* NSString+ABXLocalized.m in Sources */,
 				ADFB426719A372B900ADBE9F /* ABXModel.m in Sources */,
 				ADFB426219A372B900ADBE9F /* ABXNotificationsViewController.m in Sources */,

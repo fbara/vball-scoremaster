@@ -22,9 +22,10 @@
     
     [GBVersionTracking track];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
+    [[UINavigationBar appearance] setBarTintColor:FlatBlue];
+    [[UINavigationBar appearance] setTintColor:ContrastColorOf(FlatBlue, TRUE)];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: ContrastColorOf(FlatBlue, TRUE)}];
+    //[[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
     
     //Initialize AppbotX info
     [[ABXApiClient instance] setApiKey:@"5b0feb30a4f023f3897789f9b38ab62304ee4790"];

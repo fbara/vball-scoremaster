@@ -12,8 +12,8 @@
 #import "GBVersionTracking.h"
 #import "GAIDictionaryBuilder.h"
 //??? Hide Social code for this version
-//#import <Accounts/Accounts.h>
-//#import <Social/Social.h>
+//@import Social;
+//@import Accounts;
 
 NSString *const EMBED_HOME = @"embedHome";
 NSString *const EMBED_VISITOR = @"embedVisitor";
@@ -26,6 +26,9 @@ NSString *msgVisitor = @"VISITOR";
 NSString *textMessage;
 UIImage *screenImage;
 static NSString* const kiTunesID = @"886670213";
+//Score number font size for each device
+CGFloat const ipadScoreFont = 200.0f;
+CGFloat const iphoneScoreFont = 120.0f;
 
 
 @interface VolleyBallViewController ()
@@ -76,11 +79,20 @@ static NSString* const kiTunesID = @"886670213";
     
     //Set the Google Analytics Screen name
     self.screenName = @"Scoring";
+
     
-    //Initiaize all the UI elements
-    [self initializeHomeScore:currHomeScore];
-    [self initializeVisitorScore:currVisitorScore];
-    [self resetGameAndNames];
+    //Initiaize all the UI elements depending on the device
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        CGFloat score = ipadScoreFont;
+        [self initializeHomeScore:currHomeScore fontSize:score];
+        [self initializeVisitorScore:currVisitorScore fontSize:score];
+        [self resetGameAndNames];
+    } else {
+        CGFloat score = iphoneScoreFont;
+        [self initializeHomeScore:currHomeScore fontSize:score];
+        [self initializeVisitorScore:currVisitorScore fontSize:score];
+        [self resetGameAndNames];
+    }
     
     //Set Delegate's and DataSource's
     self.visitingTeamName.delegate = self;
@@ -177,7 +189,6 @@ static NSString* const kiTunesID = @"886670213";
         
     }
     
-
 }
 
 - (void)goToSettings
@@ -202,11 +213,12 @@ static NSString* const kiTunesID = @"886670213";
     }
 }
 
-- (void)initializeHomeScore:(int)score
+- (void)initializeHomeScore:(int)score fontSize:(CGFloat)scoreSize
 {
     self.homeColor = [self colorHomeScoreView];
     DefaultScoreViewController *homeScoreViewController = [self createViewControllersForScore:score
-                                                                             withColor:self.homeColor];
+                                                                             withColor:self.homeColor
+                                                                                     fontSize:scoreSize];
     self.homePageViewController.dataSource = self;
     [self.homePageViewController setViewControllers:@[homeScoreViewController]
                                           direction:UIPageViewControllerNavigationDirectionForward
@@ -214,11 +226,12 @@ static NSString* const kiTunesID = @"886670213";
                                          completion:nil];
 }
 
-- (void)initializeVisitorScore:(int)score
+- (void)initializeVisitorScore:(int)score fontSize:(CGFloat)scoreSize
 {
     self.visitorColor = [self colorVisitorScoreView];
     DefaultScoreViewController *visitorScoreViewController = [self createViewControllersForScore:score
-                                                                                withColor:self.visitorColor];
+                                                                                withColor:self.visitorColor
+                                                              fontSize:scoreSize];
     self.visitorPageViewController.dataSource = self;
     [self.visitorPageViewController setViewControllers:@[visitorScoreViewController]
                                              direction:UIPageViewControllerNavigationDirectionForward
@@ -227,7 +240,7 @@ static NSString* const kiTunesID = @"886670213";
     
 }
 
-- (DefaultScoreViewController *)createViewControllersForScore:(int)score withColor:(UIColor *)color
+- (DefaultScoreViewController *)createViewControllersForScore:(int)score withColor:(UIColor *)color fontSize:(CGFloat)scoreSize
 {
     //Create a new scoreViewController and initialize it with 'nil',
     //that will create one with a xib of the same name
@@ -237,6 +250,7 @@ static NSString* const kiTunesID = @"886670213";
     //Set the properties of the score view
     newScoreViewController.view.backgroundColor = color;
     newScoreViewController.score = score;
+    [newScoreViewController setScoreNumberSize:scoreSize];
     
     return newScoreViewController;
 }
@@ -250,7 +264,11 @@ static NSString* const kiTunesID = @"886670213";
         colorHome = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theHomeData];
     } else {
         colorHome = [UIColor blueColor];
+        
     }
+    self.homeTeamName.backgroundColor = ComplementaryFlatColorOf(colorHome);
+    self.homeTeamName.textColor = ContrastColorOf(self.homeTeamName.backgroundColor, TRUE);
+
     return colorHome;
 }
 
@@ -264,6 +282,9 @@ static NSString* const kiTunesID = @"886670213";
     } else {
         colorVisitor = [UIColor orangeColor];
     }
+    self.visitingTeamName.backgroundColor = ComplementaryFlatColorOf(colorVisitor);
+    self.visitingTeamName.textColor = ContrastColorOf(self.visitingTeamName.backgroundColor, TRUE);
+    
     return colorVisitor;
 }
 
@@ -285,16 +306,22 @@ static NSString* const kiTunesID = @"886670213";
     [super viewWillAppear:animated];
     
     //Update the scoreview's colors in case they were changed in Settings
-    [self initializeVisitorScore:currVisitorScore];
-    [self initializeHomeScore:currHomeScore];
+    //Initiaize all the UI elements depending on the device
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self initializeHomeScore:currHomeScore fontSize:188];
+        [self initializeVisitorScore:currVisitorScore fontSize:188];
+        [self resetGameAndNames];
+    } else {
+        [self initializeHomeScore:currHomeScore fontSize:118];
+        [self initializeVisitorScore:currVisitorScore fontSize:118];
+        [self resetGameAndNames];
+    }
+
     
     //Get the Action Names
     [self loadActionNames];
     
     //Format the circular button around the VBall
-    [self formatVBallButton];
-
-    //Create button circle around VBall
     [self formatVBallButton];
 
 
@@ -308,10 +335,10 @@ static NSString* const kiTunesID = @"886670213";
 
 #pragma mark - UI Elements
 
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
+//-(UIStatusBarStyle)preferredStatusBarStyle
+//{
+//    return UIStatusBarStyleLightContent;
+//}
 
 - (void)loadActionNames
 {
@@ -532,9 +559,9 @@ static NSString* const kiTunesID = @"886670213";
 {
     //If running on iPad, use these settings
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.sendMessageImage.frame = CGRectMake(452.0, 302.0, 100.0, 100.0);
+        self.sendMessageImage.frame = CGRectMake(472.0, 277.0, 80.0, 80.0);
         self.sendMessageImage.clipsToBounds = YES;
-        self.sendMessageImage.layer.cornerRadius = 80;
+        self.sendMessageImage.layer.cornerRadius = 40;
         self.sendMessageImage.layer.masksToBounds = YES;
     } else {
         //Running on iPhone or iPod
@@ -608,8 +635,14 @@ static NSString* const kiTunesID = @"886670213";
     if (lableNum <= 4) {
         self.gameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
         //Reset the scores to start a new game
-        [self initializeHomeScore:0];
-        [self initializeVisitorScore:0];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            [self initializeHomeScore:0 fontSize:188];
+            [self initializeVisitorScore:0 fontSize:188];
+        } else {
+            [self initializeHomeScore:0 fontSize:118];
+            [self initializeVisitorScore:0 fontSize:118];
+        }
+
         
     } else {
         self.gameNumber.text = [NSString stringWithFormat:@"%d", 0];
@@ -879,8 +912,15 @@ static NSString* const kiTunesID = @"886670213";
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex != 0) {
-        [self initializeHomeScore:0];
-        [self initializeVisitorScore:0];
+        //Initiaize all the UI elements depending on the device
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            [self initializeHomeScore:0 fontSize:188];
+            [self initializeVisitorScore:0 fontSize:188];
+        } else {
+            [self initializeHomeScore:0 fontSize:118];
+            [self initializeVisitorScore:0 fontSize:118];
+        }
+        
         [self resetGameAndNames];
         [self initializePastGames];
 
@@ -940,28 +980,42 @@ static NSString* const kiTunesID = @"886670213";
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-        //Cast the viewController as a ScoreViewController so we can act on its properties
-        DefaultScoreViewController *oldViewController = (DefaultScoreViewController *)viewController;
+    //Cast the viewController as a ScoreViewController so we can act on its properties
+    DefaultScoreViewController *oldViewController = (DefaultScoreViewController *)viewController;
+    
+    //Check the score, if it's more than 99, don't let the number get any higher
+    if (oldViewController.score == 99) {
+        return nil;
+    }
+    //Create a new scoreViewController
+    DefaultScoreViewController *newViewController = [[DefaultScoreViewController alloc] init];
+
+    //Determine what device we're on and set font size appropriately
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        newViewController = [self createViewControllersForScore:0
+                                                      withColor:ClearColor
+                                                       fontSize:ipadScoreFont];
+    } else {
+        newViewController = [self createViewControllersForScore:0
+                                                      withColor:ClearColor
+                                                       fontSize:iphoneScoreFont];
+    }
+    
+    //Setup the new view controller with the new, higher score
+    //DefaultScoreViewController *newViewController = [self createViewControllersForScore:0
+    //                                                                   withColor:[UIColor clearColor]
+    //                                                 fontSize: ];
+    newViewController.score = oldViewController.score + 1;
+    
+    //Check to see which view controller we're updating so the background color can be set correctly
+    if (pageViewController == _homePageViewController) {
+        //Home team score changing
+        newViewController.view.backgroundColor = self.homeColor;
         
-        //Check the score, if it's more than 99, don't let the number get any higher
-        if (oldViewController.score == 99) {
-            return nil;
-        }
-        
-        //Setup the new view controller with the new, higher score
-        DefaultScoreViewController *newViewController = [self createViewControllersForScore:0
-                                                                           withColor:[UIColor clearColor]];
-        newViewController.score = oldViewController.score + 1;
-        
-        //Check to see which view controller we're updating so the background color can be set correctly
-        if (pageViewController == _homePageViewController) {
-            //Home team score changing
-            newViewController.view.backgroundColor = self.homeColor;
-            
-        } else {
-           //Visitor team score changing
-            newViewController.view.backgroundColor = self.visitorColor;
-        }
+    } else {
+       //Visitor team score changing
+        newViewController.view.backgroundColor = self.visitorColor;
+    }
     
     return newViewController;
 }
@@ -977,10 +1031,23 @@ static NSString* const kiTunesID = @"886670213";
         return nil;
     }
     
-    //Setup the new view controller with the new, higher score
-    DefaultScoreViewController *newViewController = [self createViewControllersForScore:0
-                                                                              withColor:[UIColor clearColor]];
+    //Create a new scoreViewController
+    DefaultScoreViewController *newViewController = [[DefaultScoreViewController alloc] init];
     
+    //Determine what device we're on and set font size appropriately
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        newViewController = [self createViewControllersForScore:0
+                                                      withColor:ClearColor
+                                                       fontSize:ipadScoreFont];
+    } else {
+        newViewController = [self createViewControllersForScore:0
+                                                      withColor:ClearColor
+                                                       fontSize:iphoneScoreFont];
+    }
+    //Setup the new view controller with the new, higher score
+//    DefaultScoreViewController *newViewController = [self createViewControllersForScore:0
+//                                                                              withColor:[UIColor clearColor]];
+//    
     newViewController.score = oldViewController.score - 1;
     
     //Check to see which view controller we're updating so the background color can be set correctly

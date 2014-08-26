@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface DefaultScoreViewController : UIViewController
+
 @property (nonatomic)int score;
+
+- (void)setScoreNumberSize:(CGFloat)numberSize;
 
 @end

@@ -25,6 +25,8 @@
 {
     NSString *firstStartTime;
 }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-variable"
 
 #pragma mark - View Methods
 
@@ -285,6 +287,8 @@
     colorHome = self.homeTeamColor.backgroundColor;
     NSData *colorHomeData = [NSKeyedArchiver archivedDataWithRootObject:colorHome];
     [defaults setObject:colorHomeData forKey:@"homeTeamColor"];
+    //Set the complementary team name color
+    
     
     //Set the visiting team color
     UIColor *colorVisitor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
@@ -323,12 +327,14 @@
 
 - (UIColor *)getRandomColor
 {
-    int r = arc4random() % 255;
-    int g = arc4random() % 255;
-    int b = arc4random() % 255;
-    int a = arc4random() % 255;
+//    int r = arc4random() % 255;
+//    int g = arc4random() % 255;
+//    int b = arc4random() % 255;
+//    int a = arc4random() % 255;
     
-    UIColor *color = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:a/1.0];
+    //UIColor *color = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:a/1.0];
+    //Use Chameleon to return random flat color
+    UIColor *color = RandomFlatColor;
     return color;
 }
 
@@ -692,5 +698,5 @@
     return false;
 }
 
-
+#pragma clang diagnostic pop
 @end
