@@ -324,7 +324,6 @@ CGFloat const iphoneScoreFont = 120.0f;
     //Format the circular button around the VBall
     [self formatVBallButton];
 
-
 //??? Hide Social code for this version
 /*
     [self enableSocialButtons];

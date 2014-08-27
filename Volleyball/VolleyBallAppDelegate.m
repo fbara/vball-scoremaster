@@ -35,7 +35,9 @@
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+//??? Put real tracker number back
+    //id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
     
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
         UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Google Analytics" message:@"With your permission usage information will be collected to improve the application.\n\nNo personal information will be collected and you can opt out at any time from Settings." delegate:self cancelButtonTitle:@"Opt Out" otherButtonTitles:@"Opt In", nil];
@@ -57,6 +59,7 @@
         case 1:
             [[GAI sharedInstance] setOptOut:NO];
             [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
+            
             break;
         default:
             break;
