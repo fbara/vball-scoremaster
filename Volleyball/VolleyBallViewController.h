@@ -35,6 +35,8 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *pastScoreCollection;
 @property (weak, nonatomic) IBOutlet UILabel *rightActionNameNumber;
 @property (weak, nonatomic) IBOutlet UILabel *leftActionNameNumber;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
+
 //??? Hide Social code for this version
 //@property (weak, nonatomic) IBOutlet UIButton *mainPageTwitterButton;
 //@property (weak, nonatomic) IBOutlet UIButton *mainPageFacebookButton;
@@ -43,7 +45,7 @@
 @property UISwipeGestureRecognizer *homeSwipeGesture;
 @property UISwipeGestureRecognizer *visitingSwipeGesture;
 
-
+- (IBAction)goToSettings:(UIBarButtonItem *)sender;
 - (IBAction)leftActionLongPress:(UILongPressGestureRecognizer *)recognizer;
 - (IBAction)rightActionLongPress:(UILongPressGestureRecognizer *)recognizer;
 

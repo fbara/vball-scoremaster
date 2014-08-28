@@ -30,7 +30,6 @@ static NSString* const kiTunesID = @"886670213";
 CGFloat const ipadScoreFont = 200.0f;
 CGFloat const iphoneScoreFont = 120.0f;
 
-
 @interface VolleyBallViewController ()
 
 @property (weak, atomic)UIPageViewController *homePageViewController;
@@ -74,6 +73,7 @@ CGFloat const iphoneScoreFont = 120.0f;
     //If so, run tutorial.  If not, don't run turorial.
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
 //TODO Put tutorial back in
+//TODO Update tutorial for new screens
         //[self performSegueWithIdentifier:@"showTutorial" sender:self];
     }
     
@@ -103,11 +103,11 @@ CGFloat const iphoneScoreFont = 120.0f;
     self.homePageViewController.delegate = self;
     
     //Create bar button items and add them to the navigation bar
-    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:@"Settings"
-                                       style:UIBarButtonItemStyleBordered
-                                       target:self
-                                       action:@selector(goToSettings)];
+//    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc]
+//                                       initWithTitle:@"Settings"
+//                                       style:UIBarButtonItemStyleBordered
+//                                       target:self
+//                                       action:@selector(goToSettings)];
     UIImage *image = [UIImage imageNamed:@"Info44.png"];
     UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
                                    initWithImage:image
@@ -119,7 +119,7 @@ CGFloat const iphoneScoreFont = 120.0f;
                                    target:self
                                    action:nil];
     fixedSpace.width = 20.0f;
-    NSArray *barButtonItems = @[settingsButton,fixedSpace, infoButton];
+    NSArray *barButtonItems = @[self.settingsButton,fixedSpace, infoButton];
     self.navigationItem.rightBarButtonItems = barButtonItems;
     
     
@@ -191,10 +191,43 @@ CGFloat const iphoneScoreFont = 120.0f;
     
 }
 
-- (void)goToSettings
+- (void)viewWillAppear:(BOOL)animated
 {
-    //Segue to Settings View
-    [self performSegueWithIdentifier:@"settingsView" sender:self];
+    [super viewWillAppear:animated];
+    
+    //Update the scoreview's colors in case they were changed in Settings
+    //Initiaize all the UI elements depending on the device
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self initializeHomeScore:currHomeScore fontSize:188];
+        [self initializeVisitorScore:currVisitorScore fontSize:188];
+        [self resetGameAndNames];
+    } else {
+        [self initializeHomeScore:currHomeScore fontSize:118];
+        [self initializeVisitorScore:currVisitorScore fontSize:118];
+        [self resetGameAndNames];
+    }
+    
+    
+    //Get the Action Names
+    [self loadActionNames];
+    
+    //Format the circular button around the VBall
+    [self formatVBallButton];
+    
+    //Format the window background color
+    [self windowBackgroundColor];
+    
+    //??? Hide Social code for this version
+    /*
+     [self enableSocialButtons];
+     */
+    
+}
+
+- (IBAction)goToSettings:(UIBarButtonItem *)sender
+{
+        //Segue to Settings View
+       [self performSegueWithIdentifier:@"settingsView" sender:self];
 
 }
 
@@ -224,6 +257,7 @@ CGFloat const iphoneScoreFont = 120.0f;
                                           direction:UIPageViewControllerNavigationDirectionForward
                                            animated:NO
                                          completion:nil];
+ 
 }
 
 - (void)initializeVisitorScore:(int)score fontSize:(CGFloat)scoreSize
@@ -255,37 +289,77 @@ CGFloat const iphoneScoreFont = 120.0f;
     return newScoreViewController;
 }
 
+#pragma mark - Color Settings
+
 - (UIColor *)colorHomeScoreView
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     //Get home team background colors
     UIColor *colorHome = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
-    NSData *theHomeData = [[NSUserDefaults standardUserDefaults] dataForKey:@"homeTeamColor"];
+    NSData *theHomeData = [defaults dataForKey:@"homeTeamColor"];
     if (theHomeData != nil) {
         colorHome = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theHomeData];
     } else {
         colorHome = [UIColor blueColor];
         
     }
-    self.homeTeamName.backgroundColor = ComplementaryFlatColorOf(colorHome);
-    self.homeTeamName.textColor = ContrastColorOf(self.homeTeamName.backgroundColor, TRUE);
-
+    
+    NSString *color = [defaults stringForKey:@"colorSettings"];
+    
+    if ([color isEqualToString:@"Complementary"]) {
+        self.homeTeamName.backgroundColor = ComplementaryFlatColorOf(colorHome);
+        //Set the team name text color to a contrasting color
+        self.homeTeamName.textColor = ContrastColorOf(self.homeTeamName.backgroundColor, TRUE);
+    } else {
+        self.homeTeamName.backgroundColor = [UIColor whiteColor];
+        self.homeTeamName.textColor = [UIColor blackColor];
+    }
+    
     return colorHome;
 }
 
 - (UIColor *)colorVisitorScoreView
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     //Get visiting team background colors
     UIColor *colorVisitor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
-    NSData *theVisitorData = [[NSUserDefaults standardUserDefaults] dataForKey:@"visitorTeamColor"];
+    NSData *theVisitorData = [defaults dataForKey:@"visitorTeamColor"];
     if (theVisitorData != nil) {
         colorVisitor = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theVisitorData];
     } else {
         colorVisitor = [UIColor orangeColor];
     }
-    self.visitingTeamName.backgroundColor = ComplementaryFlatColorOf(colorVisitor);
-    self.visitingTeamName.textColor = ContrastColorOf(self.visitingTeamName.backgroundColor, TRUE);
+    
+    NSString *color = [defaults stringForKey:@"colorSettings"];
+    
+    if ([color isEqualToString:@"Complementary"]) {
+        self.visitingTeamName.backgroundColor = ComplementaryFlatColorOf(colorVisitor);
+        self.visitingTeamName.textColor = ContrastColorOf(self.visitingTeamName.backgroundColor, TRUE);
+        
+    } else {
+        self.visitingTeamName.backgroundColor = [UIColor whiteColor];
+        self.visitingTeamName.textColor = [UIColor blackColor];
+
+    }
     
     return colorVisitor;
+}
+
+/*!
+ *  Sets the color of the main window based on user preference
+ */
+- (void)windowBackgroundColor
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([[defaults objectForKey:@"colorSettings"] isEqualToString:@"Complementary"]) {
+        //Set windows background color to flatSand
+        self.view.backgroundColor = FlatSand;
+    } else {
+        self.view.backgroundColor = FlatWhite;
+    }
 }
 
 - (void)resetGameAndNames
@@ -299,36 +373,6 @@ CGFloat const iphoneScoreFont = 120.0f;
     currHomeScore = 0;
     currVisitorScore = 0;
     [self initializePastGames];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    //Update the scoreview's colors in case they were changed in Settings
-    //Initiaize all the UI elements depending on the device
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [self initializeHomeScore:currHomeScore fontSize:188];
-        [self initializeVisitorScore:currVisitorScore fontSize:188];
-        [self resetGameAndNames];
-    } else {
-        [self initializeHomeScore:currHomeScore fontSize:118];
-        [self initializeVisitorScore:currVisitorScore fontSize:118];
-        [self resetGameAndNames];
-    }
-
-    
-    //Get the Action Names
-    [self loadActionNames];
-    
-    //Format the circular button around the VBall
-    [self formatVBallButton];
-
-//??? Hide Social code for this version
-/*
-    [self enableSocialButtons];
-*/
-    
 }
 
 
@@ -559,16 +603,16 @@ CGFloat const iphoneScoreFont = 120.0f;
     //If running on iPad, use these settings
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.sendMessageImage.frame = CGRectMake(472.0, 277.0, 80.0, 80.0);
-        self.sendMessageImage.clipsToBounds = YES;
-        self.sendMessageImage.layer.cornerRadius = 40;
-        self.sendMessageImage.layer.masksToBounds = YES;
+        //self.sendMessageImage.layer.cornerRadius = 40;
     } else {
         //Running on iPhone or iPod
-        self.sendMessageImage.frame = CGRectMake(240.0, 140.0, 80.0, 80.0);
-        self.sendMessageImage.clipsToBounds = YES;
-        self.sendMessageImage.layer.cornerRadius = 40;
-        self.sendMessageImage.layer.masksToBounds = YES;
+        self.sendMessageImage.frame = CGRectMake(238.0, 149.0, 87.0, 87.0);
+        //self.sendMessageImage.layer.cornerRadius = 40;
     }
+    self.sendMessageImage.layer.cornerRadius = self.sendMessageImage.frame.size.width / 2.0f;
+    self.sendMessageImage.clipsToBounds = YES;
+    self.sendMessageImage.layer.masksToBounds = YES;
+
 }
 
 /*!

@@ -53,6 +53,9 @@
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
     
+    //Set the switch for color settings
+    
+    
 //??? Hide Social code for this version
 /*
     //Set the Twitter switch if messages will be sent
@@ -86,14 +89,16 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     
+    [super viewWillAppear:animated];
+
     //Is this the first time running this VC?
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     firstStartTime = [defaults stringForKey:@"firstStartTime"];
     
     if ([firstStartTime length] < 1) {
         //First time starting this VC. Set initial score background colors
-        self.homeTeamColor.backgroundColor = [UIColor blueColor];
-        self.visitingTeamColor.backgroundColor = [UIColor orangeColor];
+        self.homeTeamColor.backgroundColor = FlatBlue;
+        self.visitingTeamColor.backgroundColor = FlatOrange;
         [defaults setObject:@"No" forKey:@"firstStartTime"];
     } else {
         //Get the saved score background colors
@@ -120,6 +125,13 @@
     } else {
         [self.analyticsSwitch setSelectedSegmentIndex:1];
     }
+    
+    //Set the selected segment for color settings
+    if ([[self getColorSettings] isEqualToString:@"Complementary"]) {
+        [self.colorSettings setSelectedSegmentIndex:0];
+    } else {
+        [self.colorSettings setSelectedSegmentIndex:2];
+    }
 
 //???  Removing Social code for this version
 /*
@@ -138,7 +150,6 @@
     }
 */
     
-    [super viewWillAppear:animated];
 
 }
 
@@ -150,6 +161,7 @@
     [self saveActionNames:self.leftActionNameSelected.text secondName:self.rightActionNameSelected.text];
     [self notificationSwitch:self.sendNotificationSwitch];
     [self sendAnalytics:self.analyticsSwitch];
+    [self colorSettings:self.colorSettings];
 //??? Remove Social code for this version, to be added as IAP
 //    [self sendWithFacebook:self.facebookSwitch];
 //    [self sendWithTwitter:self.twitterSwitch];
@@ -308,9 +320,7 @@
 - (IBAction)homeTeamBackgroundColor:(id)sender
 {
     //Change the button background color each time the button is tapped
-    UIColor *homeButtonColor;
-    homeButtonColor = [self getRandomColor];
-    self.homeTeamColor.backgroundColor = homeButtonColor;
+    self.homeTeamColor.backgroundColor = RandomFlatColor;
 }
 
 /*!
@@ -320,22 +330,7 @@
 - (IBAction)visitingTeamBackgroundColor:(id)sender
 {
     //Change the button background color each time the button is tapped
-    UIColor *visitingButtonColor;
-    visitingButtonColor = [self getRandomColor];
-    self.visitingTeamColor.backgroundColor = visitingButtonColor;
-}
-
-- (UIColor *)getRandomColor
-{
-//    int r = arc4random() % 255;
-//    int g = arc4random() % 255;
-//    int b = arc4random() % 255;
-//    int a = arc4random() % 255;
-    
-    //UIColor *color = [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:a/1.0];
-    //Use Chameleon to return random flat color
-    UIColor *color = RandomFlatColor;
-    return color;
+    self.visitingTeamColor.backgroundColor = RandomFlatColor;
 }
 
 #pragma mark - FAQ
@@ -406,6 +401,36 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     return [defaults stringForKey:@"enableNotifications"];
+}
+
+#pragma mark - Color Switch
+
+- (IBAction)colorSettings:(UISegmentedControl *)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
+    
+    //Save the selected color segment
+    switch (selectedSegmentIndex) {
+        case 0:
+            //Complementary colors
+            [defaults setObject:@"Complementary" forKey:@"colorSettings"];
+            break;
+        case 1:
+            //No special color scheme
+            [defaults setObject:@"Off" forKey:@"colorSettings"];
+            break;
+        default:
+            break;
+    }
+    [self saveUserDefaults];
+}
+
+- (NSString *)getColorSettings
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    return [defaults stringForKey:@"colorSettings"];
 }
 
 #pragma mark - Social Sharing Switches

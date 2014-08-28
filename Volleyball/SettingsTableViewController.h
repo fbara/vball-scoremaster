@@ -24,6 +24,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *leftActionNameSelected;
 @property (strong, nonatomic) IBOutlet UILabel *rightActionNameSelected;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *analyticsSwitch;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *colorSettings;
+
 //??? Hide Social code for this version
 /*
 @property (weak, nonatomic) IBOutlet UISegmentedControl *twitterSwitch;
@@ -36,6 +38,8 @@
 - (IBAction)notificationSwitch:(id)sender;
 - (IBAction)textFieldReturn:(id)sender;
 - (IBAction)sendAnalytics:(UISegmentedControl *)sender;
+- (IBAction)colorSettings:(UISegmentedControl *)sender;
+
 //??? Remove Social code for this version
 //- (IBAction)sendWithFacebook:(UISegmentedControl *)sender;
 //- (IBAction)sendWithTwitter:(UISegmentedControl *)sender;
