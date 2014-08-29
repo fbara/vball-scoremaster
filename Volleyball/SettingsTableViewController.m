@@ -53,9 +53,6 @@
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
     
-    //Set the switch for color settings
-    
-    
 //??? Hide Social code for this version
 /*
     //Set the Twitter switch if messages will be sent
@@ -165,14 +162,12 @@
 //??? Remove Social code for this version, to be added as IAP
 //    [self sendWithFacebook:self.facebookSwitch];
 //    [self sendWithTwitter:self.twitterSwitch];
-
+    
+    //Set the notification when Settings is done
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsDone"
+                                                        object:self];
+    
     [super viewWillDisappear:animated];
-}
-
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    //Set the UINavigation color
-    return UIStatusBarStyleLightContent;
 }
 
 - (BOOL)canBecomeFirstResponder { return YES; }

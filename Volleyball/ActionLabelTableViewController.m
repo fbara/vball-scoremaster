@@ -120,6 +120,10 @@
    // select new
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     self.selectedActionName = cell.textLabel.text;
+    
+    //If on the iPad, selecting a row will take you out of this view
+    //[self.navigationController dismissViewControllerAnimated:TRUE completion:nil];
+    
 
 }
 

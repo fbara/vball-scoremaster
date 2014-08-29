@@ -360,7 +360,7 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                         <outletCollection property="pastScoreCollection" destination="mi0-YI-UNY" id="Tw4-My-X3t"/>
                         <segue destination="vSD-dS-WPV" kind="push" identifier="infoView" id="KBw-Ku-jMI"/>
                         <segue destination="TO8-Ip-hl0" kind="modal" identifier="showTutorial" modalTransitionStyle="coverVertical" id="BdP-S3-kPV"/>
-                        <segue destination="JoG-uN-Xre" kind="popover" identifier="settingsView" popoverAnchorView="jML-Et-saV" id="aZo-GW-u3s">
+                        <segue destination="JoG-uN-Xre" kind="popover" identifier="settingsView" popoverAnchorBarButtonItem="7HO-2n-on3" id="aZo-GW-u3s">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
@@ -487,7 +487,7 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqx-uR-HLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZIU-kI-E0M" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2146" y="-1754"/>
+            <point key="canvasLocation" x="2188" y="-2014"/>
         </scene>
         <!--Settings Table View Controller - Settings-->
         <scene sceneID="dge-Dz-h61">
@@ -919,7 +919,7 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTi-Ye-IZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2163" y="-1234"/>
+            <point key="canvasLocation" x="2178" y="-1015"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dxk-2S-oBG">

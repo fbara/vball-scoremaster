@@ -69,6 +69,13 @@ CGFloat const iphoneScoreFont = 120.0f;
     self.baralabsURL = [NSURL URLWithString:@"www.baralabs.com"];
     
     
+    //Register for notifications from SettingsTableViewController
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(viewWillAppear:)
+                                                 name:@"SettingsDone"
+                                               object:nil];
+    
+    
     //Check if this is the first time the app has run.
     //If so, run tutorial.  If not, don't run turorial.
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
@@ -224,11 +231,19 @@ CGFloat const iphoneScoreFont = 120.0f;
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [super viewWillDisappear:animated];
+}
+
+
+
 - (IBAction)goToSettings:(UIBarButtonItem *)sender
 {
         //Segue to Settings View
        [self performSegueWithIdentifier:@"settingsView" sender:self];
-
 }
 
 - (void)showInfoView
