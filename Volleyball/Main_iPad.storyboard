@@ -444,7 +444,7 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
             <objects>
                 <tableViewController title="Action Names" id="47K-Gk-dz7" customClass="ActionLabelTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="40" sectionHeaderHeight="5" sectionFooterHeight="10" id="aoN-G2-Kxd">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -481,13 +481,14 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="540" height="350"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqx-uR-HLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZIU-kI-E0M" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2188" y="-2014"/>
+            <point key="canvasLocation" x="2195" y="-2004"/>
         </scene>
         <!--Settings Table View Controller - Settings-->
         <scene sceneID="dge-Dz-h61">
@@ -796,8 +797,9 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                         <outletCollection property="settingsButtons" destination="43Z-fe-naI" id="Sva-C6-yfT"/>
                         <outletCollection property="settingsLabels" destination="14N-xf-D4v" id="4f0-ls-yYQ"/>
                         <outletCollection property="settingsLabels" destination="j4T-AC-mQX" id="cu7-qn-bCm"/>
-                        <segue destination="47K-Gk-dz7" kind="modal" identifier="actionNameView" modalPresentationStyle="currentContext" id="dFo-TN-btU"/>
-                        <segue destination="h9W-pw-aPc" kind="modal" identifier="supportView" modalPresentationStyle="currentContext" id="6hc-xD-JBH"/>
+                        <segue destination="47K-Gk-dz7" kind="popover" identifier="actionNameView" popoverAnchorView="OsV-V0-0Jc" id="qtY-bs-YLA">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c88-HG-OSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -916,6 +918,7 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                     </tableView>
                     <navigationItem key="navigationItem" id="BNV-Hv-UO8"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTi-Ye-IZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

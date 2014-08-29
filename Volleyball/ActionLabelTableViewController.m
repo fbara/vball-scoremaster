@@ -122,7 +122,7 @@
     self.selectedActionName = cell.textLabel.text;
     
     //If on the iPad, selecting a row will take you out of this view
-    //[self.navigationController dismissViewControllerAnimated:TRUE completion:nil];
+    [self.navigationController dismissViewControllerAnimated:TRUE completion:nil];
     
 
 }
