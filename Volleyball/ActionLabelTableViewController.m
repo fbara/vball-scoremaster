@@ -8,9 +8,6 @@
 
 #import "ActionLabelTableViewController.h"
 
-@interface ActionLabelTableViewController ()
-
-@end
 
 @implementation ActionLabelTableViewController
 
@@ -74,6 +71,17 @@
     //Load the row the user has already selected & put a checkmark by it
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        if ([self.delegate respondsToSelector:@selector(actionNameSelected:)]) {
+            [self.delegate actionNameSelected:self.selectedActionName];
+        }
+    }
+    
+    [super viewWillDisappear:animated];
+}
+
 - (int)getRowForName:(NSString *)selectedName
 {
     //Return the index row for the name passed in
@@ -121,9 +129,6 @@
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     self.selectedActionName = cell.textLabel.text;
     
-    //If on the iPad, selecting a row will take you out of this view
-    [self.navigationController dismissViewControllerAnimated:TRUE completion:nil];
-    
 
 }
 
@@ -134,7 +139,11 @@
     sectionHeader.backgroundColor = [UIColor clearColor];
     sectionHeader.font = [UIFont systemFontOfSize:14];
     sectionHeader.textColor = [UIColor darkGrayColor];
-    sectionHeader.text = @"   SELECT AN ACTION NAME THEN TAP 'SAVE'";
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        sectionHeader.text = @"   SELECT AN ACTION NAME";
+    } else {
+        sectionHeader.text = @"   SELECT AN ACTION NAME THEN TAP 'SAVE'";
+    }
     return sectionHeader;
 }
 

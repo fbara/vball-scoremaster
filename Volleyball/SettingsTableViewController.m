@@ -18,6 +18,7 @@
 @property int actionRow;
 @property NSString *existingRightActionName;
 @property NSString *existingLeftActionName;
+@property ActionLabelTableViewController *actionNameVC;
 
 @end
 
@@ -34,7 +35,15 @@
 {
     [super viewDidLoad];
     self.tableView.delegate = self;
-        
+    
+    //ActionName delegate for iPad on≥ly
+//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+//        self.actionNameVC = [[ActionLabelTableViewController alloc] init];
+//        self.actionNameVC.delegate = self;
+//        
+//        
+//    }
+    
     UIImage *image = [UIImage imageNamed:@"Info44.png"];
     
     UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
@@ -126,6 +135,8 @@
     //Set the selected segment for color settings
     if ([[self getColorSettings] isEqualToString:@"Complementary"]) {
         [self.colorSettings setSelectedSegmentIndex:0];
+    } else if ([[self getColorSettings] isEqualToString:@"Dark"]) {
+        [self.colorSettings setSelectedSegmentIndex:1];
     } else {
         [self.colorSettings setSelectedSegmentIndex:2];
     }
@@ -294,8 +305,6 @@
     colorHome = self.homeTeamColor.backgroundColor;
     NSData *colorHomeData = [NSKeyedArchiver archivedDataWithRootObject:colorHome];
     [defaults setObject:colorHomeData forKey:@"homeTeamColor"];
-    //Set the complementary team name color
-    
     
     //Set the visiting team color
     UIColor *colorVisitor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
@@ -412,6 +421,10 @@
             [defaults setObject:@"Complementary" forKey:@"colorSettings"];
             break;
         case 1:
+            //Dark colors
+            [defaults setObject:@"Dark" forKey:@"colorSettings"];
+            break;
+        case 2:
             //No special color scheme
             [defaults setObject:@"Off" forKey:@"colorSettings"];
             break;
@@ -576,13 +589,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - ActionName Delegate
+
+- (void)actionNameSelected:(NSString *)actionName
+{
+    [self setActionName:actionName];
+}
+
+
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"actionNameView"]) {
-        ActionLabelTableViewController *actionTVC = (ActionLabelTableViewController *)segue.destinationViewController;
-        actionTVC.selectedActionRow = self.actionRow;
+        self.actionNameVC = [[ActionLabelTableViewController alloc] init];
+        self.actionNameVC = segue.destinationViewController;
+        self.actionNameVC.delegate = self;
+        self.actionNameVC.selectedActionRow = self.actionRow;
     }
 }
 
@@ -590,21 +613,29 @@
 {
     if ([segue.sourceViewController isKindOfClass:[ActionLabelTableViewController class]]) {
         //Unwinding from Action Name VC
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-        ActionLabelTableViewController *actionNameTVC = segue.sourceViewController;
-        NSString *tempString = actionNameTVC.selectedActionName;
-        //Determine which Action Name row was selected prior to the segue
-        if (self.actionRow == 1) {
-            [defaults setObject:tempString forKey:@"leftActionName"];
-        } else {
-            [defaults setObject:tempString forKey:@"rightActionName"];
-        }
-        //Remove the row number from actionRow
-        self.actionRow = 0;
-        
-        [self saveUserDefaults];
+        self.actionNameVC = segue.sourceViewController;
+        [self setActionName:self.actionNameVC.selectedActionName];
     }
+}
+
+- (void)setActionName:(NSString *)name
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    //Determine which Action Name row was selected prior to the segue
+    if (self.actionRow == 1) {
+        [defaults setObject:name forKey:@"leftActionName"];
+    } else {
+        [defaults setObject:name forKey:@"rightActionName"];
+    }
+    //Remove the row number from actionRow
+    self.actionRow = 0;
+    
+    [self saveUserDefaults];
+    
+    //Refresh the popover values
+    [self viewWillAppear:TRUE];
+
 }
 
 #pragma mark - UITableView Delegate

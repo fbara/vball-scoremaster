@@ -25,7 +25,6 @@
     [[UINavigationBar appearance] setBarTintColor:FlatBlue];
     [[UINavigationBar appearance] setTintColor:ContrastColorOf(FlatBlue, TRUE)];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: ContrastColorOf(FlatBlue, TRUE)}];
-    //[[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
     
     //Initialize AppbotX info
     [[ABXApiClient instance] setApiKey:@"5b0feb30a4f023f3897789f9b38ab62304ee4790"];
@@ -35,7 +34,7 @@
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
-//??? Put real tracker number back
+//TODO Put real tracker number back
     //id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
     

@@ -27,7 +27,7 @@ NSString *textMessage;
 UIImage *screenImage;
 static NSString* const kiTunesID = @"886670213";
 //Score number font size for each device
-CGFloat const ipadScoreFont = 200.0f;
+CGFloat const ipadScoreFont = 220.0f;
 CGFloat const iphoneScoreFont = 120.0f;
 
 @interface VolleyBallViewController ()
@@ -67,14 +67,7 @@ CGFloat const iphoneScoreFont = 120.0f;
     
     //Set home URL for Twitter and Facebook messages
     self.baralabsURL = [NSURL URLWithString:@"www.baralabs.com"];
-    
-    
-    //Register for notifications from SettingsTableViewController
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(viewWillAppear:)
-                                                 name:@"SettingsDone"
-                                               object:nil];
-    
+
     
     //Check if this is the first time the app has run.
     //If so, run tutorial.  If not, don't run turorial.
@@ -207,11 +200,11 @@ CGFloat const iphoneScoreFont = 120.0f;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self initializeHomeScore:currHomeScore fontSize:188];
         [self initializeVisitorScore:currVisitorScore fontSize:188];
-        [self resetGameAndNames];
+        //[self resetGameAndNames];
     } else {
         [self initializeHomeScore:currHomeScore fontSize:118];
         [self initializeVisitorScore:currVisitorScore fontSize:118];
-        [self resetGameAndNames];
+        //[self resetGameAndNames];
     }
     
     
@@ -231,9 +224,22 @@ CGFloat const iphoneScoreFont = 120.0f;
     
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    //Register for notifications from SettingsTableViewController
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(viewWillAppear:)
+                                                 name:@"SettingsDone"
+                                               object:nil];
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"SettingsDone"
+                                                  object:nil];
     
     [super viewWillDisappear:animated];
 }
@@ -322,7 +328,7 @@ CGFloat const iphoneScoreFont = 120.0f;
     
     NSString *color = [defaults stringForKey:@"colorSettings"];
     
-    if ([color isEqualToString:@"Complementary"]) {
+    if ([color isEqualToString:@"Complementary"] || [color isEqualToString:@"Dark"]) {
         self.homeTeamName.backgroundColor = ComplementaryFlatColorOf(colorHome);
         //Set the team name text color to a contrasting color
         self.homeTeamName.textColor = ContrastColorOf(self.homeTeamName.backgroundColor, TRUE);
@@ -349,7 +355,7 @@ CGFloat const iphoneScoreFont = 120.0f;
     
     NSString *color = [defaults stringForKey:@"colorSettings"];
     
-    if ([color isEqualToString:@"Complementary"]) {
+    if ([color isEqualToString:@"Complementary"] || [color isEqualToString:@"Dark"]) {
         self.visitingTeamName.backgroundColor = ComplementaryFlatColorOf(colorVisitor);
         self.visitingTeamName.textColor = ContrastColorOf(self.visitingTeamName.backgroundColor, TRUE);
         
@@ -370,10 +376,20 @@ CGFloat const iphoneScoreFont = 120.0f;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ([[defaults objectForKey:@"colorSettings"] isEqualToString:@"Complementary"]) {
-        //Set windows background color to flatSand
         self.view.backgroundColor = FlatSand;
+        self.navigationController.navigationBar.barTintColor = FlatSkyBlue;
+        self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatSkyBlue, TRUE);
+        self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: ContrastColorOf(FlatSkyBlue, TRUE)};
+    } else if ([[defaults objectForKey:@"colorSettings"] isEqualToString:@"Dark"]) {
+        self.view.backgroundColor = FlatBlackDark;
+        self.navigationController.navigationBar.barTintColor = FlatBlackDark;
+        self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatBlack, TRUE);
+        self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: ContrastColorOf(FlatBlackDark, TRUE)};
     } else {
         self.view.backgroundColor = FlatWhite;
+        self.navigationController.navigationBar.barTintColor = FlatNavyBlue;
+        self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatNavyBlue, TRUE);
+        self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: ContrastColorOf(FlatNavyBlue, TRUE)};
     }
 }
 

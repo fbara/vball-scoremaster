@@ -898,7 +898,7 @@
 		92AA42D51916C2810037D405 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Volleyball.app/Volleyball";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VBall ScoreMaster.app/VBall ScoreMaster";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -920,7 +920,7 @@
 		92AA42D61916C2810037D405 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Volleyball.app/Volleyball";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VBall ScoreMaster.app/VBall ScoreMaster";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -995,7 +995,7 @@
 		ADFEAFB61941F52500CB5252 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Volleyball.app/Volleyball";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VBall ScoreMaster.app/VBall ScoreMaster";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
