@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dBP-CD-akZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dBP-CD-akZ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
-        <!--Instructions View Controller - Instructions-->
+        <!--Instructions-->
         <scene sceneID="0GH-Er-Ppm">
             <objects>
                 <viewController title="Instructions" id="vSD-dS-WPV" customClass="InstructionsViewController" sceneMemberID="viewController">
@@ -88,7 +89,6 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Instructions" id="Tjk-bY-piu"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -100,7 +100,7 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
             </objects>
             <point key="canvasLocation" x="1759" y="-180"/>
         </scene>
-        <!--Volley Ball View Controller - mainView-->
+        <!--mainView-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController title="mainView" id="vXZ-lx-hvc" customClass="VolleyBallViewController" sceneMemberID="viewController">
@@ -307,7 +307,6 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                         </subviews>
                         <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="VBall ScoreMaster" id="idF-JM-YX7">
                         <barButtonItem key="leftBarButtonItem" title="New match" id="blf-CM-yV6">
@@ -318,6 +317,7 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="7HO-2n-on3">
                             <connections>
                                 <action selector="goToSettings:" destination="vXZ-lx-hvc" id="tKB-Si-7FO"/>
+                                <segue destination="JoG-uN-Xre" kind="modal" identifier="settingsView" modalPresentationStyle="formSheet" id="nzJ-ia-09Z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -351,9 +351,6 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                         <outletCollection property="pastScoreCollection" destination="mi0-YI-UNY" id="Tw4-My-X3t"/>
                         <segue destination="vSD-dS-WPV" kind="push" identifier="infoView" id="KBw-Ku-jMI"/>
                         <segue destination="TO8-Ip-hl0" kind="modal" identifier="showTutorial" modalTransitionStyle="coverVertical" id="BdP-S3-kPV"/>
-                        <segue destination="JoG-uN-Xre" kind="popover" identifier="settingsView" popoverAnchorBarButtonItem="7HO-2n-on3" id="aZo-GW-u3s">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -370,7 +367,7 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
             </objects>
             <point key="canvasLocation" x="152" y="-937"/>
         </scene>
-        <!--Tutorial View Controller - Tutorial Main-->
+        <!--Tutorial Main-->
         <scene sceneID="o0h-Xb-kwA">
             <objects>
                 <viewController title="Tutorial Main" id="TO8-Ip-hl0" customClass="TutorialViewController" sceneMemberID="viewController">
@@ -387,7 +384,6 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
@@ -399,7 +395,7 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
             </objects>
             <point key="canvasLocation" x="152" y="82"/>
         </scene>
-        <!--Tutorial Settings View Controller - Tutorial Settings-->
+        <!--Tutorial Settings-->
         <scene sceneID="d5V-gg-hJE">
             <objects>
                 <viewController title="Tutorial Settings" id="MY6-dP-SYW" customClass="TutorialSettingsViewController" sceneMemberID="viewController">
@@ -416,7 +412,6 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="65m-uP-DJL"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -428,7 +423,7 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
             </objects>
             <point key="canvasLocation" x="164" y="1107"/>
         </scene>
-        <!--Action Label Table View Controller - Action Names-->
+        <!--Action Names-->
         <scene sceneID="S82-Dd-kqz">
             <objects>
                 <tableViewController title="Action Names" id="47K-Gk-dz7" customClass="ActionLabelTableViewController" sceneMemberID="viewController">
@@ -436,7 +431,6 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                         <rect key="frame" x="0.0" y="0.0" width="540" height="350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="IEc-eP-Hpp" rowHeight="40" style="IBUITableViewCellStyleDefault" id="hX2-1v-W6W">
                                 <rect key="frame" x="0.0" y="55" width="540" height="40"/>
@@ -479,7 +473,7 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
             </objects>
             <point key="canvasLocation" x="2195" y="-2004"/>
         </scene>
-        <!--Settings Table View Controller - Settings-->
+        <!--Settings-->
         <scene sceneID="dge-Dz-h61">
             <objects>
                 <tableViewController title="Settings" id="JoG-uN-Xre" customClass="SettingsTableViewController" sceneMemberID="viewController">
@@ -487,7 +481,6 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
                             <tableViewSection headerTitle="colors" id="f8O-Jl-JOa">
                                 <cells>
@@ -763,8 +756,12 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="6h4-mo-Fgp"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="540" height="620"/>
                     <connections>
                         <outlet property="addPhoneNumberButton" destination="lFP-xW-h2H" id="Niy-39-MKK"/>
                         <outlet property="analyticsSwitch" destination="rnr-Qi-g1k" id="odP-UT-ML1"/>
@@ -780,14 +777,14 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                         <outletCollection property="settingsButtons" destination="43Z-fe-naI" id="Sva-C6-yfT"/>
                         <outletCollection property="settingsLabels" destination="14N-xf-D4v" id="4f0-ls-yYQ"/>
                         <outletCollection property="settingsLabels" destination="j4T-AC-mQX" id="cu7-qn-bCm"/>
-                        <segue destination="47K-Gk-dz7" kind="popover" identifier="actionNameView" popoverAnchorView="OsV-V0-0Jc" id="qtY-bs-YLA">
+                        <segue destination="47K-Gk-dz7" kind="popover" identifier="actionNameView" popoverAnchorView="g2s-UN-oRu" id="qtY-bs-YLA">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c88-HG-OSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1424" y="-1664"/>
+            <point key="canvasLocation" x="1146" y="-1573"/>
         </scene>
         <!--Home Page View Controller-->
         <scene sceneID="dEb-Ol-WBp">
@@ -811,7 +808,7 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
             </objects>
             <point key="canvasLocation" x="1450" y="-581"/>
         </scene>
-        <!--Support Table View Controller - Support-->
+        <!--Support-->
         <scene sceneID="DB9-3u-827">
             <objects>
                 <tableViewController title="Support" id="h9W-pw-aPc" customClass="SupportTableViewController" sceneMemberID="viewController">
@@ -819,7 +816,6 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
                             <tableViewSection headerTitle="Support &amp; Feedback" footerTitle="Requires an internet connection" id="a5D-5H-Up0">
                                 <cells>
@@ -933,10 +929,13 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
         <image name="twitter" width="489" height="489"/>
         <image name="volleyball big spike" width="284" height="213"/>
     </resources>
-    <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination">
+            <size key="portraitSize" width="768" height="1024"/>
+            <size key="landscapeSize" width="1024" height="768"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
+    <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

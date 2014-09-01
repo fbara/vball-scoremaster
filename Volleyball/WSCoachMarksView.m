@@ -12,13 +12,15 @@
 static const CGFloat kAnimationDuration = 0.3f;
 static const CGFloat kCutoutRadius = 2.0f;
 static const CGFloat kMaxLblWidth = 230.0f;
-static const CGFloat kLblSpacing = 25.0f;
+static const CGFloat kLblSpacing = 35.0f;
 static const BOOL kEnableContinueLabel = YES;
+static const BOOL kEnableSkipButton = YES;
 
 @implementation WSCoachMarksView {
     CAShapeLayer *mask;
     NSUInteger markIndex;
     UILabel *lblContinue;
+    UIButton *btnSkipCoach;
 }
 
 #pragma mark - Properties
@@ -32,12 +34,12 @@ static const BOOL kEnableContinueLabel = YES;
 @synthesize maxLblWidth;
 @synthesize lblSpacing;
 @synthesize enableContinueLabel;
+@synthesize enableSkipButton;
 
 #pragma mark - Methods
 
 - (id)initWithFrame:(CGRect)frame coachMarks:(NSArray *)marks {
     self = [super initWithFrame:frame];
-
     if (self) {
         // Save the coach marks
         self.coachMarks = marks;
@@ -73,11 +75,12 @@ static const BOOL kEnableContinueLabel = YES;
     self.maxLblWidth = kMaxLblWidth;
     self.lblSpacing = kLblSpacing;
     self.enableContinueLabel = kEnableContinueLabel;
+    self.enableSkipButton = kEnableSkipButton;
 
     // Shape layer mask
     mask = [CAShapeLayer layer];
     [mask setFillRule:kCAFillRuleEvenOdd];
-    [mask setFillColor:[[UIColor colorWithHue:0.0f saturation:0.0f brightness:0.0f alpha:0.8f] CGColor]];
+    [mask setFillColor:[[UIColor colorWithHue:0.0f saturation:0.0f brightness:0.0f alpha:0.9f] CGColor]];
     [self.layer addSublayer:mask];
 
     // Capture touches
@@ -160,6 +163,10 @@ static const BOOL kEnableContinueLabel = YES;
                      }];
 }
 
+- (void)skipCoach {
+    [self goToCoachMarkIndexed:self.coachMarks.count];
+}
+
 - (void)goToCoachMarkIndexed:(NSUInteger)index {
     // Out of bounds
     if (index >= self.coachMarks.count) {
@@ -208,10 +215,13 @@ static const BOOL kEnableContinueLabel = YES;
     // Animate the cutout
     [self animateCutoutToRect:markRect];
 
+    CGFloat lblContinueWidth = self.enableSkipButton ? (70.0/100.0) * self.bounds.size.width : self.bounds.size.width;
+    CGFloat btnSkipWidth = self.bounds.size.width - lblContinueWidth;
+    
     // Show continue lbl if first mark
     if (self.enableContinueLabel) {
         if (markIndex == 0) {
-            lblContinue = [[UILabel alloc] initWithFrame:(CGRect){{0, self.bounds.size.height - 30.0f}, {self.bounds.size.width, 30.0f}}];
+            lblContinue = [[UILabel alloc] initWithFrame:(CGRect){{0, self.bounds.size.height - 30.0f}, {lblContinueWidth, 30.0f}}];
             lblContinue.font = [UIFont boldSystemFontOfSize:13.0f];
             lblContinue.textAlignment = NSTextAlignmentCenter;
             lblContinue.text = @"Tap to continue";
@@ -226,6 +236,19 @@ static const BOOL kEnableContinueLabel = YES;
             [lblContinue removeFromSuperview];
             lblContinue = nil;
         }
+    }
+    
+    if (self.enableSkipButton) {
+        btnSkipCoach = [[UIButton alloc] initWithFrame:(CGRect){{lblContinueWidth, self.bounds.size.height - 30.0f}, {btnSkipWidth, 30.0f}}];
+        [btnSkipCoach addTarget:self action:@selector(skipCoach) forControlEvents:UIControlEventTouchUpInside];
+        [btnSkipCoach setTitle:@"Skip" forState:UIControlStateNormal];
+        btnSkipCoach.titleLabel.font = [UIFont boldSystemFontOfSize:13.0f];
+        btnSkipCoach.alpha = 0.0f;
+        btnSkipCoach.tintColor = [UIColor whiteColor];
+        [self addSubview:btnSkipCoach];
+        [UIView animateWithDuration:0.3f delay:1.0f options:0 animations:^{
+            btnSkipCoach.alpha = 1.0f;
+        } completion:nil];
     }
 }
 

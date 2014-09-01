@@ -10,6 +10,9 @@
 
 
 @implementation ActionLabelTableViewController
+{
+    BOOL firstTimeShown;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,6 +33,9 @@
     //Load the file and read the data into an array
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     self.actionNames = [dict objectForKey:@"ActionNames"];
+    
+    //Indicate this is the first time this view is seen
+    firstTimeShown = YES;
     
 }
 
@@ -73,11 +79,11 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        if ([self.delegate respondsToSelector:@selector(actionNameSelected:)]) {
-            [self.delegate actionNameSelected:self.selectedActionName];
-        }
-    }
+//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+//        if ([self.delegate respondsToSelector:@selector(actionNameSelected:)]) {
+//            [self.delegate actionNameSelected:self.selectedActionName];
+//        }
+//    }
     
     [super viewWillDisappear:animated];
 }
@@ -127,9 +133,23 @@
   
    // select new
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    self.selectedActionName = cell.textLabel.text;
     
-
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        //Is this the first time this view was shown?
+        if (firstTimeShown) {
+            //Show the existing selection and indicate we've been thru this path before
+            firstTimeShown = NO;
+        } else {
+            if ([self.delegate respondsToSelector:@selector(actionNameSelected:)]) {
+                //Prepare to call the delegate with the selected row name
+                self.selectedActionName = cell.textLabel.text;
+                [self.delegate actionNameSelected:self.selectedActionName];
+            }
+        }
+    } else {
+        //Should only hit this if on iPhone
+        self.selectedActionName = cell.textLabel.text;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

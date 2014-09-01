@@ -36,13 +36,6 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     
-    //ActionName delegate for iPad on≥ly
-//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-//        self.actionNameVC = [[ActionLabelTableViewController alloc] init];
-//        self.actionNameVC.delegate = self;
-//        
-//        
-//    }
     
     UIImage *image = [UIImage imageNamed:@"Info44.png"];
     
@@ -594,6 +587,9 @@
 - (void)actionNameSelected:(NSString *)actionName
 {
     [self setActionName:actionName];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self.actionNameVC dismissViewControllerAnimated:TRUE completion:nil];
+    }
 }
 
 

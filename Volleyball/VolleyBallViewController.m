@@ -63,7 +63,6 @@ CGFloat const iphoneScoreFont = 120.0f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
     //Set home URL for Twitter and Facebook messages
     self.baralabsURL = [NSURL URLWithString:@"www.baralabs.com"];
@@ -248,8 +247,15 @@ CGFloat const iphoneScoreFont = 120.0f;
 
 - (IBAction)goToSettings:(UIBarButtonItem *)sender
 {
-        //Segue to Settings View
-       [self performSegueWithIdentifier:@"settingsView" sender:self];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self performSegueWithIdentifier:@"settingsView" sender:self];
+    } else {
+        SettingsTableViewController *settingsVC = [[SettingsTableViewController alloc] init];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:settingsVC];
+        [self presentViewController:navController animated:YES completion:nil];
+        
+        
+    }
 }
 
 - (void)showInfoView
@@ -380,16 +386,31 @@ CGFloat const iphoneScoreFont = 120.0f;
         self.navigationController.navigationBar.barTintColor = FlatSkyBlue;
         self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatSkyBlue, TRUE);
         self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: ContrastColorOf(FlatSkyBlue, TRUE)};
+        self.rightActionNameNumber.textColor = FlatWatermelon;
+        self.leftActionNameNumber.textColor = FlatWatermelon;
+        for (UILabel *lable in self.pastScoreCollection) {
+            lable.textColor = FlatPlum;
+        }
     } else if ([[defaults objectForKey:@"colorSettings"] isEqualToString:@"Dark"]) {
         self.view.backgroundColor = FlatBlackDark;
         self.navigationController.navigationBar.barTintColor = FlatBlackDark;
         self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatBlack, TRUE);
         self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: ContrastColorOf(FlatBlackDark, TRUE)};
+        self.rightActionNameNumber.textColor = FlatGreen;
+        self.leftActionNameNumber.textColor = FlatGreen;
+        for (UILabel *lable in self.pastScoreCollection) {
+            lable.textColor = FlatYellow;
+        }
     } else {
         self.view.backgroundColor = FlatWhite;
         self.navigationController.navigationBar.barTintColor = FlatNavyBlue;
         self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatNavyBlue, TRUE);
         self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: ContrastColorOf(FlatNavyBlue, TRUE)};
+        self.rightActionNameNumber.textColor = FlatBlackDark;
+        self.leftActionNameNumber.textColor = FlatBlackDark;
+        for (UILabel *lable in self.pastScoreCollection) {
+            lable.textColor = FlatBlack;
+        }
     }
 }
 
