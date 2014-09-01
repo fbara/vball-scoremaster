@@ -101,25 +101,13 @@ CGFloat const iphoneScoreFont = 120.0f;
     self.homePageViewController.dataSource = self;
     self.homePageViewController.delegate = self;
     
-    //Create bar button items and add them to the navigation bar
-//    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc]
-//                                       initWithTitle:@"Settings"
-//                                       style:UIBarButtonItemStyleBordered
-//                                       target:self
-//                                       action:@selector(goToSettings)];
-    UIImage *image = [UIImage imageNamed:@"Info44.png"];
-    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
-                                   initWithImage:image
-                                   style:UIBarButtonItemStyleBordered
-                                   target:self
-                                   action:@selector(showInfoView)];
-    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc]
-                                      initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                   target:self
-                                   action:nil];
-    fixedSpace.width = 20.0f;
-    NSArray *barButtonItems = @[self.settingsButton,fixedSpace, infoButton];
-    self.navigationItem.rightBarButtonItems = barButtonItems;
+    //Create bar button item and add them to the navigation bar
+    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc]
+                                       initWithTitle:@"Settings"
+                                       style:UIBarButtonItemStyleBordered
+                                       target:self
+                                       action:@selector(goToSettings:)];
+    self.navigationItem.rightBarButtonItems = @[settingsButton];
     
     
     // Create Home swipe gesture and add it to the home container view.
@@ -247,20 +235,8 @@ CGFloat const iphoneScoreFont = 120.0f;
 
 - (IBAction)goToSettings:(UIBarButtonItem *)sender
 {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        [self performSegueWithIdentifier:@"settingsView" sender:self];
-    } else {
-        SettingsTableViewController *settingsVC = [[SettingsTableViewController alloc] init];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:settingsVC];
-        [self presentViewController:navController animated:YES completion:nil];
-        
-        
-    }
-}
 
-- (void)showInfoView
-{
-    [self performSegueWithIdentifier:@"infoView" sender:self];
+    [self performSegueWithIdentifier:@"settingsView" sender:self];
 }
 
 - (void)initializePastGames
@@ -388,6 +364,7 @@ CGFloat const iphoneScoreFont = 120.0f;
         self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: ContrastColorOf(FlatSkyBlue, TRUE)};
         self.rightActionNameNumber.textColor = FlatWatermelon;
         self.leftActionNameNumber.textColor = FlatWatermelon;
+        self.gameNumber.textColor = ContrastColorOf(self.view.backgroundColor, TRUE);
         for (UILabel *lable in self.pastScoreCollection) {
             lable.textColor = FlatPlum;
         }
@@ -398,6 +375,7 @@ CGFloat const iphoneScoreFont = 120.0f;
         self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: ContrastColorOf(FlatBlackDark, TRUE)};
         self.rightActionNameNumber.textColor = FlatGreen;
         self.leftActionNameNumber.textColor = FlatGreen;
+        self.gameNumber.textColor = FlatMint;
         for (UILabel *lable in self.pastScoreCollection) {
             lable.textColor = FlatYellow;
         }
@@ -408,6 +386,7 @@ CGFloat const iphoneScoreFont = 120.0f;
         self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: ContrastColorOf(FlatNavyBlue, TRUE)};
         self.rightActionNameNumber.textColor = FlatBlackDark;
         self.leftActionNameNumber.textColor = FlatBlackDark;
+        self.gameNumber.textColor = FlatBlackDark;
         for (UILabel *lable in self.pastScoreCollection) {
             lable.textColor = FlatBlack;
         }

@@ -38,11 +38,10 @@
     self.tableView.delegate = self;
     
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
-                                           initWithTitle:@"Save"
+                                           initWithTitle:@"Close"
                                            style:UIBarButtonItemStyleDone
                                            target:self
                                             action:@selector(saveAndClose)];
-
     UIImage *image = [UIImage imageNamed:@"Info44.png"];
     UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
                                    initWithImage:image
@@ -54,8 +53,14 @@
                                    target:self
                                    action:nil];
     fixedSpace.width = 20.0f;
-    NSArray *barButtonItems = @[saveButton,fixedSpace,infoButton];
-    self.navigationItem.rightBarButtonItems = barButtonItems;
+    
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        NSArray *barButtonItems = @[saveButton,fixedSpace,infoButton];
+        self.navigationItem.rightBarButtonItems = barButtonItems;
+    } else {
+        self.navigationItem.rightBarButtonItems = @[infoButton];
+    }
     
     //Set the switch if messages will be sent
     if ([[self getSendNotifications] isEqualToString:@"On"]) {
