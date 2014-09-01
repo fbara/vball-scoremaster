@@ -37,16 +37,24 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     
-    
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
+                                           initWithTitle:@"Save"
+                                           style:UIBarButtonItemStyleDone
+                                           target:self
+                                            action:@selector(saveAndClose)];
+
     UIImage *image = [UIImage imageNamed:@"Info44.png"];
-    
     UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
                                    initWithImage:image
                                    style:UIBarButtonItemStyleBordered
                                    target:self
                                    action:@selector(showSupportView)];
-
-    NSArray *barButtonItems = @[infoButton];
+    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                   target:self
+                                   action:nil];
+    fixedSpace.width = 20.0f;
+    NSArray *barButtonItems = @[saveButton,fixedSpace,infoButton];
     self.navigationItem.rightBarButtonItems = barButtonItems;
     
     //Set the switch if messages will be sent
@@ -73,6 +81,11 @@
     }
 */
     
+}
+                                   
+- (void)saveAndClose
+{
+    [self.parentViewController dismissViewControllerAnimated:TRUE completion:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
