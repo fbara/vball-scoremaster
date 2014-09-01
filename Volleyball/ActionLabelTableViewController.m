@@ -101,8 +101,10 @@
         return 3;
     else if ([selectedName isEqualToString:@"SET"])
         return 4;
-    else {
+    else if ([selectedName isEqualToString:@"Pass"])
         return 5;
+    else {
+        return 0;
     }
 }
 

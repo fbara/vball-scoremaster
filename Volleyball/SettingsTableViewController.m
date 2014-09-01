@@ -19,6 +19,7 @@
 @property NSString *existingRightActionName;
 @property NSString *existingLeftActionName;
 @property ActionLabelTableViewController *actionNameVC;
+@property UIPopoverController *aPopover;
 
 @end
 
@@ -588,9 +589,11 @@
 {
     [self setActionName:actionName];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [self.actionNameVC dismissViewControllerAnimated:TRUE completion:nil];
+        [self.actionNameVC dismissViewControllerAnimated:FALSE completion:nil];
     }
 }
+
+
 
 
 #pragma mark - Segue
@@ -658,8 +661,10 @@
         //Exit because the row was not for Action Name
         return;
     }
+    
     //Action Name row was selected so segue to that VC
     [self performSegueWithIdentifier:@"actionNameView" sender:self];
+    
 
 }
 
