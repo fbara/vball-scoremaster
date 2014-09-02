@@ -70,11 +70,9 @@ CGFloat const iphoneScoreFont = 120.0f;
     
     //Check if this is the first time the app has run.
     //If so, run tutorial.  If not, don't run turorial.
-    if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
-//TODO Put tutorial back in
-//TODO Update tutorial for new screens
-        //[self performSegueWithIdentifier:@"showTutorial" sender:self];
-    }
+    //if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
+        [self performSegueWithIdentifier:@"showTutorial" sender:self];
+    //}
     
     //Set the Google Analytics Screen name
     self.screenName = @"Scoring";
@@ -168,11 +166,11 @@ CGFloat const iphoneScoreFont = 120.0f;
 //??? Hide Social for now, to be added to IAP later
 //        self.mainPageTwitterButton.hidden = TRUE;
 //        self.mainPageFacebookButton.hidden = TRUE;
-        self.promptView = [[ABXPromptView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
-        self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
-        self.promptView.backgroundColor = [UIColor cyanColor];
-        [self.view addSubview:self.promptView];
-        self.promptView.delegate = self;
+//        self.promptView = [[ABXPromptView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
+//        self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+//        self.promptView.backgroundColor = [UIColor cyanColor];
+//        [self.view addSubview:self.promptView];
+//        self.promptView.delegate = self;
         
     }
     

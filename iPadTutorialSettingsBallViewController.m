@@ -1,19 +1,20 @@
 //
-//  TutorialSettingsViewController.m
+//  iPadTutorialSettingsBallViewController.m
 //  VBall ScoreMaster
 //
-//  Created by Frank Bara on 7/23/14.
+//  Created by Frank Bara on 9/1/14.
 //  Copyright (c) 2014 BaraLabs, LLC. All rights reserved.
 //
 
-#import "TutorialSettingsViewController.h"
+#import "iPadTutorialSettingsBallViewController.h"
 
-@interface TutorialSettingsViewController ()
+@interface iPadTutorialSettingsBallViewController ()
+
 @property (weak, nonatomic) IBOutlet UIImageView *tutorialImage;
 
 @end
 
-@implementation TutorialSettingsViewController
+@implementation iPadTutorialSettingsBallViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,8 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.tutorialImage setImage:[UIImage imageNamed:@"TutorialImageSettings"]];
-
+    [self.tutorialImage setImage:[UIImage imageNamed:@"iPadTutorialImageSettings"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -38,38 +38,37 @@
     
     //Show coachMarks
     NSArray *coachMarks = @[
-            @{
-                @"rect": [NSValue valueWithCGRect:(CGRect){{20.0f,55.0f},{528.0f,30.0f}}],
-                @"caption": @"You decide when to send text messages..."
-                },
-            @{
-                @"rect": [NSValue valueWithCGRect:(CGRect){{299.0f,145.0f},{249.0f,30.0f}}],
-                @"caption": @"...and you can choose from your list of contacts."
-                },
-            @{
-                @"rect": [NSValue valueWithCGRect:(CGRect){{14.0f,232.0f},{191.0f,80.0f}}],
-                @"caption": @"Select Actions from a list of common terms..."
-                },
-            @{
-                @"rect": [NSValue valueWithCGRect:(CGRect){{438.0f,230.0f},{115.0f,80.0f}}],
-                @"caption": @"...and choose the right one for your player."
-                },
-            @{
-                @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
-                @"caption": @"There is help and information from the icon at the top of 'Settings'.\nHave fun!!\n\n(tap to dismiss)"
-                },
-            @{
-                @"rect": [NSValue valueWithCGRect:(CGRect){{280.0f,0.0f},{0.0f,0.0f}}],
-                @"caption": @""
-                }
-            ];
+        @{
+            @"rect": [NSValue valueWithCGRect:(CGRect){{249.0f,180.0f},{514.0f,140.0f}}],
+            @"caption": @"You can change the background color of each team's score and we've added new color schemes.\n\nYou can also change between Regular, Dark, and Colorful themes."
+            },
+        @{
+            @"rect": [NSValue valueWithCGRect:(CGRect){{255.0f,357.0f},{514.0f,96.0f}}],
+            @"caption": @"You decide when to send text messages, and can optionally include your player's name, also..."
+            },
+        @{
+            @"rect": [NSValue valueWithCGRect:(CGRect){{255.0f,450.0f},{514.0f,52.0f}}],
+            @"caption": @"...you can choose text recipients from your list of contacts or just enter their number directly."
+            },
+        @{
+            @"rect": [NSValue valueWithCGRect:(CGRect){{255.0f,567.0f},{514.0f,93.0f}}],
+            @"caption": @"Select Actions from a list of common terms and choose the right one for your player's position."
+            },
+        @{
+            @"rect": [NSValue valueWithCGRect:(CGRect){{512.0f,170.0f},{0.0f,0.0f}}],
+            @"caption": @"There is help and information from the icon at the top of 'Settings'.\nPlease feel free to provide any type of feedback you'd like!\n\nHave fun!!\n\n(tap to dismiss)"
+            },
+        @{
+            @"rect": [NSValue valueWithCGRect:(CGRect){{280.0f,0.0f},{0.0f,0.0f}}],
+            @"caption": @""
+            }
+        ];
     //Array of marks is created, now show them
     WSCoachMarksView *coachMarksView = [[WSCoachMarksView alloc] initWithFrame:self.view.bounds coachMarks:coachMarks];
     coachMarksView.delegate = self;
     [self.view addSubview:coachMarksView];
     coachMarksView.enableContinueLabel = FALSE;
     [coachMarksView start];
-    
 }
 
 - (void)coachMarksView:(WSCoachMarksView *)coachMarksView didNavigateToIndex:(NSUInteger)index
@@ -86,7 +85,6 @@
 {
     [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 - (void)didReceiveMemoryWarning
 {

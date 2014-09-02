@@ -41,27 +41,27 @@
     NSArray *coachMarks = @[
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
-            @"caption": @"Here's a quick tour of our existing and updated features."
+            @"caption": @"Here's a quick tour of the features of VBall ScoreMaster."
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,71.0f},{439.0f,30.0f}}],
-            @"caption": @"Just like before, you can add team names, and..."
+            @"caption": @"Customize the screen by adding team names, and..."
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,97.0f},{439.0f,150.0f}}],
-            @"caption": @"...tap and swipe the scores, and..."
+            @"caption": @"...tap to add points and swipe the scores to change sides."
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{118.0f,275.0f},{327.0f,30.0f}}],
-            @"caption": @"...track your player's actions with just a tap."
+            @"caption": @"Track your player's actions with just a tap."
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
-            @"caption": @"We've made some updates to this verson..."
+            @"caption": @"One of the most requested features we've recieved..."
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{14.0f,157.0f},{40.0f,98.0f}}],
-            @"caption": @"You can track past scores in the same match..."
+            @"caption": @"...you can track past scores in the same match..."
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{241.0f,149.0f},{80.0f,80.0f}}],
@@ -89,9 +89,15 @@
     //Check the index of the last shown coach mark.  It will be equal to the next mark
     //to be shown.  If it is >, we're done so exit from the view controller
     //If it's greater than the index of the last mark, segue to the Settings
+    
     if (index > 7) {
         [self performSegueWithIdentifier:@"showTutorialSettings" sender:self];
     }
+}
+
+- (void)coachMarksViewDidCleanup:(WSCoachMarksView *)coachMarksView
+{
+    [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

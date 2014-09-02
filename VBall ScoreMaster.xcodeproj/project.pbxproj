@@ -28,6 +28,8 @@
 		AD082E3619817E5C00A997CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD082E3419817E5C00A997CE /* Main.storyboard */; };
 		AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD082E37198182E800A997CE /* DefaultScoreViewController.xib */; };
 		AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */; };
+		AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */; };
+		AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A419B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m */; };
 		AD144BA6198D27DE0049EFF8 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD144BA5198D27DE0049EFF8 /* libGoogleAnalyticsServices.a */; };
 		AD1C8101194A5FD70028179B /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C8100194A5FD70028179B /* InstructionsViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
@@ -121,6 +123,10 @@
 		AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialSettingsViewController.m; sourceTree = "<group>"; };
 		AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabelTableViewController.h; sourceTree = "<group>"; };
 		AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionLabelTableViewController.m; sourceTree = "<group>"; };
+		AD1378A019B50B9300DB02D0 /* iPadTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadTutorialViewController.h; sourceTree = "<group>"; };
+		AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadTutorialViewController.m; sourceTree = "<group>"; };
+		AD1378A319B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadTutorialSettingsBallViewController.h; sourceTree = "<group>"; };
+		AD1378A419B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadTutorialSettingsBallViewController.m; sourceTree = "<group>"; };
 		AD144BA0198D27DE0049EFF8 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		AD144BA1198D27DE0049EFF8 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
 		AD144BA2198D27DE0049EFF8 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
@@ -344,8 +350,8 @@
 		92AA42A91916C2800037D405 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */,
 				AD082E37198182E800A997CE /* DefaultScoreViewController.xib */,
+				ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */,
 				AD082E3419817E5C00A997CE /* Main.storyboard */,
 				92AA42AB1916C2800037D405 /* InfoPlist.strings */,
 				92AA42B11916C2800037D405 /* VolleyBallAppDelegate.h */,
@@ -387,6 +393,10 @@
 		AD52968A197F38E100767D1C /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				AD1378A019B50B9300DB02D0 /* iPadTutorialViewController.h */,
+				AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */,
+				AD1378A319B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.h */,
+				AD1378A419B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m */,
 				AD52968B197F390E00767D1C /* TutorialViewController.h */,
 				AD52968C197F390E00767D1C /* TutorialViewController.m */,
 				AD082E31198061AE00A997CE /* TutorialSettingsViewController.h */,
@@ -693,6 +703,7 @@
 				AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */,
 				ADFB426A19A372B900ADBE9F /* ABXFAQTableViewCell.m in Sources */,
 				ADFB426419A372B900ADBE9F /* ABXAttachment.m in Sources */,
+				AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */,
 				ADFB425419A372B900ADBE9F /* ABXApiClient.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				ADFB425F19A372B900ADBE9F /* ABXFAQViewController.m in Sources */,
@@ -705,6 +716,7 @@
 				ADFB426C19A372B900ADBE9F /* ABXNotificationView.m in Sources */,
 				ADFB425819A372B900ADBE9F /* NSDictionary+ABXQueryString.m in Sources */,
 				ADFB425519A372B900ADBE9F /* ABXAppStore.m in Sources */,
+				AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */,
 				ADFB426F19A372B900ADBE9F /* ABXVersionNotificationView.m in Sources */,
 				ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */,
 				ADFB426819A372B900ADBE9F /* ABXNotification.m in Sources */,

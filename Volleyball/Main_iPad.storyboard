@@ -272,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="152" y="-937"/>
         </scene>
-        <!--Tutorial View Controller - Tutorial Main-->
+        <!--I Pad Tutorial View Controller - Tutorial Main-->
         <scene sceneID="o0h-Xb-kwA">
             <objects>
-                <viewController title="Tutorial Main" id="TO8-Ip-hl0" customClass="TutorialViewController" sceneMemberID="viewController">
+                <viewController title="Tutorial Main" id="TO8-Ip-hl0" customClass="iPadTutorialViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k3p-sY-6iK"/>
                         <viewControllerLayoutGuide type="bottom" id="laj-sD-Tr1"/>
@@ -284,7 +284,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CXz-uX-uVj">
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CXz-uX-uVj">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                         </subviews>
@@ -299,12 +299,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKj-pX-ycy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="152" y="82"/>
+            <point key="canvasLocation" x="152" y="204"/>
         </scene>
-        <!--Tutorial Settings View Controller - Tutorial Settings-->
+        <!--I Pad Tutorial Settings Ball View Controller - Tutorial Settings-->
         <scene sceneID="d5V-gg-hJE">
             <objects>
-                <viewController title="Tutorial Settings" id="MY6-dP-SYW" customClass="TutorialSettingsViewController" sceneMemberID="viewController">
+                <viewController title="Tutorial Settings" id="MY6-dP-SYW" customClass="iPadTutorialSettingsBallViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LMd-7n-NHd"/>
                         <viewControllerLayoutGuide type="bottom" id="79H-5c-lvB"/>
@@ -497,7 +497,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Sharing" footerTitle="Send text messages or use your favorite sharing site" id="AEf-DS-lJV">
+                            <tableViewSection headerTitle="Sharing" footerTitle="You can add more recipients before you send the message" id="AEf-DS-lJV">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JUD-k1-dHv" userLabel="Table View Cell - Send switch">
                                         <rect key="frame" x="0.0" y="279" width="540" height="44"/>
@@ -593,7 +593,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="action names" footerTitle="Action Names are included in the text message" id="xIz-3d-pId">
+                            <tableViewSection headerTitle="action names" footerTitle="These are included in the text message" id="xIz-3d-pId">
                                 <cells>
                                     <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J4e-OQ-jDI" userLabel="Table View Cell - Bottom action name">
                                         <rect key="frame" x="0.0" y="486" width="540" height="44"/>
@@ -603,12 +603,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Left side Action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2s-UN-oRu">
-                                                    <rect key="frame" x="20" y="1" width="255" height="19"/>
+                                                    <rect key="frame" x="20" y="3" width="255" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select an Action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hq-2P-tSW">
-                                                    <rect key="frame" x="20" y="20" width="296" height="19"/>
+                                                    <rect key="frame" x="20" y="22" width="296" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
