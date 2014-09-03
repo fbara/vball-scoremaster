@@ -1015,6 +1015,7 @@ CGFloat const iphoneScoreFont = 120.0f;
         self.promptView.backgroundColor = [UIColor cyanColor];
         self.promptView.delegate = self;
         [self.view addSubview:self.promptView];
+        //Turn prompt off for this version
         [[NSUserDefaults standardUserDefaults] setObject:@"No" forKey:@"showPrompt"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }

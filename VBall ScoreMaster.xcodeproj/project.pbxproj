@@ -49,6 +49,7 @@
 		ADAEAC5919ACB47B00519A20 /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAEAC5219ACB47B00519A20 /* UIColor+Chameleon.m */; };
 		ADAEAC5A19ACB47B00519A20 /* UIColor+CIELAB.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAEAC5419ACB47B00519A20 /* UIColor+CIELAB.m */; };
 		ADAEAC5B19ACB47B00519A20 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAEAC5619ACB47B00519A20 /* UIViewController+Chameleon.m */; };
+		ADE5AF1919B7853700AAC92D /* Acknowledgements.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADE5AF1819B7853700AAC92D /* Acknowledgements.bundle */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB425319A372B900ADBE9F /* AppbotX.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADFB421419A372B900ADBE9F /* AppbotX.bundle */; };
@@ -168,6 +169,7 @@
 		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADCC139A1981B588001DC9B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		ADE5AF1819B7853700AAC92D /* Acknowledgements.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Acknowledgements.bundle; sourceTree = "<group>"; };
 		ADEB992E1986ECB70009B3F5 /* ActionNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ActionNames.plist; sourceTree = "<group>"; };
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB421319A372B900ADBE9F /* ABX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABX.h; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 		9244799B192C01830031C1F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ADE5AF1819B7853700AAC92D /* Acknowledgements.bundle */,
 				AD9B665B199D2754002C5145 /* Settings.bundle */,
 				ADEB992E1986ECB70009B3F5 /* ActionNames.plist */,
 			);
@@ -641,6 +644,7 @@
 				AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */,
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
+				ADE5AF1919B7853700AAC92D /* Acknowledgements.bundle in Resources */,
 				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
 				ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */,
 				AD9B665C199D2754002C5145 /* Settings.bundle in Resources */,
