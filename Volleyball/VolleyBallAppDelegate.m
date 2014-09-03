@@ -39,10 +39,23 @@
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
     
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
+        //Initialize the number of times the user has launched the app
+        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"launchNumber"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"Yes" forKey:@"showPrompt"];
+        
+        //Show Google Analytics permission alert
         UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Google Analytics" message:@"With your permission usage information will be collected to improve the application.\n\nNo personal information will be collected and you can opt out at any time from Settings." delegate:self cancelButtonTitle:@"Opt Out" otherButtonTitles:@"Opt In", nil];
         [av show];
+    } else if (([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) < 5) {
+        //Increment launchNumber until we reach 5
+        NSInteger ln = [[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"];
+        ln = ln + 1;
+        [[NSUserDefaults standardUserDefaults] setInteger:ln forKey:@"launchNumber"];
+    } else {
+        //We hit 5 uses so turn off the review prompt
+        [[NSUserDefaults standardUserDefaults] setObject:@"No" forKey:@"showPrompt"];
     }
-    
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     return YES;
 }

@@ -70,9 +70,9 @@ CGFloat const iphoneScoreFont = 120.0f;
     
     //Check if this is the first time the app has run.
     //If so, run tutorial.  If not, don't run turorial.
-    //if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
+    if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
         [self performSegueWithIdentifier:@"showTutorial" sender:self];
-    //}
+    }
     
     //Set the Google Analytics Screen name
     self.screenName = @"Scoring";
@@ -161,18 +161,27 @@ CGFloat const iphoneScoreFont = 120.0f;
     [self loadActionNames];
     
     if (![ABXPromptView hasHadInteractionForCurrentVersion]) {
-//TODO Only show this after user has launched it 5 times
+        
+        if ((([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) == 5) &&
+            [[[NSUserDefaults standardUserDefaults] objectForKey:@"showPrompt"] isEqualToString:@"Yes"]) {
+            
+            //Show the Prompt view on the 5th time the user has launched the app
+            self.promptView = [[ABXPromptView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
+            self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+            self.promptView.backgroundColor = [UIColor cyanColor];
+            self.promptView.delegate = self;
+            [self.view addSubview:self.promptView];
+            [[NSUserDefaults standardUserDefaults] setObject:@"No" forKey:@"showPrompt"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+    }
         //Hide the Twitter and Facebook images so the user can read the Appbotx text
 //??? Hide Social for now, to be added to IAP later
 //        self.mainPageTwitterButton.hidden = TRUE;
 //        self.mainPageFacebookButton.hidden = TRUE;
-//        self.promptView = [[ABXPromptView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
-//        self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
-//        self.promptView.backgroundColor = [UIColor cyanColor];
-//        [self.view addSubview:self.promptView];
-//        self.promptView.delegate = self;
+    
         
-    }
+    
     
 }
 
@@ -996,6 +1005,18 @@ CGFloat const iphoneScoreFont = 120.0f;
         [self resetGameAndNames];
         [self initializePastGames];
 
+    }
+    
+    //Good place to show review prompt if they haven't already
+    if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"showPrompt"] isEqualToString:@"Yes"]) {
+        //Show the Prompt view
+        self.promptView = [[ABXPromptView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
+        self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+        self.promptView.backgroundColor = [UIColor cyanColor];
+        self.promptView.delegate = self;
+        [self.view addSubview:self.promptView];
+        [[NSUserDefaults standardUserDefaults] setObject:@"No" forKey:@"showPrompt"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 

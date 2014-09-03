@@ -71,7 +71,7 @@
         @"caption": @"...and choose the player Actions YOU want to track.\n\nYou don't have to take your eyes off the game to type out a message!"
         },
     @{
-        @"rect": [NSValue valueWithCGRect:(CGRect){{280.0f,0.0f},{0.0f,0.0f}}],
+        @"rect": [NSValue valueWithCGRect:(CGRect){{510.0f,170.0f},{0.0f,0.0f}}],
         @"caption": @""
         }
     ];

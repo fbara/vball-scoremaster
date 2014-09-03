@@ -48,12 +48,16 @@ static NSString* const kiTunesID = @"886670213";
 
 - (void)appbotPromptForFeedback
 {
-    
+    self.promptView.hidden = YES;
+    NSLog(@"Feedback");
 }
 
 - (void)appbotPromptForReview
 {
+    [ABXAppStore openAppStoreReviewForApp:kiTunesID];
+    self.promptView.hidden = YES;
     
+
 }
 
 #pragma mark - Table view delegate
@@ -77,12 +81,14 @@ static NSString* const kiTunesID = @"886670213";
             //Show Feedback form
             //Access AppbotX feedback form
             [ABXFeedbackViewController showFromController:self placeholder:nil];
-            self.promptView.hidden = YES;
-
             break;
         case 3:
-            //Acknowledgements
-            
+            //Notifications
+            [ABXNotificationsViewController showFromController:self];
+            break;
+        case 4:
+            //iTunes review
+            [ABXAppStore openAppStoreReviewForApp:kiTunesID];
             break;
         default:
             break;
@@ -100,7 +106,7 @@ static NSString* const kiTunesID = @"886670213";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    return 5;
 }
 
 
