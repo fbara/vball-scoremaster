@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="dBP-CD-akZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="dBP-CD-akZ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
-        <!--Volley Ball View Controller - mainView-->
+        <!--mainView-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController title="mainView" id="vXZ-lx-hvc" customClass="VolleyBallViewController" sceneMemberID="viewController">
@@ -35,6 +35,13 @@
                                     <action selector="sendInstantMessage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SRV-0g-Q7o"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jML-Et-saV">
+                                <rect key="frame" x="238" y="72" width="87" height="26"/>
+                                <accessibility key="accessibilityConfiguration" hint="None" label="Game label"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Visiting Team" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Gzx-4p-5vy">
                                 <rect key="frame" x="62" y="59" width="168" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
@@ -59,13 +66,6 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="Gy2-c3-JW9"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jML-Et-saV">
-                                <rect key="frame" x="238" y="72" width="87" height="26"/>
-                                <accessibility key="accessibilityConfiguration" hint="None" label="Game label"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O6P-Lx-PJG" userLabel="GameNumber">
                                 <rect key="frame" x="246" y="100" width="76" height="41"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -220,7 +220,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="VBall ScoreMaster" id="idF-JM-YX7">
                         <barButtonItem key="leftBarButtonItem" title="New match" id="blf-CM-yV6">
@@ -280,7 +279,7 @@
             </objects>
             <point key="canvasLocation" x="611" y="-525"/>
         </scene>
-        <!--Tutorial View Controller - Tutorial Main-->
+        <!--Tutorial Main-->
         <scene sceneID="o0h-Xb-kwA">
             <objects>
                 <viewController title="Tutorial Main" id="TO8-Ip-hl0" customClass="TutorialViewController" sceneMemberID="viewController">
@@ -294,7 +293,6 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
@@ -304,9 +302,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKj-pX-ycy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1368" y="98"/>
+            <point key="canvasLocation" x="611" y="44"/>
         </scene>
-        <!--Tutorial Settings View Controller - Tutorial Settings-->
+        <!--Tutorial Settings-->
         <scene sceneID="d5V-gg-hJE">
             <objects>
                 <viewController title="Tutorial Settings" id="MY6-dP-SYW" customClass="TutorialSettingsViewController" sceneMemberID="viewController">
@@ -320,7 +318,6 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="65m-uP-DJL"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -330,9 +327,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10C-oQ-JCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2108" y="98"/>
+            <point key="canvasLocation" x="616" y="544"/>
         </scene>
-        <!--Action Label Table View Controller - Action Names-->
+        <!--Action Names-->
         <scene sceneID="S82-Dd-kqz">
             <objects>
                 <tableViewController title="Action Names" id="47K-Gk-dz7" customClass="ActionLabelTableViewController" sceneMemberID="viewController">
@@ -340,7 +337,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="345"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="IEc-eP-Hpp" rowHeight="40" style="IBUITableViewCellStyleDefault" id="hX2-1v-W6W">
                                 <rect key="frame" x="0.0" y="119" width="568" height="40"/>
@@ -380,9 +376,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqx-uR-HLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZIU-kI-E0M" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2151" y="-1437"/>
+            <point key="canvasLocation" x="2088" y="-753.5"/>
         </scene>
-        <!--Settings Table View Controller - Settings-->
+        <!--Settings-->
         <scene sceneID="dge-Dz-h61">
             <objects>
                 <tableViewController title="Settings" id="JoG-uN-Xre" customClass="SettingsTableViewController" sceneMemberID="viewController">
@@ -390,7 +386,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="345"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
                             <tableViewSection headerTitle="colors" id="f8O-Jl-JOa">
                                 <cells>
@@ -697,7 +692,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c88-HG-OSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1368" y="-1074"/>
+            <point key="canvasLocation" x="1294" y="-525.5"/>
         </scene>
         <!--Home Page View Controller-->
         <scene sceneID="dEb-Ol-WBp">
@@ -708,7 +703,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGO-83-1Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1450" y="-541"/>
+            <point key="canvasLocation" x="1432" y="-109"/>
         </scene>
         <!--Visitor Page View Controller-->
         <scene sceneID="c6u-WJ-yVv">
@@ -719,9 +714,9 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6O-LZ-YFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1450" y="-233"/>
+            <point key="canvasLocation" x="1168" y="-109"/>
         </scene>
-        <!--Support Table View Controller - Support-->
+        <!--Support-->
         <scene sceneID="DB9-3u-827">
             <objects>
                 <tableViewController title="Support" id="h9W-pw-aPc" customClass="SupportTableViewController" sceneMemberID="viewController">
@@ -729,7 +724,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="345"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
                             <tableViewSection headerTitle="Support &amp; Feedback" footerTitle="Requires an internet connection" id="a5D-5H-Up0">
                                 <cells>
@@ -831,7 +825,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTi-Ye-IZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2138" y="-622"/>
+            <point key="canvasLocation" x="2088" y="-266.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dxk-2S-oBG">
@@ -858,10 +852,12 @@
         <image name="facebook" width="602" height="600"/>
         <image name="twitter" width="489" height="489"/>
     </resources>
-    <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
 </document>

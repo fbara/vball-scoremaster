@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dBP-CD-akZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="dBP-CD-akZ">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
-        <!--Volley Ball View Controller - mainView-->
+        <!--mainView-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController title="mainView" id="vXZ-lx-hvc" customClass="VolleyBallViewController" sceneMemberID="viewController">
@@ -212,7 +211,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="VBall ScoreMaster" id="idF-JM-YX7">
                         <barButtonItem key="leftBarButtonItem" title="New match" id="blf-CM-yV6">
@@ -272,7 +270,7 @@
             </objects>
             <point key="canvasLocation" x="152" y="-937"/>
         </scene>
-        <!--I Pad Tutorial View Controller - Tutorial Main-->
+        <!--Tutorial Main-->
         <scene sceneID="o0h-Xb-kwA">
             <objects>
                 <viewController title="Tutorial Main" id="TO8-Ip-hl0" customClass="iPadTutorialViewController" sceneMemberID="viewController">
@@ -289,7 +287,6 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
@@ -301,7 +298,7 @@
             </objects>
             <point key="canvasLocation" x="152" y="204"/>
         </scene>
-        <!--I Pad Tutorial Settings Ball View Controller - Tutorial Settings-->
+        <!--Tutorial Settings-->
         <scene sceneID="d5V-gg-hJE">
             <objects>
                 <viewController title="Tutorial Settings" id="MY6-dP-SYW" customClass="iPadTutorialSettingsBallViewController" sceneMemberID="viewController">
@@ -318,7 +315,6 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="65m-uP-DJL"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -330,7 +326,7 @@
             </objects>
             <point key="canvasLocation" x="164" y="1107"/>
         </scene>
-        <!--Action Label Table View Controller - Action Names-->
+        <!--Action Names-->
         <scene sceneID="S82-Dd-kqz">
             <objects>
                 <tableViewController title="Action Names" id="47K-Gk-dz7" customClass="ActionLabelTableViewController" sceneMemberID="viewController">
@@ -338,7 +334,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="540" height="350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="IEc-eP-Hpp" rowHeight="40" style="IBUITableViewCellStyleDefault" id="hX2-1v-W6W">
                                 <rect key="frame" x="0.0" y="55" width="540" height="40"/>
@@ -404,7 +399,7 @@
             </objects>
             <point key="canvasLocation" x="643" y="-2004"/>
         </scene>
-        <!--Settings Table View Controller - Settings-->
+        <!--Settings-->
         <scene sceneID="dge-Dz-h61">
             <objects>
                 <tableViewController title="Settings" id="JoG-uN-Xre" customClass="SettingsTableViewController" sceneMemberID="viewController">
@@ -690,7 +685,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="6Hq-pW-byZ"/>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <size key="freeformSize" width="540" height="620"/>
                     <connections>
                         <outlet property="addPhoneNumberButton" destination="lFP-xW-h2H" id="Niy-39-MKK"/>
                         <outlet property="analyticsSwitch" destination="rnr-Qi-g1k" id="odP-UT-ML1"/>
@@ -738,7 +732,7 @@
             </objects>
             <point key="canvasLocation" x="1450" y="-581"/>
         </scene>
-        <!--Support Table View Controller - Support-->
+        <!--Support-->
         <scene sceneID="DB9-3u-827">
             <objects>
                 <tableViewController title="Support" id="h9W-pw-aPc" customClass="SupportTableViewController" sceneMemberID="viewController">
@@ -746,7 +740,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
                             <tableViewSection headerTitle="Support &amp; Feedback" footerTitle="Requires an internet connection" id="a5D-5H-Up0">
                                 <cells>
@@ -876,10 +869,13 @@
         <image name="facebook" width="602" height="600"/>
         <image name="twitter" width="489" height="489"/>
     </resources>
-    <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination">
+            <size key="portraitSize" width="768" height="1024"/>
+            <size key="landscapeSize" width="1024" height="768"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
+    <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

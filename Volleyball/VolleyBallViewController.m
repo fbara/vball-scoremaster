@@ -29,6 +29,7 @@ static NSString* const kiTunesID = @"886670213";
 //Score number font size for each device
 CGFloat const ipadScoreFont = 220.0f;
 CGFloat const iphoneScoreFont = 120.0f;
+NSString *colorScheme;
 
 @interface VolleyBallViewController ()
 
@@ -252,7 +253,17 @@ CGFloat const iphoneScoreFont = 120.0f;
     for (UILabel *score in self.pastScoreCollection) {
         score.text = @"00";
         [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
-        score.textColor = [UIColor blackColor];
+        //Need to check what color background is being used.
+        if ([colorScheme isEqualToString:@"Dark"]) {
+            //Dark background so change color to yellow
+            score.textColor = FlatYellow;
+        } else if ([colorScheme isEqualToString:@"Colorful"]){
+            //Colorful background so change color to plum
+            score.textColor = FlatPlum;
+        } else {
+            //Regular background
+            score.textColor = FlatBlackDark;
+        }
     }
 }
 
@@ -365,17 +376,25 @@ CGFloat const iphoneScoreFont = 120.0f;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ([[defaults objectForKey:@"colorSettings"] isEqualToString:@"Complementary"]) {
+        colorScheme = @"Colorful";
         self.view.backgroundColor = FlatSand;
         self.navigationController.navigationBar.barTintColor = FlatSkyBlue;
         self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatSkyBlue, TRUE);
         self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: ContrastColorOf(FlatSkyBlue, TRUE)};
-        self.rightActionNameNumber.textColor = FlatWatermelon;
-        self.leftActionNameNumber.textColor = FlatWatermelon;
+        self.rightActionNameNumber.textColor = FlatMintDark;
+        self.leftActionNameNumber.textColor = FlatMintDark;
         self.gameNumber.textColor = ContrastColorOf(self.view.backgroundColor, TRUE);
         for (UILabel *lable in self.pastScoreCollection) {
-            lable.textColor = FlatPlum;
+            //First, check if any of the past score fonts are red
+            //If so, put them back to red after the recolor
+            if (lable.font == [UIFont boldSystemFontOfSize:20]) {
+                lable.textColor = FlatRed;
+            } else {
+                lable.textColor = FlatPlum;
+            }
         }
     } else if ([[defaults objectForKey:@"colorSettings"] isEqualToString:@"Dark"]) {
+        colorScheme = @"Dark";
         self.view.backgroundColor = FlatBlackDark;
         self.navigationController.navigationBar.barTintColor = FlatBlackDark;
         self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatBlack, TRUE);
@@ -384,9 +403,15 @@ CGFloat const iphoneScoreFont = 120.0f;
         self.leftActionNameNumber.textColor = FlatGreen;
         self.gameNumber.textColor = FlatMint;
         for (UILabel *lable in self.pastScoreCollection) {
-            lable.textColor = FlatYellow;
+            //NSLog(@"%@", lable.textColor);
+            if (lable.font == [UIFont boldSystemFontOfSize:20]) {
+                lable.textColor = FlatRed;
+            } else {
+                lable.textColor = FlatYellow;
+            }
         }
     } else {
+        colorScheme = @"Regular";
         self.view.backgroundColor = FlatWhite;
         self.navigationController.navigationBar.barTintColor = FlatNavyBlue;
         self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatNavyBlue, TRUE);
@@ -395,7 +420,11 @@ CGFloat const iphoneScoreFont = 120.0f;
         self.leftActionNameNumber.textColor = FlatBlackDark;
         self.gameNumber.textColor = FlatBlackDark;
         for (UILabel *lable in self.pastScoreCollection) {
-            lable.textColor = FlatBlack;
+            if (lable.font == [UIFont boldSystemFontOfSize:20]) {
+                lable.textColor = FlatRed;
+            } else {
+                lable.textColor = FlatBlack;
+            }
         }
     }
 }
@@ -415,11 +444,6 @@ CGFloat const iphoneScoreFont = 120.0f;
 
 
 #pragma mark - UI Elements
-
-//-(UIStatusBarStyle)preferredStatusBarStyle
-//{
-//    return UIStatusBarStyleLightContent;
-//}
 
 - (void)loadActionNames
 {
@@ -534,11 +558,11 @@ CGFloat const iphoneScoreFont = 120.0f;
 
     
     //Create the animation and swap positions of the score controllers
-    [UIView animateWithDuration:0.7f
+    [UIView animateWithDuration:0.7f //0.7
                           delay:0.0f
-         usingSpringWithDamping:0.7f
-          initialSpringVelocity:0.5f
-                        options:UIViewAnimationOptionCurveEaseInOut
+         usingSpringWithDamping:0.8f //0.8
+          initialSpringVelocity:0.5f //0.5
+                        options:UIViewAnimationOptionCurveEaseOut
                      animations:^(){
                          //Move the score containers
                          _homeTeamContainer.center = targetHomeCenter;
@@ -584,7 +608,7 @@ CGFloat const iphoneScoreFont = 120.0f;
         return;
     } else {
         //Number is not a zero, show popup menu
-        UIMenuItem *resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetTopToZero)];
+        UIMenuItem *resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetLeftToZero)];
         UIMenuItem *cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
         
         UIMenuController *menu = [UIMenuController sharedMenuController];
@@ -606,7 +630,7 @@ CGFloat const iphoneScoreFont = 120.0f;
         return;
     } else {
         //Number is not a zero, show popup menu
-        UIMenuItem *resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetBottomToZero)];
+        UIMenuItem *resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0" action:@selector(resetRightToZero)];
         UIMenuItem *cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel" action:@selector(leaveNumberAsIs)];
         
         UIMenuController *menu = [UIMenuController sharedMenuController];
@@ -616,12 +640,12 @@ CGFloat const iphoneScoreFont = 120.0f;
     }
 }
 
-- (void)resetTopToZero
+- (void)resetLeftToZero
 {
     self.leftActionNameNumber.text = @"0";
 }
 
-- (void)resetBottomToZero
+- (void)resetRightToZero
 {
     self.rightActionNameNumber.text = @"0";
 }
@@ -672,40 +696,43 @@ CGFloat const iphoneScoreFont = 120.0f;
             if (currHomeScore > currVisitorScore) {
                 self.homeGame1.textColor = [UIColor redColor];
                 [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+     
             } else if (currHomeScore < currVisitorScore) {
                 self.visitGame1.textColor = [UIColor redColor];
                 [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+
             } else {
-                self.visitGame1.textColor = [UIColor blackColor];
-                self.homeGame1.textColor = [UIColor blackColor];
+                self.visitGame1.textColor = FlatBlackDark;
+                self.homeGame1.textColor = FlatBlackDark;
+         
             }
             break;
         case 2:
             self.homeGame2.text = [NSString stringWithFormat:@"%d", currHomeScore];
             self.visitGame2.text = [NSString stringWithFormat:@"%d", currVisitorScore];
             if (currHomeScore > currVisitorScore) {
-                self.homeGame2.textColor = [UIColor redColor];
+                self.homeGame2.textColor = FlatRed;
                 [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:20]];
             } else if (currHomeScore < currVisitorScore) {
-                self.visitGame2.textColor = [UIColor redColor];
+                self.visitGame2.textColor = FlatRed;
                 [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:20]];
             }else {
-                self.visitGame2.textColor = [UIColor blackColor];
-                self.homeGame2.textColor = [UIColor blackColor];
+                self.visitGame2.textColor = FlatBlackDark;
+                self.homeGame2.textColor = FlatBlackDark;
             }
             break;
         case 3:
             self.homeGame3.text = [NSString stringWithFormat:@"%d", currHomeScore];
             self.visitGame3.text = [NSString stringWithFormat:@"%d", currVisitorScore];
             if (currHomeScore > currVisitorScore) {
-                self.homeGame3.textColor = [UIColor redColor];
+                self.homeGame3.textColor = FlatRed;
                 [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:20]];
             } else if (currHomeScore < currVisitorScore) {
-                self.visitGame3.textColor = [UIColor redColor];
+                self.visitGame3.textColor = FlatRed;
                 [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:20]];
             } else {
-                self.visitGame3.textColor = [UIColor blackColor];
-                self.homeGame3.textColor = [UIColor blackColor];
+                self.visitGame3.textColor = FlatBlackDark;
+                self.homeGame3.textColor = FlatBlackDark;
             }
         default:
             break;
@@ -717,11 +744,11 @@ CGFloat const iphoneScoreFont = 120.0f;
         self.gameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
         //Reset the scores to start a new game
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            [self initializeHomeScore:0 fontSize:188];
-            [self initializeVisitorScore:0 fontSize:188];
+            [self initializeHomeScore:00 fontSize:188];
+            [self initializeVisitorScore:00 fontSize:188];
         } else {
-            [self initializeHomeScore:0 fontSize:118];
-            [self initializeVisitorScore:0 fontSize:118];
+            [self initializeHomeScore:00 fontSize:118];
+            [self initializeVisitorScore:00 fontSize:118];
         }
 
         
@@ -746,13 +773,19 @@ CGFloat const iphoneScoreFont = 120.0f;
     //Log the button press for analytics
     [self logButtonPress:(UIButton *)sender];
     
-    //Get the number currently displayed for second Action Name and add 1
+    //Get the number currently displayed for right Action Name and add 1
     int lableNum = [self.rightActionNameNumber.text intValue];
     if (lableNum == 99) {
         lableNum = 0;
     } else {
         lableNum = lableNum + 1;
     }
+    
+//TODO Remove??
+    //Keep track of the number for this action in case the user comes back to it
+    //during this match
+    //[defaults setInteger:lableNum forKey:self.rightActionLabel.text];
+
     self.rightActionNameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     currSecondAction = lableNum;
     
@@ -775,6 +808,12 @@ CGFloat const iphoneScoreFont = 120.0f;
     } else {
         lableNum = lableNum + 1;
     }
+    
+//TODO Remove??    
+    //Keep track of the number for this action in case the user comes back to it
+    //during this match
+    //[defaults setInteger:lableNum forKey:self.leftActionLabel.text];
+    
     self.leftActionNameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     currFirstAction = lableNum;
     
@@ -990,6 +1029,12 @@ CGFloat const iphoneScoreFont = 120.0f;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/*!
+ *  AlertView to be shown only when New Match? is touched
+ *
+ *  @param alertView   What to do if the user wants to start a new match or not.
+ *  @param buttonIndex The button the user touched to start a new match or not.
+ */
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex != 0) {

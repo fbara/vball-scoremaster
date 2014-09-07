@@ -56,7 +56,7 @@
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
-                @"caption": @"There is help and information from the icon at the top of 'Settings'.\nHave fun!!\n\n(tap to dismiss)"
+                @"caption": @"There is help and information from the icon at the top of 'Settings'.\n\nPlease leave feedback in the App Store for others!\n\n(tap to dismiss)"
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{280.0f,0.0f},{0.0f,0.0f}}],
