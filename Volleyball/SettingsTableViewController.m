@@ -20,6 +20,11 @@
 @property NSString *existingLeftActionName;
 @property ActionLabelTableViewController *actionNameVC;
 @property UIPopoverController *aPopover;
+//Properties for IAP
+@property (strong, nonatomic) NSArray *products;
+@property (strong, nonatomic) NSNumberFormatter *priceFormatter;
+@property (weak, nonatomic) IBOutlet UIButton *purchaseSocial;
+
 
 @end
 
@@ -29,6 +34,18 @@
 }
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
+
+- (id) init
+{
+    self = [super init];
+    
+    if (self) {
+        self.priceFormatter = [[NSNumberFormatter alloc] init];
+        [self.priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+        [self.priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    }
+    return self;
+}
 
 #pragma mark - View Methods
 
@@ -69,8 +86,6 @@
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
     
-//??? Hide Social code for this version
-/*
     //Set the Twitter switch if messages will be sent
     if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
         [self.twitterSwitch setSelectedSegmentIndex:0];
@@ -84,7 +99,7 @@
     } else {
         [self.facebookSwitch setSelectedSegmentIndex:1];
     }
-*/
+
     
 }
                                    
@@ -108,6 +123,7 @@
 {
     
     [super viewWillAppear:animated];
+    
 
     //Is this the first time running this VC?
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -153,8 +169,6 @@
         [self.colorSettings setSelectedSegmentIndex:2];
     }
 
-//???  Removing Social code for this version
-/*
     //Set the Twitter switch if messages will be sent
     if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
         [self.twitterSwitch setSelectedSegmentIndex:0];
@@ -168,7 +182,6 @@
     } else {
         [self.facebookSwitch setSelectedSegmentIndex:1];
     }
-*/
     
 
 }
@@ -182,9 +195,8 @@
     [self notificationSwitch:self.sendNotificationSwitch];
     [self sendAnalytics:self.analyticsSwitch];
     [self colorSettings:self.colorSettings];
-//??? Remove Social code for this version, to be added as IAP
-//    [self sendWithFacebook:self.facebookSwitch];
-//    [self sendWithTwitter:self.twitterSwitch];
+    [self sendWithFacebook:self.facebookSwitch];
+    [self sendWithTwitter:self.twitterSwitch];
     
     //Set the notification when Settings is done
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsDone"
@@ -453,9 +465,12 @@
     return [defaults stringForKey:@"colorSettings"];
 }
 
-#pragma mark - Social Sharing Switches
-//??? Hide Social code for this version
-/*
+#pragma mark - Social Sharing
+
+- (IBAction)purchaseSocialSharing:(UIButton *)sender
+{
+    
+}
 
 - (IBAction)sendWithTwitter:(UISegmentedControl *)sender
 {
@@ -518,7 +533,6 @@
     
     return [defaults stringForKey:@"enableFacebook"];
 }
-*/
 
 #pragma mark - People Picker Methods
 
@@ -657,7 +671,6 @@
 
 #pragma mark - UITableView Delegate
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //Change the selected row color so the entire row doesn't become gray when it's touched
@@ -676,7 +689,7 @@
             self.actionRow = 2;
         }
     } else {
-        //Exit because the row was not for Action Name
+        //Not an action name so return
         return;
     }
     

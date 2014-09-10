@@ -10,8 +10,11 @@
 #import <AddressBookUI/AddressBookUI.h>
 #import "PhoneNumberFormatter.h"
 #import "ActionLabelTableViewController.h"
+@import StoreKit;
 
-@interface SettingsTableViewController : UITableViewController <UITableViewDelegate,ABPeoplePickerNavigationControllerDelegate,UITextViewDelegate,UITextFieldDelegate,ActionNameDelegate>
+#define k
+
+@interface SettingsTableViewController : UITableViewController <UITableViewDelegate,ABPeoplePickerNavigationControllerDelegate,UITextViewDelegate,UITextFieldDelegate,ActionNameDelegate,SKProductsRequestDelegate,SKPaymentTransactionObserver>
 
 @property (weak, nonatomic) IBOutlet UIButton *homeTeamColor;
 @property (weak, nonatomic) IBOutlet UIButton *visitingTeamColor;
@@ -26,11 +29,8 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *analyticsSwitch;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *colorSettings;
 
-//??? Hide Social code for this version
-/*
 @property (weak, nonatomic) IBOutlet UISegmentedControl *twitterSwitch;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *facebookSwitch;
-*/
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;
@@ -40,8 +40,8 @@
 - (IBAction)sendAnalytics:(UISegmentedControl *)sender;
 - (IBAction)colorSettings:(UISegmentedControl *)sender;
 
-//??? Remove Social code for this version
-//- (IBAction)sendWithFacebook:(UISegmentedControl *)sender;
-//- (IBAction)sendWithTwitter:(UISegmentedControl *)sender;
+
+- (IBAction)sendWithFacebook:(UISegmentedControl *)sender;
+- (IBAction)sendWithTwitter:(UISegmentedControl *)sender;
 
 @end

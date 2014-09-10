@@ -39,9 +39,13 @@
 		AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD529692197F45DD00767D1C /* GBVersionTracking.m */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
+		AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */; };
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
 		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
 		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
+		AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38319BFB056002CD75E /* IAPHelper.m */; };
+		AD96E38719BFB056002CD75E /* IAPItems.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38519BFB056002CD75E /* IAPItems.m */; };
+		AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */; };
 		AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9A21A8199BDB10009CEE31 /* Accounts.framework */; };
 		AD9B665C199D2754002C5145 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD9B665B199D2754002C5145 /* Settings.bundle */; };
 		ADAEAC5719ACB47B00519A20 /* ChameleonStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAEAC4E19ACB47B00519A20 /* ChameleonStatusBar.m */; };
@@ -149,9 +153,16 @@
 		AD529692197F45DD00767D1C /* GBVersionTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBVersionTracking.m; sourceTree = "<group>"; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AD96E38219BFB056002CD75E /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
+		AD96E38319BFB056002CD75E /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
+		AD96E38419BFB056002CD75E /* IAPItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPItems.h; sourceTree = "<group>"; };
+		AD96E38519BFB056002CD75E /* IAPItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPItems.m; sourceTree = "<group>"; };
+		AD96E38819BFB5F7002CD75E /* VolleyBallIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolleyBallIAPHelper.h; sourceTree = "<group>"; };
+		AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolleyBallIAPHelper.m; sourceTree = "<group>"; };
 		AD9A21A8199BDB10009CEE31 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		AD9B665B199D2754002C5145 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		ADAEAC4B19ACB47B00519A20 /* Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chameleon.h; path = Volleyball/Chameleon.h; sourceTree = "<group>"; };
@@ -242,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */,
+				AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */,
 				AD4B54C0199A40D500770580 /* Social.framework in Frameworks */,
 				AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */,
 				AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */,
@@ -283,6 +295,7 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
+				AD96E38119BFB02E002CD75E /* IAP */,
 				ADAEAC4A19ACB42D00519A20 /* Chameleon */,
 				ADFB421219A3729600ADBE9F /* AppbotX */,
 				ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */,
@@ -310,6 +323,7 @@
 		92AA42A11916C2800037D405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */,
 				AD9A21A8199BDB10009CEE31 /* Accounts.framework */,
 				AD4B54BF199A40D500770580 /* Social.framework */,
 				AD80C7F7198EFC0800C03C2E /* libz.dylib */,
@@ -416,6 +430,19 @@
 			);
 			name = GBVersionTracking;
 			path = Volleyball;
+			sourceTree = "<group>";
+		};
+		AD96E38119BFB02E002CD75E /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				AD96E38219BFB056002CD75E /* IAPHelper.h */,
+				AD96E38319BFB056002CD75E /* IAPHelper.m */,
+				AD96E38419BFB056002CD75E /* IAPItems.h */,
+				AD96E38519BFB056002CD75E /* IAPItems.m */,
+				AD96E38819BFB5F7002CD75E /* VolleyBallIAPHelper.h */,
+				AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */,
+			);
+			name = IAP;
 			sourceTree = "<group>";
 		};
 		ADAEAC4A19ACB42D00519A20 /* Chameleon */ = {
@@ -610,6 +637,11 @@
 				TargetAttributes = {
 					92AA429E1916C2800037D405 = {
 						DevelopmentTeam = CF655ESNGC;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					92AA42BF1916C2810037D405 = {
 						TestTargetID = 92AA429E1916C2800037D405;
@@ -683,6 +715,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD96E38719BFB056002CD75E /* IAPItems.m in Sources */,
 				ADE5AF7919B9DE9C00AAC92D /* ABXVersionTableViewCell.m in Sources */,
 				AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */,
 				ADE5AF7019B9DE9C00AAC92D /* ABXModel.m in Sources */,
@@ -711,8 +744,10 @@
 				ADE5AF6319B9DE9C00AAC92D /* NSString+ABXSizing.m in Sources */,
 				ADE5AF5D19B9DE9C00AAC92D /* ABXApiClient.m in Sources */,
 				ADE5AF7819B9DE9C00AAC92D /* ABXVersionNotificationView.m in Sources */,
+				AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */,
 				AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */,
 				AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */,
+				AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				ADE5AF6D19B9DE9C00AAC92D /* ABXAttachment.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
@@ -871,8 +906,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Frank Bara (CF655ESNGC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Frank Bara (CF655ESNGC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
@@ -882,7 +917,7 @@
 					"$(PROJECT_DIR)/Volleyball",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1F3397D5-91AD-4B91-83E4-907D2FD9F486";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -894,8 +929,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Frank Bara (CF655ESNGC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Frank Bara (CF655ESNGC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
@@ -905,7 +940,7 @@
 					"$(PROJECT_DIR)/Volleyball",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8B885CD4-199D-4A36-B59A-C0FE4AF3441D";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -991,8 +1026,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Frank Bara (CF655ESNGC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Frank Bara (CF655ESNGC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
@@ -1002,7 +1037,7 @@
 					"$(PROJECT_DIR)/Volleyball",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8B885CD4-199D-4A36-B59A-C0FE4AF3441D";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

@@ -10,6 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import "GAITrackedViewController.h"
 #import "ABXPromptView.h"
+#import <Social/Social.h>
 
 @interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource,UIAlertViewDelegate,UITextFieldDelegate, MFMessageComposeViewControllerDelegate,UIGestureRecognizerDelegate,UIPageViewControllerDelegate,ABXPromptViewDelegate>
  
@@ -37,9 +38,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *leftActionNameNumber;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 
-//??? Hide Social code for this version
-//@property (weak, nonatomic) IBOutlet UIButton *mainPageTwitterButton;
-//@property (weak, nonatomic) IBOutlet UIButton *mainPageFacebookButton;
+@property (weak, nonatomic) IBOutlet UIButton *mainPageTwitterButton;
+@property (weak, nonatomic) IBOutlet UIButton *mainPageFacebookButton;
 
 
 @property UISwipeGestureRecognizer *homeSwipeGesture;
