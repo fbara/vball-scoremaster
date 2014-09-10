@@ -26,11 +26,10 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *analyticsSwitch;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *colorSettings;
 
-//??? Hide Social code for this version
-/*
+@property (weak, nonatomic) IBOutlet UIButton *purchaseSocialSharing;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *twitterSwitch;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *facebookSwitch;
-*/
+
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;
@@ -40,8 +39,8 @@
 - (IBAction)sendAnalytics:(UISegmentedControl *)sender;
 - (IBAction)colorSettings:(UISegmentedControl *)sender;
 
-//??? Remove Social code for this version
-//- (IBAction)sendWithFacebook:(UISegmentedControl *)sender;
-//- (IBAction)sendWithTwitter:(UISegmentedControl *)sender;
+- (IBAction)purchaseSocial:(UIButton *)sender;
+- (IBAction)sendWithFacebook:(UISegmentedControl *)sender;
+- (IBAction)sendWithTwitter:(UISegmentedControl *)sender;
 
 @end

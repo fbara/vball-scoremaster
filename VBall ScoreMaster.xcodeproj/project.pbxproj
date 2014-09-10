@@ -37,6 +37,7 @@
 		AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968C197F390E00767D1C /* TutorialViewController.m */; };
 		AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968F197F458E00767D1C /* WSCoachMarksView.m */; };
 		AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD529692197F45DD00767D1C /* GBVersionTracking.m */; };
+		AD5797B219C0778000D7D0BF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5797B119C0778000D7D0BF /* StoreKit.framework */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
@@ -147,6 +148,7 @@
 		AD52968F197F458E00767D1C /* WSCoachMarksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSCoachMarksView.m; path = Volleyball/WSCoachMarksView.m; sourceTree = "<group>"; };
 		AD529691197F45DD00767D1C /* GBVersionTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBVersionTracking.h; sourceTree = "<group>"; };
 		AD529692197F45DD00767D1C /* GBVersionTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBVersionTracking.m; sourceTree = "<group>"; };
+		AD5797B119C0778000D7D0BF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -241,6 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5797B219C0778000D7D0BF /* StoreKit.framework in Frameworks */,
 				AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */,
 				AD4B54C0199A40D500770580 /* Social.framework in Frameworks */,
 				AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */,
@@ -283,6 +286,7 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
+				AD5797B319C0C02400D7D0BF /* IAP */,
 				ADAEAC4A19ACB42D00519A20 /* Chameleon */,
 				ADFB421219A3729600ADBE9F /* AppbotX */,
 				ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */,
@@ -310,6 +314,7 @@
 		92AA42A11916C2800037D405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD5797B119C0778000D7D0BF /* StoreKit.framework */,
 				AD9A21A8199BDB10009CEE31 /* Accounts.framework */,
 				AD4B54BF199A40D500770580 /* Social.framework */,
 				AD80C7F7198EFC0800C03C2E /* libz.dylib */,
@@ -416,6 +421,13 @@
 			);
 			name = GBVersionTracking;
 			path = Volleyball;
+			sourceTree = "<group>";
+		};
+		AD5797B319C0C02400D7D0BF /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = IAP;
 			sourceTree = "<group>";
 		};
 		ADAEAC4A19ACB42D00519A20 /* Chameleon */ = {

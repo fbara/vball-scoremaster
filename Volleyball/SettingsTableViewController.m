@@ -69,8 +69,6 @@
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
     
-//??? Hide Social code for this version
-/*
     //Set the Twitter switch if messages will be sent
     if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
         [self.twitterSwitch setSelectedSegmentIndex:0];
@@ -84,7 +82,6 @@
     } else {
         [self.facebookSwitch setSelectedSegmentIndex:1];
     }
-*/
     
 }
                                    
@@ -153,8 +150,6 @@
         [self.colorSettings setSelectedSegmentIndex:2];
     }
 
-//???  Removing Social code for this version
-/*
     //Set the Twitter switch if messages will be sent
     if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
         [self.twitterSwitch setSelectedSegmentIndex:0];
@@ -168,8 +163,7 @@
     } else {
         [self.facebookSwitch setSelectedSegmentIndex:1];
     }
-*/
-    
+ 
 
 }
 
@@ -182,9 +176,8 @@
     [self notificationSwitch:self.sendNotificationSwitch];
     [self sendAnalytics:self.analyticsSwitch];
     [self colorSettings:self.colorSettings];
-//??? Remove Social code for this version, to be added as IAP
-//    [self sendWithFacebook:self.facebookSwitch];
-//    [self sendWithTwitter:self.twitterSwitch];
+    [self sendWithFacebook:self.facebookSwitch];
+    [self sendWithTwitter:self.twitterSwitch];
     
     //Set the notification when Settings is done
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsDone"
@@ -446,6 +439,9 @@
     [self saveUserDefaults];
 }
 
+- (IBAction)purchaseSocial:(UIButton *)sender {
+}
+
 - (NSString *)getColorSettings
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -454,8 +450,6 @@
 }
 
 #pragma mark - Social Sharing Switches
-//??? Hide Social code for this version
-/*
 
 - (IBAction)sendWithTwitter:(UISegmentedControl *)sender
 {
@@ -518,7 +512,6 @@
     
     return [defaults stringForKey:@"enableFacebook"];
 }
-*/
 
 #pragma mark - People Picker Methods
 

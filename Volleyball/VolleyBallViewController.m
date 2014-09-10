@@ -11,9 +11,8 @@
 #import "SettingsTableViewController.h"
 #import "GBVersionTracking.h"
 #import "GAIDictionaryBuilder.h"
-//??? Hide Social code for this version
-//@import Social;
-//@import Accounts;
+@import Social;
+@import Accounts;
 
 NSString *const EMBED_HOME = @"embedHome";
 NSString *const EMBED_VISITOR = @"embedVisitor";
@@ -31,13 +30,14 @@ CGFloat const ipadScoreFont = 220.0f;
 CGFloat const iphoneScoreFont = 120.0f;
 NSString *colorScheme;
 
-@interface VolleyBallViewController ()
-
+@interface VolleyBallViewController (
+)
 @property (weak, atomic)UIPageViewController *homePageViewController;
 @property (weak, atomic)UIPageViewController *visitorPageViewController;
-//??? Hide Social code for this version
-//@property (weak, nonatomic)SLComposeViewController *twitterController;
-//@property (weak, nonatomic)SLComposeViewController *facebookController;
+@property (weak, nonatomic)SLComposeViewController *twitterController;
+@property (weak, nonatomic)SLComposeViewController *facebookController;
+@property (weak, nonatomic) IBOutlet UIButton *sendFacebookImage;
+@property (weak, nonatomic) IBOutlet UIButton *sendTwitterImage;
 @property (weak, nonatomic)NSURL *baralabsURL;
 @property (strong, nonatomic) ABXPromptView *promptView;
 
@@ -177,9 +177,8 @@ NSString *colorScheme;
         }
     }
         //Hide the Twitter and Facebook images so the user can read the Appbotx text
-//??? Hide Social for now, to be added to IAP later
-//        self.mainPageTwitterButton.hidden = TRUE;
-//        self.mainPageFacebookButton.hidden = TRUE;
+        self.sendFacebookImage.hidden = TRUE;
+        self.sendTwitterImage.hidden = TRUE;
     
         
     
@@ -212,10 +211,7 @@ NSString *colorScheme;
     //Format the window background color
     [self windowBackgroundColor];
     
-    //??? Hide Social code for this version
-    /*
-     [self enableSocialButtons];
-     */
+    [self enableSocialButtons];
     
 }
 
@@ -494,9 +490,6 @@ NSString *colorScheme;
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
 }
-    
-//??? Hide Social code for this version
-/*
 
 - (void)logTwitterSent
 {
@@ -524,7 +517,6 @@ NSString *colorScheme;
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
 }
-*/
     
 #pragma mark - UIGestureRecognizer Delegate Method
 
@@ -887,8 +879,6 @@ NSString *colorScheme;
 }
 
 #pragma mark - Social Accounts
-//??? Hide Social code for this version
-/*
 
 - (void)enableSocialButtons
 {
@@ -996,7 +986,6 @@ NSString *colorScheme;
        }
     }
 }
-*/
 
 #pragma mark - AppbotX
 
