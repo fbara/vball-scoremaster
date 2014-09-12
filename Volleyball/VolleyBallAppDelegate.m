@@ -9,6 +9,7 @@
 #import "VolleyBallAppDelegate.h"
 #import "GBVersionTracking.h"
 #import "GAI.h"
+#import "VolleyBallIAPHelper.h"
 
 
 @implementation VolleyBallAppDelegate
@@ -20,7 +21,10 @@
 {
     // Override point for customization after application launch.
     
+    //Needed to instantiate the version tracking
     [GBVersionTracking track];
+    //Needed to register the app as a transaction observer from Apple for IAP's
+    [VolleyBallIAPHelper sharedInstance];
     
     [[UINavigationBar appearance] setBarTintColor:FlatBlue];
     [[UINavigationBar appearance] setTintColor:ContrastColorOf(FlatBlue, TRUE)];

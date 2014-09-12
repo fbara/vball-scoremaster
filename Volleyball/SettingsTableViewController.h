@@ -11,8 +11,8 @@
 #import "PhoneNumberFormatter.h"
 #import "ActionLabelTableViewController.h"
 @import StoreKit;
+#import "VolleyBallIAPHelper.h"
 
-#define k
 
 @interface SettingsTableViewController : UITableViewController <UITableViewDelegate,ABPeoplePickerNavigationControllerDelegate,UITextViewDelegate,UITextFieldDelegate,ActionNameDelegate,SKProductsRequestDelegate,SKPaymentTransactionObserver>
 

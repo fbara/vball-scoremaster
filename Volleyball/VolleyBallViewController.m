@@ -216,8 +216,6 @@ NSString *colorScheme;
     //Format the window background color
     [self windowBackgroundColor];
     
-    //Query for previously purchased products
-    [self queryForProducts];
     
 }
 
@@ -638,6 +636,12 @@ NSString *colorScheme;
     }
 }
 
+- (IBAction)sendWithFacebook:(UIButton *)sender {
+}
+
+- (IBAction)sendWithTwitter:(UIButton *)sender {
+}
+
 - (void)resetLeftToZero
 {
     self.leftActionNameNumber.text = @"0";
@@ -886,10 +890,6 @@ NSString *colorScheme;
 
 #pragma mark - Social Accounts
 
-- (void)queryForProducts
-{
-    
-}
 
 - (void)enableSocialButtons
 {

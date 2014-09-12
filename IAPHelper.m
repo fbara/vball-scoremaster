@@ -69,9 +69,9 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
     
 }
 
-- (BOOL)productPurchased:(NSString *)productIdentifiers
+- (BOOL)productPurchased:(NSString *)productIdentifier
 {
-    return [_purchasedProductIdentifiers containsObject:productIdentifiers];
+    return [_purchasedProductIdentifiers containsObject:productIdentifier];
 }
 
 - (void)buyProduct:(SKProduct *)product
@@ -112,6 +112,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
 
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
 {
+    //Gets a list of transactions that have been updated
     for (SKPaymentTransaction *transaction in transactions) {
         switch (transaction.transactionState) {
             case SKPaymentTransactionStatePurchased:
@@ -131,8 +132,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction
 {
-    invc = [[InAppPurchaseViewController alloc] init];
-    [invc.view setNeedsDisplay];
+    NSLog(@"Complete transaction...");
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Transaction Completed"
                                                     message:nil

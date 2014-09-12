@@ -14,6 +14,11 @@
 #import "VolleyBallViewController.h"
 
 @interface SettingsTableViewController ()
+{
+    NSArray *_products;
+    NSNumberFormatter *_priceFormatter;
+    BOOL isPurchased;
+}
 
 @property int actionRow;
 @property NSString *existingRightActionName;
@@ -21,9 +26,8 @@
 @property ActionLabelTableViewController *actionNameVC;
 @property UIPopoverController *aPopover;
 //Properties for IAP
-@property (strong, nonatomic) NSArray *products;
-@property (strong, nonatomic) NSNumberFormatter *priceFormatter;
-@property (weak, nonatomic) IBOutlet UIButton *purchaseSocial;
+@property (weak, nonatomic) IBOutlet UITableViewCell *purchaseSocialCell;
+@property (strong, nonatomic) IBOutlet UITableView *settingsTable;
 
 
 @end
@@ -40,9 +44,7 @@
     self = [super init];
     
     if (self) {
-        self.priceFormatter = [[NSNumberFormatter alloc] init];
-        [self.priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
-        [self.priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        
     }
     return self;
 }
@@ -53,6 +55,11 @@
 {
     [super viewDidLoad];
     self.tableView.delegate = self;
+    
+    //Wire up the pull-to-refresh code
+    [self.refreshControl addTarget:self
+                            action:@selector(refreshView)
+                  forControlEvents:UIControlEventValueChanged];
     
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
                                            initWithTitle:@"Close"
@@ -69,21 +76,40 @@
                                    initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
                                    target:self
                                    action:nil];
+    UIBarButtonItem *restorePurchases = [[UIBarButtonItem alloc]
+                                         initWithTitle:@"Restore"
+                                         style:UIBarButtonItemStyleBordered
+                                         target:self
+                                         action:@selector(restoreTapped:)];
     fixedSpace.width = 20.0f;
     
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        NSArray *barButtonItems = @[saveButton,fixedSpace,infoButton];
+        NSArray *barButtonItems = @[saveButton,fixedSpace,restorePurchases,fixedSpace,infoButton];
         self.navigationItem.rightBarButtonItems = barButtonItems;
     } else {
-        self.navigationItem.rightBarButtonItems = @[infoButton];
+        self.navigationItem.rightBarButtonItems = @[infoButton,fixedSpace,restorePurchases];
     }
+    
+    //Refresh the tableview for IAP's
+    //[self refreshView];
     
     //Set the switch if messages will be sent
     if ([[self getSendNotifications] isEqualToString:@"On"]) {
         [self.sendNotificationSwitch setSelectedSegmentIndex:0];
     } else {
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
+    }
+
+    //Find out if they purchased social sharing
+    if ([self getIAPList]) {
+        //They've purchased so enable the switches
+        self.twitterSwitch.enabled = TRUE;
+        self.facebookSwitch.enabled = TRUE;
+    } else {
+        //Have not purchased so disable switches
+        self.twitterSwitch.enabled = FALSE;
+        self.facebookSwitch.enabled = FALSE;
     }
     
     //Set the Twitter switch if messages will be sent
@@ -99,10 +125,9 @@
     } else {
         [self.facebookSwitch setSelectedSegmentIndex:1];
     }
-
     
 }
-                                   
+
 - (void)saveAndClose
 {
     [self.parentViewController dismissViewControllerAnimated:TRUE completion:nil];
@@ -123,6 +148,12 @@
 {
     
     [super viewWillAppear:animated];
+    
+    //Setup a notification observer for IAP
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(productPurchased:)
+                                                 name:IAPHelperProductPurchaseNotification
+                                               object:nil];
     
 
     //Is this the first time running this VC?
@@ -197,6 +228,11 @@
     [self colorSettings:self.colorSettings];
     [self sendWithFacebook:self.facebookSwitch];
     [self sendWithTwitter:self.twitterSwitch];
+    
+    //Remove our observer for IAP
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:IAPHelperProductPurchaseNotification
+                                                  object:nil];
     
     //Set the notification when Settings is done
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsDone"
@@ -467,9 +503,88 @@
 
 #pragma mark - Social Sharing
 
-- (IBAction)purchaseSocialSharing:(UIButton *)sender
+- (void)formatIAPPrice
 {
+    _priceFormatter = [[NSNumberFormatter alloc] init];
+    [_priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+    [_priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+}
+
+
+- (BOOL)getIAPList
+{
+    //Get list of available IAP's
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    [[VolleyBallIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        if (success) {
+            _products = products;
+            SKProduct *product = (SKProduct *)_products[0];
+            self.purchaseSocialCell.textLabel.text = product.localizedTitle;
+            
+            [self formatIAPPrice];
+            
+            [_priceFormatter setLocale:product.priceLocale];
+            self.purchaseSocialCell.detailTextLabel.text = [_priceFormatter stringFromNumber:product.price];
+            
+            
+            if ([[VolleyBallIAPHelper sharedInstance] productPurchased:product.productIdentifier]) {
+                self.purchaseSocialCell.accessoryType = UITableViewCellAccessoryCheckmark;
+                self.purchaseSocialCell.accessoryView = nil;
+                
+                [defaults setBool:TRUE forKey:@"purchasedSocial"];
+                isPurchased = TRUE;
+                
+            } else {
+                UIButton *buyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                buyButton.frame = CGRectMake(0, 0, 214, 29);
+                [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
+                //buyButton.backgroundColor = FlatYellow;
+                buyButton.layer.borderWidth = 1.0f;
+                buyButton.layer.borderColor = [[UIColor blackColor] CGColor];
+                buyButton.layer.masksToBounds = YES;
+                buyButton.layer.cornerRadius = 5;
+                buyButton.tag = 0;
+                [buyButton addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+                self.purchaseSocialCell.accessoryType = UITableViewCellAccessoryNone;
+                self.purchaseSocialCell.accessoryView = buyButton;
+                [defaults setBool:FALSE forKey:@"purchasedSocial"];
+                isPurchased = FALSE;
+            }
+        }
+    }];
+    return isPurchased;
+}
+
+- (void)buyButtonTapped:(UIButton *)sender
+{
+    UIButton *buyButton = sender;
+    SKProduct *product = _products[buyButton.tag];
+    
+    NSLog(@"Buying %@...", product.productIdentifier);
+    [[VolleyBallIAPHelper sharedInstance] buyProduct:product];
+    
+    [self.settingsTable reloadData];
+}
+
+- (void)productPurchased:(NSNotification *)notification
+{
+    //This will be called after the user completes a purchase, so
+    //remove the 'buy' button and replace with a checkmark and do anything else
+    NSString *productIdentifier = notification.object;
+    [_products enumerateObjectsUsingBlock:^(SKProduct *product, NSUInteger idx, BOOL *stop) {
+        if ([product.productIdentifier isEqualToString:productIdentifier]) {
+            [self refreshView];
+            *stop = YES;
+        }
+    }];
+}
+
+- (void)restoreTapped:(UIButton *)sender
+{
+    [[VolleyBallIAPHelper sharedInstance] restoreCompletedTransactions];
+    
+    [self refreshView];
 }
 
 - (IBAction)sendWithTwitter:(UISegmentedControl *)sender
@@ -688,8 +803,8 @@
             //The right Action Name row was selected
             self.actionRow = 2;
         }
+    
     } else {
-        //Not an action name so return
         return;
     }
     
@@ -697,6 +812,14 @@
     [self performSegueWithIdentifier:@"actionNameView" sender:self];
     
 
+}
+
+- (void)refreshView
+{
+    [self.refreshControl beginRefreshing];
+    [self getIAPList];
+    [self.refreshControl endRefreshing];
+    
 }
 
 #pragma mark - UITextField Phone Formatting
