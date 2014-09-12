@@ -91,8 +91,6 @@
         self.navigationItem.rightBarButtonItems = @[infoButton,fixedSpace,restorePurchases];
     }
     
-    //Refresh the tableview for IAP's
-    //[self refreshView];
     
     //Set the switch if messages will be sent
     if ([[self getSendNotifications] isEqualToString:@"On"]) {
