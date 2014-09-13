@@ -10,7 +10,7 @@
 
 @interface DefaultScoreViewController : UIViewController
 
-@property (nonatomic)int score;
+@property(nonatomic) int score;
 
 - (void)setScoreNumberSize:(CGFloat)numberSize;
 
