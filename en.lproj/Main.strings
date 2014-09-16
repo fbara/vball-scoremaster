@@ -32,8 +32,8 @@
 /* Class = "IBUILabel"; text = "0"; ObjectID = "991-IZ-vz3"; */
 "991-IZ-vz3.text" = "0";
 
-/* Class = "IBUITableViewSection"; headerTitle = "notifications"; ObjectID = "AEf-DS-lJV"; */
-"AEf-DS-lJV.headerTitle" = "notifications";
+/* Class = "IBUITableViewSection"; headerTitle = "sharing"; ObjectID = "AEf-DS-lJV"; */
+"AEf-DS-lJV.headerTitle" = "sharing";
 
 /* Class = "IBUITextField"; accessibilityHint = "Who should be sent the text message."; ObjectID = "CH8-S5-jc8"; */
 "CH8-S5-jc8.accessibilityHint" = "Who should be sent the text message.";

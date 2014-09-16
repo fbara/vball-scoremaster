@@ -203,24 +203,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="N5W-5Y-GSc">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="N5W-5Y-GSc" userLabel="Twitter Button">
                                 <rect key="frame" x="287" y="271" width="34" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="twitter">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="sendWithTwitter:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kHb-tk-qF7"/>
+                                    <action selector="sendTwitter:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pkM-7X-bva"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="o7g-pR-XeM">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="o7g-pR-XeM" userLabel="Facebook Button">
                                 <rect key="frame" x="238" y="273" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="sendWithFacebook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ls4-Fw-LIz"/>
+                                    <action selector="sendFacebook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wYT-Mq-lce"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -943,8 +943,8 @@
     </scenes>
     <resources>
         <image name="VBall image" width="230" height="228"/>
-        <image name="facebook" width="602" height="600"/>
-        <image name="twitter" width="489" height="489"/>
+        <image name="facebook" width="299" height="300"/>
+        <image name="twitter" width="243" height="243"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

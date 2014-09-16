@@ -83,8 +83,9 @@
 
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
     NSArray *barButtonItems =
-        @[ saveButton, fixedSpace, restorePurchases, fixedSpace, infoButton ];
+        @[infoButton, fixedSpace, restorePurchases];
     self.navigationItem.rightBarButtonItems = barButtonItems;
+      self.navigationItem.leftBarButtonItem = saveButton;
   } else {
     self.navigationItem.rightBarButtonItems =
         @[ infoButton, fixedSpace, restorePurchases ];
@@ -96,19 +97,32 @@
   } else {
     [self.sendNotificationSwitch setSelectedSegmentIndex:1];
   }
-
-  if (!isPurchased) {
-    // Find out if they purchased social sharing
-    if ([self getIAPList]) {
-      // They've purchased so enable the switches
-      self.twitterSwitch.enabled = TRUE;
-      self.facebookSwitch.enabled = TRUE;
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
+        [self getIAPList];
+        self.twitterSwitch.enabled = FALSE;
+        self.facebookSwitch.enabled = FALSE;
     } else {
-      // Have not purchased so disable switches
-      self.twitterSwitch.enabled = FALSE;
-      self.facebookSwitch.enabled = FALSE;
+        self.twitterSwitch.enabled = TRUE;
+        self.facebookSwitch.enabled = TRUE;
+        self.purchaseSocialCell.detailTextLabel.text = @"Paid";
+        self.purchaseSocialCell.textLabel.text = @"Social sharing purchase";
+        self.purchaseSocialCell.accessoryType =
+        UITableViewCellAccessoryCheckmark;
+        self.purchaseSocialCell.accessoryView = nil;
     }
-  }
+    
+//    // Find out if they purchased social sharing
+//        if ([self getIAPList]) {
+//          // They've purchased so enable the switches
+//          self.twitterSwitch.enabled = TRUE;
+//          self.facebookSwitch.enabled = TRUE;
+//        } else {
+//          // Have not purchased so disable switches
+//          self.twitterSwitch.enabled = FALSE;
+//          self.facebookSwitch.enabled = FALSE;
+//        }
+
 
   // Set the Twitter switch if messages will be sent
   if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
@@ -524,9 +538,13 @@
               isPurchased = TRUE;
 
             } else {
-              UIButton *buyButton =
-                  [UIButton buttonWithType:UIButtonTypeRoundedRect];
-              buyButton.frame = CGRectMake(0, 0, 205, 29);
+                UIButton *buyButton =
+                [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                    buyButton.frame = CGRectMake(0, 0, 230, 29);
+                } else {
+                  buyButton.frame = CGRectMake(0, 0, 205, 29);
+                }
               [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
               buyButton.backgroundColor = FlatYellow;
               buyButton.layer.borderWidth = 0.25f;
@@ -805,11 +823,10 @@
 }
 
 - (void)refreshView {
-  if (!isPurchased) {
     [self.refreshControl beginRefreshing];
     [self getIAPList];
     [self.refreshControl endRefreshing];
-  }
+
 }
 
 #pragma mark - UITextField Phone Formatting

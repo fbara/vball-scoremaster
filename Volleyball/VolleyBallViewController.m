@@ -173,9 +173,6 @@ NSString *colorScheme;
       [[NSUserDefaults standardUserDefaults] synchronize];
     }
   }
-  // Hide the Twitter and Facebook images so the user can read the Appbotx text
-  self.mainPageTwitterButton.hidden = TRUE;
-  self.mainPageFacebookButton.hidden = TRUE;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -201,6 +198,16 @@ NSString *colorScheme;
 
   // Format the window background color
   [self windowBackgroundColor];
+    
+    // Show or hide the social buttons depending on the IAP
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
+        self.mainPageTwitterButton.hidden = FALSE;
+        self.mainPageFacebookButton.hidden = FALSE;
+    } else {
+        self.mainPageTwitterButton.hidden = TRUE;
+        self.mainPageFacebookButton.hidden = TRUE;
+    }
+    [self enableSocialButtons];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -917,6 +924,9 @@ NSString *colorScheme;
       [self presentViewController:self.twitterController
                          animated:YES
                        completion:nil];
+        
+        UIPopoverPresentationController *presentationController = [self.twitterController popoverPresentationController];
+        presentationController.sourceView = self.view;
 
       // Clear screen shot from memory
       screenImage = nil;
@@ -946,8 +956,10 @@ NSString *colorScheme;
   // Check if text messages should be sent
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
+    //Check if user enabled sending by facebook
   if ([[defaults stringForKey:@"enableFacebook"] isEqualToString:@"On"]) {
-    if ([self userHasAccessToFacebook]) {
+      //Check if user has setup facebook on the device
+      if ([self userHasAccessToFacebook]) {
       self.facebookController = [SLComposeViewController
           composeViewControllerForServiceType:SLServiceTypeFacebook];
 

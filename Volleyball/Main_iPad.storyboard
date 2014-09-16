@@ -952,8 +952,8 @@
     </scenes>
     <resources>
         <image name="VBall image" width="230" height="228"/>
-        <image name="facebook" width="602" height="600"/>
-        <image name="twitter" width="489" height="489"/>
+        <image name="facebook" width="299" height="300"/>
+        <image name="twitter" width="243" height="243"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

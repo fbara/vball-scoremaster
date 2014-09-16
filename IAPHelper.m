@@ -106,6 +106,13 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
     
     _completionHandler(NO, nil);
     _completionHandler = nil;
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't Load Products"
+                                                    message:@"Unable to communicate with the iTunes server.\nPlease check your network connection, try again later, or contact iTunes support."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 #pragma mark - SKPaymentTransactionObserver
@@ -132,17 +139,10 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction
 {
-    NSLog(@"Complete transaction...");
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Transaction Completed"
-                                                    message:nil
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil, nil];
-    [alert show];
-    
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    NSLog(@"Complete transaction...");
+
 }
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction
@@ -151,6 +151,34 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
     if (transaction.error.code != SKErrorPaymentCancelled) {
         NSLog(@"Transaction error: %@", transaction.error.localizedDescription);
     }
+    
+    UIAlertView *alert = [[UIAlertView alloc] init];
+    NSString *alertTitle = @"Purchase Error";
+    NSString *alertMsg;
+    
+    switch (transaction.error.code) {
+        case SKErrorPaymentNotAllowed:
+            alertMsg = @"Parental settings prevent purchases for this iTunes user account";
+            break;
+        case SKErrorClientInvalid:
+            alertMsg = @"Purchases not allowed for this iTunes user account";
+            break;
+        case SKErrorPaymentInvalid:
+            alertMsg = @"There was an error completing this purchase.\nContact iTunes support for more info";
+            break;
+        case SKErrorUnknown:
+            alertMsg = @"The purhase could not be completed at this time.\nPlease try again later or contact iTunes support.";
+            break;
+        default:
+            break;
+    }
+    
+    [[alert initWithTitle:alertTitle
+        message:alertMsg
+        delegate:nil
+        cancelButtonTitle:@"Ok"
+        otherButtonTitles:nil] show];
+    
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
 
