@@ -33,6 +33,7 @@
 @property(strong, nonatomic) IBOutlet UITableView *settingsTable;
 @property(strong, nonatomic)
     IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic)UIBarButtonItem *restorePurchases;
 
 @end
 
@@ -74,7 +75,7 @@
       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
                            target:self
                            action:nil];
-  UIBarButtonItem *restorePurchases =
+  self.restorePurchases =
       [[UIBarButtonItem alloc] initWithTitle:@"Restore"
                                        style:UIBarButtonItemStyleBordered
                                       target:self
@@ -83,12 +84,12 @@
 
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
     NSArray *barButtonItems =
-        @[infoButton, fixedSpace, restorePurchases];
+        @[infoButton, fixedSpace, self.restorePurchases];
     self.navigationItem.rightBarButtonItems = barButtonItems;
       self.navigationItem.leftBarButtonItem = saveButton;
   } else {
     self.navigationItem.rightBarButtonItems =
-        @[ infoButton, fixedSpace, restorePurchases ];
+        @[ infoButton, fixedSpace, self.restorePurchases ];
   }
 
   // Set the switch if messages will be sent
@@ -99,6 +100,7 @@
   }
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
+        //No purchase so get the products and disable the buttons
         [self getIAPList];
         self.twitterSwitch.enabled = FALSE;
         self.facebookSwitch.enabled = FALSE;
@@ -110,19 +112,8 @@
         self.purchaseSocialCell.accessoryType =
         UITableViewCellAccessoryCheckmark;
         self.purchaseSocialCell.accessoryView = nil;
+        self.restorePurchases.enabled = FALSE;
     }
-    
-//    // Find out if they purchased social sharing
-//        if ([self getIAPList]) {
-//          // They've purchased so enable the switches
-//          self.twitterSwitch.enabled = TRUE;
-//          self.facebookSwitch.enabled = TRUE;
-//        } else {
-//          // Have not purchased so disable switches
-//          self.twitterSwitch.enabled = FALSE;
-//          self.facebookSwitch.enabled = FALSE;
-//        }
-
 
   // Set the Twitter switch if messages will be sent
   if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
@@ -535,13 +526,16 @@
 
               [defaults setBool:TRUE forKey:@"purchasedSocial"];
                 self.purchaseSocialCell.detailTextLabel.text = @"Paid";
+                self.twitterSwitch.enabled = TRUE;
+                self.facebookSwitch.enabled = TRUE;
+                self.restorePurchases.enabled = FALSE;
               isPurchased = TRUE;
 
             } else {
                 UIButton *buyButton =
                 [UIButton buttonWithType:UIButtonTypeRoundedRect];
                 if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-                    buyButton.frame = CGRectMake(0, 0, 230, 29);
+                    buyButton.frame = CGRectMake(5, 0, 220, 29);
                 } else {
                   buyButton.frame = CGRectMake(0, 0, 205, 29);
                 }
@@ -559,6 +553,7 @@
                   UITableViewCellAccessoryNone;
               self.purchaseSocialCell.accessoryView = buyButton;
               [defaults setBool:FALSE forKey:@"purchasedSocial"];
+                self.restorePurchases.enabled = TRUE;
               isPurchased = FALSE;
             }
           }
@@ -585,13 +580,22 @@
       if ([product.productIdentifier isEqualToString:productIdentifier]) {
         [self refreshView];
           self.purchaseSocialCell.detailTextLabel.text = @"Paid";
+          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!"
+                                                          message:@"Thank you for purchasing the social sharing option!"
+                                                         delegate:nil
+                                                cancelButtonTitle:@"Ok"
+                                                otherButtonTitles:nil];
+          [alert show];
         *stop = YES;
       }
   }];
 }
 
 - (void)restoreTapped:(UIButton *)sender {
+    
     [self.activityIndicator startAnimating];
+    
+    
   [[VolleyBallIAPHelper sharedInstance] restoreCompletedTransactions];
   [self refreshView];
     self.purchaseSocialCell.detailTextLabel.text = @"Paid";

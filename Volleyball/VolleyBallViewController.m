@@ -38,8 +38,6 @@ NSString *colorScheme;
 
 @property(weak, atomic) UIPageViewController *homePageViewController;
 @property(weak, atomic) UIPageViewController *visitorPageViewController;
-@property(weak, nonatomic) SLComposeViewController *twitterController;
-@property(weak, nonatomic) SLComposeViewController *facebookController;
 @property(weak, nonatomic) NSURL *baralabsURL;
 @property(strong, nonatomic) ABXPromptView *promptView;
 
@@ -203,6 +201,7 @@ NSString *colorScheme;
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
         self.mainPageTwitterButton.hidden = FALSE;
         self.mainPageFacebookButton.hidden = FALSE;
+        
     } else {
         self.mainPageTwitterButton.hidden = TRUE;
         self.mainPageFacebookButton.hidden = TRUE;
@@ -909,7 +908,7 @@ NSString *colorScheme;
 
   if ([[defaults stringForKey:@"enableTwitter"] isEqualToString:@"On"]) {
     if ([self userHasAccessToTwitter]) {
-      self.twitterController = [SLComposeViewController
+        SLComposeViewController *twitterController = [SLComposeViewController
           composeViewControllerForServiceType:SLServiceTypeTwitter];
 
       NSString *newMessage, *tempStr1, *tempStr2;
@@ -917,17 +916,26 @@ NSString *colorScheme;
       tempStr2 = @"\n#vballscoremaster";
       newMessage = [tempStr1 stringByAppendingString:tempStr2];
 
-      [self.twitterController setInitialText:newMessage];
-      [self.twitterController addImage:[self getScreenImage]];
+      [twitterController setInitialText:newMessage];
+      [twitterController addImage:[self getScreenImage]];
+        [twitterController setCompletionHandler:^(SLComposeViewControllerResult result) {
+            switch (result) {
+                case SLComposeViewControllerResultCancelled:
+                    NSLog(@"Post cancelled");
+                    break;
+                case SLComposeViewControllerResultDone:
+                    NSLog(@"Post completed");
+                    break;
+                default:
+                    break;
+            }
+        }];
 
       // Show Twitter screen
-      [self presentViewController:self.twitterController
+      [self presentViewController:twitterController
                          animated:YES
                        completion:nil];
         
-        UIPopoverPresentationController *presentationController = [self.twitterController popoverPresentationController];
-        presentationController.sourceView = self.view;
-
       // Clear screen shot from memory
       screenImage = nil;
 
@@ -960,7 +968,7 @@ NSString *colorScheme;
   if ([[defaults stringForKey:@"enableFacebook"] isEqualToString:@"On"]) {
       //Check if user has setup facebook on the device
       if ([self userHasAccessToFacebook]) {
-      self.facebookController = [SLComposeViewController
+      SLComposeViewController *facebookController = [SLComposeViewController
           composeViewControllerForServiceType:SLServiceTypeFacebook];
 
       NSString *newMessage, *tempStr1, *tempStr2;
@@ -968,11 +976,22 @@ NSString *colorScheme;
       tempStr2 = @"\n#vballscoremaster";
       newMessage = [tempStr1 stringByAppendingString:tempStr2];
 
-      [self.facebookController setInitialText:newMessage];
-      [self.facebookController addImage:[self getScreenImage]];
+      [facebookController setInitialText:newMessage];
+      [facebookController addImage:[self getScreenImage]];
+          [facebookController setCompletionHandler:^(SLComposeViewControllerResult result){
+              switch (result) {
+                  case SLComposeViewControllerResultCancelled:
+                      NSLog(@"Post cancelled");
+                      break;
+                    case SLComposeViewControllerResultDone:
+                      NSLog(@"Post complete");
+                  default:
+                      break;
+              }
+          }];
 
       // Show Facebook screen
-      [self presentViewController:self.facebookController
+      [self presentViewController:facebookController
                          animated:YES
                        completion:nil];
 

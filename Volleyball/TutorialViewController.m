@@ -48,7 +48,7 @@
             @"caption": @"Customize the screen by adding team names, and..."
             },
         @{
-            @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,97.0f},{439.0f,150.0f}}],
+            @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,107.0f},{439.0f,130.0f}}],
             @"caption": @"...tap to add points and swipe the scores to change sides."
             },
         @{

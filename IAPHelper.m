@@ -43,9 +43,9 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
                                      boolForKey:productIdentifier];
             if (productPurchased) {
                 [_purchasedProductIdentifiers addObject:productIdentifier];
-                NSLog(@"Previously purchased: %@/n", productIdentifier);
+                NSLog(@"Previously purchased: %@", productIdentifier);
             } else {
-                NSLog(@"Not purchased: %@/n", productIdentifier);
+                NSLog(@"Not purchased: %@", productIdentifier);
             }
         }
         //Add self as the transaction observer
@@ -107,8 +107,8 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
     _completionHandler(NO, nil);
     _completionHandler = nil;
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't Load Products"
-                                                    message:@"Unable to communicate with the iTunes server.\nPlease check your network connection, try again later, or contact iTunes support."
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communications Error"
+                                                    message:@"I can't load a list of available products for purchase.\nUnable to communicate with the iTunes server.\nYou may safely ignore this error if you don't want to use social network sharing."
                                                    delegate:nil
                                           cancelButtonTitle:@"Ok"
                                           otherButtonTitles:nil];
@@ -184,6 +184,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction
 {
+    
     NSLog(@"\nRestoring transaction....");
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
@@ -193,6 +194,45 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
 - (void)restoreCompletedTransactions
 {
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+
+- (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
+{
+    //NSLog(@"paymentQueueRestoreCompletedTransactionsFinished");
+    NSLog(@"%@", queue);
+    NSLog(@"Restored Transactions are once again in Queue for purchasing %@",[queue transactions]);
+    
+    NSMutableArray *purchasedItemIDs = [[NSMutableArray alloc] init];
+    NSUInteger trans = queue.transactions.count;
+    NSLog(@"received restored transactions: %ld", (unsigned long)trans);
+    
+    for (SKPaymentTransaction *transaction in queue.transactions) {
+        NSString *productID = transaction.payment.productIdentifier;
+        [purchasedItemIDs addObject:productID];
+        NSLog (@"product id is %@" , productID);
+        // here put an if/then statement to write files based on previously purchased items
+        // example if ([productID isEqualToString: @"youruniqueproductidentifier]){write files} else { nslog sorry}
+    }
+    if (queue.transactions.count < 1) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Purchase Error"
+                                                        message:@"Unable to complete purchase.\nThe most likely reason for this is that you are not the original purchaser.\nThis purchase will now be cancelled."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:error.localizedDescription
+                                                    message:@"Unable to connect to the iTunes store.\n\nPlease try your purchase again later."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+    NSLog(@"Restore failed: %@", error.localizedDescription);
+ 
 }
 
 - (void)provideContentForProductIdentifier:(NSString *)productIdentifier
