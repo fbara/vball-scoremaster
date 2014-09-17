@@ -805,7 +805,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGO-83-1Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1450" y="-909"/>
+            <point key="canvasLocation" x="1030" y="-1161"/>
         </scene>
         <!--Visitor Page View Controller-->
         <scene sceneID="c6u-WJ-yVv">
@@ -816,7 +816,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6O-LZ-YFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1450" y="-581"/>
+            <point key="canvasLocation" x="1010" y="-715"/>
         </scene>
         <!--Support-->
         <scene sceneID="DB9-3u-827">

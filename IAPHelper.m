@@ -215,7 +215,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
     }
     if (queue.transactions.count < 1) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Purchase Error"
-                                                        message:@"Unable to complete purchase.\nThe most likely reason for this is that you are not the original purchaser.\nThis purchase will now be cancelled."
+                                                        message:@"Unable to restore or complete the purchase at this time."
                                                        delegate:nil
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil];

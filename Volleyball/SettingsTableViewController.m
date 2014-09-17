@@ -537,7 +537,7 @@
                 if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
                     buyButton.frame = CGRectMake(5, 0, 220, 29);
                 } else {
-                  buyButton.frame = CGRectMake(0, 0, 205, 29);
+                  buyButton.frame = CGRectMake(5, 0, 210, 29);
                 }
               [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
               buyButton.backgroundColor = FlatYellow;
