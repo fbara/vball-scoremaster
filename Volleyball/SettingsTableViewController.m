@@ -566,7 +566,7 @@
   UIButton *buyButton = sender;
   SKProduct *product = _products[buyButton.tag];
 
-  NSLog(@"Buying %@...", product.productIdentifier);
+  //NSLog(@"Buying %@...", product.productIdentifier);
   [[VolleyBallIAPHelper sharedInstance] buyProduct:product];
 
 }

@@ -76,7 +76,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
 
 - (void)buyProduct:(SKProduct *)product
 {
-    NSLog(@"Buying product %@.....", product.productIdentifier);
+    //NSLog(@"Buying product %@.....", product.productIdentifier);
     SKPayment *payment = [SKPayment paymentWithProduct:product];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
@@ -85,15 +85,15 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
-    NSLog(@"Loaded list of products....\n");
+    //NSLog(@"Loaded list of products....\n");
     _productsRequest = nil;
     
     NSArray *skProducts = response.products;
     for (SKProduct *skProduct in skProducts) {
-        NSLog(@"Found product: %@ %@ %0.2f",
-              skProduct.productIdentifier,
-              skProduct.localizedTitle,
-              skProduct.price.floatValue);
+//        NSLog(@"Found product: %@ %@ %0.2f",
+//              skProduct.productIdentifier,
+//              skProduct.localizedTitle,
+//              skProduct.price.floatValue);
     }
     _completionHandler(YES, skProducts);
     _completionHandler = nil;
@@ -141,7 +141,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
 {
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-    NSLog(@"Complete transaction...");
+    //NSLog(@"Complete transaction...");
 
 }
 
@@ -209,7 +209,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
     for (SKPaymentTransaction *transaction in queue.transactions) {
         NSString *productID = transaction.payment.productIdentifier;
         [purchasedItemIDs addObject:productID];
-        NSLog (@"product id is %@" , productID);
+        //NSLog (@"product id is %@" , productID);
         // here put an if/then statement to write files based on previously purchased items
         // example if ([productID isEqualToString: @"youruniqueproductidentifier]){write files} else { nslog sorry}
     }

@@ -94,6 +94,10 @@ static NSString* const kiTunesID = @"886670213";
             //iTunes review
             [ABXAppStore openAppStoreReviewForApp:kiTunesID];
             break;
+        case 5:
+            //BaraLabs website
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com"]];
+            break;
         default:
             break;
     }
@@ -110,7 +114,7 @@ static NSString* const kiTunesID = @"886670213";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 5;
+    return 6;
 }
 
 
