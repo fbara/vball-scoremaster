@@ -7,8 +7,8 @@
 //
 
 #import "ABXPromptView.h"
-
 #import "NSString+ABXLocalized.h"
+
 
 @interface ABXPromptView ()
 

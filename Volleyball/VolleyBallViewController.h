@@ -31,12 +31,16 @@
 @property(weak, nonatomic) IBOutlet UILabel *rightActionLabel;
 @property(weak, nonatomic) IBOutlet UIView *homeTeamContainer;
 @property(weak, nonatomic) IBOutlet UIView *vistingTeamContainer;
+
 @property(weak, nonatomic) IBOutlet UILabel *homeGame1;
 @property(weak, nonatomic) IBOutlet UILabel *homeGame2;
 @property(weak, nonatomic) IBOutlet UILabel *homeGame3;
+@property(weak, nonatomic) IBOutlet UILabel *homeGame4;
 @property(weak, nonatomic) IBOutlet UILabel *visitGame1;
 @property(weak, nonatomic) IBOutlet UILabel *visitGame2;
 @property(weak, nonatomic) IBOutlet UILabel *visitGame3;
+@property(weak, nonatomic) IBOutlet UILabel *visitGame4;
+
 @property(weak, nonatomic) IBOutlet UIButton *sendMessageImage;
 @property(strong, nonatomic) IBOutletCollection(UILabel)
     NSArray *pastScoreCollection;

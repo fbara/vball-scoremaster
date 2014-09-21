@@ -41,6 +41,7 @@ NSString *colorScheme;
 @property(weak, nonatomic) NSURL *baralabsURL;
 @property(strong, nonatomic) ABXPromptView *promptView;
 
+
 @end
 
 @implementation VolleyBallViewController
@@ -114,7 +115,7 @@ NSString *colorScheme;
                                UISwipeGestureRecognizerDirectionRight;
   homeSwipeGesture.delegate = self;
   [_homeTeamContainer addGestureRecognizer:homeSwipeGesture];
-
+    
   // Create the same thing for the visitor team container
   UISwipeGestureRecognizer *visitorSwipeGesture =
       [[UISwipeGestureRecognizer alloc] initWithTarget:self
@@ -196,17 +197,17 @@ NSString *colorScheme;
 
   // Format the window background color
   [self windowBackgroundColor];
-    
-    // Show or hide the social buttons depending on the IAP
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
-        self.mainPageTwitterButton.hidden = FALSE;
-        self.mainPageFacebookButton.hidden = FALSE;
-        
-    } else {
-        self.mainPageTwitterButton.hidden = TRUE;
-        self.mainPageFacebookButton.hidden = TRUE;
-    }
-    [self enableSocialButtons];
+
+  // Show or hide the social buttons depending on the IAP
+  if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
+    self.mainPageTwitterButton.hidden = FALSE;
+    self.mainPageFacebookButton.hidden = FALSE;
+
+  } else {
+    self.mainPageTwitterButton.hidden = TRUE;
+    self.mainPageFacebookButton.hidden = TRUE;
+  }
+  [self enableSocialButtons];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -232,10 +233,14 @@ NSString *colorScheme;
 }
 
 - (void)initializePastGames {
-  // There are 3 home & 3 visitor past scores that need to be reset to '00'
+  // There are 4 home & 4 visitor past scores that need to be reset to '0'
   for (UILabel *score in self.pastScoreCollection) {
-    score.text = @"00";
-    [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
+    score.text = @"0";
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+      [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:30]];
+    } else {
+      [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
+    }
     // Need to check what color background is being used.
     if ([colorScheme isEqualToString:@"Dark"]) {
       // Dark background so change color to yellow
@@ -321,7 +326,6 @@ NSString *colorScheme;
     self.homeTeamName.backgroundColor = [UIColor whiteColor];
     self.homeTeamName.textColor = [UIColor blackColor];
   }
-
   return colorHome;
 }
 
@@ -377,7 +381,7 @@ NSString *colorScheme;
     for (UILabel *lable in self.pastScoreCollection) {
       // First, check if any of the past score fonts are red
       // If so, put them back to red after the recolor
-      if (lable.font == [UIFont boldSystemFontOfSize:20]) {
+      if (![lable.text isEqualToString:@"0"]) {
         lable.textColor = FlatRed;
       } else {
         lable.textColor = FlatPlum;
@@ -397,8 +401,7 @@ NSString *colorScheme;
     self.leftActionNameNumber.textColor = FlatGreen;
     self.gameNumber.textColor = FlatMint;
     for (UILabel *lable in self.pastScoreCollection) {
-      // NSLog(@"%@", lable.textColor);
-      if (lable.font == [UIFont boldSystemFontOfSize:20]) {
+        if (![lable.text isEqualToString:@"0"]) {
         lable.textColor = FlatRed;
       } else {
         lable.textColor = FlatYellow;
@@ -417,7 +420,7 @@ NSString *colorScheme;
     self.leftActionNameNumber.textColor = FlatBlackDark;
     self.gameNumber.textColor = FlatBlackDark;
     for (UILabel *lable in self.pastScoreCollection) {
-      if (lable.font == [UIFont boldSystemFontOfSize:20]) {
+      if (![lable.text isEqualToString:@"0"]) {
         lable.textColor = FlatRed;
       } else {
         lable.textColor = FlatBlack;
@@ -540,9 +543,11 @@ NSString *colorScheme;
   CGPoint targetHomeGame1 = self.visitGame1.center;
   CGPoint targetHomeGame2 = self.visitGame2.center;
   CGPoint targetHomeGame3 = self.visitGame3.center;
+  CGPoint targetHomeGame4 = self.visitGame4.center;
   CGPoint targetVisitGame1 = self.homeGame1.center;
   CGPoint targetVisitGame2 = self.homeGame2.center;
   CGPoint targetVisitGame3 = self.homeGame3.center;
+  CGPoint targetVisitGame4 = self.homeGame4.center;
 
   // Create the animation and swap positions of the score controllers
   [UIView animateWithDuration:0.7f // 0.7
@@ -561,9 +566,11 @@ NSString *colorScheme;
                        self.homeGame1.center = targetHomeGame1;
                        self.homeGame2.center = targetHomeGame2;
                        self.homeGame3.center = targetHomeGame3;
+                       self.homeGame4.center = targetHomeGame4;
                        self.visitGame1.center = targetVisitGame1;
                        self.visitGame2.center = targetVisitGame2;
                        self.visitGame3.center = targetVisitGame3;
+                       self.visitGame4.center = targetVisitGame4;
                    }
                    completion:NULL];
 }
@@ -676,6 +683,7 @@ NSString *colorScheme;
  *  What happens when 'Game' number is touched
  */
 - (IBAction)gamePressed:(UIButton *)sender {
+    
   // Log the button press for analytics
   [self logButtonPress:(UIButton *)sender];
 
@@ -689,15 +697,23 @@ NSString *colorScheme;
     self.visitGame1.text = [NSString stringWithFormat:@"%d", currVisitorScore];
     if (currHomeScore > currVisitorScore) {
       self.homeGame1.textColor = [UIColor redColor];
-      [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+        if (IS_IPAD()) {
+            [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:30]];
+        } else {
+              [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+            }
 
     } else if (currHomeScore < currVisitorScore) {
       self.visitGame1.textColor = [UIColor redColor];
-      [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+        if (IS_IPAD()) {
+            [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:30]];
+        } else {
+              [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+            }
 
     } else {
-      self.visitGame1.textColor = FlatBlackDark;
-      self.homeGame1.textColor = FlatBlackDark;
+      self.visitGame1.textColor = FlatGray;
+      self.homeGame1.textColor = FlatGray;
     }
     break;
   case 2:
@@ -705,13 +721,22 @@ NSString *colorScheme;
     self.visitGame2.text = [NSString stringWithFormat:@"%d", currVisitorScore];
     if (currHomeScore > currVisitorScore) {
       self.homeGame2.textColor = FlatRed;
-      [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:20]];
+        if (IS_IPAD()) {
+            [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:30]];
+        } else {
+            [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:20]];
+        }
     } else if (currHomeScore < currVisitorScore) {
       self.visitGame2.textColor = FlatRed;
-      [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:20]];
+        if (IS_IPAD()) {
+            [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:30]];
+        } else {
+            [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:20]];
+        }
+        
     } else {
-      self.visitGame2.textColor = FlatBlackDark;
-      self.homeGame2.textColor = FlatBlackDark;
+      self.visitGame2.textColor = FlatGray;
+      self.homeGame2.textColor = FlatGray;
     }
     break;
   case 3:
@@ -719,42 +744,76 @@ NSString *colorScheme;
     self.visitGame3.text = [NSString stringWithFormat:@"%d", currVisitorScore];
     if (currHomeScore > currVisitorScore) {
       self.homeGame3.textColor = FlatRed;
-      [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:20]];
+        if (IS_IPAD()) {
+            [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:30]];
+        } else {
+            [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:20]];
+        }
     } else if (currHomeScore < currVisitorScore) {
       self.visitGame3.textColor = FlatRed;
-      [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:20]];
-    } else {
-      self.visitGame3.textColor = FlatBlackDark;
-      self.homeGame3.textColor = FlatBlackDark;
+        if (IS_IPAD()) {
+            [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:30]];
+        } else {
+            [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:20]];
+        }    } else {
+      self.visitGame3.textColor = FlatGray;
+      self.homeGame3.textColor = FlatGray;
     }
+      break;
+  case 4:
+      self.homeGame4.text = [NSString stringWithFormat:@"%d", currHomeScore];
+      self.visitGame4.text = [NSString stringWithFormat:@"%d", currVisitorScore];
+      if (currHomeScore > currVisitorScore) {
+          self.homeGame4.textColor = FlatRed;
+          if (IS_IPAD()) {
+              [self.homeGame4 setFont:[UIFont boldSystemFontOfSize:30]];
+          } else {
+              [self.homeGame4 setFont:[UIFont boldSystemFontOfSize:20]];
+          }
+      } else if (currHomeScore < currVisitorScore) {
+          self.visitGame4.textColor = FlatRed;
+          if (IS_IPAD()) {
+              [self.visitGame4 setFont:[UIFont boldSystemFontOfSize:30]];
+          } else {
+              [self.visitGame4 setFont:[UIFont boldSystemFontOfSize:20]];
+          }
+      } else {
+          self.visitGame4.textColor = FlatGray;
+          self.homeGame4.textColor = FlatGray;
+      }
+      break;
   default:
     break;
   }
-  // Increase the game number by 1 but don't let it go more than 4
+  // Increase the game number by 1 but don't let it go more than 5
   lableNum = lableNum + 1;
 
-  if (lableNum <= 4) {
+  if (lableNum <= 5) {
     self.gameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     // Reset the scores to start a new game
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (IS_IPAD()) {
       [self initializeHomeScore:00 fontSize:188];
       [self initializeVisitorScore:00 fontSize:188];
     } else {
       [self initializeHomeScore:00 fontSize:118];
       [self initializeVisitorScore:00 fontSize:118];
     }
-
   } else {
-    self.gameNumber.text = [NSString stringWithFormat:@"%d", 0];
+    self.gameNumber.text = [NSString stringWithFormat:@"%d", 1];
     // Reset the past game fonts back to default
     for (UILabel *score in self.pastScoreCollection) {
-      score.text = @"00";
-      [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
-      score.textColor = [UIColor blackColor];
+      score.text = @"0";
+        if (IS_IPAD()) {
+            [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:30]];
+        } else {
+              [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
+        }
     }
+      [self startNewMatch];
   }
-  currVisitorScore = 0;
-  currHomeScore = 0;
+    currHomeScore = 0;
+    currVisitorScore = 0;
+    
 }
 
 /*!
@@ -815,6 +874,8 @@ NSString *colorScheme;
  *  What happens when 'New Match' button is touched
  */
 - (IBAction)newMatch:(UIBarButtonItem *)sender {
+#define TAG_MATCH 1
+    
   UIAlertView *alert = [[UIAlertView alloc]
           initWithTitle:NSLocalizedString(@"New Match?", nil)
                 message:
@@ -824,7 +885,24 @@ NSString *colorScheme;
                delegate:self
       cancelButtonTitle:NSLocalizedString(@"No", nil)
       otherButtonTitles:NSLocalizedString(@"Yes", nil), nil];
+    alert.tag = TAG_MATCH;
   [alert show];
+}
+
+- (void)startNewMatch
+{
+    // Initiaize all the UI elements, depending on the device, for the start
+    // of a new match.
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self initializeHomeScore:0 fontSize:188];
+        [self initializeVisitorScore:0 fontSize:188];
+    } else {
+        [self initializeHomeScore:0 fontSize:118];
+        [self initializeVisitorScore:0 fontSize:118];
+    }
+    
+    [self resetGameAndNames];
+    [self initializePastGames];
 }
 
 #pragma mark - Screen Image
@@ -908,7 +986,7 @@ NSString *colorScheme;
 
   if ([[defaults stringForKey:@"enableTwitter"] isEqualToString:@"On"]) {
     if ([self userHasAccessToTwitter]) {
-        SLComposeViewController *twitterController = [SLComposeViewController
+      SLComposeViewController *twitterController = [SLComposeViewController
           composeViewControllerForServiceType:SLServiceTypeTwitter];
 
       NSString *newMessage, *tempStr1, *tempStr2;
@@ -918,24 +996,25 @@ NSString *colorScheme;
 
       [twitterController setInitialText:newMessage];
       [twitterController addImage:[self getScreenImage]];
-        [twitterController setCompletionHandler:^(SLComposeViewControllerResult result) {
-            switch (result) {
-                case SLComposeViewControllerResultCancelled:
-                    NSLog(@"Post cancelled");
-                    break;
-                case SLComposeViewControllerResultDone:
-                    NSLog(@"Post completed");
-                    break;
-                default:
-                    break;
-            }
-        }];
+      [twitterController
+          setCompletionHandler:^(SLComposeViewControllerResult result) {
+              switch (result) {
+              case SLComposeViewControllerResultCancelled:
+                NSLog(@"Post cancelled");
+                break;
+              case SLComposeViewControllerResultDone:
+                NSLog(@"Post completed");
+                break;
+              default:
+                break;
+              }
+          }];
 
       // Show Twitter screen
       [self presentViewController:twitterController
                          animated:YES
                        completion:nil];
-        
+
       // Clear screen shot from memory
       screenImage = nil;
 
@@ -964,10 +1043,10 @@ NSString *colorScheme;
   // Check if text messages should be sent
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    //Check if user enabled sending by facebook
+  // Check if user enabled sending by facebook
   if ([[defaults stringForKey:@"enableFacebook"] isEqualToString:@"On"]) {
-      //Check if user has setup facebook on the device
-      if ([self userHasAccessToFacebook]) {
+    // Check if user has setup facebook on the device
+    if ([self userHasAccessToFacebook]) {
       SLComposeViewController *facebookController = [SLComposeViewController
           composeViewControllerForServiceType:SLServiceTypeFacebook];
 
@@ -978,15 +1057,16 @@ NSString *colorScheme;
 
       [facebookController setInitialText:newMessage];
       [facebookController addImage:[self getScreenImage]];
-          [facebookController setCompletionHandler:^(SLComposeViewControllerResult result){
+      [facebookController
+          setCompletionHandler:^(SLComposeViewControllerResult result) {
               switch (result) {
-                  case SLComposeViewControllerResultCancelled:
-                      NSLog(@"Post cancelled");
-                      break;
-                    case SLComposeViewControllerResultDone:
-                      NSLog(@"Post complete");
-                  default:
-                      break;
+              case SLComposeViewControllerResultCancelled:
+                NSLog(@"Post cancelled");
+                break;
+              case SLComposeViewControllerResultDone:
+                NSLog(@"Post complete");
+              default:
+                break;
               }
           }];
 
@@ -1048,18 +1128,11 @@ NSString *colorScheme;
  */
 - (void)alertView:(UIAlertView *)alertView
     clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    //Need to determine the action based on the TAG
+    
   if (buttonIndex != 0) {
-    // Initiaize all the UI elements depending on the device
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-      [self initializeHomeScore:0 fontSize:188];
-      [self initializeVisitorScore:0 fontSize:188];
-    } else {
-      [self initializeHomeScore:0 fontSize:118];
-      [self initializeVisitorScore:0 fontSize:118];
-    }
-
-    [self resetGameAndNames];
-    [self initializePastGames];
+      [self startNewMatch];
   }
 
   // Good place to show review prompt if they haven't already

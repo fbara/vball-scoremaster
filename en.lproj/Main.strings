@@ -62,8 +62,8 @@
 /* Class = "IBUILabel"; text = "Send message to number"; ObjectID = "H3O-dK-ACP"; */
 "H3O-dK-ACP.text" = "Send message to number";
 
-/* Class = "IBUILabel"; text = "00"; ObjectID = "HOT-d2-W5V"; */
-"HOT-d2-W5V.text" = "00";
+/* Class = "IBUILabel"; text = "0"; ObjectID = "HOT-d2-W5V"; */
+"HOT-d2-W5V.text" = "0";
 
 /* Class = "IBUILabel"; text = "SPIKE"; ObjectID = "IEc-eP-Hpp"; */
 "IEc-eP-Hpp.text" = "SPIKE";
@@ -101,8 +101,8 @@
 /* Class = "IBUILabel"; text = "1"; ObjectID = "O6P-Lx-PJG"; */
 "O6P-Lx-PJG.text" = "1";
 
-/* Class = "IBUILabel"; text = "00"; ObjectID = "Sad-Nf-jjb"; */
-"Sad-Nf-jjb.text" = "00";
+/* Class = "IBUILabel"; text = "0"; ObjectID = "Sad-Nf-jjb"; */
+"Sad-Nf-jjb.text" = "0";
 
 /* Class = "IBUIViewController"; title = "Tutorial Main"; ObjectID = "TO8-Ip-hl0"; */
 "TO8-Ip-hl0.title" = "Tutorial Main";
@@ -273,11 +273,11 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
 /* Class = "IBUILabel"; text = "ACE"; ObjectID = "gCM-Vw-h76"; */
 "gCM-Vw-h76.text" = "ACE";
 
-/* Class = "IBUILabel"; text = "00"; ObjectID = "i1f-B7-MYb"; */
-"i1f-B7-MYb.text" = "00";
+/* Class = "IBUILabel"; text = "0"; ObjectID = "i1f-B7-MYb"; */
+"i1f-B7-MYb.text" = "0";
 
-/* Class = "IBUILabel"; text = "00"; ObjectID = "iJA-mX-JWA"; */
-"iJA-mX-JWA.text" = "00";
+/* Class = "IBUILabel"; text = "0"; ObjectID = "iJA-mX-JWA"; */
+"iJA-mX-JWA.text" = "0";
 
 /* Class = "IBUINavigationItem"; title = "VBall ScoreMaster"; ObjectID = "idF-JM-YX7"; */
 "idF-JM-YX7.title" = "VBall ScoreMaster";
@@ -294,11 +294,11 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
 /* Class = "IBUIButton"; accessibilityLabel = "Access contact list"; ObjectID = "lFP-xW-h2H"; */
 "lFP-xW-h2H.accessibilityLabel" = "Access contact list";
 
-/* Class = "IBUILabel"; text = "00"; ObjectID = "m1P-eG-o39"; */
-"m1P-eG-o39.text" = "00";
+/* Class = "IBUILabel"; text = "0"; ObjectID = "m1P-eG-o39"; */
+"m1P-eG-o39.text" = "0";
 
-/* Class = "IBUILabel"; text = "00"; ObjectID = "mi0-YI-UNY"; */
-"mi0-YI-UNY.text" = "00";
+/* Class = "IBUILabel"; text = "0"; ObjectID = "mi0-YI-UNY"; */
+"mi0-YI-UNY.text" = "0";
 
 /* Class = "IBUILabel"; text = "SET"; ObjectID = "mvD-s6-uQ8"; */
 "mvD-s6-uQ8.text" = "SET";
