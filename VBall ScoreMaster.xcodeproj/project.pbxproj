@@ -24,6 +24,7 @@
 		92AA42CC1916C2810037D405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92AA42CA1916C2810037D405 /* InfoPlist.strings */; };
 		92AA42CE1916C2810037D405 /* VolleyballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42CD1916C2810037D405 /* VolleyballTests.m */; };
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
+		AD07812319CF5DEC00E30AE9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD07812219CF5DEC00E30AE9 /* SWRevealViewController.m */; };
 		AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */; };
 		AD082E3619817E5C00A997CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD082E3419817E5C00A997CE /* Main.storyboard */; };
 		AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD082E37198182E800A997CE /* DefaultScoreViewController.xib */; };
@@ -123,6 +124,8 @@
 		92AA42CB1916C2810037D405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92AA42CD1916C2810037D405 /* VolleyballTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolleyballTests.m; sourceTree = "<group>"; };
 		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AD07812119CF5DEC00E30AE9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		AD07812219CF5DEC00E30AE9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		AD082E31198061AE00A997CE /* TutorialSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialSettingsViewController.h; sourceTree = "<group>"; };
 		AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialSettingsViewController.m; sourceTree = "<group>"; };
 		AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabelTableViewController.h; sourceTree = "<group>"; };
@@ -292,6 +295,7 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
+				AD07812019CF5DEC00E30AE9 /* SWRevealViewController */,
 				AD96E38119BFB02E002CD75E /* IAP */,
 				ADAEAC4A19ACB42D00519A20 /* Chameleon */,
 				ADFB421219A3729600ADBE9F /* AppbotX */,
@@ -393,6 +397,15 @@
 				92AA42CA1916C2810037D405 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD07812019CF5DEC00E30AE9 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AD07812119CF5DEC00E30AE9 /* SWRevealViewController.h */,
+				AD07812219CF5DEC00E30AE9 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		AD52967F197ED75200767D1C /* WSCoachMarks */ = {
@@ -750,6 +763,7 @@
 				ADE5AF6519B9DE9C00AAC92D /* UIViewController+ABXScreenshot.m in Sources */,
 				ADE5AF6A19B9DE9C00AAC92D /* ABXNavigationController.m in Sources */,
 				ADAEAC5B19ACB47B00519A20 /* UIViewController+Chameleon.m in Sources */,
+				AD07812319CF5DEC00E30AE9 /* SWRevealViewController.m in Sources */,
 				ADE5AF7419B9DE9C00AAC92D /* ABXNotificationTableViewCell.m in Sources */,
 				ADAEAC5819ACB47B00519A20 /* NSArray+Chameleon.m in Sources */,
 				ADE5AF6E19B9DE9C00AAC92D /* ABXFaq.m in Sources */,

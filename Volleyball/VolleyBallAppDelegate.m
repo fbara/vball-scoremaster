@@ -10,8 +10,7 @@
 #import "GBVersionTracking.h"
 #import "GAI.h"
 #import "VolleyBallIAPHelper.h"
-
-
+#import "SWRevealViewController.h"
 
 @implementation VolleyBallAppDelegate
 
@@ -62,6 +61,8 @@
         [[NSUserDefaults standardUserDefaults] setObject:@"No" forKey:@"showPrompt"];
     }
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    //Setup view controller
     
     return YES;
 }
