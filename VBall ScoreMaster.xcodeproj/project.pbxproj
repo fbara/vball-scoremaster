@@ -24,6 +24,7 @@
 		92AA42CC1916C2810037D405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92AA42CA1916C2810037D405 /* InfoPlist.strings */; };
 		92AA42CE1916C2810037D405 /* VolleyballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42CD1916C2810037D405 /* VolleyballTests.m */; };
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
+		AD07812919D0493100E30AE9 /* VolleyBallIAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD07812819D0493100E30AE9 /* VolleyBallIAPViewController.m */; };
 		AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */; };
 		AD082E3619817E5C00A997CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD082E3419817E5C00A997CE /* Main.storyboard */; };
 		AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD082E37198182E800A997CE /* DefaultScoreViewController.xib */; };
@@ -123,6 +124,8 @@
 		92AA42CB1916C2810037D405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92AA42CD1916C2810037D405 /* VolleyballTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolleyballTests.m; sourceTree = "<group>"; };
 		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AD07812719D0493100E30AE9 /* VolleyBallIAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolleyBallIAPViewController.h; sourceTree = "<group>"; };
+		AD07812819D0493100E30AE9 /* VolleyBallIAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolleyBallIAPViewController.m; sourceTree = "<group>"; };
 		AD082E31198061AE00A997CE /* TutorialSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialSettingsViewController.h; sourceTree = "<group>"; };
 		AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialSettingsViewController.m; sourceTree = "<group>"; };
 		AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabelTableViewController.h; sourceTree = "<group>"; };
@@ -436,6 +439,8 @@
 				AD96E38319BFB056002CD75E /* IAPHelper.m */,
 				AD96E38819BFB5F7002CD75E /* VolleyBallIAPHelper.h */,
 				AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */,
+				AD07812719D0493100E30AE9 /* VolleyBallIAPViewController.h */,
+				AD07812819D0493100E30AE9 /* VolleyBallIAPViewController.m */,
 			);
 			name = IAP;
 			sourceTree = "<group>";
@@ -726,6 +731,7 @@
 				ADAEAC5A19ACB47B00519A20 /* UIColor+CIELAB.m in Sources */,
 				ADE5AF6719B9DE9C00AAC92D /* ABXFAQsViewController.m in Sources */,
 				ADE5AF6219B9DE9C00AAC92D /* NSString+ABXLocalized.m in Sources */,
+				AD07812919D0493100E30AE9 /* VolleyBallIAPViewController.m in Sources */,
 				AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */,
 				ADE5AF7319B9DE9C00AAC92D /* ABXFAQTableViewCell.m in Sources */,
 				ADE5AF7119B9DE9C00AAC92D /* ABXNotification.m in Sources */,

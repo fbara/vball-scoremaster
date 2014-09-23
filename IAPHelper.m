@@ -108,7 +108,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
     _completionHandler = nil;
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communications Error"
-                                                    message:@"I can't load a list of available products for purchase.\nUnable to communicate with the iTunes server.\nYou may safely ignore this error if you don't want to use social network sharing."
+                                                    message:@"I can't load a list of available products for purchase.\nUnable to communicate with the iTunes server.\nPlease try again later."
                                                    delegate:nil
                                           cancelButtonTitle:@"Ok"
                                           otherButtonTitles:nil];
