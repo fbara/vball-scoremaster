@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="dBP-CD-akZ">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -539,6 +538,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player's name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N1L-8j-CIK">
+                                                    <rect key="frame" x="15" y="9" width="255" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(optional)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Yyj-Dn-sH1">
                                                     <rect key="frame" x="342" y="7" width="210" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -551,11 +555,6 @@
                                                         <action selector="textFieldReturn:" destination="JoG-uN-Xre" eventType="editingDidEnd" id="u44-Fl-EHY"/>
                                                     </connections>
                                                 </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player's name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N1L-8j-CIK">
-                                                    <rect key="frame" x="15" y="9" width="255" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -777,6 +776,7 @@
                         <outlet property="addPhoneNumberButton" destination="lFP-xW-h2H" id="Niy-39-MKK"/>
                         <outlet property="analyticsSwitch" destination="rnr-Qi-g1k" id="odP-UT-ML1"/>
                         <outlet property="colorSettings" destination="yBd-10-D7Y" id="lHI-u2-Hm9"/>
+                        <outlet property="facebookCellLabel" destination="Ewm-Vk-B6e" id="iH2-0h-CrZ"/>
                         <outlet property="facebookSwitch" destination="qJE-7h-IWF" id="2kA-Wr-pAo"/>
                         <outlet property="homeTeamColor" destination="43Z-fe-naI" id="lUH-3F-cvE"/>
                         <outlet property="leftActionNameSelected" destination="8Nb-0K-3R7" id="bFa-Fg-WDN"/>
@@ -784,6 +784,7 @@
                         <outlet property="notificationName" destination="CH8-S5-jc8" id="mG5-nM-XGf"/>
                         <outlet property="rightActionNameSelected" destination="v4s-lv-LRm" id="9EP-sW-Wao"/>
                         <outlet property="sendNotificationSwitch" destination="oqR-8N-8Ny" id="pfC-fk-VZI"/>
+                        <outlet property="twitterCellLabel" destination="RbX-rH-lyq" id="EoK-F0-Rbp"/>
                         <outlet property="twitterSwitch" destination="VoU-lj-I97" id="60w-EP-3gC"/>
                         <outlet property="visitingTeamColor" destination="CxM-8M-OkD" id="k0Q-s4-wFg"/>
                         <outletCollection property="settingsButtons" destination="CxM-8M-OkD" id="vEs-nj-a4w"/>
@@ -816,7 +817,7 @@
         <!--In-App Purchases-->
         <scene sceneID="hW3-aQ-cNW">
             <objects>
-                <tableViewController storyboardIdentifier="IAPViewController" title="In-App Purchases" id="czl-2M-KLM" customClass="VolleyBallIAPViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="IAPViewController" title="In-App Purchases" id="czl-2M-KLM" customClass="VolleyBallIAPViewController" colorLabel="IBBuiltInLabel-Blue" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Ro2-iw-aK8">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="345"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -855,17 +856,13 @@
                     <navigationItem key="navigationItem" id="sCx-O7-yMp"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="chA-O4-iEi">
                         <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle"/>
                     </refreshControl>
                     <connections>
-                        <outlet property="activityIndicator" destination="kIA-IL-usb" id="ZD7-BX-HKx"/>
                         <outlet property="purchaseSocialCell" destination="JPO-ga-AQV" id="fgL-6d-Bz0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ld-nw-bHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" id="kIA-IL-usb">
-                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </activityIndicatorView>
             </objects>
             <point key="canvasLocation" x="1998" y="-36.5"/>
         </scene>

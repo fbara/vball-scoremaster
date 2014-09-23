@@ -24,6 +24,8 @@
 @property NSString *existingLeftActionName;
 @property ActionLabelTableViewController *actionNameVC;
 @property UIPopoverController *aPopover;
+@property (weak, nonatomic) IBOutlet UILabel *twitterCellLabel;
+@property (weak, nonatomic) IBOutlet UILabel *facebookCellLabel;
 
 @end
 
@@ -60,12 +62,12 @@
       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
                            target:self
                            action:nil];
-  
+
   fixedSpace.width = 20.0f;
 
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
     self.navigationItem.rightBarButtonItem = infoButton;
-      self.navigationItem.leftBarButtonItem = saveButton;
+    self.navigationItem.leftBarButtonItem = saveButton;
   } else {
     self.navigationItem.rightBarButtonItem = infoButton;
   }
@@ -76,29 +78,29 @@
   } else {
     [self.sendNotificationSwitch setSelectedSegmentIndex:1];
   }
-    
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
-        //No purchase so get the products and disable the buttons
-        self.twitterSwitch.enabled = FALSE;
-        self.facebookSwitch.enabled = FALSE;
-    } else {
-        self.twitterSwitch.enabled = TRUE;
-        self.facebookSwitch.enabled = TRUE;
-    }
 
-  // Set the Twitter switch if messages will be sent
-  if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
-    [self.twitterSwitch setSelectedSegmentIndex:0];
-  } else {
-    [self.twitterSwitch setSelectedSegmentIndex:1];
-  }
+//  if (![[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
+//    // No purchase so get the products and disable the buttons
+//    self.twitterSwitch.enabled = FALSE;
+//    self.facebookSwitch.enabled = FALSE;
+//  } else {
+//    self.twitterSwitch.enabled = TRUE;
+//    self.facebookSwitch.enabled = TRUE;
+//  }
 
-  // Set the Facebook switch if messages will be sent
-  if ([[self getFacebookNotifications] isEqualToString:@"On"]) {
-    [self.facebookSwitch setSelectedSegmentIndex:0];
-  } else {
-    [self.facebookSwitch setSelectedSegmentIndex:1];
-  }
+//  // Set the Twitter switch if messages will be sent
+//  if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
+//    [self.twitterSwitch setSelectedSegmentIndex:0];
+//  } else {
+//    [self.twitterSwitch setSelectedSegmentIndex:1];
+//  }
+//
+//  // Set the Facebook switch if messages will be sent
+//  if ([[self getFacebookNotifications] isEqualToString:@"On"]) {
+//    [self.facebookSwitch setSelectedSegmentIndex:0];
+//  } else {
+//    [self.facebookSwitch setSelectedSegmentIndex:1];
+//  }
 }
 
 - (void)saveAndClose {
@@ -163,18 +165,30 @@
     [self.colorSettings setSelectedSegmentIndex:2];
   }
 
-  // Set the Twitter switch if messages will be sent
-  if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
-    [self.twitterSwitch setSelectedSegmentIndex:0];
-  } else {
-    [self.twitterSwitch setSelectedSegmentIndex:1];
-  }
+  if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
+      self.twitterSwitch.enabled = TRUE;
+      self.twitterCellLabel.text = @"Send with Twitter?";
+      self.facebookCellLabel.text = @"Send with Facebook?";
+    // Set the Twitter switch if messages will be sent
+    if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
+      [self.twitterSwitch setSelectedSegmentIndex:0];
+    } else {
+      [self.twitterSwitch setSelectedSegmentIndex:1];
+    }
 
-  // Set the Facebook switch if messages will be sent
-  if ([[self getFacebookNotifications] isEqualToString:@"On"]) {
-    [self.facebookSwitch setSelectedSegmentIndex:0];
+    // Set the Facebook switch if messages will be sent
+      self.facebookSwitch.enabled = TRUE;
+    if ([[self getFacebookNotifications] isEqualToString:@"On"]) {
+      [self.facebookSwitch setSelectedSegmentIndex:0];
+    } else {
+      [self.facebookSwitch setSelectedSegmentIndex:1];
+    }
   } else {
-    [self.facebookSwitch setSelectedSegmentIndex:1];
+      //User has not made purchase so disable social switches
+      self.twitterCellLabel.text = @"Twitter available with purchase";
+      self.facebookCellLabel.text = @"Facebook available with purchase";
+      self.twitterSwitch.enabled = FALSE;
+      self.facebookSwitch.enabled = FALSE;
   }
 }
 
@@ -541,6 +555,18 @@
   return NO;
 }
 
+/*!
+ *  New ABPeoplePickerNavigationController for iOS 8 only.
+ *  All this will do here is call the iOS7 version.  Keep both around
+ *  for compantibility.
+ *
+ *  @param person <#person description#>
+ */
+- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
+{
+    [self peoplePickerNavigationController:peoplePicker shouldContinueAfterSelectingPerson:person property:property identifier:identifier];
+}
+
 - (void)displayPerson:(ABRecordRef)person {
   NSString *phone = nil;
 
@@ -673,7 +699,7 @@
     }
 
   } else {
-      //In-App Purchase was selected
+    // In-App Purchase was selected
     return;
   }
 

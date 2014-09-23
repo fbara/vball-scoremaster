@@ -103,7 +103,7 @@ NSString *colorScheme;
                                        style:UIBarButtonItemStyleBordered
                                       target:self
                                       action:@selector(goToSettings:)];
-  self.navigationItem.rightBarButtonItems = @[ settingsButton ];
+  self.navigationItem.rightBarButtonItem = settingsButton;
 
   // Create Home swipe gesture and add it to the home container view.
   // Set this controller as the delegate to allow simultaneous gestures in the

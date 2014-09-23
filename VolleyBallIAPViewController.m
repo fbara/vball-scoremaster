@@ -22,12 +22,10 @@
 @property (strong, nonatomic) UIBarButtonItem *restorePurchases;
 @property (strong, nonatomic) UIBarButtonItem *saveButton;
 @property (weak, nonatomic) IBOutlet UITableViewCell *purchaseSocialCell;
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
 @implementation VolleyBallIAPViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.delegate = self;
@@ -46,19 +44,17 @@
                                      style:UIBarButtonItemStyleBordered
                                     target:self
                                     action:@selector(restoreTapped:)];
-    self.saveButton =
-    [[UIBarButtonItem alloc] initWithTitle:@"Close"
-                                     style:UIBarButtonItemStyleDone
-                                    target:self
-                                    action:@selector(saveAndClose)];
-    
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.navigationItem.rightBarButtonItem = self.restorePurchases;
-        self.navigationItem.leftBarButtonItem = self.saveButton;
-    } else {
-        self.navigationItem.rightBarButtonItem = self.restorePurchases;
-    }
+//    self.saveButton =
+//    [[UIBarButtonItem alloc] initWithTitle:@"Close"
+//                                     style:UIBarButtonItemStyleDone
+//                                    target:self
+//                                    action:@selector(saveAndClose)];
+//    UIBarButtonItem *indicator = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
+//    
+//    
+//    NSArray *rightBarButtons = @[indicator, self.restorePurchases];
+//    self.navigationItem.rightBarButtonItems = rightBarButtons;
+    self.navigationItem.rightBarButtonItem = self.restorePurchases;
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
         //No purchase so get the products and disable the buttons
@@ -127,20 +123,15 @@
         if ([product.productIdentifier isEqualToString:productIdentifier]) {
             [self refreshView];
             self.purchaseSocialCell.detailTextLabel.text = @"Paid";
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!"
-                                                            message:@"Thank you for purchasing the social sharing option!"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-            [alert show];
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!"
+//                                                            message:@"Thank you for purchasing the social sharing option!"
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:@"Ok"
+//                                                  otherButtonTitles:nil];
+//            [alert show];
             *stop = YES;
         }
     }];
-}
-
-
-- (void)saveAndClose {
-    [self.parentViewController dismissViewControllerAnimated:TRUE completion:nil];
 }
 
 - (void)refreshView {
@@ -154,18 +145,14 @@
 
 - (void)restoreTapped:(UIButton *)sender {
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
     [[VolleyBallIAPHelper sharedInstance] restoreCompletedTransactions];
     [self refreshView];
     self.purchaseSocialCell.detailTextLabel.text = @"Paid";
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (BOOL)getIAPList {
     // Get list of available IAP's
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    isPurchased = TRUE;
     
     [[VolleyBallIAPHelper sharedInstance]
      requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
@@ -189,8 +176,6 @@
                  
                  [defaults setBool:TRUE forKey:@"purchasedSocial"];
                  self.purchaseSocialCell.detailTextLabel.text = @"Paid";
-//                 self.twitterSwitch.enabled = TRUE;
-//                 self.facebookSwitch.enabled = TRUE;
                  self.restorePurchases.enabled = FALSE;
                  isPurchased = TRUE;
                  
@@ -227,8 +212,7 @@
 - (void)buyButtonTapped:(UIButton *)sender {
     UIButton *buyButton = sender;
     SKProduct *product = _products[buyButton.tag];
-    
-    //NSLog(@"Buying %@...", product.productIdentifier);
+    //Buy the IAP
     [[VolleyBallIAPHelper sharedInstance] buyProduct:product];
     
 }

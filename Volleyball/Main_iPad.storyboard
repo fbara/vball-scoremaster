@@ -683,9 +683,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="pmy-5I-PP7" kind="popover" identifier="iapView" trigger="accessoryAction" popoverAnchorView="G8t-Tw-Dxx" id="GkF-dF-bpl">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <segue destination="pmy-5I-PP7" kind="push" identifier="iapView" trigger="accessoryAction" id="GkF-dF-bpl"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -791,15 +789,15 @@
                         <outlet property="addPhoneNumberButton" destination="lFP-xW-h2H" id="Niy-39-MKK"/>
                         <outlet property="analyticsSwitch" destination="rnr-Qi-g1k" id="odP-UT-ML1"/>
                         <outlet property="colorSettings" destination="5eZ-bQ-w1g" id="ANq-Bz-0QQ"/>
+                        <outlet property="facebookCellLabel" destination="b2E-xc-gGz" id="S7N-9c-XeH"/>
                         <outlet property="facebookSwitch" destination="xNf-Qk-J3e" id="ntL-6h-vPK"/>
                         <outlet property="homeTeamColor" destination="43Z-fe-naI" id="lUH-3F-cvE"/>
                         <outlet property="leftActionNameSelected" destination="8Nb-0K-3R7" id="bFa-Fg-WDN"/>
                         <outlet property="nameOfPlayer" destination="Yyj-Dn-sH1" id="Zya-XT-o96"/>
                         <outlet property="notificationName" destination="CH8-S5-jc8" id="mG5-nM-XGf"/>
-                        <outlet property="purchaseSocialCell" destination="G8t-Tw-Dxx" id="9M1-p0-u3P"/>
                         <outlet property="rightActionNameSelected" destination="v4s-lv-LRm" id="9EP-sW-Wao"/>
                         <outlet property="sendNotificationSwitch" destination="oqR-8N-8Ny" id="pfC-fk-VZI"/>
-                        <outlet property="settingsTable" destination="OsV-V0-0Jc" id="9wk-Jg-2LU"/>
+                        <outlet property="twitterCellLabel" destination="pPJ-RN-PXy" id="bl8-KB-7tn"/>
                         <outlet property="twitterSwitch" destination="mjd-6d-xN3" id="Y7u-iw-g67"/>
                         <outlet property="visitingTeamColor" destination="CxM-8M-OkD" id="k0Q-s4-wFg"/>
                         <outletCollection property="settingsButtons" destination="CxM-8M-OkD" id="vEs-nj-a4w"/>
@@ -972,7 +970,7 @@
             <objects>
                 <tableViewController title="In-App Purchases" id="pmy-5I-PP7" customClass="VolleyBallIAPViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Qqo-3p-SiJ">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -1010,7 +1008,11 @@
                     <navigationItem key="navigationItem" id="wi5-SJ-5UN"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="540" height="350"/>
+                    <size key="freeformSize" width="540" height="250"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="EG4-9u-pFA">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle"/>
+                    </refreshControl>
                     <connections>
                         <outlet property="purchaseSocialCell" destination="YWc-Ef-fxQ" id="3H0-Rl-ncd"/>
                     </connections>
