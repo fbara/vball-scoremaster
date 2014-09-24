@@ -123,12 +123,12 @@
         if ([product.productIdentifier isEqualToString:productIdentifier]) {
             [self refreshView];
             self.purchaseSocialCell.detailTextLabel.text = @"Paid";
-//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!"
-//                                                            message:@"Thank you for purchasing the social sharing option!"
-//                                                           delegate:nil
-//                                                  cancelButtonTitle:@"Ok"
-//                                                  otherButtonTitles:nil];
-//            [alert show];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enable Social Buttons"
+                                                            message:@"Don't forget to enable the social sharing buttons on the Settings page if you want to use them."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+            [alert show];
             *stop = YES;
         }
     }];

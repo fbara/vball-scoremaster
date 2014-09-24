@@ -10,7 +10,6 @@
 
 @interface VolleyBallAppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) UIWindow* window;
 
 @end

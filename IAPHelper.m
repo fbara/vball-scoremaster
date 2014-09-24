@@ -147,7 +147,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction
 {
-    NSLog(@"\nFailed transaction....");
+    NSLog(@"\nFailed transaction: %@", transaction.error.localizedDescription);
     if (transaction.error.code != SKErrorPaymentCancelled) {
         NSLog(@"Transaction error: %@", transaction.error.localizedDescription);
     }
@@ -171,13 +171,14 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
             break;
         default:
             break;
-    }
     
-    [[alert initWithTitle:alertTitle
-        message:alertMsg
-        delegate:nil
-        cancelButtonTitle:@"Ok"
-        otherButtonTitles:nil] show];
+    
+        [[alert initWithTitle:alertTitle
+            message:alertMsg
+            delegate:nil
+            cancelButtonTitle:@"Ok"
+            otherButtonTitles:nil] show];
+    }
     
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }

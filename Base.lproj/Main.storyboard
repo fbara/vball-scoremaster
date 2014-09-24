@@ -577,7 +577,7 @@
                                                         <outlet property="delegate" destination="JoG-uN-Xre" id="x7l-Ao-jba"/>
                                                     </connections>
                                                 </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="lFP-xW-h2H">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="lFP-xW-h2H" userLabel="Address Book Button">
                                                     <rect key="frame" x="307" y="11" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Access contact list to choose a contact to send text messages." label="Access contact list"/>
@@ -674,7 +674,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="action names" footerTitle="These are included in the text message" id="xIz-3d-pId">
+                            <tableViewSection headerTitle="action names" footerTitle="These are included in all messages" id="xIz-3d-pId">
                                 <cells>
                                     <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J4e-OQ-jDI" userLabel="Table View Cell - Bottom action name">
                                         <rect key="frame" x="0.0" y="506" width="568" height="44"/>

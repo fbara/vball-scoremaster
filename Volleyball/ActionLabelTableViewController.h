@@ -9,18 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @protocol ActionNameDelegate <NSObject>
-- (void)actionNameSelected:(NSString *)actionName;
+- (void)actionNameSelected:(NSString*)actionName;
 
 @end
 
 @interface ActionLabelTableViewController
     : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property(assign, nonatomic) id<ActionNameDelegate> delegate;
-@property(weak, nonatomic) NSString *firstActionName;
-@property(weak, nonatomic) NSString *secondActionName;
-@property(strong, nonatomic) IBOutlet NSString *selectedActionName;
+@property (assign, nonatomic) id<ActionNameDelegate> delegate;
+@property (weak, nonatomic) NSString* firstActionName;
+@property (weak, nonatomic) NSString* secondActionName;
+@property (strong, nonatomic) IBOutlet NSString* selectedActionName;
 @property NSInteger selectedActionRow;
-@property(strong, nonatomic) NSArray *actionNames;
+@property (strong, nonatomic) NSArray* actionNames;
 
 @end
