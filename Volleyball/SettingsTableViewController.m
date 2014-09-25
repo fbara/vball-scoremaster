@@ -80,30 +80,6 @@
     } else {
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
-
-    //  if (![[NSUserDefaults standardUserDefaults]
-    //  boolForKey:@"purchasedSocial"]) {
-    //    // No purchase so get the products and disable the buttons
-    //    self.twitterSwitch.enabled = FALSE;
-    //    self.facebookSwitch.enabled = FALSE;
-    //  } else {
-    //    self.twitterSwitch.enabled = TRUE;
-    //    self.facebookSwitch.enabled = TRUE;
-    //  }
-
-    //  // Set the Twitter switch if messages will be sent
-    //  if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
-    //    [self.twitterSwitch setSelectedSegmentIndex:0];
-    //  } else {
-    //    [self.twitterSwitch setSelectedSegmentIndex:1];
-    //  }
-    //
-    //  // Set the Facebook switch if messages will be sent
-    //  if ([[self getFacebookNotifications] isEqualToString:@"On"]) {
-    //    [self.facebookSwitch setSelectedSegmentIndex:0];
-    //  } else {
-    //    [self.facebookSwitch setSelectedSegmentIndex:1];
-    //  }
 }
 
 - (void)saveAndClose

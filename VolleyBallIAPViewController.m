@@ -14,48 +14,41 @@
 #pragma clang diagnostic ignored "-Wprotocol"
 
 @interface VolleyBallIAPViewController () {
-    NSArray *_products;
-    NSNumberFormatter *_priceFormatter;
+    NSArray* _products;
+    NSNumberFormatter* _priceFormatter;
     BOOL isPurchased;
 }
 
-@property (strong, nonatomic) UIBarButtonItem *restorePurchases;
-@property (strong, nonatomic) UIBarButtonItem *saveButton;
-@property (weak, nonatomic) IBOutlet UITableViewCell *purchaseSocialCell;
+@property (strong, nonatomic) UIBarButtonItem* restorePurchases;
+@property (strong, nonatomic) UIBarButtonItem* saveButton;
+@property (weak, nonatomic) IBOutlet UITableViewCell* purchaseSocialCell;
+@property (strong, nonatomic) IBOutlet UIImageView* backgroundImage;
 
 @end
 
 @implementation VolleyBallIAPViewController
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.tableView.delegate = self;
-    
+
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
-    
+
     // Wire up the pull-to-refresh code
     [self.refreshControl addTarget:self
                             action:@selector(refreshView)
                   forControlEvents:UIControlEventValueChanged];
-    
+
     //Setup bar button items
     self.restorePurchases =
-    [[UIBarButtonItem alloc] initWithTitle:@"Restore"
-                                     style:UIBarButtonItemStyleBordered
-                                    target:self
-                                    action:@selector(restoreTapped:)];
-//    self.saveButton =
-//    [[UIBarButtonItem alloc] initWithTitle:@"Close"
-//                                     style:UIBarButtonItemStyleDone
-//                                    target:self
-//                                    action:@selector(saveAndClose)];
-//    UIBarButtonItem *indicator = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
-//    
-//    
-//    NSArray *rightBarButtons = @[indicator, self.restorePurchases];
-//    self.navigationItem.rightBarButtonItems = rightBarButtons;
+        [[UIBarButtonItem alloc] initWithTitle:@"Restore"
+                                         style:UIBarButtonItemStyleBordered
+                                        target:self
+                                        action:@selector(restoreTapped:)];
+
     self.navigationItem.rightBarButtonItem = self.restorePurchases;
-    
+
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
         //No purchase so get the products and disable the buttons
         [self getIAPList];
@@ -63,17 +56,16 @@
         //Purchase already made
         self.purchaseSocialCell.detailTextLabel.text = @"Paid";
         self.purchaseSocialCell.textLabel.text = @"Social sharing purchase";
-        self.purchaseSocialCell.accessoryType =
-        UITableViewCellAccessoryCheckmark;
+        self.purchaseSocialCell.accessoryType = UITableViewCellAccessoryCheckmark;
         self.purchaseSocialCell.accessoryView = nil;
         self.restorePurchases.enabled = FALSE;
     }
-
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
-    
+
     // Setup Google Analytics tracker for this screen
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"In-App Purchase"];
@@ -82,49 +74,47 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
+
     [super viewWillAppear:animated];
-    
+
     // Setup a notification observer for IAP
     [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(productPurchased:)
-     name:IAPHelperProductPurchaseNotification
-     object:nil];
-    
-    
+        addObserver:self
+           selector:@selector(productPurchased:)
+               name:IAPHelperProductPurchaseNotification
+             object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     // Remove our observer for IAP
     [[NSNotificationCenter defaultCenter]
-     removeObserver:self
-     name:IAPHelperProductPurchaseNotification
-     object:nil];
+        removeObserver:self
+                  name:IAPHelperProductPurchaseNotification
+                object:nil];
 
     [super viewWillDisappear:animated];
-
 }
 
-- (void)formatIAPPrice {
+- (void)formatIAPPrice
+{
     _priceFormatter = [[NSNumberFormatter alloc] init];
     [_priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
     [_priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
 }
 
-
-- (void)productPurchased:(NSNotification *)notification {
+- (void)productPurchased:(NSNotification*)notification
+{
     // This will be called after the user completes a purchase, so
     // remove the 'buy' button and replace with a checkmark and do anything else
-    NSString *productIdentifier = notification.object;
-    [_products enumerateObjectsUsingBlock:^(SKProduct *product, NSUInteger idx,
-                                            BOOL *stop) {
+    NSString* productIdentifier = notification.object;
+    [_products enumerateObjectsUsingBlock:^(SKProduct* product, NSUInteger idx,
+                                            BOOL* stop) {
         if ([product.productIdentifier isEqualToString:productIdentifier]) {
             [self refreshView];
             self.purchaseSocialCell.detailTextLabel.text = @"Paid";
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enable Social Buttons"
-                                                            message:@"Don't forget to enable the social sharing buttons on the Settings page if you want to use them."
+                                                            message:@"Don't forget to tap 'Send' on the social sharing buttons on the Settings page to use them."
                                                            delegate:nil
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil];
@@ -134,28 +124,39 @@
     }];
 }
 
-- (void)refreshView {
+- (void)refreshView
+{
 
     [self.refreshControl beginRefreshing];
-    
+
     [self getIAPList];
-    
+
     [self.refreshControl endRefreshing];
 }
 
-- (void)restoreTapped:(UIButton *)sender {
+- (void)restoreTapped:(UIButton*)sender
+{
+    UIView *overlayView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f,
+                                                                   self.view.frame.size.width, self.view.frame.size.height)];
+    [overlayView setAlpha:0.2f];
+    [overlayView setBackgroundColor:FlatBlackDark];
+    [self.view addSubview:overlayView];
+    [self.view bringSubviewToFront:overlayView];
     
     [[VolleyBallIAPHelper sharedInstance] restoreCompletedTransactions];
     [self refreshView];
     self.purchaseSocialCell.detailTextLabel.text = @"Paid";
+    
+    [overlayView removeFromSuperview];
 }
 
-- (BOOL)getIAPList {
+- (BOOL)getIAPList
+{
     // Get list of available IAP's
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+
     [[VolleyBallIAPHelper sharedInstance]
-     requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        requestProductsWithCompletionHandler:^(BOOL success, NSArray* products) {
          if (success) {
              _products = products;
              SKProduct *product = (SKProduct *)_products[0];
@@ -205,31 +206,35 @@
                  isPurchased = FALSE;
              }
          }
-     }];
+        }];
     return isPurchased;
 }
 
-- (void)buyButtonTapped:(UIButton *)sender {
-    UIButton *buyButton = sender;
-    SKProduct *product = _products[buyButton.tag];
+- (void)buyButtonTapped:(UIButton*)sender
+{
+    
+    UIButton* buyButton = sender;
+    SKProduct* product = _products[buyButton.tag];
     //Buy the IAP
     [[VolleyBallIAPHelper sharedInstance] buyProduct:product];
-    
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
+{
     // Return the number of sections.
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
+{
     // Return the number of rows in the section.
     return 1;
 }
@@ -289,6 +294,5 @@
 */
 
 #pragma clang diagnostic pop
-
 
 @end

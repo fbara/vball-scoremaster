@@ -171,14 +171,13 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
             break;
         default:
             break;
+         }
     
-    
-        [[alert initWithTitle:alertTitle
+    [[alert initWithTitle:alertTitle
             message:alertMsg
             delegate:nil
             cancelButtonTitle:@"Ok"
             otherButtonTitles:nil] show];
-    }
     
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
