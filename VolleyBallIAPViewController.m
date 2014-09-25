@@ -208,8 +208,28 @@
     
     UIButton* buyButton = sender;
     SKProduct* product = _products[buyButton.tag];
+	
+	// Log the button press for analytics
+	[self logButtonPress:(UIButton*)sender];
+	
     //Buy the IAP
     [[VolleyBallIAPHelper sharedInstance] buyProduct:product];
+}
+
+#pragma mark - Google Analytics
+
+- (void)logButtonPress:(UIButton*)button
+{
+	// Logs button presses, gets the title text of the button, and sends it
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	
+	[tracker set:kGAIScreenName value:@"In-App Purchase"];
+	[tracker send:[[GAIDictionaryBuilder
+					createEventWithCategory:@"IAP"
+					action:@"buy"
+					label:[button.titleLabel text]
+					value:nil] build]];
+	[tracker set:kGAIScreenName value:nil];
 }
 
 - (void)didReceiveMemoryWarning
