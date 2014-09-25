@@ -136,18 +136,11 @@
 
 - (void)restoreTapped:(UIButton*)sender
 {
-    UIView *overlayView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f,
-                                                                   self.view.frame.size.width, self.view.frame.size.height)];
-    [overlayView setAlpha:0.2f];
-    [overlayView setBackgroundColor:FlatBlackDark];
-    [self.view addSubview:overlayView];
-    [self.view bringSubviewToFront:overlayView];
     
     [[VolleyBallIAPHelper sharedInstance] restoreCompletedTransactions];
     [self refreshView];
     self.purchaseSocialCell.detailTextLabel.text = @"Paid";
     
-    [overlayView removeFromSuperview];
 }
 
 - (BOOL)getIAPList

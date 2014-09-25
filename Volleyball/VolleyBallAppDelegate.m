@@ -43,9 +43,9 @@
     [GAI sharedInstance].dispatchInterval = 120;
     id<GAITracker> tracker =
         [[GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
-    // TODO Put Google number back in
-    // id<GAITracker> tracker = [[GAI sharedInstance]
-    // trackerWithTrackingId:@"UA-53202813-1"];
+// TODO Put Google number back in
+    // id<GAITracker> tracker =
+        //[[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
     tracker.allowIDFACollection = NO;
 
     if ([GBVersionTracking isFirstLaunchEver] ||
