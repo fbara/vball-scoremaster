@@ -22,7 +22,7 @@
 @property (strong, nonatomic) UIBarButtonItem* restorePurchases;
 @property (strong, nonatomic) UIBarButtonItem* saveButton;
 @property (weak, nonatomic) IBOutlet UITableViewCell* purchaseSocialCell;
-@property (strong, nonatomic) IBOutlet UIImageView* backgroundImage;
+//@property (weak, nonatomic)DejalBezelActivityView *bezelActivityIndicator;
 
 @end
 
@@ -126,6 +126,7 @@
 
 - (void)refreshView
 {
+	
 
     [self.refreshControl beginRefreshing];
 
@@ -136,6 +137,7 @@
 
 - (void)restoreTapped:(UIButton*)sender
 {
+	[self showActivityIndicator:@"Attempting to restore purchase,\nplease wait..."];
     
     [[VolleyBallIAPHelper sharedInstance] restoreCompletedTransactions];
     [self refreshView];
@@ -205,8 +207,9 @@
 
 - (void)buyButtonTapped:(UIButton*)sender
 {
-    
-    UIButton* buyButton = sender;
+	[self showActivityIndicator:@"Validating purchase..."];
+	
+	UIButton* buyButton = sender;
     SKProduct* product = _products[buyButton.tag];
 	
 	// Log the button press for analytics
@@ -237,6 +240,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//- (void)showActivityIndicator:(NSString *)message
+//{
+//	[DejalBezelActivityView activityViewForView:self.navigationController.navigationBar.superview
+//									  withLabel:message];
+//	[DejalBezelActivityView currentActivityView].showNetworkActivityIndicator = YES;
+//}
+//
+//- (void)hideActivityIndicator
+//{
+//	[DejalBezelActivityView removeViewAnimated:YES];
+//}
 
 #pragma mark - Table view data source
 

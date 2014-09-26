@@ -13,6 +13,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+	#import "VolleyBallAppDelegate.h"
     #import "GAI.h"
     #import "GAIFields.h"
     #import "Chameleon.h"
