@@ -22,7 +22,6 @@
 @property (strong, nonatomic) UIBarButtonItem* restorePurchases;
 @property (strong, nonatomic) UIBarButtonItem* saveButton;
 @property (weak, nonatomic) IBOutlet UITableViewCell* purchaseSocialCell;
-//@property (weak, nonatomic)DejalBezelActivityView *bezelActivityIndicator;
 
 @end
 
@@ -65,11 +64,14 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
+	
+	
     // Setup Google Analytics tracker for this screen
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"In-App Purchase"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+	
+	NSLog(@"View did appear");
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -126,18 +128,18 @@
 
 - (void)refreshView
 {
-	
 
     [self.refreshControl beginRefreshing];
 
     [self getIAPList];
 
     [self.refreshControl endRefreshing];
+	
 }
 
 - (void)restoreTapped:(UIButton*)sender
 {
-	[self showActivityIndicator:@"Attempting to restore purchase,\nplease wait..."];
+
     
     [[VolleyBallIAPHelper sharedInstance] restoreCompletedTransactions];
     [self refreshView];
@@ -207,7 +209,6 @@
 
 - (void)buyButtonTapped:(UIButton*)sender
 {
-	[self showActivityIndicator:@"Validating purchase..."];
 	
 	UIButton* buyButton = sender;
     SKProduct* product = _products[buyButton.tag];
@@ -240,18 +241,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//- (void)showActivityIndicator:(NSString *)message
-//{
-//	[DejalBezelActivityView activityViewForView:self.navigationController.navigationBar.superview
-//									  withLabel:message];
-//	[DejalBezelActivityView currentActivityView].showNetworkActivityIndicator = YES;
-//}
-//
-//- (void)hideActivityIndicator
-//{
-//	[DejalBezelActivityView removeViewAnimated:YES];
-//}
 
 #pragma mark - Table view data source
 

@@ -44,7 +44,6 @@
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
 		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
 		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
-		AD8F405019D5955600688DB5 /* DejalActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F404F19D5955600688DB5 /* DejalActivityView.m */; };
 		AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38319BFB056002CD75E /* IAPHelper.m */; };
 		AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */; };
 		AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9A21A8199BDB10009CEE31 /* Accounts.framework */; };
@@ -164,8 +163,6 @@
 		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		AD8F404E19D5955600688DB5 /* DejalActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DejalActivityView.h; sourceTree = "<group>"; };
-		AD8F404F19D5955600688DB5 /* DejalActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejalActivityView.m; sourceTree = "<group>"; };
 		AD96E38219BFB056002CD75E /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		AD96E38319BFB056002CD75E /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		AD96E38819BFB5F7002CD75E /* VolleyBallIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolleyBallIAPHelper.h; sourceTree = "<group>"; };
@@ -308,7 +305,6 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
-				AD8F404D19D5953B00688DB5 /* DejalActivityView */,
 				ADB5A12B19D302BE009B1550 /* NRTouchPoints */,
 				AD96E38119BFB02E002CD75E /* IAP */,
 				ADAEAC4A19ACB42D00519A20 /* Chameleon */,
@@ -445,15 +441,6 @@
 			);
 			name = GBVersionTracking;
 			path = Volleyball;
-			sourceTree = "<group>";
-		};
-		AD8F404D19D5953B00688DB5 /* DejalActivityView */ = {
-			isa = PBXGroup;
-			children = (
-				AD8F404E19D5955600688DB5 /* DejalActivityView.h */,
-				AD8F404F19D5955600688DB5 /* DejalActivityView.m */,
-			);
-			name = DejalActivityView;
 			sourceTree = "<group>";
 		};
 		AD96E38119BFB02E002CD75E /* IAP */ = {
@@ -809,7 +796,6 @@
 				ADE5AF6B19B9DE9C00AAC92D /* ABXNotificationsViewController.m in Sources */,
 				ADAEAC5919ACB47B00519A20 /* UIColor+Chameleon.m in Sources */,
 				ADE5AF7719B9DE9C00AAC92D /* ABXTextView.m in Sources */,
-				AD8F405019D5955600688DB5 /* DejalActivityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

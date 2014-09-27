@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DejalActivityView.h"
 
 @interface VolleyBallAppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate>
 

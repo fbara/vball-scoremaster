@@ -189,6 +189,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 
+
 }
 
 - (void)restoreCompletedTransactions
