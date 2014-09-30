@@ -63,6 +63,9 @@ NSString* colorScheme;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+
 
     // Set home URL for Twitter and Facebook messages
     self.baralabsURL = [NSURL URLWithString:@"www.baralabs.com"];
@@ -78,7 +81,7 @@ NSString* colorScheme;
     self.screenName = @"Scoring";
 
     // Initiaize all the UI elements depending on the device
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (IS_IPAD()) {
         CGFloat score = ipadScoreFont;
         [self initializeHomeScore:currHomeScore fontSize:score];
         [self initializeVisitorScore:currVisitorScore fontSize:score];
@@ -166,11 +169,10 @@ NSString* colorScheme;
             [[[NSUserDefaults standardUserDefaults] objectForKey:@"showPrompt"]
                 isEqualToString:@"Yes"]) {
             // Show the Prompt view on the 5th time the user has launched the app
-            self.promptView = [[ABXPromptView alloc]
-                initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200,
-                                         CGRectGetWidth(self.view.bounds), 100)];
+	self.promptView = [[ABXPromptView alloc]
+                initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
             self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
-            self.promptView.backgroundColor = [UIColor cyanColor];
+            self.promptView.backgroundColor = FlatYellow;
             self.promptView.delegate = self;
             [self.view addSubview:self.promptView];
             [[NSUserDefaults standardUserDefaults] setObject:@"No"
@@ -186,7 +188,7 @@ NSString* colorScheme;
 
     // Update the scoreview's colors in case they were changed in Settings
     // Initiaize all the UI elements depending on the device
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (IS_IPAD()) {
         [self initializeHomeScore:currHomeScore fontSize:188];
         [self initializeVisitorScore:currVisitorScore fontSize:188];
         //[self resetGameAndNames];
@@ -247,7 +249,7 @@ NSString* colorScheme;
     // There are 4 home & 4 visitor past scores that need to be reset to '0'
     for (UILabel* score in self.pastScoreCollection) {
         score.text = @"0";
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        if (IS_IPAD()) {
             [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:30]];
         } else {
             [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
@@ -691,7 +693,7 @@ NSString* colorScheme;
 - (void)formatVBallButton
 {
     // If running on iPad, use these settings
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (IS_IPAD()) {
         self.sendMessageImage.frame = CGRectMake(472.0, 277.0, 80.0, 80.0);
         // self.sendMessageImage.layer.cornerRadius = 40;
     } else {
@@ -922,7 +924,7 @@ NSString* colorScheme;
 {
     // Initiaize all the UI elements, depending on the device, for the start
     // of a new match.
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (IS_IPAD()) {
         [self initializeHomeScore:0 fontSize:188];
         [self initializeVisitorScore:0 fontSize:188];
     } else {
@@ -1264,7 +1266,7 @@ NSString* colorScheme;
         [[DefaultScoreViewController alloc] init];
 
     // Determine what device we're on and set font size appropriately
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (IS_IPAD()) {
         newViewController = [self createViewControllersForScore:0
                                                       withColor:ClearColor
                                                        fontSize:ipadScoreFont];
@@ -1314,7 +1316,7 @@ NSString* colorScheme;
         [[DefaultScoreViewController alloc] init];
 
     // Determine what device we're on and set font size appropriately
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (IS_IPAD()) {
         newViewController = [self createViewControllersForScore:0
                                                       withColor:ClearColor
                                                        fontSize:ipadScoreFont];

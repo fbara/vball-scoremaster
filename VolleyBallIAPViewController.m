@@ -30,6 +30,8 @@
 {
     [super viewDidLoad];
     self.tableView.delegate = self;
+    self.title = @"In-App Purchase";
+
 
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
@@ -71,7 +73,6 @@
     [tracker set:kGAIScreenName value:@"In-App Purchase"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 	
-	NSLog(@"View did appear");
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -180,7 +181,7 @@
              } else {
                  UIButton *buyButton =
                  [UIButton buttonWithType:UIButtonTypeRoundedRect];
-                 if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                 if (IS_IPAD()) {
                      buyButton.frame = CGRectMake(5, 0, 220, 29);
                  } else {
                      buyButton.frame = CGRectMake(5, 0, 210, 29);

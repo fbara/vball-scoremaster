@@ -12,7 +12,7 @@
 #import "VolleyBallViewController.h"
 
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wunused-variable"
+#pragma clang diagnostic ignored "-Wunused-variable"	
 #pragma clang diagnostic ignored "-Wprotocol"
 
 @interface SettingsTableViewController () {
@@ -67,7 +67,7 @@
 
     fixedSpace.width = 20.0f;
 
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (IS_IPAD()) {
         self.navigationItem.rightBarButtonItem = infoButton;
         self.navigationItem.leftBarButtonItem = saveButton;
     } else {
@@ -680,7 +680,7 @@
 - (void)actionNameSelected:(NSString*)actionName
 {
     [self setActionName:actionName];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (IS_IPAD()) {
         [self.actionNameVC dismissViewControllerAnimated:FALSE completion:nil];
     }
 }

@@ -31,6 +31,7 @@ static NSString* const kiTunesID = @"886670213";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Support";
     
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
@@ -49,7 +50,6 @@ static NSString* const kiTunesID = @"886670213";
 - (void)appbotPromptForFeedback
 {
     self.promptView.hidden = YES;
-    NSLog(@"Feedback");
 }
 
 - (void)appbotPromptForReview

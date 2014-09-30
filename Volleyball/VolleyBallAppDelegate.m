@@ -21,6 +21,7 @@
     didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     // Override point for customization after application launch.
+	[[UIApplication sharedApplication] setStatusBarHidden:FALSE withAnimation:UIStatusBarAnimationNone];
 
     // Needed to instantiate the version tracking
     [GBVersionTracking track];
