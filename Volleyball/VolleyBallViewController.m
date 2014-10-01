@@ -208,15 +208,20 @@ NSString* colorScheme;
     [self windowBackgroundColor];
 
     // Show or hide the social buttons depending on the IAP
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
-        self.mainPageTwitterButton.hidden = FALSE;
-        self.mainPageFacebookButton.hidden = FALSE;
-
-    } else {
-        self.mainPageTwitterButton.hidden = TRUE;
-        self.mainPageFacebookButton.hidden = TRUE;
-    }
-    [self enableSocialButtons];
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
+//        self.mainPageTwitterButton.hidden = FALSE;
+//        self.mainPageFacebookButton.hidden = FALSE;
+//
+//    } else {
+//        self.mainPageTwitterButton.hidden = TRUE;
+//        self.mainPageFacebookButton.hidden = TRUE;
+    
+    self.mainPageTwitterButton.hidden = NO;
+    self.mainPageFacebookButton.hidden = NO;
+    self.mainPageFacebookButton.enabled = YES;
+    self.mainPageTwitterButton.enabled = YES;
+//    }
+    //[self enableSocialButtons];
 }
 
 - (void)viewDidAppear:(BOOL)animated
