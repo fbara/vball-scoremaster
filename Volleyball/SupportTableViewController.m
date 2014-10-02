@@ -98,6 +98,13 @@ static NSString* const kiTunesID = @"886670213";
             //BaraLabs website
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com"]];
             break;
+        case 6:
+            //Privacy policy
+            if (IS_IPAD()) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.privacychoice.org/policy/text?policy=6f8c60ba65fd773ce54f4a0465b8f8a3"]];
+            } else {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.privacychoice.org/policy/mobile?policy=6f8c60ba65fd773ce54f4a0465b8f8a3"]];
+            }
         default:
             break;
     }
@@ -114,7 +121,7 @@ static NSString* const kiTunesID = @"886670213";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 6;
+    return 7;
 }
 
 

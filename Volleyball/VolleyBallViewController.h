@@ -57,9 +57,6 @@
 - (IBAction)leftActionLongPress:(UILongPressGestureRecognizer*)recognizer;
 - (IBAction)rightActionLongPress:(UILongPressGestureRecognizer*)recognizer;
 
-- (IBAction)sendWithFacebook:(UIButton*)sender;
-- (IBAction)sendWithTwitter:(UIButton*)sender;
-
 - (IBAction)gamePressed:(UIButton*)sender;
 - (IBAction)rightActionPressed:(UIButton*)sender;
 - (IBAction)leftActionPressed:(UIButton*)sender;

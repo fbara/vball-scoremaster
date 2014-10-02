@@ -30,6 +30,7 @@ static NSString* const kiTunesID = @"886670213";
 CGFloat const ipadScoreFont = 220.0f;
 CGFloat const iphoneScoreFont = 120.0f;
 NSString* colorScheme;
+NSString *socialMessage;
 
 @interface VolleyBallViewController () {
     // Instance variable to store all products returned from iTunes Connect
@@ -63,9 +64,6 @@ NSString* colorScheme;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
-
 
     // Set home URL for Twitter and Facebook messages
     self.baralabsURL = [NSURL URLWithString:@"www.baralabs.com"];
@@ -80,18 +78,19 @@ NSString* colorScheme;
     // Set the Google Analytics Screen name
     self.screenName = @"Scoring";
 
-    // Initiaize all the UI elements depending on the device
-    if (IS_IPAD()) {
-        CGFloat score = ipadScoreFont;
-        [self initializeHomeScore:currHomeScore fontSize:score];
-        [self initializeVisitorScore:currVisitorScore fontSize:score];
-        [self resetGameAndNames];
-    } else {
-        CGFloat score = iphoneScoreFont;
-        [self initializeHomeScore:currHomeScore fontSize:score];
-        [self initializeVisitorScore:currVisitorScore fontSize:score];
-        [self resetGameAndNames];
-    }
+//    // Initiaize all the UI elements depending on the device
+//    if (IS_IPAD()) {
+//        CGFloat score = ipadScoreFont;
+//        [self initializeHomeScore:currHomeScore fontSize:score];
+//        [self initializeVisitorScore:currVisitorScore fontSize:score];
+//        [self resetGameAndNames];
+//    } else {
+//        CGFloat score = iphoneScoreFont;
+//        [self initializeHomeScore:currHomeScore fontSize:score];
+//        [self initializeVisitorScore:currVisitorScore fontSize:score];
+//        [self resetGameAndNames];
+//    }
+    [self resetGameAndNames];
 
     // Set Delegate's and DataSource's
     self.visitingTeamName.delegate = self;
@@ -134,7 +133,7 @@ NSString* colorScheme;
    *  appropriate swipe gesture to fail before they'll recognize their gesture.
    */
 
-    for (UIGestureRecognizer* gesture in _homePageViewController.view
+    for (UIGestureRecognizer *gesture in _homePageViewController.view
              .gestureRecognizers) {
         //		if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
         {
@@ -147,7 +146,7 @@ NSString* colorScheme;
         }
     }
 
-    for (UIGestureRecognizer* gesture in _visitorPageViewController.view
+    for (UIGestureRecognizer *gesture in _visitorPageViewController.view
              .gestureRecognizers) {
         //		if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
         {
@@ -162,7 +161,8 @@ NSString* colorScheme;
 
     // Get the Action Names
     [self loadActionNames];
-
+    
+    //Setup the AppbotX prompt for Reviews
     if (![ABXPromptView hasHadInteractionForCurrentVersion]) {
         if ((([[NSUserDefaults standardUserDefaults]
                  integerForKey:@"launchNumber"]) == 5) &&
@@ -185,18 +185,30 @@ NSString* colorScheme;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    // Initiaize all the UI elements depending on the device
+    if (IS_IPAD()) {
+        CGFloat score = ipadScoreFont;
+        [self initializeHomeScore:currHomeScore fontSize:score];
+        [self initializeVisitorScore:currVisitorScore fontSize:score];
+        [self resetGameAndNames];
+    } else {
+        CGFloat score = iphoneScoreFont;
+        [self initializeHomeScore:currHomeScore fontSize:score];
+        [self initializeVisitorScore:currVisitorScore fontSize:score];
+        [self resetGameAndNames];
+    }
+
 
     // Update the scoreview's colors in case they were changed in Settings
     // Initiaize all the UI elements depending on the device
-    if (IS_IPAD()) {
-        [self initializeHomeScore:currHomeScore fontSize:188];
-        [self initializeVisitorScore:currVisitorScore fontSize:188];
-        //[self resetGameAndNames];
-    } else {
-        [self initializeHomeScore:currHomeScore fontSize:118];
-        [self initializeVisitorScore:currVisitorScore fontSize:118];
-        //[self resetGameAndNames];
-    }
+//    if (IS_IPAD()) {
+//        [self initializeHomeScore:currHomeScore fontSize:188];
+//        [self initializeVisitorScore:currVisitorScore fontSize:188];
+//    } else {
+//        [self initializeHomeScore:currHomeScore fontSize:118];
+//        [self initializeVisitorScore:currVisitorScore fontSize:118];
+//    }
 
     // Get the Action Names
     [self loadActionNames];
@@ -215,12 +227,13 @@ NSString* colorScheme;
 //    } else {
 //        self.mainPageTwitterButton.hidden = TRUE;
 //        self.mainPageFacebookButton.hidden = TRUE;
+//    }
     
     self.mainPageTwitterButton.hidden = NO;
-    self.mainPageFacebookButton.hidden = NO;
-    self.mainPageFacebookButton.enabled = YES;
+    self.mainPageFacebookButton.hidden  = NO;
     self.mainPageTwitterButton.enabled = YES;
-//    }
+    self.mainPageFacebookButton.enabled = YES;
+    
     //[self enableSocialButtons];
 }
 
@@ -233,6 +246,7 @@ NSString* colorScheme;
                                              selector:@selector(viewWillAppear:)
                                                  name:@"SettingsDone"
                                                object:nil];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -664,14 +678,6 @@ NSString* colorScheme;
     }
 }
 
-- (IBAction)sendWithFacebook:(UIButton*)sender
-{
-}
-
-- (IBAction)sendWithTwitter:(UIButton*)sender
-{
-}
-
 - (void)resetLeftToZero
 {
     self.leftActionNameNumber.text = @"0";
@@ -1032,6 +1038,7 @@ NSString* colorScheme;
             tempStr1 = [self createMessageToSend];
             tempStr2 = @"\n#vballscoremaster";
             newMessage = [tempStr1 stringByAppendingString:tempStr2];
+            socialMessage = newMessage;
 
             [twitterController setInitialText:newMessage];
             [twitterController addImage:[self getScreenImage]];
