@@ -39,19 +39,19 @@
     //Show coachMarks
     NSArray *coachMarks = @[
         @{
-            @"rect": [NSValue valueWithCGRect:(CGRect){{249.0f,180.0f},{514.0f,140.0f}}],
+            @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,129.0f},{530.0f,133.0f}}],
             @"caption": @"You can change the background color of each team's score and we've added new color schemes.\n\nYou can also change between Regular, Dark, and Colorful themes."
             },
         @{
-            @"rect": [NSValue valueWithCGRect:(CGRect){{255.0f,357.0f},{514.0f,96.0f}}],
+            @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,284.0f},{530.0f,119.0f}}],
             @"caption": @"You decide when to send text messages, and can optionally include your player's name, also..."
             },
         @{
-            @"rect": [NSValue valueWithCGRect:(CGRect){{255.0f,450.0f},{514.0f,52.0f}}],
+            @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,390.0f},{530.0f,54.0f}}],
             @"caption": @"...you can choose text recipients from your list of contacts or just enter their number directly."
             },
         @{
-            @"rect": [NSValue valueWithCGRect:(CGRect){{255.0f,567.0f},{514.0f,93.0f}}],
+            @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,593.0f},{530.0f,111.0f}}],
             @"caption": @"Select Actions from a list of common terms and choose the right one for your player's position."
             },
         @{

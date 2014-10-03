@@ -45,7 +45,6 @@
     NSArray* pastScoreCollection;
 @property (weak, nonatomic) IBOutlet UILabel* rightActionNameNumber;
 @property (weak, nonatomic) IBOutlet UILabel* leftActionNameNumber;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem* settingsButton;
 
 @property (weak, nonatomic) IBOutlet UIButton* mainPageTwitterButton;
 @property (weak, nonatomic) IBOutlet UIButton* mainPageFacebookButton;

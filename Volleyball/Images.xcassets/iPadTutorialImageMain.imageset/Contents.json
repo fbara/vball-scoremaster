@@ -7,11 +7,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Screenshot 2014.09.01 18.52.25.png"
+      "filename" : "iPad main screen showing social.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "iPad main screen showing social-1.png"
     }
   ],
   "info" : {

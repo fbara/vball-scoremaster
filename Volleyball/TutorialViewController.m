@@ -44,11 +44,11 @@
             @"caption": @"Here's a quick tour of the features of VBall ScoreMaster."
             },
         @{
-            @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,71.0f},{439.0f,30.0f}}],
+            @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,58.0f},{439.0f,30.0f}}],
             @"caption": @"Customize the screen by adding team names, and..."
             },
         @{
-            @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,107.0f},{439.0f,130.0f}}],
+            @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,120.0f},{439.0f,105.0f}}],
             @"caption": @"...tap to add points and swipe the scores to change sides."
             },
         @{
@@ -72,6 +72,10 @@
             @"caption": @"...and choose the player Actions YOU want to track."
             },
         @{
+            @"rect": [NSValue valueWithCGRect:(CGRect){{226.0f,262.0f},{113.0f,47.0f}}],
+            @"caption": @"Sending with Twitter© & Facebook© is available with an in-app purchase."
+            },
+        @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{280.0f,0.0f},{0.0f,0.0f}}],
             @"caption": @""
             }
@@ -90,7 +94,7 @@
     //to be shown.  If it is >, we're done so exit from the view controller
     //If it's greater than the index of the last mark, segue to the Settings
     
-    if (index > 7) {
+    if (index > 8) {
         [self performSegueWithIdentifier:@"showTutorialSettings" sender:self];
     }
 }

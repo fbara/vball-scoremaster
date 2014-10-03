@@ -71,6 +71,10 @@
         @"caption": @"...and choose the player Actions YOU want to track.\n\nYou don't have to take your eyes off the game to type out a message!"
         },
     @{
+        @"rect": [NSValue valueWithCGRect:(CGRect){{391.0f,578.0f},{243.0f,96.0f}}],
+        @"caption": @"Sending with Twitter© & Facebook© is available with an in-app purchase."
+        },
+    @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{510.0f,170.0f},{0.0f,0.0f}}],
         @"caption": @""
         }
@@ -89,7 +93,7 @@
     //to be shown.  If it is >, we're done so exit from the view controller
     //If it's greater than the index of the last mark, segue to the Settings
     
-    if (index > 7) {
+    if (index > 8) {
         [self performSegueWithIdentifier:@"showTutorialSettings" sender:self];
     }
 }

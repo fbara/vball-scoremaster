@@ -135,12 +135,10 @@ NSString *socialMessage;
 
     for (UIGestureRecognizer *gesture in _homePageViewController.view
              .gestureRecognizers) {
-        //		if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
         {
             [gesture requireGestureRecognizerToFail:homeSwipeGesture];
         }
 
-        //		if ([gesture isKindOfClass:[UITapGestureRecognizer class]])
         {
             [gesture requireGestureRecognizerToFail:homeSwipeGesture];
         }
@@ -148,12 +146,10 @@ NSString *socialMessage;
 
     for (UIGestureRecognizer *gesture in _visitorPageViewController.view
              .gestureRecognizers) {
-        //		if ([gesture isKindOfClass:[UIPanGestureRecognizer class]])
         {
             [gesture requireGestureRecognizerToFail:visitorSwipeGesture];
         }
 
-        //		if ([gesture isKindOfClass:[UITapGestureRecognizer class]])
         {
             [gesture requireGestureRecognizerToFail:visitorSwipeGesture];
         }
@@ -187,28 +183,28 @@ NSString *socialMessage;
     [super viewWillAppear:animated];
     
     // Initiaize all the UI elements depending on the device
-    if (IS_IPAD()) {
-        CGFloat score = ipadScoreFont;
-        [self initializeHomeScore:currHomeScore fontSize:score];
-        [self initializeVisitorScore:currVisitorScore fontSize:score];
-        [self resetGameAndNames];
-    } else {
-        CGFloat score = iphoneScoreFont;
-        [self initializeHomeScore:currHomeScore fontSize:score];
-        [self initializeVisitorScore:currVisitorScore fontSize:score];
-        [self resetGameAndNames];
-    }
+//    if (IS_IPAD()) {
+//        CGFloat score = ipadScoreFont;
+//        [self initializeHomeScore:currHomeScore fontSize:score];
+//        [self initializeVisitorScore:currVisitorScore fontSize:score];
+//        [self resetGameAndNames];
+//    } else {
+//        CGFloat score = iphoneScoreFont;
+//        [self initializeHomeScore:currHomeScore fontSize:score];
+//        [self initializeVisitorScore:currVisitorScore fontSize:score];
+//        [self resetGameAndNames];
+//    }
 
 
     // Update the scoreview's colors in case they were changed in Settings
-    // Initiaize all the UI elements depending on the device
-//    if (IS_IPAD()) {
-//        [self initializeHomeScore:currHomeScore fontSize:188];
-//        [self initializeVisitorScore:currVisitorScore fontSize:188];
-//    } else {
-//        [self initializeHomeScore:currHomeScore fontSize:118];
-//        [self initializeVisitorScore:currVisitorScore fontSize:118];
-//    }
+    // Initiaize all the UI elements depending on the device (font=188/118)
+    if (IS_IPAD()) {
+        [self initializeHomeScore:currHomeScore fontSize:ipadScoreFont];
+        [self initializeVisitorScore:currVisitorScore fontSize:ipadScoreFont];
+    } else {
+        [self initializeHomeScore:currHomeScore fontSize:iphoneScoreFont];
+        [self initializeVisitorScore:currVisitorScore fontSize:iphoneScoreFont];
+    }
 
     // Get the Action Names
     [self loadActionNames];
@@ -220,21 +216,16 @@ NSString *socialMessage;
     [self windowBackgroundColor];
 
     // Show or hide the social buttons depending on the IAP
-//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
-//        self.mainPageTwitterButton.hidden = FALSE;
-//        self.mainPageFacebookButton.hidden = FALSE;
-//
-//    } else {
-//        self.mainPageTwitterButton.hidden = TRUE;
-//        self.mainPageFacebookButton.hidden = TRUE;
-//    }
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
+        self.mainPageTwitterButton.hidden = FALSE;
+        self.mainPageFacebookButton.hidden = FALSE;
+
+    } else {
+        self.mainPageTwitterButton.hidden = TRUE;
+        self.mainPageFacebookButton.hidden = TRUE;
+    }
     
-    self.mainPageTwitterButton.hidden = NO;
-    self.mainPageFacebookButton.hidden  = NO;
-    self.mainPageTwitterButton.enabled = YES;
-    self.mainPageFacebookButton.enabled = YES;
-    
-    //[self enableSocialButtons];
+    [self enableSocialButtons];
 }
 
 - (void)viewDidAppear:(BOOL)animated
