@@ -117,7 +117,7 @@
             [self refreshView];
             self.purchaseSocialCell.detailTextLabel.text = @"Paid";
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enable Social Buttons"
-                                                            message:@"Don't forget to tap 'Send' on the social sharing buttons on the Settings page to use them."
+                                                            message:@"Don't forget to tap 'Send' on the social sharing buttons on the Settings page."
                                                            delegate:nil
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil];
