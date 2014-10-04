@@ -27,7 +27,7 @@
     [GBVersionTracking track];
     // Needed to register the app as a transaction observer from Apple for IAP's
     [VolleyBallIAPHelper sharedInstance];
-
+    
     [[UINavigationBar appearance] setBarTintColor:FlatBlue];
     [[UINavigationBar appearance] setTintColor:ContrastColorOf(FlatBlue, TRUE)];
     [[UINavigationBar appearance]

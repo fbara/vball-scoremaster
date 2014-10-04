@@ -43,11 +43,16 @@
 @property (weak, nonatomic) IBOutlet UIButton* sendMessageImage;
 @property (strong, nonatomic) IBOutletCollection(UILabel)
     NSArray* pastScoreCollection;
+@property (strong, nonatomic) IBOutletCollection(UILabel)
+NSArray* pastHomeScoreCollection;
+@property (strong, nonatomic) IBOutletCollection(UILabel)
+NSArray* pastVisitorScoreCollection;
 @property (weak, nonatomic) IBOutlet UILabel* rightActionNameNumber;
 @property (weak, nonatomic) IBOutlet UILabel* leftActionNameNumber;
 
 @property (weak, nonatomic) IBOutlet UIButton* mainPageTwitterButton;
 @property (weak, nonatomic) IBOutlet UIButton* mainPageFacebookButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 
 @property UISwipeGestureRecognizer* homeSwipeGesture;
 @property UISwipeGestureRecognizer* visitingSwipeGesture;

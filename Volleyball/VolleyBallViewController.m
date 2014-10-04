@@ -226,6 +226,11 @@ NSString *socialMessage;
     }
     
     [self enableSocialButtons];
+    
+//    self.mainPageFacebookButton.enabled = YES;
+//    self.mainPageFacebookButton.hidden = NO;
+//    self.mainPageTwitterButton.enabled = YES;
+//    self.mainPageTwitterButton.hidden = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -388,6 +393,7 @@ NSString *socialMessage;
 - (void)windowBackgroundColor
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    int pastHome, pastVisitor;
 
     if ([[defaults objectForKey:@"colorSettings"]
             isEqualToString:@"Complementary"]) {
@@ -409,6 +415,8 @@ NSString *socialMessage;
                 lable.textColor = FlatPlum;
             }
         }
+        [self changePastScoreColors:FlatRed loser:FlatPlum];
+        
     } else if ([[defaults objectForKey:@"colorSettings"]
                    isEqualToString:@"Dark"]) {
         colorScheme = @"Dark";
@@ -428,6 +436,8 @@ NSString *socialMessage;
                 lable.textColor = FlatYellow;
             }
         }
+        [self changePastScoreColors:FlatRed loser:FlatYellow];
+
     } else {
         colorScheme = @"Regular";
         self.view.backgroundColor = FlatWhite;
@@ -446,6 +456,46 @@ NSString *socialMessage;
                 lable.textColor = FlatBlack;
             }
         }
+        [self changePastScoreColors:FlatRed loser:FlatBlack];
+
+    }
+}
+
+- (void)changePastScoreColors:(UIColor *)winTeam loser:(UIColor *)loseTeam
+{
+    //After the main screen changes colors, this evaluates all the past scores to determine
+    //the winner & loser, changing its color appropriately.
+    
+    if ([self.homeGame1.text intValue] > [self.visitGame1.text intValue]) {
+        self.homeGame1.textColor = winTeam;
+        self.visitGame1.textColor = loseTeam;
+    } else if ([self.homeGame1.text intValue] < [self.visitGame1.text intValue]){
+        self.homeGame1.textColor = loseTeam;
+        self.visitGame1.textColor = winTeam;
+    }
+    
+    if ([self.homeGame2.text intValue] > [self.visitGame2.text intValue]) {
+        self.homeGame2.textColor = winTeam;
+        self.visitGame2.textColor = loseTeam;
+    } else if ([self.homeGame2.text intValue] < [self.visitGame2.text intValue]) {
+        self.homeGame2.textColor = loseTeam;
+        self.visitGame2.textColor = winTeam;
+    }
+    
+    if ([self.homeGame3.text intValue] > [self.visitGame3.text intValue]) {
+        self.homeGame3.textColor = winTeam;
+        self.visitGame3.textColor = loseTeam;
+    } else if ([self.homeGame3.text intValue] < [self.visitGame3.text intValue]) {
+        self.homeGame3.textColor = loseTeam;
+        self.visitGame3.textColor = winTeam;
+    }
+    
+    if ([self.homeGame4.text intValue] > [self.visitGame4.text intValue]) {
+        self.homeGame4.textColor = winTeam;
+        self.visitGame4.textColor = loseTeam;
+    } else if ([self.homeGame4.text intValue] < [self.visitGame4.text intValue]) {
+        self.homeGame4.textColor = loseTeam;
+        self.visitGame4.textColor = winTeam;
     }
 }
 
