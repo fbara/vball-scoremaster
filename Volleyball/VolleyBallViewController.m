@@ -393,7 +393,6 @@ NSString *socialMessage;
 - (void)windowBackgroundColor
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    int pastHome, pastVisitor;
 
     if ([[defaults objectForKey:@"colorSettings"]
             isEqualToString:@"Complementary"]) {
