@@ -39,6 +39,8 @@ static NSString* const kiTunesID = @"886670213";
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    //Show alert to user the first time they enter the Support screen and there's
+    //an active alert.
     [ABXNotification fetchActive:^(NSArray *notifications, ABXResponseCode responseCode, NSInteger httpCode, NSError *error) {
         if (responseCode == ABXResponseCodeSuccess) {
             if (notifications.count > 0) {
@@ -55,7 +57,8 @@ static NSString* const kiTunesID = @"886670213";
                                   actionBlock:^(ABXNotificationView *view) {
                                       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:notification.actionUrl]];
                                   } dismissBlock:^(ABXNotificationView *view) {
-                                      //[notification markAsSeen];
+                                      //Mark alert as being seen so it's not shown again
+                                      [notification markAsSeen];
                                       }];
                     return;
                 }
