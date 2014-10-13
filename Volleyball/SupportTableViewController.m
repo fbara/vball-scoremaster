@@ -38,7 +38,33 @@ static NSString* const kiTunesID = @"886670213";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
+    
+    [ABXNotification fetchActive:^(NSArray *notifications, ABXResponseCode responseCode, NSInteger httpCode, NSError *error) {
+        if (responseCode == ABXResponseCodeSuccess) {
+            if (notifications.count > 0) {
+                ABXNotification *notification = [notifications firstObject];
+                
+                if (![notification hasSeen]) {
+                    //Show the view
+                    [ABXNotificationView show:notification.message
+                                   actionText:notification.actionLabel
+                              backgroundColor:FlatBlueDark
+                                    textColor:[UIColor whiteColor]
+                                  buttonColor:[UIColor redColor]
+                                 inController:self
+                                  actionBlock:^(ABXNotificationView *view) {
+                                      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:notification.actionUrl]];
+                                  } dismissBlock:^(ABXNotificationView *view) {
+                                      //[notification markAsSeen];
+                                      }];
+                    return;
+                }
+            }
+        }
+        
+    }];
+     
+ }
 
 #pragma mark - Appbotx methods
 
@@ -109,6 +135,7 @@ static NSString* const kiTunesID = @"886670213";
             break;
     }
 }
+
 
 #pragma mark - Table view data source
 

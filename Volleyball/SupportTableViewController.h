@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ABXPromptView.h"
+#import "ABXNotificationView.h"
 
 @interface SupportTableViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource,ABXPromptViewDelegate>
 
