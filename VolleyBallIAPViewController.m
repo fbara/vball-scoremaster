@@ -31,7 +31,9 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.title = @"In-App Purchase";
-
+    
+    // Needed to register the app as a transaction observer from Apple for IAP's
+    [VolleyBallIAPHelper sharedInstance];
 
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
@@ -116,13 +118,33 @@
         if ([product.productIdentifier isEqualToString:productIdentifier]) {
             [self refreshView];
             self.purchaseSocialCell.detailTextLabel.text = @"Paid";
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enable Social Buttons"
-                                                            message:@"Don't forget to tap 'Send' on the social sharing buttons on the Settings page."
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-            [alert show];
-            *stop = YES;
+            NSString *alertTitle = NSLocalizedString(@"Enable Social Buttons", nil);
+            NSString *alertMsg = NSLocalizedString(@"Don't forget to tap 'Send' on the social sharing buttons on the Settings page.", nil);
+            
+            if ([UIAlertController class]) {
+                //iOS 8 and newer
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle
+                                                                               message:alertMsg
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+                                                             style:UIAlertActionStyleDefault
+                                                           handler:^(UIAlertAction *action){
+                                                               [self dismissViewControllerAnimated:YES
+                                                                                    completion:nil];
+                                                           }];
+                [alert addAction:ok];
+                [self presentViewController:alert animated:YES completion:nil];
+            } else {
+                //Not on iOS 8
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                                message:alertMsg
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            
+        *stop = YES;
         }
     }];
 }
@@ -256,60 +278,6 @@
     // Return the number of rows in the section.
     return 1;
 }
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma clang diagnostic pop
 

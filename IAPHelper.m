@@ -107,12 +107,38 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
     _completionHandler(NO, nil);
     _completionHandler = nil;
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communications Error"
-                                                    message:@"I can't load a list of available products for purchase.\nUnable to communicate with the iTunes server.\nPlease try again later."
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Ok"
-                                          otherButtonTitles:nil];
-    [alert show];
+    NSString *alertTitle = NSLocalizedString(@"Communications Error", nil);
+    NSString *alertMsg = NSLocalizedString(@"I can't load a list of available products for purchase.\nUnable to communicate with the iTunes server.\nPlease try again later.", nil);
+    
+    if ([UIAlertController class]) {
+        //iOS 8 and newer
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle
+                                                                       message:alertMsg
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:^(UIAlertAction *action){
+                                                       [self dismissViewControllerAnimated:YES
+                                                                                completion:nil];
+                                                   }];
+        [alert addAction:ok];
+        //Need to get a handle to the active VC, otherwise the error msg won't be seen
+        UIViewController *activeVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+        if ([activeVC isKindOfClass:[UINavigationController class]]) {
+            activeVC = [(UINavigationController *)activeVC visibleViewController];
+        }
+        [activeVC presentViewController:alert animated:YES completion:nil];
+        
+    } else {
+    
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                        message:alertMsg
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
 }
 
 #pragma mark - SKPaymentTransactionObserver
@@ -153,31 +179,53 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
     }
     
     UIAlertView *alert = [[UIAlertView alloc] init];
-    NSString *alertTitle = @"Purchase Error";
+    NSString *alertTitle = NSLocalizedString(@"Purchase Error", nil);
     NSString *alertMsg;
     
     switch (transaction.error.code) {
         case SKErrorPaymentNotAllowed:
-            alertMsg = @"Parental settings prevent purchases for this iTunes user account";
+            alertMsg = NSLocalizedString(@"Parental settings prevent purchases for this iTunes user account", nil);
             break;
         case SKErrorClientInvalid:
-            alertMsg = @"Purchases not allowed for this iTunes user account";
+            alertMsg = NSLocalizedString(@"Purchases not allowed for this iTunes user account", nil);
             break;
         case SKErrorPaymentInvalid:
-            alertMsg = @"There was an error completing this purchase.\nContact iTunes support for more info";
+            alertMsg = NSLocalizedString(@"There was an error completing this purchase.\nContact iTunes support for more info", nil);
             break;
         case SKErrorUnknown:
-            alertMsg = @"The purhase could not be completed at this time.\nPlease try again later or contact iTunes support.";
+            alertMsg = NSLocalizedString(@"The purchase could not be completed at this time.\nPlease try again later or contact iTunes support.", nil);
             break;
         default:
             break;
          }
     
-    [[alert initWithTitle:alertTitle
-            message:alertMsg
-            delegate:nil
-            cancelButtonTitle:@"Ok"
-            otherButtonTitles:nil] show];
+    if ([UIAlertController class]) {
+        //iOS 8 and newer
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle
+                                                                       message:alertMsg
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:^(UIAlertAction *action){
+                                                       [self dismissViewControllerAnimated:YES
+                                                                                completion:nil];
+                                                   }];
+        [alert addAction:ok];
+        //Need to get a handle to the active VC, otherwise the error msg won't be seen
+        UIViewController *activeVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+        if ([activeVC isKindOfClass:[UINavigationController class]]) {
+            activeVC = [(UINavigationController *)activeVC visibleViewController];
+        }
+        [activeVC presentViewController:alert animated:YES completion:nil];
+        
+    } else {
+        //iOS 7 and older
+        [[alert initWithTitle:alertTitle
+                message:alertMsg
+                delegate:nil
+                cancelButtonTitle:@"Ok"
+                otherButtonTitles:nil] show];
+    }
     
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
@@ -215,25 +263,73 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
         // example if ([productID isEqualToString: @"youruniqueproductidentifier]){write files} else { nslog sorry}
     }
     if (queue.transactions.count < 1) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Purchase Error"
-                                                        message:@"Unable to restore or complete the purchase at this time."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil];
-        [alert show];
+        NSString *alertTitle = NSLocalizedString(@"Purchase Error", nil);
+        NSString *alertMsg = NSLocalizedString(@"Unable to restore or complete the purchase at this time.", nil);
+        
+        if ([UIAlertController class]) {
+            //iOS 8 and newer
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle
+                                                                           message:alertMsg
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+                                                         style:UIAlertActionStyleCancel
+                                                       handler:^(UIAlertAction *action){
+                                                           [self dismissViewControllerAnimated:YES
+                                                                                    completion:nil];
+                                                       }];
+            [alert addAction:ok];
+            //Need to get a handle to the active VC, otherwise the error msg won't be seen
+            UIViewController *activeVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+            if ([activeVC isKindOfClass:[UINavigationController class]]) {
+                activeVC = [(UINavigationController *)activeVC visibleViewController];
+            }
+            [activeVC presentViewController:alert animated:YES completion:nil];
+            
+        } else {
+            //iOS 7 and older
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                            message:alertMsg
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
     }
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:error.localizedDescription
-                                                    message:@"Unable to connect to the iTunes store.\n\nPlease try your purchase again later."
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Ok"
-                                          otherButtonTitles:nil];
-    [alert show];
     NSLog(@"Restore failed: %@", error.localizedDescription);
- 
+
+    NSString *alertTitle = NSLocalizedString(error.localizedDescription, nil);
+    NSString *alertMsg = NSLocalizedString(@"Unable to connect to the iTunes store.\n\nPlease try your purchase again later.", nil);
+    
+    if ([UIAlertController class]) {
+        //iOS 8 and newer
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle
+                                                                       message:alertMsg
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:^(UIAlertAction *action){
+                                                       [self dismissViewControllerAnimated:YES
+                                                                                completion:nil];
+                                                   }];
+        [alert addAction:ok];
+        UIViewController *activeVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+        if ([activeVC isKindOfClass:[UINavigationController class]]) {
+            activeVC = [(UINavigationController *)activeVC visibleViewController];
+        }
+        [activeVC presentViewController:alert animated:YES completion:nil];
+    } else {
+    
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                        message:alertMsg
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (void)provideContentForProductIdentifier:(NSString *)productIdentifier

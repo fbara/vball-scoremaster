@@ -21,12 +21,12 @@
     didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     // Override point for customization after application launch.
-	[[UIApplication sharedApplication] setStatusBarHidden:FALSE withAnimation:UIStatusBarAnimationNone];
+	//[[UIApplication sharedApplication] setStatusBarHidden:FALSE withAnimation:UIStatusBarAnimationNone];
 
     // Needed to instantiate the version tracking
     [GBVersionTracking track];
     // Needed to register the app as a transaction observer from Apple for IAP's
-    [VolleyBallIAPHelper sharedInstance];
+    //[VolleyBallIAPHelper sharedInstance];
     
     [[UINavigationBar appearance] setBarTintColor:FlatBlue];
     [[UINavigationBar appearance] setTintColor:ContrastColorOf(FlatBlue, TRUE)];
@@ -42,11 +42,11 @@
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
-//    id<GAITracker> tracker =
-//        [[GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
+    id<GAITracker> tracker =
+        [[GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
 // TODO Put Google number back in
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
-    tracker.allowIDFACollection = NO;
+//    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+//    tracker.allowIDFACollection = NO;
 
     if ([GBVersionTracking isFirstLaunchEver] ||
         [GBVersionTracking isFirstLaunchForVersion]) {
@@ -58,7 +58,7 @@
         // Show Google Analytics permission alert
         UIAlertView* av = [[UIAlertView alloc]
                 initWithTitle:@"Google Analytics"
-                      message:@"With your permission usage information will be "
+                      message:@"With your permission, usage information will be "
                       @"collected to improve the application.\n\nNo "
                       @"personal information will be collected and you "
                       @"can opt out at any time from Settings."
