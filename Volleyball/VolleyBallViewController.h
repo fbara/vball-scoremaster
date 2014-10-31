@@ -65,5 +65,8 @@ NSArray* pastVisitorScoreCollection;
 - (IBAction)rightActionPressed:(UIButton*)sender;
 - (IBAction)leftActionPressed:(UIButton*)sender;
 - (IBAction)newMatch:(UIBarButtonItem*)sender;
-- (IBAction)sendInstantMessage:(UIButton*)sender;
+
+  - (UIImage *)getScreenImage;
+
+  - (IBAction)sendInstantMessage:(UIButton*)sender;
 @end

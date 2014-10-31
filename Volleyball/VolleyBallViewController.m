@@ -1082,19 +1082,18 @@ NSString *socialMessage;
 
             [twitterController setInitialText:newMessage];
             [twitterController addImage:[self getScreenImage]];
-            [twitterController
-                setCompletionHandler:^(SLComposeViewControllerResult result) {
-              switch (result) {
-              case SLComposeViewControllerResultCancelled:
-                NSLog(@"Post cancelled");
-                break;
-              case SLComposeViewControllerResultDone:
-                NSLog(@"Post completed");
-                break;
-              default:
-                break;
-              }
-                }];
+            twitterController.completionHandler = ^(SLComposeViewControllerResult result) {
+                          switch (result) {
+                          case SLComposeViewControllerResultCancelled:
+                            NSLog(@"Post cancelled");
+                            break;
+                          case SLComposeViewControllerResultDone:
+                              [self logTwitterSent];
+                            break;
+                          default:
+                            break;
+                          }
+                            };
 
             // Show Twitter screen
             [self presentViewController:twitterController
@@ -1152,7 +1151,7 @@ NSString *socialMessage;
                 NSLog(@"Post cancelled");
                 break;
               case SLComposeViewControllerResultDone:
-                NSLog(@"Post complete");
+                  [self logFacebookSent];
               default:
                 break;
               }

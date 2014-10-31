@@ -8,6 +8,7 @@
 
 #import "VolleyBallIAPViewController.h"
 #import "GAIDictionaryBuilder.h"
+#import "MBProgressHUD.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
@@ -175,58 +176,68 @@
     // Get list of available IAP's
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
 
-    [[VolleyBallIAPHelper sharedInstance]
-        requestProductsWithCompletionHandler:^(BOOL success, NSArray* products) {
-         if (success) {
-             _products = products;
-             SKProduct *product = (SKProduct *)_products[0];
-             self.purchaseSocialCell.textLabel.text = product.localizedTitle;
-             
-             [self formatIAPPrice];
-             
-             [_priceFormatter setLocale:product.priceLocale];
-             self.purchaseSocialCell.detailTextLabel.text =
-             [_priceFormatter stringFromNumber:product.price];
-             
-             if ([[VolleyBallIAPHelper sharedInstance]
-                  productPurchased:product.productIdentifier]) {
-                 //Product purchased, set accessory checkmark on purchase row
-                 self.purchaseSocialCell.accessoryType =
-                 UITableViewCellAccessoryCheckmark;
-                 self.purchaseSocialCell.accessoryView = nil;
-                 
-                 [defaults setBool:TRUE forKey:@"purchasedSocial"];
-                 self.purchaseSocialCell.detailTextLabel.text = @"Paid";
-                 self.restorePurchases.enabled = FALSE;
-                 isPurchased = TRUE;
-                 
-             } else {
-                 UIButton *buyButton =
-                 [UIButton buttonWithType:UIButtonTypeRoundedRect];
-                 if (IS_IPAD()) {
-                     buyButton.frame = CGRectMake(5, 0, 220, 29);
-                 } else {
-                     buyButton.frame = CGRectMake(5, 0, 210, 29);
-                 }
-                 [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
-                 buyButton.backgroundColor = FlatYellow;
-                 buyButton.layer.borderWidth = 0.25f;
-                 buyButton.layer.borderColor = [[UIColor grayColor] CGColor];
-                 buyButton.layer.masksToBounds = YES;
-                 buyButton.layer.cornerRadius = 5;
-                 buyButton.tag = 0;
-                 [buyButton addTarget:self
-                               action:@selector(buyButtonTapped:)
-                     forControlEvents:UIControlEventTouchUpInside];
-                 self.purchaseSocialCell.accessoryType =
-                 UITableViewCellAccessoryNone;
-                 self.purchaseSocialCell.accessoryView = buyButton;
-                 [defaults setBool:FALSE forKey:@"purchasedSocial"];
-                 self.restorePurchases.enabled = TRUE;
-                 isPurchased = FALSE;
-             }
-         }
-        }];
+	//Show MBProgressHUD and spin the checking for products to a background thread
+//TODO Finish progress indicator
+	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [[VolleyBallIAPHelper sharedInstance]
+                requestProductsWithCompletionHandler:^(BOOL success, NSArray* products) {
+                    if (success) {
+                        _products = products;
+                        SKProduct *product = (SKProduct *)_products[0];
+                        self.purchaseSocialCell.textLabel.text = product.localizedTitle;
+
+                        [self formatIAPPrice];
+
+                        [_priceFormatter setLocale:product.priceLocale];
+                        self.purchaseSocialCell.detailTextLabel.text =
+                                [_priceFormatter stringFromNumber:product.price];
+
+                        if ([[VolleyBallIAPHelper sharedInstance]
+                                productPurchased:product.productIdentifier]) {
+                            //Product purchased, set accessory checkmark on purchase row
+                            self.purchaseSocialCell.accessoryType =
+                                    UITableViewCellAccessoryCheckmark;
+                            self.purchaseSocialCell.accessoryView = nil;
+
+                            [defaults setBool:TRUE forKey:@"purchasedSocial"];
+                            self.purchaseSocialCell.detailTextLabel.text = @"Paid";
+                            self.restorePurchases.enabled = FALSE;
+                            isPurchased = TRUE;
+
+                        } else {
+                            UIButton *buyButton =
+                                    [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                            if (IS_IPAD()) {
+                                buyButton.frame = CGRectMake(5, 0, 220, 29);
+                            } else {
+                                buyButton.frame = CGRectMake(5, 0, 210, 29);
+                            }
+                            [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
+                            buyButton.backgroundColor = FlatYellow;
+                            buyButton.layer.borderWidth = 0.25f;
+                            buyButton.layer.borderColor = [[UIColor grayColor] CGColor];
+                            buyButton.layer.masksToBounds = YES;
+                            buyButton.layer.cornerRadius = 5;
+                            buyButton.tag = 0;
+                            [buyButton addTarget:self
+                                          action:@selector(buyButtonTapped:)
+                                forControlEvents:UIControlEventTouchUpInside];
+                            self.purchaseSocialCell.accessoryType =
+                                    UITableViewCellAccessoryNone;
+                            self.purchaseSocialCell.accessoryView = buyButton;
+                            [defaults setBool:FALSE forKey:@"purchasedSocial"];
+                            self.restorePurchases.enabled = TRUE;
+                            isPurchased = FALSE;
+                        }
+                    }
+                }];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+    });
+
     return isPurchased;
 }
 

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @import StoreKit;
 #import "VolleyBallIAPHelper.h"
+#import "MBProgressHUD.h"
 
 
 @interface VolleyBallIAPViewController : UITableViewController <UITableViewDataSource,UITableViewDelegate,SKPaymentTransactionObserver,SKProductsRequestDelegate>
