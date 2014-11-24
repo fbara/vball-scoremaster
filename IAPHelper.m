@@ -85,7 +85,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
-    //NSLog(@"Loaded list of products....\n");
+    NSLog(@"Loaded list of products....\n");
     _productsRequest = nil;
     
     NSArray *skProducts = response.products;
