@@ -669,7 +669,7 @@ NSString *socialMessage;
     // On a long press, show popup menu with selections to reset the number to
     // zero or not
 
-    [self.rightActionNameNumber canBecomeFirstResponder];
+    [self.leftActionNameNumber canBecomeFirstResponder];
 
     // Check if the number is not a zero
     if ([self.leftActionNameNumber.text isEqualToString:@"0"]) {
@@ -687,6 +687,7 @@ NSString *socialMessage;
         UIMenuController* menu = [UIMenuController sharedMenuController];
         [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
         [menu setTargetRect:self.leftActionNameNumber.frame inView:self.view];
+		//[menu setTargetRect:self.leftActionLabel.frame inView:self.view];
         [menu setMenuVisible:YES animated:YES];
     }
 }
@@ -697,6 +698,7 @@ NSString *socialMessage;
     // zero or not
 
     [self.rightActionNameNumber canBecomeFirstResponder];
+
 
     // Check if the number is not a zero
     if ([self.rightActionNameNumber.text isEqualToString:@"0"]) {
@@ -713,8 +715,10 @@ NSString *socialMessage;
 
         UIMenuController* menu = [UIMenuController sharedMenuController];
         [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
+		[self.rightActionNameNumber becomeFirstResponder];
         [menu setTargetRect:self.rightActionNameNumber.frame inView:self.view];
         [menu setMenuVisible:YES animated:YES];
+
     }
 }
 
@@ -1290,7 +1294,7 @@ NSString *socialMessage;
     // Format the text message
     textMessage = [NSString
         stringWithFormat:
-            @"%@ has %d %@'s and %d %@'s!\nThe score is now %@ %d - %@ %d.",
+            @"%@ has %d %@s and %d %@s!\nThe score is now %@ %d - %@ %d.",
             playerName, currSecondAction, self.rightActionLabel.text,
             currFirstAction, self.leftActionLabel.text, msgVisitor,
             currVisitorScore, msgHome, currHomeScore];
