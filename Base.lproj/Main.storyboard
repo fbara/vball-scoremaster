@@ -152,7 +152,7 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V3G-uq-fca" userLabel="rightActionNameNumber">
+                            <label opaque="NO" clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V3G-uq-fca" userLabel="rightActionNameNumber">
                                 <rect key="frame" x="333" y="272" width="168" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
@@ -161,6 +161,7 @@
                             </label>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="e73-U3-5CU" userLabel="rightScreenActionButton">
                                 <rect key="frame" x="382" y="277" width="71" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button with a label that contains a number"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
@@ -173,7 +174,7 @@
                                     <outletCollection property="gestureRecognizers" destination="qAC-a6-aQ8" appends="YES" id="m98-IJ-dzl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="991-IZ-vz3" userLabel="leftActionNameNumber">
+                            <label opaque="NO" clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="991-IZ-vz3" userLabel="leftActionNameNumber">
                                 <rect key="frame" x="62" y="272" width="168" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
@@ -298,12 +299,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1" id="00j-HW-7Gn" userLabel="Long Press Gesture Recognizer - Reset Ace Number">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1" id="00j-HW-7Gn" userLabel="Long Press Gesture Recognizer - Reset Right Action Number">
                     <connections>
                         <action selector="leftActionLongPress:" destination="vXZ-lx-hvc" id="cip-2J-zST"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.99999999999999989" id="qAC-a6-aQ8" userLabel="Long Press Gesture Recognizer - Reset Spike Number">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.99999999999999989" id="qAC-a6-aQ8" userLabel="Long Press Gesture Recognizer - Reset Left Action Number">
                     <connections>
                         <action selector="rightActionLongPress:" destination="vXZ-lx-hvc" id="CsU-sd-Riv"/>
                     </connections>

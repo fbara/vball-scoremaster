@@ -42,11 +42,10 @@
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
-    id<GAITracker> tracker =
-        [[GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
-// TODO Put Google number back in
-//    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
-//    tracker.allowIDFACollection = NO;
+//    id<GAITracker> tracker =
+//        [[GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+    tracker.allowIDFACollection = NO;
 
     if ([GBVersionTracking isFirstLaunchEver] ||
         [GBVersionTracking isFirstLaunchForVersion]) {

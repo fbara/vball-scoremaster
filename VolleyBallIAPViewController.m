@@ -177,7 +177,6 @@
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
 
 	//Show MBProgressHUD and spin the checking for products to a background thread
-//TODO Finish progress indicator
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[VolleyBallIAPHelper sharedInstance]
