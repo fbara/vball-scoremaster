@@ -14,6 +14,8 @@
 @import Social;
 @import Accounts;
 @import StoreKit;
+@import UIKit;
+#import <Crashlytics/Crashlytics.h>
 
 NSString* const EMBED_HOME = @"embedHome";
 NSString* const EMBED_VISITOR = @"embedVisitor";
@@ -500,7 +502,7 @@ NSString *socialMessage;
 
 - (void)resetGameAndNames
 {
-    // Resets Game and Action Name values to 0
+    // Resets Game, Team Names, and Action Name values to 0
     self.gameNumber.text = @"1";
     self.rightActionNameNumber.text = @"0";
     self.leftActionNameNumber.text = @"0";
@@ -508,6 +510,9 @@ NSString *socialMessage;
     currSecondAction = 0;
     currHomeScore = 0;
     currVisitorScore = 0;
+	self.homeTeamName.text = @"";
+	self.visitingTeamName.text = @"";
+	
     [self initializePastGames];
 }
 
@@ -653,7 +658,7 @@ NSString *socialMessage;
 }
 
 #pragma mark - UILongPressGestureRecognizers
-#pragma mark - Reset Numbers to 0
+#pragma mark - Reset Action Numbers to 0
 
 - (IBAction)sendInstantMessage:(UIButton*)sender
 {
@@ -677,18 +682,21 @@ NSString *socialMessage;
         return;
     } else {
         // Number is not a zero, show popup menu
-        UIMenuItem* resetMenu =
-            [[UIMenuItem alloc] initWithTitle:@"Reset to 0"
-                                       action:@selector(resetLeftToZero)];
-        UIMenuItem* cancelMenu =
-            [[UIMenuItem alloc] initWithTitle:@"Cancel"
-                                       action:@selector(leaveNumberAsIs)];
+		if (IS_IPAD()) {
+		
+			UIMenuItem* resetMenu =
+				[[UIMenuItem alloc] initWithTitle:@"Reset to 0"
+										   action:@selector(resetLeftToZero)];
+			UIMenuItem* cancelMenu =
+				[[UIMenuItem alloc] initWithTitle:@"Cancel"
+										   action:@selector(leaveNumberAsIs)];
 
-        UIMenuController* menu = [UIMenuController sharedMenuController];
-        [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
-        [menu setTargetRect:self.leftActionNameNumber.frame inView:self.view];
-		//[menu setTargetRect:self.leftActionLabel.frame inView:self.view];
-        [menu setMenuVisible:YES animated:YES];
+			UIMenuController* menu = [UIMenuController sharedMenuController];
+			[menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
+			[self.leftActionNameNumber becomeFirstResponder];
+			[menu setTargetRect:self.leftActionNameNumber.frame inView:self.view];
+			[menu setMenuVisible:YES animated:YES];
+		}
     }
 }
 
@@ -706,19 +714,20 @@ NSString *socialMessage;
         return;
     } else {
         // Number is not a zero, show popup menu
-        UIMenuItem* resetMenu =
+		if (IS_IPAD()) {
+			UIMenuItem* resetMenu =
             [[UIMenuItem alloc] initWithTitle:@"Reset to 0"
                                        action:@selector(resetRightToZero)];
-        UIMenuItem* cancelMenu =
+			UIMenuItem* cancelMenu =
             [[UIMenuItem alloc] initWithTitle:@"Cancel"
                                        action:@selector(leaveNumberAsIs)];
 
-        UIMenuController* menu = [UIMenuController sharedMenuController];
-        [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
-		[self.rightActionNameNumber becomeFirstResponder];
-        [menu setTargetRect:self.rightActionNameNumber.frame inView:self.view];
-        [menu setMenuVisible:YES animated:YES];
-
+			UIMenuController* menu = [UIMenuController sharedMenuController];
+			[menu setMenuItems:[NSArray arrayWithObjects:resetMenu,cancelMenu, nil]];
+			[self.rightActionNameNumber becomeFirstResponder];
+			[menu setTargetRect:self.rightActionNameNumber.frame inView:self.view];
+			[menu setMenuVisible:YES animated:YES];
+		}
     }
 }
 
@@ -966,7 +975,7 @@ NSString *socialMessage;
             initWithTitle:NSLocalizedString(@"New Match?", nil)
                   message:
                       NSLocalizedString(
-                          @"Reset scores, action names, and start a new match?",
+                          @"Reset team names, scores, action names, and start a new match?",
                           nil)
                  delegate:self
         cancelButtonTitle:NSLocalizedString(@"No", nil)

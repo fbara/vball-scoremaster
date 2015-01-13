@@ -10,6 +10,9 @@
 #import "GBVersionTracking.h"
 #import "GAI.h"
 #import "VolleyBallIAPHelper.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 //#import "NRWindow.h"
 
 @implementation VolleyBallAppDelegate
@@ -42,9 +45,11 @@
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
-//    id<GAITracker> tracker =
-//        [[GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+    id<GAITracker> tracker =
+        [[GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
+//TODO: Put real tacking number back in
+    //id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+	[Fabric with:@[CrashlyticsKit]];
     tracker.allowIDFACollection = NO;
 
     if ([GBVersionTracking isFirstLaunchEver] ||
