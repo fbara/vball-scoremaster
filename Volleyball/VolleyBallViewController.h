@@ -11,16 +11,20 @@
 #import "GAITrackedViewController.h"
 #import "ABXPromptView.h"
 #import <Social/Social.h>
+#import "ALRadialMenu.h"
 
 @interface VolleyBallViewController
     : GAITrackedViewController <UIPageViewControllerDataSource, UIAlertViewDelegate,
                                 UITextFieldDelegate, MFMessageComposeViewControllerDelegate,
                                 UIGestureRecognizerDelegate, UIPageViewControllerDelegate,
-                                ABXPromptViewDelegate>
+                                ABXPromptViewDelegate,ALRadialMenuDelegate>
 
 @property UIColor* homeColor;
 @property UIColor* visitorColor;
 
+
+@property (strong, nonatomic) ALRadialMenu *radialMenu;
+@property (weak, nonatomic) IBOutlet UIButton *radialMenuButton;
 @property (weak, nonatomic) IBOutlet UILabel* gameNumber;
 @property (weak, nonatomic) IBOutlet UILabel* secondActionName;
 @property (weak, nonatomic) IBOutlet UILabel* firstActionName;
@@ -61,10 +65,12 @@ NSArray* pastVisitorScoreCollection;
 - (IBAction)leftActionLongPress:(UILongPressGestureRecognizer*)recognizer;
 - (IBAction)rightActionLongPress:(UILongPressGestureRecognizer*)recognizer;
 
-- (IBAction)gamePressed:(UIButton*)sender;
-- (IBAction)rightActionPressed:(UIButton*)sender;
-- (IBAction)leftActionPressed:(UIButton*)sender;
-- (IBAction)newMatch:(UIBarButtonItem*)sender;
+- (IBAction)gamePressed:(UIButton *)sender;
+- (IBAction)rightActionPressed:(UIButton *)sender;
+- (IBAction)leftActionPressed:(UIButton *)sender;
+- (IBAction)newMatch:(UIBarButtonItem *)sender;
+- (IBAction)radialMenuPressed:(UIButton *)sender;
+
 
   - (UIImage *)getScreenImage;
 

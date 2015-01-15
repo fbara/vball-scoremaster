@@ -75,6 +75,13 @@
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
 		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
 		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
+		AD891CA71A66ABDF00DCE62E /* ALRadialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AD891CA41A66ABDF00DCE62E /* ALRadialButton.m */; };
+		AD891CA81A66ABDF00DCE62E /* ALRadialMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = AD891CA61A66ABDF00DCE62E /* ALRadialMenu.m */; };
+		AD891CB41A672C0900DCE62E /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = AD891CAB1A672C0900DCE62E /* email.png */; };
+		AD891CB51A672C0900DCE62E /* facebook500.png in Resources */ = {isa = PBXBuildFile; fileRef = AD891CAC1A672C0900DCE62E /* facebook500.png */; };
+		AD891CB91A672C0900DCE62E /* twitter2.png in Resources */ = {isa = PBXBuildFile; fileRef = AD891CB01A672C0900DCE62E /* twitter2.png */; };
+		AD891CBD1A672E6F00DCE62E /* sharethis.png in Resources */ = {isa = PBXBuildFile; fileRef = AD891CBC1A672E6F00DCE62E /* sharethis.png */; };
+		AD891CBF1A67F13800DCE62E /* messenger-generic.png in Resources */ = {isa = PBXBuildFile; fileRef = AD891CBE1A67F13800DCE62E /* messenger-generic.png */; };
 		AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38319BFB056002CD75E /* IAPHelper.m */; };
 		AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */; };
 		AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9A21A8199BDB10009CEE31 /* Accounts.framework */; };
@@ -225,6 +232,15 @@
 		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AD891CA31A66ABDF00DCE62E /* ALRadialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALRadialButton.h; sourceTree = "<group>"; };
+		AD891CA41A66ABDF00DCE62E /* ALRadialButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALRadialButton.m; sourceTree = "<group>"; };
+		AD891CA51A66ABDF00DCE62E /* ALRadialMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALRadialMenu.h; sourceTree = "<group>"; };
+		AD891CA61A66ABDF00DCE62E /* ALRadialMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALRadialMenu.m; sourceTree = "<group>"; };
+		AD891CAB1A672C0900DCE62E /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		AD891CAC1A672C0900DCE62E /* facebook500.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook500.png; sourceTree = "<group>"; };
+		AD891CB01A672C0900DCE62E /* twitter2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter2.png; sourceTree = "<group>"; };
+		AD891CBC1A672E6F00DCE62E /* sharethis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sharethis.png; sourceTree = "<group>"; };
+		AD891CBE1A67F13800DCE62E /* messenger-generic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "messenger-generic.png"; sourceTree = "<group>"; };
 		AD96E38219BFB056002CD75E /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		AD96E38319BFB056002CD75E /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		AD96E38819BFB5F7002CD75E /* VolleyBallIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolleyBallIAPHelper.h; sourceTree = "<group>"; };
@@ -309,6 +325,7 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
+				AD891CA21A66ABDF00DCE62E /* ALRadial */,
 				AD5297BA1A0114790023AC71 /* MBProgressHUD */,
 				ADFB421219A3729600ADBE9F /* AppbotX */,
 				ADB5A12B19D302BE009B1550 /* NRTouchPoints */,
@@ -382,6 +399,7 @@
 		92AA42A91916C2800037D405 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD891CA91A672C0900DCE62E /* images */,
 				AD082E37198182E800A997CE /* DefaultScoreViewController.xib */,
 				ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */,
 				AD082E3419817E5C00A997CE /* Main.storyboard */,
@@ -540,6 +558,29 @@
 				AD5297BC1A0114B40023AC71 /* MBProgressHUD.m */,
 			);
 			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		AD891CA21A66ABDF00DCE62E /* ALRadial */ = {
+			isa = PBXGroup;
+			children = (
+				AD891CA31A66ABDF00DCE62E /* ALRadialButton.h */,
+				AD891CA41A66ABDF00DCE62E /* ALRadialButton.m */,
+				AD891CA51A66ABDF00DCE62E /* ALRadialMenu.h */,
+				AD891CA61A66ABDF00DCE62E /* ALRadialMenu.m */,
+			);
+			path = ALRadial;
+			sourceTree = "<group>";
+		};
+		AD891CA91A672C0900DCE62E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AD891CBE1A67F13800DCE62E /* messenger-generic.png */,
+				AD891CBC1A672E6F00DCE62E /* sharethis.png */,
+				AD891CAB1A672C0900DCE62E /* email.png */,
+				AD891CAC1A672C0900DCE62E /* facebook500.png */,
+				AD891CB01A672C0900DCE62E /* twitter2.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		AD96E38119BFB02E002CD75E /* IAP */ = {
@@ -714,14 +755,19 @@
 			files = (
 				AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */,
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
+				AD891CBF1A67F13800DCE62E /* messenger-generic.png in Resources */,
 				ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
 				ADB5A13219D30372009B1550 /* NRTouchImage.png in Resources */,
 				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
+				AD891CB51A672C0900DCE62E /* facebook500.png in Resources */,
+				AD891CB41A672C0900DCE62E /* email.png in Resources */,
 				ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */,
 				AD9B665C199D2754002C5145 /* Settings.bundle in Resources */,
 				ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */,
 				ADE5AF1B19B915BB00AAC92D /* Default-Landscape@2x~iphone.png in Resources */,
+				AD891CB91A672C0900DCE62E /* twitter2.png in Resources */,
+				AD891CBD1A672E6F00DCE62E /* sharethis.png in Resources */,
 				AD52979C1A01133C0023AC71 /* AppbotX.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,6 +847,7 @@
 				AD5297A11A01133C0023AC71 /* NSDictionary+ABXQueryString.m in Sources */,
 				ADAEAC5A19ACB47B00519A20 /* UIColor+CIELAB.m in Sources */,
 				AD07812919D0493100E30AE9 /* VolleyBallIAPViewController.m in Sources */,
+				AD891CA81A66ABDF00DCE62E /* ALRadialMenu.m in Sources */,
 				AD5297B61A01133C0023AC71 /* ABXPromptView.m in Sources */,
 				AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */,
 				AD5297B91A01133C0023AC71 /* ABXVersionTableViewCell.m in Sources */,
@@ -816,6 +863,7 @@
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
 				ADAEAC5B19ACB47B00519A20 /* UIViewController+Chameleon.m in Sources */,
+				AD891CA71A66ABDF00DCE62E /* ALRadialButton.m in Sources */,
 				AD52979E1A01133C0023AC71 /* ABXAppStore.m in Sources */,
 				ADAEAC5819ACB47B00519A20 /* NSArray+Chameleon.m in Sources */,
 				AD5297B11A01133C0023AC71 /* ABXNotification.m in Sources */,
