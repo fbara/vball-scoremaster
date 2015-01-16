@@ -159,8 +159,6 @@ NSString *socialMessage;
 
     // Get the Action Names
     [self loadActionNames];
-	// Setup radial menu
-	[self setupRadialMenu];
     
     //Setup the AppbotX prompt for Reviews
     if (![ABXPromptView hasHadInteractionForCurrentVersion]) {
@@ -544,88 +542,7 @@ NSString *socialMessage;
 
 #pragma mark - Radial Menu Setup & Delegate
 
-- (void)setupRadialMenu
-{
-	//Initial setup of radial menu
-	self.radialMenu = [[ALRadialMenu alloc] init];
-	self.radialMenu.delegate = self;
-}
 
-- (NSInteger)numberOfItemsInRadialMenu:(ALRadialMenu *)radialMenu
-{
-	return 3;
-}
-
-- (NSInteger)arcSizeForRadialMenu:(ALRadialMenu *)radialMenu
-{
-	//For left corner: return 90
-	return 180;
-}
-
-- (NSInteger)arcRadiusForRadialMenu:(ALRadialMenu *)radialMenu
-{
-	//For left corner: return 70
-	return 60;
-}
-
-- (NSInteger)arcStartForRadialMenu:(ALRadialMenu *)radialMenu
-{
-	//For left corner: return 270
-	return 180;
-}
-
-- (float)buttonSizeForRadialMenu:(ALRadialMenu *)radialMenu
-{
-	return 35.0;
-}
-
-- (ALRadialButton *)radialMenu:(ALRadialMenu *)radialMenu buttonForIndex:(NSInteger)index
-{
-	ALRadialButton *radialButton = [[ALRadialButton alloc] init];
-	if (index == 1) {
-		[radialButton setImage:[UIImage imageNamed:@"twitter2"] forState:UIControlStateNormal];
-	} else if (index == 2) {
-		[radialButton setImage:[UIImage imageNamed:@"messenger-generic"] forState:UIControlStateNormal];
-	} else if (index == 3) {
-		[radialButton setImage:[UIImage imageNamed:@"facebook500"] forState:UIControlStateNormal];
-//	} else if (index == 4) {
-//		[radialButton setImage:[UIImage imageNamed:@"sharethis"] forState:UIControlStateNormal];
-	}
-	
-	if (radialButton.imageView.image) {
-		return radialButton;
-	}
-	return nil;
-}
-
-- (void)radialMenu:(ALRadialMenu *)radialMenu didSelectItemAtIndex:(NSInteger)index
-{
-	//Retract buttons back into radial menu
-	[self.radialMenu itemsWillDisapearIntoButton:self.radialMenuButton];
-	
-	//Determine which button was selected, if any
-	if (index == 1) {
-		//Twitter
-		NSLog(@"\nSent Twitter");
-		[self logTwitterSent];
-	} else if (index == 2) {
-		//SMS message
-		NSLog(@"\nSent Text");
-
-		
-	} else if (index == 3) {
-		//Facebook
-		NSLog(@"\nSent Facebook");
-
-	}
-}
-
-- (IBAction)radialMenuPressed:(UIButton *)sender
-{
-	[self.radialMenu buttonsWillAnimateFromButton:sender
-										withFrame:self.radialMenuButton.frame
-										   inView:self.view];
-}
 
 #pragma mark - Google Analytics
 

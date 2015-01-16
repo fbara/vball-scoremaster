@@ -75,8 +75,6 @@
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
 		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
 		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
-		AD891CA71A66ABDF00DCE62E /* ALRadialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AD891CA41A66ABDF00DCE62E /* ALRadialButton.m */; };
-		AD891CA81A66ABDF00DCE62E /* ALRadialMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = AD891CA61A66ABDF00DCE62E /* ALRadialMenu.m */; };
 		AD891CB41A672C0900DCE62E /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = AD891CAB1A672C0900DCE62E /* email.png */; };
 		AD891CB51A672C0900DCE62E /* facebook500.png in Resources */ = {isa = PBXBuildFile; fileRef = AD891CAC1A672C0900DCE62E /* facebook500.png */; };
 		AD891CB91A672C0900DCE62E /* twitter2.png in Resources */ = {isa = PBXBuildFile; fileRef = AD891CB01A672C0900DCE62E /* twitter2.png */; };
@@ -232,10 +230,6 @@
 		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		AD891CA31A66ABDF00DCE62E /* ALRadialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALRadialButton.h; sourceTree = "<group>"; };
-		AD891CA41A66ABDF00DCE62E /* ALRadialButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALRadialButton.m; sourceTree = "<group>"; };
-		AD891CA51A66ABDF00DCE62E /* ALRadialMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALRadialMenu.h; sourceTree = "<group>"; };
-		AD891CA61A66ABDF00DCE62E /* ALRadialMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALRadialMenu.m; sourceTree = "<group>"; };
 		AD891CAB1A672C0900DCE62E /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		AD891CAC1A672C0900DCE62E /* facebook500.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook500.png; sourceTree = "<group>"; };
 		AD891CB01A672C0900DCE62E /* twitter2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter2.png; sourceTree = "<group>"; };
@@ -325,7 +319,6 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
-				AD891CA21A66ABDF00DCE62E /* ALRadial */,
 				AD5297BA1A0114790023AC71 /* MBProgressHUD */,
 				ADFB421219A3729600ADBE9F /* AppbotX */,
 				ADB5A12B19D302BE009B1550 /* NRTouchPoints */,
@@ -558,17 +551,6 @@
 				AD5297BC1A0114B40023AC71 /* MBProgressHUD.m */,
 			);
 			name = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		AD891CA21A66ABDF00DCE62E /* ALRadial */ = {
-			isa = PBXGroup;
-			children = (
-				AD891CA31A66ABDF00DCE62E /* ALRadialButton.h */,
-				AD891CA41A66ABDF00DCE62E /* ALRadialButton.m */,
-				AD891CA51A66ABDF00DCE62E /* ALRadialMenu.h */,
-				AD891CA61A66ABDF00DCE62E /* ALRadialMenu.m */,
-			);
-			path = ALRadial;
 			sourceTree = "<group>";
 		};
 		AD891CA91A672C0900DCE62E /* images */ = {
@@ -847,7 +829,6 @@
 				AD5297A11A01133C0023AC71 /* NSDictionary+ABXQueryString.m in Sources */,
 				ADAEAC5A19ACB47B00519A20 /* UIColor+CIELAB.m in Sources */,
 				AD07812919D0493100E30AE9 /* VolleyBallIAPViewController.m in Sources */,
-				AD891CA81A66ABDF00DCE62E /* ALRadialMenu.m in Sources */,
 				AD5297B61A01133C0023AC71 /* ABXPromptView.m in Sources */,
 				AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */,
 				AD5297B91A01133C0023AC71 /* ABXVersionTableViewCell.m in Sources */,
@@ -863,7 +844,6 @@
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
 				ADAEAC5B19ACB47B00519A20 /* UIViewController+Chameleon.m in Sources */,
-				AD891CA71A66ABDF00DCE62E /* ALRadialButton.m in Sources */,
 				AD52979E1A01133C0023AC71 /* ABXAppStore.m in Sources */,
 				ADAEAC5819ACB47B00519A20 /* NSArray+Chameleon.m in Sources */,
 				AD5297B11A01133C0023AC71 /* ABXNotification.m in Sources */,

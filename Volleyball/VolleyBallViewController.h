@@ -11,19 +11,17 @@
 #import "GAITrackedViewController.h"
 #import "ABXPromptView.h"
 #import <Social/Social.h>
-#import "ALRadialMenu.h"
 
 @interface VolleyBallViewController
     : GAITrackedViewController <UIPageViewControllerDataSource, UIAlertViewDelegate,
                                 UITextFieldDelegate, MFMessageComposeViewControllerDelegate,
                                 UIGestureRecognizerDelegate, UIPageViewControllerDelegate,
-                                ABXPromptViewDelegate,ALRadialMenuDelegate>
+                                ABXPromptViewDelegate>
 
 @property UIColor* homeColor;
 @property UIColor* visitorColor;
 
 
-@property (strong, nonatomic) ALRadialMenu *radialMenu;
 @property (weak, nonatomic) IBOutlet UIButton *radialMenuButton;
 @property (weak, nonatomic) IBOutlet UILabel* gameNumber;
 @property (weak, nonatomic) IBOutlet UILabel* secondActionName;
@@ -69,8 +67,6 @@ NSArray* pastVisitorScoreCollection;
 - (IBAction)rightActionPressed:(UIButton *)sender;
 - (IBAction)leftActionPressed:(UIButton *)sender;
 - (IBAction)newMatch:(UIBarButtonItem *)sender;
-- (IBAction)radialMenuPressed:(UIButton *)sender;
-
 
   - (UIImage *)getScreenImage;
 

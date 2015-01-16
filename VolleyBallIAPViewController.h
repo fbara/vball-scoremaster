@@ -10,11 +10,9 @@
 @import StoreKit;
 #import "VolleyBallIAPHelper.h"
 #import "MBProgressHUD.h"
-#import "ALRadialMenu.h"
 
 
-@interface VolleyBallIAPViewController : UITableViewController <UITableViewDataSource,UITableViewDelegate,SKPaymentTransactionObserver,SKProductsRequestDelegate,ALRadialMenuDelegate>
+@interface VolleyBallIAPViewController : UITableViewController <UITableViewDataSource,UITableViewDelegate,SKPaymentTransactionObserver,SKProductsRequestDelegate>
 
-@property (strong, nonatomic) ALRadialMenu *radialMenu;
 
 @end
