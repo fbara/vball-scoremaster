@@ -606,9 +606,17 @@ NSString *socialMessage;
 	//Determine which button was selected, if any
 	if (index == 1) {
 		//Twitter
+		NSLog(@"\nSent Twitter");
 		[self logTwitterSent];
+	} else if (index == 2) {
+		//SMS message
+		NSLog(@"\nSent Text");
+
 		
-		
+	} else if (index == 3) {
+		//Facebook
+		NSLog(@"\nSent Facebook");
+
 	}
 }
 
