@@ -11,12 +11,13 @@
 #import "GAITrackedViewController.h"
 #import "ABXPromptView.h"
 #import <Social/Social.h>
+#import "QuadCurveMenu.h"
 
 @interface VolleyBallViewController
     : GAITrackedViewController <UIPageViewControllerDataSource, UIAlertViewDelegate,
                                 UITextFieldDelegate, MFMessageComposeViewControllerDelegate,
                                 UIGestureRecognizerDelegate, UIPageViewControllerDelegate,
-                                ABXPromptViewDelegate>
+                                ABXPromptViewDelegate,QuadCurveMenuDelegate>
 
 @property UIColor* homeColor;
 @property UIColor* visitorColor;

@@ -43,6 +43,7 @@ NSString *socialMessage;
 @property (weak, atomic) UIPageViewController* visitorPageViewController;
 @property (weak, nonatomic) NSURL* baralabsURL;
 @property (strong, nonatomic) ABXPromptView* promptView;
+@property (strong, nonatomic) QuadCurveMenu *qcMenu;
 
 @end
 
@@ -76,6 +77,13 @@ NSString *socialMessage;
         [GBVersionTracking isFirstLaunchForVersion]) {
         [self performSegueWithIdentifier:@"showTutorial" sender:self];
     }
+	
+	//Initialize new QuadCurveMenu item
+	QuadCurveMenu *qcMenu = [[QuadCurveMenu alloc] initWithFrame:self.view.bounds
+												   mainMenuImage:@"Volleyball no background.png"
+											  menuItemImageArray:[NSArray arrayWithObjects:@"twitter2.png", "facebook500.png", "messenger-generic.png", nil]];
+	
+	
 
     // Set the Google Analytics Screen name
     self.screenName = @"Scoring";

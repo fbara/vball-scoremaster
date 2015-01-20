@@ -93,6 +93,38 @@
 		ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB5A12D19D30372009B1550 /* NRTouchImage@2x.png */; };
 		ADB5A13419D30372009B1550 /* NRWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A12F19D30372009B1550 /* NRWindow.m */; };
 		ADB5A13519D30372009B1550 /* UITouch+NRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A13119D30372009B1550 /* UITouch+NRTouch.m */; };
+		ADB700E51A6CA03B00AF4CE4 /* AGMedallionView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700A91A6CA03B00AF4CE4 /* AGMedallionView.m */; };
+		ADB700E61A6CA03B00AF4CE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700AB1A6CA03B00AF4CE4 /* AppDelegate.m */; };
+		ADB700E71A6CA03B00AF4CE4 /* AwesomeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700AD1A6CA03B00AF4CE4 /* AwesomeDataSource.m */; };
+		ADB700E81A6CA03B00AF4CE4 /* AwesomeMenu-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADB700AE1A6CA03B00AF4CE4 /* AwesomeMenu-Info.plist */; };
+		ADB700EA1A6CA03B00AF4CE4 /* AwesomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700B31A6CA03B00AF4CE4 /* AwesomeViewController.m */; };
+		ADB700EB1A6CA03B00AF4CE4 /* classy_fabric.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB700B41A6CA03B00AF4CE4 /* classy_fabric.png */; };
+		ADB700EC1A6CA03B00AF4CE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADB700B51A6CA03B00AF4CE4 /* InfoPlist.strings */; };
+		ADB700ED1A6CA03B00AF4CE4 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB700B71A6CA03B00AF4CE4 /* facebook.png */; };
+		ADB700EE1A6CA03B00AF4CE4 /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB700B81A6CA03B00AF4CE4 /* facebook@2x.png */; };
+		ADB700EF1A6CA03B00AF4CE4 /* edmundo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ADB700BA1A6CA03B00AF4CE4 /* edmundo.jpeg */; };
+		ADB700F01A6CA03B00AF4CE4 /* hector.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ADB700BB1A6CA03B00AF4CE4 /* hector.jpeg */; };
+		ADB700F11A6CA03B00AF4CE4 /* icon-plus.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ADB700BC1A6CA03B00AF4CE4 /* icon-plus.jpeg */; };
+		ADB700F21A6CA03B00AF4CE4 /* icon-plus@2x.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ADB700BD1A6CA03B00AF4CE4 /* icon-plus@2x.jpeg */; };
+		ADB700F31A6CA03B00AF4CE4 /* icon-star.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ADB700BE1A6CA03B00AF4CE4 /* icon-star.jpeg */; };
+		ADB700F41A6CA03B00AF4CE4 /* icon-star@2x.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ADB700BF1A6CA03B00AF4CE4 /* icon-star@2x.jpeg */; };
+		ADB700F51A6CA03B00AF4CE4 /* paul.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ADB700C01A6CA03B00AF4CE4 /* paul.jpeg */; };
+		ADB700F61A6CA03B00AF4CE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700C11A6CA03B00AF4CE4 /* main.m */; };
+		ADB700F71A6CA03B00AF4CE4 /* QuadCurveBlowupAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700C51A6CA03B00AF4CE4 /* QuadCurveBlowupAnimation.m */; };
+		ADB700F81A6CA03B00AF4CE4 /* QuadCurveCustomImageMenuItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700C71A6CA03B00AF4CE4 /* QuadCurveCustomImageMenuItemFactory.m */; };
+		ADB700F91A6CA03B00AF4CE4 /* QuadCurveDefaultDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700CA1A6CA03B00AF4CE4 /* QuadCurveDefaultDataSource.m */; };
+		ADB700FA1A6CA03B00AF4CE4 /* QuadCurveDefaultMenuItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700CC1A6CA03B00AF4CE4 /* QuadCurveDefaultMenuItemFactory.m */; };
+		ADB700FB1A6CA03B00AF4CE4 /* QuadCurveItemCloseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700CE1A6CA03B00AF4CE4 /* QuadCurveItemCloseAnimation.m */; };
+		ADB700FC1A6CA03B00AF4CE4 /* QuadCurveItemExpandAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700D01A6CA03B00AF4CE4 /* QuadCurveItemExpandAnimation.m */; };
+		ADB700FD1A6CA03B00AF4CE4 /* QuadCurveLinearDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700D21A6CA03B00AF4CE4 /* QuadCurveLinearDirector.m */; };
+		ADB700FE1A6CA03B00AF4CE4 /* QuadCurveMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700D41A6CA03B00AF4CE4 /* QuadCurveMenu.m */; };
+		ADB700FF1A6CA03B00AF4CE4 /* QuadCurveMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700D71A6CA03B00AF4CE4 /* QuadCurveMenuItem.m */; };
+		ADB701001A6CA03B00AF4CE4 /* QuadCurveNoAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700DC1A6CA03B00AF4CE4 /* QuadCurveNoAnimation.m */; };
+		ADB701011A6CA03B00AF4CE4 /* QuadCurveRadialDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700DE1A6CA03B00AF4CE4 /* QuadCurveRadialDirector.m */; };
+		ADB701021A6CA03B00AF4CE4 /* QuadCurveShrinkAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700E01A6CA03B00AF4CE4 /* QuadCurveShrinkAnimation.m */; };
+		ADB701031A6CA03B00AF4CE4 /* QuadCurveTiltAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB700E21A6CA03B00AF4CE4 /* QuadCurveTiltAnimation.m */; };
+		ADB701041A6CA03B00AF4CE4 /* unknown-user.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB700E31A6CA03B00AF4CE4 /* unknown-user.png */; };
+		ADB701051A6CA03B00AF4CE4 /* unknown-user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB700E41A6CA03B00AF4CE4 /* unknown-user@2x.png */; };
 		ADE5AF1B19B915BB00AAC92D /* Default-Landscape@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE5AF1A19B915BB00AAC92D /* Default-Landscape@2x~iphone.png */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
@@ -259,6 +291,62 @@
 		ADB5A12F19D30372009B1550 /* NRWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRWindow.m; sourceTree = "<group>"; };
 		ADB5A13019D30372009B1550 /* UITouch+NRTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITouch+NRTouch.h"; sourceTree = "<group>"; };
 		ADB5A13119D30372009B1550 /* UITouch+NRTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch+NRTouch.m"; sourceTree = "<group>"; };
+		ADB700A81A6CA03B00AF4CE4 /* AGMedallionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMedallionView.h; sourceTree = "<group>"; };
+		ADB700A91A6CA03B00AF4CE4 /* AGMedallionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGMedallionView.m; sourceTree = "<group>"; };
+		ADB700AA1A6CA03B00AF4CE4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ADB700AB1A6CA03B00AF4CE4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ADB700AC1A6CA03B00AF4CE4 /* AwesomeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeDataSource.h; sourceTree = "<group>"; };
+		ADB700AD1A6CA03B00AF4CE4 /* AwesomeDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeDataSource.m; sourceTree = "<group>"; };
+		ADB700AE1A6CA03B00AF4CE4 /* AwesomeMenu-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AwesomeMenu-Info.plist"; sourceTree = "<group>"; };
+		ADB700AF1A6CA03B00AF4CE4 /* AwesomeMenu-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AwesomeMenu-Prefix.pch"; sourceTree = "<group>"; };
+		ADB700B21A6CA03B00AF4CE4 /* AwesomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeViewController.h; sourceTree = "<group>"; };
+		ADB700B31A6CA03B00AF4CE4 /* AwesomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeViewController.m; sourceTree = "<group>"; };
+		ADB700B41A6CA03B00AF4CE4 /* classy_fabric.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = classy_fabric.png; sourceTree = "<group>"; };
+		ADB700B61A6CA03B00AF4CE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ADB700B71A6CA03B00AF4CE4 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		ADB700B81A6CA03B00AF4CE4 /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
+		ADB700BA1A6CA03B00AF4CE4 /* edmundo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = edmundo.jpeg; sourceTree = "<group>"; };
+		ADB700BB1A6CA03B00AF4CE4 /* hector.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hector.jpeg; sourceTree = "<group>"; };
+		ADB700BC1A6CA03B00AF4CE4 /* icon-plus.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icon-plus.jpeg"; sourceTree = "<group>"; };
+		ADB700BD1A6CA03B00AF4CE4 /* icon-plus@2x.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icon-plus@2x.jpeg"; sourceTree = "<group>"; };
+		ADB700BE1A6CA03B00AF4CE4 /* icon-star.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icon-star.jpeg"; sourceTree = "<group>"; };
+		ADB700BF1A6CA03B00AF4CE4 /* icon-star@2x.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icon-star@2x.jpeg"; sourceTree = "<group>"; };
+		ADB700C01A6CA03B00AF4CE4 /* paul.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paul.jpeg; sourceTree = "<group>"; };
+		ADB700C11A6CA03B00AF4CE4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ADB700C31A6CA03B00AF4CE4 /* QuadCurveAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveAnimation.h; sourceTree = "<group>"; };
+		ADB700C41A6CA03B00AF4CE4 /* QuadCurveBlowupAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveBlowupAnimation.h; sourceTree = "<group>"; };
+		ADB700C51A6CA03B00AF4CE4 /* QuadCurveBlowupAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveBlowupAnimation.m; sourceTree = "<group>"; };
+		ADB700C61A6CA03B00AF4CE4 /* QuadCurveCustomImageMenuItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveCustomImageMenuItemFactory.h; sourceTree = "<group>"; };
+		ADB700C71A6CA03B00AF4CE4 /* QuadCurveCustomImageMenuItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveCustomImageMenuItemFactory.m; sourceTree = "<group>"; };
+		ADB700C81A6CA03B00AF4CE4 /* QuadCurveDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveDataSourceDelegate.h; sourceTree = "<group>"; };
+		ADB700C91A6CA03B00AF4CE4 /* QuadCurveDefaultDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveDefaultDataSource.h; sourceTree = "<group>"; };
+		ADB700CA1A6CA03B00AF4CE4 /* QuadCurveDefaultDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveDefaultDataSource.m; sourceTree = "<group>"; };
+		ADB700CB1A6CA03B00AF4CE4 /* QuadCurveDefaultMenuItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveDefaultMenuItemFactory.h; sourceTree = "<group>"; };
+		ADB700CC1A6CA03B00AF4CE4 /* QuadCurveDefaultMenuItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveDefaultMenuItemFactory.m; sourceTree = "<group>"; };
+		ADB700CD1A6CA03B00AF4CE4 /* QuadCurveItemCloseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveItemCloseAnimation.h; sourceTree = "<group>"; };
+		ADB700CE1A6CA03B00AF4CE4 /* QuadCurveItemCloseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveItemCloseAnimation.m; sourceTree = "<group>"; };
+		ADB700CF1A6CA03B00AF4CE4 /* QuadCurveItemExpandAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveItemExpandAnimation.h; sourceTree = "<group>"; };
+		ADB700D01A6CA03B00AF4CE4 /* QuadCurveItemExpandAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveItemExpandAnimation.m; sourceTree = "<group>"; };
+		ADB700D11A6CA03B00AF4CE4 /* QuadCurveLinearDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveLinearDirector.h; sourceTree = "<group>"; };
+		ADB700D21A6CA03B00AF4CE4 /* QuadCurveLinearDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveLinearDirector.m; sourceTree = "<group>"; };
+		ADB700D31A6CA03B00AF4CE4 /* QuadCurveMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenu.h; sourceTree = "<group>"; };
+		ADB700D41A6CA03B00AF4CE4 /* QuadCurveMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveMenu.m; sourceTree = "<group>"; };
+		ADB700D51A6CA03B00AF4CE4 /* QuadCurveMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenuDelegate.h; sourceTree = "<group>"; };
+		ADB700D61A6CA03B00AF4CE4 /* QuadCurveMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenuItem.h; sourceTree = "<group>"; };
+		ADB700D71A6CA03B00AF4CE4 /* QuadCurveMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveMenuItem.m; sourceTree = "<group>"; };
+		ADB700D81A6CA03B00AF4CE4 /* QuadCurveMenuItemEventDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenuItemEventDelegate.h; sourceTree = "<group>"; };
+		ADB700D91A6CA03B00AF4CE4 /* QuadCurveMenuItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenuItemFactory.h; sourceTree = "<group>"; };
+		ADB700DA1A6CA03B00AF4CE4 /* QuadCurveMotionDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMotionDirector.h; sourceTree = "<group>"; };
+		ADB700DB1A6CA03B00AF4CE4 /* QuadCurveNoAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveNoAnimation.h; sourceTree = "<group>"; };
+		ADB700DC1A6CA03B00AF4CE4 /* QuadCurveNoAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveNoAnimation.m; sourceTree = "<group>"; };
+		ADB700DD1A6CA03B00AF4CE4 /* QuadCurveRadialDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveRadialDirector.h; sourceTree = "<group>"; };
+		ADB700DE1A6CA03B00AF4CE4 /* QuadCurveRadialDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveRadialDirector.m; sourceTree = "<group>"; };
+		ADB700DF1A6CA03B00AF4CE4 /* QuadCurveShrinkAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveShrinkAnimation.h; sourceTree = "<group>"; };
+		ADB700E01A6CA03B00AF4CE4 /* QuadCurveShrinkAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveShrinkAnimation.m; sourceTree = "<group>"; };
+		ADB700E11A6CA03B00AF4CE4 /* QuadCurveTiltAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveTiltAnimation.h; sourceTree = "<group>"; };
+		ADB700E21A6CA03B00AF4CE4 /* QuadCurveTiltAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveTiltAnimation.m; sourceTree = "<group>"; };
+		ADB700E31A6CA03B00AF4CE4 /* unknown-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unknown-user.png"; sourceTree = "<group>"; };
+		ADB700E41A6CA03B00AF4CE4 /* unknown-user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unknown-user@2x.png"; sourceTree = "<group>"; };
 		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADCC139A1981B588001DC9B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -319,6 +407,7 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
+				ADB700A71A6CA03B00AF4CE4 /* AwesomeMenu */,
 				AD5297BA1A0114790023AC71 /* MBProgressHUD */,
 				ADFB421219A3729600ADBE9F /* AppbotX */,
 				ADB5A12B19D302BE009B1550 /* NRTouchPoints */,
@@ -610,6 +699,85 @@
 			name = NRTouchPoints;
 			sourceTree = "<group>";
 		};
+		ADB700A71A6CA03B00AF4CE4 /* AwesomeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				ADB700A81A6CA03B00AF4CE4 /* AGMedallionView.h */,
+				ADB700A91A6CA03B00AF4CE4 /* AGMedallionView.m */,
+				ADB700AA1A6CA03B00AF4CE4 /* AppDelegate.h */,
+				ADB700AB1A6CA03B00AF4CE4 /* AppDelegate.m */,
+				ADB700AC1A6CA03B00AF4CE4 /* AwesomeDataSource.h */,
+				ADB700AD1A6CA03B00AF4CE4 /* AwesomeDataSource.m */,
+				ADB700AE1A6CA03B00AF4CE4 /* AwesomeMenu-Info.plist */,
+				ADB700AF1A6CA03B00AF4CE4 /* AwesomeMenu-Prefix.pch */,
+				ADB700B21A6CA03B00AF4CE4 /* AwesomeViewController.h */,
+				ADB700B31A6CA03B00AF4CE4 /* AwesomeViewController.m */,
+				ADB700B41A6CA03B00AF4CE4 /* classy_fabric.png */,
+				ADB700B51A6CA03B00AF4CE4 /* InfoPlist.strings */,
+				ADB700B71A6CA03B00AF4CE4 /* facebook.png */,
+				ADB700B81A6CA03B00AF4CE4 /* facebook@2x.png */,
+				ADB700B91A6CA03B00AF4CE4 /* Images */,
+				ADB700C11A6CA03B00AF4CE4 /* main.m */,
+				ADB700C21A6CA03B00AF4CE4 /* QuadCurveMenu */,
+				ADB700E31A6CA03B00AF4CE4 /* unknown-user.png */,
+				ADB700E41A6CA03B00AF4CE4 /* unknown-user@2x.png */,
+			);
+			path = AwesomeMenu;
+			sourceTree = "<group>";
+		};
+		ADB700B91A6CA03B00AF4CE4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				ADB700BA1A6CA03B00AF4CE4 /* edmundo.jpeg */,
+				ADB700BB1A6CA03B00AF4CE4 /* hector.jpeg */,
+				ADB700BC1A6CA03B00AF4CE4 /* icon-plus.jpeg */,
+				ADB700BD1A6CA03B00AF4CE4 /* icon-plus@2x.jpeg */,
+				ADB700BE1A6CA03B00AF4CE4 /* icon-star.jpeg */,
+				ADB700BF1A6CA03B00AF4CE4 /* icon-star@2x.jpeg */,
+				ADB700C01A6CA03B00AF4CE4 /* paul.jpeg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		ADB700C21A6CA03B00AF4CE4 /* QuadCurveMenu */ = {
+			isa = PBXGroup;
+			children = (
+				ADB700C31A6CA03B00AF4CE4 /* QuadCurveAnimation.h */,
+				ADB700C41A6CA03B00AF4CE4 /* QuadCurveBlowupAnimation.h */,
+				ADB700C51A6CA03B00AF4CE4 /* QuadCurveBlowupAnimation.m */,
+				ADB700C61A6CA03B00AF4CE4 /* QuadCurveCustomImageMenuItemFactory.h */,
+				ADB700C71A6CA03B00AF4CE4 /* QuadCurveCustomImageMenuItemFactory.m */,
+				ADB700C81A6CA03B00AF4CE4 /* QuadCurveDataSourceDelegate.h */,
+				ADB700C91A6CA03B00AF4CE4 /* QuadCurveDefaultDataSource.h */,
+				ADB700CA1A6CA03B00AF4CE4 /* QuadCurveDefaultDataSource.m */,
+				ADB700CB1A6CA03B00AF4CE4 /* QuadCurveDefaultMenuItemFactory.h */,
+				ADB700CC1A6CA03B00AF4CE4 /* QuadCurveDefaultMenuItemFactory.m */,
+				ADB700CD1A6CA03B00AF4CE4 /* QuadCurveItemCloseAnimation.h */,
+				ADB700CE1A6CA03B00AF4CE4 /* QuadCurveItemCloseAnimation.m */,
+				ADB700CF1A6CA03B00AF4CE4 /* QuadCurveItemExpandAnimation.h */,
+				ADB700D01A6CA03B00AF4CE4 /* QuadCurveItemExpandAnimation.m */,
+				ADB700D11A6CA03B00AF4CE4 /* QuadCurveLinearDirector.h */,
+				ADB700D21A6CA03B00AF4CE4 /* QuadCurveLinearDirector.m */,
+				ADB700D31A6CA03B00AF4CE4 /* QuadCurveMenu.h */,
+				ADB700D41A6CA03B00AF4CE4 /* QuadCurveMenu.m */,
+				ADB700D51A6CA03B00AF4CE4 /* QuadCurveMenuDelegate.h */,
+				ADB700D61A6CA03B00AF4CE4 /* QuadCurveMenuItem.h */,
+				ADB700D71A6CA03B00AF4CE4 /* QuadCurveMenuItem.m */,
+				ADB700D81A6CA03B00AF4CE4 /* QuadCurveMenuItemEventDelegate.h */,
+				ADB700D91A6CA03B00AF4CE4 /* QuadCurveMenuItemFactory.h */,
+				ADB700DA1A6CA03B00AF4CE4 /* QuadCurveMotionDirector.h */,
+				ADB700DB1A6CA03B00AF4CE4 /* QuadCurveNoAnimation.h */,
+				ADB700DC1A6CA03B00AF4CE4 /* QuadCurveNoAnimation.m */,
+				ADB700DD1A6CA03B00AF4CE4 /* QuadCurveRadialDirector.h */,
+				ADB700DE1A6CA03B00AF4CE4 /* QuadCurveRadialDirector.m */,
+				ADB700DF1A6CA03B00AF4CE4 /* QuadCurveShrinkAnimation.h */,
+				ADB700E01A6CA03B00AF4CE4 /* QuadCurveShrinkAnimation.m */,
+				ADB700E11A6CA03B00AF4CE4 /* QuadCurveTiltAnimation.h */,
+				ADB700E21A6CA03B00AF4CE4 /* QuadCurveTiltAnimation.m */,
+			);
+			path = QuadCurveMenu;
+			sourceTree = "<group>";
+		};
 		ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,17 +906,31 @@
 				AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */,
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				AD891CBF1A67F13800DCE62E /* messenger-generic.png in Resources */,
+				ADB701041A6CA03B00AF4CE4 /* unknown-user.png in Resources */,
+				ADB701051A6CA03B00AF4CE4 /* unknown-user@2x.png in Resources */,
 				ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */,
+				ADB700F01A6CA03B00AF4CE4 /* hector.jpeg in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
 				ADB5A13219D30372009B1550 /* NRTouchImage.png in Resources */,
+				ADB700F51A6CA03B00AF4CE4 /* paul.jpeg in Resources */,
+				ADB700F41A6CA03B00AF4CE4 /* icon-star@2x.jpeg in Resources */,
 				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
+				ADB700EB1A6CA03B00AF4CE4 /* classy_fabric.png in Resources */,
 				AD891CB51A672C0900DCE62E /* facebook500.png in Resources */,
 				AD891CB41A672C0900DCE62E /* email.png in Resources */,
+				ADB700EC1A6CA03B00AF4CE4 /* InfoPlist.strings in Resources */,
+				ADB700F11A6CA03B00AF4CE4 /* icon-plus.jpeg in Resources */,
+				ADB700F21A6CA03B00AF4CE4 /* icon-plus@2x.jpeg in Resources */,
 				ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */,
 				AD9B665C199D2754002C5145 /* Settings.bundle in Resources */,
 				ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */,
+				ADB700EF1A6CA03B00AF4CE4 /* edmundo.jpeg in Resources */,
 				ADE5AF1B19B915BB00AAC92D /* Default-Landscape@2x~iphone.png in Resources */,
 				AD891CB91A672C0900DCE62E /* twitter2.png in Resources */,
+				ADB700F31A6CA03B00AF4CE4 /* icon-star.jpeg in Resources */,
+				ADB700EE1A6CA03B00AF4CE4 /* facebook@2x.png in Resources */,
+				ADB700E81A6CA03B00AF4CE4 /* AwesomeMenu-Info.plist in Resources */,
+				ADB700ED1A6CA03B00AF4CE4 /* facebook.png in Resources */,
 				AD891CBD1A672E6F00DCE62E /* sharethis.png in Resources */,
 				AD52979C1A01133C0023AC71 /* AppbotX.bundle in Resources */,
 			);
@@ -811,8 +993,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB701031A6CA03B00AF4CE4 /* QuadCurveTiltAnimation.m in Sources */,
 				AD5297A01A01133C0023AC71 /* NSDictionary+ABXNSNullAsNull.m in Sources */,
 				AD5297B21A01133C0023AC71 /* ABXVersion.m in Sources */,
+				ADB701001A6CA03B00AF4CE4 /* QuadCurveNoAnimation.m in Sources */,
+				ADB700F71A6CA03B00AF4CE4 /* QuadCurveBlowupAnimation.m in Sources */,
 				AD5297A91A01133C0023AC71 /* ABXFeedbackViewController.m in Sources */,
 				AD5297AB1A01133C0023AC71 /* ABXNotificationsViewController.m in Sources */,
 				AD5297A31A01133C0023AC71 /* NSString+ABXSizing.m in Sources */,
@@ -821,9 +1006,12 @@
 				AD5297AE1A01133C0023AC71 /* ABXFaq.m in Sources */,
 				AD5297A71A01133C0023AC71 /* ABXFAQsViewController.m in Sources */,
 				AD5297AD1A01133C0023AC71 /* ABXAttachment.m in Sources */,
+				ADB701011A6CA03B00AF4CE4 /* QuadCurveRadialDirector.m in Sources */,
+				ADB700E71A6CA03B00AF4CE4 /* AwesomeDataSource.m in Sources */,
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
 				AD5297AC1A01133C0023AC71 /* ABXVersionsViewController.m in Sources */,
+				ADB700F61A6CA03B00AF4CE4 /* main.m in Sources */,
 				AD52979F1A01133C0023AC71 /* ABXKeychain.m in Sources */,
 				AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */,
 				AD5297A11A01133C0023AC71 /* NSDictionary+ABXQueryString.m in Sources */,
@@ -834,35 +1022,47 @@
 				AD5297B91A01133C0023AC71 /* ABXVersionTableViewCell.m in Sources */,
 				ADAEAC5719ACB47B00519A20 /* ChameleonStatusBar.m in Sources */,
 				ADB5A13419D30372009B1550 /* NRWindow.m in Sources */,
+				ADB700FD1A6CA03B00AF4CE4 /* QuadCurveLinearDirector.m in Sources */,
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
+				ADB700FA1A6CA03B00AF4CE4 /* QuadCurveDefaultMenuItemFactory.m in Sources */,
 				AD5297BD1A0114B40023AC71 /* MBProgressHUD.m in Sources */,
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
+				ADB700FC1A6CA03B00AF4CE4 /* QuadCurveItemExpandAnimation.m in Sources */,
 				AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */,
 				AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */,
 				AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */,
 				AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
+				ADB700F91A6CA03B00AF4CE4 /* QuadCurveDefaultDataSource.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
 				ADAEAC5B19ACB47B00519A20 /* UIViewController+Chameleon.m in Sources */,
 				AD52979E1A01133C0023AC71 /* ABXAppStore.m in Sources */,
+				ADB700FF1A6CA03B00AF4CE4 /* QuadCurveMenuItem.m in Sources */,
+				ADB701021A6CA03B00AF4CE4 /* QuadCurveShrinkAnimation.m in Sources */,
 				ADAEAC5819ACB47B00519A20 /* NSArray+Chameleon.m in Sources */,
 				AD5297B11A01133C0023AC71 /* ABXNotification.m in Sources */,
 				AD5297AA1A01133C0023AC71 /* ABXNavigationController.m in Sources */,
 				AD5297A81A01133C0023AC71 /* ABXFAQViewController.m in Sources */,
+				ADB700EA1A6CA03B00AF4CE4 /* AwesomeViewController.m in Sources */,
+				ADB700FB1A6CA03B00AF4CE4 /* QuadCurveItemCloseAnimation.m in Sources */,
 				AD5297A51A01133C0023AC71 /* UIViewController+ABXScreenshot.m in Sources */,
+				ADB700FE1A6CA03B00AF4CE4 /* QuadCurveMenu.m in Sources */,
 				AD5297B41A01133C0023AC71 /* ABXNotificationTableViewCell.m in Sources */,
 				AD5297B81A01133C0023AC71 /* ABXVersionNotificationView.m in Sources */,
 				ADB5A13519D30372009B1550 /* UITouch+NRTouch.m in Sources */,
 				AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */,
 				AD5297A21A01133C0023AC71 /* NSString+ABXLocalized.m in Sources */,
+				ADB700E61A6CA03B00AF4CE4 /* AppDelegate.m in Sources */,
 				AD52979D1A01133C0023AC71 /* ABXApiClient.m in Sources */,
 				AD5297A61A01133C0023AC71 /* ABXBaseListViewController.m in Sources */,
 				ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */,
 				ADAEAC5919ACB47B00519A20 /* UIColor+Chameleon.m in Sources */,
+				ADB700E51A6CA03B00AF4CE4 /* AGMedallionView.m in Sources */,
 				AD5297A41A01133C0023AC71 /* NSString+ABXURLEncoding.m in Sources */,
 				AD5297B51A01133C0023AC71 /* ABXNotificationView.m in Sources */,
 				AD5297B71A01133C0023AC71 /* ABXTextView.m in Sources */,
 				AD5297AF1A01133C0023AC71 /* ABXIssue.m in Sources */,
+				ADB700F81A6CA03B00AF4CE4 /* QuadCurveCustomImageMenuItemFactory.m in Sources */,
 				AD5297B01A01133C0023AC71 /* ABXModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -918,6 +1118,14 @@
 				ADCC13971981B527001DC9B6 /* Base */,
 			);
 			name = DefaultScoreViewController.xib;
+			sourceTree = "<group>";
+		};
+		ADB700B51A6CA03B00AF4CE4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADB700B61A6CA03B00AF4CE4 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
