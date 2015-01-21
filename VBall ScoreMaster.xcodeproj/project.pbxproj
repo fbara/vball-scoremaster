@@ -88,10 +88,10 @@
 		ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB5A12D19D30372009B1550 /* NRTouchImage@2x.png */; };
 		ADB5A13419D30372009B1550 /* NRWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A12F19D30372009B1550 /* NRWindow.m */; };
 		ADB5A13519D30372009B1550 /* UITouch+NRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A13119D30372009B1550 /* UITouch+NRTouch.m */; };
-		ADE5AF1B19B915BB00AAC92D /* Default-Landscape@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE5AF1A19B915BB00AAC92D /* Default-Landscape@2x~iphone.png */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */; };
+		ADFE61B01A706C1100901A58 /* Default-Landscape@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFE61AF1A706C1100901A58 /* Default-Landscape@2x~iphone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,11 +252,11 @@
 		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADCC139A1981B588001DC9B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		ADE5AF1A19B915BB00AAC92D /* Default-Landscape@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~iphone.png"; sourceTree = "<group>"; };
 		ADEB992E1986ECB70009B3F5 /* ActionNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ActionNames.plist; sourceTree = "<group>"; };
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
 		ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SupportTableViewController.m; path = Volleyball/SupportTableViewController.m; sourceTree = "<group>"; };
+		ADFE61AF1A706C1100901A58 /* Default-Landscape@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~iphone.png"; path = "Volleyball/Default-Landscape@2x~iphone.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,7 +299,7 @@
 		9244799B192C01830031C1F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				ADE5AF1A19B915BB00AAC92D /* Default-Landscape@2x~iphone.png */,
+				ADFE61AF1A706C1100901A58 /* Default-Landscape@2x~iphone.png */,
 				AD9B665B199D2754002C5145 /* Settings.bundle */,
 				ADEB992E1986ECB70009B3F5 /* ActionNames.plist */,
 			);
@@ -309,16 +309,6 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
-				AD5297BA1A0114790023AC71 /* MBProgressHUD */,
-				ADFB421219A3729600ADBE9F /* AppbotX */,
-				ADB5A12B19D302BE009B1550 /* NRTouchPoints */,
-				AD96E38119BFB02E002CD75E /* IAP */,
-				ADAEAC4A19ACB42D00519A20 /* Chameleon */,
-				ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */,
-				AD529694197F45E500767D1C /* GBVersionTracking */,
-				AD52968A197F38E100767D1C /* Tutorial */,
-				AD52967F197ED75200767D1C /* WSCoachMarks */,
-				ADFB427519A4C39200ADBE9F /* Support */,
 				92AA42A81916C2800037D405 /* Volleyball */,
 				9244799B192C01830031C1F6 /* Resources */,
 				92AA42C71916C2810037D405 /* VolleyballTests */,
@@ -374,6 +364,7 @@
 				9217E5D11926377700B2E6F1 /* DefaultScoreViewController.h */,
 				9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */,
 				92AA42BA1916C2810037D405 /* Images.xcassets */,
+				ADFB427519A4C39200ADBE9F /* Support */,
 				92AA42A91916C2800037D405 /* Supporting Files */,
 			);
 			path = Volleyball;
@@ -617,10 +608,20 @@
 		ADFB427519A4C39200ADBE9F /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				AD5297BA1A0114790023AC71 /* MBProgressHUD */,
+				ADFB421219A3729600ADBE9F /* AppbotX */,
+				ADB5A12B19D302BE009B1550 /* NRTouchPoints */,
+				AD96E38119BFB02E002CD75E /* IAP */,
+				ADAEAC4A19ACB42D00519A20 /* Chameleon */,
+				ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */,
+				AD529694197F45E500767D1C /* GBVersionTracking */,
+				AD52968A197F38E100767D1C /* Tutorial */,
+				AD52967F197ED75200767D1C /* WSCoachMarks */,
 				ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */,
 				ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */,
 			);
 			name = Support;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -719,9 +720,9 @@
 				ADB5A13219D30372009B1550 /* NRTouchImage.png in Resources */,
 				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
 				ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */,
+				ADFE61B01A706C1100901A58 /* Default-Landscape@2x~iphone.png in Resources */,
 				AD9B665C199D2754002C5145 /* Settings.bundle in Resources */,
 				ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */,
-				ADE5AF1B19B915BB00AAC92D /* Default-Landscape@2x~iphone.png in Resources */,
 				AD52979C1A01133C0023AC71 /* AppbotX.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -992,8 +993,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 					/Users/fbara/Dropbox/Docs/Coding/Google,
-					Analytics/GoogleAnalyticsServicesiOS_3.09,
-					/Users/fbara/Dropbox/Docs/Coding/Google,
 					Analytics/GoogleAnalyticsServicesiOS_3.10,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1024,8 +1023,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
-					/Users/fbara/Dropbox/Docs/Coding/Google,
-					Analytics/GoogleAnalyticsServicesiOS_3.09,
 					/Users/fbara/Dropbox/Docs/Coding/Google,
 					Analytics/GoogleAnalyticsServicesiOS_3.10,
 				);
@@ -1138,8 +1135,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
-					/Users/fbara/Dropbox/Docs/Coding/Google,
-					Analytics/GoogleAnalyticsServicesiOS_3.09,
 					/Users/fbara/Dropbox/Docs/Coding/Google,
 					Analytics/GoogleAnalyticsServicesiOS_3.10,
 				);

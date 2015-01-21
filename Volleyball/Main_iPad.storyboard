@@ -1071,8 +1071,8 @@
     </scenes>
     <resources>
         <image name="VBall image" width="460" height="456"/>
-        <image name="facebook" width="487" height="487"/>
-        <image name="twitter" width="512" height="512"/>
+        <image name="facebook" width="500" height="500"/>
+        <image name="twitter" width="500" height="500"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
