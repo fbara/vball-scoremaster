@@ -14,12 +14,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userGuides>
                             <userLayoutGuide location="33" affinity="minY"/>
+                            <userLayoutGuide location="268" affinity="minY"/>
                         </userGuides>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="o7g-pR-XeM" userLabel="Facebook Button">
-                                <rect key="frame" x="518" y="189" width="32" height="32"/>
+                                <rect key="frame" x="224" y="221" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <state key="normal" image="facebook">
+                                <state key="normal" image="facebookround">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -39,9 +40,9 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="N5W-5Y-GSc" userLabel="Twitter Button">
-                                <rect key="frame" x="518" y="139" width="34" height="34"/>
+                                <rect key="frame" x="307" y="219" width="34" height="34"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <state key="normal" image="twitter">
+                                <state key="normal" image="twitterround">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -76,13 +77,6 @@
                                     <outletCollection property="gestureRecognizers" destination="00j-HW-7Gn" appends="YES" id="FVH-z6-ZkN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="991-IZ-vz3" userLabel="leftActionNameNumber">
-                                <rect key="frame" x="48" y="218" width="168" height="33"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="2" height="2"/>
-                            </label>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="e73-U3-5CU" userLabel="rightScreenActionButton">
                                 <rect key="frame" x="410" y="219" width="47" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -98,13 +92,6 @@
                                     <outletCollection property="gestureRecognizers" destination="qAC-a6-aQ8" appends="YES" id="m98-IJ-dzl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V3G-uq-fca" userLabel="rightActionNameNumber">
-                                <rect key="frame" x="349" y="219" width="168" height="33"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="2" height="2"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEFT ACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NQ3-D6-TK5" userLabel="Label - Left Action Name">
                                 <rect key="frame" x="48" y="201" width="168" height="25"/>
                                 <gestureRecognizers/>
@@ -244,6 +231,50 @@
                                     <segue destination="xOM-Jn-cof" kind="embed" identifier="embedVisitor" id="32b-31-xme"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="S6D-c3-3bu" userLabel="Left Action Add">
+                                <rect key="frame" x="59" y="266" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="addthis"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UhS-HV-1Ww" userLabel="Left Action Attemp">
+                                <rect key="frame" x="102" y="268" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Attempt">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wcc-yp-tdl" userLabel="Right Action Add">
+                                <rect key="frame" x="360" y="268" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="addthis">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mDh-Nr-aTY" userLabel="Right Action Attempt">
+                                <rect key="frame" x="403" y="269" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Attempt">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EUi-8E-kDf" userLabel="Right Action Error">
+                                <rect key="frame" x="472" y="270" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Error">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="r9I-VG-nvV" userLabel="Left Action Error">
+                                <rect key="frame" x="171" y="267" width="35" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Error">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -264,7 +295,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="firstActionName" destination="991-IZ-vz3" id="Lko-Pf-Px5"/>
                         <outlet property="gameNumber" destination="O6P-Lx-PJG" id="hEm-tI-Usd"/>
                         <outlet property="homeGame1" destination="m1P-eG-o39" id="JRe-DD-YSl"/>
                         <outlet property="homeGame2" destination="HOT-d2-W5V" id="kvi-8l-e4N"/>
@@ -273,12 +303,9 @@
                         <outlet property="homeTeamContainer" destination="Acd-DE-Ouq" id="2Va-1T-JQ2"/>
                         <outlet property="homeTeamName" destination="KgW-hz-5sq" id="rYn-cJ-0vR"/>
                         <outlet property="leftActionLabel" destination="NQ3-D6-TK5" id="tfi-QH-n7J"/>
-                        <outlet property="leftActionNameNumber" destination="991-IZ-vz3" id="onM-1L-EEq"/>
                         <outlet property="mainPageFacebookButton" destination="o7g-pR-XeM" id="Oiv-54-lle"/>
                         <outlet property="mainPageTwitterButton" destination="N5W-5Y-GSc" id="d1Y-pb-fjS"/>
                         <outlet property="rightActionLabel" destination="tX3-rT-g7M" id="MeM-Q9-oUT"/>
-                        <outlet property="rightActionNameNumber" destination="V3G-uq-fca" id="vPg-z4-4ZO"/>
-                        <outlet property="secondActionName" destination="V3G-uq-fca" id="16P-Ae-YhH"/>
                         <outlet property="sendMessageImage" destination="av1-K7-XUr" id="oGR-yt-gkX"/>
                         <outlet property="settingsButton" destination="Ofu-Uz-Tbk" id="VSb-rv-RRw"/>
                         <outlet property="visitGame1" destination="Sad-Nf-jjb" id="GUq-Dx-1Ot"/>
@@ -338,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKj-pX-ycy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611" y="44"/>
+            <point key="canvasLocation" x="2479" y="38"/>
         </scene>
         <!--Tutorial Settings-->
         <scene sceneID="d5V-gg-hJE">
@@ -363,14 +390,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10C-oQ-JCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616" y="544"/>
+            <point key="canvasLocation" x="2479" y="609"/>
         </scene>
         <!--Action Names-->
         <scene sceneID="S82-Dd-kqz">
             <objects>
                 <tableViewController title="Action Names" id="47K-Gk-dz7" customClass="ActionLabelTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="40" sectionHeaderHeight="5" sectionFooterHeight="10" id="aoN-G2-Kxd">
-                        <rect key="frame" x="0.0" y="64" width="568" height="345"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -412,14 +439,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqx-uR-HLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZIU-kI-E0M" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="-1005.5"/>
+            <point key="canvasLocation" x="3916" y="-1042"/>
         </scene>
         <!--Settings-->
         <scene sceneID="dge-Dz-h61">
             <objects>
                 <tableViewController title="Settings" id="JoG-uN-Xre" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="OsV-V0-0Jc">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="345"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
@@ -776,8 +803,6 @@
                     <tabBarItem key="tabBarItem" title="Item" id="Eft-WX-sRN"/>
                     <navigationItem key="navigationItem" title="Settings" id="6h4-mo-Fgp"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="568" height="345"/>
                     <connections>
                         <outlet property="addPhoneNumberButton" destination="lFP-xW-h2H" id="Niy-39-MKK"/>
                         <outlet property="analyticsSwitch" destination="rnr-Qi-g1k" id="odP-UT-ML1"/>
@@ -807,7 +832,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="4255" y="-577.5"/>
+            <point key="canvasLocation" x="3165" y="-558"/>
         </scene>
         <!--Home Page View Controller-->
         <scene sceneID="dEb-Ol-WBp">
@@ -818,14 +843,14 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGO-83-1Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1301" y="44"/>
+            <point key="canvasLocation" x="3956" y="-102"/>
         </scene>
         <!--In-App Purchases-->
         <scene sceneID="hW3-aQ-cNW">
             <objects>
                 <tableViewController storyboardIdentifier="IAPViewController" title="In-App Purchases" id="czl-2M-KLM" customClass="VolleyBallIAPViewController" colorLabel="IBBuiltInLabel-Blue" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Ro2-iw-aK8">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="345"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
@@ -870,7 +895,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ld-nw-bHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="-36.5"/>
+            <point key="canvasLocation" x="3165" y="38"/>
         </scene>
         <!--Visitor Page View Controller-->
         <scene sceneID="c6u-WJ-yVv">
@@ -881,14 +906,14 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6O-LZ-YFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="44"/>
+            <point key="canvasLocation" x="3719" y="-102"/>
         </scene>
         <!--Support-->
         <scene sceneID="DB9-3u-827">
             <objects>
                 <tableViewController title="Support" id="h9W-pw-aPc" customClass="SupportTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="jM8-Dj-Evr">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="345"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
@@ -1026,7 +1051,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTi-Ye-IZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5118" y="-525.5"/>
+            <point key="canvasLocation" x="3916" y="-558"/>
         </scene>
         <!--Item-->
         <scene sceneID="1AR-eg-mcU">
@@ -1034,6 +1059,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xTC-dO-LAd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="naW-qF-ZyK"/>
                     <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gx2-eB-xQI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1051,8 +1077,9 @@
     <resources>
         <image name="Default-Landscape.png" width="568" height="320"/>
         <image name="VBall image" width="460" height="456"/>
-        <image name="facebook" width="487" height="487"/>
-        <image name="twitter" width="512" height="512"/>
+        <image name="addthis" width="500" height="500"/>
+        <image name="facebookround" width="500" height="500"/>
+        <image name="twitterround" width="500" height="500"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
