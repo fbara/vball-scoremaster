@@ -992,8 +992,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
-					/Users/fbara/Dropbox/Docs/Coding/Google,
-					Analytics/GoogleAnalyticsServicesiOS_3.10,
+					/Users/fbara/Dropbox/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1023,8 +1022,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
-					/Users/fbara/Dropbox/Docs/Coding/Google,
-					Analytics/GoogleAnalyticsServicesiOS_3.10,
+					/Users/fbara/Dropbox/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1135,8 +1133,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
-					/Users/fbara/Dropbox/Docs/Coding/Google,
-					Analytics/GoogleAnalyticsServicesiOS_3.10,
+					/Users/fbara/Dropbox/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

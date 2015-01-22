@@ -45,11 +45,11 @@
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
+//TODO:
     id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
-//TODO: Put real tacking number back in
-    //id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
-	[Fabric with:@[CrashlyticsKit]];
+//    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
     tracker.allowIDFACollection = NO;
+	
 
     if ([GBVersionTracking isFirstLaunchEver] ||
         [GBVersionTracking isFirstLaunchForVersion]) {
@@ -77,13 +77,27 @@
         ln = ln + 1;
         [[NSUserDefaults standardUserDefaults] setInteger:ln
                                                    forKey:@"launchNumber"];
+
     } else {
         // We hit 5 uses so turn off the review prompt
         [[NSUserDefaults standardUserDefaults] setObject:@"No"
                                                   forKey:@"showPrompt"];
-    }
-    [[NSUserDefaults standardUserDefaults] synchronize];
 
+    }
+	
+	//Check if user is allowing analytics or not
+	// We hit 5 uses so turn off the review prompt
+	[[NSUserDefaults standardUserDefaults] setObject:@"No"
+											  forKey:@"showPrompt"];
+	//Check if analytics are allowed
+	NSString *analyticsSetting = [[NSUserDefaults standardUserDefaults] stringForKey:@"analyticsChoice"];
+	if ([analyticsSetting isEqualToString:@"Opt out"]) {
+		[[GAI sharedInstance] setOptOut:YES];
+	} else {
+		[[GAI sharedInstance] setOptOut:NO];
+	}
+	
+    [[NSUserDefaults standardUserDefaults] synchronize];
 
     return YES;
 }
@@ -91,13 +105,16 @@
 - (void)alertView:(UIAlertView*)alertView
     clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+	
+	
+	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     switch (buttonIndex) {
     case 0:
         [[GAI sharedInstance] setOptOut:YES];
         [defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
         break;
     case 1:
+			
         [[GAI sharedInstance] setOptOut:NO];
         [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
 

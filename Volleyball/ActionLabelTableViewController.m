@@ -7,6 +7,7 @@
 //
 
 #import "ActionLabelTableViewController.h"
+#import "GAIDictionaryBuilder.h"
 
 @implementation ActionLabelTableViewController {
     BOOL firstTimeShown;
@@ -77,6 +78,16 @@
     // Load the row the user has already selected & put a checkmark by it
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	
+	// Setup Google Analytics tracker for this screen
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	[tracker set:kGAIScreenName value:@"Action Names"];
+	[tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
+
 - (int)getRowForName:(NSString*)selectedName
 {
     // Return the index row for the name passed in
@@ -135,11 +146,11 @@
             // before
             firstTimeShown = NO;
         } else {
-            if ([self.delegate respondsToSelector:@selector(actionNameSelected:)]) {
+            //if ([self.delegate respondsToSelector:@selector(actionNameSelected:)]) {
                 // Prepare to call the delegate with the selected row name
                 self.selectedActionName = cell.textLabel.text;
                 [self.delegate actionNameSelected:self.selectedActionName];
-            }
+            //}
         }
     } else {
         // Should only hit this if on iPhone
