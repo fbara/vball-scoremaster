@@ -89,12 +89,13 @@
 	// We hit 5 uses so turn off the review prompt
 	[[NSUserDefaults standardUserDefaults] setObject:@"No"
 											  forKey:@"showPrompt"];
-	//Check if analytics are allowed
+	//Check if analytics are allowed on subsequent starts of the app
 	NSString *analyticsSetting = [[NSUserDefaults standardUserDefaults] stringForKey:@"analyticsChoice"];
 	if ([analyticsSetting isEqualToString:@"Opt out"]) {
 		[[GAI sharedInstance] setOptOut:YES];
 	} else {
 		[[GAI sharedInstance] setOptOut:NO];
+		[Fabric with:@[CrashlyticsKit]];
 	}
 	
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -105,8 +106,7 @@
 - (void)alertView:(UIAlertView*)alertView
     clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-	
-	
+	//Get response from user if they allow analytics on initial startup
 	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     switch (buttonIndex) {
     case 0:
@@ -117,7 +117,7 @@
 			
         [[GAI sharedInstance] setOptOut:NO];
         [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
-
+		[Fabric with:@[CrashlyticsKit]];
         break;
     default:
         break;
