@@ -429,14 +429,14 @@
     // Save the value of the opt out
     switch (selectedSegmentIndex) {
     case 0:
-        // Do not track
-        [[GAI sharedInstance] setOptOut:YES];
-        [defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
+		// Do not track
+		[[GAI sharedInstance] setOptOut:YES];
+		[defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
         break;
     case 1:
-        // Ok to track
-        [[GAI sharedInstance] setOptOut:NO];
-        [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
+		// Ok to track
+		[[GAI sharedInstance] setOptOut:NO];
+		[defaults setObject:@"Opt in" forKey:@"analyticsChoice"];	
         break;
     default:
         break;

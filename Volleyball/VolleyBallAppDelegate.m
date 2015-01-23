@@ -92,8 +92,10 @@
 	//Check if analytics are allowed on subsequent starts of the app
 	NSString *analyticsSetting = [[NSUserDefaults standardUserDefaults] stringForKey:@"analyticsChoice"];
 	if ([analyticsSetting isEqualToString:@"Opt out"]) {
+		//Opt out - do not track
 		[[GAI sharedInstance] setOptOut:YES];
 	} else {
+		//Opt in - ok to track
 		[[GAI sharedInstance] setOptOut:NO];
 		[Fabric with:@[CrashlyticsKit]];
 	}
@@ -110,11 +112,12 @@
 	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     switch (buttonIndex) {
     case 0:
+		//Opt out - do not track
         [[GAI sharedInstance] setOptOut:YES];
         [defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
         break;
     case 1:
-			
+		//Opt out - do not track	
         [[GAI sharedInstance] setOptOut:NO];
         [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
 		[Fabric with:@[CrashlyticsKit]];
