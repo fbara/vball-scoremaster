@@ -17,6 +17,7 @@
 
 @interface SettingsTableViewController () {
     BOOL isPurchased;
+	NSString *teamChange;
 }
 
 @property int actionRow;
@@ -351,8 +352,19 @@
  */
 - (IBAction)homeTeamBackgroundColor:(id)sender
 {
-    // Change the button background color each time the button is tapped
-    self.homeTeamColor.backgroundColor = RandomFlatColor;
+	/* OLD CODE
+	// Change the button background color each time the button is tapped
+    //self.homeTeamColor.backgroundColor = RandomFlatColor;
+	*/
+	
+	//Store the team I'm changing
+	teamChange = @"Home";
+	//Use color picker to get color
+	FCColorPickerViewController *colorPicker = [FCColorPickerViewController colorPickerWithColor:self.homeTeamColor.backgroundColor
+																						delegate:self];
+
+	[colorPicker setModalPresentationStyle:UIModalPresentationFormSheet];
+	[self presentViewController:colorPicker animated:TRUE completion:nil];
 }
 
 /*!
@@ -361,8 +373,41 @@
  */
 - (IBAction)visitingTeamBackgroundColor:(id)sender
 {
-    // Change the button background color each time the button is tapped
-    self.visitingTeamColor.backgroundColor = RandomFlatColor;
+	/* OLD CODE
+	// Change the button background color each time the button is tapped
+    //self.visitingTeamColor.backgroundColor = RandomFlatColor;
+	*/
+	
+	//Store the team I'm changing
+	teamChange = @"Visitor";
+	//Use color picker to get color
+	FCColorPickerViewController *colorPicker = [FCColorPickerViewController colorPickerWithColor:self.visitingTeamColor.backgroundColor
+																						delegate:self];
+	
+	[colorPicker setModalPresentationStyle:UIModalPresentationFormSheet];
+	[self presentViewController:colorPicker animated:TRUE completion:nil];
+	
+}
+
+#pragma mark - FCColorPicker Delegate
+
+- (void)colorPickerViewController:(FCColorPickerViewController *)colorPicker didSelectColor:(UIColor *)color
+{
+	if ([teamChange isEqualToString:@"Home"]) {
+		self.homeTeamColor.backgroundColor = color;
+	} else {
+		self.visitingTeamColor.backgroundColor = color;
+	}
+	//Save the colors so they will be loaded when the Settings VC is shown again
+	[self saveScoreColors];
+	teamChange = nil;
+	[self dismissViewControllerAnimated:TRUE completion:nil];
+}
+
+- (void)colorPickerViewControllerDidCancel:(FCColorPickerViewController *)colorPicker
+{
+	teamChange = nil;
+	[self dismissViewControllerAnimated:TRUE completion:nil];
 }
 
 #pragma mark - FAQ
