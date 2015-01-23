@@ -10,6 +10,7 @@
 #import "FCColorPickerViewController.h"
 #import "FCBrightDarkGradView.h"
 #import "FCColorSwatchView.h"
+#import "Chameleon.h"
 
 @interface FCColorPickerViewController () {
 	CGFloat currentBrightness;
@@ -48,7 +49,8 @@
     [self.view bringSubviewToFront:_brightnessBar];
     viewIsLoaded = YES;
     
-    UIColor *edgeColor = [UIColor colorWithWhite:0.9 alpha:0.8];
+    //UIColor *edgeColor = [UIColor colorWithWhite:0.9 alpha:0.8];
+	UIColor *edgeColor = FlatRed;
     
     self.crossHairs.layer.cornerRadius = 19;
     self.crossHairs.layer.borderColor = edgeColor.CGColor;
@@ -71,7 +73,12 @@
     [self updateCrosshairPosition];
     _swatch.color = _color;
     self.tintColor = self.tintColor;
-    self.backgroundColor = self.backgroundColor;
+    //self.backgroundColor = self.backgroundColor;
+	if (IS_IPAD()) {
+		self.backgroundColor = FlatCoffeeDark;
+	} else {
+		self.backgroundColor = FlatNavyBlueDark;
+	}
 }
 
 - (void)viewWillLayoutSubviews {
@@ -100,7 +107,7 @@
             self.view.backgroundColor = _backgroundColor;
         } else {
             //self.view.backgroundColor = [[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPhone?[UIColor darkGrayColor]:[UIColor clearColor];
-			self.view.backgroundColor = [[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPhone? FlatNavyBlueDark:[UIColor clearColor];
+			self.view.backgroundColor = [[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPhone? FlatSandDark:FlatGreenDark;
 
         }
     }

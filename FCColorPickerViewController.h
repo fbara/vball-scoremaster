@@ -56,7 +56,7 @@
 
 /**
  Creates and returns a color picker initialized with the provided color and delegate.
- @paran color The initial value for the color picker's `color` property. The color picker will represent this color when presented.
+ @param color The initial value for the color picker's `color` property. The color picker will represent this color when presented.
  @param delegate An object implementing the `FCColorPickerViewControllerDelegate` protocol to act as the picker's delegate
  @see -color,
  @see -delegate
