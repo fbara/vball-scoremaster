@@ -1098,7 +1098,7 @@ NSString *socialMessage;
             twitterController.completionHandler = ^(SLComposeViewControllerResult result) {
                           switch (result) {
                           case SLComposeViewControllerResultCancelled:
-                            NSLog(@"Post cancelled");
+                            NSLog(@"Twitter post cancelled");
                             break;
                           case SLComposeViewControllerResultDone:
                               [self logTwitterSent];
@@ -1161,7 +1161,7 @@ NSString *socialMessage;
                 setCompletionHandler:^(SLComposeViewControllerResult result) {
               switch (result) {
               case SLComposeViewControllerResultCancelled:
-                NSLog(@"Post cancelled");
+                NSLog(@"Facebook post cancelled");
                 break;
               case SLComposeViewControllerResultDone:
                   [self logFacebookSent];
