@@ -16,6 +16,7 @@
 @import StoreKit;
 @import UIKit;
 #import <Crashlytics/Crashlytics.h>
+#import "Localytics.h"
 
 NSString* const EMBED_HOME = @"embedHome";
 NSString* const EMBED_VISITOR = @"embedVisitor";
@@ -554,6 +555,10 @@ NSString *socialMessage;
                                         label:[button.titleLabel text]
                                         value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
+	
+	// Log data to Localytics
+	NSDictionary *dictionary = @{@"Category" : @"UX", @"Screen Name" : @"Scoring", @"Action" : [button.titleLabel text]};
+	[Localytics tagEvent:@"Main Screen" attributes:dictionary];
 }
 
 - (void)logMessagesSent
@@ -567,6 +572,11 @@ NSString *socialMessage;
                                                            label:@"message sent"
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
+	
+	// Log data to Localytics
+	NSDictionary *dictionary = @{@"Category" : @"Message", @"Screen Name" : @"Scoring", @"Action" : @"Message sent"};
+	[Localytics tagEvent:@"Main Screen" attributes:dictionary];
+
 }
 
 - (void)logTwitterSent
@@ -580,6 +590,11 @@ NSString *socialMessage;
                                                            label:@"twitter sent"
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
+	
+	// Log data to Localytics
+	NSDictionary *dictionary = @{@"Category" : @"Social", @"Screen Name" : @"Scoring", @"Action" : @"Twitter sent"};
+	[Localytics tagEvent:@"Main Screen" attributes:dictionary];
+
 }
 
 - (void)logFacebookSent
@@ -593,6 +608,10 @@ NSString *socialMessage;
                                                            label:@"facebook sent"
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
+	
+	// Log data to Localytics
+	NSDictionary *dictionary = @{@"Category" : @"Social", @"Screen Name" : @"Scoring", @"Action" : @"Facebook sent"};
+	[Localytics tagEvent:@"Main Screen" attributes:dictionary];
 }
 
 #pragma mark - UIGestureRecognizer Delegate Method

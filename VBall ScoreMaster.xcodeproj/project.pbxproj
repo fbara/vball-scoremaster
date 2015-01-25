@@ -89,6 +89,9 @@
 		AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */; };
 		AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9A21A8199BDB10009CEE31 /* Accounts.framework */; };
 		AD9B665C199D2754002C5145 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD9B665B199D2754002C5145 /* Settings.bundle */; };
+		ADAABD001A74112E00085910 /* iOSa_3.0.0.version in Resources */ = {isa = PBXBuildFile; fileRef = ADAABCFC1A74112E00085910 /* iOSa_3.0.0.version */; };
+		ADAABD021A74112E00085910 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = ADAABCFE1A74112E00085910 /* LICENSE */; };
+		ADAABD061A75396000085910 /* libLocalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADAABD051A75396000085910 /* libLocalytics.a */; };
 		ADB5A13219D30372009B1550 /* NRTouchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB5A12C19D30372009B1550 /* NRTouchImage.png */; };
 		ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB5A12D19D30372009B1550 /* NRTouchImage@2x.png */; };
 		ADB5A13419D30372009B1550 /* NRWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A12F19D30372009B1550 /* NRWindow.m */; };
@@ -256,6 +259,11 @@
 		AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolleyBallIAPHelper.m; sourceTree = "<group>"; };
 		AD9A21A8199BDB10009CEE31 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		AD9B665B199D2754002C5145 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		ADAABCFC1A74112E00085910 /* iOSa_3.0.0.version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = iOSa_3.0.0.version; path = "Localytics-iOS-3.0.0/iOSa_3.0.0.version"; sourceTree = "<group>"; };
+		ADAABCFE1A74112E00085910 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = "Localytics-iOS-3.0.0/LICENSE"; sourceTree = "<group>"; };
+		ADAABCFF1A74112E00085910 /* Localytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Localytics.h; path = "Localytics-iOS-3.0.0/Localytics.h"; sourceTree = "<group>"; };
+		ADAABD031A7537AB00085910 /* libLocalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLocalytics.a; path = "Localytics-iOS-3.0.0/libLocalytics.a"; sourceTree = "<group>"; };
+		ADAABD051A75396000085910 /* libLocalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLocalytics.a; path = "../Localytics-iOS-3.0.0/libLocalytics.a"; sourceTree = "<group>"; };
 		ADB5A12C19D30372009B1550 /* NRTouchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NRTouchImage.png; sourceTree = "<group>"; };
 		ADB5A12D19D30372009B1550 /* NRTouchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NRTouchImage@2x.png"; sourceTree = "<group>"; };
 		ADB5A12E19D30372009B1550 /* NRWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRWindow.h; sourceTree = "<group>"; };
@@ -277,6 +285,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADAABD061A75396000085910 /* libLocalytics.a in Frameworks */,
 				AD0A9CE11A264EBF0054BD67 /* libGoogleAnalyticsServices.a in Frameworks */,
 				AD49B9591A648B6C0005FE0B /* Crashlytics.framework in Frameworks */,
 				AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */,
@@ -342,6 +351,8 @@
 		92AA42A11916C2800037D405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADAABD051A75396000085910 /* libLocalytics.a */,
+				ADAABD031A7537AB00085910 /* libLocalytics.a */,
 				AD49B9581A648B6C0005FE0B /* Fabric.framework */,
 				AD49B9571A648B6C0005FE0B /* Crashlytics.framework */,
 				AD0A9CE01A264EBF0054BD67 /* libGoogleAnalyticsServices.a */,
@@ -594,6 +605,16 @@
 			name = IAP;
 			sourceTree = "<group>";
 		};
+		ADAABCF11A740DEB00085910 /* Localytics */ = {
+			isa = PBXGroup;
+			children = (
+				ADAABCFC1A74112E00085910 /* iOSa_3.0.0.version */,
+				ADAABCFE1A74112E00085910 /* LICENSE */,
+				ADAABCFF1A74112E00085910 /* Localytics.h */,
+			);
+			name = Localytics;
+			sourceTree = "<group>";
+		};
 		ADB5A12B19D302BE009B1550 /* NRTouchPoints */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +658,7 @@
 		ADFB427519A4C39200ADBE9F /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				ADAABCF11A740DEB00085910 /* Localytics */,
 				AD0D059C1A727C8800B5FC00 /* Chameleon */,
 				AD0D058C1A7195CC00B5FC00 /* FCColorPicker */,
 				AD5297BA1A0114790023AC71 /* MBProgressHUD */,
@@ -751,6 +773,8 @@
 				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
 				AD0D059B1A7198F200B5FC00 /* colormap.png in Resources */,
 				ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */,
+				ADAABD001A74112E00085910 /* iOSa_3.0.0.version in Resources */,
+				ADAABD021A74112E00085910 /* LICENSE in Resources */,
 				ADFE61B01A706C1100901A58 /* Default-Landscape@2x~iphone.png in Resources */,
 				AD9B665C199D2754002C5145 /* Settings.bundle in Resources */,
 				AD0D058B1A7195C300B5FC00 /* FCColorPickerViewController.xib in Resources */,
@@ -1028,6 +1052,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 					/Users/fbara/Dropbox/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10,
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Localytics-iOS-3.0.0",
+					"/Users/fbara/Dropbox/Docs/Coding/Localytics-iOS-3.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1058,6 +1085,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 					/Users/fbara/Dropbox/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10,
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Localytics-iOS-3.0.0",
+					"/Users/fbara/Dropbox/Docs/Coding/Localytics-iOS-3.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1169,6 +1199,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 					/Users/fbara/Dropbox/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10,
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Localytics-iOS-3.0.0",
+					"/Users/fbara/Dropbox/Docs/Coding/Localytics-iOS-3.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

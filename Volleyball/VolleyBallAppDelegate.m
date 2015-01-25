@@ -12,6 +12,7 @@
 #import "VolleyBallIAPHelper.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <Localytics.h>
 
 //#import "NRWindow.h"
 
@@ -98,6 +99,7 @@
 		//Opt in - ok to track
 		[[GAI sharedInstance] setOptOut:NO];
 		[Fabric with:@[CrashlyticsKit]];
+		[Localytics autoIntegrate:@"dd377b9be9eadc496d09df4-965a7eca-a3ec-11e4-2af5-004a77f8b47f" launchOptions:launchOptions];
 	}
 	
     [[NSUserDefaults standardUserDefaults] synchronize];

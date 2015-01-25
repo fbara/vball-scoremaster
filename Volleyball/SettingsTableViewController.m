@@ -10,6 +10,7 @@
 #import "ActionLabelTableViewController.h"
 #import "GAIDictionaryBuilder.h"
 #import "VolleyBallViewController.h"
+#import "Localytics.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"	
@@ -260,6 +261,7 @@
 
     if ([leftActionName length] > 1) {
         [defaults setObject:leftActionName forKey:@"leftActionName"];
+		
     } else {
         [defaults setObject:@"SPIKE" forKey:@"leftActionName"];
     }
@@ -288,6 +290,10 @@
         self.leftActionNameSelected.text = @"SPIKE";
     } else {
         self.leftActionNameSelected.text = tempName;
+		
+		// Log data to Localytics
+		NSDictionary *dictionary = @{@"Category" : @"Action Names", @"Action Name" : @"Left", @"Name" : tempName};
+		[Localytics tagEvent:@"Settings Screen" attributes:dictionary];
     }
 
     tempName = [defaults stringForKey:@"rightActionName"];
@@ -296,6 +302,10 @@
         self.rightActionNameSelected.text = @"ACE";
     } else {
         self.rightActionNameSelected.text = tempName;
+		
+		// Log data to Localytics
+		NSDictionary *dictionary = @{@"Category" : @"Action Names", @"Action Name" : @"Left", @"Name" : tempName};
+		[Localytics tagEvent:@"Settings Screen" attributes:dictionary];
     }
 }
 
