@@ -127,13 +127,17 @@ static NSString* const kiTunesID = @"886670213";
             //BaraLabs website
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com"]];
             break;
-        case 6:
+		case 6:
+			//Launch Twitter to @BaraLabs page
+			//Check if Twitter app is installed. If it is, launch it. If not, open Safari to BaraLabs.
+			if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://user?screen_name=baralabs"]]) {
+				[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=baralabs"]];
+			} else {
+				[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.twitter.com/baralabs"]];
+			}
+			break;
+        case 7:
             //Privacy policy
-//            if (IS_IPAD()) {
-//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com/privacy-policy.html"]];
-//            } else {
-//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.privacychoice.org/policy/mobile?policy=6f8c60ba65fd773ce54f4a0465b8f8a3"]];
-//            }
 			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com/privacy-policy.html"]];
         default:
             break;
@@ -152,7 +156,8 @@ static NSString* const kiTunesID = @"886670213";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 7;
+	
+    return 8;
 }
 
 
