@@ -129,11 +129,12 @@ static NSString* const kiTunesID = @"886670213";
             break;
         case 6:
             //Privacy policy
-            if (IS_IPAD()) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.privacychoice.org/policy/text?policy=6f8c60ba65fd773ce54f4a0465b8f8a3"]];
-            } else {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.privacychoice.org/policy/mobile?policy=6f8c60ba65fd773ce54f4a0465b8f8a3"]];
-            }
+//            if (IS_IPAD()) {
+//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com/privacy-policy.html"]];
+//            } else {
+//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.privacychoice.org/policy/mobile?policy=6f8c60ba65fd773ce54f4a0465b8f8a3"]];
+//            }
+			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com/privacy-policy.html"]];
         default:
             break;
     }

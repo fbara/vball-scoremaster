@@ -758,7 +758,8 @@ NSString *socialMessage;
 {
     // If running on iPad, use these settings
     if (IS_IPAD()) {
-        self.sendMessageImage.frame = CGRectMake(472.0, 277.0, 80.0, 80.0);
+		//I commented out the next 2 lines because it was causing the vball image to shrink
+        //self.sendMessageImage.frame = CGRectMake(472.0, 277.0, 160.0, 160.0);
         // self.sendMessageImage.layer.cornerRadius = 40;
     } else {
         // Running on iPhone or iPod
