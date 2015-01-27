@@ -10,8 +10,6 @@
 #import "GBVersionTracking.h"
 #import "GAI.h"
 #import "VolleyBallIAPHelper.h"
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
 //#import "NRWindow.h"
 
 @implementation VolleyBallAppDelegate
@@ -96,7 +94,6 @@
 	} else {
 		//Opt in - ok to track
 		[[GAI sharedInstance] setOptOut:NO];
-		[Fabric with:@[CrashlyticsKit]];
 	}
 	
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -119,7 +116,6 @@
 		//Opt out - do not track	
         [[GAI sharedInstance] setOptOut:NO];
         [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
-		[Fabric with:@[CrashlyticsKit]];
         break;
     default:
         break;

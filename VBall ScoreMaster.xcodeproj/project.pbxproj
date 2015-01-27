@@ -42,8 +42,6 @@
 		AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */; };
 		AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A419B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
-		AD49B9591A648B6C0005FE0B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD49B9571A648B6C0005FE0B /* Crashlytics.framework */; };
-		AD49B95A1A648B6C0005FE0B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD49B9581A648B6C0005FE0B /* Fabric.framework */; };
 		AD4B54C0199A40D500770580 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B54BF199A40D500770580 /* Social.framework */; };
 		AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968C197F390E00767D1C /* TutorialViewController.m */; };
 		AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968F197F458E00767D1C /* WSCoachMarksView.m */; };
@@ -278,9 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD0A9CE11A264EBF0054BD67 /* libGoogleAnalyticsServices.a in Frameworks */,
-				AD49B9591A648B6C0005FE0B /* Crashlytics.framework in Frameworks */,
 				AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */,
-				AD49B95A1A648B6C0005FE0B /* Fabric.framework in Frameworks */,
 				AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */,
 				AD4B54C0199A40D500770580 /* Social.framework in Frameworks */,
 				AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */,

@@ -15,7 +15,6 @@
 @import Accounts;
 @import StoreKit;
 @import UIKit;
-#import <Crashlytics/Crashlytics.h>
 
 NSString* const EMBED_HOME = @"embedHome";
 NSString* const EMBED_VISITOR = @"embedVisitor";
