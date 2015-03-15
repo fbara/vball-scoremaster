@@ -111,7 +111,7 @@ static NSString* const kiTunesID = @"886670213";
             //Access AppbotX feedback form
             [ABXFeedbackViewController showFromController:self
                                               placeholder:@"Feedback"
-                                                    email:@"support@baralabs.com"
+                                                    email:@"Enter your email address"
                                                  metaData:nil
                                                     image:nil];
             break;

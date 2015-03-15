@@ -91,10 +91,10 @@
 		ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB5A12D19D30372009B1550 /* NRTouchImage@2x.png */; };
 		ADB5A13419D30372009B1550 /* NRWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A12F19D30372009B1550 /* NRWindow.m */; };
 		ADB5A13519D30372009B1550 /* UITouch+NRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A13119D30372009B1550 /* UITouch+NRTouch.m */; };
+		ADCFF8B01AB5D6D000AB9CB0 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */; };
-		ADFE61B01A706C1100901A58 /* Default-Landscape@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFE61AF1A706C1100901A58 /* Default-Landscape@2x~iphone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,8 +171,6 @@
 		AD1C811E1955E6FC0028179B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		AD1C816B195C43A30028179B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		AD1C816C195C43A30028179B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
-		AD49B9571A648B6C0005FE0B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		AD49B9581A648B6C0005FE0B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		AD4B54BF199A40D500770580 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AD52968B197F390E00767D1C /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialViewController.h; path = Volleyball/TutorialViewController.h; sourceTree = "<group>"; };
 		AD52968C197F390E00767D1C /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialViewController.m; path = Volleyball/TutorialViewController.m; sourceTree = "<group>"; };
@@ -263,11 +261,11 @@
 		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADCC139A1981B588001DC9B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		ADEB992E1986ECB70009B3F5 /* ActionNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ActionNames.plist; sourceTree = "<group>"; };
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
 		ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SupportTableViewController.m; path = Volleyball/SupportTableViewController.m; sourceTree = "<group>"; };
-		ADFE61AF1A706C1100901A58 /* Default-Landscape@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~iphone.png"; path = "Volleyball/Default-Landscape@2x~iphone.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,7 +306,7 @@
 		9244799B192C01830031C1F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				ADFE61AF1A706C1100901A58 /* Default-Landscape@2x~iphone.png */,
+				ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */,
 				AD9B665B199D2754002C5145 /* Settings.bundle */,
 				ADEB992E1986ECB70009B3F5 /* ActionNames.plist */,
 			);
@@ -338,8 +336,6 @@
 		92AA42A11916C2800037D405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AD49B9581A648B6C0005FE0B /* Fabric.framework */,
-				AD49B9571A648B6C0005FE0B /* Crashlytics.framework */,
 				AD0A9CE01A264EBF0054BD67 /* libGoogleAnalyticsServices.a */,
 				AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */,
 				AD9A21A8199BDB10009CEE31 /* Accounts.framework */,
@@ -662,7 +658,6 @@
 				92AA429D1916C2800037D405 /* Resources */,
 				ADC716A2196CA6F000360EF4 /* ShellScript */,
 				AD0413E21A3A1C7A00DEFB1F /* ShellScript */,
-				AD49B9561A648B240005FE0B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -747,7 +742,7 @@
 				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
 				AD0D059B1A7198F200B5FC00 /* colormap.png in Resources */,
 				ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */,
-				ADFE61B01A706C1100901A58 /* Default-Landscape@2x~iphone.png in Resources */,
+				ADCFF8B01AB5D6D000AB9CB0 /* Default-Landscape@2x.png in Resources */,
 				AD9B665C199D2754002C5145 /* Settings.bundle in Resources */,
 				AD0D058B1A7195C300B5FC00 /* FCColorPickerViewController.xib in Resources */,
 				ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */,
@@ -778,19 +773,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#Update build number with number of git commits if in release mode\nif [ ${CONFIGURATION} == \"Release\" ]; then\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nfi;";
-		};
-		AD49B9561A648B240005FE0B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 04abff92b1f1db43d24332e979655ce1432ca0b4 a64f2eaf57c69c94765e618f33ba03b57196b8590aa00ea712e327aa4d31981b";
 		};
 		ADC716A2196CA6F000360EF4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
