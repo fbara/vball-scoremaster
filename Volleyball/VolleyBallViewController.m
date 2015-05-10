@@ -11,25 +11,26 @@
 #import "SettingsTableViewController.h"
 #import "GBVersionTracking.h"
 #import "GAIDictionaryBuilder.h"
+#import "ABXNotificationView.h"
 @import Social;
 @import Accounts;
 @import StoreKit;
 @import UIKit;
 
-NSString* const EMBED_HOME = @"embedHome";
-NSString* const EMBED_VISITOR = @"embedVisitor";
-int currHomeScore = 0;
-int currVisitorScore = 0;
-int currSecondAction = 0;
-int currFirstAction = 0;
-NSString* msgHome = @"HOME";
-NSString* msgVisitor = @"VISITOR";
+NSString* const EMBED_HOME       = @"embedHome";
+NSString* const EMBED_VISITOR    = @"embedVisitor";
+int currHomeScore                = 0;
+int currVisitorScore             = 0;
+int currSecondAction             = 0;
+int currFirstAction              = 0;
+NSString* msgHome                = @"HOME";
+NSString* msgVisitor             = @"VISITOR";
 NSString* textMessage;
 UIImage* screenImage;
 static NSString* const kiTunesID = @"886670213";
 // Score number font size for each device
-CGFloat const ipadScoreFont = 220.0f;
-CGFloat const iphoneScoreFont = 120.0f;
+CGFloat const ipadScoreFont      = 220.0f;
+CGFloat const iphoneScoreFont    = 120.0f;
 NSString* colorScheme;
 NSString *socialMessage;
 
@@ -79,27 +80,15 @@ NSString *socialMessage;
     // Set the Google Analytics Screen name
     self.screenName = @"Scoring";
 
-//    // Initiaize all the UI elements depending on the device
-//    if (IS_IPAD()) {
-//        CGFloat score = ipadScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    } else {
-//        CGFloat score = iphoneScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    }
     [self resetGameAndNames];
 
     // Set Delegate's and DataSource's
-    self.visitingTeamName.delegate = self;
-    self.homeTeamName.delegate = self;
+    self.visitingTeamName.delegate            = self;
+    self.homeTeamName.delegate                = self;
     self.visitorPageViewController.dataSource = self;
-    self.visitorPageViewController.delegate = self;
-    self.homePageViewController.dataSource = self;
-    self.homePageViewController.delegate = self;
+    self.visitorPageViewController.delegate   = self;
+    self.homePageViewController.dataSource    = self;
+    self.homePageViewController.delegate      = self;
 
     // Create bar button item and add them to the navigation bar
     UIBarButtonItem* settingsButton =
@@ -182,19 +171,6 @@ NSString *socialMessage;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    // Initiaize all the UI elements depending on the device
-//    if (IS_IPAD()) {
-//        CGFloat score = ipadScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    } else {
-//        CGFloat score = iphoneScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    }
 
 
     // Update the scoreview's colors in case they were changed in Settings
@@ -227,11 +203,7 @@ NSString *socialMessage;
     }
     
     [self enableSocialButtons];
-    
-//    self.mainPageFacebookButton.enabled = YES;
-//    self.mainPageFacebookButton.hidden = NO;
-//    self.mainPageTwitterButton.enabled = YES;
-//    self.mainPageTwitterButton.hidden = NO;
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -257,7 +229,7 @@ NSString *socialMessage;
 
 - (IBAction)goToSettings:(UIBarButtonItem*)sender
 {
-    [self performSegueWithIdentifier:@"settingsView" sender:self];
+    [self performSegueWithIdentifier:@"settingsView" sender:self]; 
 }
 
 - (void)initializePastGames
@@ -1013,7 +985,7 @@ NSString *socialMessage;
     // Iterates thru every view on the screen, capturing and assemblying them to
     // form an image
     CGSize imageSize = [[UIScreen mainScreen] bounds].size;
-    if (NULL != UIGraphicsBeginImageContextWithOptions)
+    if (NULL != &UIGraphicsBeginImageContextWithOptions)
         UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
     else
         UIGraphicsBeginImageContext(imageSize);

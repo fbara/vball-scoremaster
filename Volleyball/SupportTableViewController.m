@@ -36,9 +36,6 @@ static NSString* const kiTunesID = @"886670213";
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     //Show alert to user the first time they enter the Support screen and there's
     //an active alert.
     [ABXNotification fetchActive:^(NSArray *notifications, ABXResponseCode responseCode, NSInteger httpCode, NSError *error) {
@@ -52,7 +49,7 @@ static NSString* const kiTunesID = @"886670213";
                                    actionText:notification.actionLabel
                               backgroundColor:FlatBlueDark
                                     textColor:[UIColor whiteColor]
-                                  buttonColor:[UIColor redColor]
+                                  buttonColor:[UIColor flatRedColor]
                                  inController:self
                                   actionBlock:^(ABXNotificationView *view) {
                                       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:notification.actionUrl]];
