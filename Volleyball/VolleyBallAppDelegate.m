@@ -10,6 +10,7 @@
 #import "GBVersionTracking.h"
 #import "GAI.h"
 #import "VolleyBallIAPHelper.h"
+#import <Jargon/Jargon.h>
 //#import "NRWindow.h"
 
 @implementation VolleyBallAppDelegate
@@ -42,10 +43,18 @@
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
-//TODO:
+//TODO: ***Change To Real Google Number***
     id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
 //    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
 	tracker.allowIDFACollection = NO;
+	
+//TODO: ***Change Jargon Account***
+//Development
+	[Jargon startWithAPIKey:@"DnhA7ZgJI9uldQfEG9duOIy3ZDMIwGlIjADKgRNKt9c" andOptions:@{JNOptionsDialogEnabled: @YES, JNOptionsLoggingLevel: @(JNLoggingLevelDebug)}];
+	
+//Production
+//	[Jargon startWithAPIKey:@"DnhA7ZgJI9uldQfEG9duOIy3ZDMIwGlIjADKgRNKt9c"
+//				 andOptions:@{JNOptionsServingFrequency: @(JNServingWeekly)}];
 	
 
     if ([GBVersionTracking isFirstLaunchEver] ||

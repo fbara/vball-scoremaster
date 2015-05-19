@@ -1,0 +1,24 @@
+{
+"translations" : {
+"Communications Error" : "Communications Error",
+"Don't forget to tap 'Send' on the social sharing buttons on the Settings page." : "Don't forget to tap 'Send' on the social sharing buttons on the Settings page.",
+"Enable Social Buttons" : "Enable Social Buttons",
+"I can't load a list of available products for purchase.\nUnable to communicate with the iTunes server.\nPlease try again later." : "I can't load a list of available products for purchase.\nUnable to communicate with the iTunes server.\nPlease try again later.",
+"New Match?" : "New Match?",
+"No" : "No",
+"Ok" : "Ok",
+"Parental settings prevent purchases for this iTunes user account" : "Parental settings prevent purchases for this iTunes user account",
+"Purchase Error" : "Purchase Error",
+"Purchases not allowed for this iTunes user account" : "Purchases not allowed for this iTunes user account",
+"Reset team names, scores, action names, and start a new match?" : "Reset team names, scores, action names, and start a new match?",
+"Settings could not be saved" : "Settings could not be saved",
+"The purchase could not be completed at this time.\nPlease try again later or contact iTunes support." : "The purchase could not be completed at this time.\nPlease try again later or contact iTunes support.",
+"There was an error completing this purchase.\nContact iTunes support for more info" : "There was an error completing this purchase.\nContact iTunes support for more info",
+"Unable to connect to the iTunes store.\n\nPlease try your purchase again later." : "Unable to connect to the iTunes store.\n\nPlease try your purchase again later.",
+"Unable to restore or complete the purchase at this time." : "Unable to restore or complete the purchase at this time.",
+"Yes" : "Yes"
+},
+"ui" : {
+
+}
+}
