@@ -95,7 +95,9 @@
     // Setup Google Analytics tracker for this screen
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Settings"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+	//Change to createScreenView because createAppView is deprecated
+    //[tracker send:[[GAIDictionaryBuilder createAppView] build]];
+	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

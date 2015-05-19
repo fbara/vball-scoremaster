@@ -27,7 +27,6 @@
 		AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */; };
 		AD082E3619817E5C00A997CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD082E3419817E5C00A997CE /* Main.storyboard */; };
 		AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD082E37198182E800A997CE /* DefaultScoreViewController.xib */; };
-		AD0A9CE11A264EBF0054BD67 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0A9CE01A264EBF0054BD67 /* libGoogleAnalyticsServices.a */; };
 		AD0D058A1A7195C300B5FC00 /* FCColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0D05881A7195C300B5FC00 /* FCColorPickerViewController.m */; };
 		AD0D058B1A7195C300B5FC00 /* FCColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD0D05891A7195C300B5FC00 /* FCColorPickerViewController.xib */; };
 		AD0D05981A71977100B5FC00 /* FCBrightDarkGradView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0D05951A71977100B5FC00 /* FCBrightDarkGradView.m */; };
@@ -42,6 +41,7 @@
 		AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */; };
 		AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A419B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
+		AD2239411B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2239401B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a */; };
 		AD4B54C0199A40D500770580 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B54BF199A40D500770580 /* Social.framework */; };
 		AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968C197F390E00767D1C /* TutorialViewController.m */; };
 		AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968F197F458E00767D1C /* WSCoachMarksView.m */; };
@@ -134,13 +134,6 @@
 		AD07812819D0493100E30AE9 /* VolleyBallIAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolleyBallIAPViewController.m; sourceTree = "<group>"; };
 		AD082E31198061AE00A997CE /* TutorialSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialSettingsViewController.h; sourceTree = "<group>"; };
 		AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialSettingsViewController.m; sourceTree = "<group>"; };
-		AD0A9CE01A264EBF0054BD67 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = "../Google Analytics/GoogleAnalyticsServicesiOS_3.10/libGoogleAnalyticsServices.a"; sourceTree = "<group>"; };
-		AD0A9CE21A264F1E0054BD67 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		AD0A9CE31A264F1E0054BD67 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		AD0A9CE41A264F1E0054BD67 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
-		AD0A9CE51A264F1E0054BD67 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
-		AD0A9CE61A264F1E0054BD67 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		AD0A9CE71A264F1E0054BD67 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		AD0D05871A7195C300B5FC00 /* FCColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCColorPickerViewController.h; sourceTree = "<group>"; };
 		AD0D05881A7195C300B5FC00 /* FCColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCColorPickerViewController.m; sourceTree = "<group>"; };
 		AD0D05891A7195C300B5FC00 /* FCColorPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCColorPickerViewController.xib; sourceTree = "<group>"; };
@@ -171,6 +164,13 @@
 		AD1C811E1955E6FC0028179B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		AD1C816B195C43A30028179B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		AD1C816C195C43A30028179B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		AD2239401B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		AD2239421B0B5E7000F66ED6 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		AD2239431B0B5E7000F66ED6 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		AD2239441B0B5E7000F66ED6 /* GAIFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		AD2239451B0B5E7000F66ED6 /* GAILogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		AD2239461B0B5E7000F66ED6 /* GAITrackedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		AD2239471B0B5E7000F66ED6 /* GAITracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		AD4B54BF199A40D500770580 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AD52968B197F390E00767D1C /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialViewController.h; path = Volleyball/TutorialViewController.h; sourceTree = "<group>"; };
 		AD52968C197F390E00767D1C /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialViewController.m; path = Volleyball/TutorialViewController.m; sourceTree = "<group>"; };
@@ -273,10 +273,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD0A9CE11A264EBF0054BD67 /* libGoogleAnalyticsServices.a in Frameworks */,
 				AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */,
 				AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */,
 				AD4B54C0199A40D500770580 /* Social.framework in Frameworks */,
+				AD2239411B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a in Frameworks */,
 				AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */,
 				AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */,
 				AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */,
@@ -336,7 +336,7 @@
 		92AA42A11916C2800037D405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AD0A9CE01A264EBF0054BD67 /* libGoogleAnalyticsServices.a */,
+				AD2239401B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a */,
 				AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */,
 				AD9A21A8199BDB10009CEE31 /* Accounts.framework */,
 				AD4B54BF199A40D500770580 /* Social.framework */,
@@ -602,12 +602,12 @@
 		ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				AD0A9CE21A264F1E0054BD67 /* GAI.h */,
-				AD0A9CE31A264F1E0054BD67 /* GAIDictionaryBuilder.h */,
-				AD0A9CE41A264F1E0054BD67 /* GAIFields.h */,
-				AD0A9CE51A264F1E0054BD67 /* GAILogger.h */,
-				AD0A9CE61A264F1E0054BD67 /* GAITrackedViewController.h */,
-				AD0A9CE71A264F1E0054BD67 /* GAITracker.h */,
+				AD2239421B0B5E7000F66ED6 /* GAI.h */,
+				AD2239431B0B5E7000F66ED6 /* GAIDictionaryBuilder.h */,
+				AD2239441B0B5E7000F66ED6 /* GAIFields.h */,
+				AD2239451B0B5E7000F66ED6 /* GAILogger.h */,
+				AD2239461B0B5E7000F66ED6 /* GAITrackedViewController.h */,
+				AD2239471B0B5E7000F66ED6 /* GAITracker.h */,
 			);
 			name = GoogleAnalytics;
 			path = Volleyball;
@@ -1005,7 +1005,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
-					"/Users/fbara/Google\\ Drive/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10",
+					/Users/fbara/Google,
+					Drive/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10,
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1035,7 +1037,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
-					"/Users/fbara/Google\\ Drive/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10",
+					/Users/fbara/Google,
+					Drive/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10,
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1146,7 +1150,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
-					"/Users/fbara/Google\\ Drive/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10",
+					/Users/fbara/Google,
+					Drive/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10,
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
