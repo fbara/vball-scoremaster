@@ -255,7 +255,7 @@ NSString *socialMessage;
     [super viewWillDisappear:animated];
 }
 
-- (IBAction)goToSettings:(UIBarButtonItem*)sender
+- (IBAction)goToSettings:(UIBarButtonItem *)sender
 {
     [self performSegueWithIdentifier:@"settingsView" sender:self];
 }

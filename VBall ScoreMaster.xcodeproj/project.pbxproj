@@ -1005,8 +1005,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
-					/Users/fbara/Google,
-					Drive/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10,
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1037,8 +1035,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
-					/Users/fbara/Google,
-					Drive/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10,
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1150,8 +1146,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
-					/Users/fbara/Google,
-					Drive/Docs/Coding/GoogleAnalytics/GoogleAnalyticsServicesiOS_3.10,
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
