@@ -110,7 +110,7 @@ static NSString* const kiTunesID = @"886670213";
             //Show Feedback form
             //Access AppbotX feedback form
             [ABXFeedbackViewController showFromController:self
-                                              placeholder:@"Feedback"
+                                              placeholder:@"Message to the Developer"
                                                     email:@"Enter your email address"
                                                  metaData:nil
                                                     image:nil];
