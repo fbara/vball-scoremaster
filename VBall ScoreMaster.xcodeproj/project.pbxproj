@@ -95,6 +95,8 @@
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */; };
+		ADFBDF521B0BF16000075149 /* RKNotificationHub.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFBDF511B0BF16000075149 /* RKNotificationHub.m */; };
+		ADFBDF581B0D054B00075149 /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFBDF571B0D054B00075149 /* BBBadgeBarButtonItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,6 +268,10 @@
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
 		ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SupportTableViewController.m; path = Volleyball/SupportTableViewController.m; sourceTree = "<group>"; };
+		ADFBDF501B0BF16000075149 /* RKNotificationHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNotificationHub.h; sourceTree = "<group>"; };
+		ADFBDF511B0BF16000075149 /* RKNotificationHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKNotificationHub.m; sourceTree = "<group>"; };
+		ADFBDF561B0D054B00075149 /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBadgeBarButtonItem.h; path = BBBadgeBarButtonItem/BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
+		ADFBDF571B0D054B00075149 /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBadgeBarButtonItem.m; path = BBBadgeBarButtonItem/BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -629,6 +635,8 @@
 		ADFB427519A4C39200ADBE9F /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				ADFBDF591B0D055B00075149 /* BBBadgeBarButtonItem */,
+				ADFBDF4F1B0BF10D00075149 /* RKNotificationHub */,
 				AD0D059C1A727C8800B5FC00 /* Chameleon */,
 				AD0D058C1A7195CC00B5FC00 /* FCColorPicker */,
 				AD5297BA1A0114790023AC71 /* MBProgressHUD */,
@@ -644,6 +652,24 @@
 			);
 			name = Support;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		ADFBDF4F1B0BF10D00075149 /* RKNotificationHub */ = {
+			isa = PBXGroup;
+			children = (
+				ADFBDF501B0BF16000075149 /* RKNotificationHub.h */,
+				ADFBDF511B0BF16000075149 /* RKNotificationHub.m */,
+			);
+			name = RKNotificationHub;
+			sourceTree = "<group>";
+		};
+		ADFBDF591B0D055B00075149 /* BBBadgeBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				ADFBDF561B0D054B00075149 /* BBBadgeBarButtonItem.h */,
+				ADFBDF571B0D054B00075149 /* BBBadgeBarButtonItem.m */,
+			);
+			name = BBBadgeBarButtonItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -817,6 +843,7 @@
 				AD5297B61A01133C0023AC71 /* ABXPromptView.m in Sources */,
 				AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */,
 				AD5297B91A01133C0023AC71 /* ABXVersionTableViewCell.m in Sources */,
+				ADFBDF521B0BF16000075149 /* RKNotificationHub.m in Sources */,
 				ADB5A13419D30372009B1550 /* NRWindow.m in Sources */,
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
 				AD0D05AA1A727C8800B5FC00 /* NSArray+Chameleon.m in Sources */,
@@ -849,6 +876,7 @@
 				AD0D05A91A727C8800B5FC00 /* ChameleonStatusBar.m in Sources */,
 				AD5297B71A01133C0023AC71 /* ABXTextView.m in Sources */,
 				AD5297AF1A01133C0023AC71 /* ABXIssue.m in Sources */,
+				ADFBDF581B0D054B00075149 /* BBBadgeBarButtonItem.m in Sources */,
 				AD5297B01A01133C0023AC71 /* ABXModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

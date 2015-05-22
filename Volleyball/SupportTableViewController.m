@@ -9,7 +9,7 @@
 #import "SupportTableViewController.h"
 
 static NSString* const kiTunesID = @"886670213";
-
+NSString *sourceSegue;
 
 @interface SupportTableViewController ()
 
@@ -32,12 +32,9 @@ static NSString* const kiTunesID = @"886670213";
 {
     [super viewDidLoad];
     self.title = @"Support";
-    
+	    
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //Show alert to user the first time they enter the Support screen and there's
     //an active alert.
@@ -69,7 +66,30 @@ static NSString* const kiTunesID = @"886670213";
      
  }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	
+	if ([sourceSegue isEqualToString:@"alertNotification"]) {
+		//Show the most recent alert
+		NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
+		
+		[self.tableView.delegate tableView:self.tableView didSelectRowAtIndexPath:indexPath];
+		
+		//Set this to nil so the vc isn't caught in a display loop
+		//sourceSegue = nil;
+	}
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	sourceSegue = nil;
+}
+
 #pragma mark - Appbotx methods
+
+
 
 - (void)appbotPromptClose
 {
@@ -85,7 +105,6 @@ static NSString* const kiTunesID = @"886670213";
 {
     [ABXAppStore openAppStoreReviewForApp:kiTunesID];
     self.promptView.hidden = YES;
-    
 
 }
 
@@ -110,7 +129,7 @@ static NSString* const kiTunesID = @"886670213";
             //Show Feedback form
             //Access AppbotX feedback form
             [ABXFeedbackViewController showFromController:self
-                                              placeholder:@"Feedback"
+                                              placeholder:@"Email the Developer"
                                                     email:@"Enter your email address"
                                                  metaData:nil
                                                     image:nil];
@@ -159,6 +178,19 @@ static NSString* const kiTunesID = @"886670213";
 	
     return 8;
 }
+#pragma mark - Which Segue?
+
+- (void)whichSegueWasUsed:(NSString *)segueName
+{
+	sourceSegue = segueName;
+	
+//	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
+//	
+//	
+//	[self.tableView.delegate tableView:self.tableView didSelectRowAtIndexPath:indexPath];
+	
+	
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -171,7 +203,7 @@ static NSString* const kiTunesID = @"886670213";
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: forIndexPath:indexPath];
     
     // Configure the cell...
     
@@ -217,15 +249,6 @@ static NSString* const kiTunesID = @"886670213";
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

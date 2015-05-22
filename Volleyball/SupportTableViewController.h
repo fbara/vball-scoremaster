@@ -12,4 +12,6 @@
 
 @interface SupportTableViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource,ABXPromptViewDelegate>
 
+- (void)whichSegueWasUsed:(NSString *)segueName;
+
 @end

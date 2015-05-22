@@ -9,8 +9,11 @@
 #import "VolleyBallViewController.h"
 #import "DefaultScoreViewController.h"
 #import "SettingsTableViewController.h"
+#import "SupportTableViewController.h"
 #import "GBVersionTracking.h"
 #import "GAIDictionaryBuilder.h"
+#import "BBBadgeBarButtonItem.h"
+#import "ABXNotificationView.h"
 @import Social;
 @import Accounts;
 @import StoreKit;
@@ -18,6 +21,8 @@
 
 NSString* const EMBED_HOME = @"embedHome";
 NSString* const EMBED_VISITOR = @"embedVisitor";
+//NSString *const SOURCE_SEGUE = @"volleyballVC";
+NSString *const SUPPORT_PAGE = @"alertNotification";
 int currHomeScore = 0;
 int currVisitorScore = 0;
 int currSecondAction = 0;
@@ -36,12 +41,14 @@ NSString *socialMessage;
 @interface VolleyBallViewController () {
     // Instance variable to store all products returned from iTunes Connect
     NSArray* _products;
+	BBBadgeBarButtonItem *alertBarButton;
 }
 
 @property (weak, atomic) UIPageViewController* homePageViewController;
 @property (weak, atomic) UIPageViewController* visitorPageViewController;
 @property (weak, nonatomic) NSURL* baralabsURL;
 @property (strong, nonatomic) ABXPromptView* promptView;
+@property SupportTableViewController *supportVC;
 
 @end
 
@@ -52,13 +59,19 @@ NSString *socialMessage;
 // Called first, before the main view controller is loaded
 - (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:EMBED_HOME]) {
+	if ([segue.identifier isEqualToString:EMBED_HOME]) {
         self.homePageViewController = segue.destinationViewController;
     }
 
     if ([segue.identifier isEqualToString:EMBED_VISITOR]) {
         self.visitorPageViewController = segue.destinationViewController;
     }
+	
+	if ([segue.identifier isEqualToString:SUPPORT_PAGE]) {
+		SupportTableViewController *supportVC = [[SupportTableViewController alloc] init];
+		[supportVC whichSegueWasUsed:SUPPORT_PAGE];
+		supportVC = segue.destinationViewController;
+	}
 }
 
 // Called second, after the segue's are setup
@@ -79,18 +92,6 @@ NSString *socialMessage;
     // Set the Google Analytics Screen name
     self.screenName = @"Scoring";
 
-//    // Initiaize all the UI elements depending on the device
-//    if (IS_IPAD()) {
-//        CGFloat score = ipadScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    } else {
-//        CGFloat score = iphoneScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    }
     [self resetGameAndNames];
 
     // Set Delegate's and DataSource's
@@ -100,15 +101,37 @@ NSString *socialMessage;
     self.visitorPageViewController.delegate = self;
     self.homePageViewController.dataSource = self;
     self.homePageViewController.delegate = self;
-
+//TODO: ***Original UIBarButton***
     // Create bar button item and add them to the navigation bar
-    UIBarButtonItem* settingsButton =
-        [[UIBarButtonItem alloc] initWithTitle:@"Settings"
-                                         style:UIBarButtonItemStyleBordered
-                                        target:self
-                                        action:@selector(goToSettings:)];
-    self.navigationItem.rightBarButtonItem = settingsButton;
+//    UIBarButtonItem* settingsButton =
+//        [[UIBarButtonItem alloc] initWithTitle:@"Settings"
+//                                         style:UIBarButtonItemStyleBordered
+//                                        target:self
+//                                        action:@selector(goToSettings:)];
+//	self.navigationItem.rightBarButtonItem = settingsButton;
+	
+//TODO: BBBarButton Changes
+	UIBarButtonItem *settingsBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settingsImageWhite"]
+																		  style:UIBarButtonItemStyleBordered
+																		 target:self
+																		 action:@selector(goToSettings:)];
+	
+	UIButton *alertButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+	[alertButton addTarget:self
+					action:@selector(showAlertNotification)
+		  forControlEvents:UIControlEventTouchUpInside];
+	//[alertButton setImage:[UIImage imageNamed:@"settingsImageWhite"] forState:UIControlStateNormal];
+	
+	
+	alertBarButton = [[BBBadgeBarButtonItem alloc] initWithCustomView:alertButton];
+	alertBarButton.badgeBGColor = [UIColor redColor];
+	alertBarButton.badgeValue = @"1";
+	alertBarButton.badgeOriginX = 10;
+	alertBarButton.badgeOriginY = -5;
+	self.navigationItem.rightBarButtonItems = @[settingsBarButton, alertBarButton];
 
+//TODO: ***End Changes
+	
     // Create Home swipe gesture and add it to the home container view.
     // Set this controller as the delegate to allow simultaneous gestures in the
     // PageViewController's container view
@@ -177,6 +200,7 @@ NSString *socialMessage;
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
     }
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -227,11 +251,7 @@ NSString *socialMessage;
     }
     
     [self enableSocialButtons];
-    
-//    self.mainPageFacebookButton.enabled = YES;
-//    self.mainPageFacebookButton.hidden = NO;
-//    self.mainPageTwitterButton.enabled = YES;
-//    self.mainPageTwitterButton.hidden = NO;
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -244,6 +264,9 @@ NSString *socialMessage;
                                                  name:@"SettingsDone"
                                                object:nil];
 
+	
+	//[barHub increment];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -255,10 +278,18 @@ NSString *socialMessage;
     [super viewWillDisappear:animated];
 }
 
+
 - (IBAction)goToSettings:(UIBarButtonItem *)sender
 {
     [self performSegueWithIdentifier:@"settingsView" sender:self];
 }
+	 
+- (void)showAlertNotification
+ {
+	 
+	 [self performSegueWithIdentifier:@"alertNotification" sender:self];
+
+ }
 
 - (void)initializePastGames
 {

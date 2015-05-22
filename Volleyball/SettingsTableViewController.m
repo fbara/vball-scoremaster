@@ -14,6 +14,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"	
 #pragma clang diagnostic ignored "-Wprotocol"
+NSString *const SOURCE_SEGUE = @"settingsVC";
 
 @interface SettingsTableViewController () {
     BOOL isPurchased;
