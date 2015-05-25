@@ -94,11 +94,15 @@ static NSString* const kiTunesID = @"886670213";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
-        case 0:
+		case 0:
+			//Link to First Draw
+			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://geni.us/first"]];
+			break;
+		case 1:
             //Show version info
             [ABXVersionsViewController showFromController:self];
             break;
-        case 1:
+        case 2:
             //Show FAQ
             //Access AppbotX FAQ's
             [ABXFAQsViewController showFromController:self
@@ -106,7 +110,7 @@ static NSString* const kiTunesID = @"886670213";
                                       contactMetaData:nil
                                         initialSearch:nil];
             break;
-        case 2:
+        case 3:
             //Show Feedback form
             //Access AppbotX feedback form
             [ABXFeedbackViewController showFromController:self
@@ -115,19 +119,19 @@ static NSString* const kiTunesID = @"886670213";
                                                  metaData:nil
                                                     image:nil];
             break;
-        case 3:
+        case 4:
             //Notifications
             [ABXNotificationsViewController showFromController:self];
             break;
-        case 4:
+        case 5:
             //iTunes review
             [ABXAppStore openAppStoreReviewForApp:kiTunesID];
             break;
-        case 5:
+        case 6:
             //BaraLabs website
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com"]];
             break;
-		case 6:
+		case 7:
 			//Launch Twitter to @BaraLabs page
 			//Check if Twitter app is installed. If it is, launch it. If not, open Safari to BaraLabs.
 			if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://user?screen_name=baralabs"]]) {
@@ -136,7 +140,7 @@ static NSString* const kiTunesID = @"886670213";
 				[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.twitter.com/baralabs"]];
 			}
 			break;
-        case 7:
+        case 8:
             //Privacy policy
 			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com/privacy-policy.html"]];
         default:
