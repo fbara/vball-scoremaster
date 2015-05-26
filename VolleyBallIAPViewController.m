@@ -9,6 +9,7 @@
 #import "VolleyBallIAPViewController.h"
 #import "GAIDictionaryBuilder.h"
 #import "MBProgressHUD.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
@@ -70,13 +71,18 @@
 {
     [super viewDidAppear:animated];
 	
+	[FBSDKAppEvents logEvent:@"In-App Purchase Screen"];
 	
+//TODO: Start Remove Google
+	/*
     // Setup Google Analytics tracker for this screen
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"In-App Purchase"];
 	//Change to createScreenView because createAppView is deprecated
     //[tracker send:[[GAIDictionaryBuilder createAppView] build]];
 	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+	*/
+//End remove
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -259,6 +265,11 @@
 - (void)logButtonPress:(UIButton*)button
 {
 	// Logs button presses, gets the title text of the button, and sends it
+	
+	[FBSDKAppEvents logEvent:@"In-App Purchase" parameters:@{ FBSDKAppEventParameterNameContentID : [button.titleLabel text]}];
+
+//TODO: Start Remove Google
+	/*
 	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 	
 	[tracker set:kGAIScreenName value:@"In-App Purchase"];
@@ -268,6 +279,8 @@
 					label:[button.titleLabel text]
 					value:nil] build]];
 	[tracker set:kGAIScreenName value:nil];
+	*/
+//End remove
 }
 
 - (void)didReceiveMemoryWarning

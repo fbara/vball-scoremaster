@@ -8,7 +8,9 @@
 
 #import "VolleyBallAppDelegate.h"
 #import "GBVersionTracking.h"
-#import "GAI.h"
+//#import "GAI.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "VolleyBallIAPHelper.h"
 //#import "NRWindow.h"
 
@@ -37,7 +39,8 @@
     // Initialize AppbotX info
     [[ABXApiClient instance]
         setApiKey:@"5b0feb30a4f023f3897789f9b38ab62304ee4790"];
-
+//TODO: Start Remove Google
+	/*
     // Google Analytics setup for the app
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
@@ -46,6 +49,8 @@
     id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
 //    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
 	tracker.allowIDFACollection = NO;
+	*/
+//End remove
 	
 
     if ([GBVersionTracking isFirstLaunchEver] ||
@@ -54,7 +59,8 @@
         [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"launchNumber"];
         [[NSUserDefaults standardUserDefaults] setObject:@"Yes"
                                                   forKey:@"showPrompt"];
-
+//TODO: Start Remove Google
+		/*
         // Show Google Analytics permission alert
         UIAlertView* av = [[UIAlertView alloc]
                 initWithTitle:@"Google Analytics"
@@ -66,6 +72,8 @@
             cancelButtonTitle:@"Opt Out"
             otherButtonTitles:@"Opt In", nil];
         [av show];
+		*/
+//End remove
     } else if (([[NSUserDefaults standardUserDefaults]
                    integerForKey:@"launchNumber"]) < 5) {
         // Increment launchNumber until we reach 5
@@ -90,16 +98,42 @@
 	NSString *analyticsSetting = [[NSUserDefaults standardUserDefaults] stringForKey:@"analyticsChoice"];
 	if ([analyticsSetting isEqualToString:@"Opt out"]) {
 		//Opt out - do not track
-		[[GAI sharedInstance] setOptOut:YES];
+//TODO: Start Remove Google
+		//[[GAI sharedInstance] setOptOut:YES];
 	} else {
 		//Opt in - ok to track
-		[[GAI sharedInstance] setOptOut:NO];
+		//[[GAI sharedInstance] setOptOut:NO];
 	}
+//End remove
 	
     [[NSUserDefaults standardUserDefaults] synchronize];
 
-    return YES;
+//TODO: Put back if not using Facebook
+    //return YES;
+	
+	return [[FBSDKApplicationDelegate sharedInstance] application:application
+									didFinishLaunchingWithOptions:launchOptions];
 }
+//TODO: Remove Facebook if using Google
+#pragma mark - Facebook Analytics Begin
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+	// Restart any tasks that were paused (or not yet started) while the
+	// application was inactive. If the application was previously in the
+	// background, optionally refresh the user interface.
+	[FBSDKAppEvents activateApp];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+	return [[FBSDKApplicationDelegate sharedInstance] application:application
+														  openURL:url
+												sourceApplication:sourceApplication
+													   annotation:annotation];
+}
+
+#pragma mark Facebook Analytics End
+
 
 - (void)alertView:(UIAlertView*)alertView
     clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -109,17 +143,19 @@
     switch (buttonIndex) {
     case 0:
 		//Opt out - do not track
-        [[GAI sharedInstance] setOptOut:YES];
+//TODO: Start Remove Google
+        //[[GAI sharedInstance] setOptOut:YES];
         [defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
         break;
     case 1:
 		//Opt out - do not track	
-        [[GAI sharedInstance] setOptOut:NO];
+        //[[GAI sharedInstance] setOptOut:NO];
         [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
         break;
     default:
         break;
     }
+//End remove
 }
 
 //- (NRWindow *)window
@@ -157,13 +193,6 @@
 {
     // Called as part of the transition from the background to the inactive state;
     // here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication*)application
-{
-    // Restart any tasks that were paused (or not yet started) while the
-    // application was inactive. If the application was previously in the
-    // background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication*)application

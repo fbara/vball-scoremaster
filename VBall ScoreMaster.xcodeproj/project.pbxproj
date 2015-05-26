@@ -95,6 +95,9 @@
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */; };
+		ADFBDF5E1B1493C200075149 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFBDF5B1B1493C100075149 /* FBSDKCoreKit.framework */; };
+		ADFBDF5F1B1493C200075149 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFBDF5C1B1493C200075149 /* FBSDKLoginKit.framework */; };
+		ADFBDF601B1493C200075149 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFBDF5D1B1493C200075149 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,6 +269,9 @@
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
 		ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SupportTableViewController.m; path = Volleyball/SupportTableViewController.m; sourceTree = "<group>"; };
+		ADFBDF5B1B1493C100075149 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		ADFBDF5C1B1493C200075149 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		ADFBDF5D1B1493C200075149 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +281,7 @@
 			files = (
 				AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */,
 				AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */,
+				ADFBDF601B1493C200075149 /* FBSDKShareKit.framework in Frameworks */,
 				AD4B54C0199A40D500770580 /* Social.framework in Frameworks */,
 				AD2239411B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a in Frameworks */,
 				AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */,
@@ -283,9 +290,11 @@
 				AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */,
 				AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */,
 				92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */,
+				ADFBDF5E1B1493C200075149 /* FBSDKCoreKit.framework in Frameworks */,
 				92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */,
 				92AA42A51916C2800037D405 /* CoreGraphics.framework in Frameworks */,
 				92AA42A71916C2800037D405 /* UIKit.framework in Frameworks */,
+				ADFBDF5F1B1493C200075149 /* FBSDKLoginKit.framework in Frameworks */,
 				92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,6 +638,7 @@
 		ADFB427519A4C39200ADBE9F /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				ADFBDF5A1B14937300075149 /* Facebook */,
 				AD0D059C1A727C8800B5FC00 /* Chameleon */,
 				AD0D058C1A7195CC00B5FC00 /* FCColorPicker */,
 				AD5297BA1A0114790023AC71 /* MBProgressHUD */,
@@ -644,6 +654,16 @@
 			);
 			name = Support;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		ADFBDF5A1B14937300075149 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				ADFBDF5B1B1493C100075149 /* FBSDKCoreKit.framework */,
+				ADFBDF5C1B1493C200075149 /* FBSDKLoginKit.framework */,
+				ADFBDF5D1B1493C200075149 /* FBSDKShareKit.framework */,
+			);
+			name = Facebook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -997,6 +1017,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
@@ -1027,6 +1048,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
@@ -1138,6 +1160,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";

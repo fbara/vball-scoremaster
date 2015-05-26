@@ -7,6 +7,7 @@
 //
 
 #import "TutorialViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface TutorialViewController ()
 
@@ -95,13 +96,16 @@
     //If it's greater than the index of the last mark, segue to the Settings
     
     if (index > 8) {
+//TODO: Remove if not using Facebook
+		[FBSDKAppEvents logEvent:@"Completed app tutorial"];
+		//End Facebook
         [self performSegueWithIdentifier:@"showTutorialSettings" sender:self];
     }
 }
 
 - (void)coachMarksViewDidCleanup:(WSCoachMarksView *)coachMarksView
 {
-    [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+	[self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

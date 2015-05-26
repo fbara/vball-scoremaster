@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
-#import "GAITrackedViewController.h"
+//#import "GAITrackedViewController.h"
 #import "ABXPromptView.h"
 #import <Social/Social.h>
 
-@interface VolleyBallViewController
-    : GAITrackedViewController <UIPageViewControllerDataSource, UIAlertViewDelegate,
+@interface VolleyBallViewController : UIViewController
+//    : GAITrackedViewController
+			<UIPageViewControllerDataSource, UIAlertViewDelegate,
                                 UITextFieldDelegate, MFMessageComposeViewControllerDelegate,
                                 UIGestureRecognizerDelegate, UIPageViewControllerDelegate,
                                 ABXPromptViewDelegate>

@@ -7,6 +7,7 @@
 //
 
 #import "TutorialSettingsViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface TutorialSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *tutorialImage;
@@ -78,6 +79,9 @@
     //to be shown.  If it is >, we're done so exit from the view controller
     //If it's greater than the index of the last mark, segue to the Settings
     if (index > 4) {
+//TODO: Remove if not using Facebook
+		[FBSDKAppEvents logEvent:@"Completed settings tutorial"];
+		//End Facebook
         [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }

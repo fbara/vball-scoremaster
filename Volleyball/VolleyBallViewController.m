@@ -10,7 +10,9 @@
 #import "DefaultScoreViewController.h"
 #import "SettingsTableViewController.h"
 #import "GBVersionTracking.h"
-#import "GAIDictionaryBuilder.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+//#import "GAIDictionaryBuilder.h"
 @import Social;
 @import Accounts;
 @import StoreKit;
@@ -76,21 +78,11 @@ NSString *socialMessage;
         [self performSegueWithIdentifier:@"showTutorial" sender:self];
     }
 
+//TODO: Start Remove Google
     // Set the Google Analytics Screen name
-    self.screenName = @"Scoring";
+    //self.screenName = @"Scoring";
+//End remove
 
-//    // Initiaize all the UI elements depending on the device
-//    if (IS_IPAD()) {
-//        CGFloat score = ipadScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    } else {
-//        CGFloat score = iphoneScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    }
     [self resetGameAndNames];
 
     // Set Delegate's and DataSource's
@@ -177,25 +169,16 @@ NSString *socialMessage;
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
     }
+	
+//TODO: Remove if not using Facebook
+	FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+	loginButton.center = self.view.center;
+	[self.view addSubview:loginButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    // Initiaize all the UI elements depending on the device
-//    if (IS_IPAD()) {
-//        CGFloat score = ipadScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    } else {
-//        CGFloat score = iphoneScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    }
-
 
     // Update the scoreview's colors in case they were changed in Settings
     // Initiaize all the UI elements depending on the device (font=188/118)
@@ -544,8 +527,12 @@ NSString *socialMessage;
 - (void)logButtonPress:(UIButton*)button
 {
     // Logs button presses, gets the title text of the button, and sends it
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	
+	[FBSDKAppEvents logEvent:@"Scoring" parameters:@{ FBSDKAppEventParameterNameContentID : [button.titleLabel text]}];
 
+//TODO: Start Remove Google
+	/*
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Scoring"];
     [tracker send:[[GAIDictionaryBuilder
                       createEventWithCategory:@"UX"
@@ -553,11 +540,18 @@ NSString *socialMessage;
                                         label:[button.titleLabel text]
                                         value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
+	*/
+//End remove
 }
 
 - (void)logMessagesSent
 {
     // Logs that a text message was sent
+	
+	[FBSDKAppEvents logEvent:@"Scoring" parameters:@{ FBSDKAppEventParameterNameContentType : @"Message sent"}];
+
+//TODO: Start Remove Google
+	/*
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 
     [tracker set:kGAIScreenName value:@"Scoring"];
@@ -566,11 +560,18 @@ NSString *socialMessage;
                                                            label:@"message sent"
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
+	 */
+//End remove
 }
 
 - (void)logTwitterSent
 {
     // Logs that a Twitter message was sent
+	
+	[FBSDKAppEvents logEvent:@"Scoring" parameters:@{ FBSDKAppEventParameterNameContentType : @"Twitter sent"}];
+
+//TODO: Start Remove Google
+	/*
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 
     [tracker set:kGAIScreenName value:@"Twitter"];
@@ -579,11 +580,18 @@ NSString *socialMessage;
                                                            label:@"twitter sent"
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
+	*/
+//End remove
 }
 
 - (void)logFacebookSent
 {
     // Logs that a Twitter message was sent
+	
+	[FBSDKAppEvents logEvent:@"Scoring" parameters:@{ FBSDKAppEventParameterNameContentType : @"Facebook sent"}];
+
+//TODO: Start Remove Google
+	/*
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 
     [tracker set:kGAIScreenName value:@"Facebook"];
@@ -592,6 +600,8 @@ NSString *socialMessage;
                                                            label:@"facebook sent"
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
+	*/
+//End remove
 }
 
 #pragma mark - UIGestureRecognizer Delegate Method

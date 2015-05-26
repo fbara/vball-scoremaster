@@ -7,7 +7,8 @@
 //
 
 #import "ActionLabelTableViewController.h"
-#import "GAIDictionaryBuilder.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+//#import "GAIDictionaryBuilder.h"
 
 @implementation ActionLabelTableViewController {
     BOOL firstTimeShown;
@@ -82,12 +83,18 @@
 {
 	[super viewDidAppear:animated];
 	
+	[FBSDKAppEvents logEvent:@"Action Names"];
+	
+//TODO: Start Remove Google
+	/*
 	// Setup Google Analytics tracker for this screen
 	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 	[tracker set:kGAIScreenName value:@"Action Names"];
 	//Change to createScreenView because createAppView is deprecated
 	//[tracker send:[[GAIDictionaryBuilder createAppView] build]];
 	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+	*/
+//End remove
 }
 
 - (int)getRowForName:(NSString*)selectedName

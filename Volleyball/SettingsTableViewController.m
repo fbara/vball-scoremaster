@@ -8,7 +8,8 @@
 
 #import "SettingsTableViewController.h"
 #import "ActionLabelTableViewController.h"
-#import "GAIDictionaryBuilder.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+//#import "GAIDictionaryBuilder.h"
 #import "VolleyBallViewController.h"
 
 #pragma clang diagnostic push
@@ -91,13 +92,19 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
+	
+	[FBSDKAppEvents logEvent:@"Settings"];
+	
+//TODO: Start Remove Google
+	/*
     // Setup Google Analytics tracker for this screen
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Settings"];
 	//Change to createScreenView because createAppView is deprecated
     //[tracker send:[[GAIDictionaryBuilder createAppView] build]];
 	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+	*/
+//End remove
 }
 
 - (void)viewWillAppear:(BOOL)animated
