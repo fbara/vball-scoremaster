@@ -1,11 +1,11 @@
 
-//  Chameleon.h
+//  ChameleonStatusBar.h
 
 /*
  
  The MIT License (MIT)
  
- Copyright (c) 2014 Vicc Alexander.
+ Copyright (c) 2014-2015 Vicc Alexander.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -25,15 +25,21 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
  
-*/
+ */
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@interface ChameleonStatusBar : NSObject
+
+/**
+ *  Returns either a light or dark status bar depending on which contrasts more with a specified color.
+ *
+ *  @param backgroundColor The specified color of the contrast color that is being requested.
+ *
+ *  @return A light status bar, intended for use on dark backgrounds, or a dark status bar, intended for use on light backgrounds.
+ */
++ (UIStatusBarStyle)statusBarStyleForColor:(UIColor *)backgroundColor;
 
 
-#import "ChameleonMacros.h"
-#import "ChameleonStatusBar.h"
-#import "NSArray+Chameleon.h"
-#import "UIColor+Chameleon.h"
-#import "UIViewController+Chameleon.h"
-
-
-
-
+@end

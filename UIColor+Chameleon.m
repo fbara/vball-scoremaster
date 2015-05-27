@@ -5,7 +5,7 @@
  
  The MIT License (MIT)
  
- Copyright (c) 2014 Vicc Alexander.
+ Copyright (c) 2014-2015 Vicc Alexander.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -440,8 +440,6 @@
     } else {
         return (luminance > 0.5f) ? hsba(0, 0, 15, alpha) : hsba(192, 2, 95, alpha);
     }
-    
-    return (luminance > 0.5f) ? [UIColor flatBlackColorDark] : [UIColor flatWhiteColor];
 }
 
 + (UIColor *)colorWithGradientStyle:(UIGradientStyle)gradientStyle withFrame:(CGRect)frame andColors:(NSArray *)colors; {
@@ -469,7 +467,7 @@
             [backgroundGradientLayer setEndPoint:CGPointMake(1.0, 0.5)];
             
             //Convert our CALayer to a UIImage object
-            UIGraphicsBeginImageContext(backgroundGradientLayer.bounds.size);
+            UIGraphicsBeginImageContextWithOptions(backgroundGradientLayer.bounds.size,NO, [UIScreen mainScreen].scale);
             [backgroundGradientLayer renderInContext:UIGraphicsGetCurrentContext()];
             UIImage *backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
@@ -479,8 +477,7 @@
         }
             
         case UIGradientStyleRadial: {
-            
-            UIGraphicsBeginImageContextWithOptions(frame.size, 0, 1);
+            UIGraphicsBeginImageContextWithOptions(frame.size,NO, [UIScreen mainScreen].scale);
             
             //Specific the spread of the gradient (For now this gradient only takes 2 locations)
             CGFloat locations[2] = {0.0, 1.0};
@@ -521,7 +518,7 @@
             backgroundGradientLayer.colors = cgColors;
             
             //Convert our CALayer to a UIImage object
-            UIGraphicsBeginImageContext(backgroundGradientLayer.bounds.size);
+            UIGraphicsBeginImageContextWithOptions(backgroundGradientLayer.bounds.size,NO, [UIScreen mainScreen].scale);
             [backgroundGradientLayer renderInContext:UIGraphicsGetCurrentContext()];
             UIImage *backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
@@ -608,7 +605,7 @@
             NSArray *darkColors = @[FlatBlackDark, FlatBlueDark, FlatBrownDark, FlatCoffeeDark, FlatForestGreenDark, FlatGrayDark, FlatGreenDark, FlatLimeDark, FlatMagentaDark, FlatMaroonDark, FlatMintDark, FlatNavyBlueDark, FlatOrangeDark, FlatPinkDark, FlatPlumDark, FlatPowderBlueDark, FlatPurpleDark, FlatRedDark, FlatSandDark, FlatSkyBlueDark, FlatTealDark, FlatWatermelonDark, FlatWhiteDark, FlatYellowDark];
             
             randomColor = [darkColors objectAtIndex:randomColorChosen];
-            
+            break;
         }
             
         case UIShadeStyleLight:
@@ -617,11 +614,12 @@
             NSArray *lightColors = @[FlatBlack, FlatBlue, FlatBrown, FlatCoffee, FlatForestGreen, FlatGray, FlatGreen, FlatLime, FlatMagenta, FlatMaroon, FlatMint, FlatNavyBlue, FlatOrange, FlatPink, FlatPlum, FlatPowderBlue, FlatPurple, FlatRed, FlatSand, FlatSkyBlue, FlatTeal, FlatWatermelon, FlatWhite, FlatYellow];
             
             randomColor = [lightColors objectAtIndex:randomColorChosen];
+            break;
         }
-
-    return randomColor;
     
     }
+    
+    return randomColor;
 }
 
 
@@ -664,7 +662,7 @@
     
     //Run everything through our △H' Function
     CGFloat hDeltaPrime = 0;
-    if (fabsf(H1Prime - H2Prime) <= (180.0 * M_PI/180)) {
+    if (fabs(H1Prime - H2Prime) <= (180.0 * M_PI/180)) {
         
         hDeltaPrime = H2Prime - H1Prime;
         
@@ -681,7 +679,7 @@
     
     //Get Mean H' Value
     CGFloat MeanHPrime = 0;
-    if (fabsf(H1Prime-H2Prime) > (180.0 * M_PI/180)) {
+    if (fabs(H1Prime-H2Prime) > (180.0 * M_PI/180)) {
         
         MeanHPrime = (H1Prime + H2Prime + (360.0 * M_PI/180)) / 2;
         

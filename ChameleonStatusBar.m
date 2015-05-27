@@ -1,11 +1,11 @@
 
-//  UIViewController+Chameleon.h
+//  ChameleonStatusBar.m
 
 /*
  
  The MIT License (MIT)
  
- Copyright (c) 2014 Vicc Alexander.
+ Copyright (c) 2014-2015 Vicc Alexander.
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -27,18 +27,29 @@
  
  */
 
-#import <UIKit/UIKit.h>
+#import "ChameleonStatusBar.h"
 
-@interface UIViewController (Chameleon)
+@implementation ChameleonStatusBar
 
-/**
- *  Find and convert every color object in a UIViewController to its closest flat color in the LAB colorspace.
- */
-- (void)flatify;
+#pragma  mark - VAFlatColors - Status Bar Methods
 
-/**
- *  Find and convert every color object in a UIViewController to its closest flat color in the LAB colorspace. Converts all text to either a white or black color depending on what contrasts more with the color beneath the text.
- */
-- (void)flatifyAndContrast;
++ (UIStatusBarStyle)statusBarStyleForColor:(UIColor *)backgroundColor {
+    
+    //Calculate Luminance
+    CGFloat luminance;
+    CGFloat red, green, blue;
+    
+    //Check for clear or uncalculatable color and assume white
+    if (![backgroundColor getRed:&red green:&green blue:&blue alpha:nil]) {
+        return UIStatusBarStyleDefault;
+    }
+    
+    //Relative luminance in colorimetric spaces - http://en.wikipedia.org/wiki/Luminance_(relative)
+	red *= 0.2126f; green *= 0.7152f; blue *= 0.0722f;
+    luminance = red + green + blue;
+    
+    return (luminance > 0.5f) ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent;
+}
+
 
 @end
