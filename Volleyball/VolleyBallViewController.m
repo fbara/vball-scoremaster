@@ -11,10 +11,12 @@
 #import "SettingsTableViewController.h"
 #import "GBVersionTracking.h"
 #import "GAIDictionaryBuilder.h"
+#import "ABXNotificationView.h"
 @import Social;
 @import Accounts;
 @import StoreKit;
 @import UIKit;
+@import Dispatch;
 
 NSString* const EMBED_HOME = @"embedHome";
 NSString* const EMBED_VISITOR = @"embedVisitor";
@@ -32,6 +34,9 @@ CGFloat const ipadScoreFont = 220.0f;
 CGFloat const iphoneScoreFont = 120.0f;
 NSString* colorScheme;
 NSString *socialMessage;
+
+//Dispatch queue for checking alerts
+dispatch_queue_t backgroundQueue;
 
 @interface VolleyBallViewController () {
     // Instance variable to store all products returned from iTunes Connect
@@ -227,11 +232,7 @@ NSString *socialMessage;
     }
     
     [self enableSocialButtons];
-    
-//    self.mainPageFacebookButton.enabled = YES;
-//    self.mainPageFacebookButton.hidden = NO;
-//    self.mainPageTwitterButton.enabled = YES;
-//    self.mainPageTwitterButton.hidden = NO;
+
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -23,7 +23,7 @@
 
 + (void)openAppStoreForApp:(NSString*)itunesId
 {
-    NSString *url = [NSString stringWithFormat:@"https://geo.itunes.apple.com/us/app/vball-scoremaster/id886670213?mt=8&uo=6&at=1001lDi&ct=vballtwitter"];
+    NSString *url = [NSString stringWithFormat:@"https://geo.itunes.apple.com/us/app/vball-scoremaster/id886670213?mt=8&uo=6&at=1001lDi&ct=appbotReviewPrompt"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
