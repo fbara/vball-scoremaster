@@ -224,7 +224,7 @@ static const BOOL kEnableSkipButton = YES;
             lblContinue = [[UILabel alloc] initWithFrame:(CGRect){{0, self.bounds.size.height - 30.0f}, {lblContinueWidth, 30.0f}}];
             lblContinue.font = [UIFont boldSystemFontOfSize:13.0f];
             lblContinue.textAlignment = NSTextAlignmentCenter;
-            lblContinue.text = @"Tap to continue";
+            lblContinue.text = @"Tap anywhere to continue";
             lblContinue.alpha = 0.0f;
             lblContinue.backgroundColor = [UIColor whiteColor];
             [self addSubview:lblContinue];

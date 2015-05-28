@@ -56,23 +56,23 @@
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{512.0f,170.0f},{0.0f,0.0f}}],
-        @"caption": @"One of the most requested features we've received is to track past game history, so..."
+        @"caption": @"Want to log the final scores for each game in a match?"
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{10.0f,344.0f},{79.0f,171.0f}}],
-        @"caption": @"...you can track past scores for each team in the same match."
+        @"caption": @"VBall ScoreMaster tracks each team's final score\nand places it next to the team"
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{334.0f,198.0f},{339.0f,297.0f}}],
-        @"caption": @"You can send a pre-formatted text message just by tapping the VBall..."
+        @"caption": @"You can send a pre-formatted text message just by tapping the VBall.\n\nYou don't have to take your eyes off the game to type out a message!"
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{88.0f,488.0f},{838.0f,69.0f}}],
-        @"caption": @"...and choose the player Actions YOU want to track.\n\nYou don't have to take your eyes off the game to type out a message!"
+        @"caption": @"Choose the player Actions YOU want to track."
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{391.0f,578.0f},{243.0f,96.0f}}],
-        @"caption": @"Sending with Twitter© & Facebook© is available with an in-app purchase."
+        @"caption": @"Post the game highlights to Twitter or Facebook.\nEach post includes a screenshot of the score!"
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{510.0f,170.0f},{0.0f,0.0f}}],

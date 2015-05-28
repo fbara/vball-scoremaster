@@ -79,18 +79,6 @@ NSString *socialMessage;
     // Set the Google Analytics Screen name
     self.screenName = @"Scoring";
 
-//    // Initiaize all the UI elements depending on the device
-//    if (IS_IPAD()) {
-//        CGFloat score = ipadScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    } else {
-//        CGFloat score = iphoneScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    }
     [self resetGameAndNames];
 
     // Set Delegate's and DataSource's
@@ -182,19 +170,6 @@ NSString *socialMessage;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    // Initiaize all the UI elements depending on the device
-//    if (IS_IPAD()) {
-//        CGFloat score = ipadScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    } else {
-//        CGFloat score = iphoneScoreFont;
-//        [self initializeHomeScore:currHomeScore fontSize:score];
-//        [self initializeVisitorScore:currVisitorScore fontSize:score];
-//        [self resetGameAndNames];
-//    }
 
 
     // Update the scoreview's colors in case they were changed in Settings
@@ -227,11 +202,7 @@ NSString *socialMessage;
     }
     
     [self enableSocialButtons];
-    
-//    self.mainPageFacebookButton.enabled = YES;
-//    self.mainPageFacebookButton.hidden = NO;
-//    self.mainPageTwitterButton.enabled = YES;
-//    self.mainPageTwitterButton.hidden = NO;
+
 }
 
 - (void)viewDidAppear:(BOOL)animated

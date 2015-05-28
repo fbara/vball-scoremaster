@@ -41,7 +41,7 @@
     NSArray *coachMarks = @[
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
-            @"caption": @"Here's a quick tour of the features of VBall ScoreMaster."
+            @"caption": @"Here's a quick tour of the features of VBall ScoreMaster"
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,58.0f},{439.0f,30.0f}}],
@@ -49,31 +49,31 @@
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,120.0f},{439.0f,105.0f}}],
-            @"caption": @"...tap to add points and swipe the scores to change sides."
+            @"caption": @"...tap to add points and swipe the scores to change sides"
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{118.0f,275.0f},{327.0f,30.0f}}],
-            @"caption": @"Track your player's actions with just a tap."
+            @"caption": @"Track your player's actions with just a tap"
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
-            @"caption": @"One of the most requested features we've recieved..."
+            @"caption": @"Want to log the final scores for each game in a match?"
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{14.0f,157.0f},{40.0f,98.0f}}],
-            @"caption": @"...you can track past scores in the same match..."
+            @"caption": @"VBall ScoreMaster tracks each score and puts them here"
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{241.0f,149.0f},{80.0f,80.0f}}],
-            @"caption": @"...send a text with the game score by tapping the VBall..."
+            @"caption": @"Send a message with the game highlights at anytime by tapping the VBall"
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,255.0f},{439.0f,25.0f}}],
-            @"caption": @"...and choose the player Actions YOU want to track."
+            @"caption": @"Select the player Actions YOU want to track"
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{226.0f,262.0f},{113.0f,47.0f}}],
-            @"caption": @"Sending with Twitter© & Facebook© is available with an in-app purchase."
+            @"caption": @"Easily post updates to Twitter© & Facebook©"
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{280.0f,0.0f},{0.0f,0.0f}}],

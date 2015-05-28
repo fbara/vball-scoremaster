@@ -11,7 +11,6 @@
 		92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92447968192AD7A10031C1F6 /* MessageUI.framework */; };
 		92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A21916C2800037D405 /* Foundation.framework */; };
 		92AA42A51916C2800037D405 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A41916C2800037D405 /* CoreGraphics.framework */; };
-		92AA42A71916C2800037D405 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A61916C2800037D405 /* UIKit.framework */; };
 		92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92AA42AB1916C2800037D405 /* InfoPlist.strings */; };
 		92AA42AF1916C2800037D405 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42AE1916C2800037D405 /* main.m */; };
 		92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42B21916C2800037D405 /* VolleyBallAppDelegate.m */; };
@@ -83,6 +82,7 @@
 		AD8B6BCC1B15E9B70048A73C /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B6BC61B15E9B70048A73C /* UIColor+Chameleon.m */; };
 		AD8B6BCD1B15E9B70048A73C /* UIColor+CIELAB.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B6BC81B15E9B70048A73C /* UIColor+CIELAB.m */; };
 		AD8B6BCE1B15E9B70048A73C /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B6BCA1B15E9B70048A73C /* UIViewController+Chameleon.m */; };
+		AD8B6BD01B17416C0048A73C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A61916C2800037D405 /* UIKit.framework */; };
 		AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38319BFB056002CD75E /* IAPHelper.m */; };
 		AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */; };
 		AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9A21A8199BDB10009CEE31 /* Accounts.framework */; };
@@ -118,7 +118,6 @@
 		92AA42AA1916C2800037D405 /* Volleyball-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Volleyball-Info.plist"; sourceTree = "<group>"; };
 		92AA42AC1916C2800037D405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92AA42AE1916C2800037D405 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		92AA42B01916C2800037D405 /* Volleyball-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volleyball-Prefix.pch"; sourceTree = "<group>"; };
 		92AA42B11916C2800037D405 /* VolleyBallAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolleyBallAppDelegate.h; sourceTree = "<group>"; };
 		92AA42B21916C2800037D405 /* VolleyBallAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolleyBallAppDelegate.m; sourceTree = "<group>"; };
 		92AA42B71916C2810037D405 /* VolleyBallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolleyBallViewController.h; sourceTree = "<group>"; };
@@ -246,6 +245,7 @@
 		AD8B6BC81B15E9B70048A73C /* UIColor+CIELAB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CIELAB.m"; path = "../../UIColor+CIELAB.m"; sourceTree = "<group>"; };
 		AD8B6BC91B15E9B70048A73C /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "../../UIViewController+Chameleon.h"; sourceTree = "<group>"; };
 		AD8B6BCA1B15E9B70048A73C /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "../../UIViewController+Chameleon.m"; sourceTree = "<group>"; };
+		AD8B6BCF1B173F0E0048A73C /* Volleyball-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volleyball-Prefix.pch"; sourceTree = "<group>"; };
 		AD96E38219BFB056002CD75E /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		AD96E38319BFB056002CD75E /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		AD96E38819BFB5F7002CD75E /* VolleyBallIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolleyBallIAPHelper.h; sourceTree = "<group>"; };
@@ -273,6 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD8B6BD01B17416C0048A73C /* UIKit.framework in Frameworks */,
 				AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */,
 				AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */,
 				AD4B54C0199A40D500770580 /* Social.framework in Frameworks */,
@@ -285,7 +286,6 @@
 				92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */,
 				92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */,
 				92AA42A51916C2800037D405 /* CoreGraphics.framework in Frameworks */,
-				92AA42A71916C2800037D405 /* UIKit.framework in Frameworks */,
 				92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,8 +385,8 @@
 				92AA42B11916C2800037D405 /* VolleyBallAppDelegate.h */,
 				92AA42B21916C2800037D405 /* VolleyBallAppDelegate.m */,
 				92AA42AE1916C2800037D405 /* main.m */,
+				AD8B6BCF1B173F0E0048A73C /* Volleyball-Prefix.pch */,
 				92AA42AA1916C2800037D405 /* Volleyball-Info.plist */,
-				92AA42B01916C2800037D405 /* Volleyball-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

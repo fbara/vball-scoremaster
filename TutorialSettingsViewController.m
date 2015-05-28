@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.tutorialImage setImage:[UIImage imageNamed:@"TutorialImageSettings"]];
+    [self.tutorialImage setImage:[UIImage imageNamed:@"TutorialImageSettings1"]];
 
 }
 
@@ -39,24 +39,24 @@
     //Show coachMarks
     NSArray *coachMarks = @[
             @{
-                @"rect": [NSValue valueWithCGRect:(CGRect){{20.0f,55.0f},{528.0f,30.0f}}],
-                @"caption": @"You decide when to send text messages..."
+                @"rect": [NSValue valueWithCGRect:(CGRect){{11.0f,55.0f},{546.0f,131.0f}}],
+                @"caption": @"Send updates to anyone in your Contacts list"
                 },
             @{
-                @"rect": [NSValue valueWithCGRect:(CGRect){{299.0f,145.0f},{249.0f,30.0f}}],
-                @"caption": @"...and you can choose from your list of contacts."
+                @"rect": [NSValue valueWithCGRect:(CGRect){{11.0f,184.0f},{546.0f,100.0f}}],
+                @"caption": @"Decide when to post highlights to Twitter© and Facebook©"
                 },
             @{
-                @"rect": [NSValue valueWithCGRect:(CGRect){{14.0f,232.0f},{191.0f,80.0f}}],
+                @"rect": [NSValue valueWithCGRect:(CGRect){{436.0f,188.0f},{124.0f,118.0f}}],
                 @"caption": @"Select Actions from a list of common terms..."
                 },
             @{
-                @"rect": [NSValue valueWithCGRect:(CGRect){{438.0f,230.0f},{115.0f,80.0f}}],
-                @"caption": @"...and choose the right one for your player."
+                @"rect": [NSValue valueWithCGRect:(CGRect){{8.0f,174.0f},{552.0f,140.0f}}],
+                @"caption": @"...and choose the right one for your player"
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
-                @"caption": @"There is help and information from the icon at the top of 'Settings'.\nPlease leave feedback in the App Store for others!\n(tap to dismiss)"
+                @"caption": @"There is help and information by tapping ⓘ in Settings.\nPlease leave feedback in the App Store, it helps others!\n(tap to dismiss)"
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{280.0f,0.0f},{0.0f,0.0f}}],
@@ -69,12 +69,16 @@
     [self.view addSubview:coachMarksView];
     coachMarksView.enableContinueLabel = FALSE;
     [coachMarksView start];
-    
 }
 
 - (void)coachMarksView:(WSCoachMarksView *)coachMarksView didNavigateToIndex:(NSUInteger)index
 {
-    //Check the index of the last shown coach mark.  It will be equal to the next mark
+	if (index == 2) {
+		[self.tutorialImage setImage:[UIImage imageNamed:@"TutorialImageSettings2"]];
+		return;
+	}
+	
+	//Check the index of the last shown coach mark.  It will be equal to the next mark
     //to be shown.  If it is >, we're done so exit from the view controller
     //If it's greater than the index of the last mark, segue to the Settings
     if (index > 4) {

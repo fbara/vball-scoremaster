@@ -40,15 +40,15 @@
     NSArray *coachMarks = @[
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,129.0f},{530.0f,133.0f}}],
-            @"caption": @"You can change the background color of each team's score and we've added new color schemes.\n\nYou can also change between Regular, Dark, and Colorful themes."
+            @"caption": @"You can change the background color of each team's scorebox and we've added new color schemes.\n\nYou can also alternate between Regular, Dark, and Colorful themes."
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,284.0f},{530.0f,119.0f}}],
-            @"caption": @"You decide when to send text messages, and can optionally include your player's name, also..."
+            @"caption": @"You decide when to send text messages and you can optionally include your player's name"
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,390.0f},{530.0f,54.0f}}],
-            @"caption": @"...you can choose text recipients from your list of contacts or just enter their number directly."
+            @"caption": @"Choose text message recipients from your contact list or just enter their number directly."
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,593.0f},{530.0f,111.0f}}],
@@ -56,7 +56,7 @@
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{512.0f,170.0f},{0.0f,0.0f}}],
-            @"caption": @"There is help and information from the icon at the top of 'Settings'.\nPlease leave feedback in the App Store for others.\n\nHave fun!!\n\n(tap to dismiss)"
+            @"caption": @"There is help and information by tapping ⓘ in Settings.\n\nPlease leave feedback in the App Store, it helps others find the app!\n(tap to dismiss)"
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{510.0f,170.0f},{0.0f,0.0f}}],
