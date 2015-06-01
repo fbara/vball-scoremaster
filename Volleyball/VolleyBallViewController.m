@@ -69,12 +69,13 @@ NSString *socialMessage;
     // Set home URL for Twitter and Facebook messages
     self.baralabsURL = [NSURL URLWithString:@"www.baralabs.com"];
 
+//TODO: ***Remove forced tutorial***
     // Check if this is the first time the app has run.
     // If so, run tutorial.  If not, don't run turorial.
-    if ([GBVersionTracking isFirstLaunchEver] ||
-        [GBVersionTracking isFirstLaunchForVersion]) {
+    //if ([GBVersionTracking isFirstLaunchEver] ||
+    //    [GBVersionTracking isFirstLaunchForVersion]) {
         [self performSegueWithIdentifier:@"showTutorial" sender:self];
-    }
+    //}
 
     // Set the Google Analytics Screen name
     self.screenName = @"Scoring";

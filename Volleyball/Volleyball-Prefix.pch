@@ -20,11 +20,5 @@
     #import "ABX.h"
 #endif
 
-//#ifdef UI_USER_INTERFACE_IDIOM
-//#define IS_IPAD() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-//#else
-//#define IS_IPAD() (false)
-//#endif
-
 //Had to change this for iOS 8.3 - but also works on lower versions
 #define IS_IPAD() [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad

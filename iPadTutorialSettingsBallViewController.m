@@ -40,7 +40,7 @@
     NSArray *coachMarks = @[
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,129.0f},{530.0f,133.0f}}],
-            @"caption": NSLocalizedString(@"Change the background color of each team's scorebox to match their uniforms.\nUse a custom color to get the exact match!.\n\nAlternate between Regular, Dark, and Colorful app themes.", @"Shown during the app tutorial")
+            @"caption": NSLocalizedString(@"Tap the color box to change the background color of each team's scorebox to match their uniforms.\nUse a custom color to get the exact match!.\n\nAlternate between Regular, Dark, and Colorful app themes.", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,284.0f},{530.0f,119.0f}}],

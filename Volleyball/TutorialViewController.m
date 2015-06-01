@@ -41,39 +41,39 @@
     NSArray *coachMarks = @[
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
-            @"caption": @"Here's a quick tour of the features of VBall ScoreMaster"
+            @"caption": NSLocalizedString(@"Here's a quick tour of the features of VBall ScoreMaster", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,58.0f},{439.0f,30.0f}}],
-            @"caption": @"Customize the screen by adding team names, and..."
+            @"caption": NSLocalizedString(@"Customize the scores by adding the team names", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,120.0f},{439.0f,105.0f}}],
-            @"caption": @"...tap to add points and swipe the scores to change sides"
+            @"caption": NSLocalizedString(@"Tap to add points and swipe the scores to change sides", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{118.0f,275.0f},{327.0f,30.0f}}],
-            @"caption": @"Track your player's actions with just a tap"
+            @"caption": NSLocalizedString(@"Track your player's main actions with just a tap", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
-            @"caption": @"Want to log the final scores for each game in a match?"
+            @"caption": NSLocalizedString(@"Want to log the final scores for each game in a match?", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{14.0f,157.0f},{40.0f,98.0f}}],
-            @"caption": @"VBall ScoreMaster tracks each score and puts them here"
+            @"caption": NSLocalizedString(@"VBall ScoreMaster tracks each final score and puts them here", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{241.0f,149.0f},{80.0f,80.0f}}],
-            @"caption": @"Send a message with the game highlights at anytime by tapping the VBall"
+            @"caption": NSLocalizedString(@"Send a message with the game highlights at anytime by tapping the VBall", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,255.0f},{439.0f,25.0f}}],
-            @"caption": @"Select the player Actions YOU want to track"
+            @"caption": NSLocalizedString(@"Select the player Actions YOU want to track", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{226.0f,262.0f},{113.0f,47.0f}}],
-            @"caption": @"Easily post updates to Twitter© & Facebook©"
+            @"caption": NSLocalizedString(@"Easily post updates to Twitter & Facebook\n(in-app purchase)", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{280.0f,0.0f},{0.0f,0.0f}}],

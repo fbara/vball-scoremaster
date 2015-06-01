@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.tutorialImage setImage:[UIImage imageNamed:@"TutorialImageSettings1"]];
+    [self.tutorialImage setImage:[UIImage imageNamed:@"TutorialImageSettings"]];
 
 }
 
@@ -38,25 +38,29 @@
     
     //Show coachMarks
     NSArray *coachMarks = @[
-            @{
+			@{
+				@"rect": [NSValue valueWithCGRect:(CGRect){{11.0f,63.0f},{547.0f,120.0f}}],
+				@"caption": NSLocalizedString(@"Tap the color box to change the score color", @"Shown during the app tutorial")
+				},
+			@{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{11.0f,55.0f},{546.0f,131.0f}}],
-                @"caption": @"Send updates to anyone in your Contacts list"
+                @"caption": NSLocalizedString(@"Send updates to anyone in your Contacts list", @"Shown during the app tutorial")
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{11.0f,184.0f},{546.0f,100.0f}}],
-                @"caption": @"Decide when to post highlights to Twitter© and Facebook©"
+                @"caption": NSLocalizedString(@"Decide when to post highlights to Twitter and Facebook\n(in-app purchase)", @"Shown during the app tutorial")
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{436.0f,188.0f},{124.0f,118.0f}}],
-                @"caption": @"Select Actions from a list of common terms..."
+                @"caption": NSLocalizedString(@"Select Action Names from a list of common volleyball terms...", @"Shown during the app tutorial")
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{8.0f,174.0f},{552.0f,140.0f}}],
-                @"caption": @"...and choose the right one for your player"
+                @"caption": NSLocalizedString(@"...and choose the right one for your player's position", @"Shown during the app tutorial")
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
-                @"caption": @"There is help and information by tapping ⓘ in Settings.\nPlease leave feedback in the App Store, it helps others!\n(tap to dismiss)"
+                @"caption": NSLocalizedString(@"There is help and information by tapping ⓘ in Settings.\nPlease leave feedback in the App Store, it helps others!\n(tap to dismiss)", @"Shown during the app tutorial")
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{280.0f,0.0f},{0.0f,0.0f}}],
@@ -73,7 +77,12 @@
 
 - (void)coachMarksView:(WSCoachMarksView *)coachMarksView didNavigateToIndex:(NSUInteger)index
 {
-	if (index == 2) {
+	if (index == 1) {
+		[self.tutorialImage setImage:[UIImage imageNamed:@"TutorialImageSettings1"]];
+		return;
+	}
+	
+	if (index == 3) {
 		[self.tutorialImage setImage:[UIImage imageNamed:@"TutorialImageSettings2"]];
 		return;
 	}
@@ -81,7 +90,7 @@
 	//Check the index of the last shown coach mark.  It will be equal to the next mark
     //to be shown.  If it is >, we're done so exit from the view controller
     //If it's greater than the index of the last mark, segue to the Settings
-    if (index > 4) {
+    if (index > 5) {
         [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }

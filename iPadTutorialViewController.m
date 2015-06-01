@@ -72,7 +72,7 @@
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{391.0f,578.0f},{243.0f,96.0f}}],
-        @"caption": @"Post the game highlights to Twitter or Facebook.\nEach post includes a screenshot of the score!"
+        @"caption": @"Post the game highlights to Twitter or Facebook.\nEach post includes a screenshot of the score!\n(in-app purchase required)"
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{510.0f,170.0f},{0.0f,0.0f}}],
