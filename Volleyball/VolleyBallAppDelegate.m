@@ -43,8 +43,8 @@
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
 //TODO:
-    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
-//    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+//    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
 	tracker.allowIDFACollection = NO;
 	
 
@@ -83,7 +83,7 @@
     }
 	
 	//Check if user is allowing analytics or not
-	// We hit 5 uses so turn off the review prompt
+	//We hit 5 uses so turn off the review prompt
 	[[NSUserDefaults standardUserDefaults] setObject:@"No"
 											  forKey:@"showPrompt"];
 	//Check if analytics are allowed on subsequent starts of the app
