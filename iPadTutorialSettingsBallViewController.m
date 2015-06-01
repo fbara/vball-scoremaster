@@ -40,23 +40,23 @@
     NSArray *coachMarks = @[
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,129.0f},{530.0f,133.0f}}],
-            @"caption": @"You can change the background color of each team's scorebox and we've added new color schemes.\n\nYou can also alternate between Regular, Dark, and Colorful themes."
+            @"caption": NSLocalizedString(@"Change the background color of each team's scorebox to match their uniforms.\nUse a custom color to get the exact match!.\n\nAlternate between Regular, Dark, and Colorful app themes.", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,284.0f},{530.0f,119.0f}}],
-            @"caption": @"You decide when to send text messages and you can optionally include your player's name"
+            @"caption": NSLocalizedString(@"You decide when to send text messages and even include your player's name to personalize the message or post.", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,390.0f},{530.0f,54.0f}}],
-            @"caption": @"Choose text message recipients from your contact list or just enter their number directly."
+            @"caption": NSLocalizedString(@"Choose text message recipients from your contact list or just enter their number directly.", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,593.0f},{530.0f,111.0f}}],
-            @"caption": @"Select Actions from a list of common terms and choose the right one for your player's position."
+            @"caption": NSLocalizedString(@"Select Actions from a list of common terms and choose the right one for your player's position.", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{512.0f,170.0f},{0.0f,0.0f}}],
-            @"caption": @"There is help and information by tapping ⓘ in Settings.\n\nPlease leave feedback in the App Store, it helps others find the app!\n(tap to dismiss)"
+            @"caption": NSLocalizedString(@"There is help and information by tapping ⓘ in Settings.\n\nPlease leave feedback in the App Store, it helps others find the app!\n(tap to dismiss)", @"Shown during the app tutorial. The i in the circle represents the 'info' button on Settings screen")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{510.0f,170.0f},{0.0f,0.0f}}],

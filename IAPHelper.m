@@ -223,7 +223,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
         [[alert initWithTitle:alertTitle
                 message:alertMsg
                 delegate:nil
-                cancelButtonTitle:@"Ok"
+                cancelButtonTitle:NSLocalizedString(@"Ok", nil)
                 otherButtonTitles:nil] show];
     }
     
@@ -290,7 +290,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle
                                                             message:alertMsg
                                                            delegate:nil
-                                                  cancelButtonTitle:@"Ok"
+                                                  cancelButtonTitle:NSLocalizedString(@"Ok", nil)
                                                   otherButtonTitles:nil];
             [alert show];
         }
@@ -326,7 +326,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle
                                                         message:alertMsg
                                                        delegate:nil
-                                              cancelButtonTitle:@"Ok"
+                                              cancelButtonTitle:NSLocalizedString(@"Ok", nil)
                                               otherButtonTitles:nil];
         [alert show];
     }

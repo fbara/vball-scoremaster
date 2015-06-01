@@ -40,27 +40,27 @@
     NSArray *coachMarks = @[
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{512.0f,170.0f},{0.0f,0.0f}}],
-        @"caption": @"Here's a quick tour of the exciting new features of VBall ScoreMaster for the iPad."
+        @"caption": NSLocalizedString(@"Please take a minute to review the features of VBall ScoreMaster for the iPad.", @"Shown during the app tutorial")
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{73.0f,129.0f},{861.0f,60.0f}}],
-        @"caption": @"Customize the screen by adding the team names, and..."
+        @"caption": NSLocalizedString(@"Customize the screen by adding the team names.", @"Shown during the app tutorial")
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{82.0f,185.0f},{844.0f,314.0f}}],
-        @"caption": @"...tap and swipe the scores to add and subtract points.\nFlick a scorebox with your finger to change sides when the team change!"
+        @"caption": NSLocalizedString(@"Tap or swipe the scores to add and subtract points.\nFlick a scorebox with your finger to change sides when the teams change!", @"Shown during the app tutorial")
         },
     @{
-        @"rect": [NSValue valueWithCGRect:(CGRect){{93.0f,487.0f},{844.0f,127.0f}}],
-        @"caption": @"Track your player's actions, using a variety of different measurements, with just a tap."
+        @"rect": [NSValue valueWithCGRect:(CGRect){{88.0f,537.0f},{838.0f,72.0f}}],
+        @"caption": NSLocalizedString(@"Track your player's key actions using a variety of common measurements.", @"Shown during the app tutorial")
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{512.0f,170.0f},{0.0f,0.0f}}],
-        @"caption": @"Want to log the final scores for each game in a match?"
+        @"caption": NSLocalizedString(@"Want to log the final scores for each game in a match?", @"Shown during the app tutorial")
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{10.0f,344.0f},{79.0f,171.0f}}],
-        @"caption": @"VBall ScoreMaster tracks each team's final score\nand places it next to the team"
+        @"caption": @"VBall ScoreMaster tracks each team's final score\nand places it next to the team scorebox."
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{334.0f,198.0f},{339.0f,297.0f}}],
@@ -68,7 +68,7 @@
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{88.0f,488.0f},{838.0f,69.0f}}],
-        @"caption": @"Choose the player Actions YOU want to track."
+        @"caption": @"Select the player Actions YOU want to track.\n\nMake changes in the Settings screen."
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{391.0f,578.0f},{243.0f,96.0f}}],

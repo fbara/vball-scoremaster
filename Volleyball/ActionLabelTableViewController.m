@@ -160,18 +160,33 @@
     }
 }
 
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+	//For iPad only; there's no footer displayed on the iPhone
+	UILabel *sectionFooter = [[UILabel alloc] initWithFrame:CGRectNull];
+	sectionFooter.backgroundColor = [UIColor clearColor];
+	sectionFooter.font = [UIFont systemFontOfSize:12];
+	sectionFooter.textColor = [UIColor darkGrayColor];
+	if (IS_IPAD()) {
+		sectionFooter.text = NSLocalizedString(@"   Tap anywhere off this popup to dismiss", @"Tap the screen anywhere away from this popup to dismiss the window");
+	} else {
+		sectionFooter.text = @"";
+	}	
+	return sectionFooter;
+}
+
 - (UIView*)tableView:(UITableView*)tableView
     viewForHeaderInSection:(NSInteger)section
 {
     // Set the header of the table with instructions to save changes
     UILabel* sectionHeader = [[UILabel alloc] initWithFrame:CGRectNull];
     sectionHeader.backgroundColor = [UIColor clearColor];
-    sectionHeader.font = [UIFont systemFontOfSize:14];
+	sectionHeader.font = [UIFont systemFontOfSize:14];
     sectionHeader.textColor = [UIColor darkGrayColor];
     if (IS_IPAD()) {
-        sectionHeader.text = @"   SELECT AN ACTION NAME";
+		sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME", @"Tap on the Action Name for your player");
     } else {
-        sectionHeader.text = @"   SELECT AN ACTION NAME THEN TAP 'SAVE'";
+        sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME THEN TAP 'SAVE'", @"Tap on the Action Name for your player, then tap Save");
     }
     return sectionHeader;
 }
