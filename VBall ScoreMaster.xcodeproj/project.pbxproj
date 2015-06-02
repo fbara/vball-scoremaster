@@ -70,7 +70,6 @@
 		AD5297B71A01133C0023AC71 /* ABXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297971A01133C0023AC71 /* ABXTextView.m */; };
 		AD5297B81A01133C0023AC71 /* ABXVersionNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297991A01133C0023AC71 /* ABXVersionNotificationView.m */; };
 		AD5297B91A01133C0023AC71 /* ABXVersionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52979B1A01133C0023AC71 /* ABXVersionTableViewCell.m */; };
-		AD5297BD1A0114B40023AC71 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297BC1A0114B40023AC71 /* MBProgressHUD.m */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
 		AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */; };
@@ -87,6 +86,7 @@
 		AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */; };
 		AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9A21A8199BDB10009CEE31 /* Accounts.framework */; };
 		AD9B665C199D2754002C5145 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD9B665B199D2754002C5145 /* Settings.bundle */; };
+		ADAA8F131B1D179000A3C487 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAA8F121B1D179000A3C487 /* MBProgressHUD.m */; };
 		ADB5A13219D30372009B1550 /* NRTouchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB5A12C19D30372009B1550 /* NRTouchImage.png */; };
 		ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB5A12D19D30372009B1550 /* NRTouchImage@2x.png */; };
 		ADB5A13419D30372009B1550 /* NRWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A12F19D30372009B1550 /* NRWindow.m */; };
@@ -225,8 +225,6 @@
 		AD5297991A01133C0023AC71 /* ABXVersionNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXVersionNotificationView.m; sourceTree = "<group>"; };
 		AD52979A1A01133C0023AC71 /* ABXVersionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXVersionTableViewCell.h; sourceTree = "<group>"; };
 		AD52979B1A01133C0023AC71 /* ABXVersionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXVersionTableViewCell.m; sourceTree = "<group>"; };
-		AD5297BB1A0114B40023AC71 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		AD5297BC1A0114B40023AC71 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -252,6 +250,8 @@
 		AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolleyBallIAPHelper.m; sourceTree = "<group>"; };
 		AD9A21A8199BDB10009CEE31 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		AD9B665B199D2754002C5145 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		ADAA8F111B1D179000A3C487 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		ADAA8F121B1D179000A3C487 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		ADB5A12C19D30372009B1550 /* NRTouchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NRTouchImage.png; sourceTree = "<group>"; };
 		ADB5A12D19D30372009B1550 /* NRTouchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NRTouchImage@2x.png"; sourceTree = "<group>"; };
 		ADB5A12E19D30372009B1550 /* NRWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRWindow.h; sourceTree = "<group>"; };
@@ -567,8 +567,8 @@
 		AD5297BA1A0114790023AC71 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				AD5297BB1A0114B40023AC71 /* MBProgressHUD.h */,
-				AD5297BC1A0114B40023AC71 /* MBProgressHUD.m */,
+				ADAA8F111B1D179000A3C487 /* MBProgressHUD.h */,
+				ADAA8F121B1D179000A3C487 /* MBProgressHUD.m */,
 			);
 			name = MBProgressHUD;
 			sourceTree = "<group>";
@@ -819,7 +819,6 @@
 				AD5297B91A01133C0023AC71 /* ABXVersionTableViewCell.m in Sources */,
 				ADB5A13419D30372009B1550 /* NRWindow.m in Sources */,
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
-				AD5297BD1A0114B40023AC71 /* MBProgressHUD.m in Sources */,
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
 				AD8B6BCE1B15E9B70048A73C /* UIViewController+Chameleon.m in Sources */,
 				AD0D05991A71977100B5FC00 /* FCColorSwatchView.m in Sources */,
@@ -850,6 +849,7 @@
 				AD5297B71A01133C0023AC71 /* ABXTextView.m in Sources */,
 				AD5297AF1A01133C0023AC71 /* ABXIssue.m in Sources */,
 				AD5297B01A01133C0023AC71 /* ABXModel.m in Sources */,
+				ADAA8F131B1D179000A3C487 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
