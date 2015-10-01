@@ -58,7 +58,7 @@
     UIImage* image = [UIImage imageNamed:@"Info44.png"];
     UIBarButtonItem* infoButton =
         [[UIBarButtonItem alloc] initWithImage:image
-                                         style:UIBarButtonItemStyleBordered
+                                         style:UIBarButtonItemStylePlain
                                         target:self
                                         action:@selector(showSupportView)];
     UIBarButtonItem* fixedSpace = [[UIBarButtonItem alloc]
@@ -605,23 +605,26 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*!
- *  New ABPeoplePickerNavigationController for iOS 8 only.
- *  All this will do here is call the iOS7 version.  Keep both around
- *  for compantibility.
- *
- *  @param person The phone number of the person selected from Contacts
- */
+
 - (void)peoplePickerNavigationController:
             (ABPeoplePickerNavigationController*)peoplePicker
                          didSelectPerson:(ABRecordRef)person
                                 property:(ABPropertyID)property
                               identifier:(ABMultiValueIdentifier)identifier
 {
-    [self peoplePickerNavigationController:peoplePicker
-        shouldContinueAfterSelectingPerson:person
-                                  property:property
-                                identifier:identifier];
+	
+	if (property == kABPersonPhoneProperty) {
+		ABMultiValueRef numbers = ABRecordCopyValue(person, property);
+		NSString* targetNumber = (__bridge NSString*)ABMultiValueCopyValueAtIndex(
+																				  numbers, ABMultiValueGetIndexForIdentifier(numbers, identifier));
+		
+		// Send the 'person' info to displayPerson to add the phone number to the
+		// text field
+		[self displayPerson:person targetNumber:targetNumber];
+	}
+	
+	[self dismissViewControllerAnimated:YES completion:nil];
+	
 }
 
 - (void)displayPerson:(ABRecordRef)person
@@ -652,27 +655,29 @@
     CFRelease(phoneNumbers);
 }
 
-// Called from iOS 8
-- (BOOL)peoplePickerNavigationController:
-            (ABPeoplePickerNavigationController*)peoplePicker
-      shouldContinueAfterSelectingPerson:(ABRecordRef)person
-                                property:(ABPropertyID)property
-                              identifier:(ABMultiValueIdentifier)identifier
-{
-    if (property == kABPersonPhoneProperty) {
-        ABMultiValueRef numbers = ABRecordCopyValue(person, property);
-        NSString* targetNumber = (__bridge NSString*)ABMultiValueCopyValueAtIndex(
-            numbers, ABMultiValueGetIndexForIdentifier(numbers, identifier));
 
-        // Send the 'person' info to displayPerson to add the phone number to the
-        // text field
-        [self displayPerson:person targetNumber:targetNumber];
-    }
 
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-    return NO;
-}
+// Old iOS 7 code deprecated in iOS 8.4.  Contents deleted.
+//- (BOOL)peoplePickerNavigationController:
+//            (ABPeoplePickerNavigationController*)peoplePicker
+//      shouldContinueAfterSelectingPerson:(ABRecordRef)person
+//                                property:(ABPropertyID)property
+//                              identifier:(ABMultiValueIdentifier)identifier
+//{
+//    if (property == kABPersonPhoneProperty) {
+//        ABMultiValueRef numbers = ABRecordCopyValue(person, property);
+//        NSString* targetNumber = (__bridge NSString*)ABMultiValueCopyValueAtIndex(
+//            numbers, ABMultiValueGetIndexForIdentifier(numbers, identifier));
+//
+//        // Send the 'person' info to displayPerson to add the phone number to the
+//        // text field
+//        [self displayPerson:person targetNumber:targetNumber];
+//    }
+//
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//
+//    return NO;
+//}
 
 // Does not allow users to perform default actions such as dialing a phone
 // number, when they select a contact property.

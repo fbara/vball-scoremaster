@@ -91,6 +91,7 @@
 		ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB5A12D19D30372009B1550 /* NRTouchImage@2x.png */; };
 		ADB5A13419D30372009B1550 /* NRWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A12F19D30372009B1550 /* NRWindow.m */; };
 		ADB5A13519D30372009B1550 /* UITouch+NRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A13119D30372009B1550 /* UITouch+NRTouch.m */; };
+		ADC9695A1BBD5F7500DF6390 /* SWRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC969591BBD5F7500DF6390 /* SWRevealTableViewCell.m */; };
 		ADCFF8B01AB5D6D000AB9CB0 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
@@ -258,6 +259,8 @@
 		ADB5A12F19D30372009B1550 /* NRWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRWindow.m; sourceTree = "<group>"; };
 		ADB5A13019D30372009B1550 /* UITouch+NRTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITouch+NRTouch.h"; sourceTree = "<group>"; };
 		ADB5A13119D30372009B1550 /* UITouch+NRTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch+NRTouch.m"; sourceTree = "<group>"; };
+		ADC969581BBD5F7500DF6390 /* SWRevealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealTableViewCell.h; sourceTree = "<group>"; };
+		ADC969591BBD5F7500DF6390 /* SWRevealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealTableViewCell.m; sourceTree = "<group>"; };
 		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADCC139A1981B588001DC9B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -599,6 +602,15 @@
 			name = NRTouchPoints;
 			sourceTree = "<group>";
 		};
+		ADC969571BBD5F3B00DF6390 /* SWReveal */ = {
+			isa = PBXGroup;
+			children = (
+				ADC969581BBD5F7500DF6390 /* SWRevealTableViewCell.h */,
+				ADC969591BBD5F7500DF6390 /* SWRevealTableViewCell.m */,
+			);
+			name = SWReveal;
+			sourceTree = "<group>";
+		};
 		ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,6 +641,7 @@
 		ADFB427519A4C39200ADBE9F /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				ADC969571BBD5F3B00DF6390 /* SWReveal */,
 				AD0D059C1A727C8800B5FC00 /* Chameleon */,
 				AD0D058C1A7195CC00B5FC00 /* FCColorPicker */,
 				AD5297BA1A0114790023AC71 /* MBProgressHUD */,
@@ -693,7 +706,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = VolleyBall;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "BaraLabs, LLC";
 				TargetAttributes = {
 					92AA429E1916C2800037D405 = {
@@ -848,6 +861,7 @@
 				AD5297B51A01133C0023AC71 /* ABXNotificationView.m in Sources */,
 				AD5297B71A01133C0023AC71 /* ABXTextView.m in Sources */,
 				AD5297AF1A01133C0023AC71 /* ABXIssue.m in Sources */,
+				ADC9695A1BBD5F7500DF6390 /* SWRevealTableViewCell.m in Sources */,
 				AD5297B01A01133C0023AC71 /* ABXModel.m in Sources */,
 				ADAA8F131B1D179000A3C487 /* MBProgressHUD.m in Sources */,
 			);
@@ -928,6 +942,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Frank Bara (CF655ESNGC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Frank Bara (CF655ESNGC)";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
@@ -1003,13 +1018,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BaraLabs.VBallScoreMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1034,13 +1050,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BaraLabs.VBallScoreMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1067,6 +1084,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "VolleyballTests/VolleyballTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BaraTech.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -1088,6 +1106,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "VolleyballTests/VolleyballTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BaraTech.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -1147,13 +1166,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BaraLabs.VBallScoreMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1176,6 +1196,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "VolleyballTests/VolleyballTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BaraTech.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
