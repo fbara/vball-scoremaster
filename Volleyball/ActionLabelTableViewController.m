@@ -7,12 +7,35 @@
 //
 
 #import "ActionLabelTableViewController.h"
-#import "GAIDictionaryBuilder.h"
+#import <GoogleAnalytics/GAIDictionaryBuilder.h>
+#import <GoogleAnalytics/GAI.h>
+#import <GoogleAnalytics/GAIFields.h>
+//#import "GAIDictionaryBuilder.h"
+#import "SWRevealTableViewCell.h"
+//#import <ChameleonFramework/Chameleon.h>
+#import "Chameleon.h"
 
-@implementation ActionLabelTableViewController {
+@interface ActionLabelTableViewController () <SWRevealTableViewCellDelegate, SWRevealTableViewCellDataSource>
+{
+	NSIndexPath *_revealingCellIndexPath;
+	NSInteger _sectionTitleRowCount;
+}
+
+#define IS_IPAD() [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
+
+@end
+
+@implementation ActionLabelTableViewController  {
     BOOL firstTimeShown;
 	NSArray *allActionNames;
 }
+
+typedef enum
+{
+	SectionTitle = 0,
+	SectionImage,
+	SectionsCount,
+} Sections;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -142,18 +165,32 @@
     return count;
 }
 
-- (UITableViewCell*)tableView:(UITableView*)tableView
-        cellForRowAtIndexPath:(NSIndexPath*)indexPath
+- (UITableViewCell *)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    static NSString* cellIdentifier = @"Identifier";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:cellIdentifier];
-    }
-    cell.textLabel.text = [self.actionNames objectAtIndex:indexPath.row];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    static NSString *cellIdentifier = @"Identifier";
+	SWRevealTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	cell.delegate = self;
+	cell.dataSource = self;
+	
+	if (indexPath.section == SectionTitle) {
+		cell.cellRevealMode = SWCellRevealModeReversedWithAction;
+		[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+	}
+	
+	if (indexPath.section == SectionImage) {
+		cell.cellRevealMode = SWCellRevealModeNormal;
+		[cell setAccessoryType:UITableViewCellAccessoryNone];
+	}
+	
+	
+//    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+//                                      reuseIdentifier:cellIdentifier];
+//    }
+//    cell.textLabel.text = [self.actionNames objectAtIndex:indexPath.row];
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//
     return cell;
 }
 
@@ -243,6 +280,60 @@
     return 40;
 }
 
+#pragma mark - SWReveal Row Button Actions
+-(NSArray *)rightButtonItemsInRevealTableViewCell:(SWRevealTableViewCell *)revealTableViewCell {
+	
+	NSArray *items = nil;
+	NSIndexPath *indexPath = [self.tableView indexPathForCell:revealTableViewCell];
+	NSInteger section = indexPath.section;
+	
+	if (section == SectionTitle) {
+		SWCellButtonItem *itemDelete1 = [SWCellButtonItem itemWithTitle:NSLocalizedString(@"Delete", @"Delete ActionName")
+															   handler:^(SWCellButtonItem *itemDelete, SWRevealTableViewCell *cell) {
+																   _revealingCellIndexPath = [self.tableView indexPathForCell:cell];
+																   [self performRowDeleteAction:itemDelete];
+																   return NO;
+															   }];
+		itemDelete1.backgroundColor = [UIColor flatRedColor];
+		itemDelete1.tintColor = [UIColor flatWhiteColor];
+		itemDelete1.width = 75;
+		
+		SWCellButtonItem *itemRename2 = [SWCellButtonItem itemWithTitle:NSLocalizedString(@"Rename", @"Rename")
+																handler:^(SWCellButtonItem *itemRename, SWRevealTableViewCell *cell){
+																	_revealingCellIndexPath = [self.tableView indexPathForCell:cell];
+																	[self performRowRenameAction:itemRename];
+																	return NO;
+																}];
+		itemRename2.backgroundColor = [UIColor blueColor];
+		itemRename2.tintColor = [UIColor flatWhiteColor];
+		itemRename2.width = 50;
+		
+		items = @[itemDelete1, itemRename2];
+	}
+	return items;
+}
+
+#pragma mark - Row Actions
+
+/*!
+ *  @author Me, 10-01-15 17:10
+ *
+ *  Deletes the current row
+ */
+-(void)performRowDeleteAction:(SWCellButtonItem *)item {
+	_sectionTitleRowCount -= 1;
+	[self.tableView deleteRowsAtIndexPaths:@[_revealingCellIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+/*!
+ *  @author Me, 10-01-15 17:10
+ *
+ *  Renames the current row's Action Name
+ */
+-(void)performRowRenameAction:(SWCellButtonItem *)item {
+//TODO: Add rename code
+	NSLog(NSLocalizedString(@"\nRename tapped", @"\nRename tapped"));
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WSCoachMarksView.h"
+#import <WSCoachMarksView/WSCoachMarksView.h>
+//#import "WSCoachMarksView.h"
 
 @interface TutorialViewController : UIViewController <WSCoachMarksViewDelegate>
 

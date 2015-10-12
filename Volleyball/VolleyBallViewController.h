@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
-#import "GAITrackedViewController.h"
-#import "ABXPromptView.h"
+#import <GoogleAnalytics/GAITrackedViewController.h>
+//#import "GAITrackedViewController.h"
+#import <AppbotX/ABXPromptView.h>
+//#import "ABXPromptView.h"
+#import <AppbotX/ABXFeedbackViewController.h>
+#import <AppbotX/ABXAppStore.h>
 #import <Social/Social.h>
 
 @interface VolleyBallViewController
@@ -66,7 +70,7 @@ NSArray* pastVisitorScoreCollection;
 - (IBAction)leftActionPressed:(UIButton*)sender;
 - (IBAction)newMatch:(UIBarButtonItem*)sender;
 
-  - (UIImage *)getScreenImage;
+- (UIImage *)getScreenImage;
 
-  - (IBAction)sendInstantMessage:(UIButton*)sender;
+- (IBAction)sendInstantMessage:(UIButton*)sender;
 @end

@@ -7,9 +7,13 @@
 //
 
 #import "VolleyBallAppDelegate.h"
-#import "GBVersionTracking.h"
-#import "GAI.h"
+
+#import <GBVersionTracking/GBVersionTracking.h>
+#import <GoogleAnalytics/GAI.h>
 #import "VolleyBallIAPHelper.h"
+#import <AppbotX/ABX.h>
+#import <AppbotX/ABXApiClient.h>
+
 //#import "NRWindow.h"
 
 @implementation VolleyBallAppDelegate
@@ -27,12 +31,13 @@
     [GBVersionTracking track];
     // Needed to register the app as a transaction observer from Apple for IAP's
     //[VolleyBallIAPHelper sharedInstance];
-    
-    [[UINavigationBar appearance] setBarTintColor:FlatBlue];
-    [[UINavigationBar appearance] setTintColor:ContrastColorOf(FlatBlue, TRUE)];
-    [[UINavigationBar appearance]
-        setTitleTextAttributes:
-            @{ NSForegroundColorAttributeName : ContrastColorOf(FlatBlue, TRUE) }];
+//TODO: Temp colors to be changed
+	UIColor *tempFlatBlue = [UIColor colorWithHue:224/360.0f saturation:50/100.0f brightness:63/100.0f alpha:1.0];
+    [[UINavigationBar appearance] setBarTintColor:tempFlatBlue];
+//    [[UINavigationBar appearance] setTintColor:ContrastColor(tempFlatBlue, TRUE)];
+//    [[UINavigationBar appearance]
+//        setTitleTextAttributes:
+//            @{ NSForegroundColorAttributeName : ContrastColor(tempFlatBlue, TRUE)}];
 
     // Initialize AppbotX info
     [[ABXApiClient instance]
@@ -43,8 +48,8 @@
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
 //TODO:
-//    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
+    //id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
 	tracker.allowIDFACollection = NO;
 	
 

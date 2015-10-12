@@ -8,8 +8,15 @@
 
 #import "SettingsTableViewController.h"
 #import "ActionLabelTableViewController.h"
-#import "GAIDictionaryBuilder.h"
+#import <GoogleAnalytics/GAIDictionaryBuilder.h>
+#import <GoogleAnalytics/GAIFields.h>
+#import <GoogleAnalytics/GAI.h>
+//#import "GAIDictionaryBuilder.h"
 #import "VolleyBallViewController.h"
+//#import <ChameleonFramework/Chameleon.h>
+#import "Chameleon.h"
+#import <AppbotX/ABXFAQsViewController.h>
+
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"	
@@ -19,6 +26,7 @@
     BOOL isPurchased;
 	NSString *teamChange;
 }
+#define IS_IPAD() [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
 
 @property int actionRow;
 @property NSString* existingRightActionName;

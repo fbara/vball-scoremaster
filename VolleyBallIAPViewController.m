@@ -7,8 +7,12 @@
 //
 
 #import "VolleyBallIAPViewController.h"
-#import "GAIDictionaryBuilder.h"
+#import <GoogleAnalytics/GAI.h>
+#import <GoogleAnalytics/GAIDictionaryBuilder.h>
+#import <GoogleAnalytics/GAIFields.h>
+//#import "GAIDictionaryBuilder.h"
 #import "MBProgressHUD.h"
+#import "Chameleon.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
@@ -19,6 +23,7 @@
     NSNumberFormatter* _priceFormatter;
     BOOL isPurchased;
 }
+#define IS_IPAD() [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
 
 @property (strong, nonatomic) UIBarButtonItem* restorePurchases;
 @property (strong, nonatomic) UIBarButtonItem* saveButton;

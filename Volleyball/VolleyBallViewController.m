@@ -9,8 +9,13 @@
 #import "VolleyBallViewController.h"
 #import "DefaultScoreViewController.h"
 #import "SettingsTableViewController.h"
-#import "GBVersionTracking.h"
-#import "GAIDictionaryBuilder.h"
+#import <GoogleAnalytics/GAIFields.h>
+#import <GoogleAnalytics/GAI.h>
+#import <GBVersionTracking/GBVersionTracking.h>
+#import <GoogleAnalytics/GAIDictionaryBuilder.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <AppbotX/ABXAppStore.h>
+#import "Chameleon.h"
 @import Social;
 @import Accounts;
 @import StoreKit;
@@ -37,6 +42,7 @@ NSString *socialMessage;
     // Instance variable to store all products returned from iTunes Connect
     NSArray* _products;
 }
+#define IS_IPAD() [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
 
 @property (weak, atomic) UIPageViewController* homePageViewController;
 @property (weak, atomic) UIPageViewController* visitorPageViewController;
@@ -250,7 +256,7 @@ NSString *socialMessage;
             score.textColor = FlatPlum;
         } else {
             // Regular background
-            score.textColor = FlatBlackDark;
+            score.textColor = [UIColor blackColor];
         }
     }
 }
@@ -321,9 +327,13 @@ NSString *socialMessage;
 
     if ([color isEqualToString:@"Complementary"] ||
         [color isEqualToString:@"Dark"]) {
-        self.homeTeamName.backgroundColor = ComplementaryFlatColorOf(colorHome);
+//TODO: Update Chameleon
+		//self.homeTeamName.backgroundColor = ComplementaryFlatColor(colorHome);
+		self.homeTeamName.backgroundColor = [self reverseColorOf:colorHome];
         // Set the team name text color to a contrasting color
-        self.homeTeamName.textColor = ContrastColorOf(self.homeTeamName.backgroundColor, TRUE);
+//TODO: Update Chameleon
+		//self.homeTeamName.textColor = ContrastColor(self.homeTeamName.backgroundColor, TRUE);
+        self.homeTeamName.textColor = [self reverseColorOf:self.homeTeamName.backgroundColor];
     } else {
         self.homeTeamName.backgroundColor = [UIColor whiteColor];
         self.homeTeamName.textColor = [UIColor blackColor];
@@ -348,8 +358,12 @@ NSString *socialMessage;
 
     if ([color isEqualToString:@"Complementary"] ||
         [color isEqualToString:@"Dark"]) {
-        self.visitingTeamName.backgroundColor = ComplementaryFlatColorOf(colorVisitor);
-        self.visitingTeamName.textColor = ContrastColorOf(self.visitingTeamName.backgroundColor, TRUE);
+//TODO: Update Chameleon
+//        self.visitingTeamName.backgroundColor = ComplementaryFlatColor(colorVisitor);
+//        self.visitingTeamName.textColor = ContrastColor(self.visitingTeamName.backgroundColor, TRUE);
+		self.visitingTeamName.backgroundColor = [self reverseColorOf:colorVisitor];
+		self.visitingTeamName.textColor = [self reverseColorOf:self.visitingTeamName.backgroundColor];
+
 
     } else {
         self.visitingTeamName.backgroundColor = [UIColor whiteColor];
@@ -371,12 +385,12 @@ NSString *socialMessage;
         colorScheme = @"Colorful";
         self.view.backgroundColor = FlatSand;
         self.navigationController.navigationBar.barTintColor = FlatSkyBlue;
-        self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatSkyBlue, TRUE);
+        self.navigationController.navigationBar.tintColor = ContrastColor(FlatSkyBlue, TRUE);
         self.navigationController.navigationBar.titleTextAttributes =
-            @{ NSForegroundColorAttributeName : ContrastColorOf(FlatSkyBlue, TRUE) };
+            @{ NSForegroundColorAttributeName : ContrastColor(FlatSkyBlue, TRUE) };
         self.rightActionNameNumber.textColor = FlatMintDark;
         self.leftActionNameNumber.textColor = FlatMintDark;
-        self.gameNumber.textColor = ContrastColorOf(self.view.backgroundColor, TRUE);
+        self.gameNumber.textColor = ContrastColor(self.view.backgroundColor, TRUE);
         for (UILabel* lable in self.pastScoreCollection) {
             // First, check if any of the past score fonts are red
             // If so, put them back to red after the recolor
@@ -393,9 +407,9 @@ NSString *socialMessage;
         colorScheme = @"Dark";
         self.view.backgroundColor = FlatBlackDark;
         self.navigationController.navigationBar.barTintColor = FlatBlackDark;
-        self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatBlack, TRUE);
+        self.navigationController.navigationBar.tintColor = ContrastColor(FlatBlack, TRUE);
         self.navigationController.navigationBar.titleTextAttributes = @{
-            NSForegroundColorAttributeName : ContrastColorOf(FlatBlackDark, TRUE)
+            NSForegroundColorAttributeName : ContrastColor(FlatBlackDark, TRUE)
         };
         self.rightActionNameNumber.textColor = FlatGreen;
         self.leftActionNameNumber.textColor = FlatGreen;
@@ -411,11 +425,11 @@ NSString *socialMessage;
 
     } else {
         colorScheme = @"Regular";
-        self.view.backgroundColor = FlatWhite;
+		self.navigationController.navigationBar.tintColor = ContrastColor(FlatNavyBlue, TRUE);
+        self.view.backgroundColor = [UIColor flatWhiteColor];
         self.navigationController.navigationBar.barTintColor = FlatNavyBlue;
-        self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatNavyBlue, TRUE);
         self.navigationController.navigationBar.titleTextAttributes = @{
-            NSForegroundColorAttributeName : ContrastColorOf(FlatNavyBlue, TRUE)
+            NSForegroundColorAttributeName : ContrastColor(FlatNavyBlue, TRUE)
         };
         self.rightActionNameNumber.textColor = FlatBlackDark;
         self.leftActionNameNumber.textColor = FlatBlackDark;
@@ -1428,6 +1442,48 @@ NSString *socialMessage;
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
 }
+
+#pragma mark - Temp Color Conversion
+
+-(UIColor *)reverseColorOf :(UIColor *)oldColor
+{
+	CGColorRef oldCGColor = oldColor.CGColor;
+	
+	int numberOfComponents = CGColorGetNumberOfComponents(oldCGColor);
+	// can not invert - the only component is the alpha
+	if (numberOfComponents == 1) {
+		return [UIColor colorWithCGColor:oldCGColor];
+	}
+	
+	const CGFloat *oldComponentColors = CGColorGetComponents(oldCGColor);
+	CGFloat newComponentColors[numberOfComponents];
+	
+	int i = numberOfComponents - 1;
+	newComponentColors[i] = oldComponentColors[i]; // alpha
+	while (--i >= 0) {
+		newComponentColors[i] = 1 - oldComponentColors[i];
+	}
+	
+	CGColorRef newCGColor = CGColorCreate(CGColorGetColorSpace(oldCGColor), newComponentColors);
+	UIColor *newColor = [UIColor colorWithCGColor:newCGColor];
+	CGColorRelease(newCGColor);
+	
+	//=====For the GRAY colors 'Middle level colors'
+	CGFloat white = 0;
+	[oldColor getWhite:&white alpha:nil];
+	
+	if(white>0.3 && white < 0.67)
+	{
+		if(white >= 0.5)
+			newColor = [UIColor darkGrayColor];
+		else if (white < 0.5)
+			newColor = [UIColor blackColor];
+		
+	}
+	return newColor;
+}
+
+#pragma mark - Memory Mgmt
 
 - (void)didReceiveMemoryWarning
 {

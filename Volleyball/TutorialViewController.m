@@ -88,7 +88,7 @@
 
 }
 
-- (void)coachMarksView:(WSCoachMarksView *)coachMarksView didNavigateToIndex:(NSUInteger)index
+- (void)coachMarksView:(WSCoachMarksView *)coachMarksView didNavigateToIndex:(NSInteger)index
 {
     //Check the index of the last shown coach mark.  It will be equal to the next mark
     //to be shown.  If it is >, we're done so exit from the view controller

@@ -18,6 +18,7 @@
 	CGFloat currentSaturation;
     BOOL viewIsLoaded;
 }
+#define IS_IPAD() [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
 
 @property (readwrite, nonatomic, strong) IBOutlet FCBrightDarkGradView *gradientView;
 @property (readwrite, nonatomic, strong) IBOutlet UIImageView *hueSatImage;

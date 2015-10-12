@@ -7,6 +7,15 @@
 //
 
 #import "SupportTableViewController.h"
+//#import <ChameleonFramework/Chameleon.h>
+#import "Chameleon.h"
+#import <AppbotX/ABXNotification.h>
+#import <AppbotX/ABXFAQsViewController.h>
+#import <AppbotX/ABXFeedbackViewController.h>
+#import <AppbotX/ABXVersionsViewController.h>
+#import <AppbotX/ABXNotificationsViewController.h>
+
+
 
 static NSString* const kiTunesID = @"886670213";
 
@@ -42,29 +51,59 @@ static NSString* const kiTunesID = @"886670213";
     //Show alert to user the first time they enter the Support screen and there's
     //an active alert.
     [ABXNotification fetchActive:^(NSArray *notifications, ABXResponseCode responseCode, NSInteger httpCode, NSError *error) {
-        if (responseCode == ABXResponseCodeSuccess) {
-            if (notifications.count > 0) {
-                ABXNotification *notification = [notifications firstObject];
-                
-                if (![notification hasSeen]) {
-                    //Show the view
-                    [ABXNotificationView show:notification.message
-                                   actionText:notification.actionLabel
-                              backgroundColor:FlatBlueDark
-                                    textColor:[UIColor whiteColor]
-                                  buttonColor:[UIColor redColor]
-                                 inController:self
-                                  actionBlock:^(ABXNotificationView *view) {
-                                      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:notification.actionUrl]];
-                                  } dismissBlock:^(ABXNotificationView *view) {
-                                      //Mark alert as being seen so it's not shown again
-                                      [notification markAsSeen];
-                                      }];
-                    return;
-                }
-            }
-        }
-        
+		switch (responseCode) {
+			case ABXResponseCodeSuccess:
+				if (notifications.count > 0) {
+					ABXNotification *notification = [notifications firstObject];
+
+					if (![notification hasSeen]) {
+						//Show the view
+						[ABXNotificationView show:notification.message
+									   actionText:notification.actionLabel
+								  backgroundColor:FlatBlueDark
+										textColor:[UIColor whiteColor]
+									  buttonColor:[UIColor redColor]
+									 inController:self
+									  actionBlock:^(ABXNotificationView *view) {
+										  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:notification.actionUrl]];
+									  } dismissBlock:^(ABXNotificationView *view) {
+										  //Mark alert as being seen so it's not shown again
+										  [notification markAsSeen];
+										  }];
+						return;
+					}
+				}
+
+					break;
+				
+			default:
+				//Error, fall thru
+					break;
+		}
+		
+//        if (responseCode == ABXResponseCodeSuccess) {
+//            if (notifications.count > 0) {
+//                ABXNotification *notification = [notifications firstObject];
+//                
+//                if (![notification hasSeen]) {
+//                    //Show the view
+//                    [ABXNotificationView show:notification.message
+//                                   actionText:notification.actionLabel
+//                              backgroundColor:FlatBlueDark
+//                                    textColor:[UIColor whiteColor]
+//                                  buttonColor:[UIColor redColor]
+//                                 inController:self
+//                                  actionBlock:^(ABXNotificationView *view) {
+//                                      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:notification.actionUrl]];
+//                                  } dismissBlock:^(ABXNotificationView *view) {
+//                                      //Mark alert as being seen so it's not shown again
+//                                      [notification markAsSeen];
+//                                      }];
+//                    return;
+//                }
+//            }
+//        }
+		
     }];
      
  }
