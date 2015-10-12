@@ -7,8 +7,12 @@
 //
 
 #import "VolleyBallIAPViewController.h"
-#import "GAIDictionaryBuilder.h"
-#import "MBProgressHUD.h"
+#import <GoogleAnalytics/GAIDictionaryBuilder.h>
+//#import "GAIDictionaryBuilder.h"
+//#import "MBProgressHUD.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <GoogleAnalytics/GAIFields.h>
+#import <GoogleAnalytics/GAI.h>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
@@ -214,7 +218,7 @@
                                 buyButton.frame = CGRectMake(5, 0, 210, 29);
                             }
                             [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
-                            buyButton.backgroundColor = FlatYellow;
+                            buyButton.backgroundColor = [UIColor yellowColor];
                             buyButton.layer.borderWidth = 0.25f;
                             buyButton.layer.borderColor = [[UIColor grayColor] CGColor];
                             buyButton.layer.masksToBounds = YES;

@@ -9,8 +9,12 @@
 #import "VolleyBallViewController.h"
 #import "DefaultScoreViewController.h"
 #import "SettingsTableViewController.h"
-#import "GBVersionTracking.h"
-#import "GAIDictionaryBuilder.h"
+#import <GBVersionTracking/GBVersionTracking.h>
+#import <GoogleAnalytics/GAI.h>
+#import <GoogleAnalytics/GAIFields.h>
+#import <GoogleAnalytics/GAIDictionaryBuilder.h>
+#import <ChameleonFramework/Chameleon.h>
+#import <AppbotX/ABX.h>
 @import Social;
 @import Accounts;
 @import StoreKit;
@@ -321,9 +325,9 @@ NSString *socialMessage;
 
     if ([color isEqualToString:@"Complementary"] ||
         [color isEqualToString:@"Dark"]) {
-        self.homeTeamName.backgroundColor = ComplementaryFlatColorOf(colorHome);
+        self.homeTeamName.backgroundColor = ComplementaryFlatColor(colorHome);
         // Set the team name text color to a contrasting color
-        self.homeTeamName.textColor = ContrastColorOf(self.homeTeamName.backgroundColor, TRUE);
+        self.homeTeamName.textColor = ContrastColor(self.homeTeamName.backgroundColor, TRUE);
     } else {
         self.homeTeamName.backgroundColor = [UIColor whiteColor];
         self.homeTeamName.textColor = [UIColor blackColor];
@@ -348,8 +352,8 @@ NSString *socialMessage;
 
     if ([color isEqualToString:@"Complementary"] ||
         [color isEqualToString:@"Dark"]) {
-        self.visitingTeamName.backgroundColor = ComplementaryFlatColorOf(colorVisitor);
-        self.visitingTeamName.textColor = ContrastColorOf(self.visitingTeamName.backgroundColor, TRUE);
+        self.visitingTeamName.backgroundColor = ComplementaryFlatColor(colorVisitor);
+        self.visitingTeamName.textColor = ContrastColor(self.visitingTeamName.backgroundColor, TRUE);
 
     } else {
         self.visitingTeamName.backgroundColor = [UIColor whiteColor];
@@ -371,12 +375,12 @@ NSString *socialMessage;
         colorScheme = @"Colorful";
         self.view.backgroundColor = FlatSand;
         self.navigationController.navigationBar.barTintColor = FlatSkyBlue;
-        self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatSkyBlue, TRUE);
+        self.navigationController.navigationBar.tintColor = ContrastColor(FlatSkyBlue, TRUE);
         self.navigationController.navigationBar.titleTextAttributes =
-            @{ NSForegroundColorAttributeName : ContrastColorOf(FlatSkyBlue, TRUE) };
+            @{ NSForegroundColorAttributeName : ContrastColor(FlatSkyBlue, TRUE) };
         self.rightActionNameNumber.textColor = FlatMintDark;
         self.leftActionNameNumber.textColor = FlatMintDark;
-        self.gameNumber.textColor = ContrastColorOf(self.view.backgroundColor, TRUE);
+        self.gameNumber.textColor = ContrastColor(self.view.backgroundColor, TRUE);
         for (UILabel* lable in self.pastScoreCollection) {
             // First, check if any of the past score fonts are red
             // If so, put them back to red after the recolor
@@ -393,9 +397,9 @@ NSString *socialMessage;
         colorScheme = @"Dark";
         self.view.backgroundColor = FlatBlackDark;
         self.navigationController.navigationBar.barTintColor = FlatBlackDark;
-        self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatBlack, TRUE);
+        self.navigationController.navigationBar.tintColor = ContrastColor(FlatBlack, TRUE);
         self.navigationController.navigationBar.titleTextAttributes = @{
-            NSForegroundColorAttributeName : ContrastColorOf(FlatBlackDark, TRUE)
+            NSForegroundColorAttributeName : ContrastColor(FlatBlackDark, TRUE)
         };
         self.rightActionNameNumber.textColor = FlatGreen;
         self.leftActionNameNumber.textColor = FlatGreen;
@@ -413,9 +417,9 @@ NSString *socialMessage;
         colorScheme = @"Regular";
         self.view.backgroundColor = FlatWhite;
         self.navigationController.navigationBar.barTintColor = FlatNavyBlue;
-        self.navigationController.navigationBar.tintColor = ContrastColorOf(FlatNavyBlue, TRUE);
+        self.navigationController.navigationBar.tintColor = ContrastColor(FlatNavyBlue, TRUE);
         self.navigationController.navigationBar.titleTextAttributes = @{
-            NSForegroundColorAttributeName : ContrastColorOf(FlatNavyBlue, TRUE)
+            NSForegroundColorAttributeName : ContrastColor(FlatNavyBlue, TRUE)
         };
         self.rightActionNameNumber.textColor = FlatBlackDark;
         self.leftActionNameNumber.textColor = FlatBlackDark;

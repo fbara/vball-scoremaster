@@ -8,8 +8,14 @@
 
 #import "SettingsTableViewController.h"
 #import "ActionLabelTableViewController.h"
-#import "GAIDictionaryBuilder.h"
+#import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import "VolleyBallViewController.h"
+#import <AppbotX/ABXFAQsViewController.h>
+#import <ChameleonFramework/Chameleon.h>
+#import <GoogleAnalytics/GAITracker.h>
+#import <GoogleAnalytics/GAI.h>
+#import <GoogleAnalytics/GAIFields.h>
+
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"	

@@ -7,9 +7,14 @@
 //
 
 #import "VolleyBallAppDelegate.h"
-#import "GBVersionTracking.h"
-#import "GAI.h"
+#import <GBVersionTracking/GBVersionTracking.h>
+//#import "GBVersionTracking.h"
+#import <GoogleAnalytics/GAI.h>
+//#import "GAI.h"
+#import <ChameleonFramework/Chameleon.h>
+#import <ChameleonFramework/ChameleonMacros.h>
 #import "VolleyBallIAPHelper.h"
+#import <AppbotX/ABX.h>
 //#import "NRWindow.h"
 
 @implementation VolleyBallAppDelegate
@@ -29,10 +34,10 @@
     //[VolleyBallIAPHelper sharedInstance];
     
     [[UINavigationBar appearance] setBarTintColor:FlatBlue];
-    [[UINavigationBar appearance] setTintColor:ContrastColorOf(FlatBlue, TRUE)];
+    [[UINavigationBar appearance] setTintColor:ContrastColor(FlatBlue, TRUE)];
     [[UINavigationBar appearance]
         setTitleTextAttributes:
-            @{ NSForegroundColorAttributeName : ContrastColorOf(FlatBlue, TRUE) }];
+            @{ NSForegroundColorAttributeName : ContrastColor(FlatBlue, TRUE) }];
 
     // Initialize AppbotX info
     [[ABXApiClient instance]

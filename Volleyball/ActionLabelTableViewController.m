@@ -7,7 +7,12 @@
 //
 
 #import "ActionLabelTableViewController.h"
-#import "GAIDictionaryBuilder.h"
+#import <GoogleAnalytics/GAIDictionaryBuilder.h>
+//#import "GAIDictionaryBuilder.h"
+#import <GoogleAnalytics/GAITracker.h>
+#import <GoogleAnalytics/GAIFields.h>
+#import <GoogleAnalytics/GAI.h>
+
 
 @implementation ActionLabelTableViewController {
     BOOL firstTimeShown;

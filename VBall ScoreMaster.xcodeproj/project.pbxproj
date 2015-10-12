@@ -22,6 +22,7 @@
 		92AA42CC1916C2810037D405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92AA42CA1916C2810037D405 /* InfoPlist.strings */; };
 		92AA42CE1916C2810037D405 /* VolleyballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42CD1916C2810037D405 /* VolleyballTests.m */; };
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
+		A4E3AD6529226E70123024B3 /* Pods_VBall_ScoreMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99235D913A4E424D683FDAE9 /* Pods_VBall_ScoreMaster.framework */; };
 		AD07812919D0493100E30AE9 /* VolleyBallIAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD07812819D0493100E30AE9 /* VolleyBallIAPViewController.m */; };
 		AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */; };
 		AD082E3619817E5C00A997CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD082E3419817E5C00A997CE /* Main.storyboard */; };
@@ -35,58 +36,19 @@
 		AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */; };
 		AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A419B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
-		AD2239411B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2239401B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a */; };
 		AD4B54C0199A40D500770580 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B54BF199A40D500770580 /* Social.framework */; };
 		AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968C197F390E00767D1C /* TutorialViewController.m */; };
-		AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968F197F458E00767D1C /* WSCoachMarksView.m */; };
-		AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD529692197F45DD00767D1C /* GBVersionTracking.m */; };
-		AD52979C1A01133C0023AC71 /* AppbotX.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD52975D1A01133C0023AC71 /* AppbotX.bundle */; };
-		AD52979D1A01133C0023AC71 /* ABXApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297601A01133C0023AC71 /* ABXApiClient.m */; };
-		AD52979E1A01133C0023AC71 /* ABXAppStore.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297621A01133C0023AC71 /* ABXAppStore.m */; };
-		AD52979F1A01133C0023AC71 /* ABXKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297641A01133C0023AC71 /* ABXKeychain.m */; };
-		AD5297A01A01133C0023AC71 /* NSDictionary+ABXNSNullAsNull.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297661A01133C0023AC71 /* NSDictionary+ABXNSNullAsNull.m */; };
-		AD5297A11A01133C0023AC71 /* NSDictionary+ABXQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297681A01133C0023AC71 /* NSDictionary+ABXQueryString.m */; };
-		AD5297A21A01133C0023AC71 /* NSString+ABXLocalized.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52976A1A01133C0023AC71 /* NSString+ABXLocalized.m */; };
-		AD5297A31A01133C0023AC71 /* NSString+ABXSizing.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52976C1A01133C0023AC71 /* NSString+ABXSizing.m */; };
-		AD5297A41A01133C0023AC71 /* NSString+ABXURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52976E1A01133C0023AC71 /* NSString+ABXURLEncoding.m */; };
-		AD5297A51A01133C0023AC71 /* UIViewController+ABXScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297701A01133C0023AC71 /* UIViewController+ABXScreenshot.m */; };
-		AD5297A61A01133C0023AC71 /* ABXBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297731A01133C0023AC71 /* ABXBaseListViewController.m */; };
-		AD5297A71A01133C0023AC71 /* ABXFAQsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297751A01133C0023AC71 /* ABXFAQsViewController.m */; };
-		AD5297A81A01133C0023AC71 /* ABXFAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297771A01133C0023AC71 /* ABXFAQViewController.m */; };
-		AD5297A91A01133C0023AC71 /* ABXFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297791A01133C0023AC71 /* ABXFeedbackViewController.m */; };
-		AD5297AA1A01133C0023AC71 /* ABXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52977B1A01133C0023AC71 /* ABXNavigationController.m */; };
-		AD5297AB1A01133C0023AC71 /* ABXNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52977D1A01133C0023AC71 /* ABXNotificationsViewController.m */; };
-		AD5297AC1A01133C0023AC71 /* ABXVersionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52977F1A01133C0023AC71 /* ABXVersionsViewController.m */; };
-		AD5297AD1A01133C0023AC71 /* ABXAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297821A01133C0023AC71 /* ABXAttachment.m */; };
-		AD5297AE1A01133C0023AC71 /* ABXFaq.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297841A01133C0023AC71 /* ABXFaq.m */; };
-		AD5297AF1A01133C0023AC71 /* ABXIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297861A01133C0023AC71 /* ABXIssue.m */; };
-		AD5297B01A01133C0023AC71 /* ABXModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297881A01133C0023AC71 /* ABXModel.m */; };
-		AD5297B11A01133C0023AC71 /* ABXNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52978A1A01133C0023AC71 /* ABXNotification.m */; };
-		AD5297B21A01133C0023AC71 /* ABXVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52978C1A01133C0023AC71 /* ABXVersion.m */; };
-		AD5297B31A01133C0023AC71 /* ABXFAQTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52978F1A01133C0023AC71 /* ABXFAQTableViewCell.m */; };
-		AD5297B41A01133C0023AC71 /* ABXNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297911A01133C0023AC71 /* ABXNotificationTableViewCell.m */; };
-		AD5297B51A01133C0023AC71 /* ABXNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297931A01133C0023AC71 /* ABXNotificationView.m */; };
-		AD5297B61A01133C0023AC71 /* ABXPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297951A01133C0023AC71 /* ABXPromptView.m */; };
-		AD5297B71A01133C0023AC71 /* ABXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297971A01133C0023AC71 /* ABXTextView.m */; };
-		AD5297B81A01133C0023AC71 /* ABXVersionNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5297991A01133C0023AC71 /* ABXVersionNotificationView.m */; };
-		AD5297B91A01133C0023AC71 /* ABXVersionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52979B1A01133C0023AC71 /* ABXVersionTableViewCell.m */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
 		AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */; };
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
 		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
 		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
-		AD8B6BC21B15E98A0048A73C /* ChameleonStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B6BC11B15E98A0048A73C /* ChameleonStatusBar.m */; };
-		AD8B6BCB1B15E9B70048A73C /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B6BC41B15E9B70048A73C /* NSArray+Chameleon.m */; };
-		AD8B6BCC1B15E9B70048A73C /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B6BC61B15E9B70048A73C /* UIColor+Chameleon.m */; };
-		AD8B6BCD1B15E9B70048A73C /* UIColor+CIELAB.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B6BC81B15E9B70048A73C /* UIColor+CIELAB.m */; };
-		AD8B6BCE1B15E9B70048A73C /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B6BCA1B15E9B70048A73C /* UIViewController+Chameleon.m */; };
 		AD8B6BD01B17416C0048A73C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A61916C2800037D405 /* UIKit.framework */; };
 		AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38319BFB056002CD75E /* IAPHelper.m */; };
 		AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */; };
 		AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9A21A8199BDB10009CEE31 /* Accounts.framework */; };
 		AD9B665C199D2754002C5145 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD9B665B199D2754002C5145 /* Settings.bundle */; };
-		ADAA8F131B1D179000A3C487 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAA8F121B1D179000A3C487 /* MBProgressHUD.m */; };
 		ADB5A13219D30372009B1550 /* NRTouchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB5A12C19D30372009B1550 /* NRTouchImage.png */; };
 		ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB5A12D19D30372009B1550 /* NRTouchImage@2x.png */; };
 		ADB5A13419D30372009B1550 /* NRWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A12F19D30372009B1550 /* NRWindow.m */; };
@@ -108,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80877D435E5C00A428BF118A /* Pods-VBall ScoreMaster.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBall ScoreMaster.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster.distribution.xcconfig"; sourceTree = "<group>"; };
 		9217E5D11926377700B2E6F1 /* DefaultScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultScoreViewController.h; sourceTree = "<group>"; };
 		9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultScoreViewController.m; sourceTree = "<group>"; };
 		92447968192AD7A10031C1F6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -129,6 +92,8 @@
 		92AA42CB1916C2810037D405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92AA42CD1916C2810037D405 /* VolleyballTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolleyballTests.m; sourceTree = "<group>"; };
 		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		99235D913A4E424D683FDAE9 /* Pods_VBall_ScoreMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VBall_ScoreMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9982E482587BDC7EC29A9DF9 /* Pods-VBall ScoreMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBall ScoreMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		AD07812719D0493100E30AE9 /* VolleyBallIAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolleyBallIAPViewController.h; sourceTree = "<group>"; };
 		AD07812819D0493100E30AE9 /* VolleyBallIAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolleyBallIAPViewController.m; sourceTree = "<group>"; };
 		AD082E31198061AE00A997CE /* TutorialSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialSettingsViewController.h; sourceTree = "<group>"; };
@@ -152,97 +117,15 @@
 		AD1C816B195C43A30028179B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		AD1C816C195C43A30028179B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		AD2239401B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
-		AD2239421B0B5E7000F66ED6 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		AD2239431B0B5E7000F66ED6 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		AD2239441B0B5E7000F66ED6 /* GAIFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
-		AD2239451B0B5E7000F66ED6 /* GAILogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
-		AD2239461B0B5E7000F66ED6 /* GAITrackedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		AD2239471B0B5E7000F66ED6 /* GAITracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		AD4B54BF199A40D500770580 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AD52968B197F390E00767D1C /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialViewController.h; path = Volleyball/TutorialViewController.h; sourceTree = "<group>"; };
 		AD52968C197F390E00767D1C /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialViewController.m; path = Volleyball/TutorialViewController.m; sourceTree = "<group>"; };
-		AD52968E197F458E00767D1C /* WSCoachMarksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSCoachMarksView.h; path = Volleyball/WSCoachMarksView.h; sourceTree = "<group>"; };
-		AD52968F197F458E00767D1C /* WSCoachMarksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSCoachMarksView.m; path = Volleyball/WSCoachMarksView.m; sourceTree = "<group>"; };
-		AD529691197F45DD00767D1C /* GBVersionTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBVersionTracking.h; sourceTree = "<group>"; };
-		AD529692197F45DD00767D1C /* GBVersionTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBVersionTracking.m; sourceTree = "<group>"; };
-		AD52975C1A01133C0023AC71 /* ABX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABX.h; sourceTree = "<group>"; };
-		AD52975D1A01133C0023AC71 /* AppbotX.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AppbotX.bundle; sourceTree = "<group>"; };
-		AD52975F1A01133C0023AC71 /* ABXApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXApiClient.h; sourceTree = "<group>"; };
-		AD5297601A01133C0023AC71 /* ABXApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXApiClient.m; sourceTree = "<group>"; };
-		AD5297611A01133C0023AC71 /* ABXAppStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXAppStore.h; sourceTree = "<group>"; };
-		AD5297621A01133C0023AC71 /* ABXAppStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXAppStore.m; sourceTree = "<group>"; };
-		AD5297631A01133C0023AC71 /* ABXKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXKeychain.h; sourceTree = "<group>"; };
-		AD5297641A01133C0023AC71 /* ABXKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXKeychain.m; sourceTree = "<group>"; };
-		AD5297651A01133C0023AC71 /* NSDictionary+ABXNSNullAsNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ABXNSNullAsNull.h"; sourceTree = "<group>"; };
-		AD5297661A01133C0023AC71 /* NSDictionary+ABXNSNullAsNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ABXNSNullAsNull.m"; sourceTree = "<group>"; };
-		AD5297671A01133C0023AC71 /* NSDictionary+ABXQueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ABXQueryString.h"; sourceTree = "<group>"; };
-		AD5297681A01133C0023AC71 /* NSDictionary+ABXQueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ABXQueryString.m"; sourceTree = "<group>"; };
-		AD5297691A01133C0023AC71 /* NSString+ABXLocalized.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ABXLocalized.h"; sourceTree = "<group>"; };
-		AD52976A1A01133C0023AC71 /* NSString+ABXLocalized.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ABXLocalized.m"; sourceTree = "<group>"; };
-		AD52976B1A01133C0023AC71 /* NSString+ABXSizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ABXSizing.h"; sourceTree = "<group>"; };
-		AD52976C1A01133C0023AC71 /* NSString+ABXSizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ABXSizing.m"; sourceTree = "<group>"; };
-		AD52976D1A01133C0023AC71 /* NSString+ABXURLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ABXURLEncoding.h"; sourceTree = "<group>"; };
-		AD52976E1A01133C0023AC71 /* NSString+ABXURLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ABXURLEncoding.m"; sourceTree = "<group>"; };
-		AD52976F1A01133C0023AC71 /* UIViewController+ABXScreenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ABXScreenshot.h"; sourceTree = "<group>"; };
-		AD5297701A01133C0023AC71 /* UIViewController+ABXScreenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ABXScreenshot.m"; sourceTree = "<group>"; };
-		AD5297721A01133C0023AC71 /* ABXBaseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXBaseListViewController.h; sourceTree = "<group>"; };
-		AD5297731A01133C0023AC71 /* ABXBaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXBaseListViewController.m; sourceTree = "<group>"; };
-		AD5297741A01133C0023AC71 /* ABXFAQsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXFAQsViewController.h; sourceTree = "<group>"; };
-		AD5297751A01133C0023AC71 /* ABXFAQsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXFAQsViewController.m; sourceTree = "<group>"; };
-		AD5297761A01133C0023AC71 /* ABXFAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXFAQViewController.h; sourceTree = "<group>"; };
-		AD5297771A01133C0023AC71 /* ABXFAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXFAQViewController.m; sourceTree = "<group>"; };
-		AD5297781A01133C0023AC71 /* ABXFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXFeedbackViewController.h; sourceTree = "<group>"; };
-		AD5297791A01133C0023AC71 /* ABXFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXFeedbackViewController.m; sourceTree = "<group>"; };
-		AD52977A1A01133C0023AC71 /* ABXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXNavigationController.h; sourceTree = "<group>"; };
-		AD52977B1A01133C0023AC71 /* ABXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXNavigationController.m; sourceTree = "<group>"; };
-		AD52977C1A01133C0023AC71 /* ABXNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXNotificationsViewController.h; sourceTree = "<group>"; };
-		AD52977D1A01133C0023AC71 /* ABXNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXNotificationsViewController.m; sourceTree = "<group>"; };
-		AD52977E1A01133C0023AC71 /* ABXVersionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXVersionsViewController.h; sourceTree = "<group>"; };
-		AD52977F1A01133C0023AC71 /* ABXVersionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXVersionsViewController.m; sourceTree = "<group>"; };
-		AD5297811A01133C0023AC71 /* ABXAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXAttachment.h; sourceTree = "<group>"; };
-		AD5297821A01133C0023AC71 /* ABXAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXAttachment.m; sourceTree = "<group>"; };
-		AD5297831A01133C0023AC71 /* ABXFaq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXFaq.h; sourceTree = "<group>"; };
-		AD5297841A01133C0023AC71 /* ABXFaq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXFaq.m; sourceTree = "<group>"; };
-		AD5297851A01133C0023AC71 /* ABXIssue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXIssue.h; sourceTree = "<group>"; };
-		AD5297861A01133C0023AC71 /* ABXIssue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXIssue.m; sourceTree = "<group>"; };
-		AD5297871A01133C0023AC71 /* ABXModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXModel.h; sourceTree = "<group>"; };
-		AD5297881A01133C0023AC71 /* ABXModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXModel.m; sourceTree = "<group>"; };
-		AD5297891A01133C0023AC71 /* ABXNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXNotification.h; sourceTree = "<group>"; };
-		AD52978A1A01133C0023AC71 /* ABXNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXNotification.m; sourceTree = "<group>"; };
-		AD52978B1A01133C0023AC71 /* ABXVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXVersion.h; sourceTree = "<group>"; };
-		AD52978C1A01133C0023AC71 /* ABXVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXVersion.m; sourceTree = "<group>"; };
-		AD52978E1A01133C0023AC71 /* ABXFAQTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXFAQTableViewCell.h; sourceTree = "<group>"; };
-		AD52978F1A01133C0023AC71 /* ABXFAQTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXFAQTableViewCell.m; sourceTree = "<group>"; };
-		AD5297901A01133C0023AC71 /* ABXNotificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXNotificationTableViewCell.h; sourceTree = "<group>"; };
-		AD5297911A01133C0023AC71 /* ABXNotificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXNotificationTableViewCell.m; sourceTree = "<group>"; };
-		AD5297921A01133C0023AC71 /* ABXNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXNotificationView.h; sourceTree = "<group>"; };
-		AD5297931A01133C0023AC71 /* ABXNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXNotificationView.m; sourceTree = "<group>"; };
-		AD5297941A01133C0023AC71 /* ABXPromptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXPromptView.h; sourceTree = "<group>"; };
-		AD5297951A01133C0023AC71 /* ABXPromptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXPromptView.m; sourceTree = "<group>"; };
-		AD5297961A01133C0023AC71 /* ABXTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXTextView.h; sourceTree = "<group>"; };
-		AD5297971A01133C0023AC71 /* ABXTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXTextView.m; sourceTree = "<group>"; };
-		AD5297981A01133C0023AC71 /* ABXVersionNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXVersionNotificationView.h; sourceTree = "<group>"; };
-		AD5297991A01133C0023AC71 /* ABXVersionNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXVersionNotificationView.m; sourceTree = "<group>"; };
-		AD52979A1A01133C0023AC71 /* ABXVersionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABXVersionTableViewCell.h; sourceTree = "<group>"; };
-		AD52979B1A01133C0023AC71 /* ABXVersionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABXVersionTableViewCell.m; sourceTree = "<group>"; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		AD8B6BBE1B15E9570048A73C /* Chameleon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Chameleon.h; path = ../../Chameleon.h; sourceTree = "<group>"; };
-		AD8B6BBF1B15E98A0048A73C /* ChameleonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChameleonMacros.h; path = ../../ChameleonMacros.h; sourceTree = "<group>"; };
-		AD8B6BC01B15E98A0048A73C /* ChameleonStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChameleonStatusBar.h; path = ../../ChameleonStatusBar.h; sourceTree = "<group>"; };
-		AD8B6BC11B15E98A0048A73C /* ChameleonStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChameleonStatusBar.m; path = ../../ChameleonStatusBar.m; sourceTree = "<group>"; };
-		AD8B6BC31B15E9B70048A73C /* NSArray+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Chameleon.h"; path = "../../NSArray+Chameleon.h"; sourceTree = "<group>"; };
-		AD8B6BC41B15E9B70048A73C /* NSArray+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Chameleon.m"; path = "../../NSArray+Chameleon.m"; sourceTree = "<group>"; };
-		AD8B6BC51B15E9B70048A73C /* UIColor+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Chameleon.h"; path = "../../UIColor+Chameleon.h"; sourceTree = "<group>"; };
-		AD8B6BC61B15E9B70048A73C /* UIColor+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Chameleon.m"; path = "../../UIColor+Chameleon.m"; sourceTree = "<group>"; };
-		AD8B6BC71B15E9B70048A73C /* UIColor+CIELAB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CIELAB.h"; path = "../../UIColor+CIELAB.h"; sourceTree = "<group>"; };
-		AD8B6BC81B15E9B70048A73C /* UIColor+CIELAB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CIELAB.m"; path = "../../UIColor+CIELAB.m"; sourceTree = "<group>"; };
-		AD8B6BC91B15E9B70048A73C /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "../../UIViewController+Chameleon.h"; sourceTree = "<group>"; };
-		AD8B6BCA1B15E9B70048A73C /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "../../UIViewController+Chameleon.m"; sourceTree = "<group>"; };
 		AD8B6BCF1B173F0E0048A73C /* Volleyball-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volleyball-Prefix.pch"; sourceTree = "<group>"; };
 		AD96E38219BFB056002CD75E /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		AD96E38319BFB056002CD75E /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
@@ -250,8 +133,6 @@
 		AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolleyBallIAPHelper.m; sourceTree = "<group>"; };
 		AD9A21A8199BDB10009CEE31 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		AD9B665B199D2754002C5145 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		ADAA8F111B1D179000A3C487 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		ADAA8F121B1D179000A3C487 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		ADB5A12C19D30372009B1550 /* NRTouchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NRTouchImage.png; sourceTree = "<group>"; };
 		ADB5A12D19D30372009B1550 /* NRTouchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NRTouchImage@2x.png"; sourceTree = "<group>"; };
 		ADB5A12E19D30372009B1550 /* NRWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRWindow.h; sourceTree = "<group>"; };
@@ -266,6 +147,7 @@
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
 		ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SupportTableViewController.m; path = Volleyball/SupportTableViewController.m; sourceTree = "<group>"; };
+		FBE7CEAB9E6E4D5FC5CC6BB6 /* Pods-VBall ScoreMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBall ScoreMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,7 +159,6 @@
 				AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */,
 				AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */,
 				AD4B54C0199A40D500770580 /* Social.framework in Frameworks */,
-				AD2239411B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a in Frameworks */,
 				AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */,
 				AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */,
 				AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */,
@@ -287,6 +168,7 @@
 				92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */,
 				92AA42A51916C2800037D405 /* CoreGraphics.framework in Frameworks */,
 				92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */,
+				A4E3AD6529226E70123024B3 /* Pods_VBall_ScoreMaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +185,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70F06610FFB8331B7F69811C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9982E482587BDC7EC29A9DF9 /* Pods-VBall ScoreMaster.debug.xcconfig */,
+				FBE7CEAB9E6E4D5FC5CC6BB6 /* Pods-VBall ScoreMaster.release.xcconfig */,
+				80877D435E5C00A428BF118A /* Pods-VBall ScoreMaster.distribution.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9244799B192C01830031C1F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +213,7 @@
 				92AA42C71916C2810037D405 /* VolleyballTests */,
 				92AA42A11916C2800037D405 /* Frameworks */,
 				92AA42A01916C2800037D405 /* Products */,
+				70F06610FFB8331B7F69811C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -353,6 +246,7 @@
 				92AA42A41916C2800037D405 /* CoreGraphics.framework */,
 				92AA42A61916C2800037D405 /* UIKit.framework */,
 				92AA42C11916C2810037D405 /* XCTest.framework */,
+				99235D913A4E424D683FDAE9 /* Pods_VBall_ScoreMaster.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -424,35 +318,6 @@
 			name = FCColorPicker;
 			sourceTree = "<group>";
 		};
-		AD0D059C1A727C8800B5FC00 /* Chameleon */ = {
-			isa = PBXGroup;
-			children = (
-				AD8B6BC31B15E9B70048A73C /* NSArray+Chameleon.h */,
-				AD8B6BC41B15E9B70048A73C /* NSArray+Chameleon.m */,
-				AD8B6BC51B15E9B70048A73C /* UIColor+Chameleon.h */,
-				AD8B6BC61B15E9B70048A73C /* UIColor+Chameleon.m */,
-				AD8B6BC71B15E9B70048A73C /* UIColor+CIELAB.h */,
-				AD8B6BC81B15E9B70048A73C /* UIColor+CIELAB.m */,
-				AD8B6BC91B15E9B70048A73C /* UIViewController+Chameleon.h */,
-				AD8B6BCA1B15E9B70048A73C /* UIViewController+Chameleon.m */,
-				AD8B6BBF1B15E98A0048A73C /* ChameleonMacros.h */,
-				AD8B6BC01B15E98A0048A73C /* ChameleonStatusBar.h */,
-				AD8B6BC11B15E98A0048A73C /* ChameleonStatusBar.m */,
-				AD8B6BBE1B15E9570048A73C /* Chameleon.h */,
-			);
-			name = Chameleon;
-			path = Volleyball/Chameleon;
-			sourceTree = "<group>";
-		};
-		AD52967F197ED75200767D1C /* WSCoachMarks */ = {
-			isa = PBXGroup;
-			children = (
-				AD52968E197F458E00767D1C /* WSCoachMarksView.h */,
-				AD52968F197F458E00767D1C /* WSCoachMarksView.m */,
-			);
-			name = WSCoachMarks;
-			sourceTree = "<group>";
-		};
 		AD52968A197F38E100767D1C /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,111 +331,6 @@
 				AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */,
 			);
 			name = Tutorial;
-			sourceTree = "<group>";
-		};
-		AD529694197F45E500767D1C /* GBVersionTracking */ = {
-			isa = PBXGroup;
-			children = (
-				AD529691197F45DD00767D1C /* GBVersionTracking.h */,
-				AD529692197F45DD00767D1C /* GBVersionTracking.m */,
-			);
-			name = GBVersionTracking;
-			path = Volleyball;
-			sourceTree = "<group>";
-		};
-		AD52975E1A01133C0023AC71 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				AD52975F1A01133C0023AC71 /* ABXApiClient.h */,
-				AD5297601A01133C0023AC71 /* ABXApiClient.m */,
-				AD5297611A01133C0023AC71 /* ABXAppStore.h */,
-				AD5297621A01133C0023AC71 /* ABXAppStore.m */,
-				AD5297631A01133C0023AC71 /* ABXKeychain.h */,
-				AD5297641A01133C0023AC71 /* ABXKeychain.m */,
-				AD5297651A01133C0023AC71 /* NSDictionary+ABXNSNullAsNull.h */,
-				AD5297661A01133C0023AC71 /* NSDictionary+ABXNSNullAsNull.m */,
-				AD5297671A01133C0023AC71 /* NSDictionary+ABXQueryString.h */,
-				AD5297681A01133C0023AC71 /* NSDictionary+ABXQueryString.m */,
-				AD5297691A01133C0023AC71 /* NSString+ABXLocalized.h */,
-				AD52976A1A01133C0023AC71 /* NSString+ABXLocalized.m */,
-				AD52976B1A01133C0023AC71 /* NSString+ABXSizing.h */,
-				AD52976C1A01133C0023AC71 /* NSString+ABXSizing.m */,
-				AD52976D1A01133C0023AC71 /* NSString+ABXURLEncoding.h */,
-				AD52976E1A01133C0023AC71 /* NSString+ABXURLEncoding.m */,
-				AD52976F1A01133C0023AC71 /* UIViewController+ABXScreenshot.h */,
-				AD5297701A01133C0023AC71 /* UIViewController+ABXScreenshot.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		AD5297711A01133C0023AC71 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				AD5297721A01133C0023AC71 /* ABXBaseListViewController.h */,
-				AD5297731A01133C0023AC71 /* ABXBaseListViewController.m */,
-				AD5297741A01133C0023AC71 /* ABXFAQsViewController.h */,
-				AD5297751A01133C0023AC71 /* ABXFAQsViewController.m */,
-				AD5297761A01133C0023AC71 /* ABXFAQViewController.h */,
-				AD5297771A01133C0023AC71 /* ABXFAQViewController.m */,
-				AD5297781A01133C0023AC71 /* ABXFeedbackViewController.h */,
-				AD5297791A01133C0023AC71 /* ABXFeedbackViewController.m */,
-				AD52977A1A01133C0023AC71 /* ABXNavigationController.h */,
-				AD52977B1A01133C0023AC71 /* ABXNavigationController.m */,
-				AD52977C1A01133C0023AC71 /* ABXNotificationsViewController.h */,
-				AD52977D1A01133C0023AC71 /* ABXNotificationsViewController.m */,
-				AD52977E1A01133C0023AC71 /* ABXVersionsViewController.h */,
-				AD52977F1A01133C0023AC71 /* ABXVersionsViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		AD5297801A01133C0023AC71 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				AD5297811A01133C0023AC71 /* ABXAttachment.h */,
-				AD5297821A01133C0023AC71 /* ABXAttachment.m */,
-				AD5297831A01133C0023AC71 /* ABXFaq.h */,
-				AD5297841A01133C0023AC71 /* ABXFaq.m */,
-				AD5297851A01133C0023AC71 /* ABXIssue.h */,
-				AD5297861A01133C0023AC71 /* ABXIssue.m */,
-				AD5297871A01133C0023AC71 /* ABXModel.h */,
-				AD5297881A01133C0023AC71 /* ABXModel.m */,
-				AD5297891A01133C0023AC71 /* ABXNotification.h */,
-				AD52978A1A01133C0023AC71 /* ABXNotification.m */,
-				AD52978B1A01133C0023AC71 /* ABXVersion.h */,
-				AD52978C1A01133C0023AC71 /* ABXVersion.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		AD52978D1A01133C0023AC71 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				AD52978E1A01133C0023AC71 /* ABXFAQTableViewCell.h */,
-				AD52978F1A01133C0023AC71 /* ABXFAQTableViewCell.m */,
-				AD5297901A01133C0023AC71 /* ABXNotificationTableViewCell.h */,
-				AD5297911A01133C0023AC71 /* ABXNotificationTableViewCell.m */,
-				AD5297921A01133C0023AC71 /* ABXNotificationView.h */,
-				AD5297931A01133C0023AC71 /* ABXNotificationView.m */,
-				AD5297941A01133C0023AC71 /* ABXPromptView.h */,
-				AD5297951A01133C0023AC71 /* ABXPromptView.m */,
-				AD5297961A01133C0023AC71 /* ABXTextView.h */,
-				AD5297971A01133C0023AC71 /* ABXTextView.m */,
-				AD5297981A01133C0023AC71 /* ABXVersionNotificationView.h */,
-				AD5297991A01133C0023AC71 /* ABXVersionNotificationView.m */,
-				AD52979A1A01133C0023AC71 /* ABXVersionTableViewCell.h */,
-				AD52979B1A01133C0023AC71 /* ABXVersionTableViewCell.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		AD5297BA1A0114790023AC71 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				ADAA8F111B1D179000A3C487 /* MBProgressHUD.h */,
-				ADAA8F121B1D179000A3C487 /* MBProgressHUD.m */,
-			);
-			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		AD96E38119BFB02E002CD75E /* IAP */ = {
@@ -599,46 +359,13 @@
 			name = NRTouchPoints;
 			sourceTree = "<group>";
 		};
-		ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				AD2239421B0B5E7000F66ED6 /* GAI.h */,
-				AD2239431B0B5E7000F66ED6 /* GAIDictionaryBuilder.h */,
-				AD2239441B0B5E7000F66ED6 /* GAIFields.h */,
-				AD2239451B0B5E7000F66ED6 /* GAILogger.h */,
-				AD2239461B0B5E7000F66ED6 /* GAITrackedViewController.h */,
-				AD2239471B0B5E7000F66ED6 /* GAITracker.h */,
-			);
-			name = GoogleAnalytics;
-			path = Volleyball;
-			sourceTree = "<group>";
-		};
-		ADFB421219A3729600ADBE9F /* AppbotX */ = {
-			isa = PBXGroup;
-			children = (
-				AD52975C1A01133C0023AC71 /* ABX.h */,
-				AD52975D1A01133C0023AC71 /* AppbotX.bundle */,
-				AD52975E1A01133C0023AC71 /* Classes */,
-				AD5297711A01133C0023AC71 /* Controllers */,
-				AD5297801A01133C0023AC71 /* Models */,
-				AD52978D1A01133C0023AC71 /* Views */,
-			);
-			name = AppbotX;
-			sourceTree = "<group>";
-		};
 		ADFB427519A4C39200ADBE9F /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				AD0D059C1A727C8800B5FC00 /* Chameleon */,
 				AD0D058C1A7195CC00B5FC00 /* FCColorPicker */,
-				AD5297BA1A0114790023AC71 /* MBProgressHUD */,
-				ADFB421219A3729600ADBE9F /* AppbotX */,
 				ADB5A12B19D302BE009B1550 /* NRTouchPoints */,
 				AD96E38119BFB02E002CD75E /* IAP */,
-				ADCC13A11981CE21001DC9B6 /* GoogleAnalytics */,
-				AD529694197F45E500767D1C /* GBVersionTracking */,
 				AD52968A197F38E100767D1C /* Tutorial */,
-				AD52967F197ED75200767D1C /* WSCoachMarks */,
 				ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */,
 				ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */,
 			);
@@ -653,11 +380,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92AA42D11916C2810037D405 /* Build configuration list for PBXNativeTarget "VBall ScoreMaster" */;
 			buildPhases = (
+				6D7C737318285BC8290F769F /* Check Pods Manifest.lock */,
 				92AA429B1916C2800037D405 /* Sources */,
 				92AA429C1916C2800037D405 /* Frameworks */,
 				92AA429D1916C2800037D405 /* Resources */,
 				ADC716A2196CA6F000360EF4 /* ShellScript */,
 				AD0413E21A3A1C7A00DEFB1F /* ShellScript */,
+				0DC7DAD67049FC68E7E7D61E /* Copy Pods Resources */,
+				15F3DC32EAD61B4582A930F5 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -746,7 +476,6 @@
 				AD9B665C199D2754002C5145 /* Settings.bundle in Resources */,
 				AD0D058B1A7195C300B5FC00 /* FCColorPickerViewController.xib in Resources */,
 				ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */,
-				AD52979C1A01133C0023AC71 /* AppbotX.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,6 +490,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0DC7DAD67049FC68E7E7D61E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15F3DC32EAD61B4582A930F5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D7C737318285BC8290F769F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		AD0413E21A3A1C7A00DEFB1F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -794,62 +568,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD5297A01A01133C0023AC71 /* NSDictionary+ABXNSNullAsNull.m in Sources */,
-				AD5297B21A01133C0023AC71 /* ABXVersion.m in Sources */,
-				AD5297A91A01133C0023AC71 /* ABXFeedbackViewController.m in Sources */,
-				AD5297AB1A01133C0023AC71 /* ABXNotificationsViewController.m in Sources */,
-				AD5297A31A01133C0023AC71 /* NSString+ABXSizing.m in Sources */,
-				AD529693197F45DD00767D1C /* GBVersionTracking.m in Sources */,
-				AD5297B31A01133C0023AC71 /* ABXFAQTableViewCell.m in Sources */,
-				AD5297AE1A01133C0023AC71 /* ABXFaq.m in Sources */,
-				AD5297A71A01133C0023AC71 /* ABXFAQsViewController.m in Sources */,
-				AD5297AD1A01133C0023AC71 /* ABXAttachment.m in Sources */,
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
-				AD8B6BCC1B15E9B70048A73C /* UIColor+Chameleon.m in Sources */,
-				AD5297AC1A01133C0023AC71 /* ABXVersionsViewController.m in Sources */,
-				AD52979F1A01133C0023AC71 /* ABXKeychain.m in Sources */,
 				AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */,
-				AD8B6BCD1B15E9B70048A73C /* UIColor+CIELAB.m in Sources */,
 				AD0D058A1A7195C300B5FC00 /* FCColorPickerViewController.m in Sources */,
-				AD5297A11A01133C0023AC71 /* NSDictionary+ABXQueryString.m in Sources */,
 				AD07812919D0493100E30AE9 /* VolleyBallIAPViewController.m in Sources */,
-				AD5297B61A01133C0023AC71 /* ABXPromptView.m in Sources */,
-				AD529690197F458E00767D1C /* WSCoachMarksView.m in Sources */,
-				AD5297B91A01133C0023AC71 /* ABXVersionTableViewCell.m in Sources */,
 				ADB5A13419D30372009B1550 /* NRWindow.m in Sources */,
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
-				AD8B6BCE1B15E9B70048A73C /* UIViewController+Chameleon.m in Sources */,
 				AD0D05991A71977100B5FC00 /* FCColorSwatchView.m in Sources */,
-				AD8B6BCB1B15E9B70048A73C /* NSArray+Chameleon.m in Sources */,
 				AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */,
 				AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */,
-				AD8B6BC21B15E98A0048A73C /* ChameleonStatusBar.m in Sources */,
 				AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */,
 				AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
-				AD52979E1A01133C0023AC71 /* ABXAppStore.m in Sources */,
-				AD5297B11A01133C0023AC71 /* ABXNotification.m in Sources */,
-				AD5297AA1A01133C0023AC71 /* ABXNavigationController.m in Sources */,
 				AD0D05981A71977100B5FC00 /* FCBrightDarkGradView.m in Sources */,
-				AD5297A81A01133C0023AC71 /* ABXFAQViewController.m in Sources */,
-				AD5297A51A01133C0023AC71 /* UIViewController+ABXScreenshot.m in Sources */,
-				AD5297B41A01133C0023AC71 /* ABXNotificationTableViewCell.m in Sources */,
-				AD5297B81A01133C0023AC71 /* ABXVersionNotificationView.m in Sources */,
 				ADB5A13519D30372009B1550 /* UITouch+NRTouch.m in Sources */,
 				AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */,
-				AD5297A21A01133C0023AC71 /* NSString+ABXLocalized.m in Sources */,
-				AD52979D1A01133C0023AC71 /* ABXApiClient.m in Sources */,
-				AD5297A61A01133C0023AC71 /* ABXBaseListViewController.m in Sources */,
 				ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */,
-				AD5297A41A01133C0023AC71 /* NSString+ABXURLEncoding.m in Sources */,
-				AD5297B51A01133C0023AC71 /* ABXNotificationView.m in Sources */,
-				AD5297B71A01133C0023AC71 /* ABXTextView.m in Sources */,
-				AD5297AF1A01133C0023AC71 /* ABXIssue.m in Sources */,
-				AD5297B01A01133C0023AC71 /* ABXModel.m in Sources */,
-				ADAA8F131B1D179000A3C487 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,6 +726,7 @@
 		};
 		92AA42D21916C2810037D405 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9982E482587BDC7EC29A9DF9 /* Pods-VBall ScoreMaster.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1003,13 +741,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 					"$(PROJECT_DIR)",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1020,6 +758,7 @@
 		};
 		92AA42D31916C2810037D405 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBE7CEAB9E6E4D5FC5CC6BB6 /* Pods-VBall ScoreMaster.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1034,13 +773,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 					"$(PROJECT_DIR)",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1133,6 +872,7 @@
 		};
 		ADFEAFB51941F52500CB5252 /* Distribution */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80877D435E5C00A428BF118A /* Pods-VBall ScoreMaster.distribution.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1147,13 +887,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
 					"$(PROJECT_DIR)",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
