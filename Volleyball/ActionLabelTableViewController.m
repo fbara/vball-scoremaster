@@ -8,11 +8,15 @@
 
 #import "ActionLabelTableViewController.h"
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
-//#import "GAIDictionaryBuilder.h"
 #import <GoogleAnalytics/GAITracker.h>
 #import <GoogleAnalytics/GAIFields.h>
 #import <GoogleAnalytics/GAI.h>
 
+@interface ActionLabelTableViewController ()
+
+@property (weak, nonatomic) NSString *actionNameToAdd;
+
+@end
 
 @implementation ActionLabelTableViewController {
     BOOL firstTimeShown;
@@ -41,6 +45,15 @@
 
     // Indicate this is the first time this view is seen
     firstTimeShown = YES;
+	
+	//Setup bar button items
+	UIBarButtonItem *saveActionNames = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+																					 target:self
+																					 action:@selector(returnToSettings:)];
+	UIBarButtonItem *addActionName = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+																				   target:self
+																				   action:@selector(addNewActionName:)];
+	
 }
 
 - (NSIndexPath*)tableView:(UITableView*)tableView
@@ -165,21 +178,6 @@
     }
 }
 
-- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-	//For iPad only; there's no footer displayed on the iPhone
-	UILabel *sectionFooter = [[UILabel alloc] initWithFrame:CGRectNull];
-	sectionFooter.backgroundColor = [UIColor clearColor];
-	sectionFooter.font = [UIFont systemFontOfSize:12];
-	sectionFooter.textColor = [UIColor darkGrayColor];
-	if (IS_IPAD()) {
-		sectionFooter.text = NSLocalizedString(@"   Tap anywhere off this popup to dismiss", @"Tap the screen anywhere away from this popup to dismiss the window");
-	} else {
-		sectionFooter.text = @"";
-	}	
-	return sectionFooter;
-}
-
 - (UIView*)tableView:(UITableView*)tableView
     viewForHeaderInSection:(NSInteger)section
 {
@@ -188,11 +186,8 @@
     sectionHeader.backgroundColor = [UIColor clearColor];
 	sectionHeader.font = [UIFont systemFontOfSize:14];
     sectionHeader.textColor = [UIColor darkGrayColor];
-    if (IS_IPAD()) {
-		sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME", @"Tap on the Action Name for your player");
-    } else {
-        sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME THEN TAP 'SAVE'", @"Tap on the Action Name for your player, then tap Save");
-    }
+	sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME THEN TAP 'SAVE'", @"Tap on the Action Name for your player, then tap Save");
+
     return sectionHeader;
 }
 
@@ -201,6 +196,32 @@
 {
     return 40;
 }
+
+#pragma mark - Move Rows
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+	
+}
+
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+	return YES;
+}
+
+#pragma mark - Bar Button Items
+
+-(IBAction)returnToSettings:(id)sender {
+	//Perform unwind segue and return to the Settings scene
+	[self performSegueWithIdentifier:@"unwindFromModalViewController" sender:self];
+}
+
+-(void)addNewActionName:(NSString *)newName {
+	//Create a new Action Name
+}
+
+-(void)deleteActionName:(NSIndexPath *)indexPath {
+	//Delete an existing Action Name
+}
+
 
 - (void)didReceiveMemoryWarning
 {
