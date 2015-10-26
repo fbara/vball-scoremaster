@@ -12,10 +12,17 @@
 #import <GoogleAnalytics/GAITracker.h>
 #import <GoogleAnalytics/GAIFields.h>
 #import <GoogleAnalytics/GAI.h>
+#import <ChameleonFramework/Chameleon.h>
 
+@interface ActionLabelTableViewController () {
+	NSMutableArray *actionNamesList;
+	BOOL firstTimeShown;
+	NSUserDefaults *defaults;
+}
 
+@end
 @implementation ActionLabelTableViewController {
-    BOOL firstTimeShown;
+    //BOOL firstTimeShown;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -38,13 +45,38 @@
     // Load the file and read the data into an array
     NSDictionary* dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     self.actionNames = [dict objectForKey:@"ActionNames"];
+	
+//NEW
+	actionNamesList = [[NSMutableArray alloc] init];
+	defaults = [NSUserDefaults standardUserDefaults];
+	actionNamesList = [defaults objectForKey:@"ActionNames"];
+	
+//NEW
 
     // Indicate this is the first time this view is seen
     firstTimeShown = YES;
+	
+	//Setup bar buttons
+	UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+																		  target:self
+																		  action:@selector(addNewActionNameRow)];
+	
+//	UIBarButtonItem *save = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+//																		  target:self
+//																		  action:@selector(addNewActionNameRow)];
+	
+//	UIBarButtonItem* fixedSpace = [[UIBarButtonItem alloc]
+//								   initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+//								   target:self
+//								   action:nil];
+//	
+//	fixedSpace.width = 20.0f;
+//	self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:save, fixedSpace, edit, nil];
+	self.navigationItem.rightBarButtonItem = add;
+
 }
 
-- (NSIndexPath*)tableView:(UITableView*)tableView
-    willSelectRowAtIndexPath:(NSIndexPath*)indexPath
+- (NSIndexPath*)tableView:(UITableView*)tableView willSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     NSIndexPath* oldIndex = [self.tableView indexPathForSelectedRow];
     [self.tableView cellForRowAtIndexPath:oldIndex].accessoryType = UITableViewCellAccessoryNone;
@@ -57,7 +89,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    defaults = [NSUserDefaults standardUserDefaults];
     NSString* name;
     // Which side, left or right, is the user acting on?
     switch (self.selectedActionRow) {
@@ -124,18 +156,28 @@
     return count;
 }
 
-- (UITableViewCell*)tableView:(UITableView*)tableView
-        cellForRowAtIndexPath:(NSIndexPath*)indexPath
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     static NSString* cellIdentifier = @"Identifier";
-    UITableViewCell* cell =
-        [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:cellIdentifier];
-    }
-    cell.textLabel.text = [self.actionNames objectAtIndex:indexPath.row];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    UITableViewCell* cell =
+//        [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	SESlideTableViewCell *cell = (SESlideTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	if (!cell) {
+		cell = [[SESlideTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+		cell.delegate = self;
+		//Show Delete first, then Rename
+		[cell addRightButtonWithText:NSLocalizedString(@"Rename", @"Rename the Action Name row")
+						   textColor:FlatWhite
+					 backgroundColor:FlatBlue];
+		[cell addRightButtonWithText:NSLocalizedString(@"Delete", @"Delete Action Name table row")
+						   textColor:FlatWhite
+					 backgroundColor:FlatRed];
+		
+		
+		cell.textLabel.text = [self.actionNames objectAtIndex:indexPath.row];
+		cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	}
+	
 
     return cell;
 }
@@ -200,6 +242,46 @@
     heightForHeaderInSection:(NSInteger)section
 {
     return 40;
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+	
+	
+}
+
+#pragma mark - SESlideTableViewCell Delegate
+
+-(void)slideTableViewCell:(SESlideTableViewCell *)cell didTriggerRightButton:(NSInteger)buttonIndex {
+	//Called when one of the cell buttons are tapped
+	switch (buttonIndex) {
+	  case 0:
+			//Rename row
+			[self renameActionNameRow];
+			break;
+	  case 1:
+			//Delete row
+			[self deleteActionNameRow];
+	  default:
+			break;
+	}
+}
+
+#pragma mark - Add/Remove/Rename Rows
+
+- (void)addNewActionNameRow {
+	
+}
+
+- (void)deleteActionNameRow {
+	NSLog(@"Delete");
+}
+
+- (void)editActionNameRows {
+	
+}
+
+- (void)renameActionNameRow {
+	NSLog(@"Rename");
 }
 
 - (void)didReceiveMemoryWarning

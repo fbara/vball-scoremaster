@@ -96,7 +96,7 @@ NSString *socialMessage;
     // Create bar button item and add them to the navigation bar
     UIBarButtonItem* settingsButton =
         [[UIBarButtonItem alloc] initWithTitle:@"Settings"
-                                         style:UIBarButtonItemStyleBordered
+                                         style:UIBarButtonItemStylePlain
                                         target:self
                                         action:@selector(goToSettings:)];
     self.navigationItem.rightBarButtonItem = settingsButton;

@@ -51,7 +51,7 @@
     //Setup bar button items
     self.restorePurchases =
         [[UIBarButtonItem alloc] initWithTitle:@"Restore"
-                                         style:UIBarButtonItemStyleBordered
+                                         style:UIBarButtonItemStylePlain
                                         target:self
                                         action:@selector(restoreTapped:)];
 

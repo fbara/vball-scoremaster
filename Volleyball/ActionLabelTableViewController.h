@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SESlideTableViewCell/SESlideTableViewCell.h>
 
 @protocol ActionNameDelegate <NSObject>
 - (void)actionNameSelected:(NSString*)actionName;
@@ -14,7 +15,7 @@
 @end
 
 @interface ActionLabelTableViewController
-    : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+    : UITableViewController <UITableViewDelegate, UITableViewDataSource, SESlideTableViewCellDelegate>
 
 @property (assign, nonatomic) id<ActionNameDelegate> delegate;
 @property (weak, nonatomic) NSString* firstActionName;
