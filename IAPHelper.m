@@ -109,9 +109,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
     
     NSString *alertTitle = NSLocalizedString(@"Communications Error", nil);
     NSString *alertMsg = NSLocalizedString(@"I can't load a list of available products for purchase.\nUnable to communicate with the iTunes server.\nPlease try again later.", nil);
-    
-    if ([UIAlertController class]) {
-        //iOS 8 and newer
+	
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle
                                                                        message:alertMsg
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -128,16 +126,7 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
             activeVC = [(UINavigationController *)activeVC visibleViewController];
         }
         [activeVC presentViewController:alert animated:YES completion:nil];
-        
-    } else {
-    
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle
-                                                        message:alertMsg
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
+
     
 }
 

@@ -8,7 +8,6 @@
 
 #import "ActionLabelTableViewController.h"
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
-//#import "GAIDictionaryBuilder.h"
 #import <GoogleAnalytics/GAITracker.h>
 #import <GoogleAnalytics/GAIFields.h>
 #import <GoogleAnalytics/GAI.h>
@@ -26,8 +25,11 @@
 @implementation ActionLabelTableViewController
 
 -(NSMutableArray *)actionNamesList {
+	//Create array of ActionNames
 	if (!_actionNamesList) {
+		//Names don't exist yet, create them from standard defaults
 		defaults = [NSUserDefaults standardUserDefaults];
+		_actionNamesList = [[NSMutableArray alloc] init];
 		_actionNamesList = [[defaults objectForKey:@"ActionNames"] mutableCopy];
 	}
 	return _actionNamesList;
@@ -47,33 +49,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//TODO: Change from plist to standardDefaults
-/*
-    // Find the path of the ActionNames plist
-    NSString* path =
-        [[NSBundle mainBundle] pathForResource:@"ActionNames" ofType:@"plist"];
-
-    // Load the file and read the data into an array
-    NSDictionary* dict = [[NSDictionary alloc] initWithContentsOfFile:path];
-    self.actionNames = [dict objectForKey:@"ActionNames"];
-*/
 	
-//NEW
-	//Load ActionNames into array
-	//actionNamesList = [[NSMutableArray alloc] init];
-//	defaults = [NSUserDefaults standardUserDefaults];
-//	actionNamesList = [[defaults objectForKey:@"ActionNames"] mutableCopy];
-	//Create the mutable array if it doesn't exist
-//	if (!actionNamesList) {
-//		actionNamesList = [[NSMutableArray alloc] initWithObjects:@"Spike", @"Dig", @"Ace", @"Block", @"Set", @"Pass", @"Nothing", nil];
-//	}
+	//Load default ActionNames if array doesn't yet exist
+	if (!self.actionNamesList) {
+		self.actionNamesList = [[NSMutableArray alloc] initWithObjects:@"Spike", @"Dig", @"Ace", @"Block", @"Set", @"Pass", nil];
+	}
 	//Add long press gesture for moving rows
 	UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
 																							action:@selector(longPressGesture:)];
 	[self.tableView addGestureRecognizer:longPress];
 	
-//NEW
-
     // Indicate this is the first time this view is seen
     firstTimeShown = YES;
 	
@@ -430,6 +415,32 @@
 #pragma mark - Add/Remove/Rename Rows
 
 - (void)addNewActionNameRow {
+	NSString *title = NSLocalizedString(@"New Action Name", @"Add new Action Name message box title");
+	NSString *msg = NSLocalizedString(@"Enter the new Action Name", @"Enter the new Action Name message box");
+	UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+																   message:msg
+															preferredStyle:UIAlertControllerStyleAlert];
+	UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+											   handler:^(UIAlertAction * action) {
+												   //Take the text the user entered and insert it into the array first, then into the tableview
+												   NSString *text = ((UITextField *)[alert.textFields objectAtIndex:0]).text;
+												   [self.actionNamesList insertObject:text atIndex:0];
+												   NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
+												   [self.tableView insertRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+											   }];
+	UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+												   handler:^(UIAlertAction * action) {
+													   //User tapped Cancel, dismiss alert
+													   [alert dismissViewControllerAnimated:YES completion:nil];
+												   }];
+	
+	[alert addAction:ok];
+	[alert addAction:cancel];
+	//Get text from user
+	[alert addTextFieldWithConfigurationHandler:^(UITextField *textField){
+		textField.placeholder = NSLocalizedString(@"Action Name", @"Action Name");
+	}];
+	[self presentViewController:alert animated:YES completion:nil];
 	
 }
 

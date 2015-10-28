@@ -106,8 +106,7 @@
     return YES;
 }
 
-- (void)alertView:(UIAlertView*)alertView
-    clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
 	//Get response from user if they allow analytics on initial startup
 	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
