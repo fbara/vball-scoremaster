@@ -15,16 +15,25 @@
 #import <ChameleonFramework/Chameleon.h>
 
 @interface ActionLabelTableViewController () {
-	NSMutableArray *actionNamesList;
+	//NSMutableArray *actionNamesList;
 	BOOL firstTimeShown;
 	NSUserDefaults *defaults;
 	NSIndexPath *m_currentIndexPath;
 }
+@property (strong, nonatomic)NSMutableArray *actionNamesList;
 
 @end
-@implementation ActionLabelTableViewController {
-    //BOOL firstTimeShown;
+@implementation ActionLabelTableViewController
+
+-(NSMutableArray *)actionNamesList {
+	if (!_actionNamesList) {
+		defaults = [NSUserDefaults standardUserDefaults];
+		_actionNamesList = [[defaults objectForKey:@"ActionNames"] mutableCopy];
+	}
+	return _actionNamesList;
 }
+
+#pragma mark - View Load/Unload
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -38,7 +47,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+//TODO: Change from plist to standardDefaults
+/*
     // Find the path of the ActionNames plist
     NSString* path =
         [[NSBundle mainBundle] pathForResource:@"ActionNames" ofType:@"plist"];
@@ -46,12 +56,17 @@
     // Load the file and read the data into an array
     NSDictionary* dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     self.actionNames = [dict objectForKey:@"ActionNames"];
+*/
 	
 //NEW
-	actionNamesList = [[NSMutableArray alloc] init];
-	defaults = [NSUserDefaults standardUserDefaults];
-	actionNamesList = [defaults objectForKey:@"ActionNames"];
-	
+	//Load ActionNames into array
+	//actionNamesList = [[NSMutableArray alloc] init];
+//	defaults = [NSUserDefaults standardUserDefaults];
+//	actionNamesList = [[defaults objectForKey:@"ActionNames"] mutableCopy];
+	//Create the mutable array if it doesn't exist
+//	if (!actionNamesList) {
+//		actionNamesList = [[NSMutableArray alloc] initWithObjects:@"Spike", @"Dig", @"Ace", @"Block", @"Set", @"Pass", @"Nothing", nil];
+//	}
 	//Add long press gesture for moving rows
 	UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
 																							action:@selector(longPressGesture:)];
@@ -82,14 +97,23 @@
 
 }
 
-- (NSIndexPath*)tableView:(UITableView*)tableView willSelectRowAtIndexPath:(NSIndexPath*)indexPath
-{
-    NSIndexPath* oldIndex = [self.tableView indexPathForSelectedRow];
-    [self.tableView cellForRowAtIndexPath:oldIndex].accessoryType = UITableViewCellAccessoryNone;
-    [self.tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-    [self.tableView cellForRowAtIndexPath:indexPath].highlighted = NO;
 
-    return indexPath;
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	
+	// Setup Google Analytics tracker for this screen
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	[tracker set:kGAIScreenName value:@"Action Names"];
+	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+	
+	//Save the Action Names
+	[defaults setObject:self.actionNamesList forKey:@"ActionNames"];
+	
+	[super viewWillDisappear:animated];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -121,18 +145,6 @@
     // Load the row the user has already selected & put a checkmark by it
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-	[super viewDidAppear:animated];
-	
-	// Setup Google Analytics tracker for this screen
-	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-	[tracker set:kGAIScreenName value:@"Action Names"];
-	//Change to createScreenView because createAppView is deprecated
-	//[tracker send:[[GAIDictionaryBuilder createAppView] build]];
-	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
-}
-
 - (int)getRowForName:(NSString*)selectedName
 {
     // Return the index row for the name passed in
@@ -155,11 +167,19 @@
 
 #pragma mark - UITableView Delegate Methods
 
-- (NSInteger)tableView:(UITableView*)tableView
-    numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger count = [self.actionNames count];
-    return count;
+    return [self.actionNamesList count];
+}
+
+- (NSIndexPath*)tableView:(UITableView*)tableView willSelectRowAtIndexPath:(NSIndexPath*)indexPath
+{
+	NSIndexPath* oldIndex = [self.tableView indexPathForSelectedRow];
+	[self.tableView cellForRowAtIndexPath:oldIndex].accessoryType = UITableViewCellAccessoryNone;
+	[self.tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+	[self.tableView cellForRowAtIndexPath:indexPath].highlighted = NO;
+	
+	return indexPath;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
@@ -180,7 +200,7 @@
 					 backgroundColor:FlatRed];
 		
 		
-		cell.textLabel.text = [self.actionNames objectAtIndex:indexPath.row];
+		cell.textLabel.text = [self.actionNamesList objectAtIndex:indexPath.row];
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	}
 	
@@ -188,8 +208,7 @@
     return cell;
 }
 
-- (void)tableView:(UITableView*)tableView
-    didSelectRowAtIndexPath:(NSIndexPath*)indexPath
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     // select new
     UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
@@ -228,8 +247,7 @@
 	return sectionFooter;
 }
 
-- (UIView*)tableView:(UITableView*)tableView
-    viewForHeaderInSection:(NSInteger)section
+- (UIView*)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section
 {
     // Set the header of the table with instructions to save changes
     UILabel* sectionHeader = [[UILabel alloc] initWithFrame:CGRectNull];
@@ -254,10 +272,20 @@
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (editingStyle == UITableViewCellEditingStyleDelete) {
-		[actionNamesList removeObjectAtIndex:indexPath.row];
-		[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-	}
+//	if (editingStyle == UITableViewCellEditingStyleDelete) {
+//		[self.actionNamesList removeObjectAtIndex:indexPath.row];
+//		[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//	}
+	[self.actionNamesList removeObjectAtIndex:indexPath.row];
+	[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+	return YES;
+}
+
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+	return YES;
 }
 
 #pragma mark - Long Press Gesture
@@ -269,7 +297,7 @@
 	NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
 	
 	static UIView *snapshot = nil; //snapshot of the row the user is moving
-	NSIndexPath *sourceIndexPath = nil; //initial indexPath, where gesture begins
+	static NSIndexPath *sourceIndexPath = nil; //initial indexPath, where gesture begins
 	
 	switch (state) {
 		case UIGestureRecognizerStateBegan: {
@@ -309,7 +337,7 @@
 			//Is destination valid and is it different from source?
 			if (indexPath && ![indexPath isEqual:sourceIndexPath]) {
 				//Update data source
-				[actionNamesList exchangeObjectAtIndex:indexPath.row withObjectAtIndex:sourceIndexPath.row];
+				[self.actionNamesList exchangeObjectAtIndex:indexPath.row withObjectAtIndex:sourceIndexPath.row];
 				//Move the rows
 				[self.tableView moveRowAtIndexPath:sourceIndexPath toIndexPath:indexPath];
 				//Update the source so it's in sync with the UI
@@ -319,7 +347,7 @@
 		}
 		default: {
 			//Clean up
-			UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:sourceIndexPath];
+			SESlideTableViewCell *cell = [self.tableView cellForRowAtIndexPath:sourceIndexPath];
 			cell.hidden = NO;
 			cell.alpha = 0.0;
 			
@@ -330,10 +358,11 @@
 				cell.alpha = 1.0;
 				
 			} completion:^(BOOL finished) {
-				//sourceIndexPath = nil;
+				sourceIndexPath = nil;
 				[snapshot removeFromSuperview];
 				snapshot = nil;
 			}];
+			
 			break;
 		}
 	}

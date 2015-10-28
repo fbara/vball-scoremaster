@@ -722,12 +722,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - ActionName Delegate
 
 - (void)actionNameSelected:(NSString*)actionName
@@ -781,8 +775,7 @@
 
 #pragma mark - UITableView Delegate
 
-- (void)tableView:(UITableView*)tableView
-    didSelectRowAtIndexPath:(NSIndexPath*)indexPath
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     // Change the selected row color so the entire row doesn't become gray when
     // it's touched
