@@ -13,9 +13,10 @@
 #import <GoogleAnalytics/GAI.h>
 #import <ChameleonFramework/Chameleon.h>
 
-@interface ActionLabelTableViewController () {
+@interface ActionLabelTableViewController () <UITextFieldDelegate> {
 	//NSMutableArray *actionNamesList;
 	BOOL firstTimeShown;
+	BOOL rowCanSlide;
 	NSUserDefaults *defaults;
 	NSIndexPath *m_currentIndexPath;
 }
@@ -61,11 +62,12 @@
 	
     // Indicate this is the first time this view is seen
     firstTimeShown = YES;
+	rowCanSlide = YES;
 	
 	//Setup bar buttons
 	UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
 																		  target:self
-																		  action:@selector(addNewActionNameRow)];
+																		 action:@selector(addNewActionNameRow:)];
 	
 //	UIBarButtonItem *save = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
 //																		  target:self
@@ -170,8 +172,6 @@
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     static NSString* cellIdentifier = @"Identifier";
-//    UITableViewCell* cell =
-//        [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	SESlideTableViewCell *cell = (SESlideTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (!cell) {
 		cell = [[SESlideTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -205,11 +205,9 @@
             // before
             firstTimeShown = NO;
         } else {
-            //if ([self.delegate respondsToSelector:@selector(actionNameSelected:)]) {
-                // Prepare to call the delegate with the selected row name
-                self.selectedActionName = cell.textLabel.text;
-                [self.delegate actionNameSelected:self.selectedActionName];
-            //}
+			// Prepare to call the delegate with the selected row name
+			self.selectedActionName = cell.textLabel.text;
+			[self.delegate actionNameSelected:self.selectedActionName];
         }
     } else {
         // Should only hit this if on iPhone
@@ -252,18 +250,9 @@
     return 40;
 }
 
--(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return UITableViewCellEditingStyleDelete;
-}
-
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//	if (editingStyle == UITableViewCellEditingStyleDelete) {
-//		[self.actionNamesList removeObjectAtIndex:indexPath.row];
-//		[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//	}
-	[self.actionNamesList removeObjectAtIndex:indexPath.row];
-	[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
+//-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+//	return UITableViewCellEditingStyleDelete;
+//}
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
@@ -379,15 +368,19 @@
 #pragma mark - SESlideTableViewCell Delegate
 
 -(void)slideTableViewCell:(SESlideTableViewCell *)cell didTriggerRightButton:(NSInteger)buttonIndex {
+
+	NSIndexPath *path = [self.tableView indexPathForCell:cell];
 	//Called when one of the cell buttons are tapped
 	switch (buttonIndex) {
 	  case 0:
 			//Rename row
-			[self renameActionNameRow];
+			[self renameActionName:cell];
 			break;
 	  case 1:
 			//Delete row
-			[self deleteActionNameRow];
+			[self.actionNamesList removeObjectAtIndex:path.row];
+			[self.tableView deleteRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+			break;
 	  default:
 			break;
 	}
@@ -410,13 +403,43 @@
 	if (slideState != SESlideTableViewCellSlideStateCenter) {
 		m_currentIndexPath = indexPath;
 	}
+	
+	if (slideState == SESlideTableViewCellSlideStateRight) {
+		rowCanSlide = NO;
+	} else {
+		rowCanSlide = YES;
+	}
 }
 
-#pragma mark - Add/Remove/Rename Rows
+-(BOOL)slideTableViewCell:(SESlideTableViewCell *)cell canSlideToState:(SESlideTableViewCellSlideState)slideState {
+	return rowCanSlide;
+}
 
-- (void)addNewActionNameRow {
-	NSString *title = NSLocalizedString(@"New Action Name", @"Add new Action Name message box title");
-	NSString *msg = NSLocalizedString(@"Enter the new Action Name", @"Enter the new Action Name message box");
+#pragma mark - Add ActionName Row
+
+ /*!
+ *  @author Me, 10-29-15 16:10
+ *
+ *  Adds a new row and edits an existing row for Action Names.
+ *  Depending on what it sent in actionNameText will determine if it's Add or Edit.
+ *
+ *  @param actionNameText String Will be nil for a new row and contain the existing
+ *			ActionName for a rename.
+ */
+- (void)addNewActionNameRow:(NSString *)actionNameText {
+	//Show message box to user and allow them to type in new name
+	NSString *title;
+	NSString *msg;
+	if ([actionNameText isKindOfClass:[UIBarButtonItem class]]) {
+		//This was called by the '+' bar button so add a new row
+		title = NSLocalizedString(@"New Action Name", @"Add new Action Name message box title");
+		msg = NSLocalizedString(@"Enter the new Action Name", @"Enter the new Action Name message box");
+		
+	} else {
+		//Called by 'rename' so change the existing row text
+		title = NSLocalizedString(@"Rename Action Name", @"Add new Action Name message box title");
+		msg = NSLocalizedString(@"Rename the existing Action Name", @"Enter the new Action Name message box");
+	}
 	UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
 																   message:msg
 															preferredStyle:UIAlertControllerStyleAlert];
@@ -424,9 +447,19 @@
 											   handler:^(UIAlertAction * action) {
 												   //Take the text the user entered and insert it into the array first, then into the tableview
 												   NSString *text = ((UITextField *)[alert.textFields objectAtIndex:0]).text;
-												   [self.actionNamesList insertObject:text atIndex:0];
-												   NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
-												   [self.tableView insertRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+												   if ([actionNameText isKindOfClass:[UIBarButtonItem class]]) {
+													   //Add new row
+													   [self.actionNamesList insertObject:text atIndex:0];
+													   NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
+													   [self.tableView insertRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+												   } else {
+													   //Rename existing row
+													   //NSString *oldName = [self.actionNamesList objectAtIndex:m_currentIndexPath.row];
+													   [self.actionNamesList replaceObjectAtIndex:m_currentIndexPath.row withObject:text];
+													   UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:m_currentIndexPath];
+													   cell.textLabel.text = text;
+												   }
+												   
 											   }];
 	UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
 												   handler:^(UIAlertAction * action) {
@@ -438,22 +471,31 @@
 	[alert addAction:cancel];
 	//Get text from user
 	[alert addTextFieldWithConfigurationHandler:^(UITextField *textField){
-		textField.placeholder = NSLocalizedString(@"Action Name", @"Action Name");
+		textField.delegate = self;
+		textField.placeholder = NSLocalizedString(@"Action Name (25 char. limit)", @"Action Name");
+		
 	}];
+	actionNameText = nil;
 	[self presentViewController:alert animated:YES completion:nil];
 	
 }
 
-- (void)deleteActionNameRow {
-	NSLog(@"Delete");
-}
-
-- (void)editActionNameRows {
+-(void)renameActionName:(SESlideTableViewCell *)cell {
+	//Allows the user to rename an existing cell
 	
+	[self addNewActionNameRow:cell.textLabel.text];
 }
 
-- (void)renameActionNameRow {
-	NSLog(@"Rename");
+#pragma mark - UITextView Delegate
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+	if (textField.text.length + (string.length - range.length) <= 25) {
+		//25 or less characters, it's ok
+		return TRUE;
+	} else {
+		//More than 25 characters
+		return FALSE;
+	}
+	//return textField.text.length + (string.length - range.length) <= 25;
 }
 
 - (void)didReceiveMemoryWarning
