@@ -15,11 +15,19 @@
 @interface ActionLabelTableViewController ()
 
 @property (weak, nonatomic) NSString *actionNameToAdd;
+@property (strong, nonatomic) NSMutableArray *actionNamesList;
 
 @end
 
 @implementation ActionLabelTableViewController {
     BOOL firstTimeShown;
+}
+
+-(NSMutableArray *)actionNamesList {
+	if (_actionNamesList) {
+		_actionNamesList = [[NSMutableArray alloc] initWithObjects:@"Spike", @"Dig", @"Ace", @"Block", @"Set", @"Pass" , nil];
+	}
+	return _actionNamesList;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -35,13 +43,7 @@
 {
     [super viewDidLoad];
 
-    // Find the path of the ActionNames plist
-    NSString* path =
-        [[NSBundle mainBundle] pathForResource:@"ActionNames" ofType:@"plist"];
-
-    // Load the file and read the data into an array
-    NSDictionary* dict = [[NSDictionary alloc] initWithContentsOfFile:path];
-    self.actionNames = [dict objectForKey:@"ActionNames"];
+	
 
     // Indicate this is the first time this view is seen
     firstTimeShown = YES;
@@ -195,6 +197,17 @@
     heightForHeaderInSection:(NSInteger)section
 {
     return 40;
+}
+
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return UITableViewCellEditingStyleDelete;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (editingStyle == UITableViewCellEditingStyleDelete) {
+		//Remove object from source
+		
+	}
 }
 
 #pragma mark - Move Rows
