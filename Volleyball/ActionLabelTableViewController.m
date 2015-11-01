@@ -12,8 +12,9 @@
 #import <GoogleAnalytics/GAIFields.h>
 #import <GoogleAnalytics/GAI.h>
 #import <ChameleonFramework/Chameleon.h>
+#import <TSMessages/TSMessageView.h>
 
-@interface ActionLabelTableViewController () <UITextFieldDelegate> {
+@interface ActionLabelTableViewController () <UITextFieldDelegate, TSMessageViewProtocol> {
 	//NSMutableArray *actionNamesList;
 	BOOL firstTimeShown;
 	BOOL rowCanSlide;
@@ -63,24 +64,26 @@
     // Indicate this is the first time this view is seen
     firstTimeShown = YES;
 	rowCanSlide = YES;
+	[TSMessage setDelegate:self];
 	
 	//Setup bar buttons
 	UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
 																		  target:self
 																		 action:@selector(addNewActionNameRow:)];
-	
-//	UIBarButtonItem *save = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+//TODO: Figure out how to have the tableview properly reload the data
+	//Until that time, hide the 'reset' button
+//	UIBarButtonItem *reset = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
 //																		  target:self
-//																		  action:@selector(addNewActionNameRow)];
-	
-//	UIBarButtonItem* fixedSpace = [[UIBarButtonItem alloc]
+//																		  action:@selector(resetActionNames:)];
+//	
+//	UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc]
 //								   initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
 //								   target:self
 //								   action:nil];
 //	
 //	fixedSpace.width = 20.0f;
-//	self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:save, fixedSpace, edit, nil];
 	self.navigationItem.rightBarButtonItem = add;
+	//self.navigationItem.rightBarButtonItem = add;
 
 }
 
@@ -106,6 +109,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+	
     defaults = [NSUserDefaults standardUserDefaults];
     NSString* name;
     // Which side, left or right, is the user acting on?
@@ -239,9 +243,9 @@
     sectionHeader.textColor = [UIColor darkGrayColor];
     if (IS_IPAD()) {
 		sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME", @"Tap on the Action Name for your player");
-    } else {
-        sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME THEN TAP 'SAVE'", @"Tap on the Action Name for your player, then tap Save");
-    }
+    } //else {
+//        sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME THEN TAP 'SAVE'", @"Tap on the Action Name for your player, then tap Save");
+//    }
     return sectionHeader;
 }
 
@@ -250,12 +254,20 @@
     return 40;
 }
 
-//-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-//	return UITableViewCellEditingStyleDelete;
-//}
-
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+	//Don't allow the user to delete the last row of the table
+	if (indexPath.row == [tableView numberOfRowsInSection:indexPath.section] - 1) {
+		return YES;
+	}
+	//Allow deleting all other rows
 	return YES;
+}
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+	//When the table is scrolled, close any open cells
+	SESlideTableViewCell *cell = [self.tableView cellForRowAtIndexPath:m_currentIndexPath];
+	rowCanSlide = YES;
+	[cell setSlideState:SESlideTableViewCellSlideStateCenter animated:YES];
 }
 
 -(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -342,6 +354,34 @@
 	}
 }
 
+- (IBAction)resetActionNames:(UIBarButtonItem *)sender {
+	//Resets the ActionNames back to the default list
+	NSString *title = NSLocalizedString(@"Default Action Names", @"Message box title to reset Action Names to default");
+	NSString *msg = NSLocalizedString(@"Please confirm you want to reset the Action Names to their default values.", @"Message box asking for verification to reset the Action Names.");
+	
+	UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+																   message:msg
+															preferredStyle:UIAlertControllerStyleAlert];
+	UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"Confirm", @"Confirm selection button") style:UIAlertActionStyleDefault
+											   handler:^(UIAlertAction * action) {
+												   self.actionNamesList = [[NSMutableArray alloc] initWithObjects:@"Spike", @"Dig", @"Ace", @"Block", @"Set", @"Pass", nil];
+												   dispatch_async(dispatch_get_main_queue(), ^{
+													   [self.tableView reloadData];
+												   });
+											   }];
+						 
+	UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+												   handler:^(UIAlertAction * action) {
+													   //User tapped Cancel, dismiss alert
+													   [alert dismissViewControllerAnimated:YES completion:nil];
+												   }];
+
+	[alert addAction:ok];
+	[alert addAction:cancel];
+	[self presentViewController:alert animated:YES completion:^{
+		[self.view setNeedsDisplay];
+	}];
+}
 #pragma mark - Gesture Recognizer Helper
 
 //@brief returns a customized snapshot of a given view
@@ -374,16 +414,29 @@
 	switch (buttonIndex) {
 	  case 0:
 			//Rename row
-			[self renameActionName:cell];
+			[self addNewActionNameRow:cell.textLabel.text];
+			//[self renameActionName:cell];
 			break;
 	  case 1:
 			//Delete row
-			[self.actionNamesList removeObjectAtIndex:path.row];
-			[self.tableView deleteRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+			//Do not allow deleting last row
+			if ([self.tableView numberOfRowsInSection:0] > 1) {
+				[self.actionNamesList removeObjectAtIndex:path.row];
+				rowCanSlide = YES;
+				[self.tableView deleteRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+				[self.tableView reloadData];
+			} else {
+				//Show message
+				[TSMessage showNotificationWithTitle:@"Title" subtitle:@"Subtitle" type:TSMessageNotificationTypeError];
+			}
+			
 			break;
 	  default:
 			break;
 	}
+	
+	//Close the open cell
+	//[cell animateToSlideState:SESlideTableViewCellSlideStateCenter velocity:0];
 }
 
 -(void)slideTableViewCell:(SESlideTableViewCell *)cell willSlideToState:(SESlideTableViewCellSlideState)slideState {
@@ -395,6 +448,7 @@
 				[cell setSlideState:SESlideTableViewCellSlideStateCenter animated:YES];
 			}
 		}
+		
 	}
 }
 
@@ -404,11 +458,11 @@
 		m_currentIndexPath = indexPath;
 	}
 	
-	if (slideState == SESlideTableViewCellSlideStateRight) {
-		rowCanSlide = NO;
-	} else {
-		rowCanSlide = YES;
-	}
+//	if (slideState == SESlideTableViewCellSlideStateRight) {
+//		rowCanSlide = NO;
+//	} else {
+//		rowCanSlide = YES;
+//	}
 }
 
 -(BOOL)slideTableViewCell:(SESlideTableViewCell *)cell canSlideToState:(SESlideTableViewCellSlideState)slideState {
@@ -452,14 +506,20 @@
 													   [self.actionNamesList insertObject:text atIndex:0];
 													   NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
 													   [self.tableView insertRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+													   
 												   } else {
 													   //Rename existing row
 													   //NSString *oldName = [self.actionNamesList objectAtIndex:m_currentIndexPath.row];
 													   [self.actionNamesList replaceObjectAtIndex:m_currentIndexPath.row withObject:text];
-													   UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:m_currentIndexPath];
+													   SESlideTableViewCell *cell = [self.tableView cellForRowAtIndexPath:m_currentIndexPath];
 													   cell.textLabel.text = text;
+													   if ([cell slideState] != SESlideTableViewCellSlideStateCenter) {
+														   rowCanSlide = YES;
+														   [cell setSlideState:SESlideTableViewCellSlideStateCenter animated:YES];
+													   }
+													   
 												   }
-												   
+												   text = nil;
 											   }];
 	UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
 												   handler:^(UIAlertAction * action) {
@@ -473,11 +533,13 @@
 	[alert addTextFieldWithConfigurationHandler:^(UITextField *textField){
 		textField.delegate = self;
 		textField.placeholder = NSLocalizedString(@"Action Name (25 char. limit)", @"Action Name");
-		
 	}];
-	actionNameText = nil;
-	[self presentViewController:alert animated:YES completion:nil];
+	[self presentViewController:alert animated:YES completion:^{
+		SESlideTableViewCell *cell = [self.tableView cellForRowAtIndexPath:m_currentIndexPath];
+		[cell setSlideState:SESlideTableViewCellSlideStateCenter animated:YES];
+	}];
 	
+
 }
 
 -(void)renameActionName:(SESlideTableViewCell *)cell {
@@ -488,14 +550,22 @@
 
 #pragma mark - UITextView Delegate
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-	if (textField.text.length + (string.length - range.length) <= 25) {
-		//25 or less characters, it's ok
-		return TRUE;
-	} else {
-		//More than 25 characters
-		return FALSE;
+	//Only allow 25 characters for Action Names
+	if (textField.text.length < 25) {
+		return YES;
 	}
-	//return textField.text.length + (string.length - range.length) <= 25;
+	
+	//Allow deleting chars if max has been reached
+	if (textField.text.length == 25 && string.length == 0) {
+		return YES;
+	}
+	
+	return NO;
+}
+
+#pragma mark - TSMessage Delegate
+-(void)customizeMessageView:(TSMessageView *)messageView {
+	messageView.alpha = 0.9;
 }
 
 - (void)didReceiveMemoryWarning

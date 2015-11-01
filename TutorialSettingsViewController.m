@@ -75,7 +75,7 @@
     [coachMarksView start];
 }
 
-- (void)coachMarksView:(WSCoachMarksView *)coachMarksView didNavigateToIndex:(NSInteger)index
+- (void)coachMarksView:(WSCoachMarksView *)coachMarksView didNavigateToIndex:(NSUInteger)index
 {
 	if (index == 1) {
 		[self.tutorialImage setImage:[UIImage imageNamed:@"TutorialImageSettings1"]];

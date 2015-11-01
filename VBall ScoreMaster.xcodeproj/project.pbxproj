@@ -37,6 +37,7 @@
 		AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A419B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
 		AD2270B51BD98F4A0087289B /* NSUserDefaults+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2270B41BD98F4A0087289B /* NSUserDefaults+Extension.m */; };
+		AD3621411BE553CA00666846 /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = AD3621401BE553CA00666846 /* TSMessagesDefaultDesign.json */; };
 		AD4B54C0199A40D500770580 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B54BF199A40D500770580 /* Social.framework */; };
 		AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968C197F390E00767D1C /* TutorialViewController.m */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
@@ -55,6 +56,7 @@
 		ADB5A13419D30372009B1550 /* NRWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A12F19D30372009B1550 /* NRWindow.m */; };
 		ADB5A13519D30372009B1550 /* UITouch+NRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A13119D30372009B1550 /* UITouch+NRTouch.m */; };
 		ADCFF8B01AB5D6D000AB9CB0 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */; };
+		ADDB11DF1BE662D5007D0411 /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */; };
@@ -120,6 +122,7 @@
 		AD2239401B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		AD2270B31BD98F4A0087289B /* NSUserDefaults+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+Extension.h"; path = "Volleyball/NSUserDefaults+Extension.h"; sourceTree = "<group>"; };
 		AD2270B41BD98F4A0087289B /* NSUserDefaults+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+Extension.m"; path = "Volleyball/NSUserDefaults+Extension.m"; sourceTree = "<group>"; };
+		AD3621401BE553CA00666846 /* TSMessagesDefaultDesign.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = TSMessagesDefaultDesign.json; path = Pods/TSMessages/Pod/Assets/TSMessagesDefaultDesign.json; sourceTree = "<group>"; };
 		AD4B54BF199A40D500770580 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AD52968B197F390E00767D1C /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialViewController.h; path = Volleyball/TutorialViewController.h; sourceTree = "<group>"; };
 		AD52968C197F390E00767D1C /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialViewController.m; path = Volleyball/TutorialViewController.m; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADCC139A1981B588001DC9B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
+		ADDB11DD1BE662D5007D0411 /* WSCoachMarksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCoachMarksView.h; sourceTree = "<group>"; };
+		ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCoachMarksView.m; sourceTree = "<group>"; };
 		ADEB992E1986ECB70009B3F5 /* ActionNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ActionNames.plist; sourceTree = "<group>"; };
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
@@ -211,6 +216,7 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
+				AD3621401BE553CA00666846 /* TSMessagesDefaultDesign.json */,
 				92AA42A81916C2800037D405 /* Volleyball */,
 				9244799B192C01830031C1F6 /* Resources */,
 				92AA42C71916C2810037D405 /* VolleyballTests */,
@@ -362,9 +368,19 @@
 			name = NRTouchPoints;
 			sourceTree = "<group>";
 		};
+		ADDB11DC1BE662B5007D0411 /* WSCoachMarks */ = {
+			isa = PBXGroup;
+			children = (
+				ADDB11DD1BE662D5007D0411 /* WSCoachMarksView.h */,
+				ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */,
+			);
+			name = WSCoachMarks;
+			sourceTree = "<group>";
+		};
 		ADFB427519A4C39200ADBE9F /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				ADDB11DC1BE662B5007D0411 /* WSCoachMarks */,
 				AD0D058C1A7195CC00B5FC00 /* FCColorPicker */,
 				ADB5A12B19D302BE009B1550 /* NRTouchPoints */,
 				AD96E38119BFB02E002CD75E /* IAP */,
@@ -470,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */,
+				AD3621411BE553CA00666846 /* TSMessagesDefaultDesign.json in Resources */,
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
@@ -578,6 +595,7 @@
 				AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */,
 				AD0D058A1A7195C300B5FC00 /* FCColorPickerViewController.m in Sources */,
 				AD07812919D0493100E30AE9 /* VolleyBallIAPViewController.m in Sources */,
+				ADDB11DF1BE662D5007D0411 /* WSCoachMarksView.m in Sources */,
 				ADB5A13419D30372009B1550 /* NRWindow.m in Sources */,
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
