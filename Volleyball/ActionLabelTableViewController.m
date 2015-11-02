@@ -426,8 +426,21 @@
 				[self.tableView deleteRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
 				[self.tableView reloadData];
 			} else {
-				//Show message
-				[TSMessage showNotificationWithTitle:@"Title" subtitle:@"Subtitle" type:TSMessageNotificationTypeError];
+				//Can't delete the last row, show dropdown message from top
+				NSString *title = NSLocalizedString(@"Delete Error", @"Error message title");
+				NSString *msg = NSLocalizedString(@"Deleting the last row is not allowed.\nTap to dismiss.", @"Deleting the last row is not allowed.");
+				[TSMessage showNotificationInViewController:self
+													  title:title
+												   subtitle:msg
+													  image:[UIImage imageNamed:@"alertButtonWhite"]
+													   type:TSMessageNotificationTypeError
+												   duration:8.0
+												   callback:nil
+												buttonTitle:nil
+											 buttonCallback:nil
+												 atPosition:TSMessageNotificationPositionTop
+									   canBeDismissedByUser:YES];
+				[cell setSlideState:SESlideTableViewCellSlideStateCenter animated:YES];
 			}
 			
 			break;
@@ -565,7 +578,7 @@
 
 #pragma mark - TSMessage Delegate
 -(void)customizeMessageView:(TSMessageView *)messageView {
-	messageView.alpha = 0.9;
+	messageView.alpha = 1.0;
 }
 
 - (void)didReceiveMemoryWarning
