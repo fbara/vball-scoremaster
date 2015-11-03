@@ -19,7 +19,7 @@
 	BOOL firstTimeShown;
 	BOOL rowCanSlide;
 	NSUserDefaults *defaults;
-	NSIndexPath *m_currentIndexPath;
+	NSIndexPath *m_currentIndexPath, *selectedIndexPath;
 }
 @property (strong, nonatomic)NSMutableArray *actionNamesList;
 
@@ -29,10 +29,16 @@
 -(NSMutableArray *)actionNamesList {
 	//Create array of ActionNames
 	if (!_actionNamesList) {
+		if (firstTimeShown) {
+			_actionNamesList = [[NSMutableArray alloc] initWithObjects:@"Spike", @"Dig", @"Ace", @"Block", @"Set", @"Pass", nil];
+			defaults = [NSUserDefaults standardUserDefaults];
+			[defaults setObject:_actionNamesList forKey:@"ActionNames"];
+		} else {
 		//Names don't exist yet, create them from standard defaults
 		defaults = [NSUserDefaults standardUserDefaults];
 		_actionNamesList = [[NSMutableArray alloc] init];
 		_actionNamesList = [[defaults objectForKey:@"ActionNames"] mutableCopy];
+		}
 	}
 	return _actionNamesList;
 }
@@ -54,7 +60,8 @@
 	
 	//Load default ActionNames if array doesn't yet exist
 	if (!self.actionNamesList) {
-		self.actionNamesList = [[NSMutableArray alloc] initWithObjects:@"Spike", @"Dig", @"Ace", @"Block", @"Set", @"Pass", nil];
+		self.actionNamesList = [defaults objectForKey:@"ActionNames"];
+		//self.actionNamesList = [[NSMutableArray alloc] initWithObjects:@"Spike", @"Dig", @"Ace", @"Block", @"Set", @"Pass", nil];
 	}
 	//Add long press gesture for moving rows
 	UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
@@ -102,6 +109,7 @@
 	//Save the Action Names
 	[defaults setObject:self.actionNamesList forKey:@"ActionNames"];
 	
+	
 	[super viewWillDisappear:animated];
 }
 
@@ -131,13 +139,15 @@
                           scrollPosition:UITableViewScrollPositionNone];
     [self tableView:self.tableView willSelectRowAtIndexPath:initialIndex];
     [self tableView:self.tableView didSelectRowAtIndexPath:initialIndex];
+	[self.tableView reloadData];
 
     // Load the row the user has already selected & put a checkmark by it
 }
 
 - (int)getRowForName:(NSString*)selectedName
 {
-    // Return the index row for the name passed in
+	
+	// Return the index row for the name passed in
     if ([selectedName isEqualToString:@"SPIKE"]) {
         return 0;
     } else if ([selectedName isEqualToString:@"DIG"])
@@ -199,11 +209,23 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSUInteger index = [[tableView indexPathsForVisibleRows] indexOfObject:indexPath];
+	SESlideTableViewCell *cell = [[tableView visibleCells] objectAtIndex:index];
+	[cell setAccessoryType:UITableViewCellAccessoryNone];
+	
+}
+
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     // select new
-    UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
-
+    SESlideTableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+	if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+		cell.accessoryType = UITableViewCellAccessoryNone;
+	} else {
+		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+	}
+	
     if (IS_IPAD()) {
         // Is this the first time this view was shown?
         if (firstTimeShown) {
@@ -382,9 +404,7 @@
 
 	[alert addAction:ok];
 	[alert addAction:cancel];
-	[self presentViewController:alert animated:YES completion:^{
-		[self.view setNeedsDisplay];
-	}];
+	[self presentViewController:alert animated:YES completion:nil];
 }
 #pragma mark - Gesture Recognizer Helper
 
@@ -502,7 +522,7 @@
 	NSString *title;
 	NSString *msg;
 	if ([actionNameText isEqualToString:@""]) {
-		//This was called by the '+' bar button so add a new row
+		//This was called by the 'New' cell button, so add a new row
 		title = NSLocalizedString(@"New Action Name", @"Add new Action Name message box title");
 		msg = NSLocalizedString(@"Enter the new Action Name", @"Enter the new Action Name message box");
 		
@@ -526,7 +546,6 @@
 													   
 												   } else {
 													   //Rename existing row
-													   //NSString *oldName = [self.actionNamesList objectAtIndex:m_currentIndexPath.row];
 													   [self.actionNamesList replaceObjectAtIndex:m_currentIndexPath.row withObject:text];
 													   SESlideTableViewCell *cell = [self.tableView cellForRowAtIndexPath:m_currentIndexPath];
 													   cell.textLabel.text = text;
