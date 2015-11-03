@@ -67,9 +67,9 @@
 	[TSMessage setDelegate:self];
 	
 	//Setup bar buttons
-	UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-																		  target:self
-																		 action:@selector(addNewActionNameRow:)];
+//	UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+//																		  target:self
+//																		 action:@selector(addNewActionNameRow:)];
 //TODO: Figure out how to have the tableview properly reload the data
 	//Until that time, hide the 'reset' button
 //	UIBarButtonItem *reset = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
@@ -82,9 +82,8 @@
 //								   action:nil];
 //	
 //	fixedSpace.width = 20.0f;
-	self.navigationItem.rightBarButtonItem = add;
 	//self.navigationItem.rightBarButtonItem = add;
-
+	
 }
 
 
@@ -184,6 +183,9 @@
 		[cell addRightButtonWithText:NSLocalizedString(@"Rename", @"Rename the Action Name row")
 						   textColor:FlatWhite
 					 backgroundColor:FlatBlue];
+		[cell addRightButtonWithText:NSLocalizedString(@"New", @"Add new Action Name row")
+						   textColor:FlatBlack
+					 backgroundColor:FlatGreen];
 		[cell addRightButtonWithText:NSLocalizedString(@"Delete", @"Delete Action Name table row")
 						   textColor:FlatWhite
 					 backgroundColor:FlatRed];
@@ -241,8 +243,10 @@
     sectionHeader.backgroundColor = [UIColor clearColor];
 	sectionHeader.font = [UIFont systemFontOfSize:14];
     sectionHeader.textColor = [UIColor darkGrayColor];
+
     if (IS_IPAD()) {
 		sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME", @"Tap on the Action Name for your player");
+		
     } //else {
 //        sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME THEN TAP 'SAVE'", @"Tap on the Action Name for your player, then tap Save");
 //    }
@@ -415,9 +419,11 @@
 	  case 0:
 			//Rename row
 			[self addNewActionNameRow:cell.textLabel.text];
-			//[self renameActionName:cell];
 			break;
 	  case 1:
+			[self addNewActionNameRow:@""];
+			break;
+	  case 2:
 			//Delete row
 			//Do not allow deleting last row
 			if ([self.tableView numberOfRowsInSection:0] > 1) {
@@ -428,7 +434,7 @@
 			} else {
 				//Can't delete the last row, show dropdown message from top
 				NSString *title = NSLocalizedString(@"Delete Error", @"Error message title");
-				NSString *msg = NSLocalizedString(@"Deleting the last row is not allowed.\nTap to dismiss.", @"Deleting the last row is not allowed.");
+				NSString *msg = NSLocalizedString(@"Deleting the last row is not allowed.\nYou can rename the row or add new rows.", @"Deleting the last row is not allowed.");
 				[TSMessage showNotificationInViewController:self
 													  title:title
 												   subtitle:msg
@@ -436,7 +442,7 @@
 													   type:TSMessageNotificationTypeError
 												   duration:8.0
 												   callback:nil
-												buttonTitle:nil
+												buttonTitle:NSLocalizedString(@"Dismiss", @"Dismiss button title.")
 											 buttonCallback:nil
 												 atPosition:TSMessageNotificationPositionTop
 									   canBeDismissedByUser:YES];
@@ -445,11 +451,9 @@
 			
 			break;
 	  default:
+			[cell setSlideState:SESlideTableViewCellSlideStateCenter animated:YES];
 			break;
 	}
-	
-	//Close the open cell
-	//[cell animateToSlideState:SESlideTableViewCellSlideStateCenter velocity:0];
 }
 
 -(void)slideTableViewCell:(SESlideTableViewCell *)cell willSlideToState:(SESlideTableViewCellSlideState)slideState {
@@ -497,7 +501,7 @@
 	//Show message box to user and allow them to type in new name
 	NSString *title;
 	NSString *msg;
-	if ([actionNameText isKindOfClass:[UIBarButtonItem class]]) {
+	if ([actionNameText isEqualToString:@""]) {
 		//This was called by the '+' bar button so add a new row
 		title = NSLocalizedString(@"New Action Name", @"Add new Action Name message box title");
 		msg = NSLocalizedString(@"Enter the new Action Name", @"Enter the new Action Name message box");
@@ -514,7 +518,7 @@
 											   handler:^(UIAlertAction * action) {
 												   //Take the text the user entered and insert it into the array first, then into the tableview
 												   NSString *text = ((UITextField *)[alert.textFields objectAtIndex:0]).text;
-												   if ([actionNameText isKindOfClass:[UIBarButtonItem class]]) {
+												   if ([actionNameText isEqualToString:@""]) {
 													   //Add new row
 													   [self.actionNamesList insertObject:text atIndex:0];
 													   NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -574,11 +578,6 @@
 	}
 	
 	return NO;
-}
-
-#pragma mark - TSMessage Delegate
--(void)customizeMessageView:(TSMessageView *)messageView {
-	messageView.alpha = 1.0;
 }
 
 - (void)didReceiveMemoryWarning
