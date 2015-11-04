@@ -15,7 +15,6 @@
 #import <TSMessages/TSMessageView.h>
 
 @interface ActionLabelTableViewController () <UITextFieldDelegate, TSMessageViewProtocol> {
-	//NSMutableArray *actionNamesList;
 	BOOL firstTimeShown;
 	BOOL rowCanSlide;
 	NSUserDefaults *defaults;
@@ -61,7 +60,6 @@
 	//Load default ActionNames if array doesn't yet exist
 	if (!self.actionNamesList) {
 		self.actionNamesList = [defaults objectForKey:@"ActionNames"];
-		//self.actionNamesList = [[NSMutableArray alloc] initWithObjects:@"Spike", @"Dig", @"Ace", @"Block", @"Set", @"Pass", nil];
 	}
 	//Add long press gesture for moving rows
 	UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
@@ -72,6 +70,7 @@
     firstTimeShown = YES;
 	rowCanSlide = YES;
 	[TSMessage setDelegate:self];
+	self.tableView.tintColor = FlatBlue;
 	
 	//Setup bar buttons
 //	UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
@@ -89,8 +88,10 @@
 //								   action:nil];
 //	
 //	fixedSpace.width = 20.0f;
-	//self.navigationItem.rightBarButtonItem = add;
-	
+//	self.navigationItem.rightBarButtonItem = fixedSpace;
+	//There's a Save button showing up and I can't figure out where it comes from.
+	//Hide the Save button for now. Backing out of view will save setting.
+	self.navigationItem.rightBarButtonItem = nil;
 }
 
 
@@ -108,7 +109,8 @@
 	
 	//Save the Action Names
 	[defaults setObject:self.actionNamesList forKey:@"ActionNames"];
-	
+	//Clear the selected row indexPath
+	selectedIndexPath = nil;
 	
 	[super viewWillDisappear:animated];
 }
@@ -132,37 +134,16 @@
     default:
         break;
     }
-    int row = [self getRowForName:name];
+	//Get the index of the current Action Name from the list of names
+	int row = (int)[self.actionNamesList indexOfObject:name];
+	
     NSIndexPath* initialIndex = [NSIndexPath indexPathForRow:row inSection:0];
     [self.tableView selectRowAtIndexPath:initialIndex
                                 animated:NO
                           scrollPosition:UITableViewScrollPositionNone];
-    [self tableView:self.tableView willSelectRowAtIndexPath:initialIndex];
-    [self tableView:self.tableView didSelectRowAtIndexPath:initialIndex];
-	[self.tableView reloadData];
-
-    // Load the row the user has already selected & put a checkmark by it
-}
-
-- (int)getRowForName:(NSString*)selectedName
-{
 	
-	// Return the index row for the name passed in
-    if ([selectedName isEqualToString:@"SPIKE"]) {
-        return 0;
-    } else if ([selectedName isEqualToString:@"DIG"])
-        return 1;
-    else if ([selectedName isEqualToString:@"ACE"])
-        return 2;
-    else if ([selectedName isEqualToString:@"BLOCK"])
-        return 3;
-    else if ([selectedName isEqualToString:@"SET"])
-        return 4;
-    else if ([selectedName isEqualToString:@"Pass"])
-        return 5;
-    else {
-        return 0;
-    }
+    [self tableView:self.tableView didSelectRowAtIndexPath:initialIndex];
+
 }
 
 #pragma mark - UITableView Delegate Methods
@@ -174,12 +155,21 @@
 
 - (NSIndexPath*)tableView:(UITableView*)tableView willSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-	NSIndexPath* oldIndex = [self.tableView indexPathForSelectedRow];
-	[self.tableView cellForRowAtIndexPath:oldIndex].accessoryType = UITableViewCellAccessoryNone;
-	[self.tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-	[self.tableView cellForRowAtIndexPath:indexPath].highlighted = NO;
+	SESlideTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	//Check if cell has been slid open
+	if ([cell slideState] == SESlideTableViewCellSlideStateCenter) {
+		//Cell is open, prevent an accessory checkmark
+		NSIndexPath* oldIndex = [self.tableView indexPathForSelectedRow];
+		[self.tableView cellForRowAtIndexPath:oldIndex].accessoryType = UITableViewCellAccessoryNone;
+		[self.tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+		[self.tableView cellForRowAtIndexPath:indexPath].highlighted = NO;
+		
+		return indexPath;
+	} else {
+		//Cell is closed, ok to add checkmark
+		return indexPath;
+	}
 	
-	return indexPath;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
@@ -210,27 +200,44 @@
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSUInteger index = [[tableView indexPathsForVisibleRows] indexOfObject:indexPath];
-	SESlideTableViewCell *cell = [[tableView visibleCells] objectAtIndex:index];
-	[cell setAccessoryType:UITableViewCellAccessoryNone];
-	
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	if (selectedIndexPath != indexPath) {
+		[cell setAccessoryType:UITableViewCellAccessoryNone];
+	} else {
+		return;
+	}
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    // select new
+    // select new row
     SESlideTableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
-	if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
-		cell.accessoryType = UITableViewCellAccessoryNone;
-	} else {
-		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+	//Check if use accidentally tapped a row that was slid open
+	if (cell.slideState != SESlideTableViewCellSlideStateCenter) {
+		//Don't save this cell selection, throw it out and return
+		return;
+	}
+	//User did not tap on an open cell, continue with row selection
+	[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+	selectedIndexPath = indexPath;
+	//Save the selected row to the left or right
+	switch (self.selectedActionRow) {
+	case 1:
+		//Left side
+		[defaults setObject:cell.textLabel.text forKey:@"leftActionName"];
+		break;
+	case 2:
+		//Right side
+		[defaults setObject:cell.textLabel.text forKey:@"rightActionName"];
+		break;
+	default:
+			break;
 	}
 	
     if (IS_IPAD()) {
         // Is this the first time this view was shown?
         if (firstTimeShown) {
-            // Show the existing selection and indicate we've been thru this path
-            // before
+            // Show the existing selection and indicate we've been thru this path before
             firstTimeShown = NO;
         } else {
 			// Prepare to call the delegate with the selected row name
