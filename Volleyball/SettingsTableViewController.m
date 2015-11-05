@@ -727,6 +727,7 @@
 - (void)actionNameSelected:(NSString*)actionName
 {
     [self setActionName:actionName];
+	//Close this view
     if (IS_IPAD()) {
         [self.actionNameVC dismissViewControllerAnimated:FALSE completion:nil];
     }
@@ -756,14 +757,14 @@
 
 - (void)setActionName:(NSString*)name
 {
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-
-    // Determine which Action Name row was selected prior to the segue
-    if (self.actionRow == 1) {
-        [defaults setObject:name forKey:@"leftActionName"];
-    } else {
-        [defaults setObject:name forKey:@"rightActionName"];
-    }
+//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+//
+//    // Determine which Action Name row was selected prior to the segue
+//    if (self.actionRow == 1) {
+//        [defaults setObject:name forKey:@"leftActionName"];
+//    } else {
+//        [defaults setObject:name forKey:@"rightActionName"];
+//    }
     // Remove the row number from actionRow
     self.actionRow = 0;
 

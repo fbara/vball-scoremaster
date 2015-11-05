@@ -15,7 +15,7 @@
 #import <TSMessages/TSMessageView.h>
 
 @interface ActionLabelTableViewController () <UITextFieldDelegate, TSMessageViewProtocol> {
-	BOOL firstTimeShown;
+	BOOL firstTimeShown, firstTimeEver;
 	BOOL rowCanSlide;
 	NSUserDefaults *defaults;
 	NSIndexPath *m_currentIndexPath, *selectedIndexPath;
@@ -240,13 +240,13 @@
             // Show the existing selection and indicate we've been thru this path before
             firstTimeShown = NO;
         } else {
-			// Prepare to call the delegate with the selected row name
-			self.selectedActionName = cell.textLabel.text;
-			[self.delegate actionNameSelected:self.selectedActionName];
+			// Call the delegate
+			//All this does now is allow the Action Name table to be dismissed on iPad
+			[self.delegate actionNameSelected:@"Nothing"];
         }
-    } else {
-        // Should only hit this if on iPhone
-        self.selectedActionName = cell.textLabel.text;
+//    } else {
+//        // Should only hit this if on iPhone
+//        self.selectedActionName = cell.textLabel.text;
     }
 }
 
@@ -574,6 +574,7 @@
 	[alert addAction:cancel];
 	//Get text from user
 	[alert addTextFieldWithConfigurationHandler:^(UITextField *textField){
+		
 		textField.delegate = self;
 		textField.placeholder = NSLocalizedString(@"Action Name (25 char. limit)", @"Action Name");
 	}];
@@ -593,8 +594,10 @@
 
 #pragma mark - UITextView Delegate
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+
 	//Only allow 25 characters for Action Names
 	if (textField.text.length < 25) {
+		
 		return YES;
 	}
 	
