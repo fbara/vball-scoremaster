@@ -19,6 +19,7 @@
 	BOOL rowCanSlide;
 	NSUserDefaults *defaults;
 	NSIndexPath *m_currentIndexPath, *selectedIndexPath;
+	SESlideTableViewCell *selectedCell;
 }
 @property (strong, nonatomic)NSMutableArray *actionNamesList;
 
@@ -71,6 +72,7 @@
 	rowCanSlide = YES;
 	[TSMessage setDelegate:self];
 	self.tableView.tintColor = FlatBlue;
+	[self checkForFirstTimeInView];
 	
 	//Setup bar buttons
 //	UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
@@ -135,15 +137,26 @@
         break;
     }
 	//Get the index of the current Action Name from the list of names
-	int row = (int)[self.actionNamesList indexOfObject:name];
-	
-    NSIndexPath* initialIndex = [NSIndexPath indexPathForRow:row inSection:0];
-    [self.tableView selectRowAtIndexPath:initialIndex
-                                animated:NO
-                          scrollPosition:UITableViewScrollPositionNone];
-	
-    [self tableView:self.tableView didSelectRowAtIndexPath:initialIndex];
+	NSUInteger row = [self.actionNamesList indexOfObject:name];
+	if (row != NSNotFound) {
+		//There's a match in the array so put a checkmark next to it
+		NSIndexPath* initialIndex = [NSIndexPath indexPathForRow:row inSection:0];
+		[self.tableView selectRowAtIndexPath:initialIndex
+									animated:NO
+							  scrollPosition:UITableViewScrollPositionNone];
+		
+		[self tableView:self.tableView didSelectRowAtIndexPath:initialIndex];
+	}
+}
 
+/*!
+ *  @author Me, 11-05-15 07:11
+ *
+ *  Check if this is the first time the user has ever seen this view.
+ *  If so, show them how to use the sliding cells.
+ */
+-(void)checkForFirstTimeInView {
+	
 }
 
 #pragma mark - UITableView Delegate Methods
@@ -212,15 +225,20 @@
 {
     // select new row
     SESlideTableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+	
 	//Check if use accidentally tapped a row that was slid open
 	if (cell.slideState != SESlideTableViewCellSlideStateCenter) {
 		//Don't save this cell selection, throw it out and return
 		return;
 	}
 	//User did not tap on an open cell, continue with row selection
+	
+	//Save the selected cell in case the user tries to delete it
+	selectedCell = cell;
+	//Add the checkmark
 	[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 	selectedIndexPath = indexPath;
-	//Save the selected row to the left or right
+	//Save the selected row to the left or right?
 	switch (self.selectedActionRow) {
 	case 1:
 		//Left side
@@ -244,9 +262,6 @@
 			//All this does now is allow the Action Name table to be dismissed on iPad
 			[self.delegate actionNameSelected:@"Nothing"];
         }
-//    } else {
-//        // Should only hit this if on iPhone
-//        self.selectedActionName = cell.textLabel.text;
     }
 }
 
@@ -452,6 +467,25 @@
 			break;
 	  case 2:
 			//Delete row
+			if (cell == selectedCell) {
+				//Trying to delete a row that has a checkmark, prevent it
+				NSString *title = NSLocalizedString(@"Delete Error", @"Error message title");
+				NSString *msg = NSLocalizedString(@"This is the currently selected row and it can't be deleted.\nYou can rename it or select a different row first, then delete this row.", @"Deleting the selected row is not allowed.");
+				[TSMessage showNotificationInViewController:self
+													  title:title
+												   subtitle:msg
+													  image:[UIImage imageNamed:@"alertButtonWhite"]
+													   type:TSMessageNotificationTypeError
+												   duration:8.0
+												   callback:nil
+												buttonTitle:NSLocalizedString(@"Dismiss", @"Dismiss button title.")
+											 buttonCallback:nil
+												 atPosition:TSMessageNotificationPositionTop
+									   canBeDismissedByUser:YES];
+				selectedCell = nil;
+				return;
+			}
+			
 			//Do not allow deleting last row
 			if ([self.tableView numberOfRowsInSection:0] > 1) {
 				[self.actionNamesList removeObjectAtIndex:path.row];
@@ -475,7 +509,6 @@
 									   canBeDismissedByUser:YES];
 				[cell setSlideState:SESlideTableViewCellSlideStateCenter animated:YES];
 			}
-			
 			break;
 	  default:
 			[cell setSlideState:SESlideTableViewCellSlideStateCenter animated:YES];
