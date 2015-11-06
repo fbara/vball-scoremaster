@@ -26,8 +26,8 @@
 /* Class = "IBUILabel"; accessibilityLabel = "Left-side Action name"; ObjectID = "8Nb-0K-3R7"; */
 "8Nb-0K-3R7.accessibilityLabel" = "Left-side Action name";
 
-/* Class = "IBUILabel"; text = "SPIKE"; ObjectID = "8Nb-0K-3R7"; */
-"8Nb-0K-3R7.text" = "SPIKE";
+/* Class = "IBUILabel"; text = "Not Selected"; ObjectID = "8Nb-0K-3R7"; */
+"8Nb-0K-3R7.text" = "Not Selected";
 
 /* Class = "IBUILabel"; text = "0"; ObjectID = "991-IZ-vz3"; */
 "991-IZ-vz3.text" = "0";
@@ -65,8 +65,8 @@
 /* Class = "IBUILabel"; text = "0"; ObjectID = "HOT-d2-W5V"; */
 "HOT-d2-W5V.text" = "0";
 
-/* Class = "IBUILabel"; text = "SPIKE"; ObjectID = "IEc-eP-Hpp"; */
-"IEc-eP-Hpp.text" = "SPIKE";
+/* Class = "IBUILabel"; text = "Not Selected"; ObjectID = "IEc-eP-Hpp"; */
+"IEc-eP-Hpp.text" = "Not Selected";
 
 /* Class = "IBUILabel"; text = "Right side Action name"; ObjectID = "Ikm-us-vX0"; */
 "Ikm-us-vX0.text" = "Right side Action name";
@@ -270,8 +270,8 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
 /* Class = "IBUILabel"; text = "Left side Action name"; ObjectID = "g2s-UN-oRu"; */
 "g2s-UN-oRu.text" = "Left side Action name";
 
-/* Class = "IBUILabel"; text = "ACE"; ObjectID = "gCM-Vw-h76"; */
-"gCM-Vw-h76.text" = "ACE";
+/* Class = "IBUILabel"; text = "Not Selected"; ObjectID = "gCM-Vw-h76"; */
+"gCM-Vw-h76.text" = "Not Selected";
 
 /* Class = "IBUILabel"; text = "0"; ObjectID = "i1f-B7-MYb"; */
 "i1f-B7-MYb.text" = "0";
@@ -318,8 +318,8 @@ PLEASE CONSIDER LEAVING FEEDBACK ON THE APP STORE SO THAT ENHANCEMENTS OF THIS A
 /* Class = "IBUILabel"; accessibilityLabel = "Right-side Action name"; ObjectID = "v4s-lv-LRm"; */
 "v4s-lv-LRm.accessibilityLabel" = "Right-side Action name";
 
-/* Class = "IBUILabel"; text = "ACE"; ObjectID = "v4s-lv-LRm"; */
-"v4s-lv-LRm.text" = "ACE";
+/* Class = "IBUILabel"; text = "Not Selected"; ObjectID = "v4s-lv-LRm"; */
+"v4s-lv-LRm.text" = "Not Selected";
 
 /* Class = "IBUIViewController"; title = "Instructions"; ObjectID = "vSD-dS-WPV"; */
 "vSD-dS-WPV.title" = "Instructions";

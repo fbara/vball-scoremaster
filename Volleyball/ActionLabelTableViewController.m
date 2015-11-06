@@ -13,10 +13,11 @@
 #import <GoogleAnalytics/GAI.h>
 #import <ChameleonFramework/Chameleon.h>
 #import <TSMessages/TSMessageView.h>
+#import <BTBalloon/BTBalloon.h>
+#import <GBVersionTracking/GBVersionTracking.h>
 
 @interface ActionLabelTableViewController () <UITextFieldDelegate, TSMessageViewProtocol> {
-	BOOL firstTimeShown, firstTimeEver;
-	BOOL rowCanSlide;
+	BOOL firstTimeShown, firstTimeEver, rowCanSlide, rowChecked;
 	NSUserDefaults *defaults;
 	NSIndexPath *m_currentIndexPath, *selectedIndexPath;
 	SESlideTableViewCell *selectedCell;
@@ -69,7 +70,9 @@
 	
     // Indicate this is the first time this view is seen
     firstTimeShown = YES;
+	firstTimeEver = YES;
 	rowCanSlide = YES;
+	rowChecked = NO;
 	[TSMessage setDelegate:self];
 	self.tableView.tintColor = FlatBlue;
 	[self checkForFirstTimeInView];
@@ -111,6 +114,13 @@
 	
 	//Save the Action Names
 	[defaults setObject:self.actionNamesList forKey:@"ActionNames"];
+	
+	//Check if there are no rows with checkmarks
+	if (!rowChecked) {
+		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+		
+		[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+	}
 	//Clear the selected row indexPath
 	selectedIndexPath = nil;
 	
@@ -138,15 +148,16 @@
     }
 	//Get the index of the current Action Name from the list of names
 	NSUInteger row = [self.actionNamesList indexOfObject:name];
-	if (row != NSNotFound) {
-		//There's a match in the array so put a checkmark next to it
-		NSIndexPath* initialIndex = [NSIndexPath indexPathForRow:row inSection:0];
-		[self.tableView selectRowAtIndexPath:initialIndex
-									animated:NO
-							  scrollPosition:UITableViewScrollPositionNone];
-		
-		[self tableView:self.tableView didSelectRowAtIndexPath:initialIndex];
+	if (row == NSNotFound) {
+		//There's no match in the array so select first row
+		row = 0;
 	}
+	NSIndexPath* initialIndex = [NSIndexPath indexPathForRow:row inSection:0];
+	[self.tableView selectRowAtIndexPath:initialIndex
+								animated:NO
+						  scrollPosition:UITableViewScrollPositionNone];
+	
+	[self tableView:self.tableView didSelectRowAtIndexPath:initialIndex];
 }
 
 /*!
@@ -156,8 +167,26 @@
  *  If so, show them how to use the sliding cells.
  */
 -(void)checkForFirstTimeInView {
-	
+	if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion] ) {
+		if (firstTimeEver) {
+			//Show BTBalloon with info on rows
+			NSString *title = @"Swipe Left On Cell.\nYou can add, rename, and delete rows. Just swipe a row to see the buttons.";
+			[BTBalloon appearance].textFont = [UIFont fontWithName:@"AvenirNext-Regular" size:14.0f];
+			[[BTBalloon sharedInstance] showWithTitle:title
+												image:[UIImage imageNamed:@"Swipe-Left-White"]
+										 anchorToView:selectedCell
+										  buttonTitle:@"Continue"
+									   buttonCallback:^{
+										   [[BTBalloon sharedInstance] hideWithAnimation:YES];
+									   }];
+			firstTimeEver = FALSE;
+			[defaults setBool:firstTimeEver forKey:@"firstTimeEver"];
+		} else {
+			return;
+		}
+	}
 }
+
 
 #pragma mark - UITableView Delegate Methods
 
@@ -223,7 +252,8 @@
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    // select new row
+	firstTimeEver = FALSE;
+	// select new row
     SESlideTableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
 	
 	//Check if use accidentally tapped a row that was slid open
@@ -232,7 +262,7 @@
 		return;
 	}
 	//User did not tap on an open cell, continue with row selection
-	
+	rowChecked = YES;
 	//Save the selected cell in case the user tries to delete it
 	selectedCell = cell;
 	//Add the checkmark

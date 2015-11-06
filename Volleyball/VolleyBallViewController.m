@@ -500,7 +500,7 @@ NSString *socialMessage;
     tempName = [defaults stringForKey:@"leftActionName"];
 
     if ([tempName length] < 1) {
-        self.leftActionLabel.text = @"SPIKE";
+        self.leftActionLabel.text = @"Not Selected";
     } else {
         self.leftActionLabel.text = [defaults stringForKey:@"leftActionName"];
     }
@@ -508,7 +508,7 @@ NSString *socialMessage;
     tempName = [defaults stringForKey:@"rightActionName"];
 
     if ([tempName length] < 1) {
-        self.rightActionLabel.text = @"ACE";
+        self.rightActionLabel.text = @"Not Selected";
     } else {
         self.rightActionLabel.text = [defaults stringForKey:@"rightActionName"];
     }

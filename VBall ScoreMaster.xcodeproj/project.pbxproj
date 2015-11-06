@@ -40,6 +40,8 @@
 		AD3621411BE553CA00666846 /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = AD3621401BE553CA00666846 /* TSMessagesDefaultDesign.json */; };
 		AD4B54C0199A40D500770580 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B54BF199A40D500770580 /* Social.framework */; };
 		AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968C197F390E00767D1C /* TutorialViewController.m */; };
+		AD548FA21BEBD9D500B313D4 /* BTAppTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = AD548F9F1BEBD9D500B313D4 /* BTAppTutorial.m */; };
+		AD548FA31BEBD9D500B313D4 /* BTOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AD548FA11BEBD9D500B313D4 /* BTOverlay.m */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
 		AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */; };
@@ -126,6 +128,10 @@
 		AD4B54BF199A40D500770580 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AD52968B197F390E00767D1C /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialViewController.h; path = Volleyball/TutorialViewController.h; sourceTree = "<group>"; };
 		AD52968C197F390E00767D1C /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialViewController.m; path = Volleyball/TutorialViewController.m; sourceTree = "<group>"; };
+		AD548F9E1BEBD9D500B313D4 /* BTAppTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAppTutorial.h; sourceTree = "<group>"; };
+		AD548F9F1BEBD9D500B313D4 /* BTAppTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAppTutorial.m; sourceTree = "<group>"; };
+		AD548FA01BEBD9D500B313D4 /* BTOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTOverlay.h; sourceTree = "<group>"; };
+		AD548FA11BEBD9D500B313D4 /* BTOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTOverlay.m; sourceTree = "<group>"; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -330,6 +336,10 @@
 		AD52968A197F38E100767D1C /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				AD548F9E1BEBD9D500B313D4 /* BTAppTutorial.h */,
+				AD548F9F1BEBD9D500B313D4 /* BTAppTutorial.m */,
+				AD548FA01BEBD9D500B313D4 /* BTOverlay.h */,
+				AD548FA11BEBD9D500B313D4 /* BTOverlay.m */,
 				AD1378A019B50B9300DB02D0 /* iPadTutorialViewController.h */,
 				AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */,
 				AD1378A319B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.h */,
@@ -599,11 +609,13 @@
 				ADB5A13419D30372009B1550 /* NRWindow.m in Sources */,
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
+				AD548FA21BEBD9D500B313D4 /* BTAppTutorial.m in Sources */,
 				AD0D05991A71977100B5FC00 /* FCColorSwatchView.m in Sources */,
 				AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */,
 				AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */,
 				AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */,
 				AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */,
+				AD548FA31BEBD9D500B313D4 /* BTOverlay.m in Sources */,
 				AD2270B51BD98F4A0087289B /* NSUserDefaults+Extension.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,

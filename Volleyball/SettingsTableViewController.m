@@ -269,13 +269,13 @@
     if ([leftActionName length] > 1) {
         [defaults setObject:leftActionName forKey:@"leftActionName"];
     } else {
-        [defaults setObject:@"SPIKE" forKey:@"leftActionName"];
+        [defaults setObject:@"Not Selected" forKey:@"leftActionName"];
     }
 
     if ([rightActionName length] > 1) {
         [defaults setObject:rightActionName forKey:@"rightActionName"];
     } else {
-        [defaults setObject:@"ACE" forKey:@"rightActionName"];
+        [defaults setObject:@"Not Selected" forKey:@"rightActionName"];
     }
 
     [self saveUserDefaults];
@@ -293,7 +293,7 @@
     tempName = [defaults stringForKey:@"leftActionName"];
 
     if ([tempName length] < 1) {
-        self.leftActionNameSelected.text = @"SPIKE";
+        self.leftActionNameSelected.text = @"Not Selected";
     } else {
         self.leftActionNameSelected.text = tempName;
     }
@@ -301,7 +301,7 @@
     tempName = [defaults stringForKey:@"rightActionName"];
 
     if ([tempName length] < 1) {
-        self.rightActionNameSelected.text = @"ACE";
+        self.rightActionNameSelected.text = @"Not Selected";
     } else {
         self.rightActionNameSelected.text = tempName;
     }
