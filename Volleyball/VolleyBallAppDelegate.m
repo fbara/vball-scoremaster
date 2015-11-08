@@ -62,11 +62,14 @@
 		[defaults setObject:randomUserString forKey:@"userString"];
 	} else {
 		randomUserString = [defaults objectForKey:@"userString"];
+		if (randomUserString == nil) {
+			randomUserString = [self randomStringWithLength:8];
+			[defaults setObject:randomUserString forKey:@"userString"];
+		}
 	}
 //TODO: Remove LaunchKit test user
 	[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:@"testuser@baralabs.com" name:randomUserString];
-	//[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:nil name:randomUserString];
-
+	//[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
 
     if ([GBVersionTracking isFirstLaunchEver] ||
         [GBVersionTracking isFirstLaunchForVersion]) {
