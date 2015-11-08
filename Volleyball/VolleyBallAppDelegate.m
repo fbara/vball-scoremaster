@@ -13,9 +13,12 @@
 #import <ChameleonFramework/ChameleonMacros.h>
 #import "VolleyBallIAPHelper.h"
 #import <AppbotX/ABX.h>
+#import <LaunchKit/LaunchKit.h>
 //#import "NRWindow.h"
 
-@implementation VolleyBallAppDelegate
+@implementation VolleyBallAppDelegate {
+	NSString *randomUserString;
+}
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
@@ -25,6 +28,7 @@
 {
     // Override point for customization after application launch.
 	//[[UIApplication sharedApplication] setStatusBarHidden:FALSE withAnimation:UIStatusBarAnimationNone];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     // Needed to instantiate the version tracking
     [GBVersionTracking track];
@@ -40,6 +44,9 @@
     // Initialize AppbotX info
     [[ABXApiClient instance]
         setApiKey:@"5b0feb30a4f023f3897789f9b38ab62304ee4790"];
+	
+	//Initialize LaunchKit info
+	[LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
 
     // Google Analytics setup for the app
     [GAI sharedInstance].trackUncaughtExceptions = YES;
@@ -50,6 +57,16 @@
 //    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
 	tracker.allowIDFACollection = NO;
 	
+	if ([GBVersionTracking isFirstLaunchEver]) {
+		randomUserString = [self randomStringWithLength:8];
+		[defaults setObject:randomUserString forKey:@"userString"];
+	} else {
+		randomUserString = [defaults objectForKey:@"userString"];
+	}
+//TODO: Remove LaunchKit test user
+	[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:@"testuser@baralabs.com" name:randomUserString];
+	//[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:nil name:randomUserString];
+
 
     if ([GBVersionTracking isFirstLaunchEver] ||
         [GBVersionTracking isFirstLaunchForVersion]) {
@@ -135,6 +152,19 @@
 //
 //    return customWindow;
 //}
+
+
+-(NSString *) randomStringWithLength: (int) len {
+	NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	
+	NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+	
+	for (int i=0; i<len; i++) {
+		[randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length])]];
+	}
+	
+	return randomString;
+}
 
 - (void)applicationWillResignActive:(UIApplication*)application
 {
