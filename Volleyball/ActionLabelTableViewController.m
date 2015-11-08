@@ -16,7 +16,7 @@
 #import <BTBalloon/BTBalloon.h>
 #import <GBVersionTracking/GBVersionTracking.h>
 
-@interface ActionLabelTableViewController () <UITextFieldDelegate, TSMessageViewProtocol> {
+@interface ActionLabelTableViewController () <UITextFieldDelegate, TSMessageViewProtocol, UIPopoverPresentationControllerDelegate> {
 	BOOL firstTimeShown, firstTimeEver, rowCanSlide, rowChecked;
 	NSUserDefaults *defaults;
 	NSIndexPath *m_currentIndexPath, *selectedIndexPath;
@@ -58,6 +58,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	defaults = [NSUserDefaults standardUserDefaults];
 	
 	//Load default ActionNames if array doesn't yet exist
 	if (!self.actionNamesList) {
@@ -117,6 +118,7 @@
 	
 	//Check if there are no rows with checkmarks
 	if (!rowChecked) {
+		//No rows found; put a check on the first row in the table
 		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 		
 		[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
@@ -131,7 +133,6 @@
 {
     [super viewWillAppear:animated];
 	
-    defaults = [NSUserDefaults standardUserDefaults];
     NSString* name;
     // Which side, left or right, is the user acting on?
     switch (self.selectedActionRow) {
@@ -170,19 +171,37 @@
 	if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion] ) {
 		if (firstTimeEver) {
 			//Show BTBalloon with info on rows
-			NSString *title = @"Swipe Left On Cell.\nYou can add, rename, and delete rows. Just swipe a row to see the buttons.";
+			NSString *title = @"Swipe Left On Row.\nYou can add, rename, and delete rows. Just swipe a row to see the buttons!";
 			[BTBalloon appearance].textFont = [UIFont fontWithName:@"AvenirNext-Regular" size:14.0f];
-			[[BTBalloon sharedInstance] showWithTitle:title
-												image:[UIImage imageNamed:@"Swipe-Left-White"]
-										 anchorToView:selectedCell
-										  buttonTitle:@"Continue"
-									   buttonCallback:^{
-										   [[BTBalloon sharedInstance] hideWithAnimation:YES];
-									   }];
-			firstTimeEver = FALSE;
-			[defaults setBool:firstTimeEver forKey:@"firstTimeEver"];
-		} else {
-			return;
+	//if (IS_IPAD()) {
+		//Show after a .5 second delay. The balloon will be presented after the popover so I have to delay
+		//it's presentation to make sure it shows up in front of the popover.
+		[[BTBalloon sharedInstance] showWithTitle:title
+											image:[UIImage imageNamed:@"Swipe-Left-White"]
+									 anchorToView:selectedCell
+									  buttonTitle:@"Continue"
+								   buttonCallback:^{
+									   [[BTBalloon sharedInstance] hideWithAnimation:YES];
+										}
+									   afterDelay:0.5];
+		
+
+		firstTimeEver = FALSE;
+		[defaults setBool:firstTimeEver forKey:@"firstTimeEver"];
+
+//	} else {
+//			[[BTBalloon sharedInstance] showWithTitle:title
+//												image:[UIImage imageNamed:@"Swipe-Left-White"]
+//										 anchorToView:selectedCell
+//										  buttonTitle:@"Continue"
+//									   buttonCallback:^{
+//										   [[BTBalloon sharedInstance] hideWithAnimation:YES];
+//									   }];
+//			firstTimeEver = FALSE;
+//			[defaults setBool:firstTimeEver forKey:@"firstTimeEver"];
+//	}
+//		} else {
+//			return;
 		}
 	}
 }
@@ -483,9 +502,40 @@
 
 #pragma mark - SESlideTableViewCell Delegate
 
+/*!
+ *  @author Me, 11-08-15 11:11
+ *
+ *  Called when user taps on one of the cell buttons.  All cell button actions start here.
+ *
+ *  @param cell        SESlideTableViewCell The cell/row that was tapped.
+ *  @param buttonIndex NSInteger Number that represents the index of the button that was tapped.
+ */
 -(void)slideTableViewCell:(SESlideTableViewCell *)cell didTriggerRightButton:(NSInteger)buttonIndex {
-
 	NSIndexPath *path = [self.tableView indexPathForCell:cell];
+	defaults = [NSUserDefaults standardUserDefaults];
+	NSString *currentRight = [defaults objectForKey:@"rightActionName"];
+	NSString *currentLeft = [defaults objectForKey:@"leftActionName"];
+	BOOL usedName = ([cell.textLabel.text isEqualToString:currentRight] || [cell.textLabel.text isEqualToString:currentLeft]) ? TRUE : FALSE;
+	if (usedName && (buttonIndex == 0 || buttonIndex == 2)) {
+		//Trying to delete or rename a row that has a checkmark for either right or left side; prevent it
+		NSString *title = NSLocalizedString(@"Name Error", @"Error message title");
+		NSString *msg = NSLocalizedString(@"This name is currently being used by either the right or left side.\nYou can't rename or delete this row right now.\nSelect a different name first, then you try your action again.", @"Deleting the selected row is not allowed.");
+		
+		[TSMessage showNotificationInViewController:self
+											  title:title
+										   subtitle:msg
+											  image:[UIImage imageNamed:@"alertButtonWhite"]
+											   type:TSMessageNotificationTypeError
+										   duration:TSMessageNotificationDurationAutomatic
+										   callback:nil
+										buttonTitle:NSLocalizedString(@"Dismiss", @"Dismiss button title.")
+									 buttonCallback:nil
+										 atPosition:TSMessageNotificationPositionTop
+							   canBeDismissedByUser:YES];
+		
+		return;
+	}
+	
 	//Called when one of the cell buttons are tapped
 	switch (buttonIndex) {
 	  case 0:
@@ -496,27 +546,29 @@
 			[self addNewActionNameRow:@""];
 			break;
 	  case 2:
-			//Delete row
+			//Delete row, first check if the row being deleted is the currently selected row. Can't delete a row that's selected.
 			if (cell == selectedCell) {
 				//Trying to delete a row that has a checkmark, prevent it
 				NSString *title = NSLocalizedString(@"Delete Error", @"Error message title");
-				NSString *msg = NSLocalizedString(@"This is the currently selected row and it can't be deleted.\nYou can rename it or select a different row first, then delete this row.", @"Deleting the selected row is not allowed.");
+				NSString *msg = NSLocalizedString(@"This is the currently selected row and it can't be deleted.\nTo delete this row, select a different row first then delete this row.", @"Deleting the selected row is not allowed.");
+				
 				[TSMessage showNotificationInViewController:self
 													  title:title
 												   subtitle:msg
 													  image:[UIImage imageNamed:@"alertButtonWhite"]
 													   type:TSMessageNotificationTypeError
-												   duration:8.0
+												   duration:TSMessageNotificationDurationAutomatic
 												   callback:nil
 												buttonTitle:NSLocalizedString(@"Dismiss", @"Dismiss button title.")
 											 buttonCallback:nil
 												 atPosition:TSMessageNotificationPositionTop
 									   canBeDismissedByUser:YES];
-				selectedCell = nil;
+				
 				return;
 			}
 			
-			//Do not allow deleting last row
+			//If the row to be deleted is not the selected row, next check if it's the last row.
+			//Deleting the last row is not allowed because then the user will not see the button to add a new row.
 			if ([self.tableView numberOfRowsInSection:0] > 1) {
 				[self.actionNamesList removeObjectAtIndex:path.row];
 				rowCanSlide = YES;
@@ -531,7 +583,7 @@
 												   subtitle:msg
 													  image:[UIImage imageNamed:@"alertButtonWhite"]
 													   type:TSMessageNotificationTypeError
-												   duration:8.0
+												   duration:TSMessageNotificationDurationAutomatic
 												   callback:nil
 												buttonTitle:NSLocalizedString(@"Dismiss", @"Dismiss button title.")
 											 buttonCallback:nil
@@ -670,6 +722,12 @@
 	}
 	
 	return NO;
+}
+
+#pragma mark - Segue Delegate
+
+-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+	return UIModalPresentationNone;
 }
 
 - (void)didReceiveMemoryWarning

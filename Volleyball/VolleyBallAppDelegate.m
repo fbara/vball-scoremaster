@@ -58,9 +58,9 @@
         [[NSUserDefaults standardUserDefaults] setObject:@"Yes"
                                                   forKey:@"showPrompt"];
 
-        // Show Google Analytics permission alert
+        // Show Google Analytics permissiion alert
         UIAlertView* av = [[UIAlertView alloc]
-                initWithTitle:@"Google Analytics"
+                initWithTitle:@"Analytics Request"
                       message:@"With your permission, usage information will be "
                       @"collected to improve the application.\n\nNo "
                       @"personal information will be collected and you "

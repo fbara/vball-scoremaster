@@ -32,7 +32,7 @@
                                     <action selector="sendInstantMessage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SRV-0g-Q7o"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="VISITING TEAM" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Gzx-4p-5vy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="VISITING TEAM" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" id="Gzx-4p-5vy">
                                 <rect key="frame" x="88" y="147" width="272" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
@@ -40,13 +40,13 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" hint="User enters the name of the visiting team." label="Text entry"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="rPx-ck-UCe"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="HOME TEAM" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="KgW-hz-5sq">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="HOME TEAM" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" id="KgW-hz-5sq">
                                 <rect key="frame" x="654" y="147" width="272" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
@@ -54,36 +54,27 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" hint="User enters the name of the home team." label="Text entry"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="Gy2-c3-JW9"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jML-Et-saV">
-                                <rect key="frame" x="437" y="103" width="151" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <accessibility key="accessibilityConfiguration" hint="None" label="Game label"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O6P-Lx-PJG" userLabel="GameNumber">
                                 <rect key="frame" x="472" y="167" width="80" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="52"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="52"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RIGHT ACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tX3-rT-g7M" userLabel="Label - Right Action Name">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RIGHT ACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="tX3-rT-g7M" userLabel="Label - Right Action Name">
                                 <rect key="frame" x="654" y="507" width="272" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <gestureRecognizers/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -92,16 +83,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="44"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="44"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEFT ACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NQ3-D6-TK5" userLabel="Label - Left Action Name">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEFT ACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="NQ3-D6-TK5" userLabel="Label - Left Action Name">
                                 <rect key="frame" x="88" y="507" width="272" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <gestureRecognizers/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -110,7 +101,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="44"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="44"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
@@ -183,7 +174,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -192,7 +183,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -201,7 +192,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -210,7 +201,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -219,7 +210,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -228,7 +219,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -237,7 +228,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -246,7 +237,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -272,6 +263,15 @@
                                     <action selector="sendFacebook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lrZ-q2-TBW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="jML-Et-saV">
+                                <rect key="frame" x="437" y="103" width="151" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <accessibility key="accessibilityConfiguration" hint="None" label="Game label"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
@@ -409,15 +409,15 @@
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="IEc-eP-Hpp" rowHeight="40" style="IBUITableViewCellStyleDefault" id="hX2-1v-W6W">
                                 <rect key="frame" x="0.0" y="50" width="540" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hX2-1v-W6W" id="qzH-iC-3hs">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="hX2-1v-W6W" id="qzH-iC-3hs">
                                     <rect key="frame" x="0.0" y="0.0" width="540" height="39"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IEc-eP-Hpp">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="IEc-eP-Hpp">
                                             <rect key="frame" x="15" y="0.0" width="510" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -494,11 +494,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visiting team background color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="14N-xf-D4v">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visiting team background color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="14N-xf-D4v">
                                                     <rect key="frame" x="15" y="12" width="255" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CxM-8M-OkD">
@@ -507,6 +507,7 @@
                                                     <animations/>
                                                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Changes background color of the score for the home team." label="Visitor team color"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                     <state key="normal" title="VISITOR">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -527,11 +528,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home team background color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j4T-AC-mQX">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home team background color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="j4T-AC-mQX">
                                                     <rect key="frame" x="15" y="12" width="255" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="43Z-fe-naI">
@@ -540,6 +541,7 @@
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Changes background color of the score for the home team." label="Home team color"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                     <state key="normal" title="HOME">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -560,11 +562,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main screen background colors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Fu-8N-JeF">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main screen background colors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="2Fu-8N-JeF">
                                                     <rect key="frame" x="15" y="12" width="255" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" id="5eZ-bQ-w1g">
@@ -596,11 +598,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send text notification messages?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ffm-OY-yny">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send text notification messages?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="Ffm-OY-yny">
                                                     <rect key="frame" x="15" y="12" width="255" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" id="oqR-8N-8Ny">
@@ -627,11 +629,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player's name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N1L-8j-CIK">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player's name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="N1L-8j-CIK">
                                                     <rect key="frame" x="15" y="12" width="255" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(optional)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Yyj-Dn-sH1">
@@ -659,18 +661,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send text message to number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H3O-dK-ACP">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send text message to number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="H3O-dK-ACP">
                                                     <rect key="frame" x="15" y="12" width="255" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use '+' or enter number manually" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zyb-1D-rAm">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use '+' or enter number manually" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="Zyb-1D-rAm">
                                                     <rect key="frame" x="0.0" y="662" width="296" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="lFP-xW-h2H">
@@ -710,11 +712,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use '+' or enter number manually" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v7N-Bw-nv9">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use '+' or enter number manually" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="v7N-Bw-nv9">
                                                     <rect key="frame" x="0.0" y="662" width="296" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" id="mjd-6d-xN3">
@@ -729,11 +731,11 @@
                                                         <action selector="sendWithTwitter:" destination="JoG-uN-Xre" eventType="valueChanged" id="0UE-jA-IG2"/>
                                                     </connections>
                                                 </segmentedControl>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send with Twitter?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pPJ-RN-PXy">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send with Twitter?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="pPJ-RN-PXy">
                                                     <rect key="frame" x="15" y="11" width="257" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -748,18 +750,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use '+' or enter number manually" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3pL-4f-6IZ">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use '+' or enter number manually" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="3pL-4f-6IZ">
                                                     <rect key="frame" x="0.0" y="662" width="296" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send with Facebook?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b2E-xc-gGz">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send with Facebook?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="b2E-xc-gGz">
                                                     <rect key="frame" x="15" y="11" width="257" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" id="xNf-Qk-J3e">
@@ -786,11 +788,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="473" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Available in-app purchases" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b30-QD-NiR">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Available in-app purchases" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="b30-QD-NiR">
                                                     <rect key="frame" x="15" y="0.0" width="458" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -813,27 +815,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="507" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left side Action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g2s-UN-oRu">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left side Action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="g2s-UN-oRu">
                                                     <rect key="frame" x="15" y="5" width="255" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an Action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7hq-2P-tSW">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an Action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="7hq-2P-tSW">
                                                     <rect key="frame" x="15" y="25" width="296" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPIKE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Nb-0K-3R7" userLabel="Label - First selected Action">
+                                                <label opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPIKE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="8Nb-0K-3R7" userLabel="Label - First selected Action">
                                                     <rect key="frame" x="380" y="12" width="127" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Player action being tracked." label="Left-side Action name"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -848,27 +850,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="507" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right side Action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ikm-us-vX0">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right side Action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="Ikm-us-vX0">
                                                     <rect key="frame" x="15" y="5" width="255" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an Action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fV6-jS-A2Y">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an Action to track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="fV6-jS-A2Y">
                                                     <rect key="frame" x="15" y="25" width="296" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v4s-lv-LRm" userLabel="Label - Second selected Action">
+                                                <label opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="v4s-lv-LRm" userLabel="Label - Second selected Action">
                                                     <rect key="frame" x="380" y="12" width="127" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Player action being tracked." label="Right-side Action name"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -891,7 +893,7 @@
                                                     <rect key="frame" x="20" y="9" width="255" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" id="rnr-Qi-g1k">
@@ -940,7 +942,7 @@
                         <outletCollection property="settingsButtons" destination="43Z-fe-naI" id="Sva-C6-yfT"/>
                         <outletCollection property="settingsLabels" destination="14N-xf-D4v" id="4f0-ls-yYQ"/>
                         <outletCollection property="settingsLabels" destination="j4T-AC-mQX" id="cu7-qn-bCm"/>
-                        <segue destination="47K-Gk-dz7" kind="popover" identifier="actionNameView" popoverAnchorView="g2s-UN-oRu" id="qtY-bs-YLA">
+                        <segue destination="47K-Gk-dz7" kind="popover" identifier="actionNameView" popoverAnchorView="FlS-Sr-d5G" id="qtY-bs-YLA">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                         <segue destination="h9W-pw-aPc" kind="push" identifier="supportView" id="q3S-M3-nfd"/>
@@ -985,17 +987,17 @@
                             <tableViewSection headerTitle="Support &amp; Feedback" footerTitle="Requires an internet connection" id="a5D-5H-Up0">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="elf-rp-qds" rowHeight="63" style="IBUITableViewCellStyleDefault" id="7kA-do-WkA">
-                                        <rect key="frame" x="0.0" y="50" width="540" height="63"/>
+                                        <rect key="frame" x="0.0" y="94" width="540" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7kA-do-WkA" id="ikx-Ew-8hV">
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="First Draw by BaraLabs - Simple drawing and note taking for the iPhone" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="elf-rp-qds">
-                                                    <rect key="frame" x="15" y="0.0" width="510" height="43"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="First Draw by BaraLabs - Simple drawing and note taking for the iPhone" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="elf-rp-qds">
+                                                    <rect key="frame" x="15" y="0.0" width="510" height="62"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1007,17 +1009,17 @@
                                         <color key="backgroundColor" red="0.98624199629999998" green="0.77968657019999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="J0J-vH-Fuf" style="IBUITableViewCellStyleDefault" id="dkP-Ri-RZF">
-                                        <rect key="frame" x="0.0" y="113" width="540" height="44"/>
+                                        <rect key="frame" x="0.0" y="157" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dkP-Ri-RZF" id="Vjy-l5-hqk">
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Version Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J0J-vH-Fuf">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Version Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="J0J-vH-Fuf">
                                                     <rect key="frame" x="15" y="0.0" width="510" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1027,17 +1029,17 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="LgS-7H-MQ7" style="IBUITableViewCellStyleDefault" id="NW3-4a-CXK">
-                                        <rect key="frame" x="0.0" y="157" width="540" height="44"/>
+                                        <rect key="frame" x="0.0" y="201" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NW3-4a-CXK" id="TpY-1q-TlU">
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="FAQ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LgS-7H-MQ7">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="FAQ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="LgS-7H-MQ7">
                                                     <rect key="frame" x="15" y="0.0" width="510" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1047,17 +1049,17 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Hrn-1f-vNp" style="IBUITableViewCellStyleDefault" id="y7S-ze-bNf">
-                                        <rect key="frame" x="0.0" y="201" width="540" height="44"/>
+                                        <rect key="frame" x="0.0" y="245" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y7S-ze-bNf" id="v9n-1N-NcD">
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Email the Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hrn-1f-vNp">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Email the Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="Hrn-1f-vNp">
                                                     <rect key="frame" x="15" y="0.0" width="510" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1067,17 +1069,17 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="hei-AC-AsN" style="IBUITableViewCellStyleDefault" id="e5J-bK-tGg">
-                                        <rect key="frame" x="0.0" y="245" width="540" height="44"/>
+                                        <rect key="frame" x="0.0" y="289" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e5J-bK-tGg" id="Bp1-X8-ZZw">
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hei-AC-AsN">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="hei-AC-AsN">
                                                     <rect key="frame" x="15" y="0.0" width="510" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1087,17 +1089,17 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="ibw-1h-AaS" style="IBUITableViewCellStyleDefault" id="jbQ-j4-jo1">
-                                        <rect key="frame" x="0.0" y="289" width="540" height="44"/>
+                                        <rect key="frame" x="0.0" y="333" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jbQ-j4-jo1" id="QW6-2o-rzv">
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Leave iTunes Review " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ibw-1h-AaS">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Leave iTunes Review " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="ibw-1h-AaS">
                                                     <rect key="frame" x="15" y="0.0" width="510" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1107,17 +1109,17 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="f3v-19-Ees" style="IBUITableViewCellStyleDefault" id="MxW-Yd-Dd6">
-                                        <rect key="frame" x="0.0" y="333" width="540" height="44"/>
+                                        <rect key="frame" x="0.0" y="377" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MxW-Yd-Dd6" id="CEs-vV-cyZ">
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Visit BaraLabs website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f3v-19-Ees">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Visit BaraLabs website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="f3v-19-Ees">
                                                     <rect key="frame" x="15" y="0.0" width="510" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1127,17 +1129,17 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="KuZ-ey-thE" style="IBUITableViewCellStyleDefault" id="kjy-on-l2j">
-                                        <rect key="frame" x="0.0" y="377" width="540" height="44"/>
+                                        <rect key="frame" x="0.0" y="421" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kjy-on-l2j" id="FiA-HH-MDf">
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="@BaraLabs on Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KuZ-ey-thE">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="@BaraLabs on Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="KuZ-ey-thE">
                                                     <rect key="frame" x="15" y="0.0" width="510" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1147,17 +1149,17 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Z2b-fT-Ove" style="IBUITableViewCellStyleDefault" id="ayM-Ko-uW7">
-                                        <rect key="frame" x="0.0" y="421" width="540" height="44"/>
+                                        <rect key="frame" x="0.0" y="465" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ayM-Ko-uW7" id="rJw-9g-5rl">
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="BaraLabs Privacy Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z2b-fT-Ove">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="BaraLabs Privacy Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="Z2b-fT-Ove">
                                                     <rect key="frame" x="15" y="0.0" width="510" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1202,18 +1204,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Loading available purchases..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2ig-TW-9aI">
-                                                    <rect key="frame" x="15" y="5" width="218" height="20"/>
+                                                    <rect key="frame" x="15" y="3" width="220" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Loading available prices..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eoh-rK-A6O">
-                                                    <rect key="frame" x="15" y="25" width="136" height="14"/>
+                                                    <rect key="frame" x="15" y="25" width="131" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
