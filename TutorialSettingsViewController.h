@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TutorialViewController.h"
+#import "MPTutorialViewController.h"
 
-@interface TutorialSettingsViewController : UIViewController <WSCoachMarksViewDelegate>
+@interface TutorialSettingsViewController : UIViewController <MPCoachMarksViewDelegate>
 
 
 @end

@@ -39,9 +39,6 @@
 		AD2270B51BD98F4A0087289B /* NSUserDefaults+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2270B41BD98F4A0087289B /* NSUserDefaults+Extension.m */; };
 		AD3621411BE553CA00666846 /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = AD3621401BE553CA00666846 /* TSMessagesDefaultDesign.json */; };
 		AD4B54C0199A40D500770580 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B54BF199A40D500770580 /* Social.framework */; };
-		AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52968C197F390E00767D1C /* TutorialViewController.m */; };
-		AD548FA21BEBD9D500B313D4 /* BTAppTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = AD548F9F1BEBD9D500B313D4 /* BTAppTutorial.m */; };
-		AD548FA31BEBD9D500B313D4 /* BTOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AD548FA11BEBD9D500B313D4 /* BTOverlay.m */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
 		AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */; };
@@ -59,6 +56,7 @@
 		ADB5A13519D30372009B1550 /* UITouch+NRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A13119D30372009B1550 /* UITouch+NRTouch.m */; };
 		ADCFF8B01AB5D6D000AB9CB0 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */; };
 		ADDB11DF1BE662D5007D0411 /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */; };
+		ADDE1A781BF0D0F600356E4A /* MPTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDE1A771BF0D0F600356E4A /* MPTutorialViewController.m */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */; };
@@ -126,12 +124,6 @@
 		AD2270B41BD98F4A0087289B /* NSUserDefaults+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+Extension.m"; path = "Volleyball/NSUserDefaults+Extension.m"; sourceTree = "<group>"; };
 		AD3621401BE553CA00666846 /* TSMessagesDefaultDesign.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = TSMessagesDefaultDesign.json; path = Pods/TSMessages/Pod/Assets/TSMessagesDefaultDesign.json; sourceTree = "<group>"; };
 		AD4B54BF199A40D500770580 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		AD52968B197F390E00767D1C /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialViewController.h; path = Volleyball/TutorialViewController.h; sourceTree = "<group>"; };
-		AD52968C197F390E00767D1C /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialViewController.m; path = Volleyball/TutorialViewController.m; sourceTree = "<group>"; };
-		AD548F9E1BEBD9D500B313D4 /* BTAppTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAppTutorial.h; sourceTree = "<group>"; };
-		AD548F9F1BEBD9D500B313D4 /* BTAppTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAppTutorial.m; sourceTree = "<group>"; };
-		AD548FA01BEBD9D500B313D4 /* BTOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTOverlay.h; sourceTree = "<group>"; };
-		AD548FA11BEBD9D500B313D4 /* BTOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTOverlay.m; sourceTree = "<group>"; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -157,6 +149,8 @@
 		ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		ADDB11DD1BE662D5007D0411 /* WSCoachMarksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCoachMarksView.h; sourceTree = "<group>"; };
 		ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCoachMarksView.m; sourceTree = "<group>"; };
+		ADDE1A761BF0D0F600356E4A /* MPTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTutorialViewController.h; path = Volleyball/MPTutorialViewController.h; sourceTree = "<group>"; };
+		ADDE1A771BF0D0F600356E4A /* MPTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPTutorialViewController.m; path = Volleyball/MPTutorialViewController.m; sourceTree = "<group>"; };
 		ADEB992E1986ECB70009B3F5 /* ActionNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ActionNames.plist; sourceTree = "<group>"; };
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
@@ -336,16 +330,12 @@
 		AD52968A197F38E100767D1C /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				AD548F9E1BEBD9D500B313D4 /* BTAppTutorial.h */,
-				AD548F9F1BEBD9D500B313D4 /* BTAppTutorial.m */,
-				AD548FA01BEBD9D500B313D4 /* BTOverlay.h */,
-				AD548FA11BEBD9D500B313D4 /* BTOverlay.m */,
 				AD1378A019B50B9300DB02D0 /* iPadTutorialViewController.h */,
 				AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */,
 				AD1378A319B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.h */,
 				AD1378A419B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m */,
-				AD52968B197F390E00767D1C /* TutorialViewController.h */,
-				AD52968C197F390E00767D1C /* TutorialViewController.m */,
+				ADDE1A761BF0D0F600356E4A /* MPTutorialViewController.h */,
+				ADDE1A771BF0D0F600356E4A /* MPTutorialViewController.m */,
 				AD082E31198061AE00A997CE /* TutorialSettingsViewController.h */,
 				AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */,
 			);
@@ -602,23 +592,21 @@
 			files = (
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
-				AD52968D197F390E00767D1C /* TutorialViewController.m in Sources */,
 				AD0D058A1A7195C300B5FC00 /* FCColorPickerViewController.m in Sources */,
 				AD07812919D0493100E30AE9 /* VolleyBallIAPViewController.m in Sources */,
 				ADDB11DF1BE662D5007D0411 /* WSCoachMarksView.m in Sources */,
 				ADB5A13419D30372009B1550 /* NRWindow.m in Sources */,
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
-				AD548FA21BEBD9D500B313D4 /* BTAppTutorial.m in Sources */,
 				AD0D05991A71977100B5FC00 /* FCColorSwatchView.m in Sources */,
 				AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */,
 				AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */,
 				AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */,
 				AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */,
-				AD548FA31BEBD9D500B313D4 /* BTOverlay.m in Sources */,
 				AD2270B51BD98F4A0087289B /* NSUserDefaults+Extension.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
+				ADDE1A781BF0D0F600356E4A /* MPTutorialViewController.m in Sources */,
 				AD0D05981A71977100B5FC00 /* FCBrightDarkGradView.m in Sources */,
 				ADB5A13519D30372009B1550 /* UITouch+NRTouch.m in Sources */,
 				AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */,

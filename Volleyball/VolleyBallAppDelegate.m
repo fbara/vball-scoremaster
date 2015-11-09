@@ -10,7 +10,6 @@
 #import <GBVersionTracking/GBVersionTracking.h>
 #import <GoogleAnalytics/GAI.h>
 #import <ChameleonFramework/Chameleon.h>
-#import <ChameleonFramework/ChameleonMacros.h>
 #import "VolleyBallIAPHelper.h"
 #import <AppbotX/ABX.h>
 #import <LaunchKit/LaunchKit.h>
@@ -67,8 +66,7 @@
 			[defaults setObject:randomUserString forKey:@"userString"];
 		}
 	}
-//TODO: Remove LaunchKit test user
-	[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:@"testuser@baralabs.com" name:randomUserString];
+//TODO: Enable LaunchKit
 	//[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
 
     if ([GBVersionTracking isFirstLaunchEver] ||
@@ -163,7 +161,7 @@
 	NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
 	
 	for (int i=0; i<len; i++) {
-		[randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length])]];
+		[randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform((uint32_t)[letters length])]];
 	}
 	
 	return randomString;

@@ -52,7 +52,10 @@
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,593.0f},{530.0f,111.0f}}],
-            @"caption": NSLocalizedString(@"Select Actions from a list of common terms and choose the right one for your player's position.", @"Shown during the app tutorial")
+            @"caption": NSLocalizedString(@"Select Actions from a list of common terms and choose the right one for your player's position.", @"Shown during the app tutorial"),
+			@"showArrow": [NSNumber numberWithBool:YES],
+			@"position": [NSNumber numberWithInteger:LABEL_POSITION_TOP],
+			@"alignment": [NSNumber numberWithInteger:LABEL_ALIGNMENT_CENTER]
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{512.0f,170.0f},{0.0f,0.0f}}],
@@ -64,14 +67,14 @@
             }
         ];
     //Array of marks is created, now show them
-    WSCoachMarksView *coachMarksView = [[WSCoachMarksView alloc] initWithFrame:self.view.bounds coachMarks:coachMarks];
+    MPCoachMarks *coachMarksView = [[MPCoachMarks alloc] initWithFrame:self.view.bounds coachMarks:coachMarks];
     coachMarksView.delegate = self;
     [self.view addSubview:coachMarksView];
     coachMarksView.enableContinueLabel = FALSE;
     [coachMarksView start];
 }
 
-- (void)coachMarksView:(WSCoachMarksView *)coachMarksView didNavigateToIndex:(NSUInteger)index
+- (void)coachMarksView:(MPCoachMarks *)coachMarksView didNavigateToIndex:(NSUInteger)index
 {
     //Check the index of the last shown coach mark.  It will be equal to the next mark
     //to be shown.  If it is >, we're done so exit from the view controller
@@ -81,7 +84,7 @@
     }
 }
 
-- (void)coachMarksViewDidCleanup:(WSCoachMarksView *)coachMarksView
+- (void)coachMarksViewDidCleanup:(MPCoachMarks *)coachMarksView
 {
     [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
@@ -91,16 +94,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

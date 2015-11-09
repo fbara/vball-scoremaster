@@ -339,7 +339,7 @@
         <!--Tutorial Main-->
         <scene sceneID="o0h-Xb-kwA">
             <objects>
-                <viewController title="Tutorial Main" id="TO8-Ip-hl0" customClass="TutorialViewController" sceneMemberID="viewController">
+                <viewController title="Tutorial Main" id="TO8-Ip-hl0" customClass="MPTutorialViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n66-8q-n8m">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

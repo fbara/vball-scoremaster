@@ -40,23 +40,36 @@
     NSArray *coachMarks = @[
 			@{
 				@"rect": [NSValue valueWithCGRect:(CGRect){{11.0f,63.0f},{547.0f,120.0f}}],
-				@"caption": NSLocalizedString(@"Tap the color box to change the score color", @"Shown during the app tutorial")
+				@"caption": NSLocalizedString(@"Tap the color box to change the score color", @"Shown during the app tutorial"),
+				@"showArrow": [NSNumber numberWithBool:YES]
 				},
 			@{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{11.0f,55.0f},{546.0f,131.0f}}],
-                @"caption": NSLocalizedString(@"Send updates to anyone in your Contacts list", @"Shown during the app tutorial")
+                @"caption": NSLocalizedString(@"Send updates to anyone in your Contacts list", @"Shown during the app tutorial"),
+				@"showArrow": [NSNumber numberWithBool:YES],
+				@"position": [NSNumber numberWithInteger:LABEL_POSITION_BOTTOM],
+				@"alignment": [NSNumber numberWithInteger:LABEL_ALIGNMENT_CENTER]
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{11.0f,184.0f},{546.0f,100.0f}}],
-                @"caption": NSLocalizedString(@"Decide when to post highlights to Twitter and Facebook\n(in-app purchase)", @"Shown during the app tutorial")
+				@"caption": NSLocalizedString(@"Decide when to post highlights to Twitter and Facebook\n(in-app purchase)", @"Shown during the app tutorial"),
+				@"showArrow": [NSNumber numberWithBool:YES],
+				@"position": [NSNumber numberWithInteger:LABEL_POSITION_TOP],
+				@"alignment": [NSNumber numberWithInteger:LABEL_ALIGNMENT_RIGHT]
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{436.0f,188.0f},{124.0f,118.0f}}],
-                @"caption": NSLocalizedString(@"Select Action Names from a list of common volleyball terms...", @"Shown during the app tutorial")
+				@"caption": NSLocalizedString(@"Select an existing Action Name or create your own to track your player...", @"Shown during the app tutorial"),
+				@"showArrow": [NSNumber numberWithBool:YES],
+				@"position": [NSNumber numberWithInteger:LABEL_POSITION_TOP],
+				@"alignment": [NSNumber numberWithInteger:LABEL_ALIGNMENT_RIGHT]
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{8.0f,174.0f},{552.0f,140.0f}}],
-                @"caption": NSLocalizedString(@"...and choose the right one for your player's position", @"Shown during the app tutorial")
+				@"caption": NSLocalizedString(@"...and assign them to location on the main screen!", @"Shown during the app tutorial"),
+				@"showArrow": [NSNumber numberWithBool:YES],
+				@"position": [NSNumber numberWithInteger:LABEL_POSITION_TOP],
+				@"alignment": [NSNumber numberWithInteger:LABEL_ALIGNMENT_CENTER]
                 },
             @{
                 @"rect": [NSValue valueWithCGRect:(CGRect){{281.0f,72.0f},{0.0f,0.0f}}],
@@ -68,14 +81,14 @@
                 }
             ];
     //Array of marks is created, now show them
-    WSCoachMarksView *coachMarksView = [[WSCoachMarksView alloc] initWithFrame:self.view.bounds coachMarks:coachMarks];
+    MPCoachMarks *coachMarksView = [[MPCoachMarks alloc] initWithFrame:self.view.bounds coachMarks:coachMarks];
     coachMarksView.delegate = self;
     [self.view addSubview:coachMarksView];
     coachMarksView.enableContinueLabel = FALSE;
     [coachMarksView start];
 }
 
-- (void)coachMarksView:(WSCoachMarksView *)coachMarksView didNavigateToIndex:(NSUInteger)index
+- (void)coachMarksView:(MPCoachMarks *)coachMarksView didNavigateToIndex:(NSUInteger)index
 {
 	if (index == 1) {
 		[self.tutorialImage setImage:[UIImage imageNamed:@"TutorialImageSettings1"]];
@@ -95,7 +108,7 @@
     }
 }
 
-- (void)coachMarksViewDidCleanup:(WSCoachMarksView *)coachMarksView
+- (void)coachMarksViewDidCleanup:(MPCoachMarks *)coachMarksView
 {
     [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }

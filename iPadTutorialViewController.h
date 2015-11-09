@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WSCoachMarksView.h"
+#import <MPCoachMarks/MPCoachMarks.h>
 
-@interface iPadTutorialViewController : UIViewController <WSCoachMarksViewDelegate>
+@interface iPadTutorialViewController : UIViewController <MPCoachMarksViewDelegate>
 
 @end
