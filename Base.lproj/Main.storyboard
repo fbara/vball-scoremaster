@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="dBP-CD-akZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="dBP-CD-akZ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--mainView-->
@@ -994,7 +994,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="First Draw by BaraLabs - Simple drawing and note taking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2CM-oG-IhA">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="First Draw by BaraLabs - Simple drawing and note taking" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2CM-oG-IhA">
                                                     <rect key="frame" x="15" y="0.0" width="538" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
@@ -1015,7 +1015,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Version Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J0J-vH-Fuf">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Version Info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J0J-vH-Fuf">
                                                     <rect key="frame" x="15" y="0.0" width="538" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
@@ -1035,7 +1035,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="FAQ's" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hrn-1f-vNp">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="FAQ's" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hrn-1f-vNp">
                                                     <rect key="frame" x="15" y="0.0" width="538" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
@@ -1055,7 +1055,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Email the Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hei-AC-AsN">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Email the Developer" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hei-AC-AsN">
                                                     <rect key="frame" x="15" y="0.0" width="538" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
@@ -1075,7 +1075,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Customer Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WOX-vn-5vr">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Customer Notifications" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WOX-vn-5vr">
                                                     <rect key="frame" x="15" y="0.0" width="538" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
@@ -1095,7 +1095,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Leave iTunes Review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WRp-K8-mgP">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Leave iTunes Review" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WRp-K8-mgP">
                                                     <rect key="frame" x="15" y="0.0" width="538" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
@@ -1115,11 +1115,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Visit BaraLabs website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mHR-Lx-r3Y">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Visit BaraLabs website" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mHR-Lx-r3Y">
                                                     <rect key="frame" x="15" y="0.0" width="538" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1135,11 +1135,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="@BaraLabs on Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gI3-Ko-B6z">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="@BaraLabs on Twitter" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gI3-Ko-B6z">
                                                     <rect key="frame" x="15" y="0.0" width="538" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1155,11 +1155,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="BaraLabs Privacy Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jfO-wp-lgt">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="BaraLabs Privacy Policy" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jfO-wp-lgt">
                                                     <rect key="frame" x="15" y="0.0" width="538" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="zoL-9I-oVO" style="IBUITableViewCellStyleDefault" id="OdU-cP-6g7" userLabel="Acknowledgements">
+                                        <rect key="frame" x="0.0" y="446" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OdU-cP-6g7" id="fex-ce-8MO">
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Acknowledgements" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zoL-9I-oVO">
+                                                    <rect key="frame" x="15" y="0.0" width="538" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

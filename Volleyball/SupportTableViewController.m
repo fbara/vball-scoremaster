@@ -8,7 +8,8 @@
 
 #import "SupportTableViewController.h"
 #import <ChameleonFramework/Chameleon.h>
-#import "ABX.h"
+#import <AppbotX/ABX.h>
+//#import <VTAcknowledgementsViewController/VTAcknowledgementsViewController.h>
 
 static NSString* const kiTunesID = @"886670213";
 
@@ -145,6 +146,10 @@ static NSString* const kiTunesID = @"886670213";
         case 8:
             //Privacy policy
 			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com/privacy-policy.html"]];
+			break;
+//		case 9:
+//			[self showAcknowledgements];
+//			break;
         default:
             break;
     }
@@ -166,6 +171,14 @@ static NSString* const kiTunesID = @"886670213";
     return 8;
 }
 
+#pragma mark - VTAcknowledgements
+
+//-(void)showAcknowledgements {
+//	VTAcknowledgementsViewController *ackVC = [VTAcknowledgementsViewController acknowledgementsViewController];
+//	ackVC.headerText = NSLocalizedString(@"Acknowledgements", @"Acknowledgements");
+//	[self.navigationController pushViewController:ackVC animated:YES];
+//}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -177,7 +190,7 @@ static NSString* const kiTunesID = @"886670213";
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: forIndexPath:indexPath];
     
     // Configure the cell...
     
