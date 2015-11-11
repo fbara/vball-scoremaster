@@ -76,6 +76,7 @@
 	rowChecked = NO;
 	[TSMessage setDelegate:self];
 	self.tableView.tintColor = FlatBlue;
+	//Check if this is the first time the user is seeing this view
 	[self checkForFirstTimeInView];
 	
 	//Setup bar buttons
@@ -336,11 +337,13 @@
     sectionHeader.backgroundColor = [UIColor clearColor];
 	sectionHeader.font = [UIFont systemFontOfSize:14];
     sectionHeader.textColor = [UIColor darkGrayColor];
+	
+	sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME", @"Table header, tap on the Action Name for your player");
 
-    if (IS_IPAD()) {
-		sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME", @"Tap on the Action Name for your player");
-		
-    } //else {
+//    if (IS_IPAD()) {
+//		sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME", @"Tap on the Action Name for your player");
+//		
+//    } else {
 //        sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME THEN TAP 'SAVE'", @"Tap on the Action Name for your player, then tap Save");
 //    }
     return sectionHeader;
@@ -532,6 +535,7 @@
 									 buttonCallback:nil
 										 atPosition:TSMessageNotificationPositionTop
 							   canBeDismissedByUser:YES];
+		[cell setSlideState:SESlideTableViewCellSlideStateCenter animated:YES];
 		
 		return;
 	}

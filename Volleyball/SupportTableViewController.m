@@ -8,7 +8,8 @@
 
 #import "SupportTableViewController.h"
 #import <ChameleonFramework/Chameleon.h>
-#import "ABX.h"
+#import <AppbotX/ABX.h>
+#import <VTAcknowledgementsViewController/VTAcknowledgementsViewController.h>
 
 static NSString* const kiTunesID = @"886670213";
 
@@ -34,7 +35,9 @@ static NSString* const kiTunesID = @"886670213";
 {
     [super viewDidLoad];
     self.title = @"Support";
-    
+	
+	self.tableView.backgroundColor = FlatBlackDark;
+	
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
     
@@ -93,9 +96,9 @@ static NSString* const kiTunesID = @"886670213";
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    switch (indexPath.row) {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	switch (indexPath.row) {
 		case 0:
 			//Link to First Draw
 			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://geni.us/first"]];
@@ -145,6 +148,11 @@ static NSString* const kiTunesID = @"886670213";
         case 8:
             //Privacy policy
 			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com/privacy-policy.html"]];
+			break;
+		case 9:
+			//Show acknowledgements
+			[self showAcknowledgements];
+			break;
         default:
             break;
     }
@@ -163,7 +171,53 @@ static NSString* const kiTunesID = @"886670213";
 {
     // Return the number of rows in the section.
 	
-    return 8;
+    return 10;
+}
+
+-(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+	return YES;
+}
+
+-(void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+	//Add row color
+	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+	cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+	if (indexPath.row == 0) {
+		[self setCellColor:FlatYellowDark ForCell:cell TextColor:FlatBlack];
+	} else {
+		[self setCellColor:FlatGrayDark ForCell:cell TextColor:FlatRedDark];
+	}
+
+}
+
+-(void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+	//Reset color
+	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	if (indexPath.row == 0) {
+		[self setCellColor:FlatYellow ForCell:cell TextColor:FlatRedDark];
+	} else {
+		[self setCellColor:FlatBlackDark ForCell:cell TextColor:FlatWhite];
+	}
+}
+
+
+
+-(void)setCellColor:(UIColor *)color ForCell:(UITableViewCell *)cell TextColor:(UIColor *)textColor {
+	cell.contentView.backgroundColor = color;
+	cell.backgroundColor = color;
+	cell.textLabel.textColor = textColor;
+	cell.textLabel.backgroundColor = [UIColor clearColor];
+	
+}
+
+#pragma mark - Acknowledgements
+
+-(void)showAcknowledgements {
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"Pods-VBall ScoreMaster-acknowledgements" ofType:@"plist"];
+	VTAcknowledgementsViewController *ackVC = [[VTAcknowledgementsViewController alloc] initWithAcknowledgementsPlistPath:path];
+	ackVC.headerText = @"BaraLabs Thanks These Developers:";
+	[self.navigationController pushViewController:ackVC animated:YES];
 }
 
 
@@ -171,67 +225,9 @@ static NSString* const kiTunesID = @"886670213";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+	NSLog(@"\nMemory Warning: SupportTableViewController");
 }
 
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

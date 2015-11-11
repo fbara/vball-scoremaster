@@ -36,7 +36,6 @@
 		AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */; };
 		AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A419B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
-		AD2270B51BD98F4A0087289B /* NSUserDefaults+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2270B41BD98F4A0087289B /* NSUserDefaults+Extension.m */; };
 		AD3621411BE553CA00666846 /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = AD3621401BE553CA00666846 /* TSMessagesDefaultDesign.json */; };
 		AD4B54C0199A40D500770580 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B54BF199A40D500770580 /* Social.framework */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
@@ -54,6 +53,7 @@
 		ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB5A12D19D30372009B1550 /* NRTouchImage@2x.png */; };
 		ADB5A13419D30372009B1550 /* NRWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A12F19D30372009B1550 /* NRWindow.m */; };
 		ADB5A13519D30372009B1550 /* UITouch+NRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB5A13119D30372009B1550 /* UITouch+NRTouch.m */; };
+		ADBFCF5B1BF2AF0C003B5F3D /* Pods-VBall ScoreMaster-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADBFCF5A1BF2AF0C003B5F3D /* Pods-VBall ScoreMaster-acknowledgements.plist */; };
 		ADCFF8B01AB5D6D000AB9CB0 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */; };
 		ADDB11DF1BE662D5007D0411 /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */; };
 		ADDE1A781BF0D0F600356E4A /* MPTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDE1A771BF0D0F600356E4A /* MPTutorialViewController.m */; };
@@ -120,8 +120,6 @@
 		AD1C816B195C43A30028179B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		AD1C816C195C43A30028179B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		AD2239401B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
-		AD2270B31BD98F4A0087289B /* NSUserDefaults+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+Extension.h"; path = "Volleyball/NSUserDefaults+Extension.h"; sourceTree = "<group>"; };
-		AD2270B41BD98F4A0087289B /* NSUserDefaults+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+Extension.m"; path = "Volleyball/NSUserDefaults+Extension.m"; sourceTree = "<group>"; };
 		AD3621401BE553CA00666846 /* TSMessagesDefaultDesign.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = TSMessagesDefaultDesign.json; path = Pods/TSMessages/Pod/Assets/TSMessagesDefaultDesign.json; sourceTree = "<group>"; };
 		AD4B54BF199A40D500770580 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -143,6 +141,7 @@
 		ADB5A12F19D30372009B1550 /* NRWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRWindow.m; sourceTree = "<group>"; };
 		ADB5A13019D30372009B1550 /* UITouch+NRTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITouch+NRTouch.h"; sourceTree = "<group>"; };
 		ADB5A13119D30372009B1550 /* UITouch+NRTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch+NRTouch.m"; sourceTree = "<group>"; };
+		ADBFCF5A1BF2AF0C003B5F3D /* Pods-VBall ScoreMaster-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Pods-VBall ScoreMaster-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-acknowledgements.plist"; sourceTree = "<group>"; };
 		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
 		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADCC139A1981B588001DC9B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -216,6 +215,7 @@
 		92AA42961916C2800037D405 = {
 			isa = PBXGroup;
 			children = (
+				ADBFCF5A1BF2AF0C003B5F3D /* Pods-VBall ScoreMaster-acknowledgements.plist */,
 				AD3621401BE553CA00666846 /* TSMessagesDefaultDesign.json */,
 				92AA42A81916C2800037D405 /* Volleyball */,
 				9244799B192C01830031C1F6 /* Resources */,
@@ -387,8 +387,6 @@
 				AD52968A197F38E100767D1C /* Tutorial */,
 				ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */,
 				ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */,
-				AD2270B31BD98F4A0087289B /* NSUserDefaults+Extension.h */,
-				AD2270B41BD98F4A0087289B /* NSUserDefaults+Extension.m */,
 			);
 			name = Support;
 			path = ..;
@@ -409,6 +407,7 @@
 				AD0413E21A3A1C7A00DEFB1F /* ShellScript */,
 				0DC7DAD67049FC68E7E7D61E /* Copy Pods Resources */,
 				15F3DC32EAD61B4582A930F5 /* Embed Pods Frameworks */,
+				ADBFCF551BF27247003B5F3D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -485,6 +484,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADBFCF5B1BF2AF0C003B5F3D /* Pods-VBall ScoreMaster-acknowledgements.plist in Resources */,
 				AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */,
 				AD3621411BE553CA00666846 /* TSMessagesDefaultDesign.json in Resources */,
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
@@ -570,6 +570,19 @@
 			shellPath = /bin/sh;
 			shellScript = "#Update build number with number of git commits if in release mode\nif [ ${CONFIGURATION} == \"Release\" ]; then\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nfi;";
 		};
+		ADBFCF551BF27247003B5F3D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#cp \"${SRCROOT}/Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-acknowledgements.plist\" \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Pods-VBall ScoreMaster-acknowledgements.plist\"";
+		};
 		ADC716A2196CA6F000360EF4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,7 +616,6 @@
 				AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */,
 				AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */,
 				AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */,
-				AD2270B51BD98F4A0087289B /* NSUserDefaults+Extension.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
 				ADDE1A781BF0D0F600356E4A /* MPTutorialViewController.m in Sources */,
