@@ -34,15 +34,13 @@ static NSString* const kiTunesID = @"886670213";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Support";
+    self.title = NSLocalizedString(@"Support", @"Title for Support view.");
 	
 	self.tableView.backgroundColor = FlatBlackDark;
+	self.tableView.sectionIndexBackgroundColor = FlatBlackDark;
 	
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //Show alert to user the first time they enter the Support screen and there's
     //an active alert.
@@ -72,7 +70,7 @@ static NSString* const kiTunesID = @"886670213";
         
     }];
      
- }
+}
 
 #pragma mark - Appbotx methods
 
@@ -90,8 +88,7 @@ static NSString* const kiTunesID = @"886670213";
 {
     [ABXAppStore openAppStoreReviewForApp:kiTunesID];
     self.promptView.hidden = YES;
-    
-
+ 
 }
 
 #pragma mark - Table view delegate
@@ -181,11 +178,11 @@ static NSString* const kiTunesID = @"886670213";
 -(void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
 	//Add row color
 	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-	cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+	//cell.selectionStyle = UITableViewCellSelectionStyleDefault;
 	if (indexPath.row == 0) {
 		[self setCellColor:FlatYellowDark ForCell:cell TextColor:FlatBlack];
 	} else {
-		[self setCellColor:FlatGrayDark ForCell:cell TextColor:FlatRedDark];
+		[self setCellColor:[UIColor blackColor] ForCell:cell TextColor:FlatRedDark];
 	}
 
 }
@@ -193,11 +190,11 @@ static NSString* const kiTunesID = @"886670213";
 -(void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
 	//Reset color
 	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	//cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	if (indexPath.row == 0) {
 		[self setCellColor:FlatYellow ForCell:cell TextColor:FlatRedDark];
 	} else {
-		[self setCellColor:FlatBlackDark ForCell:cell TextColor:FlatWhite];
+		[self setCellColor:[UIColor blackColor] ForCell:cell TextColor:FlatWhite];
 	}
 }
 
@@ -216,7 +213,7 @@ static NSString* const kiTunesID = @"886670213";
 -(void)showAcknowledgements {
 	NSString *path = [[NSBundle mainBundle] pathForResource:@"Pods-VBall ScoreMaster-acknowledgements" ofType:@"plist"];
 	VTAcknowledgementsViewController *ackVC = [[VTAcknowledgementsViewController alloc] initWithAcknowledgementsPlistPath:path];
-	ackVC.headerText = @"BaraLabs Thanks These Developers:";
+	ackVC.headerText = NSLocalizedString(@"VBall ScoreMaster was created with the help of the following:", @"VBall ScoreMaster was created with the help of the following:");
 	[self.navigationController pushViewController:ackVC animated:YES];
 }
 
