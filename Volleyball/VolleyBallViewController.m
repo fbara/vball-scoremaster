@@ -15,6 +15,7 @@
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import <ChameleonFramework/Chameleon.h>
 #import <AppbotX/ABX.h>
+#import <VWWPermissionKit/VWWPermissionKit.h>
 @import Social;
 @import Accounts;
 @import StoreKit;
@@ -169,6 +170,7 @@ NSString *socialMessage;
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
     }
+	[self requestPermissions];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -1431,6 +1433,24 @@ NSString *socialMessage;
 {
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
+}
+
+#pragma mark - VWWPermissions
+
+-(void)requestPermissions {
+	VWWPhotosPermission *photos = [VWWPhotosPermission permissionWithLabelText:@"This app lets you send screen images to text messages, Twitter, and Facebook, so we need access to your photo library."];
+	VWWCoreLocationWhenInUsePermission *location = [VWWCoreLocationWhenInUsePermission permissionWithLabelText:@"We use your location both to mark your screen images and for analytics (so we know where the app is being used). No personal info is captured."];
+	VWWContactsPermission *contacts = [VWWContactsPermission permissionWithLabelText:@"You can send text messages to anyone in your contact list so we need to be able to access your contacts."];
+	NSArray *permissions = @[photos, contacts, location];
+	NSString *title = @"Welcome! To get the most out of VBall ScoreMaster, we need to get your permission to use some things.  Let's get started...";
+	[VWWPermissionsManager optionPermissions:permissions
+									   title:title
+						  fromViewController:self
+								resultsBlock:^(NSArray *permissions) {
+									[permissions enumerateObjectsUsingBlock:^(VWWPermission *permission, NSUInteger idx, BOOL *stop) {
+										NSLog(@"%@ - %@", permission.type, [permission stringForStatus]);
+									}];
+								}];
 }
 
 - (void)didReceiveMemoryWarning

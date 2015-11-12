@@ -13,6 +13,7 @@
 #import "VolleyBallIAPHelper.h"
 #import <AppbotX/ABX.h>
 #import <LaunchKit/LaunchKit.h>
+#import <VWWPermissionKit/VWWPermissionKit.h>
 //#import "NRWindow.h"
 
 @implementation VolleyBallAppDelegate {
@@ -43,9 +44,6 @@
     // Initialize AppbotX info
     [[ABXApiClient instance]
         setApiKey:@"5b0feb30a4f023f3897789f9b38ab62304ee4790"];
-	
-	//Initialize LaunchKit info
-	[LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
 
     // Google Analytics setup for the app
     [GAI sharedInstance].trackUncaughtExceptions = YES;
@@ -67,6 +65,8 @@
 		}
 	}
 //TODO: Enable LaunchKit
+	//Initialize LaunchKit info
+	//[LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
 	//[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
 
     if ([GBVersionTracking isFirstLaunchEver] ||
