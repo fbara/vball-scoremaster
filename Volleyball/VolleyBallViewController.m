@@ -15,6 +15,7 @@
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import <ChameleonFramework/Chameleon.h>
 #import <AppbotX/ABX.h>
+#import "PermissionsViewController.h"
 @import Social;
 @import Accounts;
 @import StoreKit;
@@ -147,6 +148,8 @@ NSString *socialMessage;
             [gesture requireGestureRecognizerToFail:visitorSwipeGesture];
         }
     }
+	
+	
 
     // Get the Action Names
     [self loadActionNames];
@@ -1432,6 +1435,8 @@ NSString *socialMessage;
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
 }
+
+#pragma mark - Memory Warning
 
 - (void)didReceiveMemoryWarning
 {
