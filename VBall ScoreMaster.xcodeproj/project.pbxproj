@@ -57,7 +57,6 @@
 		ADCFF8B01AB5D6D000AB9CB0 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */; };
 		ADDB11DF1BE662D5007D0411 /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */; };
 		ADDE1A781BF0D0F600356E4A /* MPTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDE1A771BF0D0F600356E4A /* MPTutorialViewController.m */; };
-		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -150,7 +149,6 @@
 		ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCoachMarksView.m; sourceTree = "<group>"; };
 		ADDE1A761BF0D0F600356E4A /* MPTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTutorialViewController.h; path = Volleyball/MPTutorialViewController.h; sourceTree = "<group>"; };
 		ADDE1A771BF0D0F600356E4A /* MPTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPTutorialViewController.m; path = Volleyball/MPTutorialViewController.m; sourceTree = "<group>"; };
-		ADEB992E1986ECB70009B3F5 /* ActionNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ActionNames.plist; sourceTree = "<group>"; };
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
 		ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SupportTableViewController.m; path = Volleyball/SupportTableViewController.m; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 			children = (
 				ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */,
 				AD9B665B199D2754002C5145 /* Settings.bundle */,
-				ADEB992E1986ECB70009B3F5 /* ActionNames.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -497,7 +494,6 @@
 				ADCFF8B01AB5D6D000AB9CB0 /* Default-Landscape@2x.png in Resources */,
 				AD9B665C199D2754002C5145 /* Settings.bundle in Resources */,
 				AD0D058B1A7195C300B5FC00 /* FCColorPickerViewController.xib in Resources */,
-				ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

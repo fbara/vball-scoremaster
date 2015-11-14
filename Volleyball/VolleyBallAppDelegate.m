@@ -114,7 +114,9 @@
 		//Opt in - ok to track
 		[[GAI sharedInstance] setOptOut:NO];
 		//TODO: Enable LaunchKit
-		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
+		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString
+												email:[randomUserString stringByAppendingString:@"@email.com"]
+												 name:randomUserString];
 	}
 	
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -133,9 +135,13 @@
         [defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
         break;
     case 1:
-		//Opt out - do not track	
+		//Opt in - ok to track
         [[GAI sharedInstance] setOptOut:NO];
         [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
+		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString
+												email:[randomUserString stringByAppendingString:@"@email.com"]
+												 name:randomUserString];
+
         break;
     default:
         break;

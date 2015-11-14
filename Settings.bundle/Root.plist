@@ -72,27 +72,13 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Acknowledgements</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-			<key>Title</key>
-			<string>Acknowledgements</string>
-			<key>File</key>
-			<string>Acknowledgements</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
 			<string>Version Information</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Version 3.3</string>
+			<string>Version 3.4</string>
 			<key>Key</key>
 			<string>versionInfo</string>
 			<key>DefaultValue</key>
