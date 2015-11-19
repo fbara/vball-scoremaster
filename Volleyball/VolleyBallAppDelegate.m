@@ -45,15 +45,16 @@
         setApiKey:@"5b0feb30a4f023f3897789f9b38ab62304ee4790"];
 	
 	//Initialize LaunchKit info
-	[LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
+//TODO: Enable LaunchKit
+//	[LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
 
     // Google Analytics setup for the app
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
 //TODO: Enable Google Tracker
-//    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
+//    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
 	tracker.allowIDFACollection = NO;
 	
 	if ([GBVersionTracking isFirstLaunchEver]) {
@@ -113,8 +114,8 @@
 	} else {
 		//Opt in - ok to track
 		[[GAI sharedInstance] setOptOut:NO];
-		//TODO: Enable LaunchKit
-		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
+//TODO: Enable LaunchKit
+//		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
 	}
 	
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -136,6 +137,9 @@
 		//Opt out - do not track	
         [[GAI sharedInstance] setOptOut:NO];
         [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
+//TODO: Enable LaunchKit
+//		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
+
         break;
     default:
         break;
