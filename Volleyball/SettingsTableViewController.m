@@ -84,6 +84,13 @@
     // Set the switch if messages will be sent
     if ([[self getSendNotifications] isEqualToString:@"On"]) {
         [self.sendNotificationSwitch setSelectedSegmentIndex:0];
+        if ([[self getNotificationType] isEqualToString:@"Team"]) {
+            [self.notificationTypeSwitch setSelectedSegmentIndex:0];
+            self.notificationName.enabled = FALSE;
+        } else {
+            [self.notificationTypeSwitch setSelectedSegmentIndex:1];
+            self.notificationName.enabled = TRUE;
+        }
     } else {
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
@@ -114,7 +121,9 @@
     firstStartTime = [defaults stringForKey:@"firstStartTime"];
 
     if ([firstStartTime length] < 1) {
-        // First time starting this VC. Set initial score background colors
+        // First time starting this VC. Set notifications type to Player
+        
+        //Set initial score background colors
         self.homeTeamColor.backgroundColor = FlatBlue;
         self.visitingTeamColor.backgroundColor = FlatOrange;
         [defaults setObject:@"No" forKey:@"firstStartTime"];
@@ -137,6 +146,19 @@
         [self.sendNotificationSwitch setSelectedSegmentIndex:0];
     } else {
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
+    }
+    
+    // Set selected segment for notification types
+    if ([firstStartTime length] < 1) {
+        [self.notificationTypeSwitch setSelectedSegmentIndex:1];
+    } else {
+        if ([[self getNotificationType] isEqualToString:@"Team"]) {
+            [self.notificationTypeSwitch setSelectedSegmentIndex:0];
+            self.nameOfPlayer.enabled = FALSE;
+        } else {
+            [self.notificationTypeSwitch setSelectedSegmentIndex:1];
+            self.nameOfPlayer.enabled = TRUE;
+        }
     }
 
     // Set selected segment for analytics
@@ -191,6 +213,7 @@
     [self saveActionNames:self.leftActionNameSelected.text
                secondName:self.rightActionNameSelected.text];
     [self notificationSwitch:self.sendNotificationSwitch];
+    [self notificationTypeSwitch:self.notificationTypeSwitch];
     [self sendAnalytics:self.analyticsSwitch];
     [self colorSettings:self.colorSettings];
     [self sendWithFacebook:self.facebookSwitch];
@@ -460,13 +483,34 @@
 
 #pragma mark - Notificaion Switchs
 
-- (IBAction)notificationTypeSwitch:(UISegmentedControl *)sender {
-    
+- (IBAction)notificationTypeSwitch:(UISegmentedControl *)sender
+{
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
     
     //Save the segmented value
+    switch (selectedSegmentIndex) {
+        case 0:
+            // Send messages about the teams playing
+            [defaults setObject:@"Team" forKey:@"notificationsType"];
+            self.nameOfPlayer.enabled = FALSE;
+            break;
+        case 1:
+            // Send messages about the individual player only
+            [defaults setObject:@"Player" forKey:@"notificationsType"];
+            self.nameOfPlayer.enabled = TRUE;
+        default:
+            break;
+    }
+    [self saveUserDefaults];
+
+}
+
+- (NSString *)getNotificationType
+{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     
+    return [defaults stringForKey:@"notificationsType"];
 }
 
 - (IBAction)notificationSwitch:(id)sender
