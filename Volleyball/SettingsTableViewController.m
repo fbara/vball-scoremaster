@@ -458,7 +458,17 @@
     return [defaults stringForKey:@"analyticsChoice"];
 }
 
-#pragma mark - Text Notificaion Switch
+#pragma mark - Notificaion Switchs
+
+- (IBAction)notificationTypeSwitch:(UISegmentedControl *)sender {
+    
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
+    
+    //Save the segmented value
+    
+}
+
 - (IBAction)notificationSwitch:(id)sender
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
@@ -485,6 +495,7 @@
 
     return [defaults stringForKey:@"enableNotifications"];
 }
+
 
 #pragma mark - Color Switch
 
@@ -513,8 +524,7 @@
     [self saveUserDefaults];
 }
 
-- (IBAction)notificationTypeSwitch:(UISegmentedControl *)sender {
-}
+
 
 - (NSString*)getColorSettings
 {
