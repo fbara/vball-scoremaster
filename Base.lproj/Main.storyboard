@@ -595,8 +595,9 @@
                                                     <rect key="frame" x="342" y="8" width="218" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
-                                                        <segment title="Teams"/>
-                                                        <segment title="Player only"/>
+                                                        <segment title="Score"/>
+                                                        <segment title="Player"/>
+                                                        <segment title="Blank"/>
                                                     </segments>
                                                     <connections>
                                                         <action selector="notificationTypeSwitch:" destination="JoG-uN-Xre" eventType="valueChanged" id="eqc-2a-GjH"/>

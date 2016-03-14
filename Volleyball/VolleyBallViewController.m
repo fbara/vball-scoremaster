@@ -120,10 +120,8 @@ NSString *socialMessage;
     [_vistingTeamContainer addGestureRecognizer:visitorSwipeGesture];
 
     /*! Loop through all the gesture recognizers on each of the pageview
-   * controllers,
-   *  and when you locate either the tap or pan recognizers, set them to require
-   * the
-   *  appropriate swipe gesture to fail before they'll recognize their gesture.
+   * controllers and when you locate either the tap or pan recognizers, set them to require
+   * the appropriate swipe gesture to fail before they'll recognize their gesture.
    */
 
     for (UIGestureRecognizer *gesture in _homePageViewController.view
@@ -1063,8 +1061,17 @@ NSString *socialMessage;
                 composeViewControllerForServiceType:SLServiceTypeTwitter];
 
             NSString* newMessage, *tempStr1, *tempStr2;
-            tempStr1 = [self createMessageToSend];
-            tempStr2 = @"\n#vballscoremaster";
+            if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
+                tempStr1 = [self createPlayerMessageToSend];
+                tempStr2 = @"\n#vballscoremaster";
+            } else if ([[self teamOrPlayer] isEqualToString:@"Team"]) {
+                tempStr1 = [self createTeamMessageToSend];
+                tempStr2 = @"\n#vballscoremaster";
+            } else {
+                tempStr1 = [self createBlankMessageToSend];
+                tempStr2 = @"";
+            }
+            
             newMessage = [tempStr1 stringByAppendingString:tempStr2];
             socialMessage = newMessage;
 
@@ -1126,8 +1133,17 @@ NSString *socialMessage;
                 composeViewControllerForServiceType:SLServiceTypeFacebook];
 
             NSString* newMessage, *tempStr1, *tempStr2;
-            tempStr1 = [self createMessageToSend];
-            tempStr2 = @"\n#vballscoremaster";
+            if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
+                tempStr1 = [self createPlayerMessageToSend];
+                tempStr2 = @"\n#vballscoremaster";
+            } else if ([[self teamOrPlayer] isEqualToString:@"Team"]) {
+                tempStr1 = [self createTeamMessageToSend];
+                tempStr2 = @"\n#vballscoremaster";
+            } else {
+                tempStr1 = [self createBlankMessageToSend];
+                tempStr2 = @"";
+            }
+            
             newMessage = [tempStr1 stringByAppendingString:tempStr2];
 
             [facebookController setInitialText:newMessage];
@@ -1208,9 +1224,7 @@ NSString *socialMessage;
 - (void)alertView:(UIAlertView*)alertView
     clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-
     //Need to determine the action based on the TAG
-
     if (buttonIndex != 0) {
         [self startNewMatch];
     }
@@ -1253,7 +1267,14 @@ NSString *socialMessage;
                 setRecipients:[NSArray arrayWithObjects:notificationNumber, nil]];
             // Create new message
             NSString* smsMessage;
-            smsMessage = [self createMessageToSend];
+            if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
+                smsMessage = [self createPlayerMessageToSend];
+            } else if ([[self teamOrPlayer] isEqualToString:@"Team"]) {
+                smsMessage = [self createTeamMessageToSend];
+            } else {
+                smsMessage = [self createBlankMessageToSend];
+            }
+            
             [textComposer setBody:smsMessage];
             // Show text message screen
             [self presentViewController:textComposer animated:YES completion:nil];
@@ -1263,27 +1284,92 @@ NSString *socialMessage;
     } // No messages to be sent, exit
 }
 
-- (NSString*)createMessageToSend
+//- (NSString*)createMessageToSend
+//{
+//    // Clear the contents of the text message before creating a new one
+//    textMessage = @"";
+//
+//    // Get the player name
+//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+//    NSString* playerName = [defaults stringForKey:@"playerNameForNotifications"];
+//
+//    msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
+//    msgHome = [NSString stringWithString:self.homeTeamName.text];
+//
+//    // Format the text message
+//    textMessage = [NSString
+//        stringWithFormat:
+//            @"%@ has %d %@s and %d %@s!\nThe score is now %@ %d - %@ %d.",
+//            playerName, currSecondAction, self.rightActionLabel.text,
+//            currFirstAction, self.leftActionLabel.text, msgVisitor,
+//            currVisitorScore, msgHome, currHomeScore];
+//
+//    return textMessage;
+//}
+
+- (NSString *)createPlayerMessageToSend
 {
     // Clear the contents of the text message before creating a new one
-    textMessage = @"";
-
+    textMessage = nil;
+    
     // Get the player name
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSString* playerName = [defaults stringForKey:@"playerNameForNotifications"];
-
+    
     msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
     msgHome = [NSString stringWithString:self.homeTeamName.text];
-
+    
     // Format the text message
     textMessage = [NSString
-        stringWithFormat:
-            @"%@ has %d %@s and %d %@s!\nThe score is now %@ %d - %@ %d.",
-            playerName, currSecondAction, self.rightActionLabel.text,
-            currFirstAction, self.leftActionLabel.text, msgVisitor,
-            currVisitorScore, msgHome, currHomeScore];
-
+                   stringWithFormat:
+                   @"%@ has %d %@s and %d %@s!\nThe score is now %@ %d - %@ %d.",
+                   playerName, currSecondAction, self.rightActionLabel.text,
+                   currFirstAction, self.leftActionLabel.text, msgVisitor,
+                   currVisitorScore, msgHome, currHomeScore];
+    
     return textMessage;
+}
+
+- (NSString *)createTeamMessageToSend
+{
+    // Clear the contents of the text message before creating a new one
+    textMessage = nil;
+    
+    msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
+    msgHome = [NSString stringWithString:self.homeTeamName.text];
+    NSString *game = [NSString stringWithFormat:@"%@", self.gameNumber.text];
+    if (currHomeScore > currVisitorScore) {
+        textMessage = [NSString stringWithFormat: @"%@ is beating %@ with a score of %d - %d in game %@.",
+                      msgHome, msgVisitor, currHomeScore, currVisitorScore, game];
+    } else if (currVisitorScore > currHomeScore) {
+        textMessage = [NSString stringWithFormat: @"%@ is beating %@ with a score of %d - %d in game %@.",
+                      msgVisitor, msgHome, currVisitorScore, currHomeScore, game];
+    } else {
+        textMessage = [NSString stringWithFormat: @"In game %@ between %@ and %@, the score is 0 - 0.", game, msgHome, msgVisitor];
+    }
+    
+    return textMessage;
+}
+
+- (NSString *)createBlankMessageToSend
+{
+    // Clear the contents of the text message before creating a new one
+    textMessage = @"";
+    
+    //return a blank message
+    return textMessage;
+}
+
+- (NSString *)teamOrPlayer
+{
+    NSString *type;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    type = [defaults objectForKey:@"notificationsType"];
+    if (!type) {
+        return @"none";
+    } else {
+        return type;
+    }
 }
 
 #pragma mark - UIPageViewControllerDataSource

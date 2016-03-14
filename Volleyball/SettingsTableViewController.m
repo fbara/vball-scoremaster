@@ -87,8 +87,11 @@
         if ([[self getNotificationType] isEqualToString:@"Team"]) {
             [self.notificationTypeSwitch setSelectedSegmentIndex:0];
             self.notificationName.enabled = FALSE;
-        } else {
+        } else if ([[self getNotificationType] isEqualToString:@"Player"]) {
             [self.notificationTypeSwitch setSelectedSegmentIndex:1];
+            self.notificationName.enabled = TRUE;
+        } else {
+            [self.notificationTypeSwitch setSelectedSegmentIndex:2];
             self.notificationName.enabled = TRUE;
         }
     } else {
@@ -155,8 +158,11 @@
         if ([[self getNotificationType] isEqualToString:@"Team"]) {
             [self.notificationTypeSwitch setSelectedSegmentIndex:0];
             self.nameOfPlayer.enabled = FALSE;
-        } else {
+        } else if ([[self getNotificationType] isEqualToString:@"Player"]) {
             [self.notificationTypeSwitch setSelectedSegmentIndex:1];
+            self.nameOfPlayer.enabled = TRUE;
+        } else {
+            [self.notificationTypeSwitch setSelectedSegmentIndex:2];
             self.nameOfPlayer.enabled = TRUE;
         }
     }
@@ -499,6 +505,12 @@
             // Send messages about the individual player only
             [defaults setObject:@"Player" forKey:@"notificationsType"];
             self.nameOfPlayer.enabled = TRUE;
+            break;
+        case 2:
+            //Create blank msg for custom use
+            [defaults setObject:@"Blank" forKey:@"notificationsType"];
+            self.nameOfPlayer.enabled = TRUE;
+            break;
         default:
             break;
     }
@@ -527,6 +539,7 @@
     case 1:
         // Don't send SMS messagees
         [defaults setObject:@"Off" forKey:@"enableNotifications"];
+            break;
     default:
         break;
     }
