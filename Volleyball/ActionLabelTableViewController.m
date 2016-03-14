@@ -108,7 +108,7 @@
 	
 	// Setup Google Analytics tracker for this screen
 	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-	[tracker set:kGAIScreenName value:@"Action Names"];
+	[tracker set:kGAIScreenName value:@"Super User"];
 	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 

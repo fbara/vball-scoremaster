@@ -899,7 +899,7 @@ NSString *socialMessage;
         lableNum = lableNum + 1;
     }
 
-    // TODO Remove??
+// TODO Remove??
     // Keep track of the number for this action in case the user comes back to it
     // during this match
     //[defaults setInteger:lableNum forKey:self.rightActionLabel.text];
@@ -927,7 +927,7 @@ NSString *socialMessage;
         lableNum = lableNum + 1;
     }
 
-    // TODO Remove??
+// TODO Remove??
     // Keep track of the number for this action in case the user comes back to it
     // during this match
     //[defaults setInteger:lableNum forKey:self.leftActionLabel.text];

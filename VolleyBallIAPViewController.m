@@ -147,7 +147,7 @@
                                                                delegate:nil
                                                       cancelButtonTitle:@"Ok"
                                                       otherButtonTitles:nil];
-                [alert show];
+                [alert show];		
             }
             
         *stop = YES;

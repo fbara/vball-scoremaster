@@ -9,6 +9,8 @@
 #import "VolleyBallAppDelegate.h"
 #import <GBVersionTracking/GBVersionTracking.h>
 #import <GoogleAnalytics/GAI.h>
+#import <GoogleAnalytics/GAIFields.h>
+#import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import <ChameleonFramework/Chameleon.h>
 #import "VolleyBallIAPHelper.h"
 #import <AppbotX/ABX.h>
@@ -68,8 +70,7 @@
 		}
 	}
 
-    if ([GBVersionTracking isFirstLaunchEver] ||
-        [GBVersionTracking isFirstLaunchForVersion]) {
+    if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
         // Initialize the number of times the user has launched the app
         [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"launchNumber"];
         [[NSUserDefaults standardUserDefaults] setObject:@"Yes"
@@ -86,8 +87,7 @@
             cancelButtonTitle:@"Opt Out"
             otherButtonTitles:@"Opt In", nil];
         [av show];
-    } else if (([[NSUserDefaults standardUserDefaults]
-                   integerForKey:@"launchNumber"]) < 5) {
+    } else if (([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) < 5) {
         // Increment launchNumber until we reach 5
         NSInteger ln =
             [[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"];
@@ -116,6 +116,12 @@
 		[[GAI sharedInstance] setOptOut:NO];
 //TODO: Enable LaunchKit
 //		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
+//        if (LKAppUserIsSuper()) {
+//            //SuperUser
+//            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//            [tracker send:[[[GAIDictionaryBuilder createScreenView] set:@"Super User" forKey:kGAIScreenName] build]];
+//
+//        }
 	}
 	
     [[NSUserDefaults standardUserDefaults] synchronize];

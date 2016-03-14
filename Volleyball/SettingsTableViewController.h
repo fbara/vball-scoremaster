@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton* visitingTeamColor;
 @property (weak, nonatomic) IBOutlet UITextField* notificationName;
 @property (weak, nonatomic) IBOutlet UISegmentedControl* sendNotificationSwitch;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *notificationTypeSwitch;
 @property (weak, nonatomic) IBOutlet UITextField* nameOfPlayer;
 @property (strong, nonatomic) IBOutletCollection(UILabel)
     NSArray* settingsLabels;
@@ -44,7 +45,7 @@
 - (IBAction)textFieldReturn:(id)sender;
 - (IBAction)sendAnalytics:(UISegmentedControl*)sender;
 - (IBAction)colorSettings:(UISegmentedControl*)sender;
-
+- (IBAction)notificationTypeSwitch:(UISegmentedControl *)sender;
 - (IBAction)sendWithFacebook:(UISegmentedControl*)sender;
 - (IBAction)sendWithTwitter:(UISegmentedControl*)sender;
 

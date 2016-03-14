@@ -102,7 +102,6 @@
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Settings"];
 	//Change to createScreenView because createAppView is deprecated
-    //[tracker send:[[GAIDictionaryBuilder createAppView] build]];
 	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
@@ -512,6 +511,9 @@
         break;
     }
     [self saveUserDefaults];
+}
+
+- (IBAction)notificationTypeSwitch:(UISegmentedControl *)sender {
 }
 
 - (NSString*)getColorSettings
