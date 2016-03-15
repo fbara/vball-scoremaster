@@ -36,6 +36,8 @@ CGFloat const ipadScoreFont = 220.0f;
 CGFloat const iphoneScoreFont = 120.0f;
 NSString* colorScheme;
 NSString *socialMessage;
+int totalPastGamesHome;
+int totalPastGamesVisitor;
 
 @interface VolleyBallViewController () {
     // Instance variable to store all products returned from iTunes Connect
@@ -167,6 +169,10 @@ NSString *socialMessage;
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
     }
+    
+    //Reset total game counts
+    totalPastGamesHome = 0;
+    totalPastGamesVisitor = 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -255,6 +261,10 @@ NSString *socialMessage;
             score.textColor = FlatBlackDark;
         }
     }
+    
+    //Reset the total team wins game count
+    totalPastGamesVisitor = 0;
+    totalPastGamesHome = 0;
 }
 
 - (void)initializeHomeScore:(int)score fontSize:(CGFloat)scoreSize
@@ -442,7 +452,7 @@ NSString *socialMessage;
     if ([self.homeGame1.text intValue] > [self.visitGame1.text intValue]) {
         self.homeGame1.textColor = winTeam;
         self.visitGame1.textColor = loseTeam;
-    } else if ([self.homeGame1.text intValue] < [self.visitGame1.text intValue]){
+    } else if ([self.homeGame1.text intValue] < [self.visitGame1.text intValue]) {
         self.homeGame1.textColor = loseTeam;
         self.visitGame1.textColor = winTeam;
     }
@@ -484,6 +494,8 @@ NSString *socialMessage;
     currVisitorScore = 0;
 	self.homeTeamName.text = @"";
 	self.visitingTeamName.text = @"";
+    totalPastGamesVisitor = 0;
+    totalPastGamesHome = 0;
 	
     [self initializePastGames];
 }
@@ -528,7 +540,7 @@ NSString *socialMessage;
     [tracker set:kGAIScreenName value:nil];
 }
 
-- (void)logMessagesSent
+- (void)logMessagesSent:(NSString *)type
 {
     // Logs that a text message was sent
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
@@ -536,7 +548,7 @@ NSString *socialMessage;
     [tracker set:kGAIScreenName value:@"Scoring"];
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
                                                           action:@"message"
-                                                           label:@"message sent"
+                                                           label:type
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
 }
@@ -748,7 +760,6 @@ NSString *socialMessage;
  */
 - (IBAction)gamePressed:(UIButton*)sender
 {
-
     // Log the button press for analytics
     [self logButtonPress:(UIButton*)sender];
 
@@ -762,6 +773,7 @@ NSString *socialMessage;
         self.visitGame1.text = [NSString stringWithFormat:@"%d", currVisitorScore];
         if (currHomeScore > currVisitorScore) {
             self.homeGame1.textColor = [UIColor redColor];
+            totalPastGamesHome = totalPastGamesHome + 1;
             if (IS_IPAD()) {
                 [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
@@ -770,6 +782,7 @@ NSString *socialMessage;
 
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame1.textColor = [UIColor redColor];
+            totalPastGamesVisitor = totalPastGamesVisitor + 1;
             if (IS_IPAD()) {
                 [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
@@ -786,6 +799,7 @@ NSString *socialMessage;
         self.visitGame2.text = [NSString stringWithFormat:@"%d", currVisitorScore];
         if (currHomeScore > currVisitorScore) {
             self.homeGame2.textColor = FlatRed;
+            totalPastGamesHome = totalPastGamesHome + 1;
             if (IS_IPAD()) {
                 [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
@@ -793,6 +807,7 @@ NSString *socialMessage;
             }
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame2.textColor = FlatRed;
+            totalPastGamesVisitor = totalPastGamesVisitor + 1;
             if (IS_IPAD()) {
                 [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
@@ -809,6 +824,7 @@ NSString *socialMessage;
         self.visitGame3.text = [NSString stringWithFormat:@"%d", currVisitorScore];
         if (currHomeScore > currVisitorScore) {
             self.homeGame3.textColor = FlatRed;
+            totalPastGamesHome = totalPastGamesHome + 1;
             if (IS_IPAD()) {
                 [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
@@ -816,6 +832,7 @@ NSString *socialMessage;
             }
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame3.textColor = FlatRed;
+            totalPastGamesVisitor = totalPastGamesVisitor + 1;
             if (IS_IPAD()) {
                 [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
@@ -831,6 +848,7 @@ NSString *socialMessage;
         self.visitGame4.text = [NSString stringWithFormat:@"%d", currVisitorScore];
         if (currHomeScore > currVisitorScore) {
             self.homeGame4.textColor = FlatRed;
+            totalPastGamesHome = totalPastGamesHome + 1;
             if (IS_IPAD()) {
                 [self.homeGame4 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
@@ -838,6 +856,7 @@ NSString *socialMessage;
             }
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame4.textColor = FlatRed;
+            totalPastGamesVisitor = totalPastGamesVisitor + 1;
             if (IS_IPAD()) {
                 [self.visitGame4 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
@@ -1276,36 +1295,15 @@ NSString *socialMessage;
             }
             
             [textComposer setBody:smsMessage];
+            // Log to analytics that a message was sent
+            [self logMessagesSent:[self teamOrPlayer]];
+            
             // Show text message screen
             [self presentViewController:textComposer animated:YES completion:nil];
-            // Log to analytics that a message was sent
-            [self logMessagesSent];
+            
         }
     } // No messages to be sent, exit
 }
-
-//- (NSString*)createMessageToSend
-//{
-//    // Clear the contents of the text message before creating a new one
-//    textMessage = @"";
-//
-//    // Get the player name
-//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-//    NSString* playerName = [defaults stringForKey:@"playerNameForNotifications"];
-//
-//    msgVisitor = [NSString stringWithString:self.visitingTeamName.text];
-//    msgHome = [NSString stringWithString:self.homeTeamName.text];
-//
-//    // Format the text message
-//    textMessage = [NSString
-//        stringWithFormat:
-//            @"%@ has %d %@s and %d %@s!\nThe score is now %@ %d - %@ %d.",
-//            playerName, currSecondAction, self.rightActionLabel.text,
-//            currFirstAction, self.leftActionLabel.text, msgVisitor,
-//            currVisitorScore, msgHome, currHomeScore];
-//
-//    return textMessage;
-//}
 
 - (NSString *)createPlayerMessageToSend
 {
@@ -1320,12 +1318,8 @@ NSString *socialMessage;
     msgHome = [NSString stringWithString:self.homeTeamName.text];
     
     // Format the text message
-    textMessage = [NSString
-                   stringWithFormat:
-                   @"%@ has %d %@s and %d %@s!\nThe score is now %@ %d - %@ %d.",
-                   playerName, currSecondAction, self.rightActionLabel.text,
-                   currFirstAction, self.leftActionLabel.text, msgVisitor,
-                   currVisitorScore, msgHome, currHomeScore];
+    textMessage = [NSString stringWithFormat: @"%@ has %d %@s and %d %@s!\nThe score is now %@ %d - %@ %d.", playerName, currSecondAction, self.rightActionLabel.text,
+                   currFirstAction, self.leftActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
     
     return textMessage;
 }
@@ -1339,13 +1333,13 @@ NSString *socialMessage;
     msgHome = [NSString stringWithString:self.homeTeamName.text];
     NSString *game = [NSString stringWithFormat:@"%@", self.gameNumber.text];
     if (currHomeScore > currVisitorScore) {
-        textMessage = [NSString stringWithFormat: @"%@ is beating %@ with a score of %d - %d in game %@.",
-                      msgHome, msgVisitor, currHomeScore, currVisitorScore, game];
+        textMessage = [NSString stringWithFormat: @"%@ is beating %@ %d - %d in game %@. The match is now %@ %ld - %@ %ld.",
+                      msgHome, msgVisitor, currHomeScore, currVisitorScore, game, msgHome, (long)totalPastGamesHome, msgVisitor, (long)totalPastGamesVisitor];
     } else if (currVisitorScore > currHomeScore) {
-        textMessage = [NSString stringWithFormat: @"%@ is beating %@ with a score of %d - %d in game %@.",
-                      msgVisitor, msgHome, currVisitorScore, currHomeScore, game];
+        textMessage = [NSString stringWithFormat: @"%@ is beating %@ %d - %d in game %@. The match is now %@ %ld - %@ %ld.",
+                      msgVisitor, msgHome, currVisitorScore, currHomeScore, game, msgVisitor, (long)totalPastGamesVisitor, msgHome, (long)totalPastGamesHome];
     } else {
-        textMessage = [NSString stringWithFormat: @"In game %@ between %@ and %@, the score is 0 - 0.", game, msgHome, msgVisitor];
+        textMessage = [NSString stringWithFormat: @"In game %@ between %@ and %@, the score is %d - %d. The match is %@ %ld - %@ %ld.", game, msgHome, msgVisitor, currHomeScore, currVisitorScore, msgVisitor, (long)totalPastGamesVisitor, msgHome, (long)totalPastGamesHome];
     }
     
     return textMessage;
@@ -1366,7 +1360,7 @@ NSString *socialMessage;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     type = [defaults objectForKey:@"notificationsType"];
     if (!type) {
-        return @"none";
+        return @"Blank";
     } else {
         return type;
     }
@@ -1503,6 +1497,7 @@ NSString *socialMessage;
 {
     // After entering team name, on either side, and tapping 'Done' or
     // anywhere else to dismiss keyboard, capture the names for the text msgs.
+    textField.text = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     [self.view endEditing:YES];
     [textField resignFirstResponder];
 }
