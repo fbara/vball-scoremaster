@@ -21,7 +21,7 @@
 #pragma clang diagnostic ignored "-Wunused-variable"	
 #pragma clang diagnostic ignored "-Wprotocol"
 
-@interface SettingsTableViewController () {
+@interface SettingsTableViewController () <UIViewControllerPreviewingDelegate> {
     BOOL isPurchased;
 	NSString *teamChange;
 }
@@ -208,6 +208,8 @@
         self.twitterSwitch.enabled = FALSE;
         self.facebookSwitch.enabled = FALSE;
     }
+    
+    [self checkFor3DTouch];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -872,6 +874,22 @@
 
     // Action Name row was selected so segue to that VC
     [self performSegueWithIdentifier:@"actionNameView" sender:self];
+}
+
+#pragma mark - Peek/Pop
+
+- (void)checkFor3DTouch {
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        [self registerForPreviewingWithDelegate:(id)self sourceView:self.view];
+    }
+}
+
+-(void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [self checkFor3DTouch];
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    NSLog(@"\n3D Touch Happened!");
 }
 
 #pragma mark - UITextField Phone Formatting
