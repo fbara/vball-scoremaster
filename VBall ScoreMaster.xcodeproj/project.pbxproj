@@ -408,6 +408,7 @@
 				0DC7DAD67049FC68E7E7D61E /* Copy Pods Resources */,
 				15F3DC32EAD61B4582A930F5 /* Embed Pods Frameworks */,
 				ADBFCF551BF27247003B5F3D /* ShellScript */,
+				AD4562121C98BC4D00E72EE5 /* Set Build Number */,
 			);
 			buildRules = (
 			);
@@ -569,6 +570,20 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "#Update build number with number of git commits if in release mode\nif [ ${CONFIGURATION} == \"Release\" ]; then\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nfi;";
+		};
+		AD4562121C98BC4D00E72EE5 /* Set Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh \"$SRCROOT\"/Scripts/set_build_number_2.sh";
 		};
 		ADBFCF551BF27247003B5F3D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
