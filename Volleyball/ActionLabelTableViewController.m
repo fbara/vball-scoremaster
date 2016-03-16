@@ -17,7 +17,7 @@
 #import <GBVersionTracking/GBVersionTracking.h>
 
 @interface ActionLabelTableViewController () <UITextFieldDelegate, TSMessageViewProtocol, UIPopoverPresentationControllerDelegate> {
-	BOOL firstTimeShown, firstTimeEver, rowCanSlide, rowChecked;
+	BOOL firstTimeShown, rowCanSlide, rowChecked;
 	NSUserDefaults *defaults;
 	NSIndexPath *m_currentIndexPath, *selectedIndexPath;
 	SESlideTableViewCell *selectedCell;
@@ -70,8 +70,8 @@
 	[self.tableView addGestureRecognizer:longPress];
 	
     // Indicate this is the first time this view is seen
+    
     firstTimeShown = YES;
-	firstTimeEver = YES;
 	rowCanSlide = YES;
 	rowChecked = NO;
 	[TSMessage setDelegate:self];
@@ -79,23 +79,6 @@
 	//Check if this is the first time the user is seeing this view
 	[self checkForFirstTimeInView];
 	
-	//Setup bar buttons
-//	UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-//																		  target:self
-//																		 action:@selector(addNewActionNameRow:)];
-//TODO: Figure out how to have the tableview properly reload the data
-	//Until that time, hide the 'reset' button
-//	UIBarButtonItem *reset = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
-//																		  target:self
-//																		  action:@selector(resetActionNames:)];
-//	
-//	UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc]
-//								   initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-//								   target:self
-//								   action:nil];
-//	
-//	fixedSpace.width = 20.0f;
-//	self.navigationItem.rightBarButtonItem = fixedSpace;
 	//There's a Save button showing up and I can't figure out where it comes from.
 	//Hide the Save button for now. Backing out of view will save setting.
 	self.navigationItem.rightBarButtonItem = nil;
@@ -108,7 +91,7 @@
 	
 	// Setup Google Analytics tracker for this screen
 	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-	[tracker set:kGAIScreenName value:@"Super User"];
+	[tracker set:kGAIScreenName value:@"Action Labels"];
 	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
@@ -170,7 +153,7 @@
  */
 -(void)checkForFirstTimeInView {
 	if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion] ) {
-		if (firstTimeEver) {
+		if ([defaults boolForKey:@"firstTimeEver"]) {
 			//Show BTBalloon with info on rows
 			NSString *title = @"Swipe Left On Row.\nYou can add, rename, and delete rows. Just swipe a row to see the buttons!";
 			[BTBalloon appearance].textFont = [UIFont fontWithName:@"AvenirNext-Regular" size:14.0f];
@@ -182,27 +165,11 @@
 									 anchorToView:selectedCell
 									  buttonTitle:@"Continue"
 								   buttonCallback:^{
+                                       [defaults setBool:FALSE forKey:@"firstTimeEver"];
 									   [[BTBalloon sharedInstance] hideWithAnimation:YES];
 										}
 									   afterDelay:0.5];
-		
 
-		firstTimeEver = FALSE;
-		[defaults setBool:firstTimeEver forKey:@"firstTimeEver"];
-
-//	} else {
-//			[[BTBalloon sharedInstance] showWithTitle:title
-//												image:[UIImage imageNamed:@"Swipe-Left-White"]
-//										 anchorToView:selectedCell
-//										  buttonTitle:@"Continue"
-//									   buttonCallback:^{
-//										   [[BTBalloon sharedInstance] hideWithAnimation:YES];
-//									   }];
-//			firstTimeEver = FALSE;
-//			[defaults setBool:firstTimeEver forKey:@"firstTimeEver"];
-//	}
-//		} else {
-//			return;
 		}
 	}
 }
@@ -272,7 +239,7 @@
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-	firstTimeEver = FALSE;
+    [defaults setBool:FALSE forKey:@"firstTimeEver"];
 	// select new row
     SESlideTableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
 	
@@ -339,13 +306,6 @@
     sectionHeader.textColor = [UIColor darkGrayColor];
 	
 	sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME", @"Table header, tap on the Action Name for your player");
-
-//    if (IS_IPAD()) {
-//		sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME", @"Tap on the Action Name for your player");
-//		
-//    } else {
-//        sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME THEN TAP 'SAVE'", @"Tap on the Action Name for your player, then tap Save");
-//    }
     return sectionHeader;
 }
 

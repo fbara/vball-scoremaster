@@ -62,12 +62,14 @@
 	if ([GBVersionTracking isFirstLaunchEver]) {
 		randomUserString = [self randomStringWithLength:8];
 		[defaults setObject:randomUserString forKey:@"userString"];
+        [defaults setBool:TRUE forKey:@"firstTimeEver"];
 	} else {
 		randomUserString = [defaults objectForKey:@"userString"];
 		if (randomUserString == nil) {
 			randomUserString = [self randomStringWithLength:8];
 			[defaults setObject:randomUserString forKey:@"userString"];
 		}
+        [defaults setBool:FALSE forKey:@"firstTimeEver"];
 	}
 
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
@@ -75,7 +77,7 @@
         [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"launchNumber"];
         [[NSUserDefaults standardUserDefaults] setObject:@"Yes"
                                                   forKey:@"showPrompt"];
-
+        
         // Show Google Analytics permissiion alert
         UIAlertView* av = [[UIAlertView alloc]
                 initWithTitle:@"Analytics Request"
@@ -88,6 +90,7 @@
             otherButtonTitles:@"Opt In", nil];
         [av show];
     } else if (([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) < 5) {
+        [defaults setBool:FALSE forKey:@"firstTimeEver"];
         // Increment launchNumber until we reach 5
         NSInteger ln =
             [[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"];
@@ -102,10 +105,6 @@
 
     }
 	
-	//Check if user is allowing analytics or not
-	//We hit 5 uses so turn off the review prompt
-	[[NSUserDefaults standardUserDefaults] setObject:@"No"
-											  forKey:@"showPrompt"];
 	//Check if analytics are allowed on subsequent starts of the app
 	NSString *analyticsSetting = [[NSUserDefaults standardUserDefaults] stringForKey:@"analyticsChoice"];
 	if ([analyticsSetting isEqualToString:@"Opt out"]) {

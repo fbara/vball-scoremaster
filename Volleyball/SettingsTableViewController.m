@@ -111,7 +111,6 @@
     // Setup Google Analytics tracker for this screen
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Settings"];
-	//Change to createScreenView because createAppView is deprecated
 	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
@@ -680,6 +679,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+//3-16-16: Don't support iOS 7 anymore, commenting for now
 /*!
  *  New ABPeoplePickerNavigationController for iOS 8 only.
  *  All this will do here is call the iOS7 version.  Keep both around
@@ -687,17 +687,17 @@
  *
  *  @param person The phone number of the person selected from Contacts
  */
-- (void)peoplePickerNavigationController:
-            (ABPeoplePickerNavigationController*)peoplePicker
-                         didSelectPerson:(ABRecordRef)person
-                                property:(ABPropertyID)property
-                              identifier:(ABMultiValueIdentifier)identifier
-{
-    [self peoplePickerNavigationController:peoplePicker
-        shouldContinueAfterSelectingPerson:person
-                                  property:property
-                                identifier:identifier];
-}
+//- (void)peoplePickerNavigationController:
+//            (ABPeoplePickerNavigationController*)peoplePicker
+//                         didSelectPerson:(ABRecordRef)person
+//                                property:(ABPropertyID)property
+//                              identifier:(ABMultiValueIdentifier)identifier
+//{
+//    [self peoplePickerNavigationController:peoplePicker
+//        shouldContinueAfterSelectingPerson:person
+//                                  property:property
+//                                identifier:identifier];
+//}
 
 - (void)displayPerson:(ABRecordRef)person
          targetNumber:(NSString*)selectedNumber
@@ -826,14 +826,6 @@
 
 - (void)setActionName:(NSString*)name
 {
-//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-//
-//    // Determine which Action Name row was selected prior to the segue
-//    if (self.actionRow == 1) {
-//        [defaults setObject:name forKey:@"leftActionName"];
-//    } else {
-//        [defaults setObject:name forKey:@"rightActionName"];
-//    }
     // Remove the row number from actionRow
     self.actionRow = 0;
 

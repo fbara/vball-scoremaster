@@ -633,7 +633,8 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
                                                         <segment title="Teams"/>
-                                                        <segment title="Player only"/>
+                                                        <segment title="Player"/>
+                                                        <segment title="Blank"/>
                                                     </segments>
                                                     <connections>
                                                         <action selector="notificationSwitch:" destination="JoG-uN-Xre" eventType="valueChanged" id="OgZ-ee-W9f"/>
