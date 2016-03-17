@@ -33,6 +33,7 @@
 @property UIPopoverController* aPopover;
 @property (weak, nonatomic) IBOutlet UILabel* twitterCellLabel;
 @property (weak, nonatomic) IBOutlet UILabel* facebookCellLabel;
+@property (nonatomic, strong)id previewingContext;
 
 @end
 
@@ -96,6 +97,10 @@
         }
     } else {
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
+    }
+    
+    if ([self checkFor3DTouch]) {
+        self.previewingContext = [self registerForPreviewingWithDelegate:self sourceView:self.tableView];
     }
 }
 
@@ -843,8 +848,7 @@
 {
     // Change the selected row color so the entire row doesn't become gray when
     // it's touched
-    [[tableView cellForRowAtIndexPath:indexPath]
-        setSelectionStyle:UITableViewCellSelectionStyleNone];
+    [[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     int actionTag = (int)cell.tag;
 
@@ -870,18 +874,51 @@
 
 #pragma mark - Peek/Pop
 
-- (void)checkFor3DTouch {
-    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-        [self registerForPreviewingWithDelegate:(id)self sourceView:self.view];
+- (BOOL)checkFor3DTouch {
+    BOOL is3dTouchAvailable = NO;
+    if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)]) {
+        is3dTouchAvailable = self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable;
     }
+    return is3dTouchAvailable;
 }
 
--(void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-    [self checkFor3DTouch];
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    //Check if we're not already displaying the view controller
+    if ([self.presentedViewController isKindOfClass:[ActionLabelTableViewController class]]) {
+        return nil;
+    }
+    NSIndexPath *path = [self.tableView indexPathForRowAtPoint:location];
+    UITableViewCell *tableCell = [self.tableView cellForRowAtIndexPath:path];
+    self.actionRow = (int)tableCell.tag;
+    NSLog(@"\nActionRow: %d", self.actionRow);
+    if (!self.actionRow) {
+        return nil;
+    }
+    
+    
+    
+    if (path) {
+        previewingContext.sourceRect = tableCell.frame;
+        //Get the storyboard
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        //Setup the view controller by initializing it from the storyboard
+        ActionLabelTableViewController *previewController = [storyboard instantiateViewControllerWithIdentifier:@"ActionNames"];
+        if (self.actionRow == 1 || self.actionRow == 2) {
+            previewController.selectedActionRow = self.actionRow;
+        }
+        
+        //previewingContext.sourceRect = [self.view convertRect:tableCell.frame fromView:self.tableView];
+        return previewController;
+    }
+    return nil;
 }
 
 - (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
-    NSLog(@"\n3D Touch Happened!");
+    [self.navigationController showViewController:viewControllerToCommit sender:nil];
+}
+
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [self checkFor3DTouch];
 }
 
 #pragma mark - UITextField Phone Formatting
