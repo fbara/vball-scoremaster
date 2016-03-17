@@ -890,13 +890,11 @@
     NSIndexPath *path = [self.tableView indexPathForRowAtPoint:location];
     UITableViewCell *tableCell = [self.tableView cellForRowAtIndexPath:path];
     self.actionRow = (int)tableCell.tag;
-    NSLog(@"\nActionRow: %d", self.actionRow);
+    //Only do 3D touch for Action Names rows
     if (!self.actionRow) {
         return nil;
     }
-    
-    
-    
+
     if (path) {
         previewingContext.sourceRect = tableCell.frame;
         //Get the storyboard
