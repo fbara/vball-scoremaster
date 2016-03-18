@@ -668,7 +668,6 @@
 
 -(void)renameActionName:(SESlideTableViewCell *)cell {
 	//Allows the user to rename an existing cell
-	
 	[self addNewActionNameRow:cell.textLabel.text];
 }
 
@@ -695,16 +694,19 @@
                                                                    default:
                                                                        break;
                                                                }
+                                                               id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+                                                               [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+                                                                                                                     action:@"3D Touch"
+                                                                                                                      label:name
+                                                                                                                      value:nil] build]];
                                                                [[NSNotificationCenter defaultCenter] postNotificationName:@"updateActionNames" object:self];
-                                                               NSLog(@"\nRight: %@, Name: %@", [defaults objectForKey:@"rightActionName"], name);
-                                                               NSLog(@"\nLeft: %@, Name: %@", [defaults objectForKey:@"leftActionName"], name);
+                                                               
                                                            }];
         [list addObject:action];
         }
     self.previewActions = [UIPreviewActionGroup actionGroupWithTitle:@"Group"
                                                                style:UIPreviewActionStyleDefault
                                                              actions:list];
-    //NSArray *actionList = [NSArray arrayWithArray:list];
     return list;
 }
 

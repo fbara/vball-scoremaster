@@ -118,9 +118,12 @@
     [super viewDidAppear:animated];
 
     // Setup Google Analytics tracker for this screen
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"Settings"];
-	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    if ([self getAnalytics]) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker set:kGAIScreenName value:@"Settings"];
+        [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -907,6 +910,12 @@
         ActionLabelTableViewController *previewController = [storyboard instantiateViewControllerWithIdentifier:@"ActionNames"];
         if (self.actionRow == 1 || self.actionRow == 2) {
             previewController.selectedActionRow = self.actionRow;
+            //Log the user used 3D Touch
+            if ([self getAnalytics]) {
+                id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+                [tracker set:kGAIScreenName value:@"Settings"];
+                [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+            }
         }
         
         return previewController;

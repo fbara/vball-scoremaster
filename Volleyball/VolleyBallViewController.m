@@ -1065,8 +1065,7 @@ int totalPastGamesVisitor;
 
 - (BOOL)userHasAccessToTwitter
 {
-    return
-        [SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter];
+    return [SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter];
 }
 
 - (IBAction)sendTwitter:(UIButton*)sender;

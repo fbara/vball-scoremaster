@@ -51,7 +51,7 @@
 //	[LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
 
     // Google Analytics setup for the app
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
 //TODO: Enable Google Tracker
