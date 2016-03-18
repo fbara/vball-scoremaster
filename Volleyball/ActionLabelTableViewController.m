@@ -23,6 +23,7 @@
 	SESlideTableViewCell *selectedCell;
 }
 @property (strong, nonatomic)NSMutableArray *actionNamesList;
+@property (nonatomic, strong)UIPreviewActionGroup *previewActions;
 
 @end
 @implementation ActionLabelTableViewController
@@ -669,6 +670,42 @@
 	//Allows the user to rename an existing cell
 	
 	[self addNewActionNameRow:cell.textLabel.text];
+}
+
+#pragma mark - 3D Touch
+
+- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
+   // __weak ActionLabelTableViewController *weakSelf = self;
+    NSMutableArray *list = [[NSMutableArray alloc] init];
+    for (int i = 0; i < [self.actionNamesList count]; i++) {
+        NSString *name = self.actionNamesList[i];
+        UIPreviewAction *action = [UIPreviewAction actionWithTitle:name
+                                                             style:UIPreviewActionStyleDefault
+                                                           handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+                                                               NSLog(@"\nAction Row: %ld, Name: %@", self.selectedActionRow, name);
+                                                               switch (self.selectedActionRow) {
+                                                                   case 1:
+                                                                       //Left side
+                                                                       [defaults setObject:name forKey:@"leftActionName"];
+                                                                       break;
+                                                                   case 2:
+                                                                       //Right side
+                                                                       [defaults setObject:name forKey:@"rightActionName"];
+                                                                       break;
+                                                                   default:
+                                                                       break;
+                                                               }
+                                                               [[NSNotificationCenter defaultCenter] postNotificationName:@"updateActionNames" object:self];
+                                                               NSLog(@"\nRight: %@, Name: %@", [defaults objectForKey:@"rightActionName"], name);
+                                                               NSLog(@"\nLeft: %@, Name: %@", [defaults objectForKey:@"leftActionName"], name);
+                                                           }];
+        [list addObject:action];
+        }
+    self.previewActions = [UIPreviewActionGroup actionGroupWithTitle:@"Group"
+                                                               style:UIPreviewActionStyleDefault
+                                                             actions:list];
+    //NSArray *actionList = [NSArray arrayWithArray:list];
+    return list;
 }
 
 #pragma mark - UITextView Delegate

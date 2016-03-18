@@ -98,9 +98,13 @@
     } else {
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
-    
+    //Check for 3D Touch
     if ([self checkFor3DTouch]) {
         self.previewingContext = [self registerForPreviewingWithDelegate:self sourceView:self.tableView];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(getActionNames)
+                                                     name:@"updateActionNames"
+                                                   object:nil];
     }
 }
 
@@ -875,11 +879,11 @@
 #pragma mark - Peek/Pop
 
 - (BOOL)checkFor3DTouch {
-    BOOL is3dTouchAvailable = NO;
-    if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)]) {
-        is3dTouchAvailable = self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable;
+    BOOL is3DTouchAvail = NO;
+    if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)] && (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)) {
+        is3DTouchAvail = YES;
     }
-    return is3dTouchAvailable;
+    return is3DTouchAvail;
 }
 
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
@@ -905,7 +909,6 @@
             previewController.selectedActionRow = self.actionRow;
         }
         
-        //previewingContext.sourceRect = [self.view convertRect:tableCell.frame fromView:self.tableView];
         return previewController;
     }
     return nil;
@@ -916,7 +919,17 @@
 }
 
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-    [self checkFor3DTouch];
+    [super traitCollectionDidChange:previousTraitCollection];
+    if ([self checkFor3DTouch]) {
+        if (!self.previewingContext) {
+            self.previewingContext = [self registerForPreviewingWithDelegate:self sourceView:self.view];
+        }
+    } else {
+        if (self.previewingContext) {
+            [self unregisterForPreviewingWithContext:self.previewingContext];
+            self.previewingContext = nil;
+        }
+    }
 }
 
 #pragma mark - UITextField Phone Formatting
