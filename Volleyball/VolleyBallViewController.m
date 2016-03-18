@@ -666,21 +666,19 @@ int totalPastGamesVisitor;
         return;
     } else {
         // Number is not a zero, show popup menu
-		if (IS_IPAD()) {
+		//if (IS_IPAD()) {
 		
-			UIMenuItem* resetMenu =
-				[[UIMenuItem alloc] initWithTitle:@"Reset to 0"
-										   action:@selector(resetLeftToZero)];
-			UIMenuItem* cancelMenu =
-				[[UIMenuItem alloc] initWithTitle:@"Cancel"
-										   action:@selector(leaveNumberAsIs)];
+			UIMenuItem* resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0"
+                                                               action:@selector(resetLeftToZero)];
+			UIMenuItem* cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel"
+                                                                action:@selector(leaveNumberAsIs)];
 
 			UIMenuController* menu = [UIMenuController sharedMenuController];
 			[menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
 			[self.leftActionNameNumber becomeFirstResponder];
 			[menu setTargetRect:self.leftActionNameNumber.frame inView:self.view];
 			[menu setMenuVisible:YES animated:YES];
-		}
+		//}
     }
 }
 
@@ -698,20 +696,18 @@ int totalPastGamesVisitor;
         return;
     } else {
         // Number is not a zero, show popup menu
-		if (IS_IPAD()) {
-			UIMenuItem* resetMenu =
-            [[UIMenuItem alloc] initWithTitle:@"Reset to 0"
-                                       action:@selector(resetRightToZero)];
-			UIMenuItem* cancelMenu =
-            [[UIMenuItem alloc] initWithTitle:@"Cancel"
-                                       action:@selector(leaveNumberAsIs)];
+		//if (IS_IPAD()) {
+			UIMenuItem* resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0"
+                                                               action:@selector(resetRightToZero)];
+			UIMenuItem* cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel"
+                                                                action:@selector(leaveNumberAsIs)];
 
 			UIMenuController* menu = [UIMenuController sharedMenuController];
 			[menu setMenuItems:[NSArray arrayWithObjects:resetMenu,cancelMenu, nil]];
 			[self.rightActionNameNumber becomeFirstResponder];
 			[menu setTargetRect:self.rightActionNameNumber.frame inView:self.view];
 			[menu setMenuVisible:YES animated:YES];
-		}
+		//}
     }
 }
 

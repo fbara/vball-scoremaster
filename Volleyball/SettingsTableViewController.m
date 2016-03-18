@@ -239,14 +239,17 @@
     [self sendWithTwitter:self.twitterSwitch];
 
     // Remove our observer for IAP
-    [[NSNotificationCenter defaultCenter]
-        removeObserver:self
-                  name:IAPHelperProductPurchaseNotification
-                object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:IAPHelperProductPurchaseNotification
+                                                  object:nil];
 
     // Set the notification when Settings is done
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsDone"
                                                         object:self];
+    //Remove observer for Action Names
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"updateActionNames"
+                                                  object:nil];
 
     [super viewWillDisappear:animated];
 }

@@ -110,7 +110,7 @@
 	}
 	//Clear the selected row indexPath
 	selectedIndexPath = nil;
-	
+    	
 	[super viewWillDisappear:animated];
 }
 
