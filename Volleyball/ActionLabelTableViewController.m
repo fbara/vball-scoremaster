@@ -581,12 +581,6 @@
 	if (slideState != SESlideTableViewCellSlideStateCenter) {
 		m_currentIndexPath = indexPath;
 	}
-	
-//	if (slideState == SESlideTableViewCellSlideStateRight) {
-//		rowCanSlide = NO;
-//	} else {
-//		rowCanSlide = YES;
-//	}
 }
 
 -(BOOL)slideTableViewCell:(SESlideTableViewCell *)cell canSlideToState:(SESlideTableViewCellSlideState)slideState {
@@ -674,14 +668,12 @@
 #pragma mark - 3D Touch
 
 - (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
-   // __weak ActionLabelTableViewController *weakSelf = self;
     NSMutableArray *list = [[NSMutableArray alloc] init];
     for (int i = 0; i < [self.actionNamesList count]; i++) {
         NSString *name = self.actionNamesList[i];
         UIPreviewAction *action = [UIPreviewAction actionWithTitle:name
                                                              style:UIPreviewActionStyleDefault
                                                            handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
-                                                               NSLog(@"\nAction Row: %ld, Name: %@", self.selectedActionRow, name);
                                                                switch (self.selectedActionRow) {
                                                                    case 1:
                                                                        //Left side
@@ -704,6 +696,7 @@
                                                            }];
         [list addObject:action];
         }
+    
     self.previewActions = [UIPreviewActionGroup actionGroupWithTitle:@"Group"
                                                                style:UIPreviewActionStyleDefault
                                                              actions:list];

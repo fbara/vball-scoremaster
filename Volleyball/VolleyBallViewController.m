@@ -230,6 +230,10 @@ int totalPastGamesVisitor;
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:@"SettingsDone"
                                                   object:nil];
+    //Remove observer for Action Names
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"updateActionNames"
+                                                  object:nil];
 
     [super viewWillDisappear:animated];
 }

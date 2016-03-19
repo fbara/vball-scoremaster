@@ -247,9 +247,9 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsDone"
                                                         object:self];
     //Remove observer for Action Names
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:@"updateActionNames"
-                                                  object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self
+//                                                    name:@"updateActionNames"
+//                                                  object:nil];
 
     [super viewWillDisappear:animated];
 }
