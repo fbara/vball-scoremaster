@@ -54,7 +54,7 @@
     [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
-//TODO: Enable Google Tracker
+//TODO: Enable Google Analytics
 //    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
 	tracker.allowIDFACollection = NO;
@@ -89,9 +89,9 @@
             cancelButtonTitle:@"Opt Out"
             otherButtonTitles:@"Opt In", nil];
         [av show];
-    } else if (([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) < 5) {
+    } else if (([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) < 10) {
         [defaults setBool:FALSE forKey:@"firstTimeEver"];
-        // Increment launchNumber until we reach 5
+        // Increment launchNumber until we reach 10
         NSInteger ln =
             [[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"];
         ln = ln + 1;
@@ -99,7 +99,7 @@
                                                    forKey:@"launchNumber"];
 
     } else {
-        // We hit 5 uses so turn off the review prompt
+        // We hit 10 uses so turn off the review prompt
         [[NSUserDefaults standardUserDefaults] setObject:@"No"
                                                   forKey:@"showPrompt"];
 
@@ -119,7 +119,6 @@
             //SuperUser
             id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
             [tracker send:[[[GAIDictionaryBuilder createScreenView] set:@"Super User" forKey:kGAIScreenName] build]];
-
         }
 	}
 	
@@ -139,12 +138,11 @@
         [defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
         break;
     case 1:
-		//Opt out - do not track	
+		//Opt in - ok to track
         [[GAI sharedInstance] setOptOut:NO];
         [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
 //TODO: Enable LaunchKit
 		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
-
         break;
     default:
         break;

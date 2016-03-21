@@ -154,10 +154,10 @@ int totalPastGamesVisitor;
     //Setup the AppbotX prompt for Reviews
     if (![ABXPromptView hasHadInteractionForCurrentVersion]) {
         if ((([[NSUserDefaults standardUserDefaults]
-                 integerForKey:@"launchNumber"]) == 5) &&
+                 integerForKey:@"launchNumber"]) == 10) &&
             [[[NSUserDefaults standardUserDefaults] objectForKey:@"showPrompt"]
                 isEqualToString:@"Yes"]) {
-            // Show the Prompt view on the 5th time the user has launched the app
+            // Show the Prompt view on the 10th time the user has launched the app
 	self.promptView = [[ABXPromptView alloc]
                 initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
             self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
@@ -530,6 +530,23 @@ int totalPastGamesVisitor;
 
 #pragma mark - Google Analytics
 
+/*!
+ *  @author Me, 03-21-16 16:03
+ *
+ *  Determines if the user has allowed the use of analytics.
+ *
+ *  @return BOOL Returns TRUE if analytics are allowed and FALSE if not.
+ */
+- (BOOL)canSendAnalytics {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *analytics = [defaults stringForKey:@"analyticsChoice"];
+    if ([analytics isEqualToString:@"Opt in"]) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
 - (void)logButtonPress:(UIButton*)button
 {
     // Logs button presses, gets the title text of the button, and sends it
@@ -588,9 +605,7 @@ int totalPastGamesVisitor;
 // Force all gestures to be handled simultaneously.
 // This will allow the Swipes and PageViewController's Pan/Tap gestures to
 // coexsist and function correctly.
-- (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer
-    shouldRecognizeSimultaneouslyWithGestureRecognizer:
-        (UIGestureRecognizer*)otherGestureRecognizer
+- (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     return YES;
 }
@@ -651,7 +666,9 @@ int totalPastGamesVisitor;
 - (IBAction)sendInstantMessage:(UIButton*)sender
 {
     // Log the button press for analytics
-    [self logButtonPress:(UIButton*)sender];
+    if ([self canSendAnalytics]) {
+        [self logButtonPress:(UIButton*)sender];
+    }
 
     // Send a text message without changing the Action numbers
     [self sendSMS];
@@ -659,59 +676,47 @@ int totalPastGamesVisitor;
 
 - (IBAction)leftActionLongPress:(UILongPressGestureRecognizer*)recognizer
 {
-    // On a long press, show popup menu with selections to reset the number to
-    // zero or not
-
-    [self.leftActionNameNumber canBecomeFirstResponder];
-
-    // Check if the number is not a zero
-    if ([self.leftActionNameNumber.text isEqualToString:@"0"]) {
-        // Equal to zero so don't show the popup menu
-        return;
-    } else {
-        // Number is not a zero, show popup menu
-		//if (IS_IPAD()) {
-		
-			UIMenuItem* resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0"
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        // Check if the number is not a zero
+        if ([self.leftActionNameNumber.text isEqualToString:@"0"]) {
+            // Equal to zero so don't show the popup menu
+            return;
+        } else {
+            // Number is not a zero, show popup menu
+            UIMenuItem* resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0"
                                                                action:@selector(resetLeftToZero)];
-			UIMenuItem* cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel"
+            UIMenuItem* cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel"
                                                                 action:@selector(leaveNumberAsIs)];
 
-			UIMenuController* menu = [UIMenuController sharedMenuController];
-			[menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
-			[self.leftActionNameNumber becomeFirstResponder];
-			[menu setTargetRect:self.leftActionNameNumber.frame inView:self.view];
-			[menu setMenuVisible:YES animated:YES];
-		//}
+            UIMenuController* menu = [UIMenuController sharedMenuController];
+            [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
+            [self becomeFirstResponder];
+            [menu setTargetRect:self.leftActionNameNumber.frame inView:self.view];
+            [menu setMenuVisible:YES animated:YES];
+        }
     }
 }
 
 - (IBAction)rightActionLongPress:(UILongPressGestureRecognizer*)recognizer
 {
-    // On a long press, show popup menu with selections to reset the number to
-    // zero or not
-
-    [self.rightActionNameNumber canBecomeFirstResponder];
-
-
-    // Check if the number is not a zero
-    if ([self.rightActionNameNumber.text isEqualToString:@"0"]) {
-        // Equal to zero so don't show the popup menu
-        return;
-    } else {
-        // Number is not a zero, show popup menu
-		//if (IS_IPAD()) {
-			UIMenuItem* resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0"
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+            // Check if the number is not a zero
+        if ([self.rightActionNameNumber.text isEqualToString:@"0"]) {
+            // Equal to zero so don't show the popup menu
+            return;
+        } else {
+            // Number is not a zero, show popup menu
+            UIMenuItem* resetMenu = [[UIMenuItem alloc] initWithTitle:@"Reset to 0"
                                                                action:@selector(resetRightToZero)];
-			UIMenuItem* cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel"
+            UIMenuItem* cancelMenu = [[UIMenuItem alloc] initWithTitle:@"Cancel"
                                                                 action:@selector(leaveNumberAsIs)];
 
-			UIMenuController* menu = [UIMenuController sharedMenuController];
-			[menu setMenuItems:[NSArray arrayWithObjects:resetMenu,cancelMenu, nil]];
-			[self.rightActionNameNumber becomeFirstResponder];
-			[menu setTargetRect:self.rightActionNameNumber.frame inView:self.view];
-			[menu setMenuVisible:YES animated:YES];
-		//}
+            UIMenuController* menu = [UIMenuController sharedMenuController];
+            [menu setMenuItems:[NSArray arrayWithObjects:resetMenu,cancelMenu, nil]];
+            [self becomeFirstResponder];
+            [menu setTargetRect:self.rightActionNameNumber.frame inView:self.view];
+            [menu setMenuVisible:YES animated:YES];
+        }
     }
 }
 
@@ -761,7 +766,9 @@ int totalPastGamesVisitor;
 - (IBAction)gamePressed:(UIButton*)sender
 {
     // Log the button press for analytics
-    [self logButtonPress:(UIButton*)sender];
+    if ([self canSendAnalytics]) {
+        [self logButtonPress:(UIButton*)sender];
+    }
 
     // Grab the game number
     int lableNum = [self.gameNumber.text intValue];
@@ -906,7 +913,9 @@ int totalPastGamesVisitor;
 - (IBAction)rightActionPressed:(UIButton*)sender
 {
     // Log the button press for analytics
-    [self logButtonPress:(UIButton*)sender];
+    if ([self canSendAnalytics]) {
+        [self logButtonPress:(UIButton*)sender];
+    }
 
     // Get the number currently displayed for right Action Name and add 1
     int lableNum = [self.rightActionNameNumber.text intValue];
@@ -934,7 +943,9 @@ int totalPastGamesVisitor;
 - (IBAction)leftActionPressed:(UIButton*)sender
 {
     // Log the button press for analytics
-    [self logButtonPress:(UIButton*)sender];
+    if ([self canSendAnalytics]) {
+        [self logButtonPress:(UIButton*)sender];
+    }
 
     // Get current number and add 1
     int lableNum = [self.leftActionNameNumber.text intValue];
@@ -1101,7 +1112,9 @@ int totalPastGamesVisitor;
                             NSLog(@"Twitter post cancelled");
                             break;
                           case SLComposeViewControllerResultDone:
-                              [self logTwitterSent];
+                              if ([self canSendAnalytics]) {
+                                 [self logTwitterSent];
+                              }
                             break;
                           default:
                             break;
@@ -1117,7 +1130,9 @@ int totalPastGamesVisitor;
             screenImage = nil;
 
             // Log the button press for analytics
-            [self logButtonPress:(UIButton*)sender];
+            if ([self canSendAnalytics]) {
+                [self logButtonPress:(UIButton*)sender];
+            }
         } else {
             // User either doesn't have Twitter or denied our access
             UIAlertView* alert = [[UIAlertView alloc]
@@ -1173,7 +1188,9 @@ int totalPastGamesVisitor;
                 NSLog(@"Facebook post cancelled");
                 break;
               case SLComposeViewControllerResultDone:
-                  [self logFacebookSent];
+                  if ([self canSendAnalytics]) {
+                      [self logFacebookSent];
+                  }
               default:
                 break;
               }
@@ -1188,7 +1205,10 @@ int totalPastGamesVisitor;
             screenImage = nil;
 
             // Log the button press for analytics
-            [self logButtonPress:(UIButton*)sender];
+            if ([self canSendAnalytics]) {
+                [self logButtonPress:(UIButton*)sender];
+            }
+            
         } else {
             // User either doesn't have Facebook or denied our access
             UIAlertView* alert = [[UIAlertView alloc]
@@ -1226,9 +1246,7 @@ int totalPastGamesVisitor;
 
 #pragma mark - Text Messages & Alerts
 
-- (void)messageComposeViewController:
-            (MFMessageComposeViewController*)controller
-                 didFinishWithResult:(MessageComposeResult)result
+- (void)messageComposeViewController: (MFMessageComposeViewController*)controller didFinishWithResult:(MessageComposeResult)result
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -1273,8 +1291,7 @@ int totalPastGamesVisitor;
     if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
         // Send the SMS message
         // If it can't be sent, iOS will pop up an alert so we don't have to do that
-        MFMessageComposeViewController* textComposer =
-            [[MFMessageComposeViewController alloc] init];
+        MFMessageComposeViewController* textComposer = [[MFMessageComposeViewController alloc] init];
         [textComposer setMessageComposeDelegate:self];
 
         if ([MFMessageComposeViewController canSendText]) {
@@ -1295,7 +1312,10 @@ int totalPastGamesVisitor;
             
             [textComposer setBody:smsMessage];
             // Log to analytics that a message was sent
-            [self logMessagesSent:[self teamOrPlayer]];
+            if ([self canSendAnalytics]) {
+                [self logMessagesSent:[self teamOrPlayer]];
+            }
+            
             
             // Show text message screen
             [self presentViewController:textComposer animated:YES completion:nil];
