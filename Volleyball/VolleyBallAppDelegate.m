@@ -48,15 +48,15 @@
 	
 	//Initialize LaunchKit info
 //TODO: Enable LaunchKit
-	[LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
+//	[LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
 
     // Google Analytics setup for the app
     [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
 //TODO: Enable Google Analytics
-//    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
+//    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
 	tracker.allowIDFACollection = NO;
 	
 	if ([GBVersionTracking isFirstLaunchEver]) {
@@ -92,8 +92,7 @@
     } else if (([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) < 10) {
         [defaults setBool:FALSE forKey:@"firstTimeEver"];
         // Increment launchNumber until we reach 10
-        NSInteger ln =
-            [[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"];
+        NSInteger ln = [[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"];
         ln = ln + 1;
         [[NSUserDefaults standardUserDefaults] setInteger:ln
                                                    forKey:@"launchNumber"];
@@ -114,12 +113,12 @@
 		//Opt in - ok to track
 		[[GAI sharedInstance] setOptOut:NO];
 //TODO: Enable LaunchKit
-		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
-        if (LKAppUserIsSuper()) {
-            //SuperUser
-            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-            [tracker send:[[[GAIDictionaryBuilder createScreenView] set:@"Super User" forKey:kGAIScreenName] build]];
-        }
+//		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
+//        if (LKAppUserIsSuper()) {
+//            //SuperUser
+//            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//            [tracker send:[[[GAIDictionaryBuilder createScreenView] set:@"Super User" forKey:kGAIScreenName] build]];
+//        }
 	}
 	
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -142,7 +141,7 @@
         [[GAI sharedInstance] setOptOut:NO];
         [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
 //TODO: Enable LaunchKit
-		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
+//		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
         break;
     default:
         break;

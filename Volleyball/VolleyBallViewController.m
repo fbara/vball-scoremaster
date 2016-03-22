@@ -15,6 +15,7 @@
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import <ChameleonFramework/Chameleon.h>
 #import <AppbotX/ABX.h>
+#import <AppbotX/ABXNotificationView.h>
 @import Social;
 @import Accounts;
 @import StoreKit;
@@ -153,8 +154,7 @@ int totalPastGamesVisitor;
     
     //Setup the AppbotX prompt for Reviews
     if (![ABXPromptView hasHadInteractionForCurrentVersion]) {
-        if ((([[NSUserDefaults standardUserDefaults]
-                 integerForKey:@"launchNumber"]) == 10) &&
+        if ((([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) == 10) &&
             [[[NSUserDefaults standardUserDefaults] objectForKey:@"showPrompt"]
                 isEqualToString:@"Yes"]) {
             // Show the Prompt view on the 10th time the user has launched the app
@@ -173,6 +173,8 @@ int totalPastGamesVisitor;
     //Reset total game counts
     totalPastGamesHome = 0;
     totalPastGamesVisitor = 0;
+    
+    [self checkForActiveNotification];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -210,6 +212,7 @@ int totalPastGamesVisitor;
     }
     
     [self enableSocialButtons];
+
 
 }
 
@@ -1224,6 +1227,40 @@ int totalPastGamesVisitor;
 }
 
 #pragma mark - AppbotX
+
+- (void)checkForActiveNotification {
+    [ABXNotification fetchActive:^(NSArray *notifications, ABXResponseCode responseCode, NSInteger httpCode, NSError *error) {
+        if (responseCode == ABXResponseCodeSuccess) {
+            if (notifications.count > 0) {
+                ABXNotification *notification = [notifications firstObject];
+                BOOL firstTime = [[NSUserDefaults standardUserDefaults] boolForKey:@"firstTimeEver"];
+                NSInteger firstThisVer = [[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"];
+                if (![notification hasSeen]) {
+                    if (firstTime || (firstThisVer == 1)) {
+                        return;
+                    } else {
+                        //Show the view
+                        [ABXNotificationView show:notification.message
+                                       actionText:notification.actionLabel
+                                  backgroundColor:FlatBlueDark
+                                        textColor:[UIColor whiteColor]
+                                      buttonColor:[UIColor redColor]
+                                     inController:self.navigationController
+                                      actionBlock:^(ABXNotificationView *view) {
+                                          [[UIApplication sharedApplication] openURL:[NSURL URLWithString:notification.actionUrl]];
+                                      } dismissBlock:^(ABXNotificationView *view) {
+                                          //Mark alert as being seen so it's not shown again
+                                          [notification markAsSeen];
+                                      }];
+
+                        return;
+                    }
+                }
+            }
+        }
+        
+    }];
+}
 
 - (void)appbotPromptForReview
 {

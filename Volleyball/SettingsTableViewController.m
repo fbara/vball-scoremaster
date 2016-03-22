@@ -704,17 +704,17 @@
  *
  *  @param person The phone number of the person selected from Contacts
  */
-//- (void)peoplePickerNavigationController:
-//            (ABPeoplePickerNavigationController*)peoplePicker
-//                         didSelectPerson:(ABRecordRef)person
-//                                property:(ABPropertyID)property
-//                              identifier:(ABMultiValueIdentifier)identifier
-//{
-//    [self peoplePickerNavigationController:peoplePicker
-//        shouldContinueAfterSelectingPerson:person
-//                                  property:property
-//                                identifier:identifier];
-//}
+- (void)peoplePickerNavigationController:
+            (ABPeoplePickerNavigationController*)peoplePicker
+                         didSelectPerson:(ABRecordRef)person
+                                property:(ABPropertyID)property
+                              identifier:(ABMultiValueIdentifier)identifier
+{
+    [self peoplePickerNavigationController:peoplePicker
+        shouldContinueAfterSelectingPerson:person
+                                  property:property
+                                identifier:identifier];
+}
 
 - (void)displayPerson:(ABRecordRef)person
          targetNumber:(NSString*)selectedNumber
