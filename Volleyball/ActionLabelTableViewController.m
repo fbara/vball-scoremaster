@@ -156,7 +156,7 @@
 	if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion] ) {
 		if ([defaults boolForKey:@"firstTimeEver"]) {
 			//Show BTBalloon with info on rows
-			NSString *title = @"Swipe Left On Row.\nYou can add, rename, and delete rows. Just swipe a row to see the buttons!";
+			NSString *title = @"Swipe on the row!\nYou can add, rename, and delete rows. Just swipe a row to see the buttons!";
 			[BTBalloon appearance].textFont = [UIFont fontWithName:@"AvenirNext-Regular" size:14.0f];
 	//if (IS_IPAD()) {
 		//Show after a .5 second delay. The balloon will be presented after the popover so I have to delay
