@@ -1451,12 +1451,6 @@ int totalPastGamesVisitor;
                                                        fontSize:iphoneScoreFont];
     }
 
-    // Setup the new view controller with the new, higher score
-    // DefaultScoreViewController *newViewController = [self
-    // createViewControllersForScore:0
-    //                                                                   withColor:[UIColor
-    //                                                                   clearColor]
-    //                                                 fontSize: ];
     newViewController.score = oldViewController.score + 1;
 
     // Check to see which view controller we're updating so the background color
