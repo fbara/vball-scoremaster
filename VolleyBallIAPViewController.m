@@ -96,17 +96,6 @@
              object:nil];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    // Remove our observer for IAP
-    [[NSNotificationCenter defaultCenter]
-        removeObserver:self
-                  name:IAPHelperProductPurchaseNotification
-                object:nil];
-
-    [super viewWillDisappear:animated];
-}
-
 - (void)formatIAPPrice
 {
     _priceFormatter = [[NSNumberFormatter alloc] init];

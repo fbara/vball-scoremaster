@@ -9,6 +9,7 @@
 #import "VolleyBallViewController.h"
 #import "DefaultScoreViewController.h"
 #import "SettingsTableViewController.h"
+#import "ActionLabelTableViewController.h"
 #import <GBVersionTracking/GBVersionTracking.h>
 #import <GoogleAnalytics/GAI.h>
 #import <GoogleAnalytics/GAIFields.h>
@@ -16,6 +17,7 @@
 #import <ChameleonFramework/Chameleon.h>
 #import <AppbotX/ABX.h>
 #import <AppbotX/ABXNotificationView.h>
+
 @import Social;
 @import Accounts;
 @import StoreKit;
@@ -39,8 +41,11 @@ NSString* colorScheme;
 NSString *socialMessage;
 int totalPastGamesHome;
 int totalPastGamesVisitor;
+static void * rightContext = &rightContext;
+static void * leftContext = &leftContext;
 
-@interface VolleyBallViewController () {
+
+@interface VolleyBallViewController () <UIViewControllerPreviewingDelegate>  {
     // Instance variable to store all products returned from iTunes Connect
     NSArray* _products;
 }
@@ -49,6 +54,9 @@ int totalPastGamesVisitor;
 @property (weak, atomic) UIPageViewController* visitorPageViewController;
 @property (weak, nonatomic) NSURL* baralabsURL;
 @property (strong, nonatomic) ABXPromptView* promptView;
+@property (nonatomic, strong)id previewingContext;
+@property (weak, nonatomic) IBOutlet UIButton *rightActionNameButton;
+@property (weak, nonatomic) IBOutlet UIButton *leftActionNameButton;
 
 @end
 
@@ -97,8 +105,7 @@ int totalPastGamesVisitor;
     self.homePageViewController.delegate = self;
 
     // Create bar button item and add them to the navigation bar
-    UIBarButtonItem* settingsButton =
-        [[UIBarButtonItem alloc] initWithTitle:@"Settings"
+    UIBarButtonItem* settingsButton = [[UIBarButtonItem alloc] initWithTitle:@"Settings"
                                          style:UIBarButtonItemStylePlain
                                         target:self
                                         action:@selector(goToSettings:)];
@@ -175,12 +182,12 @@ int totalPastGamesVisitor;
     totalPastGamesVisitor = 0;
     
     [self checkForActiveNotification];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
 
     // Update the scoreview's colors in case they were changed in Settings
     // Initiaize all the UI elements depending on the device (font=188/118)
@@ -212,33 +219,18 @@ int totalPastGamesVisitor;
     }
     
     [self enableSocialButtons];
+    
+    //Check for 3D Touch
+    if ([self checkFor3DTouch]) {
+        self.previewingContext = [self registerForPreviewingWithDelegate:self sourceView:self.view];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(getMainActionNames)
+                                                     name:@"updateActionNames"
+                                                   object:nil];
+    }
+    [self loadActionNames];
 
 
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-
-    // Register for notifications from SettingsTableViewController
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(viewWillAppear:)
-                                                 name:@"SettingsDone"
-                                               object:nil];
-
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:@"SettingsDone"
-                                                  object:nil];
-    //Remove observer for Action Names
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:@"updateActionNames"
-                                                  object:nil];
-
-    [super viewWillDisappear:animated];
 }
 
 - (IBAction)goToSettings:(UIBarButtonItem *)sender
@@ -512,7 +504,6 @@ int totalPastGamesVisitor;
 - (void)loadActionNames
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-
     NSString* tempName;
     tempName = [defaults stringForKey:@"leftActionName"];
 
@@ -529,6 +520,7 @@ int totalPastGamesVisitor;
     } else {
         self.rightActionLabel.text = [defaults stringForKey:@"rightActionName"];
     }
+
 }
 
 #pragma mark - Google Analytics
@@ -1281,6 +1273,97 @@ int totalPastGamesVisitor;
     // self.mainPageTwitterButton.hidden = FALSE;
 }
 
+#pragma mark - 3D Touch
+
+- (BOOL)checkFor3DTouch {
+    BOOL is3DTouchAvail = NO;
+    if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)] && (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)) {
+        is3DTouchAvail = YES;
+    }
+    return is3DTouchAvail;
+}
+
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    //Check if we're not already displaying the view controller
+    if ([self.presentedViewController isKindOfClass:[ActionLabelTableViewController class]]) {
+        return nil;
+    }
+    int actionSide = 0;
+    if (CGRectContainsPoint([self.rightActionNameButton frame], location)) {
+        actionSide = 2;
+        previewingContext.sourceRect = self.rightActionNameButton.frame;
+    } else if (CGRectContainsPoint([self.leftActionNameButton frame], location)) {
+        actionSide = 1;
+        previewingContext.sourceRect = self.leftActionNameButton.frame;
+    } else {
+        return nil;
+    }
+
+    if (actionSide > 0) {
+        ActionLabelTableViewController *aVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ActionNames"];
+        aVC.selectedActionRow = actionSide;
+        
+        return aVC;
+    }
+    
+    return nil;
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+
+    [self.navigationController showViewController:viewControllerToCommit sender:nil];
+
+    
+}
+
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+    if ([self checkFor3DTouch]) {
+        if (!self.previewingContext) {
+            self.previewingContext = [self registerForPreviewingWithDelegate:self sourceView:self.view];
+        }
+    } else {
+        if (self.previewingContext) {
+            [self unregisterForPreviewingWithContext:self.previewingContext];
+            self.previewingContext = nil;
+        }
+    }
+}
+
+- (void)getMainActionNames
+{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSString *currentLeft, *currentRight;
+    currentLeft = self.leftActionLabel.text;
+    currentRight = self.rightActionLabel.text;
+    
+//    if ([calledFrom isEqualToString:@"didSelectRow"]) {
+//        return;
+//    } else {
+    
+        switch ([defaults integerForKey:@"updatedActionNumber"]) {
+            case 1:
+                if ([currentLeft isEqualToString:[defaults stringForKey:@"leftActionName"]]) {
+                    break;
+                } else {
+                    self.leftActionLabel.text = [defaults stringForKey:@"leftActionName"];
+                    self.leftActionNameNumber.text = NSLocalizedString(@"0", @"Number 0.");
+                    break;
+                }
+            case 2:
+                if ([currentRight isEqualToString:[defaults stringForKey:@"rightActionName"]]) {
+                    break;
+                } else {
+                    self.rightActionLabel.text = [defaults stringForKey:@"rightActionName"];
+                    self.rightActionNameNumber.text = NSLocalizedString(@"0", @"Number 0.");
+                    break;
+                }
+            default:
+                break;
+        }
+    //}
+}
+
 #pragma mark - Text Messages & Alerts
 
 - (void)messageComposeViewController: (MFMessageComposeViewController*)controller didFinishWithResult:(MessageComposeResult)result
@@ -1569,6 +1652,8 @@ int totalPastGamesVisitor;
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
 }
+
+#pragma mark - Memory Mgmt
 
 - (void)didReceiveMemoryWarning
 {

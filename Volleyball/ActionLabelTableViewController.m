@@ -144,6 +144,7 @@
 						  scrollPosition:UITableViewScrollPositionNone];
 	
 	[self tableView:self.tableView didSelectRowAtIndexPath:initialIndex];
+
 }
 
 /*!
@@ -256,15 +257,18 @@
 	//Add the checkmark
 	[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 	selectedIndexPath = indexPath;
+    NSString *selectedName = nil;
 	//Save the selected row to the left or right?
 	switch (self.selectedActionRow) {
 	case 1:
 		//Left side
 		[defaults setObject:cell.textLabel.text forKey:@"leftActionName"];
+        selectedName = @"leftActionName";
 		break;
 	case 2:
 		//Right side
 		[defaults setObject:cell.textLabel.text forKey:@"rightActionName"];
+        selectedName = @"rightActionName";
 		break;
 	default:
 			break;
@@ -281,6 +285,9 @@
 			[self.delegate actionNameSelected:@"Nothing"];
         }
     }
+    [defaults setInteger:self.selectedActionRow forKey:@"updatedActionNumber"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateActionNames" object:self];
+
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
@@ -686,20 +693,24 @@
                                                                    default:
                                                                        break;
                                                                }
+                                                               [defaults setInteger:self.selectedActionRow forKey:@"updatedActionNumber"];
+                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                   [[NSNotificationCenter defaultCenter] postNotificationName:@"updateActionNames" object:self];
+                                                               });
                                                                id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
                                                                [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
                                                                                                                      action:@"3D Touch"
                                                                                                                       label:name
                                                                                                                       value:nil] build]];
-                                                               [[NSNotificationCenter defaultCenter] postNotificationName:@"updateActionNames" object:self];
                                                                
                                                            }];
         [list addObject:action];
         }
-    
+
     self.previewActions = [UIPreviewActionGroup actionGroupWithTitle:@"Group"
                                                                style:UIPreviewActionStyleDefault
                                                              actions:list];
+    
     return list;
 }
 
