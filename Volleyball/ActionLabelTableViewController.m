@@ -710,7 +710,6 @@
     self.previewActions = [UIPreviewActionGroup actionGroupWithTitle:@"Group"
                                                                style:UIPreviewActionStyleDefault
                                                              actions:list];
-    
     return list;
 }
 

@@ -10,6 +10,7 @@
 #import "DefaultScoreViewController.h"
 #import "SettingsTableViewController.h"
 #import "ActionLabelTableViewController.h"
+#import "NotificationsTableViewController.h"
 #import <GBVersionTracking/GBVersionTracking.h>
 #import <GoogleAnalytics/GAI.h>
 #import <GoogleAnalytics/GAIFields.h>
@@ -80,7 +81,6 @@ static void * leftContext = &leftContext;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     // Set home URL for Twitter and Facebook messages
     self.baralabsURL = [NSURL URLWithString:@"www.baralabs.com"];
 
@@ -1288,6 +1288,7 @@ static void * leftContext = &leftContext;
     if ([self.presentedViewController isKindOfClass:[ActionLabelTableViewController class]]) {
         return nil;
     }
+    
     int actionSide = 0;
     if (CGRectContainsPoint([self.rightActionNameButton frame], location)) {
         actionSide = 2;
@@ -1295,8 +1296,9 @@ static void * leftContext = &leftContext;
     } else if (CGRectContainsPoint([self.leftActionNameButton frame], location)) {
         actionSide = 1;
         previewingContext.sourceRect = self.leftActionNameButton.frame;
-    } else {
-        return nil;
+    } else if (CGRectContainsPoint([self.sendMessageImage frame], location)){
+        actionSide = -1;
+        previewingContext.sourceRect = self.sendMessageImage.frame;
     }
 
     if (actionSide > 0) {
@@ -1304,16 +1306,17 @@ static void * leftContext = &leftContext;
         aVC.selectedActionRow = actionSide;
         
         return aVC;
+    } else if (actionSide < 0) {
+        NotificationsTableViewController *notiVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Notifications"];
+        return notiVC;
     }
     
     return nil;
 }
 
 - (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
-
-    [self.navigationController showViewController:viewControllerToCommit sender:nil];
-
-    
+    self.definesPresentationContext = TRUE;
+    [self.navigationController showViewController:viewControllerToCommit sender:self];
 }
 
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
@@ -1337,31 +1340,26 @@ static void * leftContext = &leftContext;
     currentLeft = self.leftActionLabel.text;
     currentRight = self.rightActionLabel.text;
     
-//    if ([calledFrom isEqualToString:@"didSelectRow"]) {
-//        return;
-//    } else {
-    
-        switch ([defaults integerForKey:@"updatedActionNumber"]) {
-            case 1:
-                if ([currentLeft isEqualToString:[defaults stringForKey:@"leftActionName"]]) {
-                    break;
-                } else {
-                    self.leftActionLabel.text = [defaults stringForKey:@"leftActionName"];
-                    self.leftActionNameNumber.text = NSLocalizedString(@"0", @"Number 0.");
-                    break;
-                }
-            case 2:
-                if ([currentRight isEqualToString:[defaults stringForKey:@"rightActionName"]]) {
-                    break;
-                } else {
-                    self.rightActionLabel.text = [defaults stringForKey:@"rightActionName"];
-                    self.rightActionNameNumber.text = NSLocalizedString(@"0", @"Number 0.");
-                    break;
-                }
-            default:
+    switch ([defaults integerForKey:@"updatedActionNumber"]) {
+        case 1:
+            if ([currentLeft isEqualToString:[defaults stringForKey:@"leftActionName"]]) {
                 break;
-        }
-    //}
+            } else {
+                self.leftActionLabel.text = [defaults stringForKey:@"leftActionName"];
+                self.leftActionNameNumber.text = NSLocalizedString(@"0", @"Number 0.");
+                break;
+            }
+        case 2:
+            if ([currentRight isEqualToString:[defaults stringForKey:@"rightActionName"]]) {
+                break;
+            } else {
+                self.rightActionLabel.text = [defaults stringForKey:@"rightActionName"];
+                self.rightActionNameNumber.text = NSLocalizedString(@"0", @"Number 0.");
+                break;
+            }
+        default:
+            break;
+    }
 }
 
 #pragma mark - Text Messages & Alerts

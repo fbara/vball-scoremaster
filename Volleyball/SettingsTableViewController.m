@@ -33,7 +33,7 @@
 @property UIPopoverController* aPopover;
 @property (weak, nonatomic) IBOutlet UILabel* twitterCellLabel;
 @property (weak, nonatomic) IBOutlet UILabel* facebookCellLabel;
-@property (nonatomic, strong)id previewingContext;
+@property (nonatomic, strong)UIPreviewActionGroup *previewActions;
 
 @end
 
@@ -98,14 +98,7 @@
     } else {
         [self.sendNotificationSwitch setSelectedSegmentIndex:1];
     }
-    //Check for 3D Touch
-//    if ([self checkFor3DTouch]) {
-//        self.previewingContext = [self registerForPreviewingWithDelegate:self sourceView:self.tableView];
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                 selector:@selector(getSettingsActionNames)
-//                                                     name:@"updateActionNames"
-//                                                   object:nil];
-//    }
+
 }
 
 - (void)saveAndClose
@@ -220,7 +213,6 @@
         self.facebookSwitch.enabled = FALSE;
     }
     
-    //[self checkFor3DTouch];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -869,68 +861,6 @@
     // Action Name row was selected so segue to that VC
     [self performSegueWithIdentifier:@"actionNameView" sender:self];
 }
-
-#pragma mark - 3D Touch
-//
-//- (BOOL)checkFor3DTouch {
-//    BOOL is3DTouchAvail = NO;
-//    if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)] && (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)) {
-//        is3DTouchAvail = YES;
-//    }
-//    return is3DTouchAvail;
-//}
-//
-//- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
-//    //Check if we're not already displaying the view controller
-//    if ([self.presentedViewController isKindOfClass:[ActionLabelTableViewController class]]) {
-//        return nil;
-//    }
-//    NSIndexPath *path = [self.tableView indexPathForRowAtPoint:location];
-//    UITableViewCell *tableCell = [self.tableView cellForRowAtIndexPath:path];
-//    self.actionRow = (int)tableCell.tag;
-//    //Only do 3D touch for Action Names rows
-//    if (!self.actionRow) {
-//        return nil;
-//    }
-//
-//    if (path) {
-//        previewingContext.sourceRect = tableCell.frame;
-//        //Get the storyboard
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        //Setup the view controller by initializing it from the storyboard
-//        ActionLabelTableViewController *previewController = [storyboard instantiateViewControllerWithIdentifier:@"ActionNames"];
-//        if (self.actionRow == 1 || self.actionRow == 2) {
-//            previewController.selectedActionRow = self.actionRow;
-//            //Log the user used 3D Touch
-//            if ([self getAnalytics]) {
-//                id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-//                [tracker set:kGAIScreenName value:@"Settings"];
-//                [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
-//            }
-//        }
-//        
-//        return previewController;
-//    }
-//    return nil;
-//}
-//
-//- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
-//    [self.navigationController showViewController:viewControllerToCommit sender:nil];
-//}
-//
-//- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-//    [super traitCollectionDidChange:previousTraitCollection];
-//    if ([self checkFor3DTouch]) {
-//        if (!self.previewingContext) {
-//            self.previewingContext = [self registerForPreviewingWithDelegate:self sourceView:self.view];
-//        }
-//    } else {
-//        if (self.previewingContext) {
-//            [self unregisterForPreviewingWithContext:self.previewingContext];
-//            self.previewingContext = nil;
-//        }
-//    }
-//}
 
 #pragma mark - UITextField Phone Formatting
 
