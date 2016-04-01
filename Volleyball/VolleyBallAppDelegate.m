@@ -15,12 +15,13 @@
 #import "VolleyBallIAPHelper.h"
 #import <AppbotX/ABX.h>
 #import <LaunchKit/LaunchKit.h>
+#import "VolleyBallViewController.h"
 //#import "NRWindow.h"
 
 @implementation VolleyBallAppDelegate {
 	NSString *randomUserString;
 }
-
+#define IS_IPAD() [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
 
@@ -159,6 +160,46 @@
 //
 //    return customWindow;
 //}
+
+#pragma mark - Shortcut Items
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    NSLog(@"\nShortcut: %@", shortcutItem);
+    completionHandler([self handleShortcutItem:shortcutItem]);
+}
+
+- (BOOL)handleShortcutItem:(UIApplicationShortcutItem *)shortcutItem {
+    UIStoryboard *storyboard;
+    UINavigationController *navController = (UINavigationController *) self.window.rootViewController;
+    if (IS_IPAD()) {
+        storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+    } else {
+        storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    }
+    
+    VolleyBallViewController *vb = (VolleyBallViewController *)navController.topViewController;
+    
+    if ([shortcutItem.localizedTitle isEqualToString:@"New Match"]) {
+        [vb startNewMatch];
+        return TRUE;
+        
+    } else if ([shortcutItem.localizedTitle isEqualToString:@"New Game"]) {
+        [vb gamePressedFromShortcut];
+        return TRUE;
+        
+    } else if ([shortcutItem.localizedTitle isEqualToString:@"HomePoint"]) {
+        
+        return TRUE;
+        
+    } else if ([shortcutItem.localizedTitle isEqualToString:@"VisitPoint"]) {
+        
+        return TRUE;
+        
+    }
+    
+    return FALSE;
+}
+
 
 
 -(NSString *) randomStringWithLength: (int) len {

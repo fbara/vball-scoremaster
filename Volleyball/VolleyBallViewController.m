@@ -58,6 +58,8 @@ static void * leftContext = &leftContext;
 @property (nonatomic, strong)id previewingContext;
 @property (weak, nonatomic) IBOutlet UIButton *rightActionNameButton;
 @property (weak, nonatomic) IBOutlet UIButton *leftActionNameButton;
+@property (weak, nonatomic) IBOutlet UIButton *gameButton;
+
 
 @end
 
@@ -182,6 +184,7 @@ static void * leftContext = &leftContext;
     totalPastGamesVisitor = 0;
     
     [self checkForActiveNotification];
+    
 
 }
 
@@ -229,7 +232,7 @@ static void * leftContext = &leftContext;
                                                    object:nil];
     }
     [self loadActionNames];
-
+    [self setupDynamicShortcuts];
 
 }
 
@@ -755,11 +758,16 @@ static void * leftContext = &leftContext;
     self.sendMessageImage.layer.masksToBounds = YES;
 }
 
+- (void)gamePressedFromShortcut {
+    [self gamePressed:self.gameButton];
+}
+
 /*!
  *  What happens when 'Game' number is touched
  */
 - (IBAction)gamePressed:(UIButton*)sender
 {
+    NSLog(@"\nButton: %@", sender);
     // Log the button press for analytics
     if ([self canSendAnalytics]) {
         [self logButtonPress:(UIButton*)sender];
@@ -1281,6 +1289,33 @@ static void * leftContext = &leftContext;
         is3DTouchAvail = YES;
     }
     return is3DTouchAvail;
+}
+
+- (void)setupDynamicShortcuts {
+    UIApplicationShortcutItem *newMatch = [[UIApplicationShortcutItem alloc] initWithType:@"$(PRODUCT_BUNDLE_IDENTIFIER).NewMatch"
+                                                                           localizedTitle:NSLocalizedString(@"New Match", @"Start a new match")
+                                                                        localizedSubtitle:NSLocalizedString(@"Start a new match", @"Start a new match button.")
+                                                                                     icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"Sport Net-50"]
+                                                                                 userInfo:nil];
+    
+    UIApplicationShortcutItem *newGame = [[UIApplicationShortcutItem alloc] initWithType:@"$(PRODUCT_BUNDLE_IDENTIFIER).NewGame"
+                                                                           localizedTitle:NSLocalizedString(@"New Game", @"Start a new game")
+                                                                        localizedSubtitle:NSLocalizedString(@"Start a new game", @"Start a new game button.")
+                                                                                    icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"volleyball-50"]
+                                                                                 userInfo:nil];
+    
+    UIApplicationShortcutItem *homePoint = [[UIApplicationShortcutItem alloc] initWithType:@"$(PRODUCT_BUNDLE_IDENTIFIER).HomePoint"
+                                                                          localizedTitle:NSLocalizedString(@"Add 1 to Home Team Score", @"Add a point to the Home team.")
+                                                                       localizedSubtitle:nil
+                                                                                    icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"exterior-50"]
+                                                                                userInfo:nil];
+    UIApplicationShortcutItem *visitPoint = [[UIApplicationShortcutItem alloc] initWithType:@"$(PRODUCT_BUNDLE_IDENTIFIER).VisitPoint"
+                                                                          localizedTitle:NSLocalizedString(@"Add 1 to Visiting Team Score", @"Add a point to the Visiting team.")
+                                                                       localizedSubtitle:nil
+                                                                                    icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"bus2-50"]
+                                                                                userInfo:nil];
+    [UIApplication sharedApplication].shortcutItems = @[newMatch, newGame, homePoint, visitPoint];
+    
 }
 
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {

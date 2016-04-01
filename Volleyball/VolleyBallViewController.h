@@ -11,6 +11,7 @@
 #import <GoogleAnalytics/GAITrackedViewController.h>
 #import <AppbotX/ABXPromptView.h>
 #import <Social/Social.h>
+@import QuartzCore;
 
 @interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource, UIAlertViewDelegate, UITextFieldDelegate, MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, ABXPromptViewDelegate>
 
@@ -37,12 +38,9 @@
 @property (weak, nonatomic) IBOutlet UILabel* visitGame4;
 
 @property (weak, nonatomic) IBOutlet UIButton* sendMessageImage;
-@property (strong, nonatomic) IBOutletCollection(UILabel)
-    NSArray* pastScoreCollection;
-@property (strong, nonatomic) IBOutletCollection(UILabel)
-NSArray* pastHomeScoreCollection;
-@property (strong, nonatomic) IBOutletCollection(UILabel)
-NSArray* pastVisitorScoreCollection;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray* pastScoreCollection;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray* pastHomeScoreCollection;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray* pastVisitorScoreCollection;
 @property (weak, nonatomic) IBOutlet UILabel* rightActionNameNumber;
 @property (weak, nonatomic) IBOutlet UILabel* leftActionNameNumber;
 
@@ -61,8 +59,9 @@ NSArray* pastVisitorScoreCollection;
 - (IBAction)rightActionPressed:(UIButton*)sender;
 - (IBAction)leftActionPressed:(UIButton*)sender;
 - (IBAction)newMatch:(UIBarButtonItem*)sender;
+- (UIImage *)getScreenImage;
+- (IBAction)sendInstantMessage:(UIButton*)sender;
 
-  - (UIImage *)getScreenImage;
-
-  - (IBAction)sendInstantMessage:(UIButton*)sender;
+- (void)startNewMatch;
+- (void)gamePressedFromShortcut;
 @end
