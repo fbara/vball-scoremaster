@@ -229,6 +229,10 @@
     [self colorSettings:self.colorSettings];
     [self sendWithFacebook:self.facebookSwitch];
     [self sendWithTwitter:self.twitterSwitch];
+    
+    // Set the notification when Settings is done
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsDone"
+                                                        object:self];
 
     [super viewWillDisappear:animated];
 }
@@ -384,11 +388,6 @@
  */
 - (IBAction)homeTeamBackgroundColor:(id)sender
 {
-	/* OLD CODE
-	// Change the button background color each time the button is tapped
-    //self.homeTeamColor.backgroundColor = RandomFlatColor;
-	*/
-	
 	//Store the team I'm changing
 	teamChange = @"Home";
 	//Use color picker to get color
@@ -405,11 +404,6 @@
  */
 - (IBAction)visitingTeamBackgroundColor:(id)sender
 {
-	/* OLD CODE
-	// Change the button background color each time the button is tapped
-    //self.visitingTeamColor.backgroundColor = RandomFlatColor;
-	*/
-	
 	//Store the team I'm changing
 	teamChange = @"Visitor";
 	//Use color picker to get color

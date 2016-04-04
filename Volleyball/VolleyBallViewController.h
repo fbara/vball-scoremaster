@@ -64,4 +64,5 @@
 
 - (void)startNewMatch;
 - (void)gamePressedFromShortcut;
+- (void)logShortcutUsed:(NSString *)shortcut;
 @end

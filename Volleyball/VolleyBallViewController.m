@@ -8,7 +8,6 @@
 
 #import "VolleyBallViewController.h"
 #import "DefaultScoreViewController.h"
-#import "SettingsTableViewController.h"
 #import "ActionLabelTableViewController.h"
 #import "NotificationsTableViewController.h"
 #import <GBVersionTracking/GBVersionTracking.h>
@@ -226,11 +225,16 @@ static void * leftContext = &leftContext;
     //Check for 3D Touch
     if ([self checkFor3DTouch]) {
         self.previewingContext = [self registerForPreviewingWithDelegate:self sourceView:self.view];
+    }
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(getMainActionNames)
                                                      name:@"updateActionNames"
                                                    object:nil];
-    }
+    // Register for notifications from SettingsTableViewController
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(viewWillAppear:)
+                                                 name:@"SettingsDone"
+                                               object:nil];
     [self loadActionNames];
     [self setupDynamicShortcuts];
 
@@ -299,10 +303,7 @@ static void * leftContext = &leftContext;
                 completion:nil];
 }
 
-- (DefaultScoreViewController*)createViewControllersForScore:(int)score
-                                                   withColor:(UIColor*)color
-                                                    fontSize:
-                                                        (CGFloat)scoreSize
+- (DefaultScoreViewController*)createViewControllersForScore:(int)score withColor:(UIColor*)color fontSize:(CGFloat)scoreSize
 {
     // Create a new scoreViewController and initialize it with 'nil',
     // that will create one with a xib of the same name
@@ -598,6 +599,16 @@ static void * leftContext = &leftContext;
     [tracker set:kGAIScreenName value:nil];
 }
 
+- (void)logShortcutUsed:(NSString *)shortcut
+{
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Shortcut"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+                                                          action:@"shortcut"
+                                                           label:shortcut
+                                                           value:nil] build]];
+}
+
 #pragma mark - UIGestureRecognizer Delegate Method
 
 // Force all gestures to be handled simultaneously.
@@ -767,7 +778,6 @@ static void * leftContext = &leftContext;
  */
 - (IBAction)gamePressed:(UIButton*)sender
 {
-    NSLog(@"\nButton: %@", sender);
     // Log the button press for analytics
     if ([self canSendAnalytics]) {
         [self logButtonPress:(UIButton*)sender];
@@ -958,7 +968,6 @@ static void * leftContext = &leftContext;
         lableNum = lableNum + 1;
     }
 
-// TODO Remove??
     // Keep track of the number for this action in case the user comes back to it
     // during this match
     //[defaults setInteger:lableNum forKey:self.leftActionLabel.text];
@@ -1304,42 +1313,35 @@ static void * leftContext = &leftContext;
                                                                                     icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"volleyball-50"]
                                                                                  userInfo:nil];
     
-    UIApplicationShortcutItem *homePoint = [[UIApplicationShortcutItem alloc] initWithType:@"$(PRODUCT_BUNDLE_IDENTIFIER).HomePoint"
-                                                                          localizedTitle:NSLocalizedString(@"Add 1 to Home Team Score", @"Add a point to the Home team.")
-                                                                       localizedSubtitle:nil
-                                                                                    icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"exterior-50"]
-                                                                                userInfo:nil];
-    UIApplicationShortcutItem *visitPoint = [[UIApplicationShortcutItem alloc] initWithType:@"$(PRODUCT_BUNDLE_IDENTIFIER).VisitPoint"
-                                                                          localizedTitle:NSLocalizedString(@"Add 1 to Visiting Team Score", @"Add a point to the Visiting team.")
-                                                                       localizedSubtitle:nil
-                                                                                    icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"bus2-50"]
-                                                                                userInfo:nil];
-    [UIApplication sharedApplication].shortcutItems = @[newMatch, newGame, homePoint, visitPoint];
+    [UIApplication sharedApplication].shortcutItems = @[newMatch, newGame];
     
 }
 
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
     //Check if we're not already displaying the view controller
-    if ([self.presentedViewController isKindOfClass:[ActionLabelTableViewController class]]) {
+    if ([self.presentedViewController isKindOfClass:[ActionLabelTableViewController class]] ||
+        [self.presentedViewController isKindOfClass:[NotificationsTableViewController class]]) {
         return nil;
     }
     
     int actionSide = 0;
     if (CGRectContainsPoint([self.rightActionNameButton frame], location)) {
         actionSide = 2;
+        [self logShortcutUsed:(NSString *)self.rightActionNameButton.titleLabel];
         previewingContext.sourceRect = self.rightActionNameButton.frame;
     } else if (CGRectContainsPoint([self.leftActionNameButton frame], location)) {
         actionSide = 1;
+        [self logShortcutUsed:(NSString *)self.leftActionNameButton.titleLabel];
         previewingContext.sourceRect = self.leftActionNameButton.frame;
     } else if (CGRectContainsPoint([self.sendMessageImage frame], location)){
         actionSide = -1;
+        [self logShortcutUsed:(NSString *)self.sendMessageImage.titleLabel];
         previewingContext.sourceRect = self.sendMessageImage.frame;
     }
 
     if (actionSide > 0) {
         ActionLabelTableViewController *aVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ActionNames"];
         aVC.selectedActionRow = actionSide;
-        
         return aVC;
     } else if (actionSide < 0) {
         NotificationsTableViewController *notiVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Notifications"];
@@ -1382,6 +1384,7 @@ static void * leftContext = &leftContext;
             } else {
                 self.leftActionLabel.text = [defaults stringForKey:@"leftActionName"];
                 self.leftActionNameNumber.text = NSLocalizedString(@"0", @"Number 0.");
+                [self logShortcutUsed:self.leftActionLabel.text];
                 break;
             }
         case 2:
@@ -1390,6 +1393,7 @@ static void * leftContext = &leftContext;
             } else {
                 self.rightActionLabel.text = [defaults stringForKey:@"rightActionName"];
                 self.rightActionNameNumber.text = NSLocalizedString(@"0", @"Number 0.");
+                [self logShortcutUsed:self.rightActionLabel.text];
                 break;
             }
         default:
@@ -1410,8 +1414,7 @@ static void * leftContext = &leftContext;
  *  @param alertView   What to do if the user wants to start a new match or not.
  *  @param buttonIndex The button the user touched to start a new match or not.
  */
-- (void)alertView:(UIAlertView*)alertView
-    clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     //Need to determine the action based on the TAG
     if (buttonIndex != 0) {
@@ -1419,8 +1422,7 @@ static void * leftContext = &leftContext;
     }
 
     // Good place to show review prompt if they haven't already
-    if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"showPrompt"]
-            isEqualToString:@"Yes"]) {
+    if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"showPrompt"] isEqualToString:@"Yes"]) {
         // Show the Prompt view
         self.promptView = [[ABXPromptView alloc]
             initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200,

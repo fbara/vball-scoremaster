@@ -164,7 +164,6 @@
 #pragma mark - Shortcut Items
 
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
-    NSLog(@"\nShortcut: %@", shortcutItem);
     completionHandler([self handleShortcutItem:shortcutItem]);
 }
 
@@ -180,19 +179,13 @@
     VolleyBallViewController *vb = (VolleyBallViewController *)navController.topViewController;
     
     if ([shortcutItem.localizedTitle isEqualToString:@"New Match"]) {
+        [vb logShortcutUsed:shortcutItem.localizedTitle];
         [vb startNewMatch];
         return TRUE;
         
     } else if ([shortcutItem.localizedTitle isEqualToString:@"New Game"]) {
+        [vb logShortcutUsed:shortcutItem.localizedTitle];
         [vb gamePressedFromShortcut];
-        return TRUE;
-        
-    } else if ([shortcutItem.localizedTitle isEqualToString:@"HomePoint"]) {
-        
-        return TRUE;
-        
-    } else if ([shortcutItem.localizedTitle isEqualToString:@"VisitPoint"]) {
-        
         return TRUE;
         
     }

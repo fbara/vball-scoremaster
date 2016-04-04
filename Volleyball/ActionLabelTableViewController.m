@@ -697,12 +697,6 @@
                                                                dispatch_async(dispatch_get_main_queue(), ^{
                                                                    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateActionNames" object:self];
                                                                });
-                                                               id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-                                                               [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
-                                                                                                                     action:@"3D Touch"
-                                                                                                                      label:name
-                                                                                                                      value:nil] build]];
-                                                               
                                                            }];
         [list addObject:action];
         }
@@ -710,6 +704,13 @@
     self.previewActions = [UIPreviewActionGroup actionGroupWithTitle:@"Group"
                                                                style:UIPreviewActionStyleDefault
                                                              actions:list];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+                                                          action:@"shortcut"
+                                                           label:@"test"
+                                                           value:nil] build]];
+    NSLog(@"\nList: %@", list);
     return list;
 }
 
