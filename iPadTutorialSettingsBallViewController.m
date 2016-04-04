@@ -39,21 +39,20 @@
     //Show coachMarks
     NSArray *coachMarks = @[
         @{
-            @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,129.0f},{530.0f,133.0f}}],
+            @"rect": [NSValue valueWithCGRect:(CGRect){{253.0f,75.0f},{519.0f,134.0f}}],
             @"caption": NSLocalizedString(@"Tap the color box to change the background color of each team's scorebox to match their uniforms.\nUse a custom color to get the exact match!.\n\nAlternate between Regular, Dark, and Colorful app themes.", @"Shown during the app tutorial")
             },
         @{
-            @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,284.0f},{530.0f,119.0f}}],
+            @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,221.0f},{519.0f,212.0f}}],
             @"caption": NSLocalizedString(@"You decide when to send text messages and even include your player's name to personalize the message or post.", @"Shown during the app tutorial")
             },
         @{
-            @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,390.0f},{530.0f,54.0f}}],
-            @"caption": NSLocalizedString(@"Choose text message recipients from your contact list or just enter their number directly.", @"Shown during the app tutorial")
+            @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,281.0f},{519.0f,68.0f}}],
+            @"caption": NSLocalizedString(@"New with this version, you can select the type of message or post.\n\nExperiment and have fun!.", @"Shown during the app tutorial")
             },
         @{
-            @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,593.0f},{530.0f,111.0f}}],
-            @"caption": NSLocalizedString(@"Select Actions from a list of common terms and choose the right one for your player's position.", @"Shown during the app tutorial"),
-			@"showArrow": [NSNumber numberWithBool:YES],
+            @"rect": [NSValue valueWithCGRect:(CGRect){{253.0f,578.0f},{519.0f,129.0f}}],
+            @"caption": NSLocalizedString(@"Select Actions from a list of common terms or create your own, customize the Actions to fit your player.", @"Shown during the app tutorial"),
 			@"position": [NSNumber numberWithInteger:LABEL_POSITION_TOP],
 			@"alignment": [NSNumber numberWithInteger:LABEL_ALIGNMENT_CENTER]
             },

@@ -710,7 +710,6 @@
                                                           action:@"shortcut"
                                                            label:@"test"
                                                            value:nil] build]];
-    NSLog(@"\nList: %@", list);
     return list;
 }
 

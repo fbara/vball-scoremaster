@@ -51,7 +51,7 @@
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{82.0f,185.0f},{844.0f,314.0f}}],
-        @"caption": NSLocalizedString(@"Tap or swipe the scores to add and subtract points.\nFlick a scorebox with your finger to change sides when the teams change!", @"Shown during the app tutorial"),
+        @"caption": NSLocalizedString(@"Tap or swipe the scores <---> to add and subtract points.\nFlick a scorebox with your finger to change sides when the teams change!", @"Shown during the app tutorial"),
 		@"showArrow": [NSNumber numberWithBool:YES]
         },
     @{
@@ -81,7 +81,7 @@
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{88.0f,488.0f},{838.0f,69.0f}}],
 		NSLocalizedString(@"caption", @"caption"): NSLocalizedString(@"Select the player Actions YOU want to track.\n\nMake changes in the Settings screen.", @"Shown during the app tutorial"),
-		@"showArrow": [NSNumber numberWithBool:YES],
+		@"showArrow": [NSNumber numberWithBool:NO],
 		@"position": [NSNumber numberWithInteger:LABEL_POSITION_TOP],
 		@"alignment": [NSNumber numberWithInteger:LABEL_ALIGNMENT_CENTER]
         },

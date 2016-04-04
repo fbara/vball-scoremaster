@@ -68,14 +68,14 @@
 					},
 				@{
 					@"rect": [NSValue valueWithCGRect:(CGRect){{241.0f,149.0f},{80.0f,80.0f}}],
-					@"caption": NSLocalizedString(@"Send a message with the game highlights at anytime by tapping the VBall", @"Shown during the app tutorial"),
-					@"showArrow": [NSNumber numberWithBool:YES],
+					@"caption": NSLocalizedString(@"Send a message anytime by tapping the VBall (Have 3D Touch? Try it here!)", @"Shown during the app tutorial"),
+					@"showArrow": [NSNumber numberWithBool:NO],
 					@"position": [NSNumber numberWithInteger:LABEL_POSITION_TOP],
 					@"alignment": [NSNumber numberWithInteger:LABEL_ALIGNMENT_RIGHT]
 					},
 				@{
 					@"rect": [NSValue valueWithCGRect:(CGRect){{62.0f,255.0f},{439.0f,25.0f}}],
-					@"caption": NSLocalizedString(@"Select the player Actions YOU want to track", @"Shown during the app tutorial")
+					@"caption": NSLocalizedString(@"Select the player Actions YOU want to track (Have 3D Touch? Try it here!)", @"Shown during the app tutorial")
 					},
 				@{
 					@"rect": [NSValue valueWithCGRect:(CGRect){{226.0f,265.0f},{113.0f,47.0f}}],

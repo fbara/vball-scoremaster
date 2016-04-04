@@ -1,4 +1,4 @@
-//
+
 //  VolleyBallViewController.m
 //  Volleyball
 //
@@ -1123,7 +1123,7 @@ static void * leftContext = &leftContext;
             twitterController.completionHandler = ^(SLComposeViewControllerResult result) {
                           switch (result) {
                           case SLComposeViewControllerResultCancelled:
-                            NSLog(@"Twitter post cancelled");
+                          [self logMessagesSent:@"Twitter post cancelled."];
                             break;
                           case SLComposeViewControllerResultDone:
                               if ([self canSendAnalytics]) {
@@ -1199,7 +1199,7 @@ static void * leftContext = &leftContext;
                 setCompletionHandler:^(SLComposeViewControllerResult result) {
               switch (result) {
               case SLComposeViewControllerResultCancelled:
-                NSLog(@"Facebook post cancelled");
+                      [self logMessagesSent:@"Facebook post cancelled."];
                 break;
               case SLComposeViewControllerResultDone:
                   if ([self canSendAnalytics]) {
