@@ -178,6 +178,16 @@ static void * leftContext = &leftContext;
         }
     }
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(getMainActionNames)
+                                                 name:@"updateActionNames"
+                                               object:nil];
+    // Register for notifications from SettingsTableViewController
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(viewWillAppear:)
+                                                 name:@"SettingsDone"
+                                               object:nil];
+    
     //Reset total game counts
     totalPastGamesHome = 0;
     totalPastGamesVisitor = 0;
@@ -226,15 +236,7 @@ static void * leftContext = &leftContext;
     if ([self checkFor3DTouch]) {
         self.previewingContext = [self registerForPreviewingWithDelegate:self sourceView:self.view];
     }
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(getMainActionNames)
-                                                     name:@"updateActionNames"
-                                                   object:nil];
-    // Register for notifications from SettingsTableViewController
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(viewWillAppear:)
-                                                 name:@"SettingsDone"
-                                               object:nil];
+
     [self loadActionNames];
     [self setupDynamicShortcuts];
 
