@@ -222,7 +222,6 @@ static NSString* const kiTunesID = @"886670213";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-	NSLog(@"\nMemory Warning: SupportTableViewController");
 }
 
 
