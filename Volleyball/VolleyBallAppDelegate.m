@@ -34,30 +34,26 @@
 
     // Needed to instantiate the version tracking
     [GBVersionTracking track];
-    // Needed to register the app as a transaction observer from Apple for IAP's
-    //[VolleyBallIAPHelper sharedInstance];
     
     [[UINavigationBar appearance] setBarTintColor:FlatBlue];
     [[UINavigationBar appearance] setTintColor:ContrastColor(FlatBlue, TRUE)];
     [[UINavigationBar appearance]
-        setTitleTextAttributes:
-            @{ NSForegroundColorAttributeName : ContrastColor(FlatBlue, TRUE) }];
+        setTitleTextAttributes:@{ NSForegroundColorAttributeName : ContrastColor(FlatBlue, TRUE) }];
 
     // Initialize AppbotX info
-    [[ABXApiClient instance]
-        setApiKey:@"5b0feb30a4f023f3897789f9b38ab62304ee4790"];
+    [[ABXApiClient instance] setApiKey:@"5b0feb30a4f023f3897789f9b38ab62304ee4790"];
 	
 	//Initialize LaunchKit info
 //TODO: Enable LaunchKit
-	[LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
+//	[LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
 
     // Google Analytics setup for the app
     [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
 //TODO: Enable Google Analytics
-//    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
+//    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
 	tracker.allowIDFACollection = NO;
 	
 	if ([GBVersionTracking isFirstLaunchEver]) {
@@ -75,38 +71,36 @@
 
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
         // Initialize the number of times the user has launched the app
-        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"launchNumber"];
-        [[NSUserDefaults standardUserDefaults] setObject:@"Yes"
+        [defaults setInteger:1 forKey:@"launchNumber"];
+        [defaults setObject:@"Yes"
                                                   forKey:@"showPrompt"];
         
         // Show Google Analytics permissiion alert
-        UIAlertView* av = [[UIAlertView alloc]
-                initWithTitle:@"Analytics Request"
-                      message:@"With your permission, usage information will be "
-                      @"collected to improve the application.\n\nNo "
-                      @"personal information will be collected and you "
-                      @"can opt out at any time from Settings."
-                     delegate:self
-            cancelButtonTitle:@"Opt Out"
-            otherButtonTitles:@"Opt In", nil];
-        [av show];
-    } else if (([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) < 10) {
+//        UIAlertView* av = [[UIAlertView alloc]
+//                initWithTitle:@"Analytics Request"
+//                      message:@"With your permission, usage information will be "
+//                      @"collected to improve the application.\n\nNo "
+//                      @"personal information will be collected and you "
+//                      @"can opt out at any time from Settings."
+//                     delegate:self
+//            cancelButtonTitle:@"Opt Out"
+//            otherButtonTitles:@"Opt In", nil];
+//        [av show];
+    } else if (([defaults integerForKey:@"launchNumber"]) < 10) {
         [defaults setBool:FALSE forKey:@"firstTimeEver"];
         // Increment launchNumber until we reach 10
-        NSInteger ln = [[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"];
+        NSInteger ln = [defaults integerForKey:@"launchNumber"];
         ln = ln + 1;
-        [[NSUserDefaults standardUserDefaults] setInteger:ln
-                                                   forKey:@"launchNumber"];
+        [defaults setInteger:ln forKey:@"launchNumber"];
 
     } else {
         // We hit 10 uses so turn off the review prompt
-        [[NSUserDefaults standardUserDefaults] setObject:@"No"
-                                                  forKey:@"showPrompt"];
+        [defaults setObject:@"No" forKey:@"showPrompt"];
 
     }
 	
 	//Check if analytics are allowed on subsequent starts of the app
-	NSString *analyticsSetting = [[NSUserDefaults standardUserDefaults] stringForKey:@"analyticsChoice"];
+	NSString *analyticsSetting = [defaults stringForKey:@"analyticsChoice"];
 	if ([analyticsSetting isEqualToString:@"Opt out"]) {
 		//Opt out - do not track
 		[[GAI sharedInstance] setOptOut:YES];
@@ -114,15 +108,15 @@
 		//Opt in - ok to track
 		[[GAI sharedInstance] setOptOut:NO];
 //TODO: Enable LaunchKit
-		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
-        if (LKAppUserIsSuper()) {
-            //SuperUser
-            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-            [tracker send:[[[GAIDictionaryBuilder createScreenView] set:@"Super User" forKey:kGAIScreenName] build]];
-        }
+//		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
+//        if (LKAppUserIsSuper()) {
+//            //SuperUser
+//            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//            [tracker send:[[[GAIDictionaryBuilder createScreenView] set:@"Super User" forKey:kGAIScreenName] build]];
+//        }
 	}
 	
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [defaults synchronize];
 
     return YES;
 }
@@ -130,7 +124,7 @@
 - (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
 	//Get response from user if they allow analytics on initial startup
-	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+	NSUserDefaults* defaults = defaults;
     switch (buttonIndex) {
     case 0:
 		//Opt out - do not track

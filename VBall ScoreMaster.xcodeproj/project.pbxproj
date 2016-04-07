@@ -61,6 +61,7 @@
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */; };
+		ADFD5A311CB68B6800567B1C /* PermissionsVolleyBall.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFD5A301CB68B6800567B1C /* PermissionsVolleyBall.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,8 @@
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
 		ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SupportTableViewController.m; path = Volleyball/SupportTableViewController.m; sourceTree = "<group>"; };
+		ADFD5A2F1CB68B6800567B1C /* PermissionsVolleyBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionsVolleyBall.h; sourceTree = "<group>"; };
+		ADFD5A301CB68B6800567B1C /* PermissionsVolleyBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionsVolleyBall.m; sourceTree = "<group>"; };
 		FBE7CEAB9E6E4D5FC5CC6BB6 /* Pods-VBall ScoreMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBall ScoreMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -295,6 +298,8 @@
 				92AA42AA1916C2800037D405 /* Volleyball-Info.plist */,
 				AD6657E41CABFD9200F5ABF0 /* NotificationsTableViewController.h */,
 				AD6657E51CABFD9200F5ABF0 /* NotificationsTableViewController.m */,
+				ADFD5A2F1CB68B6800567B1C /* PermissionsVolleyBall.h */,
+				ADFD5A301CB68B6800567B1C /* PermissionsVolleyBall.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -641,6 +646,7 @@
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
 				ADDE1A781BF0D0F600356E4A /* MPTutorialViewController.m in Sources */,
 				AD0D05981A71977100B5FC00 /* FCBrightDarkGradView.m in Sources */,
+				ADFD5A311CB68B6800567B1C /* PermissionsVolleyBall.m in Sources */,
 				ADB5A13519D30372009B1550 /* UITouch+NRTouch.m in Sources */,
 				AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */,
 				ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */,
