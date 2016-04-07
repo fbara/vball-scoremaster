@@ -52,7 +52,6 @@
 				@{
 					@"rect": [NSValue valueWithCGRect:(CGRect){{118.0f,275.0f},{327.0f,30.0f}}],
 					@"caption": NSLocalizedString(@"Track your player's main actions with just a tap", @"Shown during the app tutorial"),
-					@"showArrow": [NSNumber numberWithBool:YES],
 					@"position": [NSNumber numberWithInteger:LABEL_POSITION_TOP],
 					@"alignment": [NSNumber numberWithInteger:LABEL_ALIGNMENT_CENTER]
 					},
@@ -111,6 +110,8 @@
 }
 
 -(void)coachMarksViewDidCleanup:(MPCoachMarks *)coachMarksView {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:TRUE forKey:@"tutorialShown"];
 	[self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -44,11 +44,14 @@
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,221.0f},{519.0f,212.0f}}],
-            @"caption": NSLocalizedString(@"You decide when to send text messages and even include your player's name to personalize the message or post.", @"Shown during the app tutorial")
+            @"caption": NSLocalizedString(@"You decide what type of messages to send and when to send it.  Include your player's name to personalize the message or post!", @"Shown during the app tutorial")
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{247.0f,281.0f},{519.0f,68.0f}}],
-            @"caption": NSLocalizedString(@"New with this version, you can select the type of message or post.\n\nExperiment and have fun!.", @"Shown during the app tutorial")
+            @"caption": NSLocalizedString(@"New with this version, you can select the type of message or post.\n\nExperiment and have fun!.", @"Shown during the app tutorial"),
+            @"showArrow": [NSNumber numberWithBool:YES],
+            @"position": [NSNumber numberWithInteger:LABEL_POSITION_BOTTOM],
+            @"alignment": [NSNumber numberWithInteger:LABEL_ALIGNMENT_CENTER]
             },
         @{
             @"rect": [NSValue valueWithCGRect:(CGRect){{253.0f,578.0f},{519.0f,129.0f}}],
@@ -85,6 +88,8 @@
 
 - (void)coachMarksViewDidCleanup:(MPCoachMarks *)coachMarksView
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:TRUE forKey:@"tutorialShown"];
     [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

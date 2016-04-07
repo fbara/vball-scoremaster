@@ -57,7 +57,6 @@
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{88.0f,537.0f},{838.0f,72.0f}}],
 		@"caption": NSLocalizedString(@"Track your player's key actions using a variety of common measurements.", @"Shown during the app tutorial"),
-		@"showArrow": [NSNumber numberWithBool:YES],
 		@"position": [NSNumber numberWithInteger:LABEL_POSITION_TOP],
 		@"alignment": [NSNumber numberWithInteger:LABEL_ALIGNMENT_CENTER]
         },
@@ -80,7 +79,7 @@
         },
     @{
         @"rect": [NSValue valueWithCGRect:(CGRect){{88.0f,488.0f},{838.0f,69.0f}}],
-		NSLocalizedString(@"caption", @"caption"): NSLocalizedString(@"Select the player Actions YOU want to track.\n\nMake changes in the Settings screen.", @"Shown during the app tutorial"),
+		NSLocalizedString(@"caption", @"caption"): NSLocalizedString(@"Select the player Actions YOU want to track.\n\nMake changes in the Settings screen. You can swipe the cell to rename it or add your own.", @"Shown during the app tutorial"),
 		@"showArrow": [NSNumber numberWithBool:NO],
 		@"position": [NSNumber numberWithInteger:LABEL_POSITION_TOP],
 		@"alignment": [NSNumber numberWithInteger:LABEL_ALIGNMENT_CENTER]
@@ -118,6 +117,8 @@
 
 - (void)coachMarksViewDidCleanup:(MPCoachMarks *)coachMarksView
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:TRUE forKey:@"tutorialShown"];
     [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

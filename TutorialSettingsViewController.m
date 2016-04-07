@@ -132,6 +132,8 @@
 
 - (void)coachMarksViewDidCleanup:(MPCoachMarks *)coachMarksView
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:TRUE forKey:@"tutorialShown"];
     [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
