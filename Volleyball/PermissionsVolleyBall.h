@@ -12,7 +12,7 @@
 @interface PermissionsVolleyBall : UIViewController
 
 - (void)requestPermissions;
-- (void)setupGoogleAnalytics;
-- (void)setupLaunchKitAnalytics;
+- (void)enableGoogleAnalytics:(BOOL)status;
+- (void)enableLaunchKitAnalytics;
 
 @end

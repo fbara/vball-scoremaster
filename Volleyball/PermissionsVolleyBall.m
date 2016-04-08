@@ -31,40 +31,47 @@
     VWWPhotosPermission *photoPerm = [VWWPhotosPermission permissionWithLabelText:NSLocalizedString(@"You can save your drawings and lists.  We need your permission to save them to your photo library", @"Message box to request permission to save drawings.")];
     VWWCoreLocationWhenInUsePermission *locPerm = [VWWCoreLocationWhenInUsePermission permissionWithLabelText:NSLocalizedString(@"When using the app, we save your location with the drawings.", @"Message box to request permission to save user location.")];
     NSArray *permissions = @[photoPerm, locPerm];
-    __block BOOL googleSetup = FALSE;
+    __block BOOL isAnalyticsSetup = FALSE;
+    
+    //Need to get a handle to the active VC, otherwise the error msg won't be seen
+    UIViewController *activeVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    if ([activeVC isKindOfClass:[UINavigationController class]]) {
+        activeVC = [(UINavigationController *)activeVC visibleViewController];
+        NSLog(@"\nActive VC: %@", activeVC.title);
+    }
     
     [VWWPermissionsManager optionPermissions:permissions
                                        title:NSLocalizedString(@"Welcome to VBall ScoreMaster. To get the best experience, we need to setup some device permissions. Let's setup those permissions now.", @"Tell the user we're going to setup the device permissions.")
-                          fromViewController:self
+                          fromViewController:[UIApplication sharedApplication].keyWindow.rootViewController
                                 resultsBlock:^(NSArray *permissions) {
                                     [permissions enumerateObjectsUsingBlock:^(VWWPermission *permission, NSUInteger idx, BOOL *stop) {
                                         if ([permission.type isEqualToString:@"Photos"]) {
                                             if ([[permission stringForStatus] isEqualToString:@"Authorized"]) {
                                                 //Opt in
-                                                if (!googleSetup) {
+                                                if (!isAnalyticsSetup) {
                                                     [self.defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
-                                                    [self setupGoogleAnalytics];
-                                                    [self setupLaunchKitAnalytics];
-                                                    googleSetup = TRUE;
+                                                    [self enableGoogleAnalytics:TRUE];
+                                                    [self enableLaunchKitAnalytics];
+                                                    isAnalyticsSetup = TRUE;
                                                 }
                                             } else {
                                                 //Opt out
-                                                [[GAI sharedInstance] setOptOut:YES];
+                                                [self enableGoogleAnalytics:FALSE];
                                                 [self.defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
                                             }
                                         }
                                         if ([permission.type isEqualToString:@"Location In Use"]) {
                                             if ([[permission stringForStatus] isEqualToString:@"Authorized"]) {
                                                 //Opt in
-                                                if (!googleSetup) {
+                                                if (!isAnalyticsSetup) {
                                                     [self.defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
-                                                    [self setupGoogleAnalytics];
-                                                    [self setupLaunchKitAnalytics];
-                                                    googleSetup = TRUE;
+                                                    [self enableGoogleAnalytics:TRUE];
+                                                    [self enableLaunchKitAnalytics];
+                                                    isAnalyticsSetup = TRUE;
                                                 }
                                             } else {
                                                 //Opt out
-                                                
+                                                [self.defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
                                             }
                                         }
                                         
@@ -73,22 +80,28 @@
     
 }
 
-- (void)setupGoogleAnalytics {
-    [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
-    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
-    [GAI sharedInstance].dispatchInterval = 120;
+- (void)enableGoogleAnalytics:(BOOL)status {
+    if (status) {
+        [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
+        [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
+        [GAI sharedInstance].dispatchInterval = 120;
 //TODO: *******Change Google App ID*******
-    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
-    //    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
-    tracker.allowIDFACollection = NO;
-    [[GAI sharedInstance] setOptOut:NO];
+        id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
+//        id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+        tracker.allowIDFACollection = NO;
+        [[GAI sharedInstance] setOptOut:NO];
+    } else {
+        [[GAI sharedInstance] setOptOut:YES];
+    }
+    
 
 }
 
-- (void)setupLaunchKitAnalytics {
+- (void)enableLaunchKitAnalytics {
 //TODO: *******Change LaunchKit App ID*******
+//    [LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
     self.randomUserString = [self.defaults objectForKey:@"userString"];
-    [[LaunchKit sharedInstance] setUserIdentifier:self.randomUserString email:[self.randomUserString stringByAppendingString:@"@email.com"] name:self.randomUserString];
+//    [[LaunchKit sharedInstance] setUserIdentifier:self.randomUserString email:[self.randomUserString stringByAppendingString:@"@email.com"] name:self.randomUserString];
 
     
 }

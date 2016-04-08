@@ -11,6 +11,7 @@
 #import <GoogleAnalytics/GAITrackedViewController.h>
 #import <AppbotX/ABXPromptView.h>
 #import <Social/Social.h>
+#import "PermissionsVolleyBall.h"
 @import QuartzCore;
 
 @interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource, UIAlertViewDelegate, UITextFieldDelegate, MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, ABXPromptViewDelegate>

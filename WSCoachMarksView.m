@@ -164,6 +164,8 @@ static const BOOL kEnableSkipButton = YES;
 }
 
 - (void)skipCoach {
+    NSLog(@"\nSkipCoach");
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"requestPermissionsDone" object:self];
     [self goToCoachMarkIndexed:self.coachMarks.count];
 }
 
@@ -259,7 +261,7 @@ static const BOOL kEnableSkipButton = YES;
     if ([self.delegate respondsToSelector:@selector(coachMarksViewWillCleanup:)]) {
         [self.delegate coachMarksViewWillCleanup:self];
     }
-
+    NSLog(@"\nCoachMarks Cleanup");
     // Fade out self
     [UIView animateWithDuration:self.animationDuration
                      animations:^{

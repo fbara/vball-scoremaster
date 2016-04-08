@@ -16,11 +16,18 @@
 #import <AppbotX/ABX.h>
 #import <LaunchKit/LaunchKit.h>
 #import "VolleyBallViewController.h"
+#import "PermissionsVolleyBall.h"
 //#import "NRWindow.h"
 
-@implementation VolleyBallAppDelegate {
-	NSString *randomUserString;
-}
+@interface VolleyBallAppDelegate ()
+@property (nonatomic, strong)NSString *randomUserString;
+
+@end
+
+@implementation VolleyBallAppDelegate
+//{
+//	NSString *self.randomUserString;
+//}
 #define IS_IPAD() [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
@@ -47,24 +54,26 @@
 //TODO: Enable LaunchKit
 //	[LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
 
+//TODO: Uncomment Google
     // Google Analytics setup for the app
-    [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
-    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
-    [GAI sharedInstance].dispatchInterval = 120;
+//    [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
+//    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
+//    [GAI sharedInstance].dispatchInterval = 120;
 //TODO: Enable Google Analytics
-    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
+//    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
 //    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
-	tracker.allowIDFACollection = NO;
+//	tracker.allowIDFACollection = NO;
 	
 	if ([GBVersionTracking isFirstLaunchEver]) {
-		randomUserString = [self randomStringWithLength:8];
-		[defaults setObject:randomUserString forKey:@"userString"];
+		self.randomUserString = [self randomStringWithLength:8];
+		[defaults setObject:self.randomUserString forKey:@"userString"];
         [defaults setBool:TRUE forKey:@"firstTimeEver"];
+        
 	} else {
-		randomUserString = [defaults objectForKey:@"userString"];
-		if (randomUserString == nil) {
-			randomUserString = [self randomStringWithLength:8];
-			[defaults setObject:randomUserString forKey:@"userString"];
+		self.randomUserString = [defaults objectForKey:@"userString"];
+		if (self.randomUserString == nil) {
+			self.randomUserString = [self randomStringWithLength:8];
+			[defaults setObject:self.randomUserString forKey:@"userString"];
 		}
         [defaults setBool:FALSE forKey:@"firstTimeEver"];
 	}
@@ -72,8 +81,7 @@
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
         // Initialize the number of times the user has launched the app
         [defaults setInteger:1 forKey:@"launchNumber"];
-        [defaults setObject:@"Yes"
-                                                  forKey:@"showPrompt"];
+        [defaults setObject:@"Yes" forKey:@"showPrompt"];
         
         // Show Google Analytics permissiion alert
 //        UIAlertView* av = [[UIAlertView alloc]
@@ -100,23 +108,21 @@
     }
 	
 	//Check if analytics are allowed on subsequent starts of the app
-	NSString *analyticsSetting = [defaults stringForKey:@"analyticsChoice"];
-	if ([analyticsSetting isEqualToString:@"Opt out"]) {
-		//Opt out - do not track
-		[[GAI sharedInstance] setOptOut:YES];
-	} else {
-		//Opt in - ok to track
-		[[GAI sharedInstance] setOptOut:NO];
+//	NSString *analyticsSetting = [defaults stringForKey:@"analyticsChoice"];
+//	if ([analyticsSetting isEqualToString:@"Opt out"]) {
+//		//Opt out - do not track
+//		[[GAI sharedInstance] setOptOut:YES];
+//	} else {
+//		//Opt in - ok to track
+//		[[GAI sharedInstance] setOptOut:NO];
 //TODO: Enable LaunchKit
-//		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
+//		[[LaunchKit sharedInstance] setUserIdentifier:self.randomUserString email:[self.randomUserString stringByAppendingString:@"@email.com"] name:self.randomUserString];
 //        if (LKAppUserIsSuper()) {
 //            //SuperUser
 //            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 //            [tracker send:[[[GAIDictionaryBuilder createScreenView] set:@"Super User" forKey:kGAIScreenName] build]];
 //        }
-	}
-	
-    [defaults synchronize];
+//	}
 
     return YES;
 }
@@ -124,7 +130,7 @@
 - (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
 	//Get response from user if they allow analytics on initial startup
-	NSUserDefaults* defaults = defaults;
+	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     switch (buttonIndex) {
     case 0:
 		//Opt out - do not track
@@ -136,7 +142,7 @@
         [[GAI sharedInstance] setOptOut:NO];
         [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
 //TODO: Enable LaunchKit
-		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
+		[[LaunchKit sharedInstance] setUserIdentifier:self.randomUserString email:[self.randomUserString stringByAppendingString:@"@email.com"] name:self.randomUserString];
         break;
     default:
         break;

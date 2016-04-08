@@ -71,10 +71,10 @@ static void * leftContext = &leftContext;
 {
     if ([segue.identifier isEqualToString:EMBED_HOME]) {
         self.homePageViewController = segue.destinationViewController;
-    }
-
-    if ([segue.identifier isEqualToString:EMBED_VISITOR]) {
+    } else if ([segue.identifier isEqualToString:EMBED_VISITOR]) {
         self.visitorPageViewController = segue.destinationViewController;
+    } else {
+        NSLog(@"\nSegue sender: %@", sender);
     }
 }
 
@@ -89,7 +89,12 @@ static void * leftContext = &leftContext;
     // If so, run tutorial.  If not, don't run turorial.
     if ([GBVersionTracking isFirstLaunchEver] ||
         [GBVersionTracking isFirstLaunchForVersion]) {
-        [self performSegueWithIdentifier:@"showTutorial" sender:self];
+        // Setup a notification observer to know when the tutorial is done
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(requestAppPermissions)
+                                                     name:@"requestPermissionsDone"
+                                                   object:nil];
+       [self performSegueWithIdentifier:@"showTutorial" sender:self];
     }
 
     // Set the Google Analytics Screen name
@@ -529,7 +534,17 @@ static void * leftContext = &leftContext;
 
 }
 
-#pragma mark - Google Analytics
+#pragma mark - Analytics
+
+- (void)requestAppPermissions {
+    NSLog(@"\nRequesting");
+    PermissionsVolleyBall *permissions = [[PermissionsVolleyBall alloc] init];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [permissions requestPermissions];
+    });
+    
+    
+}
 
 /*!
  *  @author Me, 03-21-16 16:03
