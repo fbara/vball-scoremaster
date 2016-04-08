@@ -30,7 +30,7 @@
 {
     // Override point for customization after application launch.
 	//[[UIApplication sharedApplication] setStatusBarHidden:FALSE withAnimation:UIStatusBarAnimationNone];
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     // Needed to instantiate the version tracking
     [GBVersionTracking track];
@@ -69,15 +69,15 @@
 		if (randomUserString == nil) {
 			randomUserString = [self randomStringWithLength:8];
 			[defaults setObject:randomUserString forKey:@"userString"];
+            [defaults synchronize];
 		}
         [defaults setBool:FALSE forKey:@"firstTimeEver"];
 	}
 
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
         // Initialize the number of times the user has launched the app
-        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"launchNumber"];
-        [[NSUserDefaults standardUserDefaults] setObject:@"Yes"
-                                                  forKey:@"showPrompt"];
+        [defaults setInteger:1 forKey:@"launchNumber"];
+        [defaults setObject:@"No" forKey:@"showPrompt"];
         
         // Show Google Analytics permissiion alert
         UIAlertView* av = [[UIAlertView alloc]
@@ -90,23 +90,23 @@
             cancelButtonTitle:@"Opt Out"
             otherButtonTitles:@"Opt In", nil];
         [av show];
-    } else if (([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) < 10) {
+    } else if (([defaults integerForKey:@"launchNumber"]) < 10) {
         [defaults setBool:FALSE forKey:@"firstTimeEver"];
         // Increment launchNumber until we reach 10
-        NSInteger ln = [[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"];
+        NSInteger ln = [defaults integerForKey:@"launchNumber"];
         ln = ln + 1;
-        [[NSUserDefaults standardUserDefaults] setInteger:ln
-                                                   forKey:@"launchNumber"];
+        if (ln == 10) {
+            [defaults setObject:@"Yes" forKey:@"showPrompt"];
+        }
+        [defaults setInteger:ln forKey:@"launchNumber"];
 
     } else {
         // We hit 10 uses so turn off the review prompt
-        [[NSUserDefaults standardUserDefaults] setObject:@"No"
-                                                  forKey:@"showPrompt"];
-
+        [defaults setObject:@"No" forKey:@"showPrompt"];
     }
 	
 	//Check if analytics are allowed on subsequent starts of the app
-	NSString *analyticsSetting = [[NSUserDefaults standardUserDefaults] stringForKey:@"analyticsChoice"];
+	NSString *analyticsSetting = [defaults stringForKey:@"analyticsChoice"];
 	if ([analyticsSetting isEqualToString:@"Opt out"]) {
 		//Opt out - do not track
 		[[GAI sharedInstance] setOptOut:YES];
@@ -122,7 +122,7 @@
         }
 	}
 	
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [defaults synchronize];
 
     return YES;
 }

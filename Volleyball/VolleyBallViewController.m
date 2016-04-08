@@ -162,19 +162,17 @@ static void * leftContext = &leftContext;
     
     //Setup the AppbotX prompt for Reviews
     if (![ABXPromptView hasHadInteractionForCurrentVersion]) {
-        if ((([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) == 10) &&
+        NSLog(@"\nAppbotX Prompt %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"showPrompt"]);
+        if ((([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) == 9) &&
             [[[NSUserDefaults standardUserDefaults] objectForKey:@"showPrompt"]
                 isEqualToString:@"Yes"]) {
             // Show the Prompt view on the 10th time the user has launched the app
-	self.promptView = [[ABXPromptView alloc]
-                initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
+            self.promptView = [[ABXPromptView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
             self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
             self.promptView.backgroundColor = FlatYellow;
             self.promptView.delegate = self;
             [self.view addSubview:self.promptView];
-            [[NSUserDefaults standardUserDefaults] setObject:@"No"
-                                                      forKey:@"showPrompt"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+            [[NSUserDefaults standardUserDefaults] setObject:@"No" forKey:@"showPrompt"];
         }
     }
     
@@ -554,11 +552,10 @@ static void * leftContext = &leftContext;
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 
     [tracker set:kGAIScreenName value:@"Scoring"];
-    [tracker send:[[GAIDictionaryBuilder
-                      createEventWithCategory:@"UX"
-                                       action:@"touch"
-                                        label:[button.titleLabel text]
-                                        value:nil] build]];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+                                                          action:@"touch"
+                                                           label:[button.titleLabel text]
+                                                           value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
 }
 
@@ -568,36 +565,33 @@ static void * leftContext = &leftContext;
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 
     [tracker set:kGAIScreenName value:@"Scoring"];
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
-                                                          action:@"message"
-                                                           label:type
-                                                           value:nil] build]];
+    [tracker send:[[GAIDictionaryBuilder createSocialWithNetwork:@"SMS"
+                                                          action:@"Text"
+                                                          target:type] build]];
     [tracker set:kGAIScreenName value:nil];
 }
 
-- (void)logTwitterSent
+- (void)logTwitterSent:(NSString *)msg
 {
     // Logs that a Twitter message was sent
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 
     [tracker set:kGAIScreenName value:@"Twitter"];
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
-                                                          action:@"social"
-                                                           label:@"twitter sent"
-                                                           value:nil] build]];
+    [tracker send:[[GAIDictionaryBuilder createSocialWithNetwork:@"Twitter"
+                                                          action:@"Tweet"
+                                                          target:msg] build]];
     [tracker set:kGAIScreenName value:nil];
 }
 
-- (void)logFacebookSent
+- (void)logFacebookSent:(NSString *)msg
 {
     // Logs that a Twitter message was sent
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 
     [tracker set:kGAIScreenName value:@"Facebook"];
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
-                                                          action:@"social"
-                                                           label:@"facebook sent"
-                                                           value:nil] build]];
+    [tracker send:[[GAIDictionaryBuilder createSocialWithNetwork:@"Facebook"
+                                                          action:@"Post"
+                                                          target:msg] build]];
     [tracker set:kGAIScreenName value:nil];
 }
 
@@ -609,6 +603,7 @@ static void * leftContext = &leftContext;
                                                           action:@"shortcut"
                                                            label:shortcut
                                                            value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
 }
 
 #pragma mark - UIGestureRecognizer Delegate Method
@@ -990,10 +985,7 @@ static void * leftContext = &leftContext;
 
     UIAlertView* alert = [[UIAlertView alloc]
             initWithTitle:NSLocalizedString(@"New Match?", nil)
-                  message:
-                      NSLocalizedString(
-                          @"Reset team names, scores, action names, and start a new match?",
-                          nil)
+                  message:NSLocalizedString(@"Reset team names, scores, action names, and start a new match? This can't be undone.", nil)
                  delegate:self
         cancelButtonTitle:NSLocalizedString(@"No", nil)
         otherButtonTitles:NSLocalizedString(@"Yes", nil), nil];
@@ -1100,8 +1092,7 @@ static void * leftContext = &leftContext;
 
     if ([[defaults stringForKey:@"enableTwitter"] isEqualToString:@"On"]) {
         if ([self userHasAccessToTwitter]) {
-            SLComposeViewController* twitterController = [SLComposeViewController
-                composeViewControllerForServiceType:SLServiceTypeTwitter];
+            SLComposeViewController* twitterController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
 
             NSString* newMessage, *tempStr1, *tempStr2;
             if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
@@ -1127,7 +1118,7 @@ static void * leftContext = &leftContext;
                             break;
                           case SLComposeViewControllerResultDone:
                               if ([self canSendAnalytics]) {
-                                 [self logTwitterSent];
+                                 [self logTwitterSent:newMessage];
                               }
                             break;
                           default:
@@ -1176,8 +1167,7 @@ static void * leftContext = &leftContext;
     if ([[defaults stringForKey:@"enableFacebook"] isEqualToString:@"On"]) {
         // Check if user has setup facebook on the device
         if ([self userHasAccessToFacebook]) {
-            SLComposeViewController* facebookController = [SLComposeViewController
-                composeViewControllerForServiceType:SLServiceTypeFacebook];
+            SLComposeViewController* facebookController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
 
             NSString* newMessage, *tempStr1, *tempStr2;
             if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
@@ -1195,15 +1185,14 @@ static void * leftContext = &leftContext;
 
             [facebookController setInitialText:newMessage];
             [facebookController addImage:[self getScreenImage]];
-            [facebookController
-                setCompletionHandler:^(SLComposeViewControllerResult result) {
+            [facebookController setCompletionHandler:^(SLComposeViewControllerResult result) {
               switch (result) {
               case SLComposeViewControllerResultCancelled:
                       [self logMessagesSent:@"Facebook post cancelled."];
                 break;
               case SLComposeViewControllerResultDone:
                   if ([self canSendAnalytics]) {
-                      [self logFacebookSent];
+                      [self logFacebookSent:newMessage];
                   }
               default:
                 break;
@@ -1247,7 +1236,7 @@ static void * leftContext = &leftContext;
                 BOOL firstTime = [[NSUserDefaults standardUserDefaults] boolForKey:@"firstTimeEver"];
                 NSInteger firstThisVer = [[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"];
                 if (![notification hasSeen]) {
-                    if (firstTime || (firstThisVer == 1)) {
+                    if (firstTime || (firstThisVer < 4)) {
                         return;
                     } else {
                         //Show the view
@@ -1260,6 +1249,16 @@ static void * leftContext = &leftContext;
                                       actionBlock:^(ABXNotificationView *view) {
                                           [[UIApplication sharedApplication] openURL:[NSURL URLWithString:notification.actionUrl]];
                                       } dismissBlock:^(ABXNotificationView *view) {
+                                          if ([self canSendAnalytics]) {
+                                              id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+                                              
+                                              [tracker set:kGAIScreenName value:@"Notification"];
+                                              [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Notification"
+                                                                                                    action:@"Active"
+                                                                                                     label:notification.actionUrl
+                                                                                                     value:nil] build]];
+                                              [tracker set:kGAIScreenName value:nil];
+                                          }
                                           //Mark alert as being seen so it's not shown again
                                           [notification markAsSeen];
                                       }];
@@ -1275,12 +1274,18 @@ static void * leftContext = &leftContext;
 
 - (void)appbotPromptForReview
 {
+    if ([self canSendAnalytics]) {
+        [self logShortcutUsed:@"Appbot Prompt Review"];
+    }
     [ABXAppStore openAppStoreReviewForApp:kiTunesID];
     self.promptView.hidden = YES;
 }
 
 - (void)appbotPromptForFeedback
 {
+    if ([self canSendAnalytics]) {
+        [self logShortcutUsed:@"Appbot Prompt Feedback"];
+    }
     [ABXFeedbackViewController showFromController:self placeholder:nil];
     self.promptView.hidden = YES;
 }
@@ -1288,8 +1293,7 @@ static void * leftContext = &leftContext;
 - (void)appbotPromptClose
 {
     self.promptView.hidden = YES;
-    // self.mainPageFacebookButton.hidden = FALSE;
-    // self.mainPageTwitterButton.hidden = FALSE;
+
 }
 
 #pragma mark - 3D Touch
@@ -1297,6 +1301,9 @@ static void * leftContext = &leftContext;
 - (BOOL)checkFor3DTouch {
     BOOL is3DTouchAvail = NO;
     if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)] && (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)) {
+        if ([self canSendAnalytics]) {
+            [self logShortcutUsed:@"3D Enabled"];
+        }
         is3DTouchAvail = YES;
     }
     return is3DTouchAvail;
@@ -1422,9 +1429,9 @@ static void * leftContext = &leftContext;
     if (buttonIndex != 0) {
         [self startNewMatch];
     }
-
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     // Good place to show review prompt if they haven't already
-    if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"showPrompt"] isEqualToString:@"Yes"]) {
+    if ([[defaults stringForKey:@"showPrompt"] isEqualToString:@"Yes"]) {
         // Show the Prompt view
         self.promptView = [[ABXPromptView alloc]
             initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200,
@@ -1434,9 +1441,7 @@ static void * leftContext = &leftContext;
         self.promptView.delegate = self;
         [self.view addSubview:self.promptView];
         // Turn prompt off for this version
-        [[NSUserDefaults standardUserDefaults] setObject:@"No"
-                                                  forKey:@"showPrompt"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [defaults setObject:@"No" forKey:@"showPrompt"];
     }
 }
 
