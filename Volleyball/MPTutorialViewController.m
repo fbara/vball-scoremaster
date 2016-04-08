@@ -27,12 +27,6 @@
 	[self showCoachMarks];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    NSLog(@"\ncoachMarksViewWillDisappear");
-
-}
-
 #pragma mark - Create/Display
 -(void)showCoachMarks {
 	
@@ -118,7 +112,6 @@
 -(void)coachMarksViewDidCleanup:(MPCoachMarks *)coachMarksView {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:TRUE forKey:@"tutorialShown"];
-    NSLog(@"\ncoachMarksViewDidCleanup");
 	[self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

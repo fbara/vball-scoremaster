@@ -73,8 +73,6 @@ static void * leftContext = &leftContext;
         self.homePageViewController = segue.destinationViewController;
     } else if ([segue.identifier isEqualToString:EMBED_VISITOR]) {
         self.visitorPageViewController = segue.destinationViewController;
-    } else {
-        NSLog(@"\nSegue sender: %@", sender);
     }
 }
 
@@ -90,10 +88,11 @@ static void * leftContext = &leftContext;
     if ([GBVersionTracking isFirstLaunchEver] ||
         [GBVersionTracking isFirstLaunchForVersion]) {
         // Setup a notification observer to know when the tutorial is done
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(requestAppPermissions)
-                                                     name:@"requestPermissionsDone"
-                                                   object:nil];
+//TODO: Remove if not needed
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                 selector:@selector(requestAppPermissions)
+//                                                     name:@"requestPermissionsDone"
+//                                                   object:nil];
        [self performSegueWithIdentifier:@"showTutorial" sender:self];
     }
 
@@ -245,6 +244,15 @@ static void * leftContext = &leftContext;
     [self loadActionNames];
     [self setupDynamicShortcuts];
 
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"tutorialShown"] && ![defaults boolForKey:@"firstTimeEver"]) {
+        [self requestAppPermissions];
+    }
+    
 }
 
 - (IBAction)goToSettings:(UIBarButtonItem *)sender

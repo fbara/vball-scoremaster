@@ -28,8 +28,8 @@
 
 - (void)requestPermissions {
     //Use VWWPermissions to request access
-    VWWPhotosPermission *photoPerm = [VWWPhotosPermission permissionWithLabelText:NSLocalizedString(@"You can save your drawings and lists.  We need your permission to save them to your photo library", @"Message box to request permission to save drawings.")];
-    VWWCoreLocationWhenInUsePermission *locPerm = [VWWCoreLocationWhenInUsePermission permissionWithLabelText:NSLocalizedString(@"When using the app, we save your location with the drawings.", @"Message box to request permission to save user location.")];
+    VWWPhotosPermission *photoPerm = [VWWPhotosPermission permissionWithLabelText:NSLocalizedString(@"The app saves screenshots of your score for text messages and posting to social media.", @"Message box to request permission to save drawings.")];
+    VWWCoreLocationWhenInUsePermission *locPerm = [VWWCoreLocationWhenInUsePermission permissionWithLabelText:NSLocalizedString(@"Your location is saved with the screenshots so you can access it later.", @"Message box to request permission to save user location.")];
     NSArray *permissions = @[photoPerm, locPerm];
     __block BOOL isAnalyticsSetup = FALSE;
     
@@ -50,6 +50,7 @@
                                                 //Opt in
                                                 if (!isAnalyticsSetup) {
                                                     [self.defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
+                                                    [self.defaults setBool:TRUE forKey:@"photoPermissions"];
                                                     [self enableGoogleAnalytics:TRUE];
                                                     [self enableLaunchKitAnalytics];
                                                     isAnalyticsSetup = TRUE;
@@ -58,6 +59,8 @@
                                                 //Opt out
                                                 [self enableGoogleAnalytics:FALSE];
                                                 [self.defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
+                                                [self.defaults setBool:FALSE forKey:@"photoPermissions"];
+
                                             }
                                         }
                                         if ([permission.type isEqualToString:@"Location In Use"]) {
