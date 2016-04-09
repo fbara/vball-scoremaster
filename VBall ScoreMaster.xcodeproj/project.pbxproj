@@ -588,7 +588,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"$SRCROOT\"/Scripts/set_build_number_2.sh";
+			shellScript = "#/bin/sh \"$SRCROOT\"/Scripts/set_build_number_2.sh";
 		};
 		ADBFCF551BF27247003B5F3D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -705,6 +705,7 @@
 /* Begin XCBuildConfiguration section */
 		92AA42CF1916C2810037D405 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9982E482587BDC7EC29A9DF9 /* Pods-VBall ScoreMaster.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -749,6 +750,7 @@
 		};
 		92AA42D01916C2810037D405 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBE7CEAB9E6E4D5FC5CC6BB6 /* Pods-VBall ScoreMaster.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -908,6 +910,7 @@
 		};
 		ADFEAFB41941F52500CB5252 /* Distribution */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80877D435E5C00A428BF118A /* Pods-VBall ScoreMaster.distribution.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

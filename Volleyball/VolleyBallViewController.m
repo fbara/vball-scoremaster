@@ -162,7 +162,6 @@ static void * leftContext = &leftContext;
     
     //Setup the AppbotX prompt for Reviews
     if (![ABXPromptView hasHadInteractionForCurrentVersion]) {
-        NSLog(@"\nAppbotX Prompt %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"showPrompt"]);
         if ((([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) == 9) &&
             [[[NSUserDefaults standardUserDefaults] objectForKey:@"showPrompt"]
                 isEqualToString:@"Yes"]) {
