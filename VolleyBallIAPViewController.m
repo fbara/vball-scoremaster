@@ -151,7 +151,7 @@
 
     [self getIAPList];
 
-    [self.refreshControl endRefreshing];
+    [self.refreshControl endRefreshing];    
 	
 }
 
