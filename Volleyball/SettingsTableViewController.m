@@ -655,10 +655,7 @@
     contactPicker.delegate = self;
     contactPicker.editing = false;
     
-//    // Only show a person's phone number and email
-//    NSArray* displayedItems = [NSArray arrayWithObjects:[NSNumber numberWithInt:kABPersonPhoneProperty], [NSNumber numberWithInt:kABPersonEmailProperty], nil];
-//    NSArray *displayItems = @[CNContactNamePrefixKey, CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey];
-//    contactPicker.displayedPropertyKeys = displayItems;
+//    // Only show a contact who has at least 1 phone number
     NSPredicate *enablePredicate = [NSPredicate predicateWithFormat:@"(phoneNumbers.@count > 0)"];
     NSPredicate *contactSelectionPredicate = [NSPredicate predicateWithFormat:@"phoneNumbers.@count == 1"];
     NSArray *propertyKeys = @[CNContactPhoneNumbersKey, CNContactGivenNameKey, CNContactFamilyNameKey];
@@ -681,6 +678,7 @@
     CNLabeledValue *phoneNumberValue = contact.phoneNumbers.firstObject;
     CNPhoneNumber *phoneNumber = phoneNumberValue.value;
     NSString *phoneNumberString = phoneNumber.stringValue;
+    [self setPhoneNumberForMessages:phoneNumberString];
 }
 
 - (void)contactPicker:(CNContactPickerViewController *)picker didSelectContactProperty:(CNContactProperty *)contactProperty {
@@ -689,108 +687,19 @@
     CNPhoneNumber *contactPhone = contactProperty.value;
     NSString *phoneNumber = contactPhone.stringValue;
     
+    [self setPhoneNumberForMessages:phoneNumber];
 }
 
-
+- (void)setPhoneNumberForMessages:(NSString *)phoneNumber {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:phoneNumber forKey:@"phoneNumberForNotification"];
+}
 
 // CNContactPicker - End
 
 - (IBAction)getPhoneNumberFromAddressBook:(id)sender
 {
     [self getPhoneNumber];
-//    ABPeoplePickerNavigationController* picker =
-//        [[ABPeoplePickerNavigationController alloc] init];
-//
-//    picker.peoplePickerDelegate = self;
-//
-//    // Only show a person's phone number and email
-//    NSArray* displayedItems = [NSArray
-//        arrayWithObjects:[NSNumber numberWithInt:kABPersonPhoneProperty],
-//                         [NSNumber numberWithInt:kABPersonEmailProperty], nil];
-//    picker.displayedProperties = displayedItems;
-//
-//    // Show the picker
-//    [self presentViewController:picker animated:YES completion:nil];
-}
-
-//- (void)peoplePickerNavigationControllerDidCancel:
-//            (ABPeoplePickerNavigationController*)peoplePicker
-//{
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
-
-//3-16-16: Don't support iOS 7 anymore, commenting for now
-/*!
- *  New ABPeoplePickerNavigationController for iOS 8 only.
- *  All this will do here is call the iOS7 version.  Keep both around
- *  for compantibility.
- *
- *  @param person The phone number of the person selected from Contacts
- */
-- (void)peoplePickerNavigationController: (ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
-{
-    [self peoplePickerNavigationController:peoplePicker shouldContinueAfterSelectingPerson:person property:property identifier:identifier];
-}
-
-- (void)displayPerson:(ABRecordRef)person targetNumber:(NSString*)selectedNumber
-{
-    NSString* phone = nil;
-
-    ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
-
-    if (ABMultiValueGetCount(phoneNumbers) >= 1) {
-        // If they pick a contact, save that number
-        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:selectedNumber forKey:@"phoneNumberForNotification"];
-    } else {
-        // Contact didn't have a phone number on their contact.  Send alert to tell
-        // user.
-        UIAlertView* alert = [[UIAlertView alloc]
-                initWithTitle:@"Phone Number Error"
-                      message:@"The contact either doesn't have a valid phone "
-                      @"number or the app can't access the phone "
-                      @"number.\nPlease select a different contact."
-                     delegate:nil
-            cancelButtonTitle:@"Ok"
-            otherButtonTitles:nil];
-        [alert show];
-    }
-
-    CFRelease(phoneNumbers);
-}
-
-// Called from iOS 8
-- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
-{
-    if (property == kABPersonPhoneProperty) {
-        ABMultiValueRef numbers = ABRecordCopyValue(person, property);
-        NSString* targetNumber = (__bridge NSString*)ABMultiValueCopyValueAtIndex(
-            numbers, ABMultiValueGetIndexForIdentifier(numbers, identifier));
-
-        // Send the 'person' info to displayPerson to add the phone number to the
-        // text field
-        [self displayPerson:person targetNumber:targetNumber];
-    }
-
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-    return NO;
-}
-
-// Does not allow users to perform default actions such as dialing a phone
-// number, when they select a contact property.
-- (BOOL)personViewController:(ABPersonViewController*)personViewController shouldPerformDefaultActionForPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifierForValue
-{
-    // Gets the phone number the user selected
-    if (property == kABPersonPhoneProperty) {
-        ABMultiValueRef numbers = ABRecordCopyValue(person, property);
-        NSString* targetNumber = (__bridge NSString*)ABMultiValueCopyValueAtIndex(
-            numbers,
-            ABMultiValueGetIndexForIdentifier(numbers, identifierForValue));
-    }
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-    return NO;
 }
 
 - (void)showSupportView
