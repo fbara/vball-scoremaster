@@ -478,7 +478,7 @@
     return [defaults stringForKey:@"analyticsChoice"];
 }
 
-#pragma mark - Notificaion Switchs
+#pragma mark - Notificaion Switches
 
 - (IBAction)notificationTypeSwitch:(UISegmentedControl *)sender
 {

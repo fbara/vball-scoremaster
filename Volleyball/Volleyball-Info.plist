@@ -2,8 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSContactsUsageDescription</key>
-	<string>You can send the score of the game to people you know.  To do so, this app requires permission to access your Contacts.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>This app does not use your motion data.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app does not use your microphone.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>This app does not use bluetooth.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app allows you to save screenshots and send pictures to your friends &amp; family.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Please provide permission for this app to access your calendar.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -19,11 +27,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.6</string>
+	<string>3.7</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>239</string>
+	<string>242</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -31,6 +39,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSContactsUsageDescription</key>
+	<string>You can send the score of the game to people you know.  To do so, this app requires permission to access your Contacts.</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile~ipad</key>
