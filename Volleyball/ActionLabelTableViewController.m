@@ -11,10 +11,14 @@
 #import <GoogleAnalytics/GAITracker.h>
 #import <GoogleAnalytics/GAIFields.h>
 #import <GoogleAnalytics/GAI.h>
-#import <ChameleonFramework/Chameleon.h>
-#import <TSMessages/TSMessageView.h>
-#import <BTBalloon/BTBalloon.h>
-#import <GBVersionTracking/GBVersionTracking.h>
+//#import <ChameleonFramework/Chameleon.h>
+#import "Chameleon.h"
+//#import <TSMessages/TSMessageView.h>
+#import "TSMessageView.h"
+//#import <BTBalloon/BTBalloon.h>
+#import "BTBalloon.h"
+//#import <GBVersionTracking/GBVersionTracking.h>
+#import "GBversionTracking.h"
 
 @interface ActionLabelTableViewController () <UITextFieldDelegate, TSMessageViewProtocol, UIPopoverPresentationControllerDelegate> {
 	BOOL firstTimeShown, rowCanSlide, rowChecked;

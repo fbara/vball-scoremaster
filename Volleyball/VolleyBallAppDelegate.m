@@ -7,14 +7,17 @@
 //
 
 #import "VolleyBallAppDelegate.h"
-#import <GBVersionTracking/GBVersionTracking.h>
+//#import <GBVersionTracking/GBVersionTracking.h>
+#import "GBVersionTracking.h"
 #import <GoogleAnalytics/GAI.h>
 #import <GoogleAnalytics/GAIFields.h>
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
-#import <ChameleonFramework/Chameleon.h>
+#import "Chameleon.h"
+//#import <ChameleonFramework/Chameleon.h>
 #import "VolleyBallIAPHelper.h"
 #import <AppbotX/ABX.h>
-#import <LaunchKit/LaunchKit.h>
+//#import <LaunchKit/LaunchKit.h>
+#import "LaunchKit.h"
 #import "VolleyBallViewController.h"
 //#import "NRWindow.h"
 

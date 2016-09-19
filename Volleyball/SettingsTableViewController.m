@@ -11,7 +11,8 @@
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import "VolleyBallViewController.h"
 #import <AppbotX/ABXFAQsViewController.h>
-#import <ChameleonFramework/Chameleon.h>
+//#import <ChameleonFramework/Chameleon.h>
+#import "Chameleon.h"
 #import <GoogleAnalytics/GAITracker.h>
 #import <GoogleAnalytics/GAI.h>
 #import <GoogleAnalytics/GAIFields.h>
@@ -647,28 +648,76 @@
 
 #pragma mark - People Picker Methods
 
-- (IBAction)getPhoneNumberFromAddressBook:(id)sender
-{
-    ABPeoplePickerNavigationController* picker =
-        [[ABPeoplePickerNavigationController alloc] init];
+//New iOS 9+ using CNContactPicker - Start
 
-    picker.peoplePickerDelegate = self;
+- (void)getPhoneNumber {
+    CNContactPickerViewController *contactPicker = [[CNContactPickerViewController alloc] init];
+    contactPicker.delegate = self;
+    contactPicker.editing = false;
+    
+//    // Only show a person's phone number and email
+//    NSArray* displayedItems = [NSArray arrayWithObjects:[NSNumber numberWithInt:kABPersonPhoneProperty], [NSNumber numberWithInt:kABPersonEmailProperty], nil];
+//    NSArray *displayItems = @[CNContactNamePrefixKey, CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey];
+//    contactPicker.displayedPropertyKeys = displayItems;
+    NSPredicate *enablePredicate = [NSPredicate predicateWithFormat:@"(phoneNumbers.@count > 0)"];
+    NSPredicate *contactSelectionPredicate = [NSPredicate predicateWithFormat:@"phoneNumbers.@count == 1"];
+    NSArray *propertyKeys = @[CNContactPhoneNumbersKey, CNContactGivenNameKey, CNContactFamilyNameKey];
+    
+    contactPicker.displayedPropertyKeys = propertyKeys;
+    contactPicker.predicateForEnablingContact = enablePredicate;
+    contactPicker.predicateForSelectionOfContact = contactSelectionPredicate;
+    
+    //Show picker
+    [self presentViewController:contactPicker animated:true completion:nil];
 
-    // Only show a person's phone number and email
-    NSArray* displayedItems = [NSArray
-        arrayWithObjects:[NSNumber numberWithInt:kABPersonPhoneProperty],
-                         [NSNumber numberWithInt:kABPersonEmailProperty], nil];
-    picker.displayedProperties = displayedItems;
-
-    // Show the picker
-    [self presentViewController:picker animated:YES completion:nil];
 }
 
-- (void)peoplePickerNavigationControllerDidCancel:
-            (ABPeoplePickerNavigationController*)peoplePicker
-{
+- (void)contactPickerDidCancel:(CNContactPickerViewController *)picker {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact {
+    //Called when contact has only 1 phone number listed in contact card.
+    CNLabeledValue *phoneNumberValue = contact.phoneNumbers.firstObject;
+    CNPhoneNumber *phoneNumber = phoneNumberValue.value;
+    NSString *phoneNumberString = phoneNumber.stringValue;
+}
+
+- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContactProperty:(CNContactProperty *)contactProperty {
+    //Called when contact has multiple phone numbers listed in contact card.
+    CNContact *contact = contactProperty.contact;
+    CNPhoneNumber *contactPhone = contactProperty.value;
+    NSString *phoneNumber = contactPhone.stringValue;
+    
+}
+
+
+
+// CNContactPicker - End
+
+- (IBAction)getPhoneNumberFromAddressBook:(id)sender
+{
+    [self getPhoneNumber];
+//    ABPeoplePickerNavigationController* picker =
+//        [[ABPeoplePickerNavigationController alloc] init];
+//
+//    picker.peoplePickerDelegate = self;
+//
+//    // Only show a person's phone number and email
+//    NSArray* displayedItems = [NSArray
+//        arrayWithObjects:[NSNumber numberWithInt:kABPersonPhoneProperty],
+//                         [NSNumber numberWithInt:kABPersonEmailProperty], nil];
+//    picker.displayedProperties = displayedItems;
+//
+//    // Show the picker
+//    [self presentViewController:picker animated:YES completion:nil];
+}
+
+//- (void)peoplePickerNavigationControllerDidCancel:
+//            (ABPeoplePickerNavigationController*)peoplePicker
+//{
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//}
 
 //3-16-16: Don't support iOS 7 anymore, commenting for now
 /*!
@@ -678,20 +727,12 @@
  *
  *  @param person The phone number of the person selected from Contacts
  */
-- (void)peoplePickerNavigationController:
-            (ABPeoplePickerNavigationController*)peoplePicker
-                         didSelectPerson:(ABRecordRef)person
-                                property:(ABPropertyID)property
-                              identifier:(ABMultiValueIdentifier)identifier
+- (void)peoplePickerNavigationController: (ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
 {
-    [self peoplePickerNavigationController:peoplePicker
-        shouldContinueAfterSelectingPerson:person
-                                  property:property
-                                identifier:identifier];
+    [self peoplePickerNavigationController:peoplePicker shouldContinueAfterSelectingPerson:person property:property identifier:identifier];
 }
 
-- (void)displayPerson:(ABRecordRef)person
-         targetNumber:(NSString*)selectedNumber
+- (void)displayPerson:(ABRecordRef)person targetNumber:(NSString*)selectedNumber
 {
     NSString* phone = nil;
 
@@ -719,11 +760,7 @@
 }
 
 // Called from iOS 8
-- (BOOL)peoplePickerNavigationController:
-            (ABPeoplePickerNavigationController*)peoplePicker
-      shouldContinueAfterSelectingPerson:(ABRecordRef)person
-                                property:(ABPropertyID)property
-                              identifier:(ABMultiValueIdentifier)identifier
+- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
 {
     if (property == kABPersonPhoneProperty) {
         ABMultiValueRef numbers = ABRecordCopyValue(person, property);
@@ -742,11 +779,7 @@
 
 // Does not allow users to perform default actions such as dialing a phone
 // number, when they select a contact property.
-- (BOOL)personViewController:(ABPersonViewController*)personViewController
-    shouldPerformDefaultActionForPerson:(ABRecordRef)person
-                               property:(ABPropertyID)property
-                             identifier:
-                                 (ABMultiValueIdentifier)identifierForValue
+- (BOOL)personViewController:(ABPersonViewController*)personViewController shouldPerformDefaultActionForPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifierForValue
 {
     // Gets the phone number the user selected
     if (property == kABPersonPhoneProperty) {

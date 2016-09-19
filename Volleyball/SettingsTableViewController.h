@@ -13,9 +13,11 @@
 @import StoreKit;
 #import "VolleyBallIAPHelper.h"
 #import "FCColorPickerViewController.h"
+#import <Contacts/Contacts.h>
+#import <ContactsUI/ContactsUI.h>
 
 @interface SettingsTableViewController
-    : UITableViewController <UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate,
+    : UITableViewController <UITableViewDelegate, /*ABPeoplePickerNavigationControllerDelegate,*/ CNContactPickerDelegate, CNContactViewControllerDelegate,
                              UITextViewDelegate, UITextFieldDelegate, ActionNameDelegate,
                              SKProductsRequestDelegate, SKPaymentTransactionObserver,FCColorPickerViewControllerDelegate>
 

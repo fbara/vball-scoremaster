@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SESlideTableViewCell/SESlideTableViewCell.h>
+#import "SESlideTableViewCell.h"
+//#import <SESlideTableViewCell/SESlideTableViewCell.h>
+
 
 @protocol ActionNameDelegate <NSObject>
 - (void)actionNameSelected:(NSString*)actionName;

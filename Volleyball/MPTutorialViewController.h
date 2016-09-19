@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MPCoachMarks/MPCoachMarks.h>
+//#import <MPCoachMarks/MPCoachMarks.h>
+#import "MPCoachMarks.h"
 
 @interface MPTutorialViewController : UIViewController <MPCoachMarksViewDelegate>
 

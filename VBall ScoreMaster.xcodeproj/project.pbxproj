@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DC8974CB8708622F8D41488 /* Pods_VBall_ScoreMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A640EE670C67F22B2AFF1F /* Pods_VBall_ScoreMaster.framework */; };
 		9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */; };
 		92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92447968192AD7A10031C1F6 /* MessageUI.framework */; };
 		92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A21916C2800037D405 /* Foundation.framework */; };
@@ -22,7 +23,6 @@
 		92AA42CC1916C2810037D405 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92AA42CA1916C2810037D405 /* InfoPlist.strings */; };
 		92AA42CE1916C2810037D405 /* VolleyballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA42CD1916C2810037D405 /* VolleyballTests.m */; };
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
-		A4E3AD6529226E70123024B3 /* Pods_VBall_ScoreMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99235D913A4E424D683FDAE9 /* Pods_VBall_ScoreMaster.framework */; };
 		AD07812919D0493100E30AE9 /* VolleyBallIAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD07812819D0493100E30AE9 /* VolleyBallIAPViewController.m */; };
 		AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */; };
 		AD082E3619817E5C00A997CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD082E3419817E5C00A997CE /* Main.storyboard */; };
@@ -74,7 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		80877D435E5C00A428BF118A /* Pods-VBall ScoreMaster.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBall ScoreMaster.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster.distribution.xcconfig"; sourceTree = "<group>"; };
+		17C8C2CB49FDC0AAF66D01DE /* Pods-VBall ScoreMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBall ScoreMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster.debug.xcconfig"; sourceTree = "<group>"; };
+		18B82BCC5326521D88E9962C /* Pods-VBall ScoreMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBall ScoreMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster.release.xcconfig"; sourceTree = "<group>"; };
+		39A640EE670C67F22B2AFF1F /* Pods_VBall_ScoreMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VBall_ScoreMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9217E5D11926377700B2E6F1 /* DefaultScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultScoreViewController.h; sourceTree = "<group>"; };
 		9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultScoreViewController.m; sourceTree = "<group>"; };
 		92447968192AD7A10031C1F6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -96,8 +98,7 @@
 		92AA42CB1916C2810037D405 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92AA42CD1916C2810037D405 /* VolleyballTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolleyballTests.m; sourceTree = "<group>"; };
 		92D318FF193E7C0B00F5A942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		99235D913A4E424D683FDAE9 /* Pods_VBall_ScoreMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VBall_ScoreMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9982E482587BDC7EC29A9DF9 /* Pods-VBall ScoreMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBall ScoreMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster.debug.xcconfig"; sourceTree = "<group>"; };
+		A02E4D0CE70E6913D29047F8 /* Pods-VBall ScoreMaster.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBall ScoreMaster.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster.distribution.xcconfig"; sourceTree = "<group>"; };
 		AD07812719D0493100E30AE9 /* VolleyBallIAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolleyBallIAPViewController.h; sourceTree = "<group>"; };
 		AD07812819D0493100E30AE9 /* VolleyBallIAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolleyBallIAPViewController.m; sourceTree = "<group>"; };
 		AD082E31198061AE00A997CE /* TutorialSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialSettingsViewController.h; sourceTree = "<group>"; };
@@ -157,7 +158,6 @@
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
 		ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SupportTableViewController.m; path = Volleyball/SupportTableViewController.m; sourceTree = "<group>"; };
-		FBE7CEAB9E6E4D5FC5CC6BB6 /* Pods-VBall ScoreMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBall ScoreMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +178,7 @@
 				92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */,
 				92AA42A51916C2800037D405 /* CoreGraphics.framework in Frameworks */,
 				92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */,
-				A4E3AD6529226E70123024B3 /* Pods_VBall_ScoreMaster.framework in Frameworks */,
+				5DC8974CB8708622F8D41488 /* Pods_VBall_ScoreMaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,12 +195,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		70F06610FFB8331B7F69811C /* Pods */ = {
+		284FED5E77A78F9F758BEE9F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9982E482587BDC7EC29A9DF9 /* Pods-VBall ScoreMaster.debug.xcconfig */,
-				FBE7CEAB9E6E4D5FC5CC6BB6 /* Pods-VBall ScoreMaster.release.xcconfig */,
-				80877D435E5C00A428BF118A /* Pods-VBall ScoreMaster.distribution.xcconfig */,
+				17C8C2CB49FDC0AAF66D01DE /* Pods-VBall ScoreMaster.debug.xcconfig */,
+				18B82BCC5326521D88E9962C /* Pods-VBall ScoreMaster.release.xcconfig */,
+				A02E4D0CE70E6913D29047F8 /* Pods-VBall ScoreMaster.distribution.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 				92AA42C71916C2810037D405 /* VolleyballTests */,
 				92AA42A11916C2800037D405 /* Frameworks */,
 				92AA42A01916C2800037D405 /* Products */,
-				70F06610FFB8331B7F69811C /* Pods */,
+				284FED5E77A78F9F758BEE9F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -258,7 +258,7 @@
 				92AA42A41916C2800037D405 /* CoreGraphics.framework */,
 				92AA42A61916C2800037D405 /* UIKit.framework */,
 				92AA42C11916C2810037D405 /* XCTest.framework */,
-				99235D913A4E424D683FDAE9 /* Pods_VBall_ScoreMaster.framework */,
+				39A640EE670C67F22B2AFF1F /* Pods_VBall_ScoreMaster.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -404,16 +404,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92AA42D11916C2810037D405 /* Build configuration list for PBXNativeTarget "VBall ScoreMaster" */;
 			buildPhases = (
-				6D7C737318285BC8290F769F /* Check Pods Manifest.lock */,
+				557CE6F1EB9B99BD715ED8FC /* 📦 Check Pods Manifest.lock */,
 				92AA429B1916C2800037D405 /* Sources */,
 				92AA429C1916C2800037D405 /* Frameworks */,
 				92AA429D1916C2800037D405 /* Resources */,
 				ADC716A2196CA6F000360EF4 /* ShellScript */,
 				AD0413E21A3A1C7A00DEFB1F /* ShellScript */,
-				0DC7DAD67049FC68E7E7D61E /* Copy Pods Resources */,
-				15F3DC32EAD61B4582A930F5 /* Embed Pods Frameworks */,
 				ADBFCF551BF27247003B5F3D /* ShellScript */,
 				AD4562121C98BC4D00E72EE5 /* Set Build Number */,
+				0046F68F4402043E12C3FD57 /* 📦 Embed Pods Frameworks */,
+				A0EEC4F01011EC5B9BAF6B09 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -449,7 +449,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = VolleyBall;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "BaraLabs, LLC";
 				TargetAttributes = {
 					92AA429E1916C2800037D405 = {
@@ -518,29 +518,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DC7DAD67049FC68E7E7D61E /* Copy Pods Resources */ = {
+		0046F68F4402043E12C3FD57 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		15F3DC32EAD61B4582A930F5 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,19 +533,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6D7C737318285BC8290F769F /* Check Pods Manifest.lock */ = {
+		557CE6F1EB9B99BD715ED8FC /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A0EEC4F01011EC5B9BAF6B09 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AD0413E21A3A1C7A00DEFB1F /* ShellScript */ = {
@@ -705,7 +705,6 @@
 /* Begin XCBuildConfiguration section */
 		92AA42CF1916C2810037D405 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9982E482587BDC7EC29A9DF9 /* Pods-VBall ScoreMaster.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -717,17 +716,22 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Frank Bara (CF655ESNGC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Frank Bara (CF655ESNGC)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -740,7 +744,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "E7C5FC76-EC0E-474B-9C0B-507BD95751B5";
@@ -750,7 +754,6 @@
 		};
 		92AA42D01916C2810037D405 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBE7CEAB9E6E4D5FC5CC6BB6 /* Pods-VBall ScoreMaster.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -762,23 +765,28 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Frank Bara (CF655ESNGC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Frank Bara (CF655ESNGC)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "E7C5FC76-EC0E-474B-9C0B-507BD95751B5";
 				SDKROOT = iphoneos;
@@ -788,9 +796,9 @@
 		};
 		92AA42D21916C2810037D405 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9982E482587BDC7EC29A9DF9 /* Pods-VBall ScoreMaster.debug.xcconfig */;
+			baseConfigurationReference = 17C8C2CB49FDC0AAF66D01DE /* Pods-VBall ScoreMaster.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
@@ -806,7 +814,7 @@
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
@@ -825,9 +833,9 @@
 		};
 		92AA42D31916C2810037D405 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBE7CEAB9E6E4D5FC5CC6BB6 /* Pods-VBall ScoreMaster.release.xcconfig */;
+			baseConfigurationReference = 18B82BCC5326521D88E9962C /* Pods-VBall ScoreMaster.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
@@ -843,7 +851,7 @@
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
@@ -910,7 +918,6 @@
 		};
 		ADFEAFB41941F52500CB5252 /* Distribution */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80877D435E5C00A428BF118A /* Pods-VBall ScoreMaster.distribution.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -922,23 +929,28 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Frank Bara (CF655ESNGC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Frank Bara (CF655ESNGC)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "E7C5FC76-EC0E-474B-9C0B-507BD95751B5";
 				SDKROOT = iphoneos;
@@ -948,9 +960,9 @@
 		};
 		ADFEAFB51941F52500CB5252 /* Distribution */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80877D435E5C00A428BF118A /* Pods-VBall ScoreMaster.distribution.xcconfig */;
+			baseConfigurationReference = A02E4D0CE70E6913D29047F8 /* Pods-VBall ScoreMaster.distribution.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
@@ -966,7 +978,7 @@
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
