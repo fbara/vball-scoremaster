@@ -45,6 +45,7 @@
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
 		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
 		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
+		AD8A09991D9300BF00B1821A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8A09981D9300BF00B1821A /* Security.framework */; };
 		AD8B6BD01B17416C0048A73C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A61916C2800037D405 /* UIKit.framework */; };
 		AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38319BFB056002CD75E /* IAPHelper.m */; };
 		AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */; };
@@ -132,6 +133,7 @@
 		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AD8A09981D9300BF00B1821A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AD8B6BCF1B173F0E0048A73C /* Volleyball-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volleyball-Prefix.pch"; sourceTree = "<group>"; };
 		AD96E38219BFB056002CD75E /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		AD96E38319BFB056002CD75E /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD8A09991D9300BF00B1821A /* Security.framework in Frameworks */,
 				AD8B6BD01B17416C0048A73C /* UIKit.framework in Frameworks */,
 				AD9A21A9199BDB10009CEE31 /* Accounts.framework in Frameworks */,
 				AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */,
@@ -241,6 +244,7 @@
 		92AA42A11916C2800037D405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD8A09981D9300BF00B1821A /* Security.framework */,
 				AD2239401B0B5E4B00F66ED6 /* libGoogleAnalyticsServices.a */,
 				AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */,
 				AD9A21A8199BDB10009CEE31 /* Accounts.framework */,

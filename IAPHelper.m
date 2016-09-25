@@ -255,46 +255,6 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
         NSString *alertTitle = NSLocalizedString(@"Purchase Error", nil);
         NSString *alertMsg = NSLocalizedString(@"Unable to restore or complete the purchase at this time.", nil);
         
-        if ([UIAlertController class]) {
-            //iOS 8 and newer
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle
-                                                                           message:alertMsg
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
-                                                         style:UIAlertActionStyleCancel
-                                                       handler:^(UIAlertAction *action){
-                                                           [self dismissViewControllerAnimated:YES
-                                                                                    completion:nil];
-                                                       }];
-            [alert addAction:ok];
-            //Need to get a handle to the active VC, otherwise the error msg won't be seen
-            UIViewController *activeVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-            if ([activeVC isKindOfClass:[UINavigationController class]]) {
-                activeVC = [(UINavigationController *)activeVC visibleViewController];
-            }
-            [activeVC presentViewController:alert animated:YES completion:nil];
-            
-        } else {
-            //iOS 7 and older
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle
-                                                            message:alertMsg
-                                                           delegate:nil
-                                                  cancelButtonTitle:NSLocalizedString(@"Ok", nil)
-                                                  otherButtonTitles:nil];
-            [alert show];
-        }
-    }
-}
-
-- (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
-{
-    NSLog(@"Restore failed: %@", error.localizedDescription);
-
-    NSString *alertTitle = NSLocalizedString(error.localizedDescription, nil);
-    NSString *alertMsg = NSLocalizedString(@"Unable to connect to the iTunes store.\n\nPlease try your purchase again later.", nil);
-    
-    if ([UIAlertController class]) {
-        //iOS 8 and newer
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle
                                                                        message:alertMsg
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -305,20 +265,38 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
                                                                                 completion:nil];
                                                    }];
         [alert addAction:ok];
+        //Need to get a handle to the active VC, otherwise the error msg won't be seen
         UIViewController *activeVC = [UIApplication sharedApplication].keyWindow.rootViewController;
         if ([activeVC isKindOfClass:[UINavigationController class]]) {
             activeVC = [(UINavigationController *)activeVC visibleViewController];
         }
         [activeVC presentViewController:alert animated:YES completion:nil];
-    } else {
-    
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle
-                                                        message:alertMsg
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"Ok", nil)
-                                              otherButtonTitles:nil];
-        [alert show];
     }
+}
+
+- (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
+{
+    NSLog(@"Restore failed: %@", error.localizedDescription);
+
+    NSString *alertTitle = NSLocalizedString(error.localizedDescription, nil);
+    NSString *alertMsg = NSLocalizedString(@"Unable to connect to the iTunes store.\n\nPlease try your purchase again later.", nil);
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle
+                                                                   message:alertMsg
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+                                                 style:UIAlertActionStyleCancel
+                                               handler:^(UIAlertAction *action){
+                                                   [self dismissViewControllerAnimated:YES
+                                                                            completion:nil];
+                                               }];
+    [alert addAction:ok];
+    UIViewController *activeVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    if ([activeVC isKindOfClass:[UINavigationController class]]) {
+        activeVC = [(UINavigationController *)activeVC visibleViewController];
+    }
+    [activeVC presentViewController:alert animated:YES completion:nil];
+    
 }
 
 - (void)provideContentForProductIdentifier:(NSString *)productIdentifier
@@ -330,6 +308,42 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
                                                         object:productIdentifier
                                                       userInfo:nil];
 }
+
+#pragma mark - Validate Receipts
+
+- (void)validateReceipt {
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSURL *receiptURL = [mainBundle appStoreReceiptURL];
+    NSError *receiptError;
+    BOOL isPresent = [receiptURL checkResourceIsReachableAndReturnError:&receiptError];
+    if (!isPresent) {
+        //validation failed
+        
+    } else {
+        //valid receipt
+        NSData *receiptData = [NSData dataWithContentsOfURL:receiptURL];
+        // Create a memory buffer to extract the PKCS #7 container
+        BIO *receiptBIO = BIO_new(BIO_s_mem());
+        BIO_write(receiptBIO, [receiptData bytes], (int) [receiptData length]);
+        PKCS7 *receiptPKCS7 = d2i_PKCS7_bio(receiptBIO, NULL);
+        if (!receiptPKCS7) {
+            // Validation fails
+        }
+        
+        // Check that the container has a signature
+        if (!PKCS7_type_is_signed(receiptPKCS7)) {
+            // Validation fails
+        }
+        
+        // Check that the signed container has actual data
+        if (!PKCS7_type_is_data(receiptPKCS7->d.sign->contents)) {
+            // Validation fails
+        }
+    }
+}
+
+
+
 
 @end
 
