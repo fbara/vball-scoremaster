@@ -1,10 +1,10 @@
-
+//
 //  VolleyBallViewController.m
 //  Volleyball
 //
 //  Created by AppleAir on 5/4/14.
 //  Copyright (c) 2014 BaraLabs, LLC. All rights reserved.
-//
+
 
 #import "VolleyBallViewController.h"
 #import "DefaultScoreViewController.h"
@@ -1023,10 +1023,10 @@ static void * leftContext = &leftContext;
     // Iterates thru every view on the screen, capturing and assemblying them to
     // form an image
     CGSize imageSize = [[UIScreen mainScreen] bounds].size;
-    if (NULL != &UIGraphicsBeginImageContextWithOptions)
+    if (NULL != &UIGraphicsBeginImageContextWithOptions){
         UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
-    else
-        UIGraphicsBeginImageContext(imageSize);
+    } else {
+        UIGraphicsBeginImageContext(imageSize);}
 
     CGContextRef context = UIGraphicsGetCurrentContext();
 

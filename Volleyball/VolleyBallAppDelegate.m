@@ -31,8 +31,11 @@
 - (BOOL)application:(UIApplication*)application
     didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+    //Enable network diagnostic logs
+    //setenv("CFNETWORK_DIAGNOSTICS", "3", 1);
+    
     // Override point for customization after application launch.
-	//[[UIApplication sharedApplication] setStatusBarHidden:FALSE withAnimation:UIStatusBarAnimationNone];
+    //[[UIApplication sharedApplication] setStatusBarHidden:FALSE withAnimation:UIStatusBarAnimationNone];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     // Needed to instantiate the version tracking
@@ -59,8 +62,8 @@
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
     [GAI sharedInstance].dispatchInterval = 120;
 //TODO: Enable Google Analytics
-//    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
+    //    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
 	tracker.allowIDFACollection = NO;
 	
 	if ([GBVersionTracking isFirstLaunchEver]) {
