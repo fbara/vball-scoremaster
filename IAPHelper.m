@@ -160,6 +160,11 @@ NSString *const IAPHelperProductPurchaseNotification = @"IAPHelperProductPurchas
 
 }
 
+- (BOOL)paymentQueue:(SKPaymentQueue *)queue shouldAddStorePayment:(SKPayment *)payment forProduct:(SKProduct *)product
+{
+    return true;
+}
+
 - (void)failedTransaction:(SKPaymentTransaction *)transaction
 {
     NSLog(@"\nFailed transaction: %@", transaction.error.localizedDescription);
