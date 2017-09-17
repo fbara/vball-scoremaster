@@ -164,15 +164,18 @@ static void * leftContext = &leftContext;
     
     //Setup the AppbotX prompt for Reviews
     if (![ABXPromptView hasHadInteractionForCurrentVersion]) {
-        if ((([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) == 9) &&
+        if ((([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) >= 5) &&
             [[[NSUserDefaults standardUserDefaults] objectForKey:@"showPrompt"]
                 isEqualToString:@"Yes"]) {
             // Show the Prompt view on the 10th time the user has launched the app
-            self.promptView = [[ABXPromptView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
-            self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
-            self.promptView.backgroundColor = FlatYellow;
-            self.promptView.delegate = self;
-            [self.view addSubview:self.promptView];
+//            self.promptView = [[ABXPromptView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
+//            self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+//            self.promptView.backgroundColor = FlatYellow;
+//            self.promptView.delegate = self;
+//            [self.view addSubview:self.promptView];
+
+            //Show new Apple review request prompt
+            [SKStoreReviewController requestReview];
             [[NSUserDefaults standardUserDefaults] setObject:@"No" forKey:@"showPrompt"];
         }
     }
@@ -1005,7 +1008,21 @@ static void * leftContext = &leftContext;
         [self initializeHomeScore:0 fontSize:118];
         [self initializeVisitorScore:0 fontSize:118];
     }
-
+    
+//    // Count how many times the user has started a new match so I can show the Apple Review prompt
+//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+//    if ([[defaults integerForKey:@"newMatchCount"] ) {
+//        <#statements#>
+//    } else {
+//        <#statements#>
+//    }
+//    
+//    if ([[defaults stringForKey:@"newMatchCount"] isEqualToString:@"On"]) {
+//        self.mainPageTwitterButton.enabled = TRUE;
+//    } else {
+//        self.mainPageTwitterButton.enabled = FALSE;
+//    }
+//    
     [self resetGameAndNames];
     [self initializePastGames];
 }
