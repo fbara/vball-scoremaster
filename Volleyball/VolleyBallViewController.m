@@ -798,7 +798,8 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+                [self.homeGame1 setFont:[UIFont fontWithName:@"Avenir Next" size:30]];
+                //[self.homeGame1 setFont:[UIFont boldSystemFontOfSize:20]];
             }
 
         } else if (currHomeScore < currVisitorScore) {

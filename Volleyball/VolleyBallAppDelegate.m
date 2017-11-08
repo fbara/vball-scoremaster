@@ -179,7 +179,7 @@
     if (IS_IPAD()) {
         storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
     } else {
-        storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     }
     
     VolleyBallViewController *vb = (VolleyBallViewController *)navController.topViewController;

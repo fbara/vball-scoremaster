@@ -39,6 +39,7 @@
 		AD3621411BE553CA00666846 /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = AD3621401BE553CA00666846 /* TSMessagesDefaultDesign.json */; };
 		AD4B54C0199A40D500770580 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B54BF199A40D500770580 /* Social.framework */; };
 		AD6657E61CABFD9200F5ABF0 /* NotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6657E51CABFD9200F5ABF0 /* NotificationsTableViewController.m */; };
+		AD6D95681F8FE19100C24AFB /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD6D95671F8FE19100C24AFB /* Storyboard.storyboard */; };
 		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
 		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
 		AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */; };
@@ -58,6 +59,7 @@
 		ADCFF8B01AB5D6D000AB9CB0 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */; };
 		ADDB11DF1BE662D5007D0411 /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */; };
 		ADDE1A781BF0D0F600356E4A /* MPTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDE1A771BF0D0F600356E4A /* MPTutorialViewController.m */; };
+		ADE5679C1F7436A20016BA21 /* NewMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE5679B1F7436A20016BA21 /* NewMain.storyboard */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */; };
@@ -126,6 +128,7 @@
 		AD4B54BF199A40D500770580 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AD6657E41CABFD9200F5ABF0 /* NotificationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsTableViewController.h; sourceTree = "<group>"; };
 		AD6657E51CABFD9200F5ABF0 /* NotificationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsTableViewController.m; sourceTree = "<group>"; };
+		AD6D95671F8FE19100C24AFB /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -154,6 +157,7 @@
 		ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCoachMarksView.m; sourceTree = "<group>"; };
 		ADDE1A761BF0D0F600356E4A /* MPTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTutorialViewController.h; path = Volleyball/MPTutorialViewController.h; sourceTree = "<group>"; };
 		ADDE1A771BF0D0F600356E4A /* MPTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPTutorialViewController.m; path = Volleyball/MPTutorialViewController.m; sourceTree = "<group>"; };
+		ADE5679B1F7436A20016BA21 /* NewMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewMain.storyboard; sourceTree = "<group>"; };
 		ADEB992E1986ECB70009B3F5 /* ActionNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ActionNames.plist; sourceTree = "<group>"; };
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
@@ -266,8 +270,10 @@
 		92AA42A81916C2800037D405 /* Volleyball */ = {
 			isa = PBXGroup;
 			children = (
+				AD6D95671F8FE19100C24AFB /* Storyboard.storyboard */,
 				92AA42B71916C2810037D405 /* VolleyBallViewController.h */,
 				92AA42B81916C2810037D405 /* VolleyBallViewController.m */,
+				ADE5679B1F7436A20016BA21 /* NewMain.storyboard */,
 				AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */,
 				AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */,
 				AD1C816B195C43A30028179B /* SettingsTableViewController.h */,
@@ -495,7 +501,9 @@
 				AD3621411BE553CA00666846 /* TSMessagesDefaultDesign.json in Resources */,
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */,
+				AD6D95681F8FE19100C24AFB /* Storyboard.storyboard in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
+				ADE5679C1F7436A20016BA21 /* NewMain.storyboard in Resources */,
 				ADB5A13219D30372009B1550 /* NRTouchImage.png in Resources */,
 				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
 				AD0D059B1A7198F200B5FC00 /* colormap.png in Resources */,
@@ -524,9 +532,38 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AppbotX/AppbotX.framework",
+				"${BUILT_PRODUCTS_DIR}/BTBalloon/BTBalloon.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/DeviceUtil/DeviceUtil.framework",
+				"${BUILT_PRODUCTS_DIR}/GBVersionTracking/GBVersionTracking.framework",
+				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
+				"${BUILT_PRODUCTS_DIR}/LaunchKit/LaunchKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MPCoachMarks/MPCoachMarks.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/SESlideTableViewCell/SESlideTableViewCell.framework",
+				"${BUILT_PRODUCTS_DIR}/TSMessages/TSMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/VTAcknowledgementsViewController/VTAcknowledgementsViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/VWWPermissionKit/VWWPermissionKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppbotX.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BTBalloon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceUtil.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GBVersionTracking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LaunchKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MPCoachMarks.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SESlideTableViewCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TSMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VTAcknowledgementsViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VWWPermissionKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -539,13 +576,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VBall ScoreMaster-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A0EEC4F01011EC5B9BAF6B09 /* [CP] Copy Pods Resources */ = {
@@ -750,7 +790,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "E7C5FC76-EC0E-474B-9C0B-507BD95751B5";
@@ -798,7 +838,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "E7C5FC76-EC0E-474B-9C0B-507BD95751B5";
 				SDKROOT = iphoneos11.0;
@@ -826,7 +866,7 @@
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
@@ -863,7 +903,7 @@
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
@@ -968,7 +1008,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "E7C5FC76-EC0E-474B-9C0B-507BD95751B5";
 				SDKROOT = iphoneos11.0;
@@ -996,7 +1036,7 @@
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
