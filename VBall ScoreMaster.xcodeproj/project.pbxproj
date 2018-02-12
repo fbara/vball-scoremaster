@@ -455,7 +455,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = VolleyBall;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "BaraLabs, LLC";
 				TargetAttributes = {
 					92AA429E1916C2800037D405 = {
@@ -794,7 +794,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "E7C5FC76-EC0E-474B-9C0B-507BD95751B5";
-				SDKROOT = iphoneos11.0;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -841,7 +841,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "E7C5FC76-EC0E-474B-9C0B-507BD95751B5";
-				SDKROOT = iphoneos11.0;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1011,7 +1011,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "E7C5FC76-EC0E-474B-9C0B-507BD95751B5";
-				SDKROOT = iphoneos11.0;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Distribution;
