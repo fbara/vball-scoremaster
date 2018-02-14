@@ -1,0 +1,71 @@
+PODS:
+  - AppbotX (1.1.2)
+  - BTBalloon (0.1.2):
+    - PureLayout (~> 2.0.6)
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
+  - DeviceUtil (2.1.2)
+  - GBVersionTracking (1.3.2)
+  - Google-Mobile-Ads-SDK (7.28.0)
+  - GoogleAnalytics (3.17.0)
+  - HexColors (2.2.1)
+  - LaunchKit (2.1.4):
+    - LaunchKit/LaunchKit (= 2.1.4)
+  - LaunchKit/LaunchKit (2.1.4)
+  - MBProgressHUD (1.1.0)
+  - MPCoachMarks (0.0.12)
+  - PureLayout (2.0.6)
+  - SESlideTableViewCell (0.7.1)
+  - TSMessages (0.9.12):
+    - HexColors (~> 2.2.0)
+  - VTAcknowledgementsViewController (1.4)
+  - VWWPermissionKit (1.3.0)
+
+DEPENDENCIES:
+  - AppbotX (from `https://github.com/appbotx/appbotx.git`)
+  - BTBalloon
+  - ChameleonFramework
+  - DeviceUtil
+  - GBVersionTracking
+  - Google-Mobile-Ads-SDK
+  - GoogleAnalytics
+  - HexColors
+  - LaunchKit
+  - MBProgressHUD (~> 1.1)
+  - MPCoachMarks
+  - SESlideTableViewCell
+  - TSMessages
+  - VTAcknowledgementsViewController
+  - VWWPermissionKit (~> 1.3.0)
+
+EXTERNAL SOURCES:
+  AppbotX:
+    :git: https://github.com/appbotx/appbotx.git
+
+CHECKOUT OPTIONS:
+  AppbotX:
+    :commit: 285d2623d867c90dfa03a7d4d0093b0070a106cc
+    :git: https://github.com/appbotx/appbotx.git
+
+SPEC CHECKSUMS:
+  AppbotX: 6478b94b694e516fb9ee8c0acd8ba48d6bf6d6b3
+  BTBalloon: d38bbf4f6ee29ebad7b983653a927e874dfe1f7f
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  DeviceUtil: 8a0334404594ba8e3f7fa01caf48cc95b0427333
+  GBVersionTracking: c9b5eb256a234e01b5b44731fda86a3488760c49
+  Google-Mobile-Ads-SDK: 7f9bc0011df363ae5616449de3682a14c4701612
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  HexColors: abfd172e329dab59888614ccba6f216cec59289d
+  LaunchKit: 95ad4fb171a0f8ea1c80aa26d4fb7bd637788f9c
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MPCoachMarks: a957aad7e54d0eec7cda88ae2cf7dc9f10f7a96c
+  PureLayout: f25f0bb904d5ccfe6e31da3cb869185259f02e0d
+  SESlideTableViewCell: 459c3ce79b760e8bc015dd83ca84196bd70c11ed
+  TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
+  VTAcknowledgementsViewController: d62bb400ca68e240680906bcfa2a2b380d39b30f
+  VWWPermissionKit: 102e84bbd358cf909f46eb2120d1c698d0e0c3af
+
+PODFILE CHECKSUM: 61920a121b88a09079e20c5ef01fe837d716bec7
+
+COCOAPODS: 1.4.0
