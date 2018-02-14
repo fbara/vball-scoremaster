@@ -46,6 +46,7 @@
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
 		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
 		AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F7198EFC0800C03C2E /* libz.dylib */; };
+		AD87E6CB203405E100BF9D2A /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD87E6CA203405E000BF9D2A /* Storyboard.storyboard */; };
 		AD8B6BD01B17416C0048A73C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A61916C2800037D405 /* UIKit.framework */; };
 		AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38319BFB056002CD75E /* IAPHelper.m */; };
 		AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD96E38919BFB5F7002CD75E /* VolleyBallIAPHelper.m */; };
@@ -135,6 +136,7 @@
 		AD80C7F3198EFBD200C03C2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD80C7F7198EFC0800C03C2E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AD87E6CA203405E000BF9D2A /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		AD8B6BCF1B173F0E0048A73C /* Volleyball-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volleyball-Prefix.pch"; sourceTree = "<group>"; };
 		AD96E38219BFB056002CD75E /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		AD96E38319BFB056002CD75E /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				92AA42B71916C2810037D405 /* VolleyBallViewController.h */,
 				92AA42B81916C2810037D405 /* VolleyBallViewController.m */,
 				ADE5679B1F7436A20016BA21 /* NewMain.storyboard */,
+				AD87E6CA203405E000BF9D2A /* Storyboard.storyboard */,
 				AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */,
 				AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */,
 				AD1C816B195C43A30028179B /* SettingsTableViewController.h */,
@@ -502,6 +505,7 @@
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */,
 				AD6D95681F8FE19100C24AFB /* Storyboard.storyboard in Resources */,
+				AD87E6CB203405E100BF9D2A /* Storyboard.storyboard in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
 				ADE5679C1F7436A20016BA21 /* NewMain.storyboard in Resources */,
 				ADB5A13219D30372009B1550 /* NRTouchImage.png in Resources */,
@@ -866,7 +870,7 @@
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
@@ -903,7 +907,7 @@
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
@@ -1036,7 +1040,7 @@
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
