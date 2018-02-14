@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5DC8974CB8708622F8D41488 /* Pods_VBall_ScoreMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A640EE670C67F22B2AFF1F /* Pods_VBall_ScoreMaster.framework */; };
+		76095DB1B0D005A2226171DC /* libPods-VBall ScoreMaster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7A540A0B24FE594C0F5F16 /* libPods-VBall ScoreMaster.a */; };
 		9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */; };
 		92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92447968192AD7A10031C1F6 /* MessageUI.framework */; };
 		92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA42A21916C2800037D405 /* Foundation.framework */; };
@@ -79,7 +79,6 @@
 /* Begin PBXFileReference section */
 		17C8C2CB49FDC0AAF66D01DE /* Pods-VBall ScoreMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBall ScoreMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		18B82BCC5326521D88E9962C /* Pods-VBall ScoreMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBall ScoreMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster.release.xcconfig"; sourceTree = "<group>"; };
-		39A640EE670C67F22B2AFF1F /* Pods_VBall_ScoreMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VBall_ScoreMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9217E5D11926377700B2E6F1 /* DefaultScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultScoreViewController.h; sourceTree = "<group>"; };
 		9217E5D21926377700B2E6F1 /* DefaultScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultScoreViewController.m; sourceTree = "<group>"; };
 		92447968192AD7A10031C1F6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -164,6 +163,7 @@
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
 		ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SupportTableViewController.m; path = Volleyball/SupportTableViewController.m; sourceTree = "<group>"; };
+		FB7A540A0B24FE594C0F5F16 /* libPods-VBall ScoreMaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VBall ScoreMaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +184,7 @@
 				92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */,
 				92AA42A51916C2800037D405 /* CoreGraphics.framework in Frameworks */,
 				92AA42A31916C2800037D405 /* Foundation.framework in Frameworks */,
-				5DC8974CB8708622F8D41488 /* Pods_VBall_ScoreMaster.framework in Frameworks */,
+				76095DB1B0D005A2226171DC /* libPods-VBall ScoreMaster.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +264,7 @@
 				92AA42A41916C2800037D405 /* CoreGraphics.framework */,
 				92AA42A61916C2800037D405 /* UIKit.framework */,
 				92AA42C11916C2810037D405 /* XCTest.framework */,
-				39A640EE670C67F22B2AFF1F /* Pods_VBall_ScoreMaster.framework */,
+				FB7A540A0B24FE594C0F5F16 /* libPods-VBall ScoreMaster.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -598,9 +598,90 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-resources.sh",
+				"${PODS_ROOT}/AppbotX/Classes/AppbotX.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/BTBalloon/BTBalloon.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/DeviceUtil/DeviceUtil.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/LaunchKit/LaunchKitResources.bundle",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-down.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-down@2x.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-down@3x.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-left.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-left@2x.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-left@3x.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-right.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-right@2x.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-right@3x.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-top-left.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-top-left@2x.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-top-left@3x.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-top.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-top@2x.png",
+				"${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-top@3x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundError.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundError@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundErrorIcon.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundErrorIcon@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundMessage.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundMessage@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundSuccess.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundSuccess@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundSuccessIcon.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundSuccessIcon@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundWarning.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundWarning@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundWarningIcon.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationBackgroundWarningIcon@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationButtonBackground.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/NotificationButtonBackground@2x.png",
+				"${PODS_ROOT}/TSMessages/Pod/Assets/TSMessagesDefaultDesign.json",
+				"${PODS_ROOT}/VTAcknowledgementsViewController/VTAcknowledgementsViewController.bundle",
+				"${PODS_ROOT}/VWWPermissionKit/VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionsViewController.xib",
+				"${PODS_ROOT}/VWWPermissionKit/VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionTableViewCell.xib",
+				"${PODS_ROOT}/VWWPermissionKit/VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionTitleTableViewCell.xib",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppbotX.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BTBalloon.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DeviceUtil.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LaunchKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-down.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-down@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-down@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-left.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-left@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-left@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-right.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-right@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-right@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-top-left.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-top-left@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-top-left@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-top.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-top@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow-top@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundError.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundError@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundErrorIcon.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundErrorIcon@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundMessage.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundMessage@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundSuccess.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundSuccess@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundSuccessIcon.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundSuccessIcon@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundWarning.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundWarning@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundWarningIcon.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationBackgroundWarningIcon@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationButtonBackground.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NotificationButtonBackground@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TSMessagesDefaultDesign.json",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/VTAcknowledgementsViewController.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/VWWPermissionsViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/VWWPermissionTableViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/VWWPermissionTitleTableViewCell.nib",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

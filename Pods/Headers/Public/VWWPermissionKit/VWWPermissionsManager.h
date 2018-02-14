@@ -1,0 +1,1 @@
+../../../VWWPermissionKit/VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionsManager.h

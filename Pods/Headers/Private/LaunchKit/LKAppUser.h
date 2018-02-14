@@ -1,0 +1,1 @@
+../../../LaunchKit/LaunchKit/Classes/Analytics/LKAppUser.h
