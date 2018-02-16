@@ -42,7 +42,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app allows you to save screenshots and send pictures to your friends &amp; family.</string>
 	<key>UILaunchStoryboardName</key>
-	<string>Main</string>
+	<string>Storyboard</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Storyboard</string>
 	<key>UIMainStoryboardFile~ipad</key>
