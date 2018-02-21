@@ -188,7 +188,7 @@
         [self.colorSettings setSelectedSegmentIndex:2];
     }
 
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
         self.twitterSwitch.enabled = TRUE;
         self.twitterCellLabel.text = @"Send with Twitter?";
         self.facebookCellLabel.text = @"Send with Facebook?";
@@ -206,13 +206,13 @@
         } else {
             [self.facebookSwitch setSelectedSegmentIndex:1];
         }
-    } else {
-        // User has not made purchase so disable social switches
-        self.twitterCellLabel.text = @"Twitter available with purchase";
-        self.facebookCellLabel.text = @"Facebook available with purchase";
-        self.twitterSwitch.enabled = FALSE;
-        self.facebookSwitch.enabled = FALSE;
-    }
+//    } else {
+//        // User has not made purchase so disable social switches
+//        self.twitterCellLabel.text = @"Twitter available with purchase";
+//        self.facebookCellLabel.text = @"Facebook available with purchase";
+//        self.twitterSwitch.enabled = FALSE;
+//        self.facebookSwitch.enabled = FALSE;
+//    }
     
 }
 
@@ -585,29 +585,31 @@
 
 - (IBAction)sendWithTwitter:(UISegmentedControl*)sender
 {
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
-    VolleyBallViewController* volleyVC = [[VolleyBallViewController alloc] init];
-
-    // Save the segmented value
-    switch (selectedSegmentIndex) {
-    case 0:
-        // Send Twitter messages
-        {
-            [defaults setObject:@"On" forKey:@"enableTwitter"];
-            volleyVC.mainPageTwitterButton.enabled = TRUE;
-        }
-        break;
-    case 1:
-        // Don't send Twitter messages
-        {
-            [defaults setObject:@"Off" forKey:@"enableTwitter"];
-            volleyVC.mainPageTwitterButton.enabled = FALSE;
-        }
-    default:
-        break;
-    }
-    [self saveUserDefaults];
+    //TODO: Change for 3.8
+    
+//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+//    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
+//    VolleyBallViewController* volleyVC = [[VolleyBallViewController alloc] init];
+//
+//    // Save the segmented value
+//    switch (selectedSegmentIndex) {
+//    case 0:
+//        // Send Twitter messages
+//        {
+//            [defaults setObject:@"On" forKey:@"enableTwitter"];
+//            volleyVC.mainPageTwitterButton.enabled = TRUE;
+//        }
+//        break;
+//    case 1:
+//        // Don't send Twitter messages
+//        {
+//            [defaults setObject:@"Off" forKey:@"enableTwitter"];
+//            volleyVC.mainPageTwitterButton.enabled = FALSE;
+//        }
+//    default:
+//        break;
+//    }
+//    [self saveUserDefaults];
 }
 
 - (IBAction)sendWithFacebook:(UISegmentedControl*)sender
