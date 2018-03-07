@@ -900,15 +900,15 @@
                                                     <rect key="frame" x="20" y="2" width="335" height="39.666666666666664"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-dK-ACP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="112.66666666666667" height="39.666666666666664"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="118" height="39.666666666666664"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nhw-LY-Eu1" userLabel="Stack View Number">
-                                                            <rect key="frame" x="120.66666666666664" y="0.0" width="214.33333333333337" height="39.666666666666664"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Nhw-LY-Eu1" userLabel="Stack View Number">
+                                                            <rect key="frame" x="126" y="0.0" width="209" height="39.666666666666664"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFP-xW-h2H" userLabel="Address Book Button">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="22" height="39.666666666666664"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFP-xW-h2H" userLabel="Address Book Button">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="39.666666666666664"/>
                                                                     <accessibility key="accessibilityConfiguration" hint="Access contact list to choose a contact to send text messages." label="Access contact list"/>
                                                                     <state key="normal">
                                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -917,8 +917,8 @@
                                                                         <action selector="getPhoneNumberFromAddressBook:" destination="JoG-uN-Xre" eventType="touchUpInside" id="Dzd-0Z-3Bm"/>
                                                                     </connections>
                                                                 </button>
-                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(optional)" textAlignment="center" minimumFontSize="8" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CH8-S5-jc8">
-                                                                    <rect key="frame" x="30" y="0.0" width="184.33333333333334" height="39.666666666666664"/>
+                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(optional)" textAlignment="center" minimumFontSize="8" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CH8-S5-jc8">
+                                                                    <rect key="frame" x="44" y="0.0" width="165" height="39.666666666666664"/>
                                                                     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <accessibility key="accessibilityConfiguration" hint="Who should be sent the text message." label="Notification phone number"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
@@ -944,7 +944,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="action names" footerTitle="These can be included in all Player messages" id="xIz-3d-pId">
+                            <tableViewSection headerTitle="action names" footerTitle="These can be included in all player messages" id="xIz-3d-pId">
                                 <cells>
                                     <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J4e-OQ-jDI" userLabel="Table View Cell - Left action name">
                                         <rect key="frame" x="0.0" y="466.66666666666669" width="375" height="44"/>
@@ -953,21 +953,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Not Selected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8Nb-0K-3R7" userLabel="Label - First selected Action">
-                                                    <rect key="frame" x="388" y="10" width="127" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <accessibility key="accessibilityConfiguration" hint="Player action being tracked." label="Left-side Action name"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Left side Action Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2s-UN-oRu">
-                                                    <rect key="frame" x="8" y="2" width="267" height="41"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HBP-bB-GjN">
+                                                    <rect key="frame" x="20" y="2" width="321" height="39.666666666666664"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Action" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="g2s-UN-oRu">
+                                                            <rect key="frame" x="0.0" y="-1" width="161" height="40"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8Nb-0K-3R7" userLabel="Label - First selected Action">
+                                                            <rect key="frame" x="161" y="-1" width="160" height="40"/>
+                                                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="Player action being tracked." label="Left-side Action name"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HBP-bB-GjN" firstAttribute="top" secondItem="FlS-Sr-d5G" secondAttribute="top" constant="2" id="NII-cB-GFo"/>
+                                                <constraint firstAttribute="trailing" secondItem="HBP-bB-GjN" secondAttribute="trailing" id="ZP6-Nx-roV"/>
+                                                <constraint firstAttribute="bottom" secondItem="HBP-bB-GjN" secondAttribute="bottom" constant="2" id="alt-6t-GEl"/>
+                                                <constraint firstItem="HBP-bB-GjN" firstAttribute="leading" secondItem="FlS-Sr-d5G" secondAttribute="leading" constant="20" symbolic="YES" id="lXM-Cv-gXC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <viewLayoutGuide key="safeArea" id="rPC-kJ-2Jc"/>
                                     </tableViewCell>
@@ -978,21 +987,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Right side Action name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikm-us-vX0">
-                                                    <rect key="frame" x="8" y="0.0" width="267" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Not Selected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="v4s-lv-LRm" userLabel="Label - Second selected Action">
-                                                    <rect key="frame" x="388" y="10" width="127" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <accessibility key="accessibilityConfiguration" hint="Player action being tracked." label="Right-side Action name"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qcY-hy-r0D">
+                                                    <rect key="frame" x="20" y="2" width="321" height="39.666666666666664"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom Action" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ikm-us-vX0">
+                                                            <rect key="frame" x="0.0" y="0.0" width="161" height="40"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="v4s-lv-LRm" userLabel="Label - Second selected Action">
+                                                            <rect key="frame" x="161" y="0.0" width="160" height="39"/>
+                                                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="Player action being tracked." label="Right-side Action name"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="qcY-hy-r0D" secondAttribute="trailing" id="OHp-DA-O1z"/>
+                                                <constraint firstAttribute="bottom" secondItem="qcY-hy-r0D" secondAttribute="bottom" constant="2" id="QY5-Wb-flL"/>
+                                                <constraint firstItem="qcY-hy-r0D" firstAttribute="leading" secondItem="c7A-GY-0Su" secondAttribute="leading" constant="20" symbolic="YES" id="Qqg-ie-8QS"/>
+                                                <constraint firstItem="qcY-hy-r0D" firstAttribute="top" secondItem="c7A-GY-0Su" secondAttribute="top" constant="2" id="ZVy-2o-F3O"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <viewLayoutGuide key="safeArea" id="p89-bb-LjP"/>
                                     </tableViewCell>
