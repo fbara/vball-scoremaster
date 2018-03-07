@@ -944,7 +944,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="action names" footerTitle="These can be included in all player messages" id="xIz-3d-pId">
+                            <tableViewSection headerTitle="Action Names" footerTitle="These can be included in all player messages" id="xIz-3d-pId">
                                 <cells>
                                     <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J4e-OQ-jDI" userLabel="Table View Cell - Left action name">
                                         <rect key="frame" x="0.0" y="466.66666666666669" width="375" height="44"/>
@@ -1016,7 +1016,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Analytics" footerTitle="You may change this setting at any time" id="0QR-Ch-Txb">
+                            <tableViewSection headerTitle="Analytics" footerTitle="Can be changed at any time" id="0QR-Ch-Txb">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0ez-mJ-3n6" userLabel="Table View Cell - Bottom action name">
                                         <rect key="frame" x="0.0" y="630.00000000000011" width="375" height="44"/>
@@ -1025,24 +1025,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send analytics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fj-bS-bnD">
-                                                    <rect key="frame" x="8" y="2" width="267" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="rnr-Qi-g1k">
-                                                    <rect key="frame" x="342" y="7" width="218" height="29"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <segments>
-                                                        <segment title="Opt out"/>
-                                                        <segment title="Opt in"/>
-                                                    </segments>
-                                                    <connections>
-                                                        <action selector="sendAnalytics:" destination="JoG-uN-Xre" eventType="valueChanged" id="hWH-sZ-Ypm"/>
-                                                    </connections>
-                                                </segmentedControl>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kEK-J3-U8b">
+                                                    <rect key="frame" x="20" y="2" width="335" height="39.666666666666664"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send analytics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fj-bS-bnD">
+                                                            <rect key="frame" x="0.0" y="0.0" width="168" height="40"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="rnr-Qi-g1k">
+                                                            <rect key="frame" x="167.66666666666663" y="0.0" width="167.33333333333337" height="40.666666666666664"/>
+                                                            <segments>
+                                                                <segment title="Opt out"/>
+                                                                <segment title="Opt in"/>
+                                                            </segments>
+                                                            <connections>
+                                                                <action selector="sendAnalytics:" destination="JoG-uN-Xre" eventType="valueChanged" id="hWH-sZ-Ypm"/>
+                                                            </connections>
+                                                        </segmentedControl>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="kEK-J3-U8b" secondAttribute="trailing" constant="20" symbolic="YES" id="JU2-nT-wM3"/>
+                                                <constraint firstAttribute="bottom" secondItem="kEK-J3-U8b" secondAttribute="bottom" constant="2" id="S3H-Qe-coW"/>
+                                                <constraint firstItem="kEK-J3-U8b" firstAttribute="leading" secondItem="liE-gc-JR2" secondAttribute="leading" constant="20" symbolic="YES" id="UnW-OX-9bW"/>
+                                                <constraint firstItem="kEK-J3-U8b" firstAttribute="top" secondItem="liE-gc-JR2" secondAttribute="top" constant="2" id="q2e-pb-35I"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <viewLayoutGuide key="safeArea" id="TX7-N2-T7V"/>
                                     </tableViewCell>
