@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,127 +25,184 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Hg-IB-HjC" userLabel="EntireScreenStackView">
-                                <rect key="frame" x="0.0" y="88.666666666666686" width="379" height="689.33333333333326"/>
+                                <rect key="frame" x="0.0" y="88" width="0.0" height="690"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLo-p3-lg9" userLabel="Team Names Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="379" height="103.33333333333333"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bhl-rk-o7Z" userLabel="PastScoresStackView">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="538"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Visitors" textAlignment="center" minimumFontSize="9" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5RV-qU-8O0">
-                                                <rect key="frame" x="0.0" y="0.0" width="185.66666666666666" height="103.33333333333333"/>
-                                                <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <accessibility key="accessibilityConfiguration" hint="User enters the name of the visiting team." label="Text entry"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="vAs-p3-pKY"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Home" textAlignment="center" minimumFontSize="9" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bVh-Lg-pLh">
-                                                <rect key="frame" x="191.66666666666663" y="0.0" width="185.33333333333337" height="103.33333333333333"/>
-                                                <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <accessibility key="accessibilityConfiguration" hint="User enters the name of the home team." label="Text entry"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="PE5-TZ-WPG"/>
-                                                </connections>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bhl-rk-o7Z" userLabel="PastScoresStackView">
-                                        <rect key="frame" x="0.0" y="111.33333333333331" width="379" height="164"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="p7P-MJ-Moe" userLabel="VisitPastScoresStackView">
-                                                <rect key="frame" x="0.0" y="0.0" width="185.66666666666666" height="164"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="REw-Hs-vjh" userLabel="Visiting Past Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
                                                 <subviews>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cns-VC-NLI" userLabel="Label - Visit1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="185.66666666666666" height="41"/>
-                                                        <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ilq-jC-TtY" userLabel="Label - Visit2">
-                                                        <rect key="frame" x="0.0" y="41" width="185.66666666666666" height="41"/>
-                                                        <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HaW-0A-uha" userLabel="Label - Visit3">
-                                                        <rect key="frame" x="0.0" y="82" width="185.66666666666666" height="41"/>
-                                                        <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VlB-hI-1RW" userLabel="Label - Visit4">
-                                                        <rect key="frame" x="0.0" y="123" width="185.66666666666666" height="41"/>
-                                                        <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" textLabel="ZlJ-nB-Ema" style="IBUITableViewCellStyleDefault" translatesAutoresizingMaskIntoConstraints="NO" id="4Rm-v2-zbE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Rm-v2-zbE" id="fE7-XG-61V">
+                                                            <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="268.66666666666669"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Visiting Team Name" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" id="ZlJ-nB-Ema">
+                                                                    <rect key="frame" x="15" y="0.0" width="157.66666666666666" height="268.66666666666669"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="30O-ay-Un0" userLabel="Visit Past Scores Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
+                                                        <subviews>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUs-mO-eDK" userLabel="Visit1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HC-Fl-4Rm" userLabel="Visit2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaP-6P-CVm" userLabel="Visit3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJY-6N-0nz" userLabel="Visit4">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8fn-px-VB3" userLabel="Home Past Scores Stack View">
-                                                <rect key="frame" x="191.66666666666663" y="0.0" width="185.33333333333337" height="164"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kYT-f0-s69" userLabel="Home Past Stack View">
+                                                <rect key="frame" x="0.0" y="269" width="0.0" height="269"/>
                                                 <subviews>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rGF-V0-76U" userLabel="Label - Home1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="185.33333333333334" height="41"/>
-                                                        <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gqQ-Pk-zU0" userLabel="Label - Home2">
-                                                        <rect key="frame" x="0.0" y="41" width="185.33333333333334" height="41"/>
-                                                        <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1Kv-kL-oSe" userLabel="Label - Home3">
-                                                        <rect key="frame" x="0.0" y="82" width="185.33333333333334" height="41"/>
-                                                        <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Kw-ed-yeK" userLabel="Label - Home4">
-                                                        <rect key="frame" x="0.0" y="123" width="185.33333333333334" height="41"/>
-                                                        <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="saa-s3-PAo" userLabel="ActionsScoresStackView">
-                                        <rect key="frame" x="0.0" y="283.33333333333331" width="379" height="405.99999999999994"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="fillEqually" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCD-wW-u3X" userLabel="ScoresStackView">
-                                                <rect key="frame" x="0.0" y="0.0" width="379" height="406"/>
-                                                <subviews>
-                                                    <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQ1-rf-ZDS" userLabel="Home Container View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="186" height="406"/>
-                                                    </containerView>
-                                                    <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YoV-A0-bdl" userLabel="Visitor Container View">
-                                                        <rect key="frame" x="192" y="0.0" width="185" height="406"/>
-                                                    </containerView>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" focusStyle="custom" textLabel="6Wc-TX-gmZ" style="IBUITableViewCellStyleDefault" translatesAutoresizingMaskIntoConstraints="NO" id="I0v-TB-6oV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I0v-TB-6oV" id="Uoo-PZ-F92">
+                                                            <rect key="frame" x="0.0" y="0.0" width="186.66666666666666" height="268.66666666666669"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Home Team Name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" id="6Wc-TX-gmZ">
+                                                                    <rect key="frame" x="15" y="0.0" width="156.66666666666666" height="268.66666666666669"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ey8-a6-4Gh" userLabel="Home Past Scores Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
+                                                        <subviews>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyf-Dx-XoV" userLabel="Visit1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBC-SO-B9T" userLabel="Visit2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6Q-8j-wzE" userLabel="Visit3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2c-TB-lGl" userLabel="Visit4">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="269"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="center" verticalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EBT-Br-50C">
+                                        <rect key="frame" x="0.0" y="546" width="0.0" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Rm-Sd-uv3" userLabel="Action Names Stack View">
+                                        <rect key="frame" x="0.0" y="554" width="0.0" height="128"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="kpY-Hf-pvC" userLabel="ActionNames Table View">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="128"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <sections>
+                                                    <tableViewSection id="EeV-fo-HdH">
+                                                        <cells>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="jn9-2L-Ln5" style="IBUITableViewCellStyleDefault" id="gbg-FJ-Zbe" userLabel="Action Name 1 Cell">
+                                                                <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gbg-FJ-Zbe" id="cyb-tx-qBX">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.666666666666664"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Action Name 1" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" id="jn9-2L-Ln5">
+                                                                            <rect key="frame" x="15" y="0.0" width="325" height="43.666666666666664"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </tableViewCellContentView>
+                                                            </tableViewCell>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="kvG-uR-Vfz" style="IBUITableViewCellStyleDefault" id="DZn-ca-xZC" userLabel="Action Name 2 Cell">
+                                                                <rect key="frame" x="0.0" y="79" width="375" height="44"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DZn-ca-xZC" id="dE0-7J-DEu">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.666666666666664"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Action Name 2" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" id="kvG-uR-Vfz" userLabel="Action Name 2">
+                                                                            <rect key="frame" x="15" y="0.0" width="325" height="43.666666666666664"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </tableViewCellContentView>
+                                                            </tableViewCell>
+                                                        </cells>
+                                                    </tableViewSection>
+                                                </sections>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="center" verticalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="180-IM-N9Y">
+                                        <rect key="frame" x="0.0" y="690" width="0.0" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="JLo-p3-lg9" firstAttribute="height" secondItem="7Hg-IB-HjC" secondAttribute="height" multiplier="0.15" id="hT9-25-CeQ"/>
+                                    <constraint firstItem="EBT-Br-50C" firstAttribute="leading" secondItem="7Hg-IB-HjC" secondAttribute="leading" id="44l-CU-lLb"/>
+                                    <constraint firstAttribute="trailing" secondItem="EBT-Br-50C" secondAttribute="trailing" id="pna-xT-miV"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ba0-fK-j6v" firstAttribute="bottom" secondItem="7Hg-IB-HjC" secondAttribute="bottom" id="FBI-fX-qWU"/>
-                            <constraint firstItem="ba0-fK-j6v" firstAttribute="leading" secondItem="7Hg-IB-HjC" secondAttribute="leading" constant="2" id="GTq-BP-Ckb"/>
-                            <constraint firstItem="7Hg-IB-HjC" firstAttribute="trailing" secondItem="ba0-fK-j6v" secondAttribute="trailing" constant="2" id="IGZ-Vx-3rJ"/>
+                            <constraint firstItem="ba0-fK-j6v" firstAttribute="leading" secondItem="7Hg-IB-HjC" secondAttribute="leading" id="GTq-BP-Ckb"/>
+                            <constraint firstItem="7Hg-IB-HjC" firstAttribute="trailing" secondItem="ba0-fK-j6v" secondAttribute="trailing" id="IGZ-Vx-3rJ"/>
                             <constraint firstItem="7Hg-IB-HjC" firstAttribute="top" secondItem="ba0-fK-j6v" secondAttribute="top" id="KfW-vy-Gkk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ba0-fK-j6v"/>
