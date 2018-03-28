@@ -125,21 +125,21 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="248" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="exb-Lt-P09" userLabel="ActionNamesStack View">
                                         <rect key="frame" x="0.0" y="116.99999999999999" width="373" height="217.66666666666663"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ura-2W-HSh" userLabel="RightActionStackView">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ura-2W-HSh" userLabel="RightActionStackView">
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="108"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="250" text="RIGHT ACTION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nGf-Ly-qhe" userLabel="Right Action Name">
-                                                        <rect key="frame" x="0.0" y="0.0" width="186.66666666666666" height="108"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="261" height="108"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="249" distribution="fillEqually" spacing="-200" translatesAutoresizingMaskIntoConstraints="NO" id="inL-QT-MIx" userLabel="TopActionNumberStackView">
-                                                        <rect key="frame" x="186.66666666666663" y="0.0" width="186.33333333333337" height="108"/>
+                                                    <stackView opaque="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="249" distribution="fillEqually" spacing="-100" translatesAutoresizingMaskIntoConstraints="NO" id="inL-QT-MIx" userLabel="TopActionNumberStackView">
+                                                        <rect key="frame" x="261" y="0.0" width="112" height="108"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jg4-YH-lXx" userLabel="rightScreenActionButton">
-                                                                <rect key="frame" x="0.0" y="0.0" width="193" height="108"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="106" height="108"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button with a label that contains a number"/>
                                                                 <gestureRecognizers/>
@@ -153,7 +153,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wca-9B-IlW" userLabel="rightActionNameNumber">
-                                                                <rect key="frame" x="-7" y="0.0" width="193.33333333333334" height="108"/>
+                                                                <rect key="frame" x="6" y="0.0" width="106" height="108"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                                                 <nil key="highlightedColor"/>
@@ -163,24 +163,24 @@
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="inL-QT-MIx" firstAttribute="width" secondItem="ura-2W-HSh" secondAttribute="width" multiplier="0.75" priority="999" constant="1" id="qsO-zn-YfX"/>
+                                                    <constraint firstItem="inL-QT-MIx" firstAttribute="width" secondItem="ura-2W-HSh" secondAttribute="width" multiplier="0.3" id="2el-iz-nbt"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DsK-vg-6fi" userLabel="LeftActionStackView">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DsK-vg-6fi" userLabel="LeftActionStackView">
                                                 <rect key="frame" x="0.0" y="110" width="373" height="107.66666666666669"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="250" text="LEFT ACTION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZQR-dU-Ieu" userLabel="Left Action Name">
-                                                        <rect key="frame" x="0.0" y="0.0" width="186.66666666666666" height="107.66666666666667"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="261" height="107.66666666666667"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="249" distribution="fillEqually" spacing="-200" translatesAutoresizingMaskIntoConstraints="NO" id="7oK-Jk-HT9" userLabel="BottomActionNumberStackView">
-                                                        <rect key="frame" x="186.66666666666663" y="0.0" width="186.33333333333337" height="107.66666666666667"/>
+                                                    <stackView opaque="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="249" distribution="fillEqually" spacing="-100" translatesAutoresizingMaskIntoConstraints="NO" id="7oK-Jk-HT9" userLabel="BottomActionNumberStackView">
+                                                        <rect key="frame" x="261" y="0.0" width="112" height="107.66666666666667"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngr-68-tdf" userLabel="leftScreenActionButton">
-                                                                <rect key="frame" x="0.0" y="0.0" width="193" height="107.66666666666667"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="106" height="107.66666666666667"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button with a label that contains a number"/>
                                                                 <gestureRecognizers/>
@@ -194,7 +194,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PLA-fo-lKd" userLabel="leftActionNameNumber">
-                                                                <rect key="frame" x="-7" y="0.0" width="193.33333333333334" height="107.66666666666667"/>
+                                                                <rect key="frame" x="6" y="0.0" width="106" height="107.66666666666667"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                                                 <nil key="highlightedColor"/>
@@ -203,11 +203,11 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="7oK-Jk-HT9" firstAttribute="width" secondItem="DsK-vg-6fi" secondAttribute="width" multiplier="0.3" priority="999" id="ekY-xr-oDs"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="7oK-Jk-HT9" firstAttribute="width" secondItem="inL-QT-MIx" secondAttribute="width" id="9V1-mu-9mv"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="749" verticalHuggingPriority="750" verticalCompressionResistancePriority="749" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="a3u-yc-v7l" userLabel="ScoresStackView">
                                         <rect key="frame" x="0.0" y="342.66666666666674" width="373" height="342.33333333333326"/>
