@@ -58,29 +58,44 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
 
-    UIBarButtonItem* saveButton =
+//    UIBarButtonItem* saveButton =
+//        [[UIBarButtonItem alloc] initWithTitle:@"Close"
+//                                         style:UIBarButtonItemStyleDone
+//                                        target:self
+//                                        action:@selector(saveAndClose)];
+//    UIImage* image = [UIImage imageNamed:@"Info44.png"];
+//    UIBarButtonItem* infoButton =
+//        [[UIBarButtonItem alloc] initWithImage:image
+//                                         style:UIBarButtonItemStyleBordered
+//                                        target:self
+//                                        action:@selector(showSupportView)];
+//    UIBarButtonItem* fixedSpace = [[UIBarButtonItem alloc]
+//        initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+//                             target:self
+//                             action:nil];
+//
+//    fixedSpace.width = 20.0f;
+
+    if (IS_IPAD()) {
+        UIBarButtonItem* saveButton =
         [[UIBarButtonItem alloc] initWithTitle:@"Close"
                                          style:UIBarButtonItemStyleDone
                                         target:self
                                         action:@selector(saveAndClose)];
-    UIImage* image = [UIImage imageNamed:@"Info44.png"];
-    UIBarButtonItem* infoButton =
+        UIImage* image = [UIImage imageNamed:@"Info44.png"];
+        UIBarButtonItem* infoButton =
         [[UIBarButtonItem alloc] initWithImage:image
                                          style:UIBarButtonItemStyleBordered
                                         target:self
                                         action:@selector(showSupportView)];
-    UIBarButtonItem* fixedSpace = [[UIBarButtonItem alloc]
-        initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                             target:self
-                             action:nil];
-
-    fixedSpace.width = 20.0f;
-
-    if (IS_IPAD()) {
+        UIBarButtonItem* fixedSpace = [[UIBarButtonItem alloc]
+                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                       target:self
+                                       action:nil];
+        
+        fixedSpace.width = 20.0f;
         self.navigationItem.rightBarButtonItem = infoButton;
         self.navigationItem.leftBarButtonItem = saveButton;
-    } else {
-        self.navigationItem.rightBarButtonItem = infoButton;
     }
 
     // Set the switch if messages will be sent
@@ -780,6 +795,7 @@
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     int actionTag = (int)cell.tag;
 
+    
     if (actionTag == 1 || actionTag == 2) {
         self.existingLeftActionName = self.leftActionNameSelected.text;
         self.existingRightActionName = self.rightActionNameSelected.text;
@@ -790,14 +806,17 @@
             // The right Action Name row was selected
             self.actionRow = 2;
         }
+        // Action Name row was selected so segue to that VC
+        [self performSegueWithIdentifier:@"actionNameView" sender:self];
 
+    } else if (actionTag == 3) {
+        // Show Support VC
+        [self performSegueWithIdentifier:@"supportView" sender:self];
+        return;
     } else {
         // In-App Purchase was selected
         return;
     }
-
-    // Action Name row was selected so segue to that VC
-    [self performSegueWithIdentifier:@"actionNameView" sender:self];
 }
 
 #pragma mark - UITextField Phone Formatting

@@ -736,7 +736,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#cp \"${SRCROOT}/Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-acknowledgements.plist\" \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Pods-VBall ScoreMaster-acknowledgements.plist\"";
+			shellScript = "cp \"${SRCROOT}/Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-acknowledgements.plist\" \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Pods-VBall ScoreMaster-acknowledgements.plist\"";
 		};
 		ADC716A2196CA6F000360EF4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
