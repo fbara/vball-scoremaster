@@ -59,7 +59,6 @@
 		ADCFF8B01AB5D6D000AB9CB0 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */; };
 		ADDB11DF1BE662D5007D0411 /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */; };
 		ADDE1A781BF0D0F600356E4A /* MPTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDE1A771BF0D0F600356E4A /* MPTutorialViewController.m */; };
-		ADE5679C1F7436A20016BA21 /* NewMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE5679B1F7436A20016BA21 /* NewMain.storyboard */; };
 		ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEB992E1986ECB70009B3F5 /* ActionNames.plist */; };
 		ADFAA8B019A8D617009D1143 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */; };
 		ADFB427319A4C37D00ADBE9F /* SupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB427219A4C37D00ADBE9F /* SupportTableViewController.m */; };
@@ -156,7 +155,6 @@
 		ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCoachMarksView.m; sourceTree = "<group>"; };
 		ADDE1A761BF0D0F600356E4A /* MPTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTutorialViewController.h; path = Volleyball/MPTutorialViewController.h; sourceTree = "<group>"; };
 		ADDE1A771BF0D0F600356E4A /* MPTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPTutorialViewController.m; path = Volleyball/MPTutorialViewController.m; sourceTree = "<group>"; };
-		ADE5679B1F7436A20016BA21 /* NewMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewMain.storyboard; sourceTree = "<group>"; };
 		ADEB992E1986ECB70009B3F5 /* ActionNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ActionNames.plist; sourceTree = "<group>"; };
 		ADFAA8AF19A8D617009D1143 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		ADFB427119A4C37D00ADBE9F /* SupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupportTableViewController.h; path = Volleyball/SupportTableViewController.h; sourceTree = "<group>"; };
@@ -272,7 +270,6 @@
 			children = (
 				92AA42B71916C2810037D405 /* VolleyBallViewController.h */,
 				92AA42B81916C2810037D405 /* VolleyBallViewController.m */,
-				ADE5679B1F7436A20016BA21 /* NewMain.storyboard */,
 				AD87E6CC20375D5200BF9D2A /* Storyboard.storyboard */,
 				AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */,
 				AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */,
@@ -504,7 +501,6 @@
 				ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */,
 				AD87E6CD20375D5200BF9D2A /* Storyboard.storyboard in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
-				ADE5679C1F7436A20016BA21 /* NewMain.storyboard in Resources */,
 				ADB5A13219D30372009B1550 /* NRTouchImage.png in Resources */,
 				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
 				AD0D059B1A7198F200B5FC00 /* colormap.png in Resources */,

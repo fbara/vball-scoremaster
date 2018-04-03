@@ -8,6 +8,7 @@
 
 #import "SettingsTableViewController.h"
 #import "ActionLabelTableViewController.h"
+#import "SupportTableViewController.h"
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import "VolleyBallViewController.h"
 #import <AppbotX/ABXFAQsViewController.h>
@@ -57,7 +58,7 @@
 {
     [super viewDidLoad];
     self.tableView.delegate = self;
-
+    //TODO: Need a way to get back to Settings
 //    UIBarButtonItem* saveButton =
 //        [[UIBarButtonItem alloc] initWithTitle:@"Close"
 //                                         style:UIBarButtonItemStyleDone
@@ -75,6 +76,7 @@
 //                             action:nil];
 //
 //    fixedSpace.width = 20.0f;
+//    self.navigationItem.leftBarButtonItem = saveButton;
 
     if (IS_IPAD()) {
         UIBarButtonItem* saveButton =
@@ -812,6 +814,7 @@
     } else if (actionTag == 3) {
         // Show Support VC
         [self performSegueWithIdentifier:@"supportView" sender:self];
+        //[self performSegueWithIdentifier:@"supportView" sender:self];
         return;
     } else {
         // In-App Purchase was selected

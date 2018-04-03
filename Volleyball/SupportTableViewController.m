@@ -136,38 +136,38 @@ static NSString* const kiTunesID = @"886670213";
 			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://geni.us/first"]];
 			break;
 		case 1:
-            //Show version info
-            [ABXVersionsViewController showFromController:self];
-            break;
-        case 2:
-            //Show FAQ
-            //Access AppbotX FAQ's
-            [ABXFAQsViewController showFromController:self
-                                    hideContactButton:NO
-                                      contactMetaData:nil
-                                        initialSearch:nil];
-            break;
-        case 3:
-            //Show Feedback form
-            //Access AppbotX feedback form
-            [ABXFeedbackViewController showFromController:self
-                                              placeholder:@"Message to the Developer"
-                                                    email:@"Enter your email address"
-                                                 metaData:nil
-                                                    image:nil];
-            break;
-        case 4:
-            //Notifications
-            [ABXNotificationsViewController showFromController:self];
-            break;
-        case 5:
-            //iTunes review
-            [ABXAppStore openAppStoreReviewForApp:kiTunesID];
-            break;
-        case 6:
-            //BaraLabs website
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com"]];
-            break;
+        //Show version info
+        [ABXVersionsViewController showFromController:self];
+        break;
+    case 2:
+        //Show FAQ
+        //Access AppbotX FAQ's
+        [ABXFAQsViewController showFromController:self
+                                hideContactButton:NO
+                                  contactMetaData:nil
+                                    initialSearch:nil];
+        break;
+    case 3:
+        //Show Feedback form
+        //Access AppbotX feedback form
+        [ABXFeedbackViewController showFromController:self
+                                          placeholder:@"Message to the Developer"
+                                                email:@"Enter your email address"
+                                             metaData:nil
+                                                image:nil];
+        break;
+    case 4:
+        //Notifications
+        [ABXNotificationsViewController showFromController:self];
+        break;
+    case 5:
+        //iTunes review
+        [ABXAppStore openAppStoreReviewForApp:kiTunesID];
+        break;
+    case 6:
+        //BaraLabs website
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com"]];
+        break;
 		case 7:
 			//Launch Twitter to @BaraLabs page
 			//Check if Twitter app is installed. If it is, launch it. If not, open Safari to BaraLabs.
@@ -246,6 +246,7 @@ static NSString* const kiTunesID = @"886670213";
 #pragma mark - Acknowledgements
 
 -(void)showAcknowledgements {
+  //TODO: Not working, needs to be fixed.
 	NSString *path = [[NSBundle mainBundle] pathForResource:@"Pods-VBall ScoreMaster-acknowledgements" ofType:@"plist"];
 	VTAcknowledgementsViewController *ackVC = [[VTAcknowledgementsViewController alloc] initWithAcknowledgementsPlistPath:path];
 	ackVC.headerText = NSLocalizedString(@"VBall ScoreMaster was created with the help of the following:", @"VBall ScoreMaster was created with the help of the following:");
