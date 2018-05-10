@@ -814,7 +814,6 @@
     } else if (actionTag == 3) {
         // Show Support VC
         [self performSegueWithIdentifier:@"supportView" sender:self];
-        //[self performSegueWithIdentifier:@"supportView" sender:self];
         return;
     } else {
         // In-App Purchase was selected

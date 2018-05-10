@@ -60,6 +60,8 @@ static void * leftContext = &leftContext;
 @property (weak, nonatomic) IBOutlet UIButton *rightActionNameButton;
 @property (weak, nonatomic) IBOutlet UIButton *leftActionNameButton;
 @property (weak, nonatomic) IBOutlet UIButton *gameButton;
+@property (weak, nonatomic) IBOutlet UILabel *visitingTeamPastName;
+@property (weak, nonatomic) IBOutlet UILabel *homeTeamPastName;
 
 
 @end
@@ -348,6 +350,8 @@ static void * leftContext = &leftContext;
         self.homeTeamName.backgroundColor = [UIColor whiteColor];
         self.homeTeamName.textColor = [UIColor blackColor];
     }
+    self.homeTeamPastName.backgroundColor = self.homeTeamName.backgroundColor;
+    self.homeTeamPastName.textColor = self.homeTeamName.textColor;
     return colorHome;
 }
 
@@ -375,6 +379,8 @@ static void * leftContext = &leftContext;
         self.visitingTeamName.backgroundColor = [UIColor whiteColor];
         self.visitingTeamName.textColor = [UIColor blackColor];
     }
+    self.visitingTeamPastName.backgroundColor = self.visitingTeamName.backgroundColor;
+    self.visitingTeamPastName.textColor = self.visitingTeamName.textColor;
 
     return colorVisitor;
 }
@@ -390,10 +396,9 @@ static void * leftContext = &leftContext;
             isEqualToString:@"Complementary"]) {
         colorScheme = @"Colorful";
         self.view.backgroundColor = FlatSand;
-        self.navigationController.navigationBar.barTintColor = FlatSkyBlue;
-        self.navigationController.navigationBar.tintColor = ContrastColor(FlatSkyBlue, TRUE);
-        self.navigationController.navigationBar.titleTextAttributes =
-            @{ NSForegroundColorAttributeName : ContrastColor(FlatSkyBlue, TRUE) };
+//        self.navigationController.navigationBar.barTintColor = FlatSkyBlue;
+//        self.navigationController.navigationBar.tintColor = ContrastColor(FlatSkyBlue, TRUE);
+//        self.navigationController.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : ContrastColor(FlatSkyBlue, TRUE) };
         self.rightActionNameNumber.textColor = FlatMintDark;
         self.leftActionNameNumber.textColor = FlatMintDark;
         self.gameNumber.textColor = ContrastColor(self.view.backgroundColor, TRUE);
@@ -412,11 +417,9 @@ static void * leftContext = &leftContext;
                    isEqualToString:@"Dark"]) {
         colorScheme = @"Dark";
         self.view.backgroundColor = FlatBlackDark;
-        self.navigationController.navigationBar.barTintColor = FlatBlackDark;
-        self.navigationController.navigationBar.tintColor = ContrastColor(FlatBlack, TRUE);
-        self.navigationController.navigationBar.titleTextAttributes = @{
-            NSForegroundColorAttributeName : ContrastColor(FlatBlackDark, TRUE)
-        };
+//        self.navigationController.navigationBar.barTintColor = FlatBlackDark;
+//        self.navigationController.navigationBar.tintColor = ContrastColor(FlatBlack, TRUE);
+//        self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : ContrastColor(FlatBlackDark, TRUE)};
         self.rightActionNameNumber.textColor = FlatGreen;
         self.leftActionNameNumber.textColor = FlatGreen;
         self.gameNumber.textColor = FlatMint;
@@ -432,11 +435,9 @@ static void * leftContext = &leftContext;
     } else {
         colorScheme = @"Regular";
         self.view.backgroundColor = FlatWhite;
-        self.navigationController.navigationBar.barTintColor = FlatNavyBlue;
-        self.navigationController.navigationBar.tintColor = ContrastColor(FlatNavyBlue, TRUE);
-        self.navigationController.navigationBar.titleTextAttributes = @{
-            NSForegroundColorAttributeName : ContrastColor(FlatNavyBlue, TRUE)
-        };
+//        self.navigationController.navigationBar.barTintColor = FlatNavyBlue;
+//        self.navigationController.navigationBar.tintColor = ContrastColor(FlatNavyBlue, TRUE);
+//        self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : ContrastColor(FlatNavyBlue, TRUE)};
         self.rightActionNameNumber.textColor = FlatBlackDark;
         self.leftActionNameNumber.textColor = FlatBlackDark;
         self.gameNumber.textColor = FlatBlackDark;
@@ -501,7 +502,9 @@ static void * leftContext = &leftContext;
     currHomeScore = 0;
     currVisitorScore = 0;
 	self.homeTeamName.text = @"";
+    self.homeTeamPastName.text = @"";
 	self.visitingTeamName.text = @"";
+    self.visitingTeamPastName.text = @"";
     totalPastGamesVisitor = 0;
     totalPastGamesHome = 0;
 	
@@ -799,7 +802,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                [self.homeGame1 setFont:[UIFont fontWithName:@"Avenir Next" size:30]];
+                //[self.homeGame1 setFont:[UIFont fontWithName:@"Avenir Next" size:30]];
                 //[self.homeGame1 setFont:[UIFont boldSystemFontOfSize:20]];
             }
 
@@ -809,7 +812,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+                //[self.visitGame1 setFont:[UIFont boldSystemFontOfSize:20]];
             }
 
         } else {
@@ -826,7 +829,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:20]];
+                //[self.homeGame2 setFont:[UIFont boldSystemFontOfSize:20]];
             }
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame2.textColor = FlatRed;
@@ -834,7 +837,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:20]];
+                //[self.visitGame2 setFont:[UIFont boldSystemFontOfSize:20]];
             }
 
         } else {
@@ -851,7 +854,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:20]];
+                //[self.homeGame3 setFont:[UIFont boldSystemFontOfSize:20]];
             }
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame3.textColor = FlatRed;
@@ -859,7 +862,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:20]];
+                //[self.visitGame3 setFont:[UIFont boldSystemFontOfSize:20]];
             }
         } else {
             self.visitGame3.textColor = FlatGray;
@@ -875,7 +878,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.homeGame4 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                [self.homeGame4 setFont:[UIFont boldSystemFontOfSize:20]];
+                //[self.homeGame4 setFont:[UIFont boldSystemFontOfSize:20]];
             }
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame4.textColor = FlatRed;
@@ -883,7 +886,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.visitGame4 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                [self.visitGame4 setFont:[UIFont boldSystemFontOfSize:20]];
+                //[self.visitGame4 setFont:[UIFont boldSystemFontOfSize:20]];
             }
         } else {
             self.visitGame4.textColor = FlatGray;
