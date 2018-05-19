@@ -200,38 +200,36 @@
                                     <constraint firstItem="7oK-Jk-HT9" firstAttribute="width" secondItem="inL-QT-MIx" secondAttribute="width" id="9V1-mu-9mv"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RVz-6f-Bry" userLabel="VBallStackView">
-                                <rect key="frame" x="-8" y="367" width="116" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RVz-6f-Bry" userLabel="VBallStackView">
+                                <rect key="frame" x="8" y="232" width="359" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnZ-hY-kqa" userLabel="BlankButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnZ-hY-kqa" userLabel="BlankButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="114.33333333333333" height="40"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hc-qm-XBk">
-                                        <rect key="frame" x="38" y="0.0" width="40" height="40"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hc-qm-XBk">
+                                        <rect key="frame" x="122.33333333333334" y="0.0" width="114.33333333333334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                         <state key="normal" image="VBallSmall-40"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlZ-Qr-fpC" userLabel="BlankButton">
-                                        <rect key="frame" x="86" y="0.0" width="30" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlZ-Qr-fpC" userLabel="BlankButton">
+                                        <rect key="frame" x="244.66666666666666" y="0.0" width="114.33333333333334" height="40"/>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="749" verticalHuggingPriority="750" verticalCompressionResistancePriority="749" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="a3u-yc-v7l" userLabel="ScoresStackView">
-                                <rect key="frame" x="-8" y="269" width="391.33333333333331" height="274"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="749" verticalHuggingPriority="750" verticalCompressionResistancePriority="749" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="a3u-yc-v7l" userLabel="ScoresStackView">
+                                <rect key="frame" x="8" y="280" width="359" height="274"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="idM-Sd-32G" userLabel="VisitScoreStackView">
-                                        <rect key="frame" x="0.0" y="0.0" width="391.33333333333331" height="136"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="idM-Sd-32G" userLabel="VisitScoreStackView">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="136"/>
                                         <subviews>
-                                            <containerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MIi-P2-4PF" userLabel="Visitor Container View">
-                                                <rect key="frame" x="0.0" y="0.0" width="194.66666666666666" height="136"/>
+                                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIi-P2-4PF" userLabel="Visitor Container View">
+                                                <rect key="frame" x="0.0" y="0.0" width="178.66666666666666" height="136"/>
                                                 <connections>
                                                     <segue destination="xOM-Jn-cof" kind="embed" identifier="embedVisit" id="bYG-qz-1F8"/>
                                                 </connections>
                                             </containerView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="999" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Visitors" borderStyle="roundedRect" placeholder="Visitors" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="V3I-fa-y0G">
-                                                <rect key="frame" x="196.66666666666669" y="0.0" width="194.66666666666669" height="136"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Visitors" borderStyle="roundedRect" placeholder="Visitors" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="V3I-fa-y0G">
+                                                <rect key="frame" x="180.66666666666663" y="0.0" width="178.33333333333337" height="136"/>
                                                 <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration" hint="User enters the name of the visiting team." label="Text entry"/>
@@ -244,11 +242,11 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="749" ambiguous="YES" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ahR-Cj-VB1" userLabel="HomeScoreStackView">
-                                        <rect key="frame" x="0.0" y="138" width="391.33333333333331" height="136"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="749" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ahR-Cj-VB1" userLabel="HomeScoreStackView">
+                                        <rect key="frame" x="0.0" y="138" width="359" height="136"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="999" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Home" borderStyle="roundedRect" placeholder="Home" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ENv-Nj-Vop">
-                                                <rect key="frame" x="0.0" y="0.0" width="194.66666666666666" height="136"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Home" borderStyle="roundedRect" placeholder="Home" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ENv-Nj-Vop">
+                                                <rect key="frame" x="0.0" y="0.0" width="178.66666666666666" height="136"/>
                                                 <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration" hint="User enters the name of the home team." label="Text entry"/>
@@ -259,8 +257,8 @@
                                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="6g0-b7-4yK"/>
                                                 </connections>
                                             </textField>
-                                            <containerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TU3-3V-RLx" userLabel="Home Container View">
-                                                <rect key="frame" x="196.66666666666669" y="0.0" width="194.66666666666669" height="136"/>
+                                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TU3-3V-RLx" userLabel="Home Container View">
+                                                <rect key="frame" x="180.66666666666663" y="0.0" width="178.33333333333337" height="136"/>
                                                 <connections>
                                                     <segue destination="UDW-Id-wMZ" kind="embed" identifier="embedHome" id="KYA-EI-dsm"/>
                                                 </connections>
@@ -272,12 +270,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="a3u-yc-v7l" firstAttribute="leading" secondItem="gFW-IP-wBD" secondAttribute="leading" constant="8" id="39e-T3-m7W"/>
+                            <constraint firstItem="RVz-6f-Bry" firstAttribute="leading" secondItem="gFW-IP-wBD" secondAttribute="leading" constant="8" id="3Ex-Ps-h2g"/>
+                            <constraint firstItem="a3u-yc-v7l" firstAttribute="top" secondItem="RVz-6f-Bry" secondAttribute="bottom" constant="8" symbolic="YES" id="7X0-Gr-2TB"/>
+                            <constraint firstItem="RVz-6f-Bry" firstAttribute="top" secondItem="exb-Lt-P09" secondAttribute="bottom" constant="8" symbolic="YES" id="C1D-Rr-5cf"/>
                             <constraint firstItem="Cdy-VV-tjM" firstAttribute="top" secondItem="gFW-IP-wBD" secondAttribute="top" id="K8T-pu-a6C"/>
                             <constraint firstItem="gFW-IP-wBD" firstAttribute="trailing" secondItem="Cdy-VV-tjM" secondAttribute="trailing" constant="8" id="PSX-km-4FZ"/>
                             <constraint firstItem="exb-Lt-P09" firstAttribute="leading" secondItem="Cdy-VV-tjM" secondAttribute="leading" id="Xta-9G-iMq"/>
                             <constraint firstItem="exb-Lt-P09" firstAttribute="trailing" secondItem="Cdy-VV-tjM" secondAttribute="trailing" id="qqX-jE-Y1H"/>
                             <constraint firstItem="exb-Lt-P09" firstAttribute="top" secondItem="Cdy-VV-tjM" secondAttribute="bottom" constant="8" symbolic="YES" id="ub1-1h-1L6"/>
+                            <constraint firstItem="gFW-IP-wBD" firstAttribute="trailing" secondItem="a3u-yc-v7l" secondAttribute="trailing" constant="8" id="vZa-Q2-Xm8"/>
                             <constraint firstItem="Cdy-VV-tjM" firstAttribute="leading" secondItem="gFW-IP-wBD" secondAttribute="leading" constant="8" id="wHw-vv-c7s"/>
+                            <constraint firstItem="gFW-IP-wBD" firstAttribute="trailing" secondItem="RVz-6f-Bry" secondAttribute="trailing" constant="8" id="xXx-FQ-ZsC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gFW-IP-wBD"/>
                     </view>
@@ -437,7 +441,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Bbm-WU-ROV" userLabel="Entire Screen Stack View">
-                                <rect key="frame" x="0.0" y="20" width="1000.3333333333334" height="422.66666666666669"/>
+                                <rect key="frame" x="0.0" y="20" width="1000.3333333333334" height="422.66666666666663"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="top" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8m-9e-EpO" userLabel="Team Names Stack View">
@@ -470,7 +474,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="L3I-E7-36k" userLabel="Actions and Scores Stack View">
-                                        <rect key="frame" x="0.0" y="38.666666666666686" width="1000.3333333333334" height="384"/>
+                                        <rect key="frame" x="0.0" y="38.666666666666657" width="1000.3333333333334" height="384"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="R9v-Es-GTd">
                                                 <rect key="frame" x="0.0" y="0.0" width="1000.3333333333334" height="384"/>
@@ -490,25 +494,25 @@
                                                                 <rect key="frame" x="201.66666666666669" y="0.0" width="193.66666666666669" height="222"/>
                                                                 <subviews>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sad-Nf-jjb" userLabel="Label - Visit1">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="193.66666666666666" height="55.333333333333336"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="193.66666666666666" height="55.666666666666664"/>
                                                                         <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1f-B7-MYb" userLabel="Label - Visit2">
-                                                                        <rect key="frame" x="0.0" y="55.333333333333343" width="193.66666666666666" height="55.666666666666657"/>
+                                                                        <rect key="frame" x="0.0" y="55.666666666666657" width="193.66666666666666" height="55.333333333333343"/>
                                                                         <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mi0-YI-UNY" userLabel="Label - Visit3">
-                                                                        <rect key="frame" x="0.0" y="110.99999999999999" width="193.66666666666666" height="55.333333333333329"/>
+                                                                        <rect key="frame" x="0.0" y="111.00000000000001" width="193.66666666666666" height="55.666666666666671"/>
                                                                         <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPK-lI-pMO" userLabel="Label - Visit4">
-                                                                        <rect key="frame" x="0.0" y="166.33333333333334" width="193.66666666666666" height="55.666666666666657"/>
+                                                                        <rect key="frame" x="0.0" y="166.66666666666666" width="193.66666666666666" height="55.333333333333343"/>
                                                                         <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                                         <nil key="highlightedColor"/>
@@ -533,25 +537,25 @@
                                                                 <rect key="frame" x="605" y="0.0" width="193.66666666666663" height="222"/>
                                                                 <subviews>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1P-eG-o39" userLabel="Label - Home1">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="193.66666666666666" height="55.333333333333336"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="193.66666666666666" height="55.666666666666664"/>
                                                                         <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOT-d2-W5V" userLabel="Label - Home2">
-                                                                        <rect key="frame" x="0.0" y="55.333333333333343" width="193.66666666666666" height="55.666666666666657"/>
+                                                                        <rect key="frame" x="0.0" y="55.666666666666657" width="193.66666666666666" height="55.333333333333343"/>
                                                                         <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJA-mX-JWA" userLabel="Label - Home3">
-                                                                        <rect key="frame" x="0.0" y="110.99999999999999" width="193.66666666666666" height="55.333333333333329"/>
+                                                                        <rect key="frame" x="0.0" y="111.00000000000001" width="193.66666666666666" height="55.666666666666671"/>
                                                                         <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSa-1M-sAa" userLabel="Label - Home4">
-                                                                        <rect key="frame" x="0.0" y="166.33333333333334" width="193.66666666666666" height="55.666666666666657"/>
+                                                                        <rect key="frame" x="0.0" y="166.66666666666666" width="193.66666666666666" height="55.333333333333343"/>
                                                                         <accessibility key="accessibilityConfiguration" hint="Shows the previous ending score for this team." label="Static numbers"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                                         <nil key="highlightedColor"/>

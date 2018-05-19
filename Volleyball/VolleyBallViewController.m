@@ -926,7 +926,7 @@ static void * leftContext = &leftContext;
     currVisitorScore = 0;
 }
 
-/*!
+/*
  *  What happens when right Action number is touched
  */
 - (IBAction)rightActionPressed:(UIButton*)sender
