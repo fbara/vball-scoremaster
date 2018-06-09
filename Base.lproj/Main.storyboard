@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="dBP-CD-akZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="dBP-CD-akZ">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -429,12 +429,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1" id="00j-HW-7Gn" userLabel="Long Press Gesture Recognizer - Reset Right Action Number">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1" id="00j-HW-7Gn" userLabel="Long Press Reset Right Action Number">
                     <connections>
                         <action selector="leftActionLongPress:" destination="vXZ-lx-hvc" id="cip-2J-zST"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.99999999999999989" id="qAC-a6-aQ8" userLabel="Long Press Gesture Recognizer - Reset Left Action Number">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.99999999999999989" id="qAC-a6-aQ8" userLabel="Long Press Reset Left Action Number">
                     <connections>
                         <action selector="rightActionLongPress:" destination="vXZ-lx-hvc" id="CsU-sd-Riv"/>
                     </connections>

@@ -38,7 +38,7 @@ UIImage* screenImage;
 static NSString* const kiTunesID = @"886670213";
 // Score number font size for each device
 CGFloat const ipadScoreFont = 220.0f;
-CGFloat const iphoneScoreFont = 120.0f;
+CGFloat const iphoneScoreFont = 118.0f;
 NSString* colorScheme;
 NSString *socialMessage;
 int totalPastGamesHome;
@@ -219,7 +219,7 @@ static void * leftContext = &leftContext;
     [self loadActionNames];
 
     // Format the circular button around the VBall
-    [self formatVBallButton];
+    //[self formatVBallButton];
 
     // Format the window background color
     [self windowBackgroundColor];
@@ -374,7 +374,6 @@ static void * leftContext = &leftContext;
         [color isEqualToString:@"Dark"]) {
         self.visitingTeamName.backgroundColor = ComplementaryFlatColor(colorVisitor);
         self.visitingTeamName.textColor = ContrastColor(self.visitingTeamName.backgroundColor, TRUE);
-
     } else {
         self.visitingTeamName.backgroundColor = [UIColor whiteColor];
         self.visitingTeamName.textColor = [UIColor blackColor];
@@ -402,6 +401,10 @@ static void * leftContext = &leftContext;
         self.rightActionNameNumber.textColor = FlatMintDark;
         self.leftActionNameNumber.textColor = FlatMintDark;
         self.gameNumber.textColor = ContrastColor(self.view.backgroundColor, TRUE);
+        UIImage *matchImage = [UIImage imageNamed:@"NewGame.png"];
+        [self.matchButton setImage:matchImage forState:UIControlStateNormal];
+        UIImage *gameImage = [UIImage imageNamed:@"NewMatch3.png"];
+        [self.gameButton setImage:gameImage forState:UIControlStateNormal];
         for (UILabel* lable in self.pastScoreCollection) {
             // First, check if any of the past score fonts are red
             // If so, put them back to red after the recolor
@@ -423,6 +426,10 @@ static void * leftContext = &leftContext;
         self.rightActionNameNumber.textColor = FlatGreen;
         self.leftActionNameNumber.textColor = FlatGreen;
         self.gameNumber.textColor = FlatMint;
+        UIImage *matchImage = [UIImage imageNamed:@"NewGameWhite.png"];
+        [self.matchButton setImage:matchImage forState:UIControlStateNormal];
+        UIImage *gameImage = [UIImage imageNamed:@"NewMatch3White.png"];
+        [self.gameButton setImage:gameImage forState:UIControlStateNormal];
         for (UILabel* lable in self.pastScoreCollection) {
             if (![lable.text isEqualToString:@"0"]) {
                 lable.textColor = FlatRed;
@@ -430,6 +437,7 @@ static void * leftContext = &leftContext;
                 lable.textColor = FlatYellow;
             }
         }
+        
         [self changePastScoreColors:FlatRed loser:FlatYellow];
 
     } else {
@@ -441,6 +449,10 @@ static void * leftContext = &leftContext;
         self.rightActionNameNumber.textColor = FlatBlackDark;
         self.leftActionNameNumber.textColor = FlatBlackDark;
         self.gameNumber.textColor = FlatBlackDark;
+        UIImage *matchImage = [UIImage imageNamed:@"NewGame.png"];
+        [self.matchButton setImage:matchImage forState:UIControlStateNormal];
+        UIImage *gameImage = [UIImage imageNamed:@"NewMatch3.png"];
+        [self.gameButton setImage:gameImage forState:UIControlStateNormal];
         for (UILabel* lable in self.pastScoreCollection) {
             if (![lable.text isEqualToString:@"0"]) {
                 lable.textColor = FlatRed;
@@ -501,10 +513,10 @@ static void * leftContext = &leftContext;
     currSecondAction = 0;
     currHomeScore = 0;
     currVisitorScore = 0;
-	self.homeTeamName.text = @"";
-    self.homeTeamPastName.text = @"";
-	self.visitingTeamName.text = @"";
-    self.visitingTeamPastName.text = @"";
+	  self.homeTeamName.text = @"";
+    self.homeTeamPastName.text = self.homeTeamName.text;
+	  self.visitingTeamName.text = @"";
+    self.visitingTeamPastName.text = self.visitingTeamName.text;
     totalPastGamesVisitor = 0;
     totalPastGamesHome = 0;
 	
@@ -988,19 +1000,19 @@ static void * leftContext = &leftContext;
 /*!
  *  What happens when 'New Match' button is touched
  */
-- (IBAction)newMatch:(UIBarButtonItem*)sender
-{
-#define TAG_MATCH 1
-
-    UIAlertView* alert = [[UIAlertView alloc]
-            initWithTitle:NSLocalizedString(@"New Match?", nil)
-                  message:NSLocalizedString(@"Reset team names, scores, action names, and start a new match? This can't be undone.", nil)
-                 delegate:self
-        cancelButtonTitle:NSLocalizedString(@"No", nil)
-        otherButtonTitles:NSLocalizedString(@"Yes", nil), nil];
-    alert.tag = TAG_MATCH;
-    [alert show];
-}
+//- (IBAction)newMatch:(UIBarButtonItem*)sender
+//{
+//#define TAG_MATCH 1
+//
+//    UIAlertView* alert = [[UIAlertView alloc]
+//            initWithTitle:NSLocalizedString(@"New Match?", nil)
+//                  message:NSLocalizedString(@"Reset team names, scores, action names, and start a new match? This can't be undone.", nil)
+//                 delegate:self
+//        cancelButtonTitle:NSLocalizedString(@"No", nil)
+//        otherButtonTitles:NSLocalizedString(@"Yes", nil), nil];
+//    alert.tag = TAG_MATCH;
+//    [alert show];
+//}
 
 - (void)startNewMatch
 {
@@ -1009,9 +1021,9 @@ static void * leftContext = &leftContext;
     if (IS_IPAD()) {
         [self initializeHomeScore:0 fontSize:188];
         [self initializeVisitorScore:0 fontSize:188];
-    } else {
-        [self initializeHomeScore:0 fontSize:118];
-        [self initializeVisitorScore:0 fontSize:118];
+//    } else {
+//        [self initializeHomeScore:0 fontSize:118];
+//        [self initializeVisitorScore:0 fontSize:118];
     }
     
 //    // Count how many times the user has started a new match so I can show the Apple Review prompt
@@ -1032,8 +1044,20 @@ static void * leftContext = &leftContext;
     [self initializePastGames];
 }
 
-#pragma mark - Screen Image
+- (IBAction)newMatch:(UIButton *)sender {
+#define TAG_MATCH 1
+    
+    UIAlertView* alert = [[UIAlertView alloc]
+                          initWithTitle:NSLocalizedString(@"New Match?", nil)
+                          message:NSLocalizedString(@"Reset team names, scores, action names, and start a new match? This can't be undone.", nil)
+                          delegate:self
+                          cancelButtonTitle:NSLocalizedString(@"No", nil)
+                          otherButtonTitles:NSLocalizedString(@"Yes", nil), nil];
+    alert.tag = TAG_MATCH;
+    [alert show];
+}
 
+#pragma mark - Screen Image
 /*!
  *  Takes a snapshot of the screen with the scores, prior
  *  to when the message or social screens take over the view
@@ -1047,8 +1071,7 @@ static void * leftContext = &leftContext;
     CGSize imageSize = [[UIScreen mainScreen] bounds].size;
     if (NULL != &UIGraphicsBeginImageContextWithOptions){
         UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
-    } else {
-        UIGraphicsBeginImageContext(imageSize);}
+    }
 
     CGContextRef context = UIGraphicsGetCurrentContext();
 

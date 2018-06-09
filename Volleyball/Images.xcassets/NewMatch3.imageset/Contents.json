@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "volleyball-50.png",
+      "filename" : "NewMatch-3.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "volleyball-51.png",
+      "filename" : "NewMatch-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "volleyball-52.png",
+      "filename" : "NewMatch-2.png",
       "scale" : "3x"
     }
   ],

@@ -47,6 +47,7 @@
 @property (weak, nonatomic) IBOutlet UIButton* mainPageTwitterButton;
 @property (weak, nonatomic) IBOutlet UIButton* mainPageFacebookButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
+@property (weak, nonatomic) IBOutlet UIButton *matchButton;
 
 @property UISwipeGestureRecognizer* homeSwipeGesture;
 @property UISwipeGestureRecognizer* visitingSwipeGesture;
@@ -58,7 +59,7 @@
 - (IBAction)gamePressed:(UIButton*)sender;
 - (IBAction)rightActionPressed:(UIButton*)sender;
 - (IBAction)leftActionPressed:(UIButton*)sender;
-- (IBAction)newMatch:(UIBarButtonItem*)sender;
+- (IBAction)newMatch:(UIButton *)sender;
 - (UIImage *)getScreenImage;
 - (IBAction)sendInstantMessage:(UIButton*)sender;
 
