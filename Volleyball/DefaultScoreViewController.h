@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DefaultScoreViewController : UIViewController
+@interface DefaultScoreViewController : UIViewController <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
 @property (nonatomic) int score;
 

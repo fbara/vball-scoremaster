@@ -135,6 +135,7 @@
 
 - (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    // TODO: Fix deprecated method
 	//Get response from user if they allow analytics on initial startup
 	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     switch (buttonIndex) {

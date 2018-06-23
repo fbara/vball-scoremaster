@@ -736,9 +736,13 @@
 
 #pragma mark - Segue Delegate
 
--(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
-	return UIModalPresentationNone;
-}
+//-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+//    return UIModalPresentationNone;
+//}
+
+//- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection {
+//    return UIModalPresentationPopover;
+//}
 
 - (void)didReceiveMemoryWarning
 {

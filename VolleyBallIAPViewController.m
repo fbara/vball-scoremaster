@@ -176,7 +176,7 @@
         [[VolleyBallIAPHelper sharedInstance]
                 requestProductsWithCompletionHandler:^(BOOL success, NSArray* products) {
                     if (success) {
-                        _products = products;
+                        _products =     products;
                         SKProduct *product = (SKProduct *)_products[0];
                         self.purchaseSocialCell.textLabel.text = product.localizedTitle;
 
@@ -269,20 +269,77 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return 1;
-}
-
-#pragma clang diagnostic pop
+//#pragma mark - Table view data source
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
+//{
+//    // Return the number of sections.
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    // Return the number of rows in the section.
+//    return 1;
+//}
+//
+//- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+//    <#code#>
+//}
+//
+//
+//#pragma clang diagnostic pop
+//
+//- (void)paymentQueue:(nonnull SKPaymentQueue *)queue updatedTransactions:(nonnull NSArray<SKPaymentTransaction *> *)transactions {
+//    <#code#>
+//}
+//
+//- (void)productsRequest:(nonnull SKProductsRequest *)request didReceiveResponse:(nonnull SKProductsResponse *)response {
+//    <#code#>
+//}
+//
+//- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
+//    <#code#>
+//}
+//
+//- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
+//    <#code#>
+//}
+//
+//- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
+//    <#code#>
+//}
+//
+//- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
+//    <#code#>
+//}
+//
+//- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
+//    <#code#>
+//}
+//
+//- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+//    <#code#>
+//}
+//
+//- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+//    <#code#>
+//}
+//
+//- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
+//    <#code#>
+//}
+//
+//- (void)setNeedsFocusUpdate {
+//    <#code#>
+//}
+//
+//- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
+//    <#code#>
+//}
+//
+//- (void)updateFocusIfNeeded {
+//    <#code#>
+//}
 
 @end

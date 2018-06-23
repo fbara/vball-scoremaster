@@ -58,6 +58,12 @@
 {
     [super viewDidLoad];
     self.tableView.delegate = self;
+    
+//    UITabBarItem* saveButton = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemTopRated tag:@"100"];
+//    [[UIBarButtonItem alloc] initWithTitle:@"Close"
+//                                     style:UIBarButtonItemStyleDone
+//                                    target:self
+//                                    action:@selector(saveAndClose)];
     //TODO: Need a way to get back to Settings
 //    UIBarButtonItem* saveButton =
 //        [[UIBarButtonItem alloc] initWithTitle:@"Close"
@@ -98,6 +104,8 @@
         fixedSpace.width = 20.0f;
         self.navigationItem.rightBarButtonItem = infoButton;
         self.navigationItem.leftBarButtonItem = saveButton;
+    } else {
+        [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:NSLocalizedString(@"Save", @"Saves content")];
     }
 
     // Set the switch if messages will be sent
@@ -749,9 +757,9 @@
 {
     [self setActionName:actionName];
 	//Close this view
-    if (IS_IPAD()) {
+    //if (IS_IPAD()) {
         [self.actionNameVC dismissViewControllerAnimated:FALSE completion:nil];
-    }
+    //}
 }
 
 #pragma mark - Segue

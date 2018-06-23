@@ -211,8 +211,8 @@ static void * leftContext = &leftContext;
         [self initializeHomeScore:currHomeScore fontSize:ipadScoreFont];
         [self initializeVisitorScore:currVisitorScore fontSize:ipadScoreFont];
     } else {
-        [self initializeHomeScore:currHomeScore fontSize:iphoneScoreFont];
         [self initializeVisitorScore:currVisitorScore fontSize:iphoneScoreFont];
+        [self initializeHomeScore:currHomeScore fontSize:iphoneScoreFont];
     }
 
     // Get the Action Names
@@ -287,28 +287,24 @@ static void * leftContext = &leftContext;
         [self createViewControllersForScore:score
                                   withColor:self.homeColor
                                    fontSize:scoreSize];
-    self.homePageViewController.dataSource = self;
-    [self.homePageViewController
-        setViewControllers:@[ homeScoreViewController ]
-                 direction:UIPageViewControllerNavigationDirectionForward
-                  animated:NO
-                completion:nil];
+    //self.homePageViewController.dataSource = self;
+    [self.homePageViewController setViewControllers:@[homeScoreViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
 
 - (void)initializeVisitorScore:(int)score fontSize:(CGFloat)scoreSize
 {
     self.visitorColor = [self colorVisitorScoreView];
-    DefaultScoreViewController* visitorScoreViewController =
-        [self createViewControllersForScore:score
-                                  withColor:self.visitorColor
-                                   fontSize:scoreSize];
-    self.visitorPageViewController.dataSource = self;
-    [self.visitorPageViewController
-        setViewControllers:@[ visitorScoreViewController ]
-                 direction:UIPageViewControllerNavigationDirectionForward
-                  animated:NO
-                completion:nil];
+//    DefaultScoreViewController* visitorScoreViewController =
+//        [self createViewControllersForScore:score
+//                                  withColor:self.visitorColor
+//                                   fontSize:scoreSize];
+    DefaultScoreViewController* visitorScoreView = [self createViewControllersForScore:score withColor:self.visitorColor fontSize:scoreSize];
+    //self.visitorPageViewController.dataSource = self;
+    //[visitorScoreView setViewControllers:@[visitorScoreViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [self.visitorPageViewController setViewControllers:@[visitorScoreView] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
+
+
 
 - (DefaultScoreViewController*)createViewControllersForScore:(int)score withColor:(UIColor*)color fontSize:(CGFloat)scoreSize
 {
@@ -341,10 +337,8 @@ static void * leftContext = &leftContext;
 
     NSString* color = [defaults stringForKey:@"colorSettings"];
 
-    if ([color isEqualToString:@"Complementary"] ||
-        [color isEqualToString:@"Dark"]) {
+    if ([color isEqualToString:@"Complementary"] || [color isEqualToString:@"Dark"]) {
         self.homeTeamName.backgroundColor = ComplementaryFlatColor(colorHome);
-        // Set the team name text color to a contrasting color
         self.homeTeamName.textColor = ContrastColor(self.homeTeamName.backgroundColor, TRUE);
     } else {
         self.homeTeamName.backgroundColor = [UIColor whiteColor];
@@ -390,6 +384,7 @@ static void * leftContext = &leftContext;
 - (void)windowBackgroundColor
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    UIColor *textColor;
 
     if ([[defaults objectForKey:@"colorSettings"]
             isEqualToString:@"Complementary"]) {
@@ -401,6 +396,11 @@ static void * leftContext = &leftContext;
         self.rightActionNameNumber.textColor = FlatMintDark;
         self.leftActionNameNumber.textColor = FlatMintDark;
         self.gameNumber.textColor = ContrastColor(self.view.backgroundColor, TRUE);
+        textColor = ComplementaryFlatColor(self.rightActionNameNumber.textColor);
+        self.rightActionLabel.textColor = textColor;
+        self.leftActionLabel.textColor = textColor;
+        self.visitingTeamPastName.textColor = textColor;
+        self.homeTeamPastName.textColor = textColor;
         UIImage *matchImage = [UIImage imageNamed:@"NewGame.png"];
         [self.matchButton setImage:matchImage forState:UIControlStateNormal];
         UIImage *gameImage = [UIImage imageNamed:@"NewMatch3.png"];
@@ -426,6 +426,11 @@ static void * leftContext = &leftContext;
         self.rightActionNameNumber.textColor = FlatGreen;
         self.leftActionNameNumber.textColor = FlatGreen;
         self.gameNumber.textColor = FlatMint;
+        textColor = ContrastColor(self.view.backgroundColor, TRUE);
+        self.rightActionLabel.textColor = textColor;
+        self.leftActionLabel.textColor = textColor;
+        self.visitingTeamPastName.textColor = textColor;
+        self.homeTeamPastName.textColor = textColor;
         UIImage *matchImage = [UIImage imageNamed:@"NewGameWhite.png"];
         [self.matchButton setImage:matchImage forState:UIControlStateNormal];
         UIImage *gameImage = [UIImage imageNamed:@"NewMatch3White.png"];
@@ -449,6 +454,11 @@ static void * leftContext = &leftContext;
         self.rightActionNameNumber.textColor = FlatBlackDark;
         self.leftActionNameNumber.textColor = FlatBlackDark;
         self.gameNumber.textColor = FlatBlackDark;
+        textColor = ContrastColor(self.view.backgroundColor, TRUE);
+        self.rightActionLabel.textColor = textColor;
+        self.leftActionLabel.textColor = textColor;
+        self.visitingTeamPastName.textColor = textColor;
+        self.homeTeamPastName.textColor = textColor;
         UIImage *matchImage = [UIImage imageNamed:@"NewGame.png"];
         [self.matchButton setImage:matchImage forState:UIControlStateNormal];
         UIImage *gameImage = [UIImage imageNamed:@"NewMatch3.png"];
@@ -973,6 +983,7 @@ static void * leftContext = &leftContext;
  */
 - (IBAction)leftActionPressed:(UIButton*)sender
 {
+    //TODO: Fix popup menu location
     // Log the button press for analytics
     if ([self canSendAnalytics]) {
         [self logButtonPress:(UIButton*)sender];
@@ -1392,7 +1403,7 @@ static void * leftContext = &leftContext;
         [self.presentedViewController isKindOfClass:[NotificationsTableViewController class]]) {
         return nil;
     }
-    
+    // TODO: Fix Context Menu
     int actionSide = 0;
     if (CGRectContainsPoint([self.rightActionNameButton frame], location)) {
         actionSide = 2;
@@ -1485,6 +1496,7 @@ static void * leftContext = &leftContext;
  */
 - (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    // TODO: Fix deprecated method
     //Need to determine the action based on the TAG
     if (buttonIndex != 0) {
         [self startNewMatch];
