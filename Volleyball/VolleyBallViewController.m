@@ -10,12 +10,10 @@
 #import "DefaultScoreViewController.h"
 #import "ActionLabelTableViewController.h"
 #import "NotificationsTableViewController.h"
-//#import <GBVersionTracking/GBVersionTracking.h>
 #import "GBVersionTracking.h"
 #import <GoogleAnalytics/GAI.h>
 #import <GoogleAnalytics/GAIFields.h>
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
-//#import <ChameleonFramework/Chameleon.h>
 #import "Chameleon.h"
 #import <AppbotX/ABX.h>
 #import <AppbotX/ABXNotificationView.h>
@@ -257,11 +255,7 @@ static void * leftContext = &leftContext;
     // There are 4 home & 4 visitor past scores that need to be reset to '0'
     for (UILabel* score in self.pastScoreCollection) {
         score.text = @"0";
-        if (IS_IPAD()) {
-            [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:30]];
-        } else {
-            [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
-        }
+        [score setFont:[UIFont systemFontOfSize:31 weight:UIFontWeightRegular]];
         // Need to check what color background is being used.
         if ([colorScheme isEqualToString:@"Dark"]) {
             // Dark background so change color to yellow
@@ -294,17 +288,13 @@ static void * leftContext = &leftContext;
 - (void)initializeVisitorScore:(int)score fontSize:(CGFloat)scoreSize
 {
     self.visitorColor = [self colorVisitorScoreView];
-//    DefaultScoreViewController* visitorScoreViewController =
-//        [self createViewControllersForScore:score
-//                                  withColor:self.visitorColor
-//                                   fontSize:scoreSize];
-    DefaultScoreViewController* visitorScoreView = [self createViewControllersForScore:score withColor:self.visitorColor fontSize:scoreSize];
+    DefaultScoreViewController* visitorScoreViewController =
+        [self createViewControllersForScore:score
+                                  withColor:self.visitorColor
+                                   fontSize:scoreSize];
     //self.visitorPageViewController.dataSource = self;
-    //[visitorScoreView setViewControllers:@[visitorScoreViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    [self.visitorPageViewController setViewControllers:@[visitorScoreView] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [self.visitorPageViewController setViewControllers:@[visitorScoreViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
-
-
 
 - (DefaultScoreViewController*)createViewControllersForScore:(int)score withColor:(UIColor*)color fontSize:(CGFloat)scoreSize
 {
@@ -338,13 +328,15 @@ static void * leftContext = &leftContext;
     NSString* color = [defaults stringForKey:@"colorSettings"];
 
     if ([color isEqualToString:@"Complementary"] || [color isEqualToString:@"Dark"]) {
-        self.homeTeamName.backgroundColor = ComplementaryFlatColor(colorHome);
-        self.homeTeamName.textColor = ContrastColor(self.homeTeamName.backgroundColor, TRUE);
+        self.homeTeamName.backgroundColor = [colorHome darkenByPercentage:0.20];
+        //self.homeTeamName.textColor = ComplementaryFlatColor(self.homeTeamName.backgroundColor);
     } else {
-        self.homeTeamName.backgroundColor = [UIColor whiteColor];
-        self.homeTeamName.textColor = [UIColor blackColor];
+        self.homeTeamName.backgroundColor = FlatSand;
+        //self.homeTeamName.textColor = ContrastColor(self.homeTeamName.backgroundColor, TRUE);
     }
-    self.homeTeamPastName.backgroundColor = self.homeTeamName.backgroundColor;
+    
+    self.homeTeamName.textColor = ContrastColor(self.homeTeamName.backgroundColor, TRUE);
+    self.homeTeamPastName.backgroundColor = colorHome;
     self.homeTeamPastName.textColor = self.homeTeamName.textColor;
     return colorHome;
 }
@@ -364,16 +356,17 @@ static void * leftContext = &leftContext;
 
     NSString* color = [defaults stringForKey:@"colorSettings"];
 
-    if ([color isEqualToString:@"Complementary"] ||
-        [color isEqualToString:@"Dark"]) {
-        self.visitingTeamName.backgroundColor = ComplementaryFlatColor(colorVisitor);
-        self.visitingTeamName.textColor = ContrastColor(self.visitingTeamName.backgroundColor, TRUE);
+    if ([color isEqualToString:@"Complementary"] || [color isEqualToString:@"Dark"]) {
+        self.visitingTeamName.backgroundColor = [colorVisitor darkenByPercentage:0.20];
+        //self.visitingTeamName.textColor = ContrastColor(self.visitingTeamName.backgroundColor, TRUE);
     } else {
-        self.visitingTeamName.backgroundColor = [UIColor whiteColor];
-        self.visitingTeamName.textColor = [UIColor blackColor];
+        self.visitingTeamName.backgroundColor = FlatSandDark;
+        //self.visitingTeamName.textColor = ContrastColor(self.visitingTeamName.backgroundColor, TRUE);
     }
-    self.visitingTeamPastName.backgroundColor = self.visitingTeamName.backgroundColor;
-    self.visitingTeamPastName.textColor = self.visitingTeamName.textColor;
+    
+    self.visitingTeamName.textColor = ContrastColor(self.visitingTeamName.backgroundColor, TRUE);
+    self.visitingTeamPastName.backgroundColor = colorVisitor;
+    self.visitingTeamPastName.textColor = ContrastColor(colorVisitor, TRUE);
 
     return colorVisitor;
 }
@@ -819,22 +812,21 @@ static void * leftContext = &leftContext;
         self.homeGame1.text = [NSString stringWithFormat:@"%d", currHomeScore];
         self.visitGame1.text = [NSString stringWithFormat:@"%d", currVisitorScore];
         if (currHomeScore > currVisitorScore) {
-            self.homeGame1.textColor = [UIColor redColor];
+            self.homeGame1.textColor = FlatRed;
             totalPastGamesHome = totalPastGamesHome + 1;
             if (IS_IPAD()) {
                 [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                //[self.homeGame1 setFont:[UIFont fontWithName:@"Avenir Next" size:30]];
-                //[self.homeGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+                [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:31]];
             }
 
         } else if (currHomeScore < currVisitorScore) {
-            self.visitGame1.textColor = [UIColor redColor];
+            self.visitGame1.textColor = FlatRed;
             totalPastGamesVisitor = totalPastGamesVisitor + 1;
             if (IS_IPAD()) {
                 [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                //[self.visitGame1 setFont:[UIFont boldSystemFontOfSize:20]];
+                [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:31]];
             }
 
         } else {
@@ -851,7 +843,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                //[self.homeGame2 setFont:[UIFont boldSystemFontOfSize:20]];
+                [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:31]];
             }
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame2.textColor = FlatRed;
@@ -859,7 +851,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                //[self.visitGame2 setFont:[UIFont boldSystemFontOfSize:20]];
+                [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:31]];
             }
 
         } else {
@@ -876,7 +868,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                //[self.homeGame3 setFont:[UIFont boldSystemFontOfSize:20]];
+                [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:31]];
             }
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame3.textColor = FlatRed;
@@ -884,7 +876,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                //[self.visitGame3 setFont:[UIFont boldSystemFontOfSize:20]];
+                [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:31]];
             }
         } else {
             self.visitGame3.textColor = FlatGray;
@@ -900,7 +892,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.homeGame4 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                //[self.homeGame4 setFont:[UIFont boldSystemFontOfSize:20]];
+                [self.homeGame4 setFont:[UIFont boldSystemFontOfSize:31]];
             }
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame4.textColor = FlatRed;
@@ -908,7 +900,7 @@ static void * leftContext = &leftContext;
             if (IS_IPAD()) {
                 [self.visitGame4 setFont:[UIFont boldSystemFontOfSize:30]];
             } else {
-                //[self.visitGame4 setFont:[UIFont boldSystemFontOfSize:20]];
+                [self.visitGame4 setFont:[UIFont boldSystemFontOfSize:31]];
             }
         } else {
             self.visitGame4.textColor = FlatGray;
@@ -934,14 +926,15 @@ static void * leftContext = &leftContext;
     } else {
         self.gameNumber.text = [NSString stringWithFormat:@"%d", 1];
         // Reset the past game fonts back to default
-        for (UILabel* score in self.pastScoreCollection) {
-            score.text = @"0";
-            if (IS_IPAD()) {
-                [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:30]];
-            } else {
-                [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
-            }
-        }
+        [self initializePastGames];
+//        for (UILabel* score in self.pastScoreCollection) {
+//            score.text = @"0";
+//            if (IS_IPAD()) {
+//                [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:30]];
+//            } else {
+//                [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
+//            }
+//        }
         [self startNewMatch];
     }
     currHomeScore = 0;
@@ -1032,40 +1025,44 @@ static void * leftContext = &leftContext;
     if (IS_IPAD()) {
         [self initializeHomeScore:0 fontSize:188];
         [self initializeVisitorScore:0 fontSize:188];
-//    } else {
-//        [self initializeHomeScore:0 fontSize:118];
-//        [self initializeVisitorScore:0 fontSize:118];
+    } else {
+        [self initializeHomeScore:0 fontSize:118];
+        [self initializeVisitorScore:0 fontSize:118];
     }
     
-//    // Count how many times the user has started a new match so I can show the Apple Review prompt
-//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-//    if ([[defaults integerForKey:@"newMatchCount"] ) {
-//        <#statements#>
-//    } else {
-//        <#statements#>
-//    }
-//    
-//    if ([[defaults stringForKey:@"newMatchCount"] isEqualToString:@"On"]) {
-//        self.mainPageTwitterButton.enabled = TRUE;
-//    } else {
-//        self.mainPageTwitterButton.enabled = FALSE;
-//    }
-//    
+    // Count how many times the user has started a new match so I can show the Apple Review prompt
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults integerForKey:@"newMatchCount"] ) {
+        NSLog(@"\nMatch: %li", [defaults integerForKey:@"newMatchCount"]);
+    } else {
+        NSLog(@"No new match");
+    }
+  
     [self resetGameAndNames];
     [self initializePastGames];
 }
 
 - (IBAction)newMatch:(UIButton *)sender {
-#define TAG_MATCH 1
+    // TODO: Verify if TAG_MATCH is still needed.
+//#define TAG_MATCH 1
     
-    UIAlertView* alert = [[UIAlertView alloc]
-                          initWithTitle:NSLocalizedString(@"New Match?", nil)
-                          message:NSLocalizedString(@"Reset team names, scores, action names, and start a new match? This can't be undone.", nil)
-                          delegate:self
-                          cancelButtonTitle:NSLocalizedString(@"No", nil)
-                          otherButtonTitles:NSLocalizedString(@"Yes", nil), nil];
-    alert.tag = TAG_MATCH;
-    [alert show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"New Match?", nil) message:NSLocalizedString(@"Reset team names, scores, action names, and start a new match? This can't be undone.", nil) preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *no = [UIAlertAction actionWithTitle:NSLocalizedString(@"No", nil) style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *yes = [UIAlertAction actionWithTitle:NSLocalizedString(@"Yes", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self startNewMatch];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [alert addAction:no];
+    [alert addAction:yes];
+    
+   // Get the active VC
+    UIViewController *activeVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    if ([activeVC isKindOfClass:[UINavigationController class]]) {
+        activeVC = [(UINavigationController *)activeVC visibleViewController];
+    }
+    [activeVC presentViewController:alert animated:YES completion:nil];
+    
 }
 
 #pragma mark - Screen Image
@@ -1494,28 +1491,28 @@ static void * leftContext = &leftContext;
  *  @param alertView   What to do if the user wants to start a new match or not.
  *  @param buttonIndex The button the user touched to start a new match or not.
  */
-- (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    // TODO: Fix deprecated method
-    //Need to determine the action based on the TAG
-    if (buttonIndex != 0) {
-        [self startNewMatch];
-    }
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    // Good place to show review prompt if they haven't already
-    if ([[defaults stringForKey:@"showPrompt"] isEqualToString:@"Yes"]) {
-        // Show the Prompt view
-        self.promptView = [[ABXPromptView alloc]
-            initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200,
-                                     CGRectGetWidth(self.view.bounds), 100)];
-        self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
-        self.promptView.backgroundColor = [UIColor cyanColor];
-        self.promptView.delegate = self;
-        [self.view addSubview:self.promptView];
-        // Turn prompt off for this version
-        [defaults setObject:@"No" forKey:@"showPrompt"];
-    }
-}
+//- (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//    // TODO: Fix deprecated method
+//    //Need to determine the action based on the TAG
+//    if (buttonIndex != 0) {
+//        [self startNewMatch];
+//    }
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    // Good place to show review prompt if they haven't already
+//    if ([[defaults stringForKey:@"showPrompt"] isEqualToString:@"Yes"]) {
+//        // Show the Prompt view
+//        self.promptView = [[ABXPromptView alloc]
+//            initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200,
+//                                     CGRectGetWidth(self.view.bounds), 100)];
+//        self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+//        self.promptView.backgroundColor = [UIColor cyanColor];
+//        self.promptView.delegate = self;
+//        [self.view addSubview:self.promptView];
+//        // Turn prompt off for this version
+//        [defaults setObject:@"No" forKey:@"showPrompt"];
+//    }
+//}
 
 - (void)sendSMS
 {
@@ -1745,6 +1742,16 @@ static void * leftContext = &leftContext;
 }
 
 #pragma mark - UITextFieldDelegate
+
+// Update the past team names whenever the main text field is updated
+- (IBAction)visitorNameEntered:(UITextField *)sender {
+    self.visitingTeamPastName.text = sender.text;
+}
+
+- (IBAction)homeNameEntered:(UITextField *)sender {
+    self.homeTeamPastName.text = sender.text;
+}
+
 
 - (void)textFieldDidEndEditing:(UITextField*)textField
 {

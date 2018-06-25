@@ -391,10 +391,6 @@
                         <outlet property="firstActionName" destination="991-IZ-vz3" id="Lko-Pf-Px5"/>
                         <outlet property="gameButton" destination="zLM-eS-SXb" id="tOZ-xp-0jX"/>
                         <outlet property="gameNumber" destination="O6P-Lx-PJG" id="hEm-tI-Usd"/>
-                        <outlet property="homeGame1" destination="m1P-eG-o39" id="JRe-DD-YSl"/>
-                        <outlet property="homeGame2" destination="HOT-d2-W5V" id="kvi-8l-e4N"/>
-                        <outlet property="homeGame3" destination="iJA-mX-JWA" id="YC9-Qu-zCX"/>
-                        <outlet property="homeGame4" destination="OSa-1M-sAa" id="Vwy-EO-hck"/>
                         <outlet property="homeTeamContainer" destination="Acd-DE-Ouq" id="2Va-1T-JQ2"/>
                         <outlet property="homeTeamName" destination="KgW-hz-5sq" id="rYn-cJ-0vR"/>
                         <outlet property="leftActionLabel" destination="NQ3-D6-TK5" id="tfi-QH-n7J"/>
