@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -303,7 +302,7 @@
                                                             <segue destination="xOM-Jn-cof" kind="embed" identifier="embedVisitor" id="bYG-qz-1F8"/>
                                                         </connections>
                                                     </containerView>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Visitors" placeholder="Visitors" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="8" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="V3I-fa-y0G">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Visitors" placeholder="Visitors" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="8" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="V3I-fa-y0G" userLabel="Visiting Team Name">
                                                         <rect key="frame" x="180.66666666666663" y="0.0" width="178.33333333333337" height="166.33333333333334"/>
                                                         <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -313,6 +312,7 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                         <connections>
                                                             <action selector="visitorNameEntered:" destination="PNK-B0-6uX" eventType="editingDidEnd" id="Y6I-Zv-ALq"/>
+                                                            <outlet property="delegate" destination="PNK-B0-6uX" id="JQp-Of-JPc"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -320,7 +320,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="749" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ahR-Cj-VB1" userLabel="HomeScoreStackView">
                                                 <rect key="frame" x="0.0" y="168.33333333333331" width="359" height="166"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Home" placeholder="Home" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="8" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ENv-Nj-Vop">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Home" placeholder="Home" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="8" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tp6-Ot-gF8" userLabel="Home Team Name">
                                                         <rect key="frame" x="0.0" y="0.0" width="178.66666666666666" height="166"/>
                                                         <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -329,7 +329,8 @@
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                         <connections>
-                                                            <action selector="homeNameEntered:" destination="PNK-B0-6uX" eventType="editingDidEnd" id="H6o-dn-scZ"/>
+                                                            <action selector="homeNameEntered:" destination="PNK-B0-6uX" eventType="editingDidEnd" id="505-gR-EVS"/>
+                                                            <outlet property="delegate" destination="PNK-B0-6uX" id="Bw7-QG-jnd"/>
                                                         </connections>
                                                     </textField>
                                                     <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TU3-3V-RLx" userLabel="Home Container View">
@@ -373,7 +374,7 @@
                         <outlet property="homeGame3" destination="N1X-cT-N5r" id="H00-d1-5Ey"/>
                         <outlet property="homeGame4" destination="aUy-X5-UyR" id="o7S-Me-bKc"/>
                         <outlet property="homeTeamContainer" destination="TU3-3V-RLx" id="Rgq-qt-3yy"/>
-                        <outlet property="homeTeamName" destination="ENv-Nj-Vop" id="7k3-8S-8ci"/>
+                        <outlet property="homeTeamName" destination="tp6-Ot-gF8" id="duk-uU-0Mj"/>
                         <outlet property="homeTeamPastName" destination="xMR-op-eTx" id="Nns-06-8nV"/>
                         <outlet property="leftActionLabel" destination="ZQR-dU-Ieu" id="FBN-62-bQf"/>
                         <outlet property="leftActionNameButton" destination="38Z-K6-fZ9" id="vJC-92-utT"/>

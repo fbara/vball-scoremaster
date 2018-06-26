@@ -87,6 +87,7 @@ static void * leftContext = &leftContext;
     // Set home URL for Twitter and Facebook messages
     self.baralabsURL = [NSURL URLWithString:@"www.baralabs.com"];
 
+    
     // Check if this is the first time the app has run.
     // If so, run tutorial.  If not, don't run turorial.
     if ([GBVersionTracking isFirstLaunchEver] ||
@@ -100,8 +101,7 @@ static void * leftContext = &leftContext;
     [self resetGameAndNames];
 
     // Set Delegate's and DataSource's
-    self.visitingTeamName.delegate = self;
-    self.homeTeamName.delegate = self;
+
     self.visitorPageViewController.dataSource = self;
     self.visitorPageViewController.delegate = self;
     self.homePageViewController.dataSource = self;
@@ -201,7 +201,8 @@ static void * leftContext = &leftContext;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    [super viewWillAppear:NO];
+    [self.homeTeamName addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:NULL];
 
     // Update the scoreview's colors in case they were changed in Settings
     // Initiaize all the UI elements depending on the device (font=188/118)
@@ -243,6 +244,11 @@ static void * leftContext = &leftContext;
     [self loadActionNames];
     [self setupDynamicShortcuts];
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.homeTeamName removeObserver:self forKeyPath:@"contentSize"];
 }
 
 - (IBAction)goToSettings:(UIBarButtonItem *)sender
@@ -1741,6 +1747,14 @@ static void * leftContext = &leftContext;
     }
 }
 
+#pragma mark - UITextView Delegates
+
+//- (void)textViewDidEndEditing:(UITextView *)textView {
+//    self.homeTeamName.text = textView.text;
+//}
+
+
+
 #pragma mark - UITextFieldDelegate
 
 // Update the past team names whenever the main text field is updated
@@ -1751,6 +1765,8 @@ static void * leftContext = &leftContext;
 - (IBAction)homeNameEntered:(UITextField *)sender {
     self.homeTeamPastName.text = sender.text;
 }
+
+
 
 
 - (void)textFieldDidEndEditing:(UITextField*)textField

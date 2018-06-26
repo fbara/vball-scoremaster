@@ -5,6 +5,7 @@ PODS:
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
+  - CZPlaceholderTextView (0.1.0)
   - DeviceUtil (2.1.2)
   - GBVersionTracking (1.3.2)
   - Google-Mobile-Ads-SDK (7.28.0)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - AppbotX (from `https://github.com/appbotx/appbotx.git`)
   - BTBalloon
   - ChameleonFramework
+  - CZPlaceholderTextView
   - DeviceUtil
   - GBVersionTracking
   - Google-Mobile-Ads-SDK
@@ -38,6 +40,25 @@ DEPENDENCIES:
   - TSMessages
   - VTAcknowledgementsViewController
   - VWWPermissionKit (~> 1.3.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - BTBalloon
+    - ChameleonFramework
+    - CZPlaceholderTextView
+    - DeviceUtil
+    - GBVersionTracking
+    - Google-Mobile-Ads-SDK
+    - GoogleAnalytics
+    - HexColors
+    - LaunchKit
+    - MBProgressHUD
+    - MPCoachMarks
+    - PureLayout
+    - SESlideTableViewCell
+    - TSMessages
+    - VTAcknowledgementsViewController
+    - VWWPermissionKit
 
 EXTERNAL SOURCES:
   AppbotX:
@@ -52,6 +73,7 @@ SPEC CHECKSUMS:
   AppbotX: 6478b94b694e516fb9ee8c0acd8ba48d6bf6d6b3
   BTBalloon: d38bbf4f6ee29ebad7b983653a927e874dfe1f7f
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  CZPlaceholderTextView: 3a48e0a7fd31677c1bd8f071fbadcd616fa06676
   DeviceUtil: 8a0334404594ba8e3f7fa01caf48cc95b0427333
   GBVersionTracking: c9b5eb256a234e01b5b44731fda86a3488760c49
   Google-Mobile-Ads-SDK: 7f9bc0011df363ae5616449de3682a14c4701612
@@ -66,6 +88,6 @@ SPEC CHECKSUMS:
   VTAcknowledgementsViewController: d62bb400ca68e240680906bcfa2a2b380d39b30f
   VWWPermissionKit: 102e84bbd358cf909f46eb2120d1c698d0e0c3af
 
-PODFILE CHECKSUM: 42e5b081c1cc7d202d00f7d3f6eb1dad69d09592
+PODFILE CHECKSUM: 0c7484607b757b325e5912e394992de1cfd4570d
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

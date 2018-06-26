@@ -1,6 +1,6 @@
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/BTBalloon
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/BTBalloon" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AppbotX" "${PODS_ROOT}/Headers/Public/BTBalloon" "${PODS_ROOT}/Headers/Public/ChameleonFramework" "${PODS_ROOT}/Headers/Public/DeviceUtil" "${PODS_ROOT}/Headers/Public/GBVersionTracking" "${PODS_ROOT}/Headers/Public/Google-Mobile-Ads-SDK" "${PODS_ROOT}/Headers/Public/GoogleAnalytics" "${PODS_ROOT}/Headers/Public/HexColors" "${PODS_ROOT}/Headers/Public/LaunchKit" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/MPCoachMarks" "${PODS_ROOT}/Headers/Public/PureLayout" "${PODS_ROOT}/Headers/Public/SESlideTableViewCell" "${PODS_ROOT}/Headers/Public/TSMessages" "${PODS_ROOT}/Headers/Public/VTAcknowledgementsViewController" "${PODS_ROOT}/Headers/Public/VWWPermissionKit"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/BTBalloon" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/BTBalloon" "${PODS_ROOT}/Headers/Public/PureLayout"
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PureLayout"
 OTHER_LDFLAGS = -framework "UIKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
