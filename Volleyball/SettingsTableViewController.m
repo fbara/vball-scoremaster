@@ -104,9 +104,6 @@
         fixedSpace.width = 20.0f;
         self.navigationItem.rightBarButtonItem = infoButton;
         self.navigationItem.leftBarButtonItem = saveButton;
-//    } else {
-//        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveAndClose)];
-//        self.navigationItem.rightBarButtonItem = backButton;
     }
 
     // Set the switch if messages will be sent
@@ -149,9 +146,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.barTintColor = FlatBlackDark;
-    self.navigationController.navigationBar.tintColor = ContrastColor(FlatBlackDark, TRUE);
-    self.navigationController.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : ContrastColor(FlatBlackDark, TRUE) };
+    [self setStatusBarStyle:UIStatusBarStyleContrast];
 
     // Is this the first time running this VC?
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];

@@ -431,7 +431,7 @@
 		01A1DF45CACC1CA8845847C7E02A2C3A /* ABXAttachment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABXAttachment.m; path = Classes/Models/ABXAttachment.m; sourceTree = "<group>"; };
 		01E25ABF23C15FE68D6D1E959C11FA2F /* LKBundleInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKBundleInfo.h; path = LaunchKit/Classes/Bundles/LKBundleInfo.h; sourceTree = "<group>"; };
 		023D7E5CFD15A0CEF595395FE330879D /* ABXVersionTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABXVersionTableViewCell.m; path = Classes/Views/ABXVersionTableViewCell.m; sourceTree = "<group>"; };
-		03C1719B912D890B2D2D6B7CCCF580B3 /* libMPCoachMarks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMPCoachMarks.a; path = libMPCoachMarks.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		03C1719B912D890B2D2D6B7CCCF580B3 /* libMPCoachMarks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMPCoachMarks.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E2FEB071951B7FC5B3651A1204BBB0 /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.m"; sourceTree = "<group>"; };
 		0582645CA30F4D154EED820452BBBB6A /* NotificationBackgroundWarningIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundWarningIcon@2x.png"; path = "Pod/Assets/NotificationBackgroundWarningIcon@2x.png"; sourceTree = "<group>"; };
 		05E0EC6219080BC471C7F2FD35B9737C /* UIColor+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Chameleon.m"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.m"; sourceTree = "<group>"; };
@@ -448,7 +448,7 @@
 		0D4D078B347A51F465A2A00C96EB2D4C /* NotificationBackgroundSuccessIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundSuccessIcon.png; path = Pod/Assets/NotificationBackgroundSuccessIcon.png; sourceTree = "<group>"; };
 		0ED21696D60451AB06E127038CDCA821 /* VTAcknowledgementsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VTAcknowledgementsViewController.h; path = Classes/VTAcknowledgementsViewController.h; sourceTree = "<group>"; };
 		0F8981EF62F1FEB9528FDAAC19985876 /* LaunchKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LaunchKit-dummy.m"; sourceTree = "<group>"; };
-		1193F7AC0C137FF233C9F833F0E24AEB /* lk_zip.c */ = {isa = PBXFileReference; includeInIndex = 1; name = lk_zip.c; path = LaunchKit/Classes/ThirdParty/ZipArchive/minizip/lk_zip.c; sourceTree = "<group>"; };
+		1193F7AC0C137FF233C9F833F0E24AEB /* lk_zip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = lk_zip.c; path = LaunchKit/Classes/ThirdParty/ZipArchive/minizip/lk_zip.c; sourceTree = "<group>"; };
 		11CD70A66FDD9699B192AABA91B6630C /* VWWPermissionTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWPermissionTableViewCell.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionTableViewCell.h; sourceTree = "<group>"; };
 		120E8C0A6FD28A82476D7F9020C23683 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
 		12C5B90C88450D2D0A4797AFD141C112 /* BTBalloonArrow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTBalloonArrow.m; path = Pod/Classes/BTBalloonArrow.m; sourceTree = "<group>"; };
@@ -460,7 +460,7 @@
 		17B79F1BB9C0D3CC074C63E99D5E45D5 /* VWWPermissionsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWPermissionsViewController.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionsViewController.h; sourceTree = "<group>"; };
 		1820CB188C8AF5C6F87BDD9DC6AA5E77 /* LKAnalytics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LKAnalytics.m; path = LaunchKit/Classes/Analytics/LKAnalytics.m; sourceTree = "<group>"; };
 		184D0CD724FF3E6C3D8BF9A6575B14C2 /* ABXTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABXTextView.m; path = Classes/Views/ABXTextView.m; sourceTree = "<group>"; };
-		189FF1BECA15313645BCB33F02EE6FBD /* lk_ioapi.c */ = {isa = PBXFileReference; includeInIndex = 1; name = lk_ioapi.c; path = LaunchKit/Classes/ThirdParty/ZipArchive/minizip/lk_ioapi.c; sourceTree = "<group>"; };
+		189FF1BECA15313645BCB33F02EE6FBD /* lk_ioapi.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = lk_ioapi.c; path = LaunchKit/Classes/ThirdParty/ZipArchive/minizip/lk_ioapi.c; sourceTree = "<group>"; };
 		19134C3359A888934F9ED288E490086A /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
 		19F2A22A5E434D300DCA71E8845A8357 /* arrow-right.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrow-right.png"; path = "MPCoachMarks/arrows/arrow-right.png"; sourceTree = "<group>"; };
 		1A4C53844AED62F93CD24E3C31E99016 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = Sources/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
@@ -468,7 +468,7 @@
 		1AE5CE2F0318ACD88D4B70F520BA74EA /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = Sources/GAIEcommerceProduct.h; sourceTree = "<group>"; };
 		1AE8D537FE00ED1C720E6AC019F0CF9D /* VWWCalendarsPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWCalendarsPermission.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWCalendarsPermission.h; sourceTree = "<group>"; };
 		1B95B3C86946D0CF1A03D82EC9CAD1DD /* NSString+ABXSizing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+ABXSizing.h"; path = "Classes/Classes/NSString+ABXSizing.h"; sourceTree = "<group>"; };
-		1B96FE813DF432058B0F51C8248C6D51 /* libPods-VBall ScoreMaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-VBall ScoreMaster.a"; path = "libPods-VBall ScoreMaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B96FE813DF432058B0F51C8248C6D51 /* libPods-VBall ScoreMaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VBall ScoreMaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4DFF9DE389903DB42E6AB06439642E /* ABXNotificationTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABXNotificationTableViewCell.m; path = Classes/Views/ABXNotificationTableViewCell.m; sourceTree = "<group>"; };
 		1CD1CFB291D8EDD367BD6AC158E0BB71 /* HexColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HexColors.xcconfig; sourceTree = "<group>"; };
 		1E0B686967678E0D928273411DBEF124 /* NotificationBackgroundErrorIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundErrorIcon.png; path = Pod/Assets/NotificationBackgroundErrorIcon.png; sourceTree = "<group>"; };
@@ -476,7 +476,7 @@
 		1F0E517F98333BFDE5B4B9EA3EC65BD8 /* NSDictionary+LKFormEncoded.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+LKFormEncoded.h"; path = "LaunchKit/Classes/NSDictionary+LKFormEncoded.h"; sourceTree = "<group>"; };
 		1F7354BA176DE54FF21DE517F76118D6 /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
 		202866B33016C7C41B56817968271AC4 /* VTAcknowledgementsParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VTAcknowledgementsParser.m; path = Classes/VTAcknowledgementsParser.m; sourceTree = "<group>"; };
-		209AC188889E4662DCF5CACFC6BB0B9A /* libSESlideTableViewCell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSESlideTableViewCell.a; path = libSESlideTableViewCell.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		209AC188889E4662DCF5CACFC6BB0B9A /* libSESlideTableViewCell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSESlideTableViewCell.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		20A379A19CBF9C9C53A32B60A28C0124 /* TSMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSMessage.h; path = Pod/Classes/TSMessage.h; sourceTree = "<group>"; };
 		212CAA8DEF90075B22BBFB0FE5B9F8B5 /* Pods-VBall ScoreMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VBall ScoreMaster.release.xcconfig"; sourceTree = "<group>"; };
 		21391566439B16B8CD8F61C68FE1AF42 /* ABXNotificationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABXNotificationView.h; path = Classes/Views/ABXNotificationView.h; sourceTree = "<group>"; };
@@ -513,7 +513,7 @@
 		3725E061A3B7582E61214A1D6B5CBD65 /* VWWAccountsPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWAccountsPermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWAccountsPermission.m; sourceTree = "<group>"; };
 		376B0952673C25446CCF00676722FBED /* NotificationBackgroundWarning@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundWarning@2x.png"; path = "Pod/Assets/NotificationBackgroundWarning@2x.png"; sourceTree = "<group>"; };
 		37DA35F94B5910B57D3ACA76D43E711D /* VWWCoreMotionPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWCoreMotionPermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWCoreMotionPermission.m; sourceTree = "<group>"; };
-		39999C5EE5F9F1812A47324D9622ECC1 /* libAppbotX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAppbotX.a; path = libAppbotX.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		39999C5EE5F9F1812A47324D9622ECC1 /* libAppbotX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAppbotX.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E398ADFAF2969752A103686F7860D9 /* ABXBaseListViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABXBaseListViewController.m; path = Classes/Controllers/ABXBaseListViewController.m; sourceTree = "<group>"; };
 		3AF08F351B4C5AC87E4BED1BF5E8A60D /* HexColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HexColor.h; path = Classes/HexColor.h; sourceTree = "<group>"; };
 		3B1EB93042482947F2FE4D16C75290D7 /* UILabel+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+Chameleon.h"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.h"; sourceTree = "<group>"; };
@@ -528,7 +528,7 @@
 		3EA4FEB9ECEDD906690F5D8EC9D4FCFB /* BTBalloonArrow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTBalloonArrow.h; path = Pod/Classes/BTBalloonArrow.h; sourceTree = "<group>"; };
 		3F0C4D1E7354160BF04B873506059E45 /* LKCardPresentationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LKCardPresentationController.m; path = LaunchKit/Classes/UI/Presentation/LKCardPresentationController.m; sourceTree = "<group>"; };
 		3F519FAAA885CD55409EE74D49E8DBD6 /* DeviceList.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = DeviceList.plist; sourceTree = "<group>"; };
-		3F5B4624EBC831D8F1085E901948614E /* lk_unzip.c */ = {isa = PBXFileReference; includeInIndex = 1; name = lk_unzip.c; path = LaunchKit/Classes/ThirdParty/ZipArchive/minizip/lk_unzip.c; sourceTree = "<group>"; };
+		3F5B4624EBC831D8F1085E901948614E /* lk_unzip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = lk_unzip.c; path = LaunchKit/Classes/ThirdParty/ZipArchive/minizip/lk_unzip.c; sourceTree = "<group>"; };
 		4195BEB7B4D247898B3C30A78D9A437C /* CZPlaceholderTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZPlaceholderTextView.h; path = Pod/Classes/CZPlaceholderTextView.h; sourceTree = "<group>"; };
 		41A42CE32CA7EFD9B68E0B01FD0F2AE3 /* VWWContactsPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWContactsPermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWContactsPermission.m; sourceTree = "<group>"; };
 		41E9E01EC7962EB78D5022BA5A3C9125 /* VWWPermissionTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWPermissionTableViewCell.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionTableViewCell.m; sourceTree = "<group>"; };
@@ -537,7 +537,7 @@
 		45978FBF73DB0E6C3F6BE414B11711D4 /* GAILogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = Sources/GAILogger.h; sourceTree = "<group>"; };
 		47EE394A943CEDAD2D57DA62E094B6A4 /* LKGradientView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKGradientView.h; path = LaunchKit/Classes/UI/Components/LKGradientView.h; sourceTree = "<group>"; };
 		48187ADEF20A97522666C14B6AC85AF5 /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.h"; sourceTree = "<group>"; };
-		48D32FCAADBC950C427C0D2A184E715F /* libGBVersionTracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGBVersionTracking.a; path = libGBVersionTracking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		48D32FCAADBC950C427C0D2A184E715F /* libGBVersionTracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGBVersionTracking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5CDA8774DD351181814F4D37A0C5CB /* ABXNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABXNotification.h; path = Classes/Models/ABXNotification.h; sourceTree = "<group>"; };
 		4B45031567DD8F253E7EDC56A78797F9 /* arrow-top.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrow-top.png"; path = "MPCoachMarks/arrows/arrow-top.png"; sourceTree = "<group>"; };
 		4C7D24FC1598415C93F5244C4ED8C63F /* LKLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LKLabel.m; path = LaunchKit/Classes/UI/Components/LKLabel.m; sourceTree = "<group>"; };
@@ -555,7 +555,7 @@
 		57EC5FCD146A5AA9A6D8780FCBDD6ADE /* SESlideTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SESlideTableViewCell.h; path = SESlideTableViewCell/lib/SESlideTableViewCell.h; sourceTree = "<group>"; };
 		5854D446C3044EBC941039D42B1092D1 /* NSDictionary+ABXQueryString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+ABXQueryString.m"; path = "Classes/Classes/NSDictionary+ABXQueryString.m"; sourceTree = "<group>"; };
 		58C2B45E07E7C19EA5D60A85B54488A9 /* GBVersionTracking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GBVersionTracking-prefix.pch"; sourceTree = "<group>"; };
-		58F9C515D635D928A9DEAB82599CB58E /* BTBalloon.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BTBalloon.bundle; path = "BTBalloon-BTBalloon.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58F9C515D635D928A9DEAB82599CB58E /* BTBalloon.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTBalloon.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		597E1D89180DA33500E36E84D03D89B4 /* VWWMicrophonePermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWMicrophonePermission.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWMicrophonePermission.h; sourceTree = "<group>"; };
 		59EAF44DD930A41B1B1757C429733C98 /* LKTrackOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LKTrackOperation.m; path = LaunchKit/Classes/LKTrackOperation.m; sourceTree = "<group>"; };
 		5A50EF4A75B4A06B16D13272B7EC8949 /* lk_mztools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lk_mztools.h; path = LaunchKit/Classes/ThirdParty/ZipArchive/minizip/lk_mztools.h; sourceTree = "<group>"; };
@@ -563,7 +563,7 @@
 		5C7C3ADCF399444E96B9038EBF3E55A8 /* ABXFeedbackViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABXFeedbackViewController.m; path = Classes/Controllers/ABXFeedbackViewController.m; sourceTree = "<group>"; };
 		5CA9566007B92860D55CD59657170D96 /* NotificationBackgroundSuccess@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundSuccess@2x.png"; path = "Pod/Assets/NotificationBackgroundSuccess@2x.png"; sourceTree = "<group>"; };
 		5DB88FEA019ADA33C0921D4AFFA5258E /* VWWPhotosPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWPhotosPermission.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPhotosPermission.h; sourceTree = "<group>"; };
-		5E141D55D2B7417ABAB5873BF7A70D66 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMBProgressHUD.a; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E141D55D2B7417ABAB5873BF7A70D66 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4FF10340341D1819D9D6C4FE5280F8 /* VWWPermissionTitleTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = VWWPermissionTitleTableViewCell.xib; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionTitleTableViewCell.xib; sourceTree = "<group>"; };
 		5F243CB9D701ED4408557295A84DFD2A /* ABXApiClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABXApiClient.h; path = Classes/Classes/ABXApiClient.h; sourceTree = "<group>"; };
 		6085B882A40E6F01C7D97E5B118E9450 /* LKPageControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKPageControl.h; path = LaunchKit/Classes/UI/Components/LKPageControl.h; sourceTree = "<group>"; };
@@ -583,7 +583,7 @@
 		6C726F1C8270798FABA24500809B61ED /* BTBalloon-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BTBalloon-dummy.m"; sourceTree = "<group>"; };
 		6C799C5F4E2325DC2BF8B7F937DF1975 /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
 		6C819A76A2EF0BAD5762362940947AF9 /* NotificationButtonBackground.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationButtonBackground.png; path = Pod/Assets/NotificationButtonBackground.png; sourceTree = "<group>"; };
-		6D560B29FD6906943C766403342F9F21 /* libVWWPermissionKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libVWWPermissionKit.a; path = libVWWPermissionKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D560B29FD6906943C766403342F9F21 /* libVWWPermissionKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVWWPermissionKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F91323DBCC11352E80537B256C48356 /* VWWPermissionKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VWWPermissionKit.xcconfig; sourceTree = "<group>"; };
 		6FBF89DE30DFA827171CA39CF8D5BDB9 /* Pods-VBall ScoreMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VBall ScoreMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		71905AF98960667D8BC7610F6E373624 /* ChameleonEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonEnums.h; path = "Pod/Classes/Objective-C/ChameleonEnums.h"; sourceTree = "<group>"; };
@@ -614,7 +614,7 @@
 		81EA23AB42CDE08E302481471AF33291 /* LKTrackOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKTrackOperation.h; path = LaunchKit/Classes/LKTrackOperation.h; sourceTree = "<group>"; };
 		831EEC7A27A8A7D0967261A21006B692 /* VWWPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWPermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermission.m; sourceTree = "<group>"; };
 		8339845307D6E49374D101F102441B1F /* ABXNotificationTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABXNotificationTableViewCell.h; path = Classes/Views/ABXNotificationTableViewCell.h; sourceTree = "<group>"; };
-		837088439F68525EE8AB42ED774613CA /* libHexColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHexColors.a; path = libHexColors.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		837088439F68525EE8AB42ED774613CA /* libHexColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHexColors.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F75183FE54B4AAE27A5D856626FFC3 /* Pods-VBall ScoreMaster-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VBall ScoreMaster-frameworks.sh"; sourceTree = "<group>"; };
 		865C562869B49AE2EDFD31E145C9A846 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
 		873411873D7076664D144BD6C4E3D469 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
@@ -622,7 +622,7 @@
 		88E520812C11120237BF35A5A8E112F0 /* VTAcknowledgementsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VTAcknowledgementsViewController.m; path = Classes/VTAcknowledgementsViewController.m; sourceTree = "<group>"; };
 		8915EF32386AE49FEF415E472085FE81 /* NSString+ABXURLEncoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+ABXURLEncoding.h"; path = "Classes/Classes/NSString+ABXURLEncoding.h"; sourceTree = "<group>"; };
 		8BE994431432A2275DFC0F098A14F8ED /* NotificationBackgroundError@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundError@2x.png"; path = "Pod/Assets/NotificationBackgroundError@2x.png"; sourceTree = "<group>"; };
-		8C0FCE3A75ED5052B8CD802001A39ECA /* libDeviceUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libDeviceUtil.a; path = libDeviceUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0FCE3A75ED5052B8CD802001A39ECA /* libDeviceUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDeviceUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D23D06220AB50C3E2F8E77914092FD5 /* VWWCoreLocationAlwaysPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWCoreLocationAlwaysPermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWCoreLocationAlwaysPermission.m; sourceTree = "<group>"; };
 		901106F588844A6691A9AD75C958B4E4 /* SESlideTableViewCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SESlideTableViewCell-prefix.pch"; sourceTree = "<group>"; };
 		907A180FCEAFE4239A054CA789180AAA /* UIViewController+ABXScreenshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+ABXScreenshot.h"; path = "Classes/Classes/UIViewController+ABXScreenshot.h"; sourceTree = "<group>"; };
@@ -631,19 +631,19 @@
 		930B32763B2A918D85A1C54C4D03CFD8 /* LKSimpleStackView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKSimpleStackView.h; path = LaunchKit/Classes/UI/Components/LKSimpleStackView.h; sourceTree = "<group>"; };
 		936BD0B67E08A9B61A5560545FCB5883 /* BTBalloon-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTBalloon-prefix.pch"; sourceTree = "<group>"; };
 		937AE9E0D1E39B3A65618B89EA821DA4 /* CZPlaceholderTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CZPlaceholderTextView-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93C646E8FEC877C73F95EA854F1CD990 /* LKButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LKButton.m; path = LaunchKit/Classes/UI/Components/LKButton.m; sourceTree = "<group>"; };
 		93ED3FEC36A821616813569680F96F01 /* VWWPermissionTitleTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWPermissionTitleTableViewCell.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionTitleTableViewCell.m; sourceTree = "<group>"; };
 		952A1EF149E7053218FC4B9E7614A0F6 /* ABX.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABX.h; path = Classes/ABX.h; sourceTree = "<group>"; };
 		95F6DE3255F9C10E88942745214CD033 /* VWWCoreBluetoothPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWCoreBluetoothPermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWCoreBluetoothPermission.m; sourceTree = "<group>"; };
 		979F3DF421625BAB9D8CCAE55FA2764D /* VWWContactsPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWContactsPermission.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWContactsPermission.h; sourceTree = "<group>"; };
-		97E40F898E1A020E3BE5D7CA44D5273F /* LaunchKitResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LaunchKitResources.bundle; path = "LaunchKit-LaunchKitResources.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97E40F898E1A020E3BE5D7CA44D5273F /* LaunchKitResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaunchKitResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		984C73B2F1B5154F022958C04D88EAB6 /* LKLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKLabel.h; path = LaunchKit/Classes/UI/Components/LKLabel.h; sourceTree = "<group>"; };
 		98686FB8426E85E97239371375ECB0A4 /* VWWPermissionKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWPermissionKit.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionKit.h; sourceTree = "<group>"; };
 		98E2719A95ACA868650BD3661A674E8A /* SESlideTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SESlideTableViewCell.m; path = SESlideTableViewCell/lib/SESlideTableViewCell.m; sourceTree = "<group>"; };
 		990F36CDECDFC89CFABA5BB558E4DCCB /* VWWPhotosPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWPhotosPermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPhotosPermission.m; sourceTree = "<group>"; };
 		99B0A70EF5DA88855D2D5768F4E066FE /* ABXFAQViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABXFAQViewController.m; path = Classes/Controllers/ABXFAQViewController.m; sourceTree = "<group>"; };
-		9A848186AE4E7E7C87D37E1A65C14470 /* libVTAcknowledgementsViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libVTAcknowledgementsViewController.a; path = libVTAcknowledgementsViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A848186AE4E7E7C87D37E1A65C14470 /* libVTAcknowledgementsViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVTAcknowledgementsViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B257539D3ECEC04A8DDC1B1891F0221 /* Pods-VBall ScoreMaster.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VBall ScoreMaster.distribution.xcconfig"; sourceTree = "<group>"; };
 		9B739A874D7534A13BA17BB10DF26A34 /* VWWPermissionNotifications.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWPermissionNotifications.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionNotifications.h; sourceTree = "<group>"; };
 		9C61C4B8EED60DF62E54F71F45A9D057 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = Sources/GAIEcommercePromotion.h; sourceTree = "<group>"; };
@@ -654,7 +654,7 @@
 		A4970D00D63F26FAD7ACFDDF11C52220 /* VWWPermissionTitleTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWPermissionTitleTableViewCell.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionTitleTableViewCell.h; sourceTree = "<group>"; };
 		A6D4B6A837E3875B2DA04973CF7424EB /* ABXAttachment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABXAttachment.h; path = Classes/Models/ABXAttachment.h; sourceTree = "<group>"; };
 		A72F294440B832699C59BEC18118CEEF /* ABXPromptView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABXPromptView.m; path = Classes/Views/ABXPromptView.m; sourceTree = "<group>"; };
-		A7EC722D9CD9AB57BE9D09B4256FA8F4 /* libTSMessages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libTSMessages.a; path = libTSMessages.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7EC722D9CD9AB57BE9D09B4256FA8F4 /* libTSMessages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTSMessages.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B86707E4530A4485E68B85FDDB0A2F /* UIColor+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.m"; sourceTree = "<group>"; };
 		AA3F0F813E3C5B6B99D75ABC9BA64C92 /* LKViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKViewController.h; path = LaunchKit/Classes/UI/Components/LKViewController.h; sourceTree = "<group>"; };
 		AA9E415EC8BB49C966DCD9CAC1A10CFC /* NotificationBackgroundMessage@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundMessage@2x.png"; path = "Pod/Assets/NotificationBackgroundMessage@2x.png"; sourceTree = "<group>"; };
@@ -682,7 +682,7 @@
 		B9172B36A328B682C0AE35D7E832707D /* NSArray+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Chameleon.h"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.h"; sourceTree = "<group>"; };
 		BA00457BE95D95B066B0EFD527812055 /* TSMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TSMessage.m; path = Pod/Classes/TSMessage.m; sourceTree = "<group>"; };
 		BA109063745089B8DB3FF51433545E14 /* VWWNotificationsPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWNotificationsPermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWNotificationsPermission.m; sourceTree = "<group>"; };
-		BA6756108E6F67718E6BEC52564E8701 /* TSMessagesDefaultDesign.json */ = {isa = PBXFileReference; includeInIndex = 1; name = TSMessagesDefaultDesign.json; path = Pod/Assets/TSMessagesDefaultDesign.json; sourceTree = "<group>"; };
+		BA6756108E6F67718E6BEC52564E8701 /* TSMessagesDefaultDesign.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = TSMessagesDefaultDesign.json; path = Pod/Assets/TSMessagesDefaultDesign.json; sourceTree = "<group>"; };
 		BAD7815D6FAFB597D8E5E225BD5284E4 /* Pods-VBall ScoreMaster-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VBall ScoreMaster-dummy.m"; sourceTree = "<group>"; };
 		BD090D4DB0367C931C2E9C082DE66D3A /* UIAppearance+Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAppearance+Swift.h"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.h"; sourceTree = "<group>"; };
 		BE8E09963BBDAAAAF34D5508D1CE0D6D /* VTAcknowledgementsViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VTAcknowledgementsViewController-dummy.m"; sourceTree = "<group>"; };
@@ -697,7 +697,7 @@
 		C45AE89F8ACE3EB8E806A7D10D294B3C /* LKPopCustomSegue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKPopCustomSegue.h; path = LaunchKit/Classes/UI/Components/LKPopCustomSegue.h; sourceTree = "<group>"; };
 		C52B60E64354DA3371D5EE0A93064AB4 /* arrow-left@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrow-left@3x.png"; path = "MPCoachMarks/arrows/arrow-left@3x.png"; sourceTree = "<group>"; };
 		C567CBC9F5FAED66907786D2282CA603 /* ABXVersion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABXVersion.m; path = Classes/Models/ABXVersion.m; sourceTree = "<group>"; };
-		C5750185C4A24634BAE2C7238A19C112 /* libCZPlaceholderTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCZPlaceholderTextView.a; path = libCZPlaceholderTextView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5750185C4A24634BAE2C7238A19C112 /* libCZPlaceholderTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCZPlaceholderTextView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B026003E4EC070822CE61CBCAAB83F /* VWWPermissionTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = VWWPermissionTableViewCell.xib; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionTableViewCell.xib; sourceTree = "<group>"; };
 		C6C2EDE8CB4094961D809073DC3B7D8E /* NSDictionary+ABXQueryString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+ABXQueryString.h"; path = "Classes/Classes/NSDictionary+ABXQueryString.h"; sourceTree = "<group>"; };
 		C73EB589314C629A2D6A69B22D01189E /* NSDictionary+LKFormEncoded.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+LKFormEncoded.m"; path = "LaunchKit/Classes/NSDictionary+LKFormEncoded.m"; sourceTree = "<group>"; };
@@ -737,25 +737,25 @@
 		DE1460675C44AEAD0ECEB61E9446CEC7 /* CZPlaceholderTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CZPlaceholderTextView.xcconfig; sourceTree = "<group>"; };
 		DE2F62790893177B646D39C4233153E6 /* UIColor+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Chameleon.h"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.h"; sourceTree = "<group>"; };
 		DE9AC3D2D9EE5C7016642EFE9EB5388D /* ABXTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABXTextView.h; path = Classes/Views/ABXTextView.h; sourceTree = "<group>"; };
-		DED3A884C609DA5C45F6C6340F426876 /* libPureLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPureLayout.a; path = libPureLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DED3A884C609DA5C45F6C6340F426876 /* libPureLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPureLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFAA42EB72B50B53AD5CC7DC45C5D8F3 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		E17B6B78D65B49F406B5628DA7734951 /* VTAcknowledgement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VTAcknowledgement.m; path = Classes/VTAcknowledgement.m; sourceTree = "<group>"; };
 		E1C7D74FE850149C4E7FB0EAAE218B92 /* HexColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HexColor.m; path = Classes/HexColor.m; sourceTree = "<group>"; };
 		E29ED3FA5367E911DA8AB599662E5532 /* VTAcknowledgementViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VTAcknowledgementViewController.h; path = Classes/VTAcknowledgementViewController.h; sourceTree = "<group>"; };
-		E323D780514657FD3452E95C96E2EE21 /* libBTBalloon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libBTBalloon.a; path = libBTBalloon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E323D780514657FD3452E95C96E2EE21 /* libBTBalloon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBTBalloon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3298F7D0D400611A3C41A59D5914DE9 /* Chameleon_.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon_.h; path = "Pod/Classes/Objective-C/Chameleon_.h"; sourceTree = "<group>"; };
 		E45A0796B00FF4ECA141FED8C1CD3613 /* LKPagedUIViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LKPagedUIViewController.m; path = LaunchKit/Classes/UI/Components/LKPagedUIViewController.m; sourceTree = "<group>"; };
 		E482B0E91DB5AC42A43BE757B9E8E18E /* ABXFAQsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABXFAQsViewController.m; path = Classes/Controllers/ABXFAQsViewController.m; sourceTree = "<group>"; };
-		E4E55DEE1F36F11BE8AAE5B40C475D4D /* lk_mztools.c */ = {isa = PBXFileReference; includeInIndex = 1; name = lk_mztools.c; path = LaunchKit/Classes/ThirdParty/ZipArchive/minizip/lk_mztools.c; sourceTree = "<group>"; };
+		E4E55DEE1F36F11BE8AAE5B40C475D4D /* lk_mztools.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = lk_mztools.c; path = LaunchKit/Classes/ThirdParty/ZipArchive/minizip/lk_mztools.c; sourceTree = "<group>"; };
 		E5733A7561B01707633475BDBBA52E05 /* LKFadeCustomSegue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LKFadeCustomSegue.h; path = LaunchKit/Classes/UI/Components/LKFadeCustomSegue.h; sourceTree = "<group>"; };
 		E5F748DA8F98E61F788C3488D6BA25DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		E65A5EEB941955D5DE29BC2298287DC4 /* libLaunchKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libLaunchKit.a; path = libLaunchKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E65A5EEB941955D5DE29BC2298287DC4 /* libLaunchKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLaunchKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E102E60F7BAF1934BF9DC7A5781BF5 /* UIView+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.m"; sourceTree = "<group>"; };
 		E780DE1DAAB7C54755CFBA18645F7590 /* arrow-top-left.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrow-top-left.png"; path = "MPCoachMarks/arrows/arrow-top-left.png"; sourceTree = "<group>"; };
 		E7C5476238CA801E851802969118CD88 /* GAIFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = Sources/GAIFields.h; sourceTree = "<group>"; };
 		EAA170FFD0ADA6F7DAA60817A076B1C4 /* NotificationBackgroundSuccess.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundSuccess.png; path = Pod/Assets/NotificationBackgroundSuccess.png; sourceTree = "<group>"; };
 		EB61149A86A69AC656A3B49C5BB62763 /* AppbotX.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = AppbotX.bundle; path = Classes/AppbotX.bundle; sourceTree = "<group>"; };
-		EB6BEF59484EEA980FA9522355774759 /* libChameleonFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libChameleonFramework.a; path = libChameleonFramework.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB6BEF59484EEA980FA9522355774759 /* libChameleonFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libChameleonFramework.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF0738398F5540E4AA04D9EAD2F810B /* NSDictionary+ABXNSNullAsNull.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+ABXNSNullAsNull.m"; path = "Classes/Classes/NSDictionary+ABXNSNullAsNull.m"; sourceTree = "<group>"; };
 		EC0A438514EA6E9E6FED46D5BD1C8E70 /* LaunchKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LaunchKit.h; path = LaunchKit/Classes/LaunchKit.h; sourceTree = "<group>"; };
 		EC79895B3FA22EF6F22867B26CBD33C4 /* VWWCoreBluetoothPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWCoreBluetoothPermission.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWCoreBluetoothPermission.h; sourceTree = "<group>"; };
@@ -765,7 +765,7 @@
 		ECFCF38DC2323B17D5B51CFFC4B515B4 /* LKConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LKConfig.m; path = LaunchKit/Classes/Config/LKConfig.m; sourceTree = "<group>"; };
 		EFEB83C06161FCB0F61B1EA7EA93E1B9 /* UIAppearance+Swift.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAppearance+Swift.m"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.m"; sourceTree = "<group>"; };
 		F1EBE22C8FA94A45E90D42C2E4B4777C /* VTAcknowledgement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VTAcknowledgement.h; path = Classes/VTAcknowledgement.h; sourceTree = "<group>"; };
-		F241CF8400251776B9B9018AF0BA5DEB /* DeviceUtil.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = DeviceUtil.bundle; path = "DeviceUtil-DeviceUtil.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F241CF8400251776B9B9018AF0BA5DEB /* DeviceUtil.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviceUtil.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		F24F42DED6C939648EC1B47E1B8B6FED /* NSString+ABXLocalized.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+ABXLocalized.m"; path = "Classes/Classes/NSString+ABXLocalized.m"; sourceTree = "<group>"; };
 		F303496C20190AEDD00B932ABDD94F1B /* LKOnboardingViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LKOnboardingViewController.m; path = LaunchKit/Classes/UI/Onboarding/LKOnboardingViewController.m; sourceTree = "<group>"; };
 		F3CB6D4B7C690276B042926DFE1384EA /* VWWPermissionsManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWPermissionsManager.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionsManager.m; sourceTree = "<group>"; };
@@ -1016,7 +1016,6 @@
 				6C799C5F4E2325DC2BF8B7F937DF1975 /* PureLayoutDefines.h */,
 				EAE4380F05EB00659397A9FE23647E97 /* Support Files */,
 			);
-			name = PureLayout;
 			path = PureLayout;
 			sourceTree = "<group>";
 		};
@@ -1045,7 +1044,6 @@
 				6F2CD6FAB6713555E5A1897E25CCB1C7 /* LaunchKit */,
 				B445D8EC03777A692442F86A8A3A5A0A /* Support Files */,
 			);
-			name = LaunchKit;
 			path = LaunchKit;
 			sourceTree = "<group>";
 		};
@@ -1101,7 +1099,6 @@
 				8054FD4267E12951A46EEA533E8FC846 /* CZPlaceholderTextView.m */,
 				D0F3D45F2708A32C34A6EEFFDFF8CB4E /* Support Files */,
 			);
-			name = CZPlaceholderTextView;
 			path = CZPlaceholderTextView;
 			sourceTree = "<group>";
 		};
@@ -1170,7 +1167,6 @@
 				804B22509A89CF9756009E595C78A7A0 /* Resources */,
 				05186212347E93BEBC4B58A3F37E04F3 /* Support Files */,
 			);
-			name = AppbotX;
 			path = AppbotX;
 			sourceTree = "<group>";
 		};
@@ -1196,7 +1192,6 @@
 				CEF7278A2FDB636F421C45DABB84BADB /* Resources */,
 				208C6FC7F7613E89D428C5AEFE3AED0F /* Support Files */,
 			);
-			name = VTAcknowledgementsViewController;
 			path = VTAcknowledgementsViewController;
 			sourceTree = "<group>";
 		};
@@ -1260,7 +1255,6 @@
 				CFB32A5A8173CAF4FFF1711207E7B8AB /* Resources */,
 				00091B6187ADE850DAB54B8D1CB2FD1C /* Support Files */,
 			);
-			name = TSMessages;
 			path = TSMessages;
 			sourceTree = "<group>";
 		};
@@ -1269,7 +1263,6 @@
 			children = (
 				0CC9E9B7CC0F85A2FFC346E3C01FCB6B /* Frameworks */,
 			);
-			name = "Google-Mobile-Ads-SDK";
 			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
 		};
@@ -1282,7 +1275,6 @@
 				12C5B90C88450D2D0A4797AFD141C112 /* BTBalloonArrow.m */,
 				FEFBE492E01F0922B1FBBE9241AAA536 /* Support Files */,
 			);
-			name = BTBalloon;
 			path = BTBalloon;
 			sourceTree = "<group>";
 		};
@@ -1478,7 +1470,6 @@
 				31E33A7AB66F042A4984671F365BBA4C /* Resources */,
 				77AF5EBB0B9F3AD65C80C7E834062F47 /* Support Files */,
 			);
-			name = DeviceUtil;
 			path = DeviceUtil;
 			sourceTree = "<group>";
 		};
@@ -1497,7 +1488,6 @@
 				ADBBC653C0B0DBDADE09D4808F104BBF /* GAITracker.h */,
 				7B2B2C67F063FFCB9FCFB0050A1C4EC9 /* Frameworks */,
 			);
-			name = GoogleAnalytics;
 			path = GoogleAnalytics;
 			sourceTree = "<group>";
 		};
@@ -1508,7 +1498,6 @@
 				624848F45A13CC72F1156CDC3414672A /* GBVersionTracking.m */,
 				B048B9B73DD30B6A09ECF7771AB35A29 /* Support Files */,
 			);
-			name = GBVersionTracking;
 			path = GBVersionTracking;
 			sourceTree = "<group>";
 		};
@@ -1530,7 +1519,6 @@
 				DFAA42EB72B50B53AD5CC7DC45C5D8F3 /* MBProgressHUD.m */,
 				14A5139E372B1C7BC614BB8DEB10B13C /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1588,7 +1576,6 @@
 				00E379AD7A3EA541BF2B1415A563D012 /* Resources */,
 				FE855D414927C1F22CC655548211B106 /* Support Files */,
 			);
-			name = VWWPermissionKit;
 			path = VWWPermissionKit;
 			sourceTree = "<group>";
 		};
@@ -1599,7 +1586,6 @@
 				E1C7D74FE850149C4E7FB0EAAE218B92 /* HexColor.m */,
 				032E18A4D0F991882B59936587498624 /* Support Files */,
 			);
-			name = HexColors;
 			path = HexColors;
 			sourceTree = "<group>";
 		};
@@ -1653,7 +1639,6 @@
 				98E2719A95ACA868650BD3661A674E8A /* SESlideTableViewCell.m */,
 				9BC26E3F6E6970B31AB01EDCDEAC2487 /* Support Files */,
 			);
-			name = SESlideTableViewCell;
 			path = SESlideTableViewCell;
 			sourceTree = "<group>";
 		};
@@ -1665,7 +1650,6 @@
 				F2B53256FC63810530597026C0789A51 /* Resources */,
 				5113ED66FAC60F4E9E82EC57A640E31E /* Support Files */,
 			);
-			name = MPCoachMarks;
 			path = MPCoachMarks;
 			sourceTree = "<group>";
 		};
@@ -1675,7 +1659,6 @@
 				21CC214D7EB40F91D83C59631157150F /* Default */,
 				57EF2ECBDF12DC929E0AD953FB65AEEF /* Support Files */,
 			);
-			name = ChameleonFramework;
 			path = ChameleonFramework;
 			sourceTree = "<group>";
 		};
@@ -2316,7 +2299,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2796,7 +2779,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/DeviceUtil/DeviceUtil-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2820,7 +2803,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/LaunchKit/LaunchKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2926,7 +2909,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/DeviceUtil/DeviceUtil-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3032,7 +3015,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/HexColors/HexColors-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3055,7 +3038,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/HexColors/HexColors-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3103,7 +3086,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/TSMessages/TSMessages-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3125,7 +3108,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DeviceUtil";
 				INFOPLIST_FILE = "Target Support Files/DeviceUtil/ResourceBundle-DeviceUtil-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = DeviceUtil;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -3143,7 +3126,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/TSMessages/TSMessages-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3189,7 +3172,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/GBVersionTracking/GBVersionTracking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3234,7 +3217,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LaunchKit";
 				INFOPLIST_FILE = "Target Support Files/LaunchKit/ResourceBundle-LaunchKitResources-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = LaunchKitResources;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -3253,7 +3236,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/AppbotX/AppbotX-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3277,7 +3260,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3301,7 +3284,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/AppbotX/AppbotX-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3395,7 +3378,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/GBVersionTracking/GBVersionTracking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3443,7 +3426,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/AppbotX/AppbotX-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3466,7 +3449,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/SESlideTableViewCell/SESlideTableViewCell-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3489,7 +3472,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/SESlideTableViewCell/SESlideTableViewCell-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3511,7 +3494,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LaunchKit";
 				INFOPLIST_FILE = "Target Support Files/LaunchKit/ResourceBundle-LaunchKitResources-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = LaunchKitResources;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -3529,7 +3512,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/DeviceUtil/DeviceUtil-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3552,7 +3535,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3576,7 +3559,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MPCoachMarks/MPCoachMarks-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3644,7 +3627,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DeviceUtil";
 				INFOPLIST_FILE = "Target Support Files/DeviceUtil/ResourceBundle-DeviceUtil-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = DeviceUtil;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -3724,7 +3707,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DeviceUtil";
 				INFOPLIST_FILE = "Target Support Files/DeviceUtil/ResourceBundle-DeviceUtil-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = DeviceUtil;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -3766,7 +3749,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MPCoachMarks/MPCoachMarks-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3813,7 +3796,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/LaunchKit/LaunchKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3885,7 +3868,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MPCoachMarks/MPCoachMarks-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3909,7 +3892,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/LaunchKit/LaunchKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3933,7 +3916,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/GBVersionTracking/GBVersionTracking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3998,7 +3981,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/TSMessages/TSMessages-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -4046,7 +4029,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -4110,7 +4093,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/HexColors/HexColors-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -4132,7 +4115,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LaunchKit";
 				INFOPLIST_FILE = "Target Support Files/LaunchKit/ResourceBundle-LaunchKitResources-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = LaunchKitResources;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -4150,7 +4133,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/SESlideTableViewCell/SESlideTableViewCell-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";

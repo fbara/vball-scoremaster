@@ -163,6 +163,7 @@ static void * leftContext = &leftContext;
     [self loadActionNames];
     
     //Setup the AppbotX prompt for Reviews
+    //TODO: Remove and use Apple prompt.
     if (![ABXPromptView hasHadInteractionForCurrentVersion]) {
         if ((([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) >= 5) &&
             [[[NSUserDefaults standardUserDefaults] objectForKey:@"showPrompt"]
@@ -234,7 +235,7 @@ static void * leftContext = &leftContext;
         self.mainPageFacebookButton.hidden = TRUE;
     }
     
-    [self enableSocialButtons];
+    //[self enableSocialButtons];
     
     //Check for 3D Touch
     if ([self checkFor3DTouch]) {
@@ -398,8 +399,7 @@ static void * leftContext = &leftContext;
         textColor = ComplementaryFlatColor(self.rightActionNameNumber.textColor);
         self.rightActionLabel.textColor = textColor;
         self.leftActionLabel.textColor = textColor;
-        self.visitingTeamPastName.textColor = textColor;
-        self.homeTeamPastName.textColor = textColor;
+
         UIImage *matchImage = [UIImage imageNamed:@"NewGame.png"];
         [self.matchButton setImage:matchImage forState:UIControlStateNormal];
         UIImage *gameImage = [UIImage imageNamed:@"NewMatch3.png"];
@@ -428,8 +428,7 @@ static void * leftContext = &leftContext;
         textColor = ContrastColor(self.view.backgroundColor, TRUE);
         self.rightActionLabel.textColor = textColor;
         self.leftActionLabel.textColor = textColor;
-        self.visitingTeamPastName.textColor = textColor;
-        self.homeTeamPastName.textColor = textColor;
+
         UIImage *matchImage = [UIImage imageNamed:@"NewGameWhite.png"];
         [self.matchButton setImage:matchImage forState:UIControlStateNormal];
         UIImage *gameImage = [UIImage imageNamed:@"NewMatch3White.png"];
@@ -456,8 +455,7 @@ static void * leftContext = &leftContext;
         textColor = ContrastColor(self.view.backgroundColor, TRUE);
         self.rightActionLabel.textColor = textColor;
         self.leftActionLabel.textColor = textColor;
-        self.visitingTeamPastName.textColor = textColor;
-        self.homeTeamPastName.textColor = textColor;
+
         UIImage *matchImage = [UIImage imageNamed:@"NewGame.png"];
         [self.matchButton setImage:matchImage forState:UIControlStateNormal];
         UIImage *gameImage = [UIImage imageNamed:@"NewMatch3.png"];
@@ -469,6 +467,8 @@ static void * leftContext = &leftContext;
                 lable.textColor = FlatBlack;
             }
         }
+        self.visitingTeamPastName.textColor = ContrastColor(self.visitingTeamPastName.backgroundColor, TRUE);
+        self.homeTeamPastName.textColor = ContrastColor(self.homeTeamPastName.textColor, TRUE);
         [self changePastScoreColors:FlatRed loser:FlatBlack];
 
     }
@@ -1036,7 +1036,7 @@ static void * leftContext = &leftContext;
         [self initializeVisitorScore:0 fontSize:118];
     }
     
-    // Count how many times the user has started a new match so I can show the Apple Review prompt
+    // TODO: Count how many times the user has started a new match so I can show the Apple Review prompt
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults integerForKey:@"newMatchCount"] ) {
         NSLog(@"\nMatch: %li", [defaults integerForKey:@"newMatchCount"]);
@@ -1401,6 +1401,7 @@ static void * leftContext = &leftContext;
 }
 
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    //TODO: Showing menu in wrong location
     //Check if we're not already displaying the view controller
     if ([self.presentedViewController isKindOfClass:[ActionLabelTableViewController class]] ||
         [self.presentedViewController isKindOfClass:[NotificationsTableViewController class]]) {

@@ -41,13 +41,8 @@
     // Needed to instantiate the version tracking
     [GBVersionTracking track];
     // Needed to register the app as a transaction observer from Apple for IAP's
+    //TODO: Add back when IAP's fixed.
     //[VolleyBallIAPHelper sharedInstance];
-    
-    [[UINavigationBar appearance] setBarTintColor:FlatBlue];
-    [[UINavigationBar appearance] setTintColor:ContrastColor(FlatBlue, TRUE)];
-    [[UINavigationBar appearance]
-        setTitleTextAttributes:
-            @{ NSForegroundColorAttributeName : ContrastColor(FlatBlue, TRUE) }];
 
     // Initialize AppbotX info
     [[ABXApiClient instance]
