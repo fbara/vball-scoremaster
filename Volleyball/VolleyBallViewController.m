@@ -162,25 +162,6 @@ static void * leftContext = &leftContext;
     // Get the Action Names
     [self loadActionNames];
     
-    //Setup the AppbotX prompt for Reviews
-    //TODO: Remove and use Apple prompt.
-    if (![ABXPromptView hasHadInteractionForCurrentVersion]) {
-        if ((([[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"]) >= 5) &&
-            [[[NSUserDefaults standardUserDefaults] objectForKey:@"showPrompt"]
-                isEqualToString:@"Yes"]) {
-            // Show the Prompt view on the 10th time the user has launched the app
-//            self.promptView = [[ABXPromptView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200, CGRectGetWidth(self.view.bounds), 100)];
-//            self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
-//            self.promptView.backgroundColor = FlatYellow;
-//            self.promptView.delegate = self;
-//            [self.view addSubview:self.promptView];
-
-            //Show new Apple review request prompt
-            [SKStoreReviewController requestReview];
-            [[NSUserDefaults standardUserDefaults] setObject:@"No" forKey:@"showPrompt"];
-        }
-    }
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(getMainActionNames)
                                                  name:@"updateActionNames"
@@ -1036,14 +1017,34 @@ static void * leftContext = &leftContext;
         [self initializeVisitorScore:0 fontSize:118];
     }
     
-    // TODO: Count how many times the user has started a new match so I can show the Apple Review prompt
+    
+    
+    // Determine if review prompt should be shown
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults integerForKey:@"newMatchCount"] ) {
-        NSLog(@"\nMatch: %li", [defaults integerForKey:@"newMatchCount"]);
-    } else {
-        NSLog(@"No new match");
+    if ([defaults boolForKey:@"showPrompt"]) {
+        [SKStoreReviewController requestReview];
+        [defaults setBool:FALSE forKey:@"showPrompt"];
     }
-  
+//    NSInteger i = [defaults integerForKey:@"newMatchCount"];
+//    if (i > 0 && i < 10) {
+//        // Already started new matches, keep counting
+//        i = i + 1;
+//        [defaults setInteger:i forKey:@"newMatchCount"];
+//    } else if (i == 0) {
+//        // Start tracking the matches
+//        NSLog(@"Start tracking matches.");
+//        [defaults setInteger:1 forKey:@"newMatchCount"];
+//
+//    } else {
+//        BOOL show = [defaults boolForKey:@"showPrompt"];
+//        if (show) {
+//            [SKStoreReviewController requestReview];
+//            [defaults setBool:FALSE forKey:@"showPrompt"];
+//        }
+//        i = i + 1;
+//        [defaults setInteger:i forKey:@"newMatchCount"];
+//    }
+
     [self resetGameAndNames];
     [self initializePastGames];
 }
@@ -1145,160 +1146,146 @@ static void * leftContext = &leftContext;
 
 }
 
-//TODO: Remove for iOS 11
-//- (BOOL)userHasAccessToTwitter
+//- (IBAction)sendTwitter:(UIButton*)sender;
 //{
-//    return [SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter];
-//
-//}
-
-- (IBAction)sendTwitter:(UIButton*)sender;
-{
-    //TODO: Remove for iOS 11
-//    // Check if text messages should be sent
-//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-//
-////    if ([[defaults stringForKey:@"enableTwitter"] isEqualToString:@"On"]) {
-//        if ([self userHasAccessToTwitter]) {
-//            SLComposeViewController* twitterController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-//
-//            NSString* newMessage, *tempStr1, *tempStr2;
-//            if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
-//                tempStr1 = [self createPlayerMessageToSend];
-//                tempStr2 = @"\n#vballscoremaster";
-//            } else if ([[self teamOrPlayer] isEqualToString:@"Team"]) {
-//                tempStr1 = [self createTeamMessageToSend];
-//                tempStr2 = @"\n#vballscoremaster";
-//            } else {
-//                tempStr1 = [self createBlankMessageToSend];
-//                tempStr2 = @"";
-//            }
-//
-//            newMessage = [tempStr1 stringByAppendingString:tempStr2];
-//            socialMessage = newMessage;
-//
-//            [twitterController setInitialText:newMessage];
-//            [twitterController addImage:[self getScreenImage]];
-//
-//
-//            //TODO: Change for 3.8 - REMOVE
-////            twitterController.completionHandler = ^(SLComposeViewControllerResult result) {
-////                          switch (result) {
-////                          case SLComposeViewControllerResultCancelled:
-////                          [self logMessagesSent:@"Twitter post cancelled."];
-////                            break;
-////                          case SLComposeViewControllerResultDone:
-////                              if ([self canSendAnalytics]) {
-////                                 [self logTwitterSent:newMessage];
-////                              }
-////                            break;
-////                          default:
-////                            break;
-////                          }
-////                            };
+//    //TODO: Remove for iOS 11
+////    // Check if text messages should be sent
+////    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
 ////
-////            // Show Twitter screen
-////            [self presentViewController:twitterController
+//////    if ([[defaults stringForKey:@"enableTwitter"] isEqualToString:@"On"]) {
+////        if ([self userHasAccessToTwitter]) {
+////            SLComposeViewController* twitterController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+////
+////            NSString* newMessage, *tempStr1, *tempStr2;
+////            if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
+////                tempStr1 = [self createPlayerMessageToSend];
+////                tempStr2 = @"\n#vballscoremaster";
+////            } else if ([[self teamOrPlayer] isEqualToString:@"Team"]) {
+////                tempStr1 = [self createTeamMessageToSend];
+////                tempStr2 = @"\n#vballscoremaster";
+////            } else {
+////                tempStr1 = [self createBlankMessageToSend];
+////                tempStr2 = @"";
+////            }
+////
+////            newMessage = [tempStr1 stringByAppendingString:tempStr2];
+////            socialMessage = newMessage;
+////
+////            [twitterController setInitialText:newMessage];
+////            [twitterController addImage:[self getScreenImage]];
+////
+////
+////            //TODO: Change for 3.8 - REMOVE
+//////            twitterController.completionHandler = ^(SLComposeViewControllerResult result) {
+//////                          switch (result) {
+//////                          case SLComposeViewControllerResultCancelled:
+//////                          [self logMessagesSent:@"Twitter post cancelled."];
+//////                            break;
+//////                          case SLComposeViewControllerResultDone:
+//////                              if ([self canSendAnalytics]) {
+//////                                 [self logTwitterSent:newMessage];
+//////                              }
+//////                            break;
+//////                          default:
+//////                            break;
+//////                          }
+//////                            };
+//////
+//////            // Show Twitter screen
+//////            [self presentViewController:twitterController
+//////                               animated:YES
+//////                             completion:nil];
+////
+////
+////            // Clear screen shot from memory
+////            screenImage = nil;
+////
+////            // Log the button press for analytics
+////            if ([self canSendAnalytics]) {
+////                [self logButtonPress:(UIButton*)sender];
+////            }
+//////        } else {
+//////            // User either doesn't have Twitter or denied our access
+//////            UIAlertView* alert = [[UIAlertView alloc]
+//////                    initWithTitle:@"Can't access Twitter"
+//////                          message:@"Either you don't have a Twitter account or this "
+//////                          @"app has been denied access to your Twitter " @"account."
+//////                         delegate:nil
+//////                cancelButtonTitle:@"Ok"
+//////                otherButtonTitles:nil];
+//////            [alert show];
+//////        }
+////    }
+//}
+//
+//- (IBAction)sendFacebook:(UIButton*)sender
+//{
+////TODO: Remove for iOS 11
+////    // Check if text messages should be sent
+////    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+////
+////    // Check if user enabled sending by facebook
+////    if ([[defaults stringForKey:@"enableFacebook"] isEqualToString:@"On"]) {
+////        // Check if user has setup facebook on the device
+////        if ([self userHasAccessToFacebook]) {
+////            SLComposeViewController* facebookController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+////
+////            NSString* newMessage, *tempStr1, *tempStr2;
+////            if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
+////                tempStr1 = [self createPlayerMessageToSend];
+////                tempStr2 = @"\n#vballscoremaster";
+////            } else if ([[self teamOrPlayer] isEqualToString:@"Team"]) {
+////                tempStr1 = [self createTeamMessageToSend];
+////                tempStr2 = @"\n#vballscoremaster";
+////            } else {
+////                tempStr1 = [self createBlankMessageToSend];
+////                tempStr2 = @"";
+////            }
+////
+////            newMessage = [tempStr1 stringByAppendingString:tempStr2];
+////
+////            [facebookController setInitialText:newMessage];
+////            [facebookController addImage:[self getScreenImage]];
+////            [facebookController setCompletionHandler:^(SLComposeViewControllerResult result) {
+////              switch (result) {
+////              case SLComposeViewControllerResultCancelled:
+////                      [self logMessagesSent:@"Facebook post cancelled."];
+////                break;
+////              case SLComposeViewControllerResultDone:
+////                  if ([self canSendAnalytics]) {
+////                      [self logFacebookSent:newMessage];
+////                  }
+////              default:
+////                break;
+////              }
+////                }];
+////
+////            // Show Facebook screen
+////            [self presentViewController:facebookController
 ////                               animated:YES
 ////                             completion:nil];
-//
-//
-//            // Clear screen shot from memory
-//            screenImage = nil;
-//
-//            // Log the button press for analytics
-//            if ([self canSendAnalytics]) {
-//                [self logButtonPress:(UIButton*)sender];
-//            }
+////
+////            // Clear screen shot from memory
+////            screenImage = nil;
+////
+////            // Log the button press for analytics
+////            if ([self canSendAnalytics]) {
+////                [self logButtonPress:(UIButton*)sender];
+////            }
+////
 ////        } else {
-////            // User either doesn't have Twitter or denied our access
+////            // User either doesn't have Facebook or denied our access
 ////            UIAlertView* alert = [[UIAlertView alloc]
-////                    initWithTitle:@"Can't access Twitter"
-////                          message:@"Either you don't have a Twitter account or this "
-////                          @"app has been denied access to your Twitter " @"account."
+////                    initWithTitle:@"Can't access Facebook"
+////                          message:@"Either you don't have a Facebook account or this "
+////                          @"app has been denied access to your Facebook " @"account."
 ////                         delegate:nil
 ////                cancelButtonTitle:@"Ok"
 ////                otherButtonTitles:nil];
 ////            [alert show];
 ////        }
-//    }
-}
-
-//TODO: Remove for iOS 11
-//- (BOOL)userHasAccessToFacebook
-//{
-//    return
-//        [SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook];
+////    }
 //}
-
-- (IBAction)sendFacebook:(UIButton*)sender
-{
-//TODO: Remove for iOS 11
-//    // Check if text messages should be sent
-//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-//
-//    // Check if user enabled sending by facebook
-//    if ([[defaults stringForKey:@"enableFacebook"] isEqualToString:@"On"]) {
-//        // Check if user has setup facebook on the device
-//        if ([self userHasAccessToFacebook]) {
-//            SLComposeViewController* facebookController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-//
-//            NSString* newMessage, *tempStr1, *tempStr2;
-//            if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
-//                tempStr1 = [self createPlayerMessageToSend];
-//                tempStr2 = @"\n#vballscoremaster";
-//            } else if ([[self teamOrPlayer] isEqualToString:@"Team"]) {
-//                tempStr1 = [self createTeamMessageToSend];
-//                tempStr2 = @"\n#vballscoremaster";
-//            } else {
-//                tempStr1 = [self createBlankMessageToSend];
-//                tempStr2 = @"";
-//            }
-//
-//            newMessage = [tempStr1 stringByAppendingString:tempStr2];
-//
-//            [facebookController setInitialText:newMessage];
-//            [facebookController addImage:[self getScreenImage]];
-//            [facebookController setCompletionHandler:^(SLComposeViewControllerResult result) {
-//              switch (result) {
-//              case SLComposeViewControllerResultCancelled:
-//                      [self logMessagesSent:@"Facebook post cancelled."];
-//                break;
-//              case SLComposeViewControllerResultDone:
-//                  if ([self canSendAnalytics]) {
-//                      [self logFacebookSent:newMessage];
-//                  }
-//              default:
-//                break;
-//              }
-//                }];
-//
-//            // Show Facebook screen
-//            [self presentViewController:facebookController
-//                               animated:YES
-//                             completion:nil];
-//
-//            // Clear screen shot from memory
-//            screenImage = nil;
-//
-//            // Log the button press for analytics
-//            if ([self canSendAnalytics]) {
-//                [self logButtonPress:(UIButton*)sender];
-//            }
-//
-//        } else {
-//            // User either doesn't have Facebook or denied our access
-//            UIAlertView* alert = [[UIAlertView alloc]
-//                    initWithTitle:@"Can't access Facebook"
-//                          message:@"Either you don't have a Facebook account or this "
-//                          @"app has been denied access to your Facebook " @"account."
-//                         delegate:nil
-//                cancelButtonTitle:@"Ok"
-//                otherButtonTitles:nil];
-//            [alert show];
-//        }
-//    }
-}
 
 #pragma mark - AppbotX
 

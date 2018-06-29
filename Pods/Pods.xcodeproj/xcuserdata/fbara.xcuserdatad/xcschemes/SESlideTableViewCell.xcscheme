@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BAC1BC29E85931A3A6E0EAE6C0D0350E"
+               BlueprintIdentifier = "B71E8E5991D0DFAB52B3776AF49B8D23"
                BuildableName = "libSESlideTableViewCell.a"
                BlueprintName = "SESlideTableViewCell"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BAC1BC29E85931A3A6E0EAE6C0D0350E"
+            BlueprintIdentifier = "B71E8E5991D0DFAB52B3776AF49B8D23"
             BuildableName = "libSESlideTableViewCell.a"
             BlueprintName = "SESlideTableViewCell"
             ReferencedContainer = "container:Pods.xcodeproj">

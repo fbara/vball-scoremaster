@@ -12,7 +12,6 @@ target 'VBall ScoreMaster' do
 	pod 'GBVersionTracking'
 	pod 'GoogleAnalytics'
 	pod 'HexColors'
-	pod 'LaunchKit'
 	pod 'MBProgressHUD', '~> 1.1'
 	pod 'MPCoachMarks'
 	pod 'SESlideTableViewCell'

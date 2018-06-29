@@ -7,22 +7,18 @@
 //
 
 #import "VolleyBallAppDelegate.h"
-//#import <GBVersionTracking/GBVersionTracking.h>
 #import "GBVersionTracking.h"
 #import <GoogleAnalytics/GAI.h>
 #import <GoogleAnalytics/GAIFields.h>
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import "Chameleon.h"
-//#import <ChameleonFramework/Chameleon.h>
 #import "VolleyBallIAPHelper.h"
 #import <AppbotX/ABX.h>
-//#import <LaunchKit/LaunchKit.h>
-#import "LaunchKit.h"
 #import "VolleyBallViewController.h"
 //#import "NRWindow.h"
 
 @implementation VolleyBallAppDelegate {
-	NSString *randomUserString;
+	
 }
 #define IS_IPAD() [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
 #pragma clang diagnostic push
@@ -47,10 +43,6 @@
     // Initialize AppbotX info
     [[ABXApiClient instance]
         setApiKey:@"5b0feb30a4f023f3897789f9b38ab62304ee4790"];
-	
-	//Initialize LaunchKit info
-//TODO: Enable LaunchKit
-	[LaunchKit launchWithToken:@"6Ms7MJIwN142MdBpvohTgVUCflw4yYEGPn-VOkZHkmO1"];
 
     // Google Analytics setup for the app
     [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
@@ -59,51 +51,54 @@
 //TODO: Enable Google Analytics
     id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
     //    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
-	tracker.allowIDFACollection = NO;
-	
-	if ([GBVersionTracking isFirstLaunchEver]) {
-		randomUserString = [self randomStringWithLength:8];
-		[defaults setObject:randomUserString forKey:@"userString"];
-        [defaults setBool:TRUE forKey:@"firstTimeEver"];
-	} else {
-		randomUserString = [defaults objectForKey:@"userString"];
-		if (randomUserString == nil) {
-			randomUserString = [self randomStringWithLength:8];
-			[defaults setObject:randomUserString forKey:@"userString"];
-            [defaults synchronize];
-		}
-        [defaults setBool:FALSE forKey:@"firstTimeEver"];
-	}
-
-    if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
+	  tracker.allowIDFACollection = NO;
+    
+    if ([GBVersionTracking isFirstLaunchEver]) {
         // Initialize the number of times the user has launched the app
+        [defaults setBool:TRUE forKey:@"firstTimeEver"];
         [defaults setInteger:1 forKey:@"launchNumber"];
-        [defaults setObject:@"No" forKey:@"showPrompt"];
         
-        // Show Google Analytics permissiion alert
-        UIAlertView* av = [[UIAlertView alloc]
-                initWithTitle:@"Analytics Request"
-                      message:@"With your permission, usage information will be "
-                      @"collected to improve the application.\n\nNo "
-                      @"personal information will be collected and you "
-                      @"can opt out at any time from Settings."
-                     delegate:self
-            cancelButtonTitle:@"Opt Out"
-            otherButtonTitles:@"Opt In", nil];
-        [av show];
-    } else if (([defaults integerForKey:@"launchNumber"]) < 10) {
-        [defaults setBool:FALSE forKey:@"firstTimeEver"];
-        // Increment launchNumber until we reach 10
-        NSInteger ln = [defaults integerForKey:@"launchNumber"];
-        ln = ln + 1;
-        if (ln == 10) {
-            [defaults setObject:@"Yes" forKey:@"showPrompt"];
-        }
-        [defaults setInteger:ln forKey:@"launchNumber"];
-
+        // Show Google Analytics permission alert
+        UIWindow* topWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        topWindow.rootViewController = [UIViewController new];
+        topWindow.windowLevel = UIWindowLevelAlert + 1;
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Analytics Request", nil) message:NSLocalizedString(@"With your permission, usage information will be collected to improve the application. No personal information will be collected and you can opt out at any time from Settings.", nil) preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *no = [UIAlertAction actionWithTitle:NSLocalizedString(@"Opt out", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+            [self disableAnalytics];
+            topWindow.hidden = YES;
+        }];
+        UIAlertAction *yes = [UIAlertAction actionWithTitle:NSLocalizedString(@"Opt in", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            [self enableAnalytics];
+            topWindow.hidden = YES;
+        }];
+        
+        [alert addAction:no];
+        [alert addAction:yes];
+        [topWindow makeKeyAndVisible];
+        [topWindow.rootViewController presentViewController:alert animated:TRUE completion:nil];
+    } else if ([GBVersionTracking isFirstLaunchForBuild]) {
+        // Reset the lauch count for each new build
+        [defaults setInteger:0 forKey:@"launchNumber"];
     } else {
-        // We hit 10 uses so turn off the review prompt
-        [defaults setObject:@"No" forKey:@"showPrompt"];
+        // Not first time ever
+        NSInteger num = [defaults integerForKey:@"launchNumber"];
+        if (num <= 9) {
+            [defaults setBool:FALSE forKey:@"firstTimeEver"];
+            // Increment launchNumber until we reach 10
+            num = num + 1;
+            if (num == 10) {
+                // It's ok to show the review prompt
+                [defaults setBool:TRUE forKey:@"showPrompt"];
+            }
+            
+        } else {
+            // We hit 10 launches so reset the count for the review prompt
+            [defaults setBool:FALSE forKey:@"showPrompt"];
+            num = 0;
+        }
+        [defaults setInteger:num forKey:@"launchNumber"];
+
     }
 	
 	//Check if analytics are allowed on subsequent starts of the app
@@ -114,41 +109,22 @@
 	} else {
 		//Opt in - ok to track
 		[[GAI sharedInstance] setOptOut:NO];
-//TODO: Enable LaunchKit
-		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
-        if (LKAppUserIsSuper()) {
-            //SuperUser
-            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-            [tracker send:[[[GAIDictionaryBuilder createScreenView] set:@"Super User" forKey:kGAIScreenName] build]];
-        }
 	}
-	
-    [defaults synchronize];
-
     return YES;
 }
 
-- (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    // TODO: Fix deprecated method
-	//Get response from user if they allow analytics on initial startup
-	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    switch (buttonIndex) {
-    case 0:
-		//Opt out - do not track
-        [[GAI sharedInstance] setOptOut:YES];
-        [defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
-        break;
-    case 1:
-		//Opt in - ok to track
-        [[GAI sharedInstance] setOptOut:NO];
-        [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
-//TODO: Enable LaunchKit
-		[[LaunchKit sharedInstance] setUserIdentifier:randomUserString email:[randomUserString stringByAppendingString:@"@email.com"] name:randomUserString];
-        break;
-    default:
-        break;
-    }
+- (void)enableAnalytics {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //Opt in - ok to track
+    [[GAI sharedInstance] setOptOut:NO];
+    [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
+}
+
+- (void)disableAnalytics {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //Opt out - do not track
+    [[GAI sharedInstance] setOptOut:YES];
+    [defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
 }
 
 //- (NRWindow *)window
@@ -193,20 +169,6 @@
     }
     
     return FALSE;
-}
-
-
-
--(NSString *) randomStringWithLength: (int) len {
-	NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-	
-	NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
-	
-	for (int i=0; i<len; i++) {
-		[randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform((uint32_t)[letters length])]];
-	}
-	
-	return randomString;
 }
 
 - (void)applicationWillResignActive:(UIApplication*)application

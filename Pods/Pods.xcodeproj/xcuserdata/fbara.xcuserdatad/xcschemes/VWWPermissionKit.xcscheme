@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9829B069B45DDE7B54EC914414284C9E"
+               BlueprintIdentifier = "C79479DBC877F2D06CFCF4DB5AB6FE23"
                BuildableName = "libVWWPermissionKit.a"
                BlueprintName = "VWWPermissionKit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9829B069B45DDE7B54EC914414284C9E"
+            BlueprintIdentifier = "C79479DBC877F2D06CFCF4DB5AB6FE23"
             BuildableName = "libVWWPermissionKit.a"
             BlueprintName = "VWWPermissionKit"
             ReferencedContainer = "container:Pods.xcodeproj">

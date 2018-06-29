@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "75900EA41349A640F9DD81FE52A59277"
+               BlueprintIdentifier = "8002C6C7FB74E120898BDE46987F2464"
                BuildableName = "libVTAcknowledgementsViewController.a"
                BlueprintName = "VTAcknowledgementsViewController"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "75900EA41349A640F9DD81FE52A59277"
+            BlueprintIdentifier = "8002C6C7FB74E120898BDE46987F2464"
             BuildableName = "libVTAcknowledgementsViewController.a"
             BlueprintName = "VTAcknowledgementsViewController"
             ReferencedContainer = "container:Pods.xcodeproj">
