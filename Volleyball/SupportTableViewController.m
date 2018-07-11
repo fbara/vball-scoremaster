@@ -162,7 +162,8 @@ static NSString* const kiTunesID = @"886670213";
         break;
     case 5:
         //iTunes review
-        [ABXAppStore openAppStoreReviewForApp:kiTunesID];
+        //[ABXAppStore openAppStoreReviewForApp:kiTunesID];
+          [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/vball-scoremaster-the-best-volleyball-scoreboard/id886670213?ls=1&mt=8?at=1001lDi?action=write-review"] options:@{} completionHandler:nil];
         break;
     case 6:
         //BaraLabs website

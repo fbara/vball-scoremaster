@@ -45,7 +45,7 @@ static void * rightContext = &rightContext;
 static void * leftContext = &leftContext;
 
 
-@interface VolleyBallViewController () <UIViewControllerPreviewingDelegate>  {
+@interface VolleyBallViewController ()  {
     // Instance variable to store all products returned from iTunes Connect
     NSArray* _products;
 }
@@ -55,12 +55,12 @@ static void * leftContext = &leftContext;
 @property (weak, nonatomic) NSURL* baralabsURL;
 @property (strong, nonatomic) ABXPromptView* promptView;
 @property (nonatomic, strong)id previewingContext;
-@property (weak, nonatomic) IBOutlet UIButton *rightActionNameButton;
-@property (weak, nonatomic) IBOutlet UIButton *leftActionNameButton;
+//@property (weak, nonatomic) IBOutlet UIButton *rightActionNameButton;
+//@property (weak, nonatomic) IBOutlet UIButton *leftActionNameButton;
 @property (weak, nonatomic) IBOutlet UIButton *gameButton;
 @property (weak, nonatomic) IBOutlet UILabel *visitingTeamPastName;
 @property (weak, nonatomic) IBOutlet UILabel *homeTeamPastName;
-
+@property (weak, nonatomic) IBOutlet UIStackView *rightActionNameStackView;
 
 @end
 
@@ -131,7 +131,7 @@ static void * leftContext = &leftContext;
     visitorSwipeGesture.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
     visitorSwipeGesture.delegate = self;
     [_vistingTeamContainer addGestureRecognizer:visitorSwipeGesture];
-
+    
     /*! Loop through all the gesture recognizers on each of the pageview
    * controllers and when you locate either the tap or pan recognizers, set them to require
    * the appropriate swipe gesture to fail before they'll recognize their gesture.
@@ -177,13 +177,13 @@ static void * leftContext = &leftContext;
     totalPastGamesVisitor = 0;
     
     [self checkForActiveNotification];
-    
 
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:NO];
+    
     [self.homeTeamName addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:NULL];
 
     // Update the scoreview's colors in case they were changed in Settings
@@ -240,6 +240,7 @@ static void * leftContext = &leftContext;
 
 - (void)initializePastGames
 {
+    // TODO: Update for iPad
     // There are 4 home & 4 visitor past scores that need to be reset to '0'
     for (UILabel* score in self.pastScoreCollection) {
         score.text = @"0";
@@ -265,22 +266,23 @@ static void * leftContext = &leftContext;
 - (void)initializeHomeScore:(int)score fontSize:(CGFloat)scoreSize
 {
     self.homeColor = [self colorHomeScoreView];
-    DefaultScoreViewController* homeScoreViewController =
-        [self createViewControllersForScore:score
-                                  withColor:self.homeColor
-                                   fontSize:scoreSize];
-    //self.homePageViewController.dataSource = self;
+    DefaultScoreViewController* homeScoreViewController = [self createViewControllersForScore:score withColor:self.homeColor fontSize:scoreSize];
+    if (IS_IPAD()) {
+        [self.homeTeamPastName setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
+        [self.rightActionLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
+        
+    }
     [self.homePageViewController setViewControllers:@[homeScoreViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
 
 - (void)initializeVisitorScore:(int)score fontSize:(CGFloat)scoreSize
 {
     self.visitorColor = [self colorVisitorScoreView];
-    DefaultScoreViewController* visitorScoreViewController =
-        [self createViewControllersForScore:score
-                                  withColor:self.visitorColor
-                                   fontSize:scoreSize];
-    //self.visitorPageViewController.dataSource = self;
+    DefaultScoreViewController* visitorScoreViewController = [self createViewControllersForScore:score withColor:self.visitorColor fontSize:scoreSize];
+    if (IS_IPAD()) {
+        [self.visitingTeamPastName setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
+        [self.leftActionLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
+    }
     [self.visitorPageViewController setViewControllers:@[visitorScoreViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
 
@@ -707,7 +709,7 @@ static void * leftContext = &leftContext;
             UIMenuController* menu = [UIMenuController sharedMenuController];
             [menu setMenuItems:[NSArray arrayWithObjects:resetMenu, cancelMenu, nil]];
             [self becomeFirstResponder];
-            [menu setTargetRect:self.leftActionNameNumber.frame inView:self.view];
+            [menu setTargetRect:self.leftActionNameNumber.frame inView:self.leftActionNameNumber];
             [menu setMenuVisible:YES animated:YES];
         }
     }
@@ -730,7 +732,7 @@ static void * leftContext = &leftContext;
             UIMenuController* menu = [UIMenuController sharedMenuController];
             [menu setMenuItems:[NSArray arrayWithObjects:resetMenu,cancelMenu, nil]];
             [self becomeFirstResponder];
-            [menu setTargetRect:self.rightActionNameNumber.frame inView:self.view];
+            [menu setTargetRect:self.rightActionNameNumber.frame inView:self.rightActionNameNumber];
             [menu setMenuVisible:YES animated:YES];
         }
     }
@@ -780,6 +782,10 @@ static void * leftContext = &leftContext;
     [self gamePressed:self.gameButton];
 }
 
+- (void)matchPressedFromShortcut {
+    [self newMatch:self.matchButton];
+}
+
 /*!
  *  What happens when 'Game' number is touched
  */
@@ -789,7 +795,7 @@ static void * leftContext = &leftContext;
     if ([self canSendAnalytics]) {
         [self logButtonPress:(UIButton*)sender];
     }
-
+    // TODO: Update for iPad
     // Grab the game number
     int lableNum = [self.gameNumber.text intValue];
     // Update the past scores, set the winner in red text
@@ -1046,7 +1052,7 @@ static void * leftContext = &leftContext;
 //    }
 
     [self resetGameAndNames];
-    [self initializePastGames];
+    //[self initializePastGames];
 }
 
 - (IBAction)newMatch:(UIButton *)sender {
@@ -1378,15 +1384,15 @@ static void * leftContext = &leftContext;
                                                                                  userInfo:nil];
     
     UIApplicationShortcutItem *newGame = [[UIApplicationShortcutItem alloc] initWithType:@"$(PRODUCT_BUNDLE_IDENTIFIER).NewGame"
-                                                                           localizedTitle:NSLocalizedString(@"New Game", @"Start a new game")
-                                                                        localizedSubtitle:NSLocalizedString(@"Start a new game", @"Start a new game button.")
+                                                                           localizedTitle:NSLocalizedString(@"New Set", @"Start a new set")
+                                                                        localizedSubtitle:NSLocalizedString(@"Start a new set", @"Start a new game button.")
                                                                                     icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"volleyball-50"]
                                                                                  userInfo:nil];
     
     [UIApplication sharedApplication].shortcutItems = @[newMatch, newGame];
     
 }
-
+// TODO: Previewing Context Doesn't work inside StackView
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
     //TODO: Showing menu in wrong location
     //Check if we're not already displaying the view controller
@@ -1395,30 +1401,30 @@ static void * leftContext = &leftContext;
         return nil;
     }
     // TODO: Fix Context Menu
-    int actionSide = 0;
-    if (CGRectContainsPoint([self.rightActionNameButton frame], location)) {
-        actionSide = 2;
-        [self logShortcutUsed:(NSString *)self.rightActionNameButton.titleLabel];
-        previewingContext.sourceRect = self.rightActionNameButton.frame;
-    } else if (CGRectContainsPoint([self.leftActionNameButton frame], location)) {
-        actionSide = 1;
-        [self logShortcutUsed:(NSString *)self.leftActionNameButton.titleLabel];
-        previewingContext.sourceRect = self.leftActionNameButton.frame;
-    } else if (CGRectContainsPoint([self.sendMessageImage frame], location)){
-        actionSide = -1;
-        [self logShortcutUsed:(NSString *)self.sendMessageImage.titleLabel];
-        previewingContext.sourceRect = self.sendMessageImage.frame;
-    }
+//    int actionSide = 0;
+//    if (CGRectContainsPoint([self.rightActionLabel.layer frame], location)) {
+//        actionSide = 2;
+//        [self logShortcutUsed:(NSString *)self.rightActionLabel.titleLabel];
+//        previewingContext.sourceRect = self.rightActionNameButton.frame;
+//    } else if (CGRectContainsPoint([self.leftActionNameButton frame], location)) {
+//        actionSide = 1;
+//        [self logShortcutUsed:(NSString *)self.leftActionNameButton.titleLabel];
+//        previewingContext.sourceRect = self.leftActionNameButton.frame;
+//    } else if (CGRectContainsPoint([self.sendMessageImage frame], location)){
+//        actionSide = -1;
+//        [self logShortcutUsed:(NSString *)self.sendMessageImage.titleLabel];
+//        previewingContext.sourceRect = self.sendMessageImage.frame;
+//    }
 
-    if (actionSide > 0) {
-        ActionLabelTableViewController *aVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ActionNames"];
-        aVC.selectedActionRow = actionSide;
-        return aVC;
-    } else if (actionSide < 0) {
-        NotificationsTableViewController *notiVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Notifications"];
-        return notiVC;
-    }
-    
+//    if (actionSide > 0) {
+//        ActionLabelTableViewController *aVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ActionNames"];
+//        aVC.selectedActionRow = actionSide;
+//        return aVC;
+//    } else if (actionSide < 0) {
+//        NotificationsTableViewController *notiVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Notifications"];
+//        return notiVC;
+//    }
+
     return nil;
 }
 
@@ -1478,35 +1484,6 @@ static void * leftContext = &leftContext;
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*!
- *  AlertView to be shown only when New Match? is touched
- *
- *  @param alertView   What to do if the user wants to start a new match or not.
- *  @param buttonIndex The button the user touched to start a new match or not.
- */
-//- (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    // TODO: Fix deprecated method
-//    //Need to determine the action based on the TAG
-//    if (buttonIndex != 0) {
-//        [self startNewMatch];
-//    }
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    // Good place to show review prompt if they haven't already
-//    if ([[defaults stringForKey:@"showPrompt"] isEqualToString:@"Yes"]) {
-//        // Show the Prompt view
-//        self.promptView = [[ABXPromptView alloc]
-//            initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - 200,
-//                                     CGRectGetWidth(self.view.bounds), 100)];
-//        self.promptView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
-//        self.promptView.backgroundColor = [UIColor cyanColor];
-//        self.promptView.delegate = self;
-//        [self.view addSubview:self.promptView];
-//        // Turn prompt off for this version
-//        [defaults setObject:@"No" forKey:@"showPrompt"];
-//    }
-//}
 
 - (void)sendSMS
 {

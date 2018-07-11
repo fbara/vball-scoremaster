@@ -13,7 +13,7 @@
 #import <Social/Social.h>
 @import QuartzCore;
 
-@interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource, UIAlertViewDelegate, UITextViewDelegate, MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, ABXPromptViewDelegate>
+@interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource, UIAlertViewDelegate, UITextViewDelegate, MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, ABXPromptViewDelegate, UIViewControllerPreviewingDelegate>
 
 @property UIColor* homeColor;
 @property UIColor* visitorColor;
@@ -65,6 +65,7 @@
 
 - (void)startNewMatch;
 - (void)gamePressedFromShortcut;
+- (void)matchPressedFromShortcut;
 - (void)logShortcutUsed:(NSString *)shortcut;
 - (nullable UIViewController *)pageViewController:(nonnull UIPageViewController *)pageViewController viewControllerAfterViewController:(nonnull UIViewController *)viewController;
 

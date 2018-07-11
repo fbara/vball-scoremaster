@@ -36,6 +36,7 @@
 @property (strong, nonatomic) IBOutlet UILabel* rightActionNameSelected;
 @property (weak, nonatomic) IBOutlet UISegmentedControl* analyticsSwitch;
 @property (weak, nonatomic) IBOutlet UISegmentedControl* colorSettings;
+@property (weak, nonatomic) IBOutlet UIButton *reviewButton;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl* twitterSwitch;
 @property (weak, nonatomic) IBOutlet UISegmentedControl* facebookSwitch;
@@ -50,5 +51,6 @@
 - (IBAction)notificationTypeSwitch:(UISegmentedControl *)sender;
 - (IBAction)sendWithFacebook:(UISegmentedControl*)sender;
 - (IBAction)sendWithTwitter:(UISegmentedControl*)sender;
+- (IBAction)leaveReview:(UIButton *)sender;
 
 @end

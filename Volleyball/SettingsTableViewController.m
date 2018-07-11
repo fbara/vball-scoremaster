@@ -461,7 +461,7 @@
 	[self dismissViewControllerAnimated:TRUE completion:nil];
 }
 
-#pragma mark - FAQ
+#pragma mark - Extras
 
 - (IBAction)getFAQ:(UIButton*)sender
 {
@@ -469,6 +469,14 @@
                             hideContactButton:NO
                               contactMetaData:nil
                                 initialSearch:nil];
+}
+
+- (void)leaveReview:(UIButton *)sender {
+    // Allow the user to leave App Store review
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/vball-scoremaster-the-best-volleyball-scoreboard/id886670213?ls=1&mt=8?at=1001lDi?action=write-review"] options:@{} completionHandler:nil];
+    // itms-apps://itunes.apple.com/app/idYOUR_APP_ID?action=write-review
+    // https://itunes.apple.com/us/app/vball-scoremaster-the-best-volleyball-scoreboard/id886670213?ls=1&mt=8?at=1001lDi?action=write-review
+
 }
 
 #pragma mark - Analytics Opt Out

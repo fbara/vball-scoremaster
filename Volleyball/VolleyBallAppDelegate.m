@@ -15,11 +15,13 @@
 #import "VolleyBallIAPHelper.h"
 #import <AppbotX/ABX.h>
 #import "VolleyBallViewController.h"
+#import <UIDeviceIdentifier/UIDeviceHardware.h>
 //#import "NRWindow.h"
 
 @implementation VolleyBallAppDelegate {
 	
 }
+//#define IS_IPAD() [UIDHardware platformStringSimple] == "iPad"
 #define IS_IPAD() [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
@@ -148,20 +150,24 @@
 - (BOOL)handleShortcutItem:(UIApplicationShortcutItem *)shortcutItem {
     UIStoryboard *storyboard;
     UINavigationController *navController = (UINavigationController *) self.window.rootViewController;
-    if (IS_IPAD()) {
-        storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+    NSString *isiPad = [UIDeviceHardware platformStringSimple];
+    if ([isiPad rangeOfString:@"ipad" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        //Main_iPad
+        storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     } else {
         storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     }
     
-    VolleyBallViewController *vb = (VolleyBallViewController *)navController.topViewController;
+    //VolleyBallViewController *vb = (VolleyBallViewController *)navController.topViewController;
+    VolleyBallViewController *vb = [[VolleyBallViewController alloc] init];
     
     if ([shortcutItem.localizedTitle isEqualToString:@"New Match"]) {
         [vb logShortcutUsed:shortcutItem.localizedTitle];
-        [vb startNewMatch];
+        [vb matchPressedFromShortcut];
+        //[vb startNewMatch];
         return TRUE;
         
-    } else if ([shortcutItem.localizedTitle isEqualToString:@"New Game"]) {
+    } else if ([shortcutItem.localizedTitle isEqualToString:@"New Set"]) {
         [vb logShortcutUsed:shortcutItem.localizedTitle];
         [vb gamePressedFromShortcut];
         return TRUE;

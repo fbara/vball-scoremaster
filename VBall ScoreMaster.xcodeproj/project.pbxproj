@@ -645,7 +645,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "#Update build number with number of git commits if in release mode\n#if [ ${CONFIGURATION} == \"Release\" ]; then\n#buildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n#/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n#fi;";
+			shellScript = "#Update build number with number of git commits if in release mode\n#if [ ${CONFIGURATION} == \"Release\" ]; then\n#buildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n#/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n#fi;\n";
 		};
 		AD4562121C98BC4D00E72EE5 /* Set Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -659,7 +659,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#/bin/sh \"$SRCROOT\"/Scripts/set_build_number_2.sh";
+			shellScript = "#/bin/sh \"$SRCROOT\"/Scripts/set_build_number_2.sh\n";
 		};
 		AD68BCD12051C0E6005030EF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -672,7 +672,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 		};
 		ADBFCF551BF27247003B5F3D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -685,7 +685,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp \"${SRCROOT}/Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-acknowledgements.plist\" \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Pods-VBall ScoreMaster-acknowledgements.plist\"";
+			shellScript = "cp \"${SRCROOT}/Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-acknowledgements.plist\" \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Pods-VBall ScoreMaster-acknowledgements.plist\"\n";
 		};
 		ADC716A2196CA6F000360EF4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -698,7 +698,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\" find \"${SRCROOT}\" \\( -name \"*.h\" -or\n-name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-\nmatching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\" find \"${SRCROOT}\" \\( -name \"*.h\" -or\n-name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-\nmatching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

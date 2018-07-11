@@ -16,6 +16,7 @@ PODS:
   - SESlideTableViewCell (0.7.1)
   - TSMessages (0.9.12):
     - HexColors (~> 2.2.0)
+  - UIDeviceIdentifier (1.1.1)
   - VTAcknowledgementsViewController (1.4)
   - VWWPermissionKit (1.3.0)
 
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - MPCoachMarks
   - SESlideTableViewCell
   - TSMessages
+  - UIDeviceIdentifier (from `https://github.com/squarefrog/UIDeviceIdentifier.git`)
   - VTAcknowledgementsViewController
   - VWWPermissionKit (~> 1.3.0)
 
@@ -55,11 +57,16 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   AppbotX:
     :git: https://github.com/appbotx/appbotx.git
+  UIDeviceIdentifier:
+    :git: https://github.com/squarefrog/UIDeviceIdentifier.git
 
 CHECKOUT OPTIONS:
   AppbotX:
     :commit: 285d2623d867c90dfa03a7d4d0093b0070a106cc
     :git: https://github.com/appbotx/appbotx.git
+  UIDeviceIdentifier:
+    :commit: ab74270cb08ec710b01bc74bfdf8dccb29375d57
+    :git: https://github.com/squarefrog/UIDeviceIdentifier.git
 
 SPEC CHECKSUMS:
   AppbotX: 6478b94b694e516fb9ee8c0acd8ba48d6bf6d6b3
@@ -75,9 +82,10 @@ SPEC CHECKSUMS:
   PureLayout: f25f0bb904d5ccfe6e31da3cb869185259f02e0d
   SESlideTableViewCell: 459c3ce79b760e8bc015dd83ca84196bd70c11ed
   TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
+  UIDeviceIdentifier: 9281343882e24460235f00a0d7d2fc04a65688c6
   VTAcknowledgementsViewController: d62bb400ca68e240680906bcfa2a2b380d39b30f
   VWWPermissionKit: 102e84bbd358cf909f46eb2120d1c698d0e0c3af
 
-PODFILE CHECKSUM: 12afa00d1c7dcef5542671a2bd6dcec87c1b1f3d
+PODFILE CHECKSUM: f5adaa4df312106e295568cf36771ab83d13d64c
 
 COCOAPODS: 1.5.3
