@@ -85,7 +85,7 @@ static void * leftContext = &leftContext;
 {
     [super viewDidLoad];
     // Set home URL for Twitter and Facebook messages
-    self.baralabsURL = [NSURL URLWithString:@"www.baralabs.com"];
+    self.baralabsURL = [NSURL URLWithString:@"http://baralabs.com"];
 
     
     // Check if this is the first time the app has run.
@@ -182,9 +182,18 @@ static void * leftContext = &leftContext;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:NO];
+    [super viewWillAppear:TRUE];
     
     [self.homeTeamName addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:NULL];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(getMainActionNames)
+                                                 name:@"updateActionNames"
+                                               object:nil];
+    // Register for notifications from SettingsTableViewController
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(viewWillAppear:)
+                                                 name:@"SettingsDone"
+                                               object:nil];
 
     // Update the scoreview's colors in case they were changed in Settings
     // Initiaize all the UI elements depending on the device (font=188/118)

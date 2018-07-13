@@ -473,9 +473,7 @@
 
 - (void)leaveReview:(UIButton *)sender {
     // Allow the user to leave App Store review
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/vball-scoremaster-the-best-volleyball-scoreboard/id886670213?ls=1&mt=8?at=1001lDi?action=write-review"] options:@{} completionHandler:nil];
-    // itms-apps://itunes.apple.com/app/idYOUR_APP_ID?action=write-review
-    // https://itunes.apple.com/us/app/vball-scoremaster-the-best-volleyball-scoreboard/id886670213?ls=1&mt=8?at=1001lDi?action=write-review
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/id886670213?action=write-review"] options:@{} completionHandler:nil];
 
 }
 

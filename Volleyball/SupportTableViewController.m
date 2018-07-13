@@ -133,7 +133,8 @@ static NSString* const kiTunesID = @"886670213";
 	switch (indexPath.row) {
 		case 0:
 			//Link to First Draw
-			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://geni.us/first"]];
+			//[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://geni.us/first"]];
+      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://geni.us/first"] options:@{} completionHandler:nil];
 			break;
 		case 1:
         //Show version info
@@ -163,11 +164,11 @@ static NSString* const kiTunesID = @"886670213";
     case 5:
         //iTunes review
         //[ABXAppStore openAppStoreReviewForApp:kiTunesID];
-          [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/vball-scoremaster-the-best-volleyball-scoreboard/id886670213?ls=1&mt=8?at=1001lDi?action=write-review"] options:@{} completionHandler:nil];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/id886670213?action=write-review"] options:@{} completionHandler:nil];
         break;
     case 6:
         //BaraLabs website
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com"]];
+          [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com"] options:@{} completionHandler:nil];
         break;
 		case 7:
 			//Launch Twitter to @BaraLabs page
