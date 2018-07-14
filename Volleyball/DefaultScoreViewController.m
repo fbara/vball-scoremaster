@@ -2,8 +2,8 @@
 //  DefaultScoreViewController.m
 //  Volleyball
 //
-//  Created by AppleAir on 5/16/14.
-//  Copyright (c) 2014 BaraTech. All rights reserved.
+//  Created by Frank Bara on 5/16/14.
+//  Copyright (c) 2014 BaraLabs. All rights reserved.
 //
 
 #import "DefaultScoreViewController.h"

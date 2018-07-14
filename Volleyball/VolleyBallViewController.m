@@ -2,7 +2,7 @@
 //  VolleyBallViewController.m
 //  Volleyball
 //
-//  Created by AppleAir on 5/4/14.
+//  Created by Frank Bara on 5/4/14.
 //  Copyright (c) 2014 BaraLabs, LLC. All rights reserved.
 
 
@@ -87,13 +87,13 @@ static void * leftContext = &leftContext;
     // Set home URL for Twitter and Facebook messages
     self.baralabsURL = [NSURL URLWithString:@"http://baralabs.com"];
 
-    
+    // TODO: Update tutorial?
     // Check if this is the first time the app has run.
     // If so, run tutorial.  If not, don't run turorial.
-    if ([GBVersionTracking isFirstLaunchEver] ||
-        [GBVersionTracking isFirstLaunchForVersion]) {
-        [self performSegueWithIdentifier:@"showTutorial" sender:self];
-    }
+//    if ([GBVersionTracking isFirstLaunchEver] ||
+//        [GBVersionTracking isFirstLaunchForVersion]) {
+//        [self performSegueWithIdentifier:@"showTutorial" sender:self];
+//    }
 
     // Set the Google Analytics Screen name
     self.screenName = @"Scoring";
@@ -208,14 +208,11 @@ static void * leftContext = &leftContext;
     // Get the Action Names
     [self loadActionNames];
 
-    // Format the circular button around the VBall
-    //[self formatVBallButton];
-
     // Format the window background color
     [self windowBackgroundColor];
 
     // Show or hide the social buttons depending on the IAP
-//TODO: Change for 3.8
+    //TODO: Change for 3.8
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
         self.mainPageTwitterButton.hidden = TRUE;
         self.mainPageFacebookButton.hidden = TRUE;
@@ -279,7 +276,10 @@ static void * leftContext = &leftContext;
     if (IS_IPAD()) {
         [self.homeTeamPastName setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
         [self.rightActionLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
-        
+        for (UILabel *score in self.pastHomeScoreCollection) {
+            score.font = self.homeTeamPastName.font;
+        }
+        self.gameNumber.font = self.rightActionLabel.font;
     }
     [self.homePageViewController setViewControllers:@[homeScoreViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
@@ -291,6 +291,9 @@ static void * leftContext = &leftContext;
     if (IS_IPAD()) {
         [self.visitingTeamPastName setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
         [self.leftActionLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
+        for (UILabel* lable in self.pastVisitorScoreCollection) {
+            lable.font = self.visitingTeamPastName.font;
+        }
     }
     [self.visitorPageViewController setViewControllers:@[visitorScoreViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
@@ -769,24 +772,6 @@ static void * leftContext = &leftContext;
 
 #pragma mark - Button Presses
 
-// Format the VBall button
-- (void)formatVBallButton
-{
-    // If running on iPad, use these settings
-    if (IS_IPAD()) {
-		//I commented out the next 2 lines because it was causing the vball image to shrink
-        //self.sendMessageImage.frame = CGRectMake(472.0, 277.0, 160.0, 160.0);
-        // self.sendMessageImage.layer.cornerRadius = 40;
-    } else {
-        // Running on iPhone or iPod
-        self.sendMessageImage.frame = CGRectMake(238.0, 149.0, 87.0, 87.0);
-        // self.sendMessageImage.layer.cornerRadius = 40;
-    }
-    self.sendMessageImage.layer.cornerRadius = self.sendMessageImage.frame.size.width / 2.0f;
-    self.sendMessageImage.clipsToBounds = YES;
-    self.sendMessageImage.layer.masksToBounds = YES;
-}
-
 - (void)gamePressedFromShortcut {
     [self gamePressed:self.gameButton];
 }
@@ -978,11 +963,7 @@ static void * leftContext = &leftContext;
  */
 - (IBAction)leftActionPressed:(UIButton*)sender
 {
-    //TODO: Fix popup menu location
-    // Log the button press for analytics
-    if ([self canSendAnalytics]) {
-        [self logButtonPress:(UIButton*)sender];
-    }
+    
 
     // Get current number and add 1
     int lableNum = [self.leftActionNameNumber.text intValue];
@@ -998,27 +979,14 @@ static void * leftContext = &leftContext;
 
     self.leftActionNameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     currFirstAction = lableNum;
-
+    
+    // Log the button press for analytics
+    if ([self canSendAnalytics]) {
+        [self logButtonPress:(UIButton*)sender];
+    }
     // Send the text message
     [self sendSMS];
 }
-
-/*!
- *  What happens when 'New Match' button is touched
- */
-//- (IBAction)newMatch:(UIBarButtonItem*)sender
-//{
-//#define TAG_MATCH 1
-//
-//    UIAlertView* alert = [[UIAlertView alloc]
-//            initWithTitle:NSLocalizedString(@"New Match?", nil)
-//                  message:NSLocalizedString(@"Reset team names, scores, action names, and start a new match? This can't be undone.", nil)
-//                 delegate:self
-//        cancelButtonTitle:NSLocalizedString(@"No", nil)
-//        otherButtonTitles:NSLocalizedString(@"Yes", nil), nil];
-//    alert.tag = TAG_MATCH;
-//    [alert show];
-//}
 
 - (void)startNewMatch
 {
@@ -1501,16 +1469,14 @@ static void * leftContext = &leftContext;
 
     if ([[defaults stringForKey:@"enableNotifications"] isEqualToString:@"On"]) {
         // Send the SMS message
-        // If it can't be sent, iOS will pop up an alert so we don't have to do that
+        // If it can't be sent, iOS will pop up an alert so I don't have to do that
         MFMessageComposeViewController* textComposer = [[MFMessageComposeViewController alloc] init];
         [textComposer setMessageComposeDelegate:self];
 
         if ([MFMessageComposeViewController canSendText]) {
-            NSString* notificationNumber =
-                [defaults stringForKey:@"phoneNumberForNotification"];
+            NSString* notificationNumber = [defaults stringForKey:@"phoneNumberForNotification"];
 
-            [textComposer
-                setRecipients:[NSArray arrayWithObjects:notificationNumber, nil]];
+            [textComposer setRecipients:[NSArray arrayWithObjects:notificationNumber, nil]];
             // Create new message
             NSString* smsMessage;
             if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
@@ -1548,8 +1514,7 @@ static void * leftContext = &leftContext;
     msgHome = [NSString stringWithString:self.homeTeamName.text];
     
     // Format the text message
-    textMessage = [NSString stringWithFormat: @"%@ has %d %@s and %d %@s!\nThe score is now %@ %d - %@ %d.", playerName, currSecondAction, self.rightActionLabel.text,
-                   currFirstAction, self.leftActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
+    textMessage = [NSString stringWithFormat: @"%@ has %d %@s and %d %@s!\nThe score is now %@ %d - %@ %d.", playerName, currSecondAction, self.rightActionLabel.text, currFirstAction, self.leftActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
     
     return textMessage;
 }
@@ -1598,9 +1563,7 @@ static void * leftContext = &leftContext;
 
 #pragma mark - UIPageViewControllerDataSource
 
-- (UIViewController*)pageViewController:
-                         (UIPageViewController*)pageViewController
-      viewControllerAfterViewController:(UIViewController*)viewController
+- (UIViewController*)pageViewController: (UIPageViewController*)pageViewController viewControllerAfterViewController:(UIViewController*)viewController
 {
     // Cast the viewController as a ScoreViewController so we can act on its
     // properties
@@ -1625,12 +1588,6 @@ static void * leftContext = &leftContext;
                                                        fontSize:iphoneScoreFont];
     }
 
-    // Setup the new view controller with the new, higher score
-    // DefaultScoreViewController *newViewController = [self
-    // createViewControllersForScore:0
-    //                                                                   withColor:[UIColor
-    //                                                                   clearColor]
-    //                                                 fontSize: ];
     newViewController.score = oldViewController.score + 1;
 
     // Check to see which view controller we're updating so the background color
@@ -1647,9 +1604,7 @@ static void * leftContext = &leftContext;
     return newViewController;
 }
 
-- (UIViewController*)pageViewController:
-                         (UIPageViewController*)pageViewController
-     viewControllerBeforeViewController:(UIViewController*)viewController
+- (UIViewController*)pageViewController:(UIPageViewController*)pageViewController viewControllerBeforeViewController:(UIViewController*)viewController
 {
     // Cast the viewController as a ScoreViewController so we can act on its
     // properties
@@ -1674,11 +1629,7 @@ static void * leftContext = &leftContext;
                                                       withColor:ClearColor
                                                        fontSize:iphoneScoreFont];
     }
-    // Setup the new view controller with the new, higher score
-    //    DefaultScoreViewController *newViewController = [self
-    //    createViewControllersForScore:0
-    //                                                                              withColor:[UIColor clearColor]];
-    //
+ 
     newViewController.score = oldViewController.score - 1;
 
     // Check to see which view controller we're updating so the background color

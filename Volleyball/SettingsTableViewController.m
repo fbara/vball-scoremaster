@@ -59,30 +59,6 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     
-//    UITabBarItem* saveButton = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemTopRated tag:@"100"];
-//    [[UIBarButtonItem alloc] initWithTitle:@"Close"
-//                                     style:UIBarButtonItemStyleDone
-//                                    target:self
-//                                    action:@selector(saveAndClose)];
-    //TODO: Need a way to get back to Settings
-//    UIBarButtonItem* saveButton =
-//        [[UIBarButtonItem alloc] initWithTitle:@"Close"
-//                                         style:UIBarButtonItemStyleDone
-//                                        target:self
-//                                        action:@selector(saveAndClose)];
-//    UIImage* image = [UIImage imageNamed:@"Info44.png"];
-//    UIBarButtonItem* infoButton =
-//        [[UIBarButtonItem alloc] initWithImage:image
-//                                         style:UIBarButtonItemStyleBordered
-//                                        target:self
-//                                        action:@selector(showSupportView)];
-//    UIBarButtonItem* fixedSpace = [[UIBarButtonItem alloc]
-//        initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-//                             target:self
-//                             action:nil];
-//
-//    fixedSpace.width = 20.0f;
-//    self.navigationItem.leftBarButtonItem = saveButton;
 
     if (IS_IPAD()) {
         UIBarButtonItem* saveButton =
