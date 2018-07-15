@@ -428,6 +428,7 @@
         <scene sceneID="mTk-Cp-7in">
             <objects>
                 <tabBarController title="VBall ScoreMaster" id="Vu9-6f-G8M" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="Vhe-z4-9mQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -580,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKj-pX-ycy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-320" y="-3847"/>
+            <point key="canvasLocation" x="-293" y="-3542"/>
         </scene>
         <!--Tutorial Settings-->
         <scene sceneID="d5V-gg-hJE">
@@ -608,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10C-oQ-JCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="-3847"/>
+            <point key="canvasLocation" x="190" y="-3542"/>
         </scene>
         <!--Action Names-->
         <scene sceneID="S82-Dd-kqz">
