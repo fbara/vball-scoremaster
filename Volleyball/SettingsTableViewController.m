@@ -58,30 +58,7 @@
 {
     [super viewDidLoad];
     self.tableView.delegate = self;
-    
-
-    if (IS_IPAD()) {
-        UIBarButtonItem* saveButton =
-        [[UIBarButtonItem alloc] initWithTitle:@"Close"
-                                         style:UIBarButtonItemStyleDone
-                                        target:self
-                                        action:@selector(saveAndClose)];
-        UIImage* image = [UIImage imageNamed:@"Info44.png"];
-        UIBarButtonItem* infoButton =
-        [[UIBarButtonItem alloc] initWithImage:image
-                                         style:UIBarButtonItemStyleBordered
-                                        target:self
-                                        action:@selector(showSupportView)];
-        UIBarButtonItem* fixedSpace = [[UIBarButtonItem alloc]
-                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                       target:self
-                                       action:nil];
-        
-        fixedSpace.width = 20.0f;
-        self.navigationItem.rightBarButtonItem = infoButton;
-        self.navigationItem.leftBarButtonItem = saveButton;
-    }
-
+  
     // Set the switch if messages will be sent
     if ([[self getSendNotifications] isEqualToString:@"On"]) {
         [self.sendNotificationSwitch setSelectedSegmentIndex:0];

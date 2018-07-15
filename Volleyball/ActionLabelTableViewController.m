@@ -11,13 +11,9 @@
 #import <GoogleAnalytics/GAITracker.h>
 #import <GoogleAnalytics/GAIFields.h>
 #import <GoogleAnalytics/GAI.h>
-//#import <ChameleonFramework/Chameleon.h>
 #import "Chameleon.h"
-//#import <TSMessages/TSMessageView.h>
 #import "TSMessageView.h"
-//#import <BTBalloon/BTBalloon.h>
 #import "BTBalloon.h"
-//#import <GBVersionTracking/GBVersionTracking.h>
 #import "GBversionTracking.h"
 
 @interface ActionLabelTableViewController () <UITextFieldDelegate, TSMessageViewProtocol, UIPopoverPresentationControllerDelegate> {
@@ -76,17 +72,17 @@
 	
     // Indicate this is the first time this view is seen
     
-    firstTimeShown = YES;
+  firstTimeShown = YES;
 	rowCanSlide = YES;
 	rowChecked = NO;
 	[TSMessage setDelegate:self];
-	self.tableView.tintColor = FlatBlue;
+	//self.tableView.tintColor = FlatBlue;
 	//Check if this is the first time the user is seeing this view
 	[self checkForFirstTimeInView];
 	
 	//There's a Save button showing up and I can't figure out where it comes from.
 	//Hide the Save button for now. Backing out of view will save setting.
-	self.navigationItem.rightBarButtonItem = nil;
+	//self.navigationItem.rightBarButtonItem = nil;
 }
 
 
@@ -143,9 +139,7 @@
 		row = 0;
 	}
 	NSIndexPath* initialIndex = [NSIndexPath indexPathForRow:row inSection:0];
-	[self.tableView selectRowAtIndexPath:initialIndex
-								animated:NO
-						  scrollPosition:UITableViewScrollPositionNone];
+	[self.tableView selectRowAtIndexPath:initialIndex animated:NO scrollPosition:UITableViewScrollPositionNone];
 	
 	[self tableView:self.tableView didSelectRowAtIndexPath:initialIndex];
 
@@ -163,7 +157,6 @@
 			//Show BTBalloon with info on rows
 			NSString *title = @"Swipe on the row!\nYou can add, rename, and delete rows. Just swipe a row to see the buttons!";
 			[BTBalloon appearance].textFont = [UIFont fontWithName:@"AvenirNext-Regular" size:14.0f];
-	//if (IS_IPAD()) {
 		//Show after a .5 second delay. The balloon will be presented after the popover so I have to delay
 		//it's presentation to make sure it shows up in front of the popover.
 		[[BTBalloon sharedInstance] showWithTitle:title

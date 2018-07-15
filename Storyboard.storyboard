@@ -122,13 +122,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="248" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="exb-Lt-P09" userLabel="ActionNamesStack View">
                                         <rect key="frame" x="0.0" y="141.66666666666666" width="359" height="133.99999999999997"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ura-2W-HSh" userLabel="RightActionStackView">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ura-2W-HSh" userLabel="LeftActionStackView">
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="66"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-250" translatesAutoresizingMaskIntoConstraints="NO" id="Mri-q2-udj" userLabel="RightActionNameStackView">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-250" translatesAutoresizingMaskIntoConstraints="NO" id="Mri-q2-udj" userLabel="LeftActionNameStackView">
                                                         <rect key="frame" x="0.0" y="0.0" width="251.33333333333334" height="66"/>
                                                         <subviews>
-                                                            <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="250" text="RIGHT ACTION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nGf-Ly-qhe" userLabel="Right Action Label">
+                                                            <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="250" text="LEFT ACTION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nGf-Ly-qhe" userLabel="Left Action Label">
                                                                 <rect key="frame" x="0.0" y="0.0" width="251.33333333333334" height="66"/>
                                                                 <gestureRecognizers/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
@@ -140,14 +140,14 @@
                                                     <stackView opaque="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="249" distribution="fillEqually" spacing="-100" translatesAutoresizingMaskIntoConstraints="NO" id="inL-QT-MIx" userLabel="TopActionNumberStackView">
                                                         <rect key="frame" x="251.33333333333329" y="0.0" width="107.66666666666666" height="66"/>
                                                         <subviews>
-                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wca-9B-IlW" userLabel="rightActionNameNumber">
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wca-9B-IlW" userLabel="leftActionNameNumber">
                                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="66"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <size key="shadowOffset" width="2" height="2"/>
                                                             </label>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jg4-YH-lXx" userLabel="rightScreenActionButton">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jg4-YH-lXx" userLabel="leftScreenActionButton">
                                                                 <rect key="frame" x="4" y="0.0" width="103.66666666666667" height="66"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button with a label that contains a number"/>
@@ -158,8 +158,8 @@
                                                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="rightActionPressed:" destination="PNK-B0-6uX" eventType="touchUpInside" id="gn9-en-zag"/>
-                                                                    <outletCollection property="gestureRecognizers" destination="Q5i-LW-rYc" appends="YES" id="w7e-YE-rzm"/>
+                                                                    <action selector="leftActionPressed:" destination="PNK-B0-6uX" eventType="touchUpInside" id="7gb-NB-iiz"/>
+                                                                    <outletCollection property="gestureRecognizers" destination="O6R-EB-K19" appends="YES" id="WQq-dU-RIJ"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -169,35 +169,32 @@
                                                     <constraint firstItem="inL-QT-MIx" firstAttribute="width" secondItem="ura-2W-HSh" secondAttribute="width" multiplier="0.3" id="2el-iz-nbt"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DsK-vg-6fi" userLabel="LeftActionStackView">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DsK-vg-6fi" userLabel="RightActionStackView">
                                                 <rect key="frame" x="0.0" y="68.000000000000028" width="359" height="66"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-250" translatesAutoresizingMaskIntoConstraints="NO" id="Eln-3l-JKG" userLabel="LeftActionNameStackView">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-250" translatesAutoresizingMaskIntoConstraints="NO" id="Eln-3l-JKG" userLabel="RightActionNameStackView">
                                                         <rect key="frame" x="0.0" y="0.0" width="251.33333333333334" height="66"/>
                                                         <subviews>
-                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="250" text="LEFT ACTION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZQR-dU-Ieu" userLabel="Left Action Label">
-                                                                <rect key="frame" x="0.0" y="0.0" width="250.66666666666666" height="66"/>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="250" text="RIGHT ACTION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZQR-dU-Ieu" userLabel="Right Action Label">
+                                                                <rect key="frame" x="0.0" y="0.0" width="251.33333333333334" height="66"/>
                                                                 <gestureRecognizers/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38Z-K6-fZ9" userLabel="Left Action Name">
-                                                                <rect key="frame" x="0.6666666666666714" y="0.0" width="250.66666666666663" height="66"/>
-                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="249" distribution="fillEqually" spacing="-100" translatesAutoresizingMaskIntoConstraints="NO" id="7oK-Jk-HT9" userLabel="BottomActionNumberStackView">
                                                         <rect key="frame" x="251.33333333333329" y="0.0" width="107.66666666666666" height="66"/>
                                                         <subviews>
-                                                            <label opaque="NO" clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PLA-fo-lKd" userLabel="leftActionNameNumber">
+                                                            <label opaque="NO" clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PLA-fo-lKd" userLabel="rightActionNameNumber">
                                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="66"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <size key="shadowOffset" width="2" height="2"/>
                                                             </label>
-                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngr-68-tdf" userLabel="leftScreenActionButton">
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngr-68-tdf" userLabel="rightScreenActionButton">
                                                                 <rect key="frame" x="4" y="0.0" width="103.66666666666667" height="66"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Sends a preformatted text message with the score and content of the Action Names" label="Button with a label that contains a number"/>
@@ -208,8 +205,8 @@
                                                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="leftActionPressed:" destination="PNK-B0-6uX" eventType="touchUpInside" id="tAt-W5-jVF"/>
-                                                                    <outletCollection property="gestureRecognizers" destination="O6R-EB-K19" appends="YES" id="1YP-zp-4EZ"/>
+                                                                    <action selector="rightActionPressed:" destination="PNK-B0-6uX" eventType="touchUpInside" id="xBU-Km-5BB"/>
+                                                                    <outletCollection property="gestureRecognizers" destination="Q5i-LW-rYc" appends="YES" id="FPy-gW-pnN"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -376,12 +373,11 @@
                         <outlet property="homeTeamContainer" destination="TU3-3V-RLx" id="Rgq-qt-3yy"/>
                         <outlet property="homeTeamName" destination="tp6-Ot-gF8" id="duk-uU-0Mj"/>
                         <outlet property="homeTeamPastName" destination="xMR-op-eTx" id="Nns-06-8nV"/>
-                        <outlet property="leftActionLabel" destination="ZQR-dU-Ieu" id="FBN-62-bQf"/>
-                        <outlet property="leftActionNameNumber" destination="PLA-fo-lKd" id="73i-R2-cvs"/>
+                        <outlet property="leftActionLabel" destination="nGf-Ly-qhe" id="oNj-ml-5gl"/>
+                        <outlet property="leftActionNameNumber" destination="Wca-9B-IlW" id="IUO-1W-hEu"/>
                         <outlet property="matchButton" destination="PlZ-Qr-fpC" id="8OH-fe-Bko"/>
-                        <outlet property="rightActionLabel" destination="nGf-Ly-qhe" id="Ahk-gV-cd1"/>
-                        <outlet property="rightActionNameNumber" destination="Wca-9B-IlW" id="mRf-3j-1TF"/>
-                        <outlet property="rightActionNameStackView" destination="Mri-q2-udj" id="7X2-LF-U8m"/>
+                        <outlet property="rightActionLabel" destination="ZQR-dU-Ieu" id="gkL-Ze-Gi7"/>
+                        <outlet property="rightActionNameNumber" destination="PLA-fo-lKd" id="HAU-IE-OqS"/>
                         <outlet property="secondActionName" destination="Wca-9B-IlW" id="1as-hn-ZCq"/>
                         <outlet property="sendMessageImage" destination="8Hc-qm-XBk" id="Edc-j3-H5p"/>
                         <outlet property="visitGame1" destination="98a-45-Eju" id="iis-Ht-jVj"/>
@@ -422,7 +418,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-862" y="-2814"/>
+            <point key="canvasLocation" x="-794" y="-2696"/>
         </scene>
         <!--VBall ScoreMaster-->
         <scene sceneID="mTk-Cp-7in">
@@ -616,7 +612,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="ActionNames" title="Action Names" clearsSelectionOnViewWillAppear="NO" id="47K-Gk-dz7" customClass="ActionLabelTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="40" sectionHeaderHeight="5" sectionFooterHeight="10" id="aoN-G2-Kxd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
@@ -646,22 +642,19 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Action Names" id="KHW-54-sUv">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="2ri-VX-FfC"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Action Names" id="KHW-54-sUv"/>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqx-uR-HLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-97" y="-1020"/>
+            <point key="canvasLocation" x="-324" y="-605"/>
         </scene>
         <!--Settings-->
         <scene sceneID="dge-Dz-h61">
             <objects>
                 <tableViewController storyboardIdentifier="Settings" title="Settings" id="JoG-uN-Xre" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="OsV-V0-0Jc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
@@ -1095,10 +1088,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Settings" id="6h4-mo-Fgp">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="YzX-fn-CNG"/>
-                    </navigationItem>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Settings" id="6h4-mo-Fgp"/>
                     <connections>
                         <outlet property="addPhoneNumberButton" destination="lFP-xW-h2H" id="Niy-39-MKK"/>
                         <outlet property="analyticsSwitch" destination="rnr-Qi-g1k" id="odP-UT-ML1"/>
@@ -1121,7 +1111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c88-HG-OSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-809" y="-1020"/>
+            <point key="canvasLocation" x="-867" y="-605"/>
         </scene>
         <!--Home Page View Controller-->
         <scene sceneID="dEb-Ol-WBp">
@@ -1189,7 +1179,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ld-nw-bHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="776.5" y="-2943"/>
+            <point key="canvasLocation" x="433" y="-1656"/>
         </scene>
         <!--Visitor Page View Controller-->
         <scene sceneID="c6u-WJ-yVv">
@@ -1446,7 +1436,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTi-Ye-IZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="272" y="-2238"/>
+            <point key="canvasLocation" x="-200" y="-1656"/>
         </scene>
         <!--Settings-->
         <scene sceneID="THD-uy-Vze">
@@ -1455,10 +1445,10 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Settings" image="Setting Tab" id="24w-Tk-BHC"/>
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="Jxt-XA-6VH">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="JBA-hE-8X0">
@@ -1470,7 +1460,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4L1-Rb-Ar7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1398" y="-1020"/>
+            <point key="canvasLocation" x="-1402" y="-605"/>
         </scene>
         <!--Support-->
         <scene sceneID="BRt-0O-yLN">
@@ -1489,7 +1479,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlQ-hY-M9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-321" y="-2238"/>
+            <point key="canvasLocation" x="-793" y="-1656"/>
         </scene>
     </scenes>
     <resources>

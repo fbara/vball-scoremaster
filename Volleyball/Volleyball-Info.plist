@@ -21,7 +21,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>479</string>
+	<string>493</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -32,7 +32,7 @@
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>This app does not use bluetooth.</string>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Please provide permission for this app to access your calendar.</string>
+	<string>This app does not user your calendar.</string>
 	<key>NSContactsUsageDescription</key>
 	<string>You can send the score of the game to people you know.  To do so, this app requires permission to access your Contacts.</string>
 	<key>NSMicrophoneUsageDescription</key>
@@ -40,7 +40,7 @@
 	<key>NSMotionUsageDescription</key>
 	<string>This app does not use your motion data.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app allows you to save screenshots and send pictures to your friends &amp; family.</string>
+	<string>This app does not use your camera or photo library.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Storyboard</string>
 	<key>UIMainStoryboardFile</key>

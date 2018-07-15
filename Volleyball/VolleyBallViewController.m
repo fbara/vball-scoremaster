@@ -276,6 +276,7 @@ static void * leftContext = &leftContext;
     if (IS_IPAD()) {
         [self.homeTeamPastName setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
         [self.rightActionLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
+        self.rightActionNameNumber.font = self.rightActionLabel.font;
         for (UILabel *score in self.pastHomeScoreCollection) {
             score.font = self.homeTeamPastName.font;
         }
@@ -291,6 +292,7 @@ static void * leftContext = &leftContext;
     if (IS_IPAD()) {
         [self.visitingTeamPastName setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
         [self.leftActionLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
+        self.leftActionNameNumber.font = self.leftActionNameNumber.font;
         for (UILabel* lable in self.pastVisitorScoreCollection) {
             lable.font = self.visitingTeamPastName.font;
         }
@@ -1008,25 +1010,6 @@ static void * leftContext = &leftContext;
         [SKStoreReviewController requestReview];
         [defaults setBool:FALSE forKey:@"showPrompt"];
     }
-//    NSInteger i = [defaults integerForKey:@"newMatchCount"];
-//    if (i > 0 && i < 10) {
-//        // Already started new matches, keep counting
-//        i = i + 1;
-//        [defaults setInteger:i forKey:@"newMatchCount"];
-//    } else if (i == 0) {
-//        // Start tracking the matches
-//        NSLog(@"Start tracking matches.");
-//        [defaults setInteger:1 forKey:@"newMatchCount"];
-//
-//    } else {
-//        BOOL show = [defaults boolForKey:@"showPrompt"];
-//        if (show) {
-//            [SKStoreReviewController requestReview];
-//            [defaults setBool:FALSE forKey:@"showPrompt"];
-//        }
-//        i = i + 1;
-//        [defaults setInteger:i forKey:@"newMatchCount"];
-//    }
 
     [self resetGameAndNames];
     //[self initializePastGames];
@@ -1062,48 +1045,48 @@ static void * leftContext = &leftContext;
  *
  *  @return UIImage of the screen
  */
-- (UIImage*)getScreenImage
-{
-    // Iterates thru every view on the screen, capturing and assemblying them to
-    // form an image
-    CGSize imageSize = [[UIScreen mainScreen] bounds].size;
-    if (NULL != &UIGraphicsBeginImageContextWithOptions){
-        UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
-    }
-
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
-    // Iterate over every window from back to front
-    for (UIWindow* window in [[UIApplication sharedApplication] windows]) {
-        if (![window respondsToSelector:@selector(screen)] ||
-            [window screen] == [UIScreen mainScreen]) {
-            // -renderInContext: renders in the coordinate space of the layer,
-            // so we must first apply the layer's geometry to the graphics context
-            CGContextSaveGState(context);
-            // Center the context around the window's anchor point
-            CGContextTranslateCTM(context, [window center].x, [window center].y);
-            // Apply the window's transform about the anchor point
-            CGContextConcatCTM(context, [window transform]);
-            // Offset by the portion of the bounds left of and above the anchor point
-            CGContextTranslateCTM(
-                context, -[window bounds].size.width * [[window layer] anchorPoint].x,
-                -[window bounds].size.height * [[window layer] anchorPoint].y);
-
-            // Render the layer hierarchy to the current context
-            [[window layer] renderInContext:context];
-
-            // Restore the context
-            CGContextRestoreGState(context);
-        }
-    }
-
-    // Retrieve the screenshot image
-    screenImage = UIGraphicsGetImageFromCurrentImageContext();
-
-    UIGraphicsEndImageContext();
-
-    return screenImage;
-}
+//- (UIImage*)getScreenImage
+//{
+//    // Iterates thru every view on the screen, capturing and assemblying them to
+//    // form an image
+//    CGSize imageSize = [[UIScreen mainScreen] bounds].size;
+//    if (NULL != &UIGraphicsBeginImageContextWithOptions){
+//        UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
+//    }
+//
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//
+//    // Iterate over every window from back to front
+//    for (UIWindow* window in [[UIApplication sharedApplication] windows]) {
+//        if (![window respondsToSelector:@selector(screen)] ||
+//            [window screen] == [UIScreen mainScreen]) {
+//            // -renderInContext: renders in the coordinate space of the layer,
+//            // so we must first apply the layer's geometry to the graphics context
+//            CGContextSaveGState(context);
+//            // Center the context around the window's anchor point
+//            CGContextTranslateCTM(context, [window center].x, [window center].y);
+//            // Apply the window's transform about the anchor point
+//            CGContextConcatCTM(context, [window transform]);
+//            // Offset by the portion of the bounds left of and above the anchor point
+//            CGContextTranslateCTM(
+//                context, -[window bounds].size.width * [[window layer] anchorPoint].x,
+//                -[window bounds].size.height * [[window layer] anchorPoint].y);
+//
+//            // Render the layer hierarchy to the current context
+//            [[window layer] renderInContext:context];
+//
+//            // Restore the context
+//            CGContextRestoreGState(context);
+//        }
+//    }
+//
+//    // Retrieve the screenshot image
+//    screenImage = UIGraphicsGetImageFromCurrentImageContext();
+//
+//    UIGraphicsEndImageContext();
+//
+//    return screenImage;
+//}
 
 #pragma mark - Social Accounts
 

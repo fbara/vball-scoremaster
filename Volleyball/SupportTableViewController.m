@@ -7,10 +7,8 @@
 //
 
 #import "SupportTableViewController.h"
-//#import <ChameleonFramework/Chameleon.h>
 #import "Chameleon.h"
 #import <AppbotX/ABX.h>
-//#import <VTAcknowledgementsViewController/VTAcknowledgementsViewController.h>
 #import "VTAcknowledgementsViewController.h"
 #import <GoogleAnalytics/GAI.h>
 #import <GoogleAnalytics/GAIFields.h>
