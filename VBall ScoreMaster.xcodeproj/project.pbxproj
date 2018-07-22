@@ -33,6 +33,20 @@
 		AD0D05991A71977100B5FC00 /* FCColorSwatchView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0D05971A71977100B5FC00 /* FCColorSwatchView.m */; };
 		AD0D059B1A7198F200B5FC00 /* colormap.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0D059A1A7198F200B5FC00 /* colormap.png */; };
 		AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */; };
+		AD10D2A82104CB24000C1149 /* ColorPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10D2952104CB23000C1149 /* ColorPickerController.m */; };
+		AD10D2A92104CB24000C1149 /* ColorPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2962104CB23000C1149 /* ColorPickerController.xib */; };
+		AD10D2AA2104CB24000C1149 /* ColorPickerAlphaSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10D2992104CB23000C1149 /* ColorPickerAlphaSlider.m */; };
+		AD10D2AB2104CB24000C1149 /* ColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10D29B2104CB23000C1149 /* ColorPickerImageView.m */; };
+		AD10D2AC2104CB24000C1149 /* ColorSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10D29D2104CB23000C1149 /* ColorSlider.m */; };
+		AD10D2AD2104CB24000C1149 /* color_picker.png in Resources */ = {isa = PBXBuildFile; fileRef = AD10D29F2104CB23000C1149 /* color_picker.png */; };
+		AD10D2AE2104CB24000C1149 /* color_picker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2A02104CB23000C1149 /* color_picker@2x.png */; };
+		AD10D2AF2104CB24000C1149 /* color_picker@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2A12104CB23000C1149 /* color_picker@3x.png */; };
+		AD10D2B02104CB24000C1149 /* color_slider.png in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2A22104CB23000C1149 /* color_slider.png */; };
+		AD10D2B12104CB24000C1149 /* color_slider@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2A32104CB23000C1149 /* color_slider@2x.png */; };
+		AD10D2B22104CB24000C1149 /* color_slider@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2A42104CB23000C1149 /* color_slider@3x.png */; };
+		AD10D2B32104CB24000C1149 /* color_wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2A52104CB23000C1149 /* color_wheel.png */; };
+		AD10D2B42104CB24000C1149 /* color_wheel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2A62104CB23000C1149 /* color_wheel@2x.png */; };
+		AD10D2B52104CB24000C1149 /* color_wheel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2A72104CB23000C1149 /* color_wheel@3x.png */; };
 		AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */; };
 		AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A419B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
@@ -112,6 +126,24 @@
 		AD0D059A1A7198F200B5FC00 /* colormap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colormap.png; sourceTree = "<group>"; };
 		AD0E1A07196AC50700289E7D /* ActionLabelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabelTableViewController.h; sourceTree = "<group>"; };
 		AD0E1A08196AC50700289E7D /* ActionLabelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionLabelTableViewController.m; sourceTree = "<group>"; };
+		AD10D2942104CB23000C1149 /* ColorPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerController.h; sourceTree = "<group>"; };
+		AD10D2952104CB23000C1149 /* ColorPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerController.m; sourceTree = "<group>"; };
+		AD10D2962104CB23000C1149 /* ColorPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerController.xib; sourceTree = "<group>"; };
+		AD10D2982104CB23000C1149 /* ColorPickerAlphaSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerAlphaSlider.h; sourceTree = "<group>"; };
+		AD10D2992104CB23000C1149 /* ColorPickerAlphaSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerAlphaSlider.m; sourceTree = "<group>"; };
+		AD10D29A2104CB23000C1149 /* ColorPickerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerImageView.h; sourceTree = "<group>"; };
+		AD10D29B2104CB23000C1149 /* ColorPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerImageView.m; sourceTree = "<group>"; };
+		AD10D29C2104CB23000C1149 /* ColorSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSlider.h; sourceTree = "<group>"; };
+		AD10D29D2104CB23000C1149 /* ColorSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSlider.m; sourceTree = "<group>"; };
+		AD10D29F2104CB23000C1149 /* color_picker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_picker.png; sourceTree = "<group>"; };
+		AD10D2A02104CB23000C1149 /* color_picker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color_picker@2x.png"; sourceTree = "<group>"; };
+		AD10D2A12104CB23000C1149 /* color_picker@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color_picker@3x.png"; sourceTree = "<group>"; };
+		AD10D2A22104CB23000C1149 /* color_slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_slider.png; sourceTree = "<group>"; };
+		AD10D2A32104CB23000C1149 /* color_slider@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color_slider@2x.png"; sourceTree = "<group>"; };
+		AD10D2A42104CB23000C1149 /* color_slider@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color_slider@3x.png"; sourceTree = "<group>"; };
+		AD10D2A52104CB23000C1149 /* color_wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_wheel.png; sourceTree = "<group>"; };
+		AD10D2A62104CB23000C1149 /* color_wheel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color_wheel@2x.png"; sourceTree = "<group>"; };
+		AD10D2A72104CB23000C1149 /* color_wheel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color_wheel@3x.png"; sourceTree = "<group>"; };
 		AD1378A019B50B9300DB02D0 /* iPadTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadTutorialViewController.h; sourceTree = "<group>"; };
 		AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadTutorialViewController.m; sourceTree = "<group>"; };
 		AD1378A319B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadTutorialSettingsBallViewController.h; sourceTree = "<group>"; };
@@ -285,6 +317,7 @@
 		92AA42A91916C2800037D405 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD10D2932104CB23000C1149 /* ColorPickerController */,
 				AD082E37198182E800A997CE /* DefaultScoreViewController.xib */,
 				AD082E3419817E5C00A997CE /* Main.storyboard */,
 				92AA42AB1916C2800037D405 /* InfoPlist.strings */,
@@ -330,6 +363,47 @@
 				AD0D05891A7195C300B5FC00 /* FCColorPickerViewController.xib */,
 			);
 			name = FCColorPicker;
+			sourceTree = "<group>";
+		};
+		AD10D2932104CB23000C1149 /* ColorPickerController */ = {
+			isa = PBXGroup;
+			children = (
+				AD10D2942104CB23000C1149 /* ColorPickerController.h */,
+				AD10D2952104CB23000C1149 /* ColorPickerController.m */,
+				AD10D2962104CB23000C1149 /* ColorPickerController.xib */,
+				AD10D2972104CB23000C1149 /* ColorPickerImageView */,
+				AD10D29E2104CB23000C1149 /* Img_Color_Wheel */,
+			);
+			path = ColorPickerController;
+			sourceTree = "<group>";
+		};
+		AD10D2972104CB23000C1149 /* ColorPickerImageView */ = {
+			isa = PBXGroup;
+			children = (
+				AD10D2982104CB23000C1149 /* ColorPickerAlphaSlider.h */,
+				AD10D2992104CB23000C1149 /* ColorPickerAlphaSlider.m */,
+				AD10D29A2104CB23000C1149 /* ColorPickerImageView.h */,
+				AD10D29B2104CB23000C1149 /* ColorPickerImageView.m */,
+				AD10D29C2104CB23000C1149 /* ColorSlider.h */,
+				AD10D29D2104CB23000C1149 /* ColorSlider.m */,
+			);
+			path = ColorPickerImageView;
+			sourceTree = "<group>";
+		};
+		AD10D29E2104CB23000C1149 /* Img_Color_Wheel */ = {
+			isa = PBXGroup;
+			children = (
+				AD10D29F2104CB23000C1149 /* color_picker.png */,
+				AD10D2A02104CB23000C1149 /* color_picker@2x.png */,
+				AD10D2A12104CB23000C1149 /* color_picker@3x.png */,
+				AD10D2A22104CB23000C1149 /* color_slider.png */,
+				AD10D2A32104CB23000C1149 /* color_slider@2x.png */,
+				AD10D2A42104CB23000C1149 /* color_slider@3x.png */,
+				AD10D2A52104CB23000C1149 /* color_wheel.png */,
+				AD10D2A62104CB23000C1149 /* color_wheel@2x.png */,
+				AD10D2A72104CB23000C1149 /* color_wheel@3x.png */,
+			);
+			path = Img_Color_Wheel;
 			sourceTree = "<group>";
 		};
 		AD52968A197F38E100767D1C /* Tutorial */ = {
@@ -491,19 +565,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADBFCF5B1BF2AF0C003B5F3D /* Pods-VBall ScoreMaster-acknowledgements.plist in Resources */,
+				AD10D2AE2104CB24000C1149 /* color_picker@2x.png in Resources */,
 				AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */,
+				AD10D2B02104CB24000C1149 /* color_slider.png in Resources */,
+				AD10D2AF2104CB24000C1149 /* color_picker@3x.png in Resources */,
+				AD10D2B12104CB24000C1149 /* color_slider@2x.png in Resources */,
 				AD3621411BE553CA00666846 /* TSMessagesDefaultDesign.json in Resources */,
 				92AA42BB1916C2810037D405 /* Images.xcassets in Resources */,
 				ADB5A13319D30372009B1550 /* NRTouchImage@2x.png in Resources */,
 				AD87E6CD20375D5200BF9D2A /* Storyboard.storyboard in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
+				AD10D2B52104CB24000C1149 /* color_wheel@3x.png in Resources */,
 				ADB5A13219D30372009B1550 /* NRTouchImage.png in Resources */,
 				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
+				AD10D2B42104CB24000C1149 /* color_wheel@2x.png in Resources */,
+				AD10D2B22104CB24000C1149 /* color_slider@3x.png in Resources */,
 				AD0D059B1A7198F200B5FC00 /* colormap.png in Resources */,
 				ADCFF8B01AB5D6D000AB9CB0 /* Default-Landscape@2x.png in Resources */,
 				AD9B665C199D2754002C5145 /* Settings.bundle in Resources */,
 				AD0D058B1A7195C300B5FC00 /* FCColorPickerViewController.xib in Resources */,
+				AD10D2A92104CB24000C1149 /* ColorPickerController.xib in Resources */,
 				ADEB992F1986ECB70009B3F5 /* ActionNames.plist in Resources */,
+				AD10D2AD2104CB24000C1149 /* color_picker.png in Resources */,
+				AD10D2B32104CB24000C1149 /* color_wheel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,17 +793,21 @@
 				AD07812919D0493100E30AE9 /* VolleyBallIAPViewController.m in Sources */,
 				ADDB11DF1BE662D5007D0411 /* WSCoachMarksView.m in Sources */,
 				AD6657E61CABFD9200F5ABF0 /* NotificationsTableViewController.m in Sources */,
+				AD10D2AA2104CB24000C1149 /* ColorPickerAlphaSlider.m in Sources */,
 				ADB5A13419D30372009B1550 /* NRWindow.m in Sources */,
 				AD0E1A09196AC50700289E7D /* ActionLabelTableViewController.m in Sources */,
 				AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */,
 				AD0D05991A71977100B5FC00 /* FCColorSwatchView.m in Sources */,
 				AD96E38619BFB056002CD75E /* IAPHelper.m in Sources */,
+				AD10D2AB2104CB24000C1149 /* ColorPickerImageView.m in Sources */,
+				AD10D2AC2104CB24000C1149 /* ColorSlider.m in Sources */,
 				AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */,
 				AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */,
 				AD96E38A19BFB5F7002CD75E /* VolleyBallIAPHelper.m in Sources */,
 				92AA42AF1916C2800037D405 /* main.m in Sources */,
 				9217E5D41926377700B2E6F1 /* DefaultScoreViewController.m in Sources */,
 				ADDE1A781BF0D0F600356E4A /* MPTutorialViewController.m in Sources */,
+				AD10D2A82104CB24000C1149 /* ColorPickerController.m in Sources */,
 				AD0D05981A71977100B5FC00 /* FCBrightDarkGradView.m in Sources */,
 				ADB5A13519D30372009B1550 /* UITouch+NRTouch.m in Sources */,
 				AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */,

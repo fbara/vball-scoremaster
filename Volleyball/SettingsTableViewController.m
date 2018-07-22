@@ -17,6 +17,7 @@
 #import <GoogleAnalytics/GAITracker.h>
 #import <GoogleAnalytics/GAI.h>
 #import <GoogleAnalytics/GAIFields.h>
+#import "ColorPickerController.h"
 
 
 #pragma clang diagnostic push
@@ -369,11 +370,22 @@
 	//Store the team I'm changing
 	teamChange = @"Home";
 	//Use color picker to get color
-	FCColorPickerViewController *colorPicker = [FCColorPickerViewController colorPickerWithColor:self.homeTeamColor.backgroundColor
-																						delegate:self];
-
-	[colorPicker setModalPresentationStyle:UIModalPresentationFormSheet];
-	[self presentViewController:colorPicker animated:TRUE completion:nil];
+  // TODO: Remove FCColorPicker code
+//    FCColorPickerViewController *colorPicker = [FCColorPickerViewController colorPickerWithColor:self.homeTeamColor.backgroundColor
+//                                                                                        delegate:self];
+//
+//    [colorPicker setModalPresentationStyle:UIModalPresentationFormSheet];
+//    [self presentViewController:colorPicker animated:TRUE completion:nil];
+    
+    [ColorPickerController presentColorPickerController:self defaultColor:self.homeTeamColor.backgroundColor colorTitle:NSLocalizedString(@"Home Team Color", @"Select the background color for the Home team") completion:^(BOOL success, UIColor *selectedColours, CGFloat alpha) {
+        if (success) {
+            self.homeTeamColor.backgroundColor = selectedColours;
+            [self saveScoreColors];
+            teamChange = nil;
+        }
+        
+    }];
+    
 }
 
 /*!
@@ -385,44 +397,46 @@
 	//Store the team I'm changing
 	teamChange = @"Visitor";
 	//Use color picker to get color
-	FCColorPickerViewController *colorPicker = [FCColorPickerViewController colorPickerWithColor:self.visitingTeamColor.backgroundColor
-																						delegate:self];
-	
-	[colorPicker setModalPresentationStyle:UIModalPresentationFormSheet];
-	[self presentViewController:colorPicker animated:TRUE completion:nil];
+  // TODO: Remove FCColorPicker code
+//    FCColorPickerViewController *colorPicker = [FCColorPickerViewController colorPickerWithColor:self.visitingTeamColor.backgroundColor
+//                                                                                        delegate:self];
+//
+//    [colorPicker setModalPresentationStyle:UIModalPresentationFormSheet];
+//    [self presentViewController:colorPicker animated:TRUE completion:nil];
+    
+    [ColorPickerController presentColorPickerController:self defaultColor:self.visitingTeamColor.backgroundColor colorTitle:NSLocalizedString(@"Visiting Team Color", @"Select the background color for the Visiting team") completion:^(BOOL success, UIColor *selectedColours, CGFloat alpha) {
+        if (success) {
+            self.visitingTeamColor.backgroundColor = selectedColours;
+            [self saveScoreColors];
+            teamChange = nil;
+        }
+        
+    }];
 	
 }
 
 #pragma mark - FCColorPicker Delegate
-
-- (void)colorPickerViewController:(FCColorPickerViewController *)colorPicker didSelectColor:(UIColor *)color
-{
-	if ([teamChange isEqualToString:@"Home"]) {
-		self.homeTeamColor.backgroundColor = color;
-	} else {
-		self.visitingTeamColor.backgroundColor = color;
-	}
-	//Save the colors so they will be loaded when the Settings VC is shown again
-	[self saveScoreColors];
-	teamChange = nil;
-	[self dismissViewControllerAnimated:TRUE completion:nil];
-}
-
-- (void)colorPickerViewControllerDidCancel:(FCColorPickerViewController *)colorPicker
-{
-	teamChange = nil;
-	[self dismissViewControllerAnimated:TRUE completion:nil];
-}
+// TODO: Remove FCColorPicker code
+//- (void)colorPickerViewController:(FCColorPickerViewController *)colorPicker didSelectColor:(UIColor *)color
+//{
+//    if ([teamChange isEqualToString:@"Home"]) {
+//        self.homeTeamColor.backgroundColor = color;
+//    } else {
+//        self.visitingTeamColor.backgroundColor = color;
+//    }
+//    //Save the colors so they will be loaded when the Settings VC is shown again
+//    [self saveScoreColors];
+//    teamChange = nil;
+//    [self dismissViewControllerAnimated:TRUE completion:nil];
+//}
+//
+//- (void)colorPickerViewControllerDidCancel:(FCColorPickerViewController *)colorPicker
+//{
+//    teamChange = nil;
+//    [self dismissViewControllerAnimated:TRUE completion:nil];
+//}
 
 #pragma mark - Extras
-
-- (IBAction)getFAQ:(UIButton*)sender
-{
-    [ABXFAQsViewController showFromController:self
-                            hideContactButton:NO
-                              contactMetaData:nil
-                                initialSearch:nil];
-}
 
 - (void)leaveReview:(UIButton *)sender {
     // Allow the user to leave App Store review

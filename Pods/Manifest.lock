@@ -5,6 +5,7 @@ PODS:
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
+  - Color-Picker-for-iOS (2.0.2)
   - DeviceUtil (2.1.2)
   - GBVersionTracking (1.3.2)
   - Google-Mobile-Ads-SDK (7.28.0)
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - AppbotX (from `https://github.com/appbotx/appbotx.git`)
   - BTBalloon
   - ChameleonFramework
+  - Color-Picker-for-iOS (~> 2.0)
   - DeviceUtil
   - GBVersionTracking
   - Google-Mobile-Ads-SDK
@@ -41,6 +43,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BTBalloon
     - ChameleonFramework
+    - Color-Picker-for-iOS
     - DeviceUtil
     - GBVersionTracking
     - Google-Mobile-Ads-SDK
@@ -72,6 +75,7 @@ SPEC CHECKSUMS:
   AppbotX: 6478b94b694e516fb9ee8c0acd8ba48d6bf6d6b3
   BTBalloon: d38bbf4f6ee29ebad7b983653a927e874dfe1f7f
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Color-Picker-for-iOS: 4980589b3e3cfe7198f227dd50be9adb02d8bc0b
   DeviceUtil: 8a0334404594ba8e3f7fa01caf48cc95b0427333
   GBVersionTracking: c9b5eb256a234e01b5b44731fda86a3488760c49
   Google-Mobile-Ads-SDK: 7f9bc0011df363ae5616449de3682a14c4701612
@@ -86,6 +90,6 @@ SPEC CHECKSUMS:
   VTAcknowledgementsViewController: d62bb400ca68e240680906bcfa2a2b380d39b30f
   VWWPermissionKit: 102e84bbd358cf909f46eb2120d1c698d0e0c3af
 
-PODFILE CHECKSUM: f5adaa4df312106e295568cf36771ab83d13d64c
+PODFILE CHECKSUM: 5d6b5339e9f99134ee8ab10c27776cb00d5def0f
 
 COCOAPODS: 1.5.3

@@ -12,14 +12,14 @@
 #import "ActionLabelTableViewController.h"
 @import StoreKit;
 #import "VolleyBallIAPHelper.h"
-#import "FCColorPickerViewController.h"
+//#import "FCColorPickerViewController.h"
 #import <Contacts/Contacts.h>
 #import <ContactsUI/ContactsUI.h>
 
 @interface SettingsTableViewController
     : UITableViewController <UITableViewDelegate, /*ABPeoplePickerNavigationControllerDelegate,*/ CNContactPickerDelegate, CNContactViewControllerDelegate,
                              UITextViewDelegate, UITextFieldDelegate, ActionNameDelegate,
-                             SKProductsRequestDelegate, SKPaymentTransactionObserver,FCColorPickerViewControllerDelegate>
+                             SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 @property (weak, nonatomic) IBOutlet UIButton* homeTeamColor;
 @property (weak, nonatomic) IBOutlet UIButton* visitingTeamColor;
