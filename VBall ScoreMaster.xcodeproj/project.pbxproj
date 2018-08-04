@@ -47,6 +47,7 @@
 		AD10D2B32104CB24000C1149 /* color_wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2A52104CB23000C1149 /* color_wheel.png */; };
 		AD10D2B42104CB24000C1149 /* color_wheel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2A62104CB23000C1149 /* color_wheel@2x.png */; };
 		AD10D2B52104CB24000C1149 /* color_wheel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2A72104CB23000C1149 /* color_wheel@3x.png */; };
+		AD10D2B821069C05000C1149 /* EATutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10D2B721069C05000C1149 /* EATutorialViewController.m */; };
 		AD1378A219B50B9300DB02D0 /* iPadTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */; };
 		AD1378A519B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1378A419B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.m */; };
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
@@ -144,6 +145,8 @@
 		AD10D2A52104CB23000C1149 /* color_wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_wheel.png; sourceTree = "<group>"; };
 		AD10D2A62104CB23000C1149 /* color_wheel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color_wheel@2x.png"; sourceTree = "<group>"; };
 		AD10D2A72104CB23000C1149 /* color_wheel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color_wheel@3x.png"; sourceTree = "<group>"; };
+		AD10D2B621069C05000C1149 /* EATutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EATutorialViewController.h; path = Tutorial/EATutorialViewController.h; sourceTree = "<group>"; };
+		AD10D2B721069C05000C1149 /* EATutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EATutorialViewController.m; path = Tutorial/EATutorialViewController.m; sourceTree = "<group>"; };
 		AD1378A019B50B9300DB02D0 /* iPadTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadTutorialViewController.h; sourceTree = "<group>"; };
 		AD1378A119B50B9300DB02D0 /* iPadTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadTutorialViewController.m; sourceTree = "<group>"; };
 		AD1378A319B50BB400DB02D0 /* iPadTutorialSettingsBallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadTutorialSettingsBallViewController.h; sourceTree = "<group>"; };
@@ -417,6 +420,8 @@
 				ADDE1A771BF0D0F600356E4A /* MPTutorialViewController.m */,
 				AD082E31198061AE00A997CE /* TutorialSettingsViewController.h */,
 				AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */,
+				AD10D2B621069C05000C1149 /* EATutorialViewController.h */,
+				AD10D2B721069C05000C1149 /* EATutorialViewController.m */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -789,6 +794,7 @@
 			files = (
 				92AA42B31916C2800037D405 /* VolleyBallAppDelegate.m in Sources */,
 				92AA42B91916C2810037D405 /* VolleyBallViewController.m in Sources */,
+				AD10D2B821069C05000C1149 /* EATutorialViewController.m in Sources */,
 				AD0D058A1A7195C300B5FC00 /* FCColorPickerViewController.m in Sources */,
 				AD07812919D0493100E30AE9 /* VolleyBallIAPViewController.m in Sources */,
 				ADDB11DF1BE662D5007D0411 /* WSCoachMarksView.m in Sources */,

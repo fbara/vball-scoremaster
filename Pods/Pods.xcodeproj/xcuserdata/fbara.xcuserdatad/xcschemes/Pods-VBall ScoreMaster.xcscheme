@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D3AD8BB18FABB4A96A8C7EE49555BD8E"
+               BlueprintIdentifier = "5591A98B14EFBE5A16E1C1D45C769CDE"
                BlueprintName = "Pods-VBall ScoreMaster"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-VBall ScoreMaster.a">

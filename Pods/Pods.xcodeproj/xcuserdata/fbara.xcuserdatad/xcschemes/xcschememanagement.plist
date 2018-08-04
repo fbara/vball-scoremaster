@@ -24,17 +24,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Color-Picker-for-iOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>DeviceUtil-DeviceUtil.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>DeviceUtil.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>EAIntroView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>EARestrictedScrollView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

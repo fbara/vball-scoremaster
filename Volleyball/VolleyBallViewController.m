@@ -212,7 +212,7 @@ static void * leftContext = &leftContext;
     [self windowBackgroundColor];
 
     // Show or hide the social buttons depending on the IAP
-    //TODO: Change for 3.8
+    //TODO: Change when showing social media
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
         self.mainPageTwitterButton.hidden = TRUE;
         self.mainPageFacebookButton.hidden = TRUE;
@@ -274,6 +274,7 @@ static void * leftContext = &leftContext;
     self.homeColor = [self colorHomeScoreView];
     DefaultScoreViewController* homeScoreViewController = [self createViewControllersForScore:score withColor:self.homeColor fontSize:scoreSize];
     if (IS_IPAD()) {
+        [self.homeTeamName setFont:[UIFont systemFontOfSize:100.0 weight:UIFontWeightBold]];
         [self.homeTeamPastName setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
         [self.rightActionLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
         self.rightActionNameNumber.font = self.rightActionLabel.font;
@@ -290,9 +291,10 @@ static void * leftContext = &leftContext;
     self.visitorColor = [self colorVisitorScoreView];
     DefaultScoreViewController* visitorScoreViewController = [self createViewControllersForScore:score withColor:self.visitorColor fontSize:scoreSize];
     if (IS_IPAD()) {
+        [self.visitingTeamName setFont:[UIFont systemFontOfSize:100.0 weight:UIFontWeightBold]];
         [self.visitingTeamPastName setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
         [self.leftActionLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
-        self.leftActionNameNumber.font = self.leftActionNameNumber.font;
+        self.leftActionNameNumber.font = self.leftActionLabel.font;
         for (UILabel* lable in self.pastVisitorScoreCollection) {
             lable.font = self.visitingTeamPastName.font;
         }
@@ -313,6 +315,19 @@ static void * leftContext = &leftContext;
 
     return newScoreViewController;
 }
+
+//#pragma mark - Team Name Font Size
+//
+//- (void)setTeamNameFontSize
+//{
+//    if (IS_IPAD()) {
+//        //Make font bigger
+//        self.homeTeamName setFont:[UIFont fontWithName:<#(nonnull NSString *)#> size:<#(CGFloat)#>]
+//    } else {
+//        //Regular size
+//
+//    }
+//}
 
 #pragma mark - Color Settings
 
@@ -791,7 +806,6 @@ static void * leftContext = &leftContext;
     if ([self canSendAnalytics]) {
         [self logButtonPress:(UIButton*)sender];
     }
-    // TODO: Update for iPad
     // Grab the game number
     int lableNum = [self.gameNumber.text intValue];
     // Update the past scores, set the winner in red text
