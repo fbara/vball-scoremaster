@@ -275,13 +275,14 @@ static void * leftContext = &leftContext;
     DefaultScoreViewController* homeScoreViewController = [self createViewControllersForScore:score withColor:self.homeColor fontSize:scoreSize];
     if (IS_IPAD()) {
         [self.homeTeamName setFont:[UIFont systemFontOfSize:100.0 weight:UIFontWeightBold]];
+        [self.rightActionNameNumber setFont:[UIFont systemFontOfSize:60.0 weight:UIFontWeightMedium]];
         [self.homeTeamPastName setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
         [self.rightActionLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
-        self.rightActionNameNumber.font = self.rightActionLabel.font;
         for (UILabel *score in self.pastHomeScoreCollection) {
             score.font = self.homeTeamPastName.font;
         }
         self.gameNumber.font = self.rightActionLabel.font;
+        self.rightActionNameNumber.textAlignment = NSTextAlignmentRight;
     }
     [self.homePageViewController setViewControllers:@[homeScoreViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
@@ -292,12 +293,13 @@ static void * leftContext = &leftContext;
     DefaultScoreViewController* visitorScoreViewController = [self createViewControllersForScore:score withColor:self.visitorColor fontSize:scoreSize];
     if (IS_IPAD()) {
         [self.visitingTeamName setFont:[UIFont systemFontOfSize:100.0 weight:UIFontWeightBold]];
+        [self.leftActionNameNumber setFont:[UIFont systemFontOfSize:60.0 weight:UIFontWeightMedium]];
         [self.visitingTeamPastName setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
         [self.leftActionLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
-        self.leftActionNameNumber.font = self.leftActionLabel.font;
         for (UILabel* lable in self.pastVisitorScoreCollection) {
             lable.font = self.visitingTeamPastName.font;
         }
+        self.leftActionNameNumber.textAlignment = NSTextAlignmentRight;
     }
     [self.visitorPageViewController setViewControllers:@[visitorScoreViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
@@ -315,19 +317,6 @@ static void * leftContext = &leftContext;
 
     return newScoreViewController;
 }
-
-//#pragma mark - Team Name Font Size
-//
-//- (void)setTeamNameFontSize
-//{
-//    if (IS_IPAD()) {
-//        //Make font bigger
-//        self.homeTeamName setFont:[UIFont fontWithName:<#(nonnull NSString *)#> size:<#(CGFloat)#>]
-//    } else {
-//        //Regular size
-//
-//    }
-//}
 
 #pragma mark - Color Settings
 
@@ -930,14 +919,6 @@ static void * leftContext = &leftContext;
         self.gameNumber.text = [NSString stringWithFormat:@"%d", 1];
         // Reset the past game fonts back to default
         [self initializePastGames];
-//        for (UILabel* score in self.pastScoreCollection) {
-//            score.text = @"0";
-//            if (IS_IPAD()) {
-//                [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:30]];
-//            } else {
-//                [score setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
-//            }
-//        }
         [self startNewMatch];
     }
     currHomeScore = 0;
