@@ -1506,10 +1506,10 @@ static void * leftContext = &leftContext;
     msgHome = [NSString stringWithString:self.homeTeamName.text];
     NSString *game = [NSString stringWithFormat:@"%@", self.gameNumber.text];
     if (currHomeScore > currVisitorScore) {
-        textMessage = [NSString stringWithFormat: @"%@ is beating %@ %d - %d in game %@. The match is now %@ %ld - %@ %ld.",
+        textMessage = [NSString stringWithFormat: @"%@ are beating %@ %d - %d in game %@. The match is now %@ %ld - %@ %ld.",
                       msgHome, msgVisitor, currHomeScore, currVisitorScore, game, msgHome, (long)totalPastGamesHome, msgVisitor, (long)totalPastGamesVisitor];
     } else if (currVisitorScore > currHomeScore) {
-        textMessage = [NSString stringWithFormat: @"%@ is beating %@ %d - %d in game %@. The match is now %@ %ld - %@ %ld.",
+        textMessage = [NSString stringWithFormat: @"%@ are beating %@ %d - %d in game %@. The match is now %@ %ld - %@ %ld.",
                       msgVisitor, msgHome, currVisitorScore, currHomeScore, game, msgVisitor, (long)totalPastGamesVisitor, msgHome, (long)totalPastGamesHome];
     } else {
         textMessage = [NSString stringWithFormat: @"In game %@ between %@ and %@, the score is %d - %d. The match is %@ %ld - %@ %ld.", game, msgHome, msgVisitor, currHomeScore, currVisitorScore, msgVisitor, (long)totalPastGamesVisitor, msgHome, (long)totalPastGamesHome];
