@@ -671,6 +671,8 @@
 
 #pragma mark - 3D Touch
 
+
+
 - (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
     NSMutableArray *list = [[NSMutableArray alloc] init];
     for (int i = 0; i < [self.actionNamesList count]; i++) {
