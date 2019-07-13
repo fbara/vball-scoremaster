@@ -388,7 +388,8 @@
 	FCColorPickerViewController *colorPicker = [FCColorPickerViewController colorPickerWithColor:self.visitingTeamColor.backgroundColor
 																						delegate:self];
 	
-	[colorPicker setModalPresentationStyle:UIModalPresentationFormSheet];
+    //[colorPicker setModalPresentationStyle:UIModalPresentationFullScreen];
+    //[colorPicker setModalPresentationStyle:UIModalPresentationFormSheet];
 	[self presentViewController:colorPicker animated:TRUE completion:nil];
 	
 }
