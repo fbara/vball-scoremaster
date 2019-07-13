@@ -11,9 +11,11 @@
 #import "ActionLabelTableViewController.h"
 #import "NotificationsTableViewController.h"
 #import "GBVersionTracking.h"
-#import <GoogleAnalytics/GAI.h>
+/*
+ #import <GoogleAnalytics/GAI.h>
 #import <GoogleAnalytics/GAIFields.h>
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
+ */
 #import "Chameleon.h"
 #import <AppbotX/ABX.h>
 #import <AppbotX/ABXNotificationView.h>
@@ -95,8 +97,10 @@ static void * leftContext = &leftContext;
 //        [self performSegueWithIdentifier:@"showTutorial" sender:self];
 //    }
 
+    /*
     // Set the Google Analytics Screen name
     self.screenName = @"Scoring";
+     */
 
     [self resetGameAndNames];
 
@@ -553,15 +557,15 @@ static void * leftContext = &leftContext;
 
 }
 
+/*
 #pragma mark - Google Analytics
 
-/*!
  *  @author Me, 03-21-16 16:03
  *
  *  Determines if the user has allowed the use of analytics.
  *
  *  @return BOOL Returns TRUE if analytics are allowed and FALSE if not.
- */
+
 - (BOOL)canSendAnalytics {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *analytics = [defaults stringForKey:@"analyticsChoice"];
@@ -631,6 +635,7 @@ static void * leftContext = &leftContext;
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
 }
+*/
 
 #pragma mark - UIGestureRecognizer Delegate Method
 
@@ -695,16 +700,17 @@ static void * leftContext = &leftContext;
 #pragma mark - UILongPressGestureRecognizers
 #pragma mark - Reset Action Numbers to 0
 
-- (IBAction)sendInstantMessage:(UIButton*)sender
-{
-    // Log the button press for analytics
-    if ([self canSendAnalytics]) {
-        [self logButtonPress:(UIButton*)sender];
-    }
 
-    // Send a text message without changing the Action numbers
-    [self sendSMS];
-}
+//- (IBAction)sendInstantMessage:(UIButton*)sender
+//{
+//    // Log the button press for analytics
+//    if ([self canSendAnalytics]) {
+//        [self logButtonPress:(UIButton*)sender];
+//    }
+//
+//    // Send a text message without changing the Action numbers
+//    [self sendSMS];
+//}
 
 - (IBAction)leftActionLongPress:(UILongPressGestureRecognizer*)recognizer
 {
@@ -787,10 +793,10 @@ static void * leftContext = &leftContext;
  */
 - (IBAction)gamePressed:(UIButton*)sender
 {
-    // Log the button press for analytics
-    if ([self canSendAnalytics]) {
-        [self logButtonPress:(UIButton*)sender];
-    }
+//    // Log the button press for analytics
+//    if ([self canSendAnalytics]) {
+//        [self logButtonPress:(UIButton*)sender];
+//    }
     // TODO: Update for iPad
     // Grab the game number
     int lableNum = [self.gameNumber.text intValue];
@@ -935,10 +941,10 @@ static void * leftContext = &leftContext;
  */
 - (IBAction)rightActionPressed:(UIButton*)sender
 {
-    // Log the button press for analytics
-    if ([self canSendAnalytics]) {
-        [self logButtonPress:(UIButton*)sender];
-    }
+//    // Log the button press for analytics
+//    if ([self canSendAnalytics]) {
+//        [self logButtonPress:(UIButton*)sender];
+//    }
 
     // Get the number currently displayed for right Action Name and add 1
     int lableNum = [self.rightActionNameNumber.text intValue];
@@ -982,10 +988,10 @@ static void * leftContext = &leftContext;
     self.leftActionNameNumber.text = [NSString stringWithFormat:@"%d", lableNum];
     currFirstAction = lableNum;
     
-    // Log the button press for analytics
-    if ([self canSendAnalytics]) {
-        [self logButtonPress:(UIButton*)sender];
-    }
+//    // Log the button press for analytics
+//    if ([self canSendAnalytics]) {
+//        [self logButtonPress:(UIButton*)sender];
+//    }
     // Send the text message
     [self sendSMS];
 }
@@ -1038,221 +1044,6 @@ static void * leftContext = &leftContext;
     
 }
 
-#pragma mark - Screen Image
-/*!
- *  Takes a snapshot of the screen with the scores, prior
- *  to when the message or social screens take over the view
- *
- *  @return UIImage of the screen
- */
-//- (UIImage*)getScreenImage
-//{
-//    // Iterates thru every view on the screen, capturing and assemblying them to
-//    // form an image
-//    CGSize imageSize = [[UIScreen mainScreen] bounds].size;
-//    if (NULL != &UIGraphicsBeginImageContextWithOptions){
-//        UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
-//    }
-//
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//
-//    // Iterate over every window from back to front
-//    for (UIWindow* window in [[UIApplication sharedApplication] windows]) {
-//        if (![window respondsToSelector:@selector(screen)] ||
-//            [window screen] == [UIScreen mainScreen]) {
-//            // -renderInContext: renders in the coordinate space of the layer,
-//            // so we must first apply the layer's geometry to the graphics context
-//            CGContextSaveGState(context);
-//            // Center the context around the window's anchor point
-//            CGContextTranslateCTM(context, [window center].x, [window center].y);
-//            // Apply the window's transform about the anchor point
-//            CGContextConcatCTM(context, [window transform]);
-//            // Offset by the portion of the bounds left of and above the anchor point
-//            CGContextTranslateCTM(
-//                context, -[window bounds].size.width * [[window layer] anchorPoint].x,
-//                -[window bounds].size.height * [[window layer] anchorPoint].y);
-//
-//            // Render the layer hierarchy to the current context
-//            [[window layer] renderInContext:context];
-//
-//            // Restore the context
-//            CGContextRestoreGState(context);
-//        }
-//    }
-//
-//    // Retrieve the screenshot image
-//    screenImage = UIGraphicsGetImageFromCurrentImageContext();
-//
-//    UIGraphicsEndImageContext();
-//
-//    return screenImage;
-//}
-
-#pragma mark - Social Accounts
-
-- (void)enableSocialButtons
-{
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-     //TODO: Change for 3.8 - ADD
-    [defaults setObject:@"Off" forKey:@"enableTwitter"];
-    [defaults setObject:@"Off" forKey:@"enableFacebook"];
-
-//TODO: Change for 3.8 - REMOVE
-//    if ([[defaults stringForKey:@"enableTwitter"] isEqualToString:@"On"]) {
-//        self.mainPageTwitterButton.enabled = TRUE;
-//    } else {
-//        self.mainPageTwitterButton.enabled = FALSE;
-//    }
-//
-//    if ([[defaults stringForKey:@"enableFacebook"] isEqualToString:@"On"]) {
-//        self.mainPageFacebookButton.enabled = TRUE;
-//    } else {
-//        self.mainPageFacebookButton.enabled = FALSE;
-//    }
-
-}
-
-//- (IBAction)sendTwitter:(UIButton*)sender;
-//{
-//    //TODO: Remove for iOS 11
-////    // Check if text messages should be sent
-////    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-////
-//////    if ([[defaults stringForKey:@"enableTwitter"] isEqualToString:@"On"]) {
-////        if ([self userHasAccessToTwitter]) {
-////            SLComposeViewController* twitterController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-////
-////            NSString* newMessage, *tempStr1, *tempStr2;
-////            if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
-////                tempStr1 = [self createPlayerMessageToSend];
-////                tempStr2 = @"\n#vballscoremaster";
-////            } else if ([[self teamOrPlayer] isEqualToString:@"Team"]) {
-////                tempStr1 = [self createTeamMessageToSend];
-////                tempStr2 = @"\n#vballscoremaster";
-////            } else {
-////                tempStr1 = [self createBlankMessageToSend];
-////                tempStr2 = @"";
-////            }
-////
-////            newMessage = [tempStr1 stringByAppendingString:tempStr2];
-////            socialMessage = newMessage;
-////
-////            [twitterController setInitialText:newMessage];
-////            [twitterController addImage:[self getScreenImage]];
-////
-////
-////            //TODO: Change for 3.8 - REMOVE
-//////            twitterController.completionHandler = ^(SLComposeViewControllerResult result) {
-//////                          switch (result) {
-//////                          case SLComposeViewControllerResultCancelled:
-//////                          [self logMessagesSent:@"Twitter post cancelled."];
-//////                            break;
-//////                          case SLComposeViewControllerResultDone:
-//////                              if ([self canSendAnalytics]) {
-//////                                 [self logTwitterSent:newMessage];
-//////                              }
-//////                            break;
-//////                          default:
-//////                            break;
-//////                          }
-//////                            };
-//////
-//////            // Show Twitter screen
-//////            [self presentViewController:twitterController
-//////                               animated:YES
-//////                             completion:nil];
-////
-////
-////            // Clear screen shot from memory
-////            screenImage = nil;
-////
-////            // Log the button press for analytics
-////            if ([self canSendAnalytics]) {
-////                [self logButtonPress:(UIButton*)sender];
-////            }
-//////        } else {
-//////            // User either doesn't have Twitter or denied our access
-//////            UIAlertView* alert = [[UIAlertView alloc]
-//////                    initWithTitle:@"Can't access Twitter"
-//////                          message:@"Either you don't have a Twitter account or this "
-//////                          @"app has been denied access to your Twitter " @"account."
-//////                         delegate:nil
-//////                cancelButtonTitle:@"Ok"
-//////                otherButtonTitles:nil];
-//////            [alert show];
-//////        }
-////    }
-//}
-//
-//- (IBAction)sendFacebook:(UIButton*)sender
-//{
-////TODO: Remove for iOS 11
-////    // Check if text messages should be sent
-////    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-////
-////    // Check if user enabled sending by facebook
-////    if ([[defaults stringForKey:@"enableFacebook"] isEqualToString:@"On"]) {
-////        // Check if user has setup facebook on the device
-////        if ([self userHasAccessToFacebook]) {
-////            SLComposeViewController* facebookController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-////
-////            NSString* newMessage, *tempStr1, *tempStr2;
-////            if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
-////                tempStr1 = [self createPlayerMessageToSend];
-////                tempStr2 = @"\n#vballscoremaster";
-////            } else if ([[self teamOrPlayer] isEqualToString:@"Team"]) {
-////                tempStr1 = [self createTeamMessageToSend];
-////                tempStr2 = @"\n#vballscoremaster";
-////            } else {
-////                tempStr1 = [self createBlankMessageToSend];
-////                tempStr2 = @"";
-////            }
-////
-////            newMessage = [tempStr1 stringByAppendingString:tempStr2];
-////
-////            [facebookController setInitialText:newMessage];
-////            [facebookController addImage:[self getScreenImage]];
-////            [facebookController setCompletionHandler:^(SLComposeViewControllerResult result) {
-////              switch (result) {
-////              case SLComposeViewControllerResultCancelled:
-////                      [self logMessagesSent:@"Facebook post cancelled."];
-////                break;
-////              case SLComposeViewControllerResultDone:
-////                  if ([self canSendAnalytics]) {
-////                      [self logFacebookSent:newMessage];
-////                  }
-////              default:
-////                break;
-////              }
-////                }];
-////
-////            // Show Facebook screen
-////            [self presentViewController:facebookController
-////                               animated:YES
-////                             completion:nil];
-////
-////            // Clear screen shot from memory
-////            screenImage = nil;
-////
-////            // Log the button press for analytics
-////            if ([self canSendAnalytics]) {
-////                [self logButtonPress:(UIButton*)sender];
-////            }
-////
-////        } else {
-////            // User either doesn't have Facebook or denied our access
-////            UIAlertView* alert = [[UIAlertView alloc]
-////                    initWithTitle:@"Can't access Facebook"
-////                          message:@"Either you don't have a Facebook account or this "
-////                          @"app has been denied access to your Facebook " @"account."
-////                         delegate:nil
-////                cancelButtonTitle:@"Ok"
-////                otherButtonTitles:nil];
-////            [alert show];
-////        }
-////    }
-//}
-
 #pragma mark - AppbotX
 
 - (void)checkForActiveNotification {
@@ -1276,16 +1067,16 @@ static void * leftContext = &leftContext;
                                       actionBlock:^(ABXNotificationView *view) {
                                           [[UIApplication sharedApplication] openURL:[NSURL URLWithString:notification.actionUrl]];
                                       } dismissBlock:^(ABXNotificationView *view) {
-                                          if ([self canSendAnalytics]) {
-                                              id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-                                              
-                                              [tracker set:kGAIScreenName value:@"Notification"];
-                                              [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Notification"
-                                                                                                    action:@"Active"
-                                                                                                     label:notification.actionUrl
-                                                                                                     value:nil] build]];
-                                              [tracker set:kGAIScreenName value:nil];
-                                          }
+//                                          if ([self canSendAnalytics]) {
+//                                              id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//
+//                                              [tracker set:kGAIScreenName value:@"Notification"];
+//                                              [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Notification"
+//                                                                                                    action:@"Active"
+//                                                                                                     label:notification.actionUrl
+//                                                                                                     value:nil] build]];
+//                                              [tracker set:kGAIScreenName value:nil];
+//                                          }
                                           //Mark alert as being seen so it's not shown again
                                           [notification markAsSeen];
                                       }];
@@ -1301,18 +1092,18 @@ static void * leftContext = &leftContext;
 
 - (void)appbotPromptForReview
 {
-    if ([self canSendAnalytics]) {
-        [self logShortcutUsed:@"Appbot Prompt Review"];
-    }
+//    if ([self canSendAnalytics]) {
+//        [self logShortcutUsed:@"Appbot Prompt Review"];
+//    }
     [ABXAppStore openAppStoreReviewForApp:kiTunesID];
     self.promptView.hidden = YES;
 }
 
 - (void)appbotPromptForFeedback
 {
-    if ([self canSendAnalytics]) {
-        [self logShortcutUsed:@"Appbot Prompt Feedback"];
-    }
+//    if ([self canSendAnalytics]) {
+//        [self logShortcutUsed:@"Appbot Prompt Feedback"];
+//    }
     [ABXFeedbackViewController showFromController:self placeholder:nil];
     self.promptView.hidden = YES;
 }
@@ -1328,9 +1119,9 @@ static void * leftContext = &leftContext;
 - (BOOL)checkFor3DTouch {
     BOOL is3DTouchAvail = NO;
     if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)] && (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)) {
-        if ([self canSendAnalytics]) {
-            [self logShortcutUsed:@"3D Enabled"];
-        }
+//        if ([self canSendAnalytics]) {
+//            [self logShortcutUsed:@"3D Enabled"];
+//        }
         is3DTouchAvail = YES;
     }
     return is3DTouchAvail;
@@ -1472,9 +1263,9 @@ static void * leftContext = &leftContext;
             
             [textComposer setBody:smsMessage];
             // Log to analytics that a message was sent
-            if ([self canSendAnalytics]) {
-                [self logMessagesSent:[self teamOrPlayer]];
-            }
+//            if ([self canSendAnalytics]) {
+//                [self logMessagesSent:[self teamOrPlayer]];
+//            }
             
             
             // Show text message screen

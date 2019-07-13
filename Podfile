@@ -10,7 +10,6 @@ target 'VBall ScoreMaster' do
 	pod 'ChameleonFramework'
 	pod 'DeviceUtil'
 	pod 'GBVersionTracking'
-	pod 'GoogleAnalytics'
 	pod 'HexColors'
 	pod 'MBProgressHUD', '~> 1.1'
 	pod 'MPCoachMarks'
@@ -18,6 +17,5 @@ target 'VBall ScoreMaster' do
 	pod "TSMessages"
 	pod 'VTAcknowledgementsViewController'
 	pod 'VWWPermissionKit', '~> 1.3.0'
-	pod 'Google-Mobile-Ads-SDK'
   pod 'UIDeviceIdentifier', :git => 'https://github.com/squarefrog/UIDeviceIdentifier.git'
 end

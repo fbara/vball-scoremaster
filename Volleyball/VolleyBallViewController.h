@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
-#import <GoogleAnalytics/GAITrackedViewController.h>
+//#import <GoogleAnalytics/GAITrackedViewController.h>
 #import <AppbotX/ABXPromptView.h>
 #import <Social/Social.h>
 @import QuartzCore;
 
-@interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource, UIAlertViewDelegate, UITextViewDelegate, MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, ABXPromptViewDelegate, UIViewControllerPreviewingDelegate>
+@interface VolleyBallViewController : UIViewController  <UIPageViewControllerDataSource, UIAlertViewDelegate, UITextViewDelegate, MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, ABXPromptViewDelegate, UIViewControllerPreviewingDelegate>
+/* Removed from @interface:GAITrackedViewController
+ */
 
 
 @property UIColor* _Nullable homeColor;
@@ -61,7 +63,6 @@
 - (IBAction)rightActionPressed:(UIButton*)sender;
 - (IBAction)leftActionPressed:(UIButton*)sender;
 - (IBAction)newMatch:(UIButton *)sender;
-- (UIImage *)getScreenImage;
 - (IBAction)sendInstantMessage:(UIButton*)sender;
 
 - (void)startNewMatch;

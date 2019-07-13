@@ -7,10 +7,12 @@
 //
 
 #import "ActionLabelTableViewController.h"
-#import <GoogleAnalytics/GAIDictionaryBuilder.h>
-#import <GoogleAnalytics/GAITracker.h>
-#import <GoogleAnalytics/GAIFields.h>
-#import <GoogleAnalytics/GAI.h>
+/*
+ #import <GoogleAnalytics/GAIDictionaryBuilder.h>
+ #import <GoogleAnalytics/GAITracker.h>
+ #import <GoogleAnalytics/GAIFields.h>
+ #import <GoogleAnalytics/GAI.h>
+ */
 #import "Chameleon.h"
 #import "TSMessageView.h"
 #import "BTBalloon.h"
@@ -90,10 +92,10 @@
 {
 	[super viewDidAppear:animated];
 	
-	// Setup Google Analytics tracker for this screen
-	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-	[tracker set:kGAIScreenName value:@"Action Labels"];
-	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+//	// Setup Google Analytics tracker for this screen
+//	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//	[tracker set:kGAIScreenName value:@"Action Labels"];
+//	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -704,11 +706,11 @@
                                                                style:UIPreviewActionStyleDefault
                                                              actions:list];
     
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
-                                                          action:@"shortcut"
-                                                           label:@"test"
-                                                           value:nil] build]];
+//    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+//                                                          action:@"shortcut"
+//                                                           label:@"test"
+//                                                           value:nil] build]];
     return list;
 }
 

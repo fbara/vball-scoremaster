@@ -9,14 +9,17 @@
 #import "SettingsTableViewController.h"
 #import "ActionLabelTableViewController.h"
 #import "SupportTableViewController.h"
-#import <GoogleAnalytics/GAIDictionaryBuilder.h>
+/*
+ #import <GoogleAnalytics/GAIDictionaryBuilder.h>
+ #import <GoogleAnalytics/GAITracker.h>
+ #import <GoogleAnalytics/GAI.h>
+ #import <GoogleAnalytics/GAIFields.h>
+ */
 #import "VolleyBallViewController.h"
 #import <AppbotX/ABXFAQsViewController.h>
 //#import <ChameleonFramework/Chameleon.h>
 #import "Chameleon.h"
-#import <GoogleAnalytics/GAITracker.h>
-#import <GoogleAnalytics/GAI.h>
-#import <GoogleAnalytics/GAIFields.h>
+
 
 
 #pragma clang diagnostic push
@@ -87,12 +90,12 @@
 {
     [super viewDidAppear:animated];
 
-    // Setup Google Analytics tracker for this screen
-    if ([self getAnalytics]) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker set:kGAIScreenName value:@"Settings"];
-        [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
-    }
+    //    // Setup Google Analytics tracker for this screen
+    //    if ([self getAnalytics]) {
+    //        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    //        [tracker set:kGAIScreenName value:@"Settings"];
+    //        [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    //    }
     
 }
 
@@ -431,29 +434,29 @@
 
 }
 
-#pragma mark - Analytics Opt Out
-- (IBAction)sendAnalytics:(UISegmentedControl*)sender
-{
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
-
-    // Save the value of the opt out
-    switch (selectedSegmentIndex) {
-    case 0:
-		// Do not track
-		[[GAI sharedInstance] setOptOut:YES];
-		[defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
-        break;
-    case 1:
-		// Ok to track
-		[[GAI sharedInstance] setOptOut:NO];
-		[defaults setObject:@"Opt in" forKey:@"analyticsChoice"];	
-        break;
-    default:
-        break;
-    }
-    [self saveUserDefaults];
-}
+//#pragma mark - Analytics Opt Out
+//- (IBAction)sendAnalytics:(UISegmentedControl*)sender
+//{
+//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+//    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
+//
+//    // Save the value of the opt out
+//    switch (selectedSegmentIndex) {
+//    case 0:
+//		// Do not track
+//		[[GAI sharedInstance] setOptOut:YES];
+//		[defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
+//        break;
+//    case 1:
+//		// Ok to track
+//		[[GAI sharedInstance] setOptOut:NO];
+//		[defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
+//        break;
+//    default:
+//        break;
+//    }
+//    [self saveUserDefaults];
+//}
 
 - (NSString*)getAnalytics
 {
