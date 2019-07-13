@@ -164,13 +164,13 @@
     VolleyBallViewController *vb = [[VolleyBallViewController alloc] init];
     
     if ([shortcutItem.localizedTitle isEqualToString:@"New Match"]) {
-        [vb logShortcutUsed:shortcutItem.localizedTitle];
+        //[vb logShortcutUsed:shortcutItem.localizedTitle];
         [vb matchPressedFromShortcut];
         //[vb startNewMatch];
         return TRUE;
         
     } else if ([shortcutItem.localizedTitle isEqualToString:@"New Set"]) {
-        [vb logShortcutUsed:shortcutItem.localizedTitle];
+        //[vb logShortcutUsed:shortcutItem.localizedTitle];
         [vb gamePressedFromShortcut];
         return TRUE;
         

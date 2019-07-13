@@ -152,12 +152,12 @@
         }
     }
 
-    // Set selected segment for analytics
-    if ([[self getAnalytics] isEqualToString:@"Opt out"]) {
-        [self.analyticsSwitch setSelectedSegmentIndex:0];
-    } else {
-        [self.analyticsSwitch setSelectedSegmentIndex:1];
-    }
+//    // Set selected segment for analytics
+//    if ([[self getAnalytics] isEqualToString:@"Opt out"]) {
+//        [self.analyticsSwitch setSelectedSegmentIndex:0];
+//    } else {
+//        [self.analyticsSwitch setSelectedSegmentIndex:1];
+//    }
 
     // Set the selected segment for color settings
     if ([[self getColorSettings] isEqualToString:@"Complementary"]) {
@@ -169,23 +169,23 @@
     }
 
 //    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
-        self.twitterSwitch.enabled = TRUE;
-        self.twitterCellLabel.text = @"Send with Twitter?";
-        self.facebookCellLabel.text = @"Send with Facebook?";
-        // Set the Twitter switch if messages will be sent
-        if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
-            [self.twitterSwitch setSelectedSegmentIndex:0];
-        } else {
-            [self.twitterSwitch setSelectedSegmentIndex:1];
-        }
-
-        // Set the Facebook switch if messages will be sent
-        self.facebookSwitch.enabled = TRUE;
-        if ([[self getFacebookNotifications] isEqualToString:@"On"]) {
-            [self.facebookSwitch setSelectedSegmentIndex:0];
-        } else {
-            [self.facebookSwitch setSelectedSegmentIndex:1];
-        }
+//        self.twitterSwitch.enabled = TRUE;
+//        self.twitterCellLabel.text = @"Send with Twitter?";
+//        self.facebookCellLabel.text = @"Send with Facebook?";
+//        // Set the Twitter switch if messages will be sent
+//        if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
+//            [self.twitterSwitch setSelectedSegmentIndex:0];
+//        } else {
+//            [self.twitterSwitch setSelectedSegmentIndex:1];
+//        }
+//
+//        // Set the Facebook switch if messages will be sent
+//        self.facebookSwitch.enabled = TRUE;
+//        if ([[self getFacebookNotifications] isEqualToString:@"On"]) {
+//            [self.facebookSwitch setSelectedSegmentIndex:0];
+//        } else {
+//            [self.facebookSwitch setSelectedSegmentIndex:1];
+//        }
 //    } else {
 //        // User has not made purchase so disable social switches
 //        self.twitterCellLabel.text = @"Twitter available with purchase";
@@ -206,10 +206,10 @@
                secondName:self.rightActionNameSelected.text];
     [self notificationSwitch:self.sendNotificationSwitch];
     [self notificationTypeSwitch:self.notificationTypeSwitch];
-    [self sendAnalytics:self.analyticsSwitch];
+    //[self sendAnalytics:self.analyticsSwitch];
     [self colorSettings:self.colorSettings];
-    [self sendWithFacebook:self.facebookSwitch];
-    [self sendWithTwitter:self.twitterSwitch];
+//    [self sendWithFacebook:self.facebookSwitch];
+//    [self sendWithTwitter:self.twitterSwitch];
     
     // Set the notification when Settings is done
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsDone"
@@ -458,12 +458,12 @@
 //    [self saveUserDefaults];
 //}
 
-- (NSString*)getAnalytics
-{
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-
-    return [defaults stringForKey:@"analyticsChoice"];
-}
+//- (NSString*)getAnalytics
+//{
+//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+//
+//    return [defaults stringForKey:@"analyticsChoice"];
+//}
 
 #pragma mark - Notificaion Switches
 

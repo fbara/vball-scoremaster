@@ -1212,7 +1212,7 @@ static void * leftContext = &leftContext;
             } else {
                 self.leftActionLabel.text = [defaults stringForKey:@"leftActionName"];
                 self.leftActionNameNumber.text = NSLocalizedString(@"0", @"Number 0.");
-                [self logShortcutUsed:self.leftActionLabel.text];
+                //[self logShortcutUsed:self.leftActionLabel.text];
                 break;
             }
         case 2:
@@ -1221,7 +1221,7 @@ static void * leftContext = &leftContext;
             } else {
                 self.rightActionLabel.text = [defaults stringForKey:@"rightActionName"];
                 self.rightActionNameNumber.text = NSLocalizedString(@"0", @"Number 0.");
-                [self logShortcutUsed:self.rightActionLabel.text];
+                //[self logShortcutUsed:self.rightActionLabel.text];
                 break;
             }
         default:
