@@ -8,9 +8,11 @@
 
 #import "VolleyBallAppDelegate.h"
 #import "GBVersionTracking.h"
-#import <GoogleAnalytics/GAI.h>
-#import <GoogleAnalytics/GAIFields.h>
-#import <GoogleAnalytics/GAIDictionaryBuilder.h>
+/*
+ #import <GoogleAnalytics/GAI.h>
+ #import <GoogleAnalytics/GAIFields.h>
+ #import <GoogleAnalytics/GAIDictionaryBuilder.h>
+ */
 #import "Chameleon.h"
 #import "VolleyBallIAPHelper.h"
 #import <AppbotX/ABX.h>
@@ -46,39 +48,39 @@
     [[ABXApiClient instance]
         setApiKey:@"5b0feb30a4f023f3897789f9b38ab62304ee4790"];
 
-    // Google Analytics setup for the app
-    [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
-    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
-    [GAI sharedInstance].dispatchInterval = 120;
+//    // Google Analytics setup for the app
+//    [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
+//    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelError];
+//    [GAI sharedInstance].dispatchInterval = 120;
 //TODO: Enable Google Analytics
-    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
-    //    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
-	  tracker.allowIDFACollection = NO;
+//    id<GAITracker> tracker =[ [GAI sharedInstance] trackerWithTrackingId:@"XX-11111111-1"];
+//    //    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53202813-1"];
+//	  tracker.allowIDFACollection = NO;
     
     if ([GBVersionTracking isFirstLaunchEver]) {
         // Initialize the number of times the user has launched the app
         [defaults setBool:TRUE forKey:@"firstTimeEver"];
         [defaults setInteger:1 forKey:@"launchNumber"];
         
-        // Show Google Analytics permission alert
-        UIWindow* topWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        topWindow.rootViewController = [UIViewController new];
-        topWindow.windowLevel = UIWindowLevelAlert + 1;
+//        // Show Google Analytics permission alert
+//        UIWindow* topWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//        topWindow.rootViewController = [UIViewController new];
+//        topWindow.windowLevel = UIWindowLevelAlert + 1;
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Analytics Request", nil) message:NSLocalizedString(@"With your permission, usage information will be collected to improve the application. No personal information will be collected and you can opt out at any time from Settings.", nil) preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *no = [UIAlertAction actionWithTitle:NSLocalizedString(@"Opt out", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
-            [self disableAnalytics];
-            topWindow.hidden = YES;
-        }];
-        UIAlertAction *yes = [UIAlertAction actionWithTitle:NSLocalizedString(@"Opt in", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-            [self enableAnalytics];
-            topWindow.hidden = YES;
-        }];
-        
-        [alert addAction:no];
-        [alert addAction:yes];
-        [topWindow makeKeyAndVisible];
-        [topWindow.rootViewController presentViewController:alert animated:TRUE completion:nil];
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Analytics Request", nil) message:NSLocalizedString(@"With your permission, usage information will be collected to improve the application. No personal information will be collected and you can opt out at any time from Settings.", nil) preferredStyle:UIAlertControllerStyleAlert];
+//        UIAlertAction *no = [UIAlertAction actionWithTitle:NSLocalizedString(@"Opt out", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+//            //[self disableAnalytics];
+//            topWindow.hidden = YES;
+//        }];
+//        UIAlertAction *yes = [UIAlertAction actionWithTitle:NSLocalizedString(@"Opt in", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+//            //[self enableAnalytics];
+//            topWindow.hidden = YES;
+//        }];
+//
+//        [alert addAction:no];
+//        [alert addAction:yes];
+//        [topWindow makeKeyAndVisible];
+//        [topWindow.rootViewController presentViewController:alert animated:TRUE completion:nil];
     } else if ([GBVersionTracking isFirstLaunchForBuild]) {
         // Reset the lauch count for each new build
         [defaults setInteger:0 forKey:@"launchNumber"];
@@ -104,30 +106,30 @@
     }
 	
 	//Check if analytics are allowed on subsequent starts of the app
-	NSString *analyticsSetting = [defaults stringForKey:@"analyticsChoice"];
-	if ([analyticsSetting isEqualToString:@"Opt out"]) {
-		//Opt out - do not track
-		[[GAI sharedInstance] setOptOut:YES];
-	} else {
-		//Opt in - ok to track
-		[[GAI sharedInstance] setOptOut:NO];
-	}
+//	NSString *analyticsSetting = [defaults stringForKey:@"analyticsChoice"];
+//	if ([analyticsSetting isEqualToString:@"Opt out"]) {
+//		//Opt out - do not track
+//		[[GAI sharedInstance] setOptOut:YES];
+//	} else {
+//		//Opt in - ok to track
+//		[[GAI sharedInstance] setOptOut:NO];
+//	}
     return YES;
 }
 
-- (void)enableAnalytics {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //Opt in - ok to track
-    [[GAI sharedInstance] setOptOut:NO];
-    [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
-}
-
-- (void)disableAnalytics {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //Opt out - do not track
-    [[GAI sharedInstance] setOptOut:YES];
-    [defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
-}
+//- (void)enableAnalytics {
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    //Opt in - ok to track
+//    [[GAI sharedInstance] setOptOut:NO];
+//    [defaults setObject:@"Opt in" forKey:@"analyticsChoice"];
+//}
+//
+//- (void)disableAnalytics {
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    //Opt out - do not track
+//    [[GAI sharedInstance] setOptOut:YES];
+//    [defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
+//}
 
 //- (NRWindow *)window
 //{

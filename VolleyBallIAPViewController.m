@@ -7,12 +7,15 @@
 //
 
 #import "VolleyBallIAPViewController.h"
-#import <GoogleAnalytics/GAIDictionaryBuilder.h>
-//#import "GAIDictionaryBuilder.h"
 #import "MBProgressHUD.h"
 //#import <MBProgressHUD/MBProgressHUD.h>
-#import <GoogleAnalytics/GAIFields.h>
-#import <GoogleAnalytics/GAI.h>
+/*
+ //#import "GAIDictionaryBuilder.h"
+ #import <GoogleAnalytics/GAIDictionaryBuilder.h>
+ #import <GoogleAnalytics/GAIFields.h>
+ #import <GoogleAnalytics/GAI.h>
+ */
+
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
@@ -75,12 +78,12 @@
     [super viewDidAppear:animated];
 	
 	
-    // Setup Google Analytics tracker for this screen
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"In-App Purchase"];
-	//Change to createScreenView because createAppView is deprecated
-    //[tracker send:[[GAIDictionaryBuilder createAppView] build]];
-	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+//    // Setup Google Analytics tracker for this screen
+//    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//    [tracker set:kGAIScreenName value:@"In-App Purchase"];
+//	//Change to createScreenView because createAppView is deprecated
+//    //[tracker send:[[GAIDictionaryBuilder createAppView] build]];
+//	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -241,7 +244,7 @@
     SKProduct* product = _products[buyButton.tag];
 	
 	// Log the button press for analytics
-	[self logButtonPress:(UIButton*)sender];
+	//[self logButtonPress:(UIButton*)sender];
 	
     //Buy the IAP
     [[VolleyBallIAPHelper sharedInstance] buyProduct:product];
@@ -249,97 +252,24 @@
 
 #pragma mark - Google Analytics
 
-- (void)logButtonPress:(UIButton*)button
-{
-	// Logs button presses, gets the title text of the button, and sends it
-	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-	
-	[tracker set:kGAIScreenName value:@"In-App Purchase"];
-	[tracker send:[[GAIDictionaryBuilder
-					createEventWithCategory:@"IAP"
-					action:@"buy"
-					label:[button.titleLabel text]
-					value:nil] build]];
-	[tracker set:kGAIScreenName value:nil];
-}
+//- (void)logButtonPress:(UIButton*)button
+//{
+//	// Logs button presses, gets the title text of the button, and sends it
+//	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//
+//	[tracker set:kGAIScreenName value:@"In-App Purchase"];
+//	[tracker send:[[GAIDictionaryBuilder
+//					createEventWithCategory:@"IAP"
+//					action:@"buy"
+//					label:[button.titleLabel text]
+//					value:nil] build]];
+//	[tracker set:kGAIScreenName value:nil];
+//}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
-//{
-//    // Return the number of sections.
-//    return 1;
-//}
-//
-//- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    // Return the number of rows in the section.
-//    return 1;
-//}
-//
-//- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-//    <#code#>
-//}
-//
-//
-//#pragma clang diagnostic pop
-//
-//- (void)paymentQueue:(nonnull SKPaymentQueue *)queue updatedTransactions:(nonnull NSArray<SKPaymentTransaction *> *)transactions {
-//    <#code#>
-//}
-//
-//- (void)productsRequest:(nonnull SKProductsRequest *)request didReceiveResponse:(nonnull SKProductsResponse *)response {
-//    <#code#>
-//}
-//
-//- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
-//    <#code#>
-//}
-//
-//- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
-//    <#code#>
-//}
-//
-//- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-//    <#code#>
-//}
-//
-//- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
-//    <#code#>
-//}
-//
-//- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-//    <#code#>
-//}
-//
-//- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-//    <#code#>
-//}
-//
-//- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-//    <#code#>
-//}
-//
-//- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
-//    <#code#>
-//}
-//
-//- (void)setNeedsFocusUpdate {
-//    <#code#>
-//}
-//
-//- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
-//    <#code#>
-//}
-//
-//- (void)updateFocusIfNeeded {
-//    <#code#>
-//}
 
 @end
