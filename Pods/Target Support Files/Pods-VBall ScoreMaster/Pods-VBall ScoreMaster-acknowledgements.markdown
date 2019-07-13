@@ -483,14 +483,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    See the License for the specific language governing permissions and
    limitations under the License.
 
-## Google-Mobile-Ads-SDK
-
-Copyright 2018 Google
-
-## GoogleAnalytics
-
-Copyright 2016 Google
-
 ## HexColors
 
 The MIT License (MIT)

@@ -63,12 +63,12 @@
 - (IBAction)rightActionPressed:(UIButton*)sender;
 - (IBAction)leftActionPressed:(UIButton*)sender;
 - (IBAction)newMatch:(UIButton *)sender;
-- (IBAction)sendInstantMessage:(UIButton*)sender;
+//- (IBAction)sendInstantMessage:(UIButton*)sender;
 
 - (void)startNewMatch;
 - (void)gamePressedFromShortcut;
 - (void)matchPressedFromShortcut;
-- (void)logShortcutUsed:(NSString *)shortcut;
+//- (void)logShortcutUsed:(NSString *)shortcut;
 - (nullable UIViewController *)pageViewController:(nonnull UIPageViewController *)pageViewController viewControllerAfterViewController:(nonnull UIViewController *)viewController;
 
 - (nullable UIViewController *)pageViewController:(nonnull UIPageViewController *)pageViewController viewControllerBeforeViewController:(nonnull UIViewController *)viewController;
