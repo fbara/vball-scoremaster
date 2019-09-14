@@ -9,21 +9,16 @@
 #import "SettingsTableViewController.h"
 #import "ActionLabelTableViewController.h"
 #import "SupportTableViewController.h"
-#import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import "VolleyBallViewController.h"
 #import <AppbotX/ABXFAQsViewController.h>
 //#import <ChameleonFramework/Chameleon.h>
 #import "Chameleon.h"
-#import <GoogleAnalytics/GAITracker.h>
-#import <GoogleAnalytics/GAI.h>
-#import <GoogleAnalytics/GAIFields.h>
-
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"	
 #pragma clang diagnostic ignored "-Wprotocol"
 
-@interface SettingsTableViewController () <UIViewControllerPreviewingDelegate> {
+@interface SettingsTableViewController () <UIViewControllerPreviewingDelegate, UIAdaptivePresentationControllerDelegate> {
     BOOL isPurchased;
 	NSString *teamChange;
 }
@@ -87,13 +82,6 @@
 {
     [super viewDidAppear:animated];
 
-    // Setup Google Analytics tracker for this screen
-    if ([self getAnalytics]) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker set:kGAIScreenName value:@"Settings"];
-        [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
-    }
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -149,13 +137,6 @@
         }
     }
 
-    // Set selected segment for analytics
-    if ([[self getAnalytics] isEqualToString:@"Opt out"]) {
-        [self.analyticsSwitch setSelectedSegmentIndex:0];
-    } else {
-        [self.analyticsSwitch setSelectedSegmentIndex:1];
-    }
-
     // Set the selected segment for color settings
     if ([[self getColorSettings] isEqualToString:@"Complementary"]) {
         [self.colorSettings setSelectedSegmentIndex:0];
@@ -203,7 +184,6 @@
                secondName:self.rightActionNameSelected.text];
     [self notificationSwitch:self.sendNotificationSwitch];
     [self notificationTypeSwitch:self.notificationTypeSwitch];
-    [self sendAnalytics:self.analyticsSwitch];
     [self colorSettings:self.colorSettings];
     [self sendWithFacebook:self.facebookSwitch];
     [self sendWithTwitter:self.twitterSwitch];
@@ -431,38 +411,7 @@
 
 }
 
-#pragma mark - Analytics Opt Out
-- (IBAction)sendAnalytics:(UISegmentedControl*)sender
-{
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
-
-    // Save the value of the opt out
-    switch (selectedSegmentIndex) {
-    case 0:
-		// Do not track
-		[[GAI sharedInstance] setOptOut:YES];
-		[defaults setObject:@"Opt out" forKey:@"analyticsChoice"];
-        break;
-    case 1:
-		// Ok to track
-		[[GAI sharedInstance] setOptOut:NO];
-		[defaults setObject:@"Opt in" forKey:@"analyticsChoice"];	
-        break;
-    default:
-        break;
-    }
-    [self saveUserDefaults];
-}
-
-- (NSString*)getAnalytics
-{
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-
-    return [defaults stringForKey:@"analyticsChoice"];
-}
-
-#pragma mark - Notificaion Switches
+#pragma mark - Notification Switches
 
 - (IBAction)notificationTypeSwitch:(UISegmentedControl *)sender
 {
@@ -634,14 +583,12 @@
 
 #pragma mark - People Picker Methods
 
-//New iOS 9+ using CNContactPicker - Start
-
 - (void)getPhoneNumber {
     CNContactPickerViewController *contactPicker = [[CNContactPickerViewController alloc] init];
     contactPicker.delegate = self;
     contactPicker.editing = false;
     
-//    // Only show a contact who has at least 1 phone number
+    // Only show a contact who has at least 1 phone number
     NSPredicate *enablePredicate = [NSPredicate predicateWithFormat:@"(phoneNumbers.@count > 0)"];
     NSPredicate *contactSelectionPredicate = [NSPredicate predicateWithFormat:@"phoneNumbers.@count == 1"];
     NSArray *propertyKeys = @[CNContactPhoneNumbersKey, CNContactGivenNameKey, CNContactFamilyNameKey];
@@ -651,6 +598,7 @@
     contactPicker.predicateForSelectionOfContact = contactSelectionPredicate;
     
     //Show picker
+    contactPicker.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:contactPicker animated:true completion:nil];
 
 }
@@ -753,6 +701,10 @@
     // Refresh the popover values
     [self viewWillAppear:TRUE];
 }
+
+//- (void)presentationControllerDidDismiss:(UIPresentationController *)presentationController {
+//    self.modalPresentationStyle = UIModalPresentationFullScreen;
+//}
 
 #pragma mark - UITableView Delegate
 

@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
-#import <GoogleAnalytics/GAITrackedViewController.h>
 #import <AppbotX/ABXPromptView.h>
 #import <Social/Social.h>
 @import QuartzCore;
 
-@interface VolleyBallViewController : GAITrackedViewController <UIPageViewControllerDataSource, UIAlertViewDelegate, UITextViewDelegate, MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, ABXPromptViewDelegate, UIViewControllerPreviewingDelegate>
+@interface VolleyBallViewController : UIViewController <UIPageViewControllerDataSource, UIAlertViewDelegate, UITextViewDelegate, MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, ABXPromptViewDelegate, UIViewControllerPreviewingDelegate>
 
 
 @property UIColor* _Nullable homeColor;
@@ -61,13 +60,11 @@
 - (IBAction)rightActionPressed:(UIButton*)sender;
 - (IBAction)leftActionPressed:(UIButton*)sender;
 - (IBAction)newMatch:(UIButton *)sender;
-- (UIImage *)getScreenImage;
 - (IBAction)sendInstantMessage:(UIButton*)sender;
 
 - (void)startNewMatch;
 - (void)gamePressedFromShortcut;
 - (void)matchPressedFromShortcut;
-- (void)logShortcutUsed:(NSString *)shortcut;
 - (nullable UIViewController *)pageViewController:(nonnull UIPageViewController *)pageViewController viewControllerAfterViewController:(nonnull UIViewController *)viewController;
 
 - (nullable UIViewController *)pageViewController:(nonnull UIPageViewController *)pageViewController viewControllerBeforeViewController:(nonnull UIViewController *)viewController;

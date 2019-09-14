@@ -10,9 +10,6 @@
 #import "Chameleon.h"
 #import <AppbotX/ABX.h>
 #import "VTAcknowledgementsViewController.h"
-#import <GoogleAnalytics/GAI.h>
-#import <GoogleAnalytics/GAIFields.h>
-#import <GoogleAnalytics/GAIDictionaryBuilder.h>
 
 static NSString* const kiTunesID = @"886670213";
 
@@ -84,44 +81,15 @@ static NSString* const kiTunesID = @"886670213";
 
 - (void)appbotPromptForFeedback
 {
-    if ([self canSendAnalytics]) {
-        [self logShortcutUsed:@"Appbot Settings Feedback"];
-    }
     [ABXFeedbackViewController showFromController:self placeholder:nil];
     self.promptView.hidden = YES;
 }
 
 - (void)appbotPromptForReview
 {
-    if ([self canSendAnalytics]) {
-        [self logShortcutUsed:@"Appbot Settings Review"];
-    }
     [ABXAppStore openAppStoreReviewForApp:kiTunesID];
     self.promptView.hidden = YES;
  
-}
-
-#pragma mark - Analytics
-
-- (BOOL)canSendAnalytics {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *analytics = [defaults stringForKey:@"analyticsChoice"];
-    if ([analytics isEqualToString:@"Opt in"]) {
-        return TRUE;
-    } else {
-        return FALSE;
-    }
-}
-
-- (void)logShortcutUsed:(NSString *)shortcut
-{
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"Settings"];
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
-                                                          action:@"shortcut"
-                                                           label:shortcut
-                                                           value:nil] build]];
-    [tracker set:kGAIScreenName value:nil];
 }
 
 #pragma mark - Table view delegate
