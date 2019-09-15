@@ -25,7 +25,6 @@
 		92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D318FF193E7C0B00F5A942 /* QuartzCore.framework */; };
 		AD07812919D0493100E30AE9 /* VolleyBallIAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD07812819D0493100E30AE9 /* VolleyBallIAPViewController.m */; };
 		AD082E33198061AE00A997CE /* TutorialSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD082E32198061AE00A997CE /* TutorialSettingsViewController.m */; };
-		AD082E3619817E5C00A997CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD082E3419817E5C00A997CE /* Main.storyboard */; };
 		AD082E39198182E800A997CE /* DefaultScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD082E37198182E800A997CE /* DefaultScoreViewController.xib */; };
 		AD0D058A1A7195C300B5FC00 /* FCColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0D05881A7195C300B5FC00 /* FCColorPickerViewController.m */; };
 		AD0D058B1A7195C300B5FC00 /* FCColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD0D05891A7195C300B5FC00 /* FCColorPickerViewController.xib */; };
@@ -146,8 +145,6 @@
 		ADB5A13119D30372009B1550 /* UITouch+NRTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch+NRTouch.m"; sourceTree = "<group>"; };
 		ADBFCF5A1BF2AF0C003B5F3D /* Pods-VBall ScoreMaster-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Pods-VBall ScoreMaster-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-VBall ScoreMaster/Pods-VBall ScoreMaster-acknowledgements.plist"; sourceTree = "<group>"; };
 		ADCC13971981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DefaultScoreViewController.xib; sourceTree = "<group>"; };
-		ADCC13981981B527001DC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		ADCC139A1981B588001DC9B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		ADCFF8AF1AB5D6D000AB9CB0 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		ADDB11DD1BE662D5007D0411 /* WSCoachMarksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCoachMarksView.h; sourceTree = "<group>"; };
 		ADDB11DE1BE662D5007D0411 /* WSCoachMarksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCoachMarksView.m; sourceTree = "<group>"; };
@@ -285,7 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				AD082E37198182E800A997CE /* DefaultScoreViewController.xib */,
-				AD082E3419817E5C00A997CE /* Main.storyboard */,
 				92AA42AB1916C2800037D405 /* InfoPlist.strings */,
 				92AA42B11916C2800037D405 /* VolleyBallAppDelegate.h */,
 				92AA42B21916C2800037D405 /* VolleyBallAppDelegate.m */,
@@ -496,7 +492,6 @@
 				AD87E6CD20375D5200BF9D2A /* Storyboard.storyboard in Resources */,
 				92AA42AD1916C2800037D405 /* InfoPlist.strings in Resources */,
 				ADB5A13219D30372009B1550 /* NRTouchImage.png in Resources */,
-				AD082E3619817E5C00A997CE /* Main.storyboard in Resources */,
 				AD0D059B1A7198F200B5FC00 /* colormap.png in Resources */,
 				ADCFF8B01AB5D6D000AB9CB0 /* Default-Landscape@2x.png in Resources */,
 				AD9B665C199D2754002C5145 /* Settings.bundle in Resources */,
@@ -758,16 +753,6 @@
 				92AA42CB1916C2810037D405 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		AD082E3419817E5C00A997CE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ADCC13981981B527001DC9B6 /* Base */,
-				ADCC139A1981B588001DC9B6 /* en */,
-			);
-			name = Main.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		AD082E37198182E800A997CE /* DefaultScoreViewController.xib */ = {

@@ -174,6 +174,12 @@ static void * leftContext = &leftContext;
 
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    NSLog(@"View did layout subviews./n");
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:TRUE];
@@ -325,12 +331,10 @@ static void * leftContext = &leftContext;
 
     NSString* color = [defaults stringForKey:@"colorSettings"];
 
-    if ([color isEqualToString:@"Complementary"] || [color isEqualToString:@"Dark"]) {
+    if ([color isEqualToString:@"Complementary"] || [color isEqualToString:@"System"]) {
         self.homeTeamName.backgroundColor = [colorHome darkenByPercentage:0.20];
-        //self.homeTeamName.textColor = ComplementaryFlatColor(self.homeTeamName.backgroundColor);
     } else {
         self.homeTeamName.backgroundColor = FlatSand;
-        //self.homeTeamName.textColor = ContrastColor(self.homeTeamName.backgroundColor, TRUE);
     }
     
     self.homeTeamName.textColor = ContrastColor(self.homeTeamName.backgroundColor, TRUE);
@@ -356,10 +360,8 @@ static void * leftContext = &leftContext;
 
     if ([color isEqualToString:@"Complementary"] || [color isEqualToString:@"Dark"]) {
         self.visitingTeamName.backgroundColor = [colorVisitor darkenByPercentage:0.20];
-        //self.visitingTeamName.textColor = ContrastColor(self.visitingTeamName.backgroundColor, TRUE);
     } else {
         self.visitingTeamName.backgroundColor = FlatSandDark;
-        //self.visitingTeamName.textColor = ContrastColor(self.visitingTeamName.backgroundColor, TRUE);
     }
     
     self.visitingTeamName.textColor = ContrastColor(self.visitingTeamName.backgroundColor, TRUE);
@@ -369,6 +371,14 @@ static void * leftContext = &leftContext;
     return colorVisitor;
 }
 
+- (void)updateWindowColors
+{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
+    self.view.backgroundColor = [UIColor colorNamed:@"backgroundColor"];
+    
+}
+
 /*!
  *  Sets the color of the main window based on user preference
  */
@@ -376,16 +386,15 @@ static void * leftContext = &leftContext;
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     UIColor *textColor;
-
+    [self updateWindowColors];
+    
     if ([[defaults objectForKey:@"colorSettings"]
             isEqualToString:@"Complementary"]) {
         colorScheme = @"Colorful";
-        self.view.backgroundColor = FlatSand;
-//        self.navigationController.navigationBar.barTintColor = FlatSkyBlue;
-//        self.navigationController.navigationBar.tintColor = ContrastColor(FlatSkyBlue, TRUE);
-//        self.navigationController.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : ContrastColor(FlatSkyBlue, TRUE) };
-        self.rightActionNameNumber.textColor = FlatMintDark;
-        self.leftActionNameNumber.textColor = FlatMintDark;
+        
+        //self.view.backgroundColor = FlatSand;
+//        self.rightActionNameNumber.textColor = FlatMintDark;
+//        self.leftActionNameNumber.textColor = FlatMintDark;
         self.gameNumber.textColor = ContrastColor(self.view.backgroundColor, TRUE);
         textColor = ComplementaryFlatColor(self.rightActionNameNumber.textColor);
         self.rightActionLabel.textColor = textColor;
@@ -407,60 +416,62 @@ static void * leftContext = &leftContext;
         [self changePastScoreColors:FlatRed loser:FlatPlum];
         
     } else if ([[defaults objectForKey:@"colorSettings"]
-                   isEqualToString:@"Dark"]) {
-        colorScheme = @"Dark";
-        self.view.backgroundColor = FlatBlackDark;
-//        self.navigationController.navigationBar.barTintColor = FlatBlackDark;
-//        self.navigationController.navigationBar.tintColor = ContrastColor(FlatBlack, TRUE);
-//        self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : ContrastColor(FlatBlackDark, TRUE)};
-        self.rightActionNameNumber.textColor = FlatGreen;
-        self.leftActionNameNumber.textColor = FlatGreen;
-        self.gameNumber.textColor = FlatMint;
-        textColor = ContrastColor(self.view.backgroundColor, TRUE);
-        self.rightActionLabel.textColor = textColor;
-        self.leftActionLabel.textColor = textColor;
-
-        UIImage *matchImage = [UIImage imageNamed:@"NewGameWhite.png"];
-        [self.matchButton setImage:matchImage forState:UIControlStateNormal];
-        UIImage *gameImage = [UIImage imageNamed:@"NewMatch3White.png"];
-        [self.gameButton setImage:gameImage forState:UIControlStateNormal];
-        for (UILabel* lable in self.pastScoreCollection) {
-            if (![lable.text isEqualToString:@"0"]) {
-                lable.textColor = FlatRed;
-            } else {
-                lable.textColor = FlatYellow;
+                   isEqualToString:@"System"]) {
+        colorScheme = @"System";
+        if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+            // System is set to Dark Mode
+            //self.view.backgroundColor = [UIColor colorNamed:@"backgroundColor"];
+            self.navigationController.navigationBar.barTintColor = UIColor.redColor;
+            //self.navigationController.navigationBar.barTintColor = FlatBlackDark;
+            self.navigationController.navigationBar.tintColor = UIColor.lightTextColor;
+            //self.navigationController.navigationBar.tintColor = ContrastColor(FlatBlack, TRUE);
+            //self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : ContrastColor(FlatBlackDark, TRUE)};
+            self.rightActionNameNumber.textColor = FlatGreen;
+            self.leftActionNameNumber.textColor = FlatGreen;
+            self.gameNumber.textColor = FlatMint;
+            textColor = ContrastColor(self.view.backgroundColor, TRUE);
+            self.rightActionLabel.textColor = textColor;
+            self.leftActionLabel.textColor = textColor;
+            
+            UIImage *matchImage = [UIImage imageNamed:@"NewGameWhite.png"];
+            [self.matchButton setImage:matchImage forState:UIControlStateNormal];
+            UIImage *gameImage = [UIImage imageNamed:@"NewMatch3White.png"];
+            [self.gameButton setImage:gameImage forState:UIControlStateNormal];
+            for (UILabel* lable in self.pastScoreCollection) {
+                if (![lable.text isEqualToString:@"0"]) {
+                    lable.textColor = FlatRed;
+                } else {
+                    lable.textColor = FlatYellow;
+                }
             }
+            
+            [self changePastScoreColors:FlatRed loser:FlatYellow];
+        } else {
+            
+            self.rightActionNameNumber.textColor = FlatBlackDark;
+            self.leftActionNameNumber.textColor = FlatBlackDark;
+            self.gameNumber.textColor = FlatBlackDark;
+            textColor = ContrastColor(self.view.backgroundColor, TRUE);
+            self.rightActionLabel.textColor = textColor;
+            self.leftActionLabel.textColor = textColor;
+            
+            UIImage *matchImage = [UIImage imageNamed:@"NewGame.png"];
+            [self.matchButton setImage:matchImage forState:UIControlStateNormal];
+            UIImage *gameImage = [UIImage imageNamed:@"NewMatch3.png"];
+            [self.gameButton setImage:gameImage forState:UIControlStateNormal];
+            for (UILabel* lable in self.pastScoreCollection) {
+                if (![lable.text isEqualToString:@"0"]) {
+                    lable.textColor = FlatRed;
+                } else {
+                    lable.textColor = FlatBlack;
+                }
+            }
+            self.visitingTeamPastName.textColor = ContrastColor(self.visitingTeamPastName.backgroundColor, TRUE);
+            self.homeTeamPastName.textColor = ContrastColor(self.homeTeamPastName.textColor, TRUE);
+            [self changePastScoreColors:FlatRed loser:FlatBlack];
         }
+//
         
-        [self changePastScoreColors:FlatRed loser:FlatYellow];
-
-    } else {
-        colorScheme = @"Regular";
-        self.view.backgroundColor = FlatWhite;
-//        self.navigationController.navigationBar.barTintColor = FlatNavyBlue;
-//        self.navigationController.navigationBar.tintColor = ContrastColor(FlatNavyBlue, TRUE);
-//        self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : ContrastColor(FlatNavyBlue, TRUE)};
-        self.rightActionNameNumber.textColor = FlatBlackDark;
-        self.leftActionNameNumber.textColor = FlatBlackDark;
-        self.gameNumber.textColor = FlatBlackDark;
-        textColor = ContrastColor(self.view.backgroundColor, TRUE);
-        self.rightActionLabel.textColor = textColor;
-        self.leftActionLabel.textColor = textColor;
-
-        UIImage *matchImage = [UIImage imageNamed:@"NewGame.png"];
-        [self.matchButton setImage:matchImage forState:UIControlStateNormal];
-        UIImage *gameImage = [UIImage imageNamed:@"NewMatch3.png"];
-        [self.gameButton setImage:gameImage forState:UIControlStateNormal];
-        for (UILabel* lable in self.pastScoreCollection) {
-            if (![lable.text isEqualToString:@"0"]) {
-                lable.textColor = FlatRed;
-            } else {
-                lable.textColor = FlatBlack;
-            }
-        }
-        self.visitingTeamPastName.textColor = ContrastColor(self.visitingTeamPastName.backgroundColor, TRUE);
-        self.homeTeamPastName.textColor = ContrastColor(self.homeTeamPastName.textColor, TRUE);
-        [self changePastScoreColors:FlatRed loser:FlatBlack];
 
     }
 }
@@ -521,6 +532,17 @@ static void * leftContext = &leftContext;
     totalPastGamesHome = 0;
 	
     [self initializePastGames];
+}
+
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    // called whenever the user has changed device appearance settings, like Dark Mode
+    [super traitCollectionDidChange:previousTraitCollection];
+    
+    if (previousTraitCollection.userInterfaceStyle != UITraitCollection.currentTraitCollection.userInterfaceStyle) {
+        NSLog(@"Color has changed to: %ld", (long)UITraitCollection.currentTraitCollection.userInterfaceStyle);
+        //[NSUserDefaults standardUserDefaults] [setObject: forKey:@"colorSetting"];
+        [self windowBackgroundColor];
+    }
 }
 
 #pragma mark - UI Elements
@@ -1086,19 +1108,19 @@ static void * leftContext = &leftContext;
     [self.navigationController showViewController:viewControllerToCommit sender:self];
 }
 
-- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-    [super traitCollectionDidChange:previousTraitCollection];
-    if ([self checkFor3DTouch]) {
-        if (!self.previewingContext) {
-            self.previewingContext = [self registerForPreviewingWithDelegate:self sourceView:self.view];
-        }
-    } else {
-        if (self.previewingContext) {
-            [self unregisterForPreviewingWithContext:self.previewingContext];
-            self.previewingContext = nil;
-        }
-    }
-}
+//- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+//    [super traitCollectionDidChange:previousTraitCollection];
+//    if ([self checkFor3DTouch]) {
+//        if (!self.previewingContext) {
+//            self.previewingContext = [self registerForPreviewingWithDelegate:self sourceView:self.view];
+//        }
+//    } else {
+//        if (self.previewingContext) {
+//            [self unregisterForPreviewingWithContext:self.previewingContext];
+//            self.previewingContext = nil;
+//        }
+//    }
+//}
 
 - (void)getMainActionNames
 {

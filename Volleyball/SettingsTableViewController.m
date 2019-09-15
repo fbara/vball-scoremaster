@@ -140,10 +140,10 @@
     // Set the selected segment for color settings
     if ([[self getColorSettings] isEqualToString:@"Complementary"]) {
         [self.colorSettings setSelectedSegmentIndex:0];
-    } else if ([[self getColorSettings] isEqualToString:@"Dark"]) {
+    } else if ([[self getColorSettings] isEqualToString:@"System"]) {
         [self.colorSettings setSelectedSegmentIndex:1];
-    } else {
-        [self.colorSettings setSelectedSegmentIndex:2];
+//    } else {
+//        [self.colorSettings setSelectedSegmentIndex:2];
     }
 
 //    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
@@ -480,6 +480,7 @@
 
 #pragma mark - Color Switch
 
+// TODO: Update here for Dark Mode
 - (IBAction)colorSettings:(UISegmentedControl*)sender
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
@@ -492,13 +493,13 @@
         [defaults setObject:@"Complementary" forKey:@"colorSettings"];
         break;
     case 1:
-        // Dark colors
-        [defaults setObject:@"Dark" forKey:@"colorSettings"];
+        // System colors
+        [defaults setObject:@"System" forKey:@"colorSettings"];
         break;
-    case 2:
-        // No special color scheme
-        [defaults setObject:@"Off" forKey:@"colorSettings"];
-        break;
+//    case 2:
+//        // Follow the system default (Dark Mode support)
+//        [defaults setObject:@"Off" forKey:@"colorSettings"];
+//        break;
     default:
         break;
     }

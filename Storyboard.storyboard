@@ -2,8 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Vu9-6f-G8M">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="top" id="lMs-fx-2Oi"/>
                         <viewControllerLayoutGuide type="bottom" id="vQC-dC-S3J"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5z4-8I-DED">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="5z4-8I-DED">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -130,7 +130,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="251.33333333333334" height="66"/>
                                                                 <gestureRecognizers/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="actionNameColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -142,6 +142,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="66"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
+                                                                <color key="textColor" name="actionNumberColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <size key="shadowOffset" width="2" height="2"/>
                                                             </label>
@@ -177,7 +178,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="251.33333333333334" height="66"/>
                                                                 <gestureRecognizers/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="actionNameColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -189,6 +190,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="66"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
+                                                                <color key="textColor" name="actionNumberColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <size key="shadowOffset" width="2" height="2"/>
                                                             </label>
@@ -347,7 +349,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="feQ-xI-Hvn" firstAttribute="leading" secondItem="5z4-8I-DED" secondAttribute="leading" constant="8" id="RfH-Ft-D9f"/>
                             <constraint firstItem="vQC-dC-S3J" firstAttribute="top" secondItem="feQ-xI-Hvn" secondAttribute="bottom" constant="8" id="b1A-VW-VJk"/>
@@ -610,7 +612,8 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="40" sectionHeaderHeight="5" sectionFooterHeight="10" id="aoN-G2-Kxd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" name="backgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="IEc-eP-Hpp" rowHeight="40" style="IBUITableViewCellStyleDefault" id="hX2-1v-W6W" customClass="SESlideTableViewCell">
                                 <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="40"/>
@@ -628,6 +631,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" name="backgroundColor"/>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -652,7 +656,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="OsV-V0-0Jc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Team Colors" id="f8O-Jl-JOa">
                                 <cells>
@@ -694,6 +698,7 @@
                                                 <constraint firstItem="pb1-Jm-gmm" firstAttribute="leading" secondItem="vPk-ef-ZBV" secondAttribute="leading" constant="20" symbolic="YES" id="z5k-cv-hzE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KeT-Dd-A7O" userLabel="Table View Cell - Home color">
                                         <rect key="frame" x="0.0" y="99.333332061767578" width="375" height="44"/>
@@ -733,6 +738,7 @@
                                                 <constraint firstItem="x2T-mN-GnY" firstAttribute="top" secondItem="Tz1-OK-GHs" secondAttribute="top" id="fp7-YF-ggu"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bg3-Kr-GUR" userLabel="Table View Cell - Home color">
                                         <rect key="frame" x="0.0" y="143.33333206176758" width="375" height="44"/>
@@ -741,20 +747,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" insetsLayoutMarginsFromSafeArea="NO" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-7J-38N" userLabel="Stack View Color Settings">
+                                                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" insetsLayoutMarginsFromSafeArea="NO" distribution="fillEqually" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-7J-38N" userLabel="Stack View Color Settings">
                                                     <rect key="frame" x="20" y="2" width="335" height="40"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="App Colors" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRu-c4-3hS">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="Scoreboard Color" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRu-c4-3hS">
                                                             <rect key="frame" x="0.0" y="0.0" width="163.66666666666666" height="40"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <segmentedControl opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="yBd-10-D7Y">
+                                                        <segmentedControl opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="yBd-10-D7Y">
                                                             <rect key="frame" x="171.66666666666663" y="0.0" width="163.33333333333337" height="41"/>
                                                             <segments>
                                                                 <segment title="Colorful"/>
-                                                                <segment title="Dark"/>
-                                                                <segment title="Regular"/>
+                                                                <segment title="System"/>
                                                             </segments>
                                                             <connections>
                                                                 <action selector="colorSettings:" destination="JoG-uN-Xre" eventType="valueChanged" id="mS0-PI-9tD"/>
@@ -770,6 +775,7 @@
                                                 <constraint firstItem="9Cg-7J-38N" firstAttribute="leading" secondItem="eYg-G7-40j" secondAttribute="leading" constant="20" symbolic="YES" id="USg-md-NfL"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -792,6 +798,7 @@
                                                         </label>
                                                         <segmentedControl opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="oqR-8N-8Ny">
                                                             <rect key="frame" x="171.66666666666663" y="0.0" width="163.33333333333337" height="41"/>
+                                                            <color key="backgroundColor" name="backgroundColor"/>
                                                             <segments>
                                                                 <segment title="Send"/>
                                                                 <segment title="Don't send"/>
@@ -810,6 +817,7 @@
                                                 <constraint firstItem="JMW-K8-zrk" firstAttribute="leading" secondItem="2F5-gu-tbJ" secondAttribute="leading" constant="20" symbolic="YES" id="nYO-Ow-4MA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="dZN-rA-r2b" userLabel="Table View Cell - Notify number">
                                         <rect key="frame" x="0.0" y="279.33333206176758" width="375" height="44"/>
@@ -848,6 +856,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="fYI-jt-r2m" secondAttribute="bottom" constant="2" id="qKk-Nl-Rfd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Xy2-mz-t2F" userLabel="Table View Cell - Player name">
                                         <rect key="frame" x="0.0" y="323.33333206176758" width="375" height="44"/>
@@ -885,6 +894,7 @@
                                                 <constraint firstItem="yzZ-7r-gZK" firstAttribute="leading" secondItem="Wg2-Ec-tBI" secondAttribute="leading" constant="20" symbolic="YES" id="wmw-Rm-vLj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tYo-kp-FcY" userLabel="Table View Cell - Notify number">
                                         <rect key="frame" x="0.0" y="367.33333206176758" width="375" height="44"/>
@@ -940,6 +950,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="Lsq-B4-w3r" secondAttribute="bottom" constant="2" id="zYq-Mw-JvC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -977,6 +988,7 @@
                                                 <constraint firstItem="HBP-bB-GjN" firstAttribute="leading" secondItem="FlS-Sr-d5G" secondAttribute="leading" constant="20" symbolic="YES" id="lXM-Cv-gXC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rZn-jg-JqB" userLabel="Table View Cell - Right action name">
                                         <rect key="frame" x="0.0" y="510.66666412353516" width="375" height="44"/>
@@ -1010,6 +1022,7 @@
                                                 <constraint firstItem="qcY-hy-r0D" firstAttribute="top" secondItem="c7A-GY-0Su" secondAttribute="top" constant="2" id="ZVy-2o-F3O"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1038,6 +1051,7 @@
                                                 <constraint firstItem="dtK-e1-new" firstAttribute="leading" secondItem="8rk-Xz-Moy" secondAttribute="leading" constant="20" symbolic="YES" id="x2F-TT-i9h"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1158,8 +1172,8 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="jM8-Dj-Evr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" name="backgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Support &amp; Feedback" footerTitle="Requires an internet connection" id="a5D-5H-Up0">
                                 <cells>
@@ -1180,7 +1194,7 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.98624199628829956" green="0.7796865701675415" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="J0J-vH-Fuf" style="IBUITableViewCellStyleDefault" id="dkP-Ri-RZF" userLabel="Version Info">
                                         <rect key="frame" x="0.0" y="99.333332061767578" width="375" height="44"/>
@@ -1201,7 +1215,7 @@
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Hrn-1f-vNp" style="IBUITableViewCellStyleDefault" id="y7S-ze-bNf" userLabel="FAQ">
@@ -1223,7 +1237,7 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="hei-AC-AsN" style="IBUITableViewCellStyleDefault" id="e5J-bK-tGg" userLabel="Feedback">
@@ -1246,7 +1260,7 @@
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="WOX-vn-5vr" style="IBUITableViewCellStyleDefault" id="Ukm-8R-DWS" userLabel="Notifications">
                                         <rect key="frame" x="0.0" y="231.33333206176758" width="375" height="44"/>
@@ -1268,7 +1282,7 @@
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="WRp-K8-mgP" style="IBUITableViewCellStyleDefault" id="bCg-qd-M3P" userLabel="iTunes Review">
                                         <rect key="frame" x="0.0" y="275.33333206176758" width="375" height="44"/>
@@ -1290,7 +1304,7 @@
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="mHR-Lx-r3Y" style="IBUITableViewCellStyleDefault" id="8ce-wo-MOW" userLabel="Website">
                                         <rect key="frame" x="0.0" y="319.33333206176758" width="375" height="44"/>
@@ -1312,7 +1326,7 @@
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="gI3-Ko-B6z" style="IBUITableViewCellStyleDefault" id="dQY-OL-SOG" userLabel="Twitter">
                                         <rect key="frame" x="0.0" y="363.33333206176758" width="375" height="44"/>
@@ -1334,7 +1348,7 @@
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="jfO-wp-lgt" style="IBUITableViewCellStyleDefault" id="yfm-0e-enT" userLabel="Privacy">
                                         <rect key="frame" x="0.0" y="407.33333206176758" width="375" height="44"/>
@@ -1356,7 +1370,7 @@
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="2Sf-od-6nZ" style="IBUITableViewCellStyleDefault" id="8IS-41-U23" userLabel="Licenses">
                                         <rect key="frame" x="0.0" y="451.33333206176758" width="375" height="44"/>
@@ -1378,7 +1392,7 @@
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1448,5 +1462,14 @@
         <image name="Setting Tab" width="25" height="25"/>
         <image name="Sport Net-50" width="50" height="50"/>
         <image name="TransparentVBall" width="40" height="40"/>
+        <namedColor name="actionNameColor">
+            <color white="1" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="actionNumberColor">
+            <color red="0.15101002156734467" green="0.56891876459121704" blue="0.43715286254882812" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="backgroundColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
