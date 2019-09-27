@@ -33,19 +33,19 @@
 @property (weak, nonatomic) IBOutlet UIButton* addPhoneNumberButton;
 @property (strong, nonatomic) IBOutlet UILabel* leftActionNameSelected;
 @property (strong, nonatomic) IBOutlet UILabel* rightActionNameSelected;
-@property (weak, nonatomic) IBOutlet UISegmentedControl* colorSettings;
-@property (weak, nonatomic) IBOutlet UISegmentedControl* twitterSwitch;
-@property (weak, nonatomic) IBOutlet UISegmentedControl* facebookSwitch;
+//@property (weak, nonatomic) IBOutlet UISegmentedControl* colorSettings;
+//@property (weak, nonatomic) IBOutlet UISegmentedControl* twitterSwitch;
+//@property (weak, nonatomic) IBOutlet UISegmentedControl* facebookSwitch;
 
 - (IBAction)homeTeamBackgroundColor:(id)sender;
 - (IBAction)visitingTeamBackgroundColor:(id)sender;
 - (IBAction)getPhoneNumberFromAddressBook:(id)sender;
 - (IBAction)notificationSwitch:(id)sender;
 - (IBAction)textFieldReturn:(id)sender;
-- (IBAction)colorSettings:(UISegmentedControl*)sender;
+//- (IBAction)colorSettings:(UISegmentedControl*)sender;
 - (IBAction)notificationTypeSwitch:(UISegmentedControl *)sender;
-- (IBAction)sendWithFacebook:(UISegmentedControl*)sender;
-- (IBAction)sendWithTwitter:(UISegmentedControl*)sender;
+//- (IBAction)sendWithFacebook:(UISegmentedControl*)sender;
+//- (IBAction)sendWithTwitter:(UISegmentedControl*)sender;
 - (IBAction)leaveReview:(UIButton *)sender;
 
 @end

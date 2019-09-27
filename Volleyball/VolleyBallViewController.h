@@ -44,15 +44,15 @@
 @property (weak, nonatomic) IBOutlet UILabel* rightActionNameNumber;
 @property (weak, nonatomic) IBOutlet UILabel* leftActionNameNumber;
 
-@property (weak, nonatomic) IBOutlet UIButton* mainPageTwitterButton;
-@property (weak, nonatomic) IBOutlet UIButton* mainPageFacebookButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
+//@property (weak, nonatomic) IBOutlet UIButton* mainPageTwitterButton;
+//@property (weak, nonatomic) IBOutlet UIButton* mainPageFacebookButton;
+//@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *matchButton;
 
 @property UISwipeGestureRecognizer* homeSwipeGesture;
 @property UISwipeGestureRecognizer* visitingSwipeGesture;
 
-- (IBAction)goToSettings:(UIBarButtonItem*)sender;
+//- (IBAction)goToSettings:(UIBarButtonItem*)sender;
 - (IBAction)leftActionLongPress:(UILongPressGestureRecognizer*)recognizer;
 - (IBAction)rightActionLongPress:(UILongPressGestureRecognizer*)recognizer;
 

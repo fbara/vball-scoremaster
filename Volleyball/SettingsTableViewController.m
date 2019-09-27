@@ -28,8 +28,6 @@
 @property NSString* existingLeftActionName;
 @property ActionLabelTableViewController* actionNameVC;
 @property UIPopoverController* aPopover;
-@property (weak, nonatomic) IBOutlet UILabel* twitterCellLabel;
-@property (weak, nonatomic) IBOutlet UILabel* facebookCellLabel;
 @property (nonatomic, strong)UIPreviewActionGroup *previewActions;
 
 @end
@@ -138,38 +136,13 @@
     }
 
     // Set the selected segment for color settings
-    if ([[self getColorSettings] isEqualToString:@"Complementary"]) {
-        [self.colorSettings setSelectedSegmentIndex:0];
-    } else if ([[self getColorSettings] isEqualToString:@"System"]) {
-        [self.colorSettings setSelectedSegmentIndex:1];
+    // TODO: For Color Settings
+//    if ([[self getColorSettings] isEqualToString:@"Complementary"]) {
+//        [self.colorSettings setSelectedSegmentIndex:0];
+//    } else if ([[self getColorSettings] isEqualToString:@"System"]) {
+//        [self.colorSettings setSelectedSegmentIndex:1];
 //    } else {
 //        [self.colorSettings setSelectedSegmentIndex:2];
-    }
-
-//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
-        self.twitterSwitch.enabled = TRUE;
-        self.twitterCellLabel.text = @"Send with Twitter?";
-        self.facebookCellLabel.text = @"Send with Facebook?";
-        // Set the Twitter switch if messages will be sent
-        if ([[self getTwitterNotifications] isEqualToString:@"On"]) {
-            [self.twitterSwitch setSelectedSegmentIndex:0];
-        } else {
-            [self.twitterSwitch setSelectedSegmentIndex:1];
-        }
-
-        // Set the Facebook switch if messages will be sent
-        self.facebookSwitch.enabled = TRUE;
-        if ([[self getFacebookNotifications] isEqualToString:@"On"]) {
-            [self.facebookSwitch setSelectedSegmentIndex:0];
-        } else {
-            [self.facebookSwitch setSelectedSegmentIndex:1];
-        }
-//    } else {
-//        // User has not made purchase so disable social switches
-//        self.twitterCellLabel.text = @"Twitter available with purchase";
-//        self.facebookCellLabel.text = @"Facebook available with purchase";
-//        self.twitterSwitch.enabled = FALSE;
-//        self.facebookSwitch.enabled = FALSE;
 //    }
     
 }
@@ -184,9 +157,7 @@
                secondName:self.rightActionNameSelected.text];
     [self notificationSwitch:self.sendNotificationSwitch];
     [self notificationTypeSwitch:self.notificationTypeSwitch];
-    [self colorSettings:self.colorSettings];
-    [self sendWithFacebook:self.facebookSwitch];
-    [self sendWithTwitter:self.twitterSwitch];
+//    [self colorSettings:self.colorSettings];
     
     // Set the notification when Settings is done
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsDone"
@@ -546,27 +517,27 @@
 //    [self saveUserDefaults];
 }
 
-- (IBAction)sendWithFacebook:(UISegmentedControl*)sender
-{
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
-    VolleyBallViewController* volleyVC = [[VolleyBallViewController alloc] init];
-
-    // Save the segmented value
-    switch (selectedSegmentIndex) {
-    case 0: { // Send Facebook messages
-        [defaults setObject:@"On" forKey:@"enableFacebook"];
-        volleyVC.mainPageFacebookButton.enabled = TRUE;
-    } break;
-    case 1: { // Don't send Facebook messages
-        [defaults setObject:@"Off" forKey:@"enableFacebook"];
-        volleyVC.mainPageFacebookButton.enabled = FALSE;
-    }
-    default:
-        break;
-    }
-    [self saveUserDefaults];
-}
+//- (IBAction)sendWithFacebook:(UISegmentedControl*)sender
+//{
+//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+//    NSInteger selectedSegmentIndex = [sender selectedSegmentIndex];
+//    VolleyBallViewController* volleyVC = [[VolleyBallViewController alloc] init];
+//
+//    // Save the segmented value
+//    switch (selectedSegmentIndex) {
+//    case 0: { // Send Facebook messages
+//        [defaults setObject:@"On" forKey:@"enableFacebook"];
+//        volleyVC.mainPageFacebookButton.enabled = TRUE;
+//    } break;
+//    case 1: { // Don't send Facebook messages
+//        [defaults setObject:@"Off" forKey:@"enableFacebook"];
+//        volleyVC.mainPageFacebookButton.enabled = FALSE;
+//    }
+//    default:
+//        break;
+//    }
+//    [self saveUserDefaults];
+//}
 
 - (NSString*)getTwitterNotifications
 {

@@ -1835,7 +1835,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1110;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1843,6 +1843,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = BC1798A85854F6B919CC16A2FAB376C6 /* Products */;
@@ -2218,7 +2219,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC6985E39E6BB92FAC8B98AAF77F7EBA /* GBVersionTracking.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2242,7 +2242,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA7825722D3C4DE36EDEF50835CFA9BF /* TSMessages.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2267,7 +2266,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62EEE11B8A6B8B6A0B999DF6242A2AC4 /* BTBalloon.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2291,7 +2289,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B380BAFAF777784FF47076F85724817E /* MBProgressHUD.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2315,7 +2312,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA7825722D3C4DE36EDEF50835CFA9BF /* TSMessages.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2340,7 +2336,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 67F54DA7097DDEDCBA4E5D839DFE7885 /* AppbotX.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2440,7 +2435,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 110D4A4176695206A185F292A876565E /* HexColors.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2464,7 +2458,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C84392748AC0E47282B0A914A5796B9E /* SESlideTableViewCell.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2488,7 +2481,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC6985E39E6BB92FAC8B98AAF77F7EBA /* GBVersionTracking.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2514,7 +2506,6 @@
 			baseConfigurationReference = 0C1E4E89BAFDA5E8EFEEE6AD88A5CB7C /* Pods-VBall ScoreMaster.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2537,7 +2528,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 67F54DA7097DDEDCBA4E5D839DFE7885 /* AppbotX.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2562,7 +2552,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D4C14F0DF89CA24299477377D38ED94 /* UIDeviceIdentifier.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2587,7 +2576,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC6985E39E6BB92FAC8B98AAF77F7EBA /* GBVersionTracking.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2628,7 +2616,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C399F13094BF3390FFD8593BB8CD5B1 /* VWWPermissionKit.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2653,7 +2640,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B42F60DB626EFEF039EC85B1DF1EB44 /* MPCoachMarks.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2679,7 +2665,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7150031DE3064DC55025220E9BD3297A /* DeviceUtil.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2703,7 +2688,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DE428D3C11010C25B0BAA3930A7C2B9D /* VTAcknowledgementsViewController.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2743,7 +2727,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D4C14F0DF89CA24299477377D38ED94 /* UIDeviceIdentifier.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2769,7 +2752,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 110D4A4176695206A185F292A876565E /* HexColors.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2794,7 +2776,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DAF17E54BBD35FD1C56FEE1BF29F072A /* ChameleonFramework.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2818,7 +2799,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 344378EA7741E73139793E05898C9D8E /* PureLayout.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2843,7 +2823,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DAF17E54BBD35FD1C56FEE1BF29F072A /* ChameleonFramework.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2868,7 +2847,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 344378EA7741E73139793E05898C9D8E /* PureLayout.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2951,7 +2929,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C399F13094BF3390FFD8593BB8CD5B1 /* VWWPermissionKit.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2975,7 +2952,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7150031DE3064DC55025220E9BD3297A /* DeviceUtil.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3000,7 +2976,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C84392748AC0E47282B0A914A5796B9E /* SESlideTableViewCell.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3025,7 +3000,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B42F60DB626EFEF039EC85B1DF1EB44 /* MPCoachMarks.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3050,7 +3024,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 67F54DA7097DDEDCBA4E5D839DFE7885 /* AppbotX.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3074,7 +3047,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62EEE11B8A6B8B6A0B999DF6242A2AC4 /* BTBalloon.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3099,7 +3071,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B380BAFAF777784FF47076F85724817E /* MBProgressHUD.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3124,7 +3095,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D4C14F0DF89CA24299477377D38ED94 /* UIDeviceIdentifier.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3150,7 +3120,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C84392748AC0E47282B0A914A5796B9E /* SESlideTableViewCell.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3193,7 +3162,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 110D4A4176695206A185F292A876565E /* HexColors.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3219,7 +3187,6 @@
 			baseConfigurationReference = 332C39E9D3B35923C472A208EA3F066C /* Pods-VBall ScoreMaster.distribution.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3258,7 +3225,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62EEE11B8A6B8B6A0B999DF6242A2AC4 /* BTBalloon.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3283,7 +3249,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C399F13094BF3390FFD8593BB8CD5B1 /* VWWPermissionKit.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3308,7 +3273,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DE428D3C11010C25B0BAA3930A7C2B9D /* VTAcknowledgementsViewController.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3333,7 +3297,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DE428D3C11010C25B0BAA3930A7C2B9D /* VTAcknowledgementsViewController.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3358,7 +3321,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA7825722D3C4DE36EDEF50835CFA9BF /* TSMessages.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3465,7 +3427,6 @@
 			baseConfigurationReference = DDBF9DAB31F9FED183D22FD2C1104C20 /* Pods-VBall ScoreMaster.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3487,7 +3448,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B42F60DB626EFEF039EC85B1DF1EB44 /* MPCoachMarks.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3513,7 +3473,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DAF17E54BBD35FD1C56FEE1BF29F072A /* ChameleonFramework.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3538,7 +3497,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 344378EA7741E73139793E05898C9D8E /* PureLayout.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3563,7 +3521,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7150031DE3064DC55025220E9BD3297A /* DeviceUtil.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3588,7 +3545,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B380BAFAF777784FF47076F85724817E /* MBProgressHUD.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
