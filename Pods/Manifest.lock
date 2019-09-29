@@ -1,5 +1,4 @@
 PODS:
-  - AppbotX (1.1.2)
   - BTBalloon (0.1.2):
     - PureLayout (~> 2.0.6)
   - ChameleonFramework (2.1.0):
@@ -19,7 +18,6 @@ PODS:
   - VWWPermissionKit (1.3.0)
 
 DEPENDENCIES:
-  - AppbotX (from `https://github.com/appbotx/appbotx.git`)
   - BTBalloon
   - ChameleonFramework
   - DeviceUtil
@@ -49,21 +47,15 @@ SPEC REPOS:
     - VWWPermissionKit
 
 EXTERNAL SOURCES:
-  AppbotX:
-    :git: https://github.com/appbotx/appbotx.git
   UIDeviceIdentifier:
     :git: https://github.com/squarefrog/UIDeviceIdentifier.git
 
 CHECKOUT OPTIONS:
-  AppbotX:
-    :commit: 285d2623d867c90dfa03a7d4d0093b0070a106cc
-    :git: https://github.com/appbotx/appbotx.git
   UIDeviceIdentifier:
     :commit: ab74270cb08ec710b01bc74bfdf8dccb29375d57
     :git: https://github.com/squarefrog/UIDeviceIdentifier.git
 
 SPEC CHECKSUMS:
-  AppbotX: 6478b94b694e516fb9ee8c0acd8ba48d6bf6d6b3
   BTBalloon: d38bbf4f6ee29ebad7b983653a927e874dfe1f7f
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   DeviceUtil: 8a0334404594ba8e3f7fa01caf48cc95b0427333
@@ -78,6 +70,6 @@ SPEC CHECKSUMS:
   VTAcknowledgementsViewController: d62bb400ca68e240680906bcfa2a2b380d39b30f
   VWWPermissionKit: 102e84bbd358cf909f46eb2120d1c698d0e0c3af
 
-PODFILE CHECKSUM: 29b9da7b3e69b13a35ac8ecd2949384ed5ec2209
+PODFILE CHECKSUM: 6f0a8c059c579795e04078deaa551f834b36bf69
 
 COCOAPODS: 1.7.4

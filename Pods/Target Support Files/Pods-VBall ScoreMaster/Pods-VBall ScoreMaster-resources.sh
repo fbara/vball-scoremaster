@@ -97,7 +97,6 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/AppbotX/Classes/AppbotX.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/BTBalloon/BTBalloon.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/DeviceUtil/DeviceUtil.bundle"
   install_resource "${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-down.png"
@@ -138,7 +137,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/VWWPermissionKit/VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionTitleTableViewCell.xib"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/AppbotX/Classes/AppbotX.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/BTBalloon/BTBalloon.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/DeviceUtil/DeviceUtil.bundle"
   install_resource "${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-down.png"
@@ -179,7 +177,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/VWWPermissionKit/VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionTitleTableViewCell.xib"
 fi
 if [[ "$CONFIGURATION" == "Distribution" ]]; then
-  install_resource "${PODS_ROOT}/AppbotX/Classes/AppbotX.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/BTBalloon/BTBalloon.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/DeviceUtil/DeviceUtil.bundle"
   install_resource "${PODS_ROOT}/MPCoachMarks/MPCoachMarks/arrows/arrow-down.png"
