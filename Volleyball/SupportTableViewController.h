@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AppbotX/ABXPromptView.h>
-#import <AppbotX/ABXNotificationView.h>
 
-@interface SupportTableViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource,ABXPromptViewDelegate>
+@interface SupportTableViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource>
 
 @end

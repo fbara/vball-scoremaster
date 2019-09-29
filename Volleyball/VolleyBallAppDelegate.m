@@ -10,7 +10,6 @@
 #import "GBVersionTracking.h"
 #import "Chameleon.h"
 #import "VolleyBallIAPHelper.h"
-#import <AppbotX/ABX.h>
 #import "VolleyBallViewController.h"
 #import <UIDeviceIdentifier/UIDeviceHardware.h>
 //#import "NRWindow.h"
@@ -38,10 +37,6 @@
     // Needed to register the app as a transaction observer from Apple for IAP's
     //TODO: Add back when IAP's fixed.
     //[VolleyBallIAPHelper sharedInstance];
-
-    // Initialize AppbotX info
-    [[ABXApiClient instance]
-        setApiKey:@"5b0feb30a4f023f3897789f9b38ab62304ee4790"];
     
     if ([GBVersionTracking isFirstLaunchEver]) {
         // Initialize the number of times the user has launched the app

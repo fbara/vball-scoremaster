@@ -5,7 +5,6 @@ inhibit_all_warnings!
 
 target 'VBall ScoreMaster' do
 	pod 'ChameleonFramework'
-	pod "AppbotX", :git => "https://github.com/appbotx/appbotx.git"
 	pod 'BTBalloon'
 	pod 'ChameleonFramework'
 	pod 'DeviceUtil'

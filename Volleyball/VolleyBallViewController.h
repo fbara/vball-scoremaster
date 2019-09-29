@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
-#import <AppbotX/ABXPromptView.h>
-#import <Social/Social.h>
 @import QuartzCore;
 
-@interface VolleyBallViewController : UIViewController <UIPageViewControllerDataSource, UIAlertViewDelegate, UITextViewDelegate, MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, ABXPromptViewDelegate, UIViewControllerPreviewingDelegate>
+@interface VolleyBallViewController : UIViewController <UIPageViewControllerDataSource, UIAlertViewDelegate, UITextViewDelegate, MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, UIViewControllerPreviewingDelegate>
 
 
 @property UIColor* _Nullable homeColor;
@@ -70,11 +68,5 @@
 - (nullable UIViewController *)pageViewController:(nonnull UIPageViewController *)pageViewController viewControllerBeforeViewController:(nonnull UIViewController *)viewController;
 
 - (void)messageComposeViewController:(nonnull MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result;
-
-- (void)appbotPromptClose;
-
-- (void)appbotPromptForFeedback;
-
-- (void)appbotPromptForReview;
 
 @end

@@ -288,11 +288,6 @@
 	//sectionFooter.backgroundColor = [UIColor clearColor];
 	sectionFooter.font = [UIFont systemFontOfSize:12];
 	//sectionFooter.textColor = [UIColor darkGrayColor];
-	if (IS_IPAD()) {
-		sectionFooter.text = NSLocalizedString(@"   Tap anywhere off this popup to dismiss", @"Tap the screen anywhere away from this popup to dismiss the window");
-	} else {
-		sectionFooter.text = @"";
-	}	
 	return sectionFooter;
 }
 

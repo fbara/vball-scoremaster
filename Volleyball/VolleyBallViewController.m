@@ -12,10 +12,7 @@
 #import "NotificationsTableViewController.h"
 #import "GBVersionTracking.h"
 #import "Chameleon.h"
-#import <AppbotX/ABX.h>
-#import <AppbotX/ABXNotificationView.h>
 
-@import Social;
 @import Accounts;
 @import StoreKit;
 @import UIKit;
@@ -50,7 +47,6 @@ static void * leftContext = &leftContext;
 @property (weak, atomic) UIPageViewController* homePageViewController;
 @property (weak, atomic) UIPageViewController* visitorPageViewController;
 @property (weak, nonatomic) NSURL* baralabsURL;
-@property (strong, nonatomic) ABXPromptView* promptView;
 @property (nonatomic, strong)id previewingContext;
 //@property (weak, nonatomic) IBOutlet UIButton *rightActionNameButton;
 //@property (weak, nonatomic) IBOutlet UIButton *leftActionNameButton;
@@ -169,8 +165,6 @@ static void * leftContext = &leftContext;
     //Reset total game counts
     totalPastGamesHome = 0;
     totalPastGamesVisitor = 0;
-    
-    [self checkForActiveNotification];
 
 }
 
@@ -204,6 +198,17 @@ static void * leftContext = &leftContext;
 
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    // Check for dark mode and adjust the colors accordingly
+    if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+        [self showDarkMode];
+    } else {
+        [self showLightMode];
+    }
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.homeTeamName removeObserver:self forKeyPath:@"contentSize"];
@@ -211,7 +216,10 @@ static void * leftContext = &leftContext;
 
 - (IBAction)goToSettings:(UIBarButtonItem *)sender
 {
-    [self performSegueWithIdentifier:@"settingsView" sender:self];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"settingsView" sender:self];
+    });
+    
 }
 
 - (void)initializePastGames
@@ -262,7 +270,7 @@ static void * leftContext = &leftContext;
     if (IS_IPAD()) {
         [self.visitingTeamPastName setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
         [self.leftActionLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle]];
-        self.leftActionNameNumber.font = self.leftActionNameNumber.font;
+        self.leftActionNameNumber.font = self.leftActionLabel.font;
         for (UILabel* lable in self.pastVisitorScoreCollection) {
             lable.font = self.visitingTeamPastName.font;
         }
@@ -330,19 +338,10 @@ static void * leftContext = &leftContext;
 
 - (void)showDarkMode {
     UIImage *matchImage = [UIImage imageNamed:@"NewGameWhite.png"];
-   [self.matchButton setImage:matchImage forState:UIControlStateNormal];
+    [self.matchButton setImage:matchImage forState:UIControlStateNormal];
     
    UIImage *gameImage = [UIImage imageNamed:@"NewMatch3White.png"];
    [self.gameButton setImage:gameImage forState:UIControlStateNormal];
-    
-   for (UILabel* lable in self.pastScoreCollection) {
-       if (![lable.text isEqualToString:@"0"]) {
-           lable.textColor = FlatRed;
-       } else {
-           lable.textColor = FlatYellow;
-       }
-   }
-               
     [self changePastScoreColors:FlatRed loser:FlatYellow];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -352,17 +351,9 @@ static void * leftContext = &leftContext;
 - (void)showLightMode {
     UIImage *matchImage = [UIImage imageNamed:@"NewGame.png"];
     [self.matchButton setImage:matchImage forState:UIControlStateNormal];
+    
     UIImage *gameImage = [UIImage imageNamed:@"NewMatch3.png"];
     [self.gameButton setImage:gameImage forState:UIControlStateNormal];
-    for (UILabel* lable in self.pastScoreCollection) {
-        // First, check if any of the past score fonts are red
-        // If so, put them back to red after the recolor
-        if (![lable.text isEqualToString:@"0"]) {
-            lable.textColor = FlatRed;
-        } else {
-            lable.textColor = FlatPlum;
-        }
-    }
     [self changePastScoreColors:FlatRed loser:FlatPlum];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -438,9 +429,12 @@ static void * leftContext = &leftContext;
             [self showDarkMode];
         } else {
             [self showLightMode];
-    }
+            
+        }
     }
 }
+
+
 
 #pragma mark - UI Elements
 
@@ -464,25 +458,6 @@ static void * leftContext = &leftContext;
         self.rightActionLabel.text = [defaults stringForKey:@"rightActionName"];
     }
 
-}
-
-#pragma mark - Google Analytics
-
-/*!
- *  @author Me, 03-21-16 16:03
- *
- *  Determines if the user has allowed the use of analytics.
- *
- *  @return BOOL Returns TRUE if analytics are allowed and FALSE if not.
- */
-- (BOOL)canSendAnalytics {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *analytics = [defaults stringForKey:@"analyticsChoice"];
-    if ([analytics isEqualToString:@"Opt in"]) {
-        return TRUE;
-    } else {
-        return FALSE;
-    }
 }
 
 #pragma mark - UIGestureRecognizer Delegate Method
@@ -884,60 +859,6 @@ static void * leftContext = &leftContext;
 
 }
 
-#pragma mark - AppbotX
-
-- (void)checkForActiveNotification {
-    [ABXNotification fetchActive:^(NSArray *notifications, ABXResponseCode responseCode, NSInteger httpCode, NSError *error) {
-        if (responseCode == ABXResponseCodeSuccess) {
-            if (notifications.count > 0) {
-                ABXNotification *notification = [notifications firstObject];
-                BOOL firstTime = [[NSUserDefaults standardUserDefaults] boolForKey:@"firstTimeEver"];
-                NSInteger firstThisVer = [[NSUserDefaults standardUserDefaults] integerForKey:@"launchNumber"];
-                if (![notification hasSeen]) {
-                    if (firstTime || (firstThisVer < 4)) {
-                        return;
-                    } else {
-                        //Show the view
-                        [ABXNotificationView show:notification.message
-                                       actionText:notification.actionLabel
-                                  backgroundColor:FlatBlueDark
-                                        textColor:[UIColor whiteColor]
-                                      buttonColor:[UIColor redColor]
-                                     inController:self.navigationController
-                                      actionBlock:^(ABXNotificationView *view) {
-                                          [[UIApplication sharedApplication] openURL:[NSURL URLWithString:notification.actionUrl]];
-                                      } dismissBlock:^(ABXNotificationView *view) {
-                                          //Mark alert as being seen so it's not shown again
-                                          [notification markAsSeen];
-                                      }];
-
-                        return;
-                    }
-                }
-            }
-        }
-        
-    }];
-}
-
-- (void)appbotPromptForReview
-{
-    [ABXAppStore openAppStoreReviewForApp:kiTunesID];
-    self.promptView.hidden = YES;
-}
-
-- (void)appbotPromptForFeedback
-{
-    [ABXFeedbackViewController showFromController:self placeholder:nil];
-    self.promptView.hidden = YES;
-}
-
-- (void)appbotPromptClose
-{
-    self.promptView.hidden = YES;
-
-}
-
 #pragma mark - 3D Touch
 
 - (BOOL)checkFor3DTouch {
@@ -1102,7 +1023,7 @@ static void * leftContext = &leftContext;
     msgHome = [NSString stringWithString:self.homeTeamName.text];
     
     // Format the text message
-    textMessage = [NSString stringWithFormat: @"%@ has %d %@s and %d %@s!\nThe score is now %@ %d - %@ %d.", playerName, currSecondAction, self.rightActionLabel.text, currFirstAction, self.leftActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
+    textMessage = [NSString stringWithFormat: @"%@ has %d %@ and %d %@!\nThe score is now %@ %d - %@ %d.", playerName, currSecondAction, self.rightActionLabel.text, currFirstAction, self.leftActionLabel.text, msgVisitor, currVisitorScore, msgHome, currHomeScore];
     
     return textMessage;
 }

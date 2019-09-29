@@ -10,7 +10,6 @@
 #import "ActionLabelTableViewController.h"
 #import "SupportTableViewController.h"
 #import "VolleyBallViewController.h"
-#import <AppbotX/ABXFAQsViewController.h>
 //#import <ChameleonFramework/Chameleon.h>
 #import "Chameleon.h"
 
@@ -367,14 +366,6 @@
 }
 
 #pragma mark - Extras
-
-- (IBAction)getFAQ:(UIButton*)sender
-{
-    [ABXFAQsViewController showFromController:self
-                            hideContactButton:NO
-                              contactMetaData:nil
-                                initialSearch:nil];
-}
 
 - (void)leaveReview:(UIButton *)sender {
     // Allow the user to leave App Store review

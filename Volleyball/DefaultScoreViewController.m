@@ -32,15 +32,6 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"%d", aScore];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-
-    //[[NSNotificationCenter defaultCenter] postNotificationName:@"swipe"
-    // object:self];
-}
-
 - (void)setScoreNumberSize:(CGFloat)numberSize
 {
     [self.scoreLabel
@@ -55,12 +46,6 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
