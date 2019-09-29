@@ -199,31 +199,6 @@ static void * leftContext = &leftContext;
         [self initializeHomeScore:currHomeScore fontSize:iphoneScoreFont];
     }
 
-// Remove for iOS 13
-    // Get the Action Names
-    //[self loadActionNames];
-
-    // Format the window background color
-    //[self windowBackgroundColor];
-
-//    // Show or hide the social buttons depending on the IAP
-//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"purchasedSocial"]) {
-//        self.mainPageTwitterButton.hidden = TRUE;
-//        self.mainPageFacebookButton.hidden = TRUE;
-//
-//    } else {
-//        self.mainPageTwitterButton.hidden = TRUE;
-//        self.mainPageFacebookButton.hidden = TRUE;
-//    }
-    
-    //[self enableSocialButtons];
-    
-// Remove checking for 3D touch in iOS 13
-//    //Check for 3D Touch
-//    if ([self checkFor3DTouch]) {
-//        self.previewingContext = [self registerForPreviewingWithDelegate:self sourceView:self.view];
-//    }
-
     [self loadActionNames];
     [self setupDynamicShortcuts];
 
@@ -323,21 +298,15 @@ static void * leftContext = &leftContext;
     } else {
         colorHome = [UIColor blueColor];
     }
-
-    NSString* color = [defaults stringForKey:@"colorSettings"];
-
-    if ([color isEqualToString:@"Complementary"] || [color isEqualToString:@"System"]) {
-        self.homeTeamName.backgroundColor = [colorHome darkenByPercentage:0.20];
-    } else {
-        self.homeTeamName.backgroundColor = FlatSand;
-    }
     
+    self.homeTeamName.backgroundColor = [colorHome darkenByPercentage:0.20];
     self.homeTeamName.textColor = ContrastColor(self.homeTeamName.backgroundColor, TRUE);
     self.homeTeamPastName.backgroundColor = colorHome;
     self.homeTeamPastName.textColor = self.homeTeamName.textColor;
     return colorHome;
 }
 
+// TODO: Update for changes to trait collection
 - (UIColor*)colorVisitorScoreView
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
@@ -351,116 +320,12 @@ static void * leftContext = &leftContext;
         colorVisitor = [UIColor orangeColor];
     }
 
-    NSString* color = [defaults stringForKey:@"colorSettings"];
-
-    if ([color isEqualToString:@"Complementary"] || [color isEqualToString:@"Dark"]) {
-        self.visitingTeamName.backgroundColor = [colorVisitor darkenByPercentage:0.20];
-    } else {
-        self.visitingTeamName.backgroundColor = FlatSandDark;
-    }
-    
+    self.visitingTeamName.backgroundColor = [colorVisitor darkenByPercentage:0.20];
     self.visitingTeamName.textColor = ContrastColor(self.visitingTeamName.backgroundColor, TRUE);
     self.visitingTeamPastName.backgroundColor = colorVisitor;
     self.visitingTeamPastName.textColor = ContrastColor(colorVisitor, TRUE);
 
     return colorVisitor;
-}
-
-/*!
- *  Sets the color of the main window based on user preference
- */
-- (void)windowBackgroundColor
-{
- //   NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-//    UIColor *textColor;
-    
-//    if ([[defaults objectForKey:@"colorSettings"]
-//            isEqualToString:@"Complementary"]) {
-//        colorScheme = @"Colorful";
-        
-        //self.view.backgroundColor = FlatSand;
-//        self.rightActionNameNumber.textColor = FlatMintDark;
-//        self.leftActionNameNumber.textColor = FlatMintDark;
-        //self.gameNumber.textColor = ContrastColor(self.view.backgroundColor, TRUE);
-        //textColor = ComplementaryFlatColor(self.rightActionNameNumber.textColor);
-//        self.rightActionLabel.textColor = textColor;
-//        self.leftActionLabel.textColor = textColor;
-
-    if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
-
-        UIImage *matchImage = [UIImage imageNamed:@"NewGame.png"];
-        [self.matchButton setImage:matchImage forState:UIControlStateNormal];
-        UIImage *gameImage = [UIImage imageNamed:@"NewMatch3.png"];
-        [self.gameButton setImage:gameImage forState:UIControlStateNormal];
-        for (UILabel* lable in self.pastScoreCollection) {
-            // First, check if any of the past score fonts are red
-            // If so, put them back to red after the recolor
-            if (![lable.text isEqualToString:@"0"]) {
-                lable.textColor = FlatRed;
-            } else {
-                lable.textColor = FlatPlum;
-            }
-        }
-        [self changePastScoreColors:FlatRed loser:FlatPlum];
-    }
-        
-//    } else if ([[defaults objectForKey:@"colorSettings"]
-//                   isEqualToString:@"System"]) {
-//        colorScheme = @"System";
-    if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-            // System is set to Dark Mode
-            //self.view.backgroundColor = [UIColor colorNamed:@"backgroundColor"];
-            //self.navigationController.navigationBar.barTintColor = UIColor.redColor;
-            //self.navigationController.navigationBar.barTintColor = FlatBlackDark;
-            //self.navigationController.navigationBar.tintColor = UIColor.lightTextColor;
-            //self.navigationController.navigationBar.tintColor = ContrastColor(FlatBlack, TRUE);
-            //self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : ContrastColor(FlatBlackDark, TRUE)};
-//            self.rightActionNameNumber.textColor = FlatGreen;
-//            self.leftActionNameNumber.textColor = FlatGreen;
-//            self.gameNumber.textColor = FlatMint;
-//            textColor = ContrastColor(self.view.backgroundColor, TRUE);
-//            self.rightActionLabel.textColor = textColor;
-//            self.leftActionLabel.textColor = textColor;
-            
-            UIImage *matchImage = [UIImage imageNamed:@"NewGameWhite.png"];
-            [self.matchButton setImage:matchImage forState:UIControlStateNormal];
-            UIImage *gameImage = [UIImage imageNamed:@"NewMatch3White.png"];
-            [self.gameButton setImage:gameImage forState:UIControlStateNormal];
-            for (UILabel* lable in self.pastScoreCollection) {
-                if (![lable.text isEqualToString:@"0"]) {
-                    lable.textColor = FlatRed;
-                } else {
-                    lable.textColor = FlatYellow;
-                }
-            }
-            
-            [self changePastScoreColors:FlatRed loser:FlatYellow];
-        } else {
-            
-//            self.rightActionNameNumber.textColor = FlatBlackDark;
-//            self.leftActionNameNumber.textColor = FlatBlackDark;
-//            self.gameNumber.textColor = FlatBlackDark;
-//            textColor = ContrastColor(self.view.backgroundColor, TRUE);
-//            self.rightActionLabel.textColor = textColor;
-//            self.leftActionLabel.textColor = textColor;
-            
-            UIImage *matchImage = [UIImage imageNamed:@"NewGame.png"];
-            [self.matchButton setImage:matchImage forState:UIControlStateNormal];
-            UIImage *gameImage = [UIImage imageNamed:@"NewMatch3.png"];
-            [self.gameButton setImage:gameImage forState:UIControlStateNormal];
-            for (UILabel* lable in self.pastScoreCollection) {
-                if (![lable.text isEqualToString:@"0"]) {
-                    lable.textColor = FlatRed;
-                } else {
-                    lable.textColor = FlatBlack;
-                }
-            }
-            self.visitingTeamPastName.textColor = ContrastColor(self.visitingTeamPastName.backgroundColor, TRUE);
-            self.homeTeamPastName.textColor = ContrastColor(self.homeTeamPastName.textColor, TRUE);
-            [self changePastScoreColors:FlatRed loser:FlatBlack];
-        }
-//
-        
 }
 
 - (void)showDarkMode {
@@ -478,7 +343,10 @@ static void * leftContext = &leftContext;
        }
    }
                
-               [self changePastScoreColors:FlatRed loser:FlatYellow];
+    [self changePastScoreColors:FlatRed loser:FlatYellow];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"Dark" forKey:@"colorSetting"];
 }
 
 - (void)showLightMode {
@@ -497,6 +365,8 @@ static void * leftContext = &leftContext;
     }
     [self changePastScoreColors:FlatRed loser:FlatPlum];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"Light" forKey:@"colorSetting"];
 }
 
 

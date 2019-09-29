@@ -72,7 +72,6 @@
 	rowCanSlide = YES;
 	rowChecked = NO;
 	[TSMessage setDelegate:self];
-	//self.tableView.tintColor = FlatBlue;
 	//Check if this is the first time the user is seeing this view
 	[self checkForFirstTimeInView];
 	
@@ -109,7 +108,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-	
     NSString* name;
     // Which side, left or right, is the user acting on?
     switch (self.selectedActionRow) {
@@ -167,6 +165,10 @@
 
 
 #pragma mark - UITableView Delegate Methods
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.backgroundColor = [UIColor colorNamed:@"backgroundColor"];
+}
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -283,9 +285,9 @@
 {
 	//For iPad only; there's no footer displayed on the iPhone
 	UILabel *sectionFooter = [[UILabel alloc] initWithFrame:CGRectNull];
-	sectionFooter.backgroundColor = [UIColor clearColor];
+	//sectionFooter.backgroundColor = [UIColor clearColor];
 	sectionFooter.font = [UIFont systemFontOfSize:12];
-	sectionFooter.textColor = [UIColor darkGrayColor];
+	//sectionFooter.textColor = [UIColor darkGrayColor];
 	if (IS_IPAD()) {
 		sectionFooter.text = NSLocalizedString(@"   Tap anywhere off this popup to dismiss", @"Tap the screen anywhere away from this popup to dismiss the window");
 	} else {
@@ -298,9 +300,9 @@
 {
     // Set the header of the table with instructions to save changes
     UILabel* sectionHeader = [[UILabel alloc] initWithFrame:CGRectNull];
-    sectionHeader.backgroundColor = [UIColor clearColor];
+    sectionHeader.backgroundColor = [UIColor colorNamed:@"backgroundColor"];
 	sectionHeader.font = [UIFont systemFontOfSize:14];
-    sectionHeader.textColor = [UIColor darkGrayColor];
+    sectionHeader.textColor = [UIColor colorNamed:@"settingsTableTextColor"];
 	
 	sectionHeader.text = NSLocalizedString(@"   SELECT AN ACTION NAME", @"Table header, tap on the Action Name for your player");
     return sectionHeader;

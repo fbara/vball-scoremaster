@@ -36,8 +36,7 @@ static NSString* const kiTunesID = @"886670213";
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Support", @"Title for Support view.");
 	
-	self.tableView.backgroundColor = FlatBlackDark;
-	self.tableView.sectionIndexBackgroundColor = FlatBlackDark;
+	
 	
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
@@ -178,38 +177,38 @@ static NSString* const kiTunesID = @"886670213";
 	return YES;
 }
 
--(void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-	//Add row color
-	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-	//cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-	if (indexPath.row == 0) {
-		[self setCellColor:FlatYellowDark ForCell:cell TextColor:FlatBlack];
-	} else {
-		[self setCellColor:[UIColor blackColor] ForCell:cell TextColor:FlatRedDark];
-	}
-
-}
-
--(void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-	//Reset color
-	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-	//cell.selectionStyle = UITableViewCellSelectionStyleNone;
-	if (indexPath.row == 0) {
-		[self setCellColor:FlatYellow ForCell:cell TextColor:FlatRedDark];
-	} else {
-		[self setCellColor:FlatBlackDark ForCell:cell TextColor:FlatWhite];
-	}
-}
-
-
-
--(void)setCellColor:(UIColor *)color ForCell:(UITableViewCell *)cell TextColor:(UIColor *)textColor {
-	cell.contentView.backgroundColor = color;
-	cell.backgroundColor = color;
-	cell.textLabel.textColor = textColor;
-	cell.textLabel.backgroundColor = [UIColor clearColor];
-	
-}
+//-(void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+//	//Add row color
+//	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+//	//cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+//	if (indexPath.row == 0) {
+//		[self setCellColor:FlatYellowDark ForCell:cell TextColor:FlatBlack];
+//	} else {
+//		[self setCellColor:[UIColor blackColor] ForCell:cell TextColor:FlatRedDark];
+//	}
+//
+//}
+//
+//-(void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+//	//Reset color
+//	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+//	//cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//	if (indexPath.row == 0) {
+//		[self setCellColor:FlatYellow ForCell:cell TextColor:FlatRedDark];
+//	} else {
+//		[self setCellColor:FlatBlackDark ForCell:cell TextColor:FlatWhite];
+//	}
+//}
+//
+//
+//
+//-(void)setCellColor:(UIColor *)color ForCell:(UITableViewCell *)cell TextColor:(UIColor *)textColor {
+//	cell.contentView.backgroundColor = color;
+//	cell.backgroundColor = color;
+//	cell.textLabel.textColor = textColor;
+//	cell.textLabel.backgroundColor = [UIColor clearColor];
+//
+//}
 
 #pragma mark - Acknowledgements
 

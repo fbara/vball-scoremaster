@@ -48,7 +48,7 @@ static UIImage* SECreateImageWithColor(UIColor* color, CGSize size) {
 - (instancetype)initWithFrame:(CGRect)frame {
 	self = [super initWithFrame:frame];
 	if (self) {
-		m_color = [UIColor whiteColor];
+      m_color = [UIColor colorNamed:@"backgroundColor"];
 		
 		self.clipsToBounds = YES;
 		UIImage* image = SECreateImageWithColor(m_color, CGSizeMake(1, 1));
@@ -273,7 +273,7 @@ typedef NS_OPTIONS(NSUInteger, SESlideIndicatorSideOption) {
 - (instancetype)init {
 	self = [super initWithFrame:CGRectMake(0, 0, INDICATOR_WIDTH, INDICATOR_HEIGHT)];
 	if (self) {
-		self.backgroundColor = [UIColor clearColor];
+      self.backgroundColor = [UIColor clearColor];
 		m_color = [UIColor colorWithWhite:210/255.0f alpha:1.0f];
 	}
 	return self;
