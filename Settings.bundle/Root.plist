@@ -50,33 +50,13 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Analytics to improve app</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Allow gathering analytics?</string>
-			<key>Key</key>
-			<string>analyticsChoice</string>
-			<key>DefaultValue</key>
-			<true/>
-			<key>TrueValue</key>
-			<string>Opt in</string>
-			<key>FalseValue</key>
-			<string>Opt out</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
 			<string>Version Information</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Version 4.0</string>
+			<string>Version 4.2</string>
 			<key>Key</key>
 			<string>versionInfo</string>
 			<key>DefaultValue</key>

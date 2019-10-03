@@ -228,7 +228,7 @@ static void * leftContext = &leftContext;
     // There are 4 home & 4 visitor past scores that need to be reset to '0'
     for (UILabel* score in self.pastScoreCollection) {
         score.text = @"0";
-        [score setFont:[UIFont systemFontOfSize:31 weight:UIFontWeightRegular]];
+        [score setFont:[UIFont systemFontOfSize:28 weight:UIFontWeightRegular]];
         // Need to check what color background is being used.
         if ([colorScheme isEqualToString:@"Dark"]) {
             // Dark background so change color to yellow
@@ -613,6 +613,7 @@ static void * leftContext = &leftContext;
     // TODO: Update for iPad
     // Grab the game number
     int lableNum = [self.gameNumber.text intValue];
+    UIFont *iPhoneFont = [UIFont systemFontOfSize:26];
     // Update the past scores, set the winner in red text
     // For a tie, both get plain black
     switch (lableNum) {
@@ -623,18 +624,18 @@ static void * leftContext = &leftContext;
             self.homeGame1.textColor = FlatRed;
             totalPastGamesHome = totalPastGamesHome + 1;
             if (IS_IPAD()) {
-                [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:30]];
+                [self.homeGame1 setFont:[UIFont systemFontOfSize:30]];
             } else {
-                [self.homeGame1 setFont:[UIFont boldSystemFontOfSize:31]];
+                [self.homeGame1 setFont:iPhoneFont];
             }
 
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame1.textColor = FlatRed;
             totalPastGamesVisitor = totalPastGamesVisitor + 1;
             if (IS_IPAD()) {
-                [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:30]];
+                [self.visitGame1 setFont:[UIFont systemFontOfSize:30]];
             } else {
-                [self.visitGame1 setFont:[UIFont boldSystemFontOfSize:31]];
+                [self.visitGame1 setFont:iPhoneFont];
             }
 
         } else {
@@ -649,17 +650,17 @@ static void * leftContext = &leftContext;
             self.homeGame2.textColor = FlatRed;
             totalPastGamesHome = totalPastGamesHome + 1;
             if (IS_IPAD()) {
-                [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:30]];
+                [self.homeGame2 setFont:[UIFont systemFontOfSize:30]];
             } else {
-                [self.homeGame2 setFont:[UIFont boldSystemFontOfSize:31]];
+                [self.homeGame2 setFont:iPhoneFont];
             }
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame2.textColor = FlatRed;
             totalPastGamesVisitor = totalPastGamesVisitor + 1;
             if (IS_IPAD()) {
-                [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:30]];
+                [self.visitGame2 setFont:[UIFont systemFontOfSize:30]];
             } else {
-                [self.visitGame2 setFont:[UIFont boldSystemFontOfSize:31]];
+                [self.visitGame2 setFont:iPhoneFont];
             }
 
         } else {
@@ -674,17 +675,17 @@ static void * leftContext = &leftContext;
             self.homeGame3.textColor = FlatRed;
             totalPastGamesHome = totalPastGamesHome + 1;
             if (IS_IPAD()) {
-                [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:30]];
+                [self.homeGame3 setFont:[UIFont systemFontOfSize:30]];
             } else {
-                [self.homeGame3 setFont:[UIFont boldSystemFontOfSize:31]];
+                [self.homeGame3 setFont:iPhoneFont];
             }
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame3.textColor = FlatRed;
             totalPastGamesVisitor = totalPastGamesVisitor + 1;
             if (IS_IPAD()) {
-                [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:30]];
+                [self.visitGame3 setFont:[UIFont systemFontOfSize:30]];
             } else {
-                [self.visitGame3 setFont:[UIFont boldSystemFontOfSize:31]];
+                [self.visitGame3 setFont:iPhoneFont];
             }
         } else {
             self.visitGame3.textColor = FlatGray;
@@ -698,17 +699,17 @@ static void * leftContext = &leftContext;
             self.homeGame4.textColor = FlatRed;
             totalPastGamesHome = totalPastGamesHome + 1;
             if (IS_IPAD()) {
-                [self.homeGame4 setFont:[UIFont boldSystemFontOfSize:30]];
+                [self.homeGame4 setFont:[UIFont systemFontOfSize:30]];
             } else {
-                [self.homeGame4 setFont:[UIFont boldSystemFontOfSize:31]];
+                [self.homeGame4 setFont:iPhoneFont];
             }
         } else if (currHomeScore < currVisitorScore) {
             self.visitGame4.textColor = FlatRed;
             totalPastGamesVisitor = totalPastGamesVisitor + 1;
             if (IS_IPAD()) {
-                [self.visitGame4 setFont:[UIFont boldSystemFontOfSize:30]];
+                [self.visitGame4 setFont:[UIFont systemFontOfSize:30]];
             } else {
-                [self.visitGame4 setFont:[UIFont boldSystemFontOfSize:31]];
+                [self.visitGame4 setFont:iPhoneFont];
             }
         } else {
             self.visitGame4.textColor = FlatGray;
