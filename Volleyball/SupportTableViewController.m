@@ -43,24 +43,19 @@ static NSString* const kiTunesID = @"886670213";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	switch (indexPath.row) {
-		case 0:
-			//Link to First Draw
-			//[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://geni.us/first"]];
-      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://geni.us/first"] options:@{} completionHandler:nil];
-			break;
-    case 1:
+    case 0:
         //BaraLabs website
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com"] options:@{} completionHandler:nil];
         break;
-		case 2:
+		case 1:
 			//Launch Twitter to @BaraLabs page
 				[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.twitter.com/baralabs"]];
 			break;
-    case 3:
+    case 2:
       //Privacy policy
 			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com/privacy-policy.html"]];
 			break;
-		case 4:
+		case 3:
 			//Show acknowledgements
 			[self showAcknowledgements];
 			break;
