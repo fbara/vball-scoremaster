@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AddressBookUI/AddressBookUI.h>
+// TODO: Replace with Contacts
+//#import <AddressBookUI/AddressBookUI.h>
+@import Contacts;
 #import "PhoneNumberFormatter.h"
 #import "ActionLabelTableViewController.h"
 @import StoreKit;

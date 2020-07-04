@@ -10,7 +10,6 @@
 #import "ActionLabelTableViewController.h"
 #import "SupportTableViewController.h"
 #import "VolleyBallViewController.h"
-//#import <ChameleonFramework/Chameleon.h>
 #import "Chameleon.h"
 
 #pragma clang diagnostic push
@@ -442,7 +441,6 @@
 
 #pragma mark - Color Switch
 
-// TODO: Update here for Dark Mode
 - (IBAction)colorSettings:(UISegmentedControl*)sender
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
@@ -547,6 +545,7 @@
 #pragma mark - People Picker Methods
 
 - (void)getPhoneNumber {
+    // TODO: Replace with Contacts
     CNContactPickerViewController *contactPicker = [[CNContactPickerViewController alloc] init];
     contactPicker.delegate = self;
     contactPicker.editing = false;
