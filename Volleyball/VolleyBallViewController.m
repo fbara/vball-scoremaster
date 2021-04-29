@@ -854,21 +854,20 @@ static void * leftContext = &leftContext;
 - (void)enableSocialButtons
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-     //TODO: Change for 3.8 - ADD
     [defaults setObject:@"Off" forKey:@"enableTwitter"];
     [defaults setObject:@"Off" forKey:@"enableFacebook"];
 
 }
 
-#pragma mark - 3D Touch
-
-- (BOOL)checkFor3DTouch {
-    BOOL is3DTouchAvail = NO;
-    if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)] && (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)) {
-        is3DTouchAvail = YES;
-    }
-    return is3DTouchAvail;
-}
+//#pragma mark - 3D Touch
+//
+//- (BOOL)checkFor3DTouch {
+//    BOOL is3DTouchAvail = NO;
+//    if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)] && (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)) {
+//        is3DTouchAvail = YES;
+//    }
+//    return is3DTouchAvail;
+//}
 
 - (void)setupDynamicShortcuts {
     UIApplicationShortcutItem *newMatch = [[UIApplicationShortcutItem alloc] initWithType:@"$(PRODUCT_BUNDLE_IDENTIFIER).NewMatch"
@@ -886,15 +885,16 @@ static void * leftContext = &leftContext;
     [UIApplication sharedApplication].shortcutItems = @[newMatch, newGame];
     
 }
+
 // TODO: Previewing Context Doesn't work inside StackView
-- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
-    //TODO: Showing menu in wrong location
-    //Check if we're not already displaying the view controller
-    if ([self.presentedViewController isKindOfClass:[ActionLabelTableViewController class]] ||
-        [self.presentedViewController isKindOfClass:[NotificationsTableViewController class]]) {
-        return nil;
-    }
-    // TODO: Fix Context Menu
+//- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+//    //TODO: Showing menu in wrong location
+//    //Check if we're not already displaying the view controller
+//    if ([self.presentedViewController isKindOfClass:[ActionLabelTableViewController class]] ||
+//        [self.presentedViewController isKindOfClass:[NotificationsTableViewController class]]) {
+//        return nil;
+//    }
+//    // TODO: Fix Context Menu
 //    int actionSide = 0;
 //    if (CGRectContainsPoint([self.rightActionLabel.layer frame], location)) {
 //        actionSide = 2;
@@ -909,7 +909,7 @@ static void * leftContext = &leftContext;
 //        [self logShortcutUsed:(NSString *)self.sendMessageImage.titleLabel];
 //        previewingContext.sourceRect = self.sendMessageImage.frame;
 //    }
-
+//
 //    if (actionSide > 0) {
 //        ActionLabelTableViewController *aVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ActionNames"];
 //        aVC.selectedActionRow = actionSide;
@@ -918,14 +918,14 @@ static void * leftContext = &leftContext;
 //        NotificationsTableViewController *notiVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Notifications"];
 //        return notiVC;
 //    }
+//
+//    return nil;
+//}
 
-    return nil;
-}
-
-- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
-    self.definesPresentationContext = TRUE;
-    [self.navigationController showViewController:viewControllerToCommit sender:self];
-}
+//- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+//    self.definesPresentationContext = TRUE;
+//    [self.navigationController showViewController:viewControllerToCommit sender:self];
+//}
 
 //- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
 //    [super traitCollectionDidChange:previousTraitCollection];

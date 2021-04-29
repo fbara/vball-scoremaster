@@ -545,7 +545,6 @@
 #pragma mark - People Picker Methods
 
 - (void)getPhoneNumber {
-    // TODO: Replace with Contacts
     CNContactPickerViewController *contactPicker = [[CNContactPickerViewController alloc] init];
     contactPicker.delegate = self;
     contactPicker.editing = false;

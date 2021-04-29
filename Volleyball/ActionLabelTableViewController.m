@@ -662,39 +662,39 @@
 
 
 
-- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
-    NSMutableArray *list = [[NSMutableArray alloc] init];
-    for (int i = 0; i < [self.actionNamesList count]; i++) {
-        NSString *name = self.actionNamesList[i];
-        UIPreviewAction *action = [UIPreviewAction actionWithTitle:name
-                                                             style:UIPreviewActionStyleDefault
-                                                           handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
-                                                               switch (self.selectedActionRow) {
-                                                                   case 1:
-                                                                       //Left side
-                                                                       [defaults setObject:name forKey:@"leftActionName"];
-                                                                       break;
-                                                                   case 2:
-                                                                       //Right side
-                                                                       [defaults setObject:name forKey:@"rightActionName"];
-                                                                       break;
-                                                                   default:
-                                                                       break;
-                                                               }
-                                                               [defaults setInteger:self.selectedActionRow forKey:@"updatedActionNumber"];
-                                                               dispatch_async(dispatch_get_main_queue(), ^{
-                                                                   [[NSNotificationCenter defaultCenter] postNotificationName:@"updateActionNames" object:self];
-                                                               });
-                                                           }];
-        [list addObject:action];
-        }
-
-    self.previewActions = [UIPreviewActionGroup actionGroupWithTitle:@"Group"
-                                                               style:UIPreviewActionStyleDefault
-                                                             actions:list];
-    
-    return list;
-}
+//- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
+//    NSMutableArray *list = [[NSMutableArray alloc] init];
+//    for (int i = 0; i < [self.actionNamesList count]; i++) {
+//        NSString *name = self.actionNamesList[i];
+//        UIPreviewAction *action = [UIPreviewAction actionWithTitle:name
+//                                                             style:UIPreviewActionStyleDefault
+//                                                           handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+//                                                               switch (self.selectedActionRow) {
+//                                                                   case 1:
+//                                                                       //Left side
+//                                                                       [defaults setObject:name forKey:@"leftActionName"];
+//                                                                       break;
+//                                                                   case 2:
+//                                                                       //Right side
+//                                                                       [defaults setObject:name forKey:@"rightActionName"];
+//                                                                       break;
+//                                                                   default:
+//                                                                       break;
+//                                                               }
+//                                                               [defaults setInteger:self.selectedActionRow forKey:@"updatedActionNumber"];
+//                                                               dispatch_async(dispatch_get_main_queue(), ^{
+//                                                                   [[NSNotificationCenter defaultCenter] postNotificationName:@"updateActionNames" object:self];
+//                                                               });
+//                                                           }];
+//        [list addObject:action];
+//        }
+//
+//    self.previewActions = [UIPreviewActionGroup actionGroupWithTitle:@"Group"
+//                                                               style:UIPreviewActionStyleDefault
+//                                                             actions:list];
+//    
+//    return list;
+//}
 
 #pragma mark - UITextView Delegate
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {

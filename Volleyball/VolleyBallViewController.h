@@ -10,8 +10,8 @@
 #import <MessageUI/MessageUI.h>
 @import QuartzCore;
 
-@interface VolleyBallViewController : UIViewController <UIPageViewControllerDataSource, UIAlertViewDelegate, UITextViewDelegate, MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, UIViewControllerPreviewingDelegate>
-
+@interface VolleyBallViewController : UIViewController <UIPageViewControllerDataSource, UIAlertViewDelegate, UITextViewDelegate, MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate>
+// 9/12/20: Removed  UIViewControllerPreviewingDelegate because it's deprecated
 
 @property UIColor* _Nullable homeColor;
 @property UIColor* visitorColor;

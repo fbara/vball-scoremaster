@@ -36,41 +36,41 @@
 
 #pragma mark - 3d Touch
 
-- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
-    NSArray *list = [[NSArray alloc] init];
-    UIPreviewAction *score = [UIPreviewAction actionWithTitle:@"Score"
-                                                          style:UIPreviewActionStyleDefault
-                                                        handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
-                                                            [self setOptions:@"Team" forKey:@"notificationsType" rowNumber:0];
-                                                        }];
-    UIPreviewAction *player = [UIPreviewAction actionWithTitle:@"Player"
-                                                          style:UIPreviewActionStyleDefault
-                                                        handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
-                                                            [self setOptions:@"Player" forKey:@"notificationsType" rowNumber:1];
-                                                        }];
-    UIPreviewAction *blank = [UIPreviewAction actionWithTitle:@"Blank"
-                                                          style:UIPreviewActionStyleDefault
-                                                        handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
-                                                            [self setOptions:@"Blank" forKey:@"notificationsType" rowNumber:2];
-                                                        }];
-    UIPreviewAction *NotifOn = [UIPreviewAction actionWithTitle:@"Notfication On"
-                                                          style:UIPreviewActionStyleDefault
-                                                        handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
-                                                            [self setOptions:@"On" forKey:@"enableNotifications" rowNumber:3];
-                                                        }];
-    UIPreviewAction *NotifOff = [UIPreviewAction actionWithTitle:@"Notfication Off"
-                                                           style:UIPreviewActionStyleDefault
-                                                         handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
-                                                             [self setOptions:@"Off" forKey:@"enableNotifications" rowNumber:4];
-                                                             
-                                                         }];
-    list = @[score,player,blank,NotifOn,NotifOff];
-    self.previewActions = [UIPreviewActionGroup actionGroupWithTitle:@"Notifications"
-                                                                   style:UIPreviewActionStyleDefault
-                                                                 actions:list];
-    return list;
-
-}
+//- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
+//    NSArray *list = [[NSArray alloc] init];
+//    UIPreviewAction *score = [UIPreviewAction actionWithTitle:@"Score"
+//                                                          style:UIPreviewActionStyleDefault
+//                                                        handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+//                                                            [self setOptions:@"Team" forKey:@"notificationsType" rowNumber:0];
+//                                                        }];
+//    UIPreviewAction *player = [UIPreviewAction actionWithTitle:@"Player"
+//                                                          style:UIPreviewActionStyleDefault
+//                                                        handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+//                                                            [self setOptions:@"Player" forKey:@"notificationsType" rowNumber:1];
+//                                                        }];
+//    UIPreviewAction *blank = [UIPreviewAction actionWithTitle:@"Blank"
+//                                                          style:UIPreviewActionStyleDefault
+//                                                        handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+//                                                            [self setOptions:@"Blank" forKey:@"notificationsType" rowNumber:2];
+//                                                        }];
+//    UIPreviewAction *NotifOn = [UIPreviewAction actionWithTitle:@"Notfication On"
+//                                                          style:UIPreviewActionStyleDefault
+//                                                        handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+//                                                            [self setOptions:@"On" forKey:@"enableNotifications" rowNumber:3];
+//                                                        }];
+//    UIPreviewAction *NotifOff = [UIPreviewAction actionWithTitle:@"Notfication Off"
+//                                                           style:UIPreviewActionStyleDefault
+//                                                         handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+//                                                             [self setOptions:@"Off" forKey:@"enableNotifications" rowNumber:4];
+//                                                             
+//                                                         }];
+//    list = @[score,player,blank,NotifOn,NotifOff];
+//    self.previewActions = [UIPreviewActionGroup actionGroupWithTitle:@"Notifications"
+//                                                                   style:UIPreviewActionStyleDefault
+//                                                                 actions:list];
+//    return list;
+//
+//}
 
 - (void)setOptions:(NSString *)object forKey:(NSString *)key rowNumber:(int)row {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
