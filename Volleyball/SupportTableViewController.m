@@ -45,7 +45,7 @@ static NSString* const kiTunesID = @"886670213";
 	switch (indexPath.row) {
     case 0:
         //BaraLabs website
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com"] options:@{} completionHandler:nil];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://baralabs.github.io/vballscoremaster/"] options:@{} completionHandler:nil];
         break;
 		case 1:
 			//Launch Twitter to @BaraLabs page
@@ -53,7 +53,7 @@ static NSString* const kiTunesID = @"886670213";
 			break;
     case 2:
       //Privacy policy
-			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://baralabs.com/privacy-policy.html"]];
+			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://baralabs.github.io/vballscoremaster/privacypolicy/"]];
 			break;
 		case 3:
 			//Show acknowledgements
