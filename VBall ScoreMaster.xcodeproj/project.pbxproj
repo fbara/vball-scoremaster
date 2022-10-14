@@ -37,8 +37,6 @@
 		AD1C816E195C43A30028179B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1C816C195C43A30028179B /* SettingsTableViewController.m */; };
 		AD4B54C0199A40D500770580 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B54BF199A40D500770580 /* Social.framework */; };
 		AD6657E61CABFD9200F5ABF0 /* NotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6657E51CABFD9200F5ABF0 /* NotificationsTableViewController.m */; };
-		AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7E1969F7BC00CEFAF4 /* AddressBook.framework */; };
-		AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD746E7F1969F7BC00CEFAF4 /* AddressBookUI.framework */; };
 		AD7DCC8319BCBE9A0078EB53 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7DCC8219BCBE9A0078EB53 /* StoreKit.framework */; };
 		AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F3198EFBD200C03C2E /* CoreData.framework */; };
 		AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD80C7F5198EFBF300C03C2E /* SystemConfiguration.framework */; };
@@ -168,8 +166,6 @@
 				AD80C7F8198EFC0800C03C2E /* libz.dylib in Frameworks */,
 				AD80C7F6198EFBF300C03C2E /* SystemConfiguration.framework in Frameworks */,
 				AD80C7F4198EFBD200C03C2E /* CoreData.framework in Frameworks */,
-				AD746E801969F7BC00CEFAF4 /* AddressBook.framework in Frameworks */,
-				AD746E811969F7BC00CEFAF4 /* AddressBookUI.framework in Frameworks */,
 				92D31900193E7C0B00F5A942 /* QuartzCore.framework in Frameworks */,
 				92447969192AD7A10031C1F6 /* MessageUI.framework in Frameworks */,
 				92AA42A51916C2800037D405 /* CoreGraphics.framework in Frameworks */,
@@ -444,7 +440,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = VolleyBall;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "BaraLabs, LLC";
 				TargetAttributes = {
 					92AA429E1916C2800037D405 = {
@@ -787,6 +783,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -814,7 +811,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wno-nullability-completeness";
 				OTHER_LDFLAGS = "-ObjC";
@@ -847,6 +844,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -867,7 +865,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				OTHER_CFLAGS = "-Wno-nullability-completeness";
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "E7C5FC76-EC0E-474B-9C0B-507BD95751B5";
@@ -897,7 +895,8 @@
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
@@ -935,7 +934,8 @@
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",
@@ -1025,6 +1025,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1045,7 +1046,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wno-nullability-completeness";
 				OTHER_LDFLAGS = "-ObjC";
@@ -1076,7 +1077,8 @@
 				GCC_PREFIX_HEADER = "Volleyball/Volleyball-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Volleyball/Volleyball-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Volleyball",

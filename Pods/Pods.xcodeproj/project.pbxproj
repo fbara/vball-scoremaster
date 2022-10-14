@@ -252,13 +252,13 @@
 
 /* Begin PBXFileReference section */
 		012225FAE0C89477FBB170EB25ADFE78 /* ResourceBundle-BTBalloon-BTBalloon-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-BTBalloon-BTBalloon-Info.plist"; sourceTree = "<group>"; };
-		0383903D05EDD5C442C682C1F7A1752D /* libChameleonFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libChameleonFramework.a; path = libChameleonFramework.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0383903D05EDD5C442C682C1F7A1752D /* libChameleonFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libChameleonFramework.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0527A8F8147B2EAC519E0B2BA75E3957 /* NotificationBackgroundSuccessIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundSuccessIcon@2x.png"; path = "Pod/Assets/NotificationBackgroundSuccessIcon@2x.png"; sourceTree = "<group>"; };
 		0576A01CED9B04E8611DFFB249B154E4 /* UIButton+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Chameleon.m"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.m"; sourceTree = "<group>"; };
 		08093F93D1D2B75750862C93F77C5411 /* VWWPermissionNotifications.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWPermissionNotifications.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionNotifications.h; sourceTree = "<group>"; };
 		095FA48805E714F946F2B55241ECB373 /* BTBalloon-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTBalloon-prefix.pch"; sourceTree = "<group>"; };
 		0A65C0201838DF0BE882ECE093CBFDB1 /* arrow-right.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrow-right.png"; path = "MPCoachMarks/arrows/arrow-right.png"; sourceTree = "<group>"; };
-		0ADDCF90AE05532090BEC180BAFEB764 /* libDeviceUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libDeviceUtil.a; path = libDeviceUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ADDCF90AE05532090BEC180BAFEB764 /* libDeviceUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDeviceUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE172E0328C6C3CEE7192B3F38F7106 /* NotificationBackgroundSuccess@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundSuccess@2x.png"; path = "Pod/Assets/NotificationBackgroundSuccess@2x.png"; sourceTree = "<group>"; };
 		0C1E4E89BAFDA5E8EFEEE6AD88A5CB7C /* Pods-VBall ScoreMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VBall ScoreMaster.release.xcconfig"; sourceTree = "<group>"; };
 		0E6BE82C070C56197B6B600C99194D39 /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 		12BCBEBF2F4D0FEDCB38930E0C6609D2 /* VWWCoreBluetoothPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWCoreBluetoothPermission.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWCoreBluetoothPermission.h; sourceTree = "<group>"; };
 		164E216DA25359FAA6672DF8D0DD6A33 /* VWWMicrophonePermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWMicrophonePermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWMicrophonePermission.m; sourceTree = "<group>"; };
 		16B09AEB9962F185E26D0BAE5229C33E /* arrow-left@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrow-left@3x.png"; path = "MPCoachMarks/arrows/arrow-left@3x.png"; sourceTree = "<group>"; };
-		1722CACE637CD7F4DFD8E7575D626000 /* TSMessagesDefaultDesign.json */ = {isa = PBXFileReference; includeInIndex = 1; name = TSMessagesDefaultDesign.json; path = Pod/Assets/TSMessagesDefaultDesign.json; sourceTree = "<group>"; };
+		1722CACE637CD7F4DFD8E7575D626000 /* TSMessagesDefaultDesign.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = TSMessagesDefaultDesign.json; path = Pod/Assets/TSMessagesDefaultDesign.json; sourceTree = "<group>"; };
 		174B7EC6F3BEE8DF058B9D57DE8840E5 /* UIColor+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.m"; sourceTree = "<group>"; };
 		17D13E0D2DACE4B70831496D41058A23 /* VWWPermissionsManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWPermissionsManager.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionsManager.h; sourceTree = "<group>"; };
 		183086CF12F155CB7B9E2AA88D12A0CF /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
@@ -309,12 +309,12 @@
 		39D535C498EFA94D285D2FABDC58DE5D /* TSMessages.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSMessages.xcconfig; sourceTree = "<group>"; };
 		3C68D173AFAA86D8E0CA138D406B1D01 /* MPCoachMarks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPCoachMarks.h; path = MPCoachMarks/MPCoachMarks.h; sourceTree = "<group>"; };
 		3F1B558B72D26D8CDC3B326C90C70BFA /* NotificationBackgroundMessage@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundMessage@2x.png"; path = "Pod/Assets/NotificationBackgroundMessage@2x.png"; sourceTree = "<group>"; };
-		40FE091DE0D85A50606D4CDE191D2671 /* libGBVersionTracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGBVersionTracking.a; path = libGBVersionTracking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		40FE091DE0D85A50606D4CDE191D2671 /* libGBVersionTracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGBVersionTracking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		418655C820B026FA4A12F2D8A141D0DB /* arrow-top@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrow-top@3x.png"; path = "MPCoachMarks/arrows/arrow-top@3x.png"; sourceTree = "<group>"; };
 		4552CE5EEDDC717618E1E430EAEB79F5 /* UINavigationController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Chameleon.h"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.h"; sourceTree = "<group>"; };
 		45CECE7DB162A983EE6F03EF9F3C74A7 /* BTBalloon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTBalloon.h; path = Pod/Classes/BTBalloon.h; sourceTree = "<group>"; };
 		469670916D1440AC195F552003718D30 /* VWWPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWPermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermission.m; sourceTree = "<group>"; };
-		47A28A6BF0DB3CD9885FC89FB63624E1 /* BTBalloon.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BTBalloon.bundle; path = "BTBalloon-BTBalloon.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47A28A6BF0DB3CD9885FC89FB63624E1 /* BTBalloon.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTBalloon.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C46AC2FAB5C654B370B5EA6A015354 /* TSBlurView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TSBlurView.m; path = Pod/Classes/TSBlurView.m; sourceTree = "<group>"; };
 		4A32D39650BC3D5E52E381A3D148EC18 /* HexColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HexColors.xcconfig; sourceTree = "<group>"; };
 		4B2629CFA22E8B2CCF2DB349D7F4810D /* arrow-top-left.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrow-top-left.png"; path = "MPCoachMarks/arrows/arrow-top-left.png"; sourceTree = "<group>"; };
@@ -333,9 +333,9 @@
 		5C159E1FF1A6C36BAF702665BB5A35FA /* NotificationButtonBackground.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationButtonBackground.png; path = Pod/Assets/NotificationButtonBackground.png; sourceTree = "<group>"; };
 		5C2C5CF1B9DD6334DB497AC7EFB76317 /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.h"; sourceTree = "<group>"; };
 		5C4CB087EE9688677E223C533409ECF1 /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
-		5C7B8DC91FBBB772D443340567177F64 /* libMPCoachMarks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMPCoachMarks.a; path = libMPCoachMarks.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C7B8DC91FBBB772D443340567177F64 /* libMPCoachMarks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMPCoachMarks.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5BC6E9E4B821F7AD04BB1E9056AA07 /* NotificationButtonBackground@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationButtonBackground@2x.png"; path = "Pod/Assets/NotificationButtonBackground@2x.png"; sourceTree = "<group>"; };
-		5DAC6A810C8CF6C1BE00B0DB8776ABCD /* libVTAcknowledgementsViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libVTAcknowledgementsViewController.a; path = libVTAcknowledgementsViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DAC6A810C8CF6C1BE00B0DB8776ABCD /* libVTAcknowledgementsViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVTAcknowledgementsViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E67D3A73AE9F098D3FB4D5204961EE3 /* arrow-top.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrow-top.png"; path = "MPCoachMarks/arrows/arrow-top.png"; sourceTree = "<group>"; };
 		5F4EBC57B04AB78557D91406EAF5C695 /* HexColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HexColor.m; path = Classes/HexColor.m; sourceTree = "<group>"; };
 		6046F7BA9060434B8A592FB01589C04F /* ChameleonConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChameleonConstants.m; path = "Pod/Classes/Objective-C/ChameleonConstants.m"; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 		66FADE2DDC9FFDFC06BC386A21620443 /* NotificationBackgroundSuccess.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundSuccess.png; path = Pod/Assets/NotificationBackgroundSuccess.png; sourceTree = "<group>"; };
 		69433D494D753907C4D89E62E895AA82 /* VWWPermissionsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWPermissionsViewController.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionsViewController.h; sourceTree = "<group>"; };
 		6A00C4049F43D50D3D1C79C722B901B2 /* Pods-VBall ScoreMaster-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VBall ScoreMaster-resources.sh"; sourceTree = "<group>"; };
-		6A24C96EA9167F0E69C9CE04FF6D3383 /* libPods-VBall ScoreMaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-VBall ScoreMaster.a"; path = "libPods-VBall ScoreMaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A24C96EA9167F0E69C9CE04FF6D3383 /* libPods-VBall ScoreMaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VBall ScoreMaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC2852793542AE03F2FA7408A670FDB /* VTAcknowledgementsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VTAcknowledgementsViewController.m; path = Classes/VTAcknowledgementsViewController.m; sourceTree = "<group>"; };
 		6CBD380323E2104CB032C3E4EB2E8696 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		6D6CB9F4B4FF88393EEDE018474B3A4E /* arrow-top-left@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrow-top-left@3x.png"; path = "MPCoachMarks/arrows/arrow-top-left@3x.png"; sourceTree = "<group>"; };
@@ -355,7 +355,7 @@
 		7155EFEEBCDD3B55A9CB53788FA590BC /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
 		7211D7829C9F964C55C2243BF0C2AD0E /* UIView+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.h"; sourceTree = "<group>"; };
 		7229171A915DE82EE6E1CE06024DBAE9 /* VWWRemindersPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWRemindersPermission.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWRemindersPermission.h; sourceTree = "<group>"; };
-		7350B247CE345D198416FCCE17761066 /* libHexColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHexColors.a; path = libHexColors.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7350B247CE345D198416FCCE17761066 /* libHexColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHexColors.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7385CA24A7F1508416CFD321B220E5FE /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
 		7428CCF06D433765812115BF43C796F7 /* MPCoachMarks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPCoachMarks.m; path = MPCoachMarks/MPCoachMarks.m; sourceTree = "<group>"; };
 		743858EF528B806687D63523DDA1FBB8 /* VTAcknowledgementViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VTAcknowledgementViewController.h; path = Classes/VTAcknowledgementViewController.h; sourceTree = "<group>"; };
@@ -381,32 +381,32 @@
 		880BE4C18AAE24902424C1EAF9EF6B3E /* NotificationBackgroundError.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundError.png; path = Pod/Assets/NotificationBackgroundError.png; sourceTree = "<group>"; };
 		899D07714E59519DF1C87D1AA58D89B7 /* TSBlurView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSBlurView.h; path = Pod/Classes/TSBlurView.h; sourceTree = "<group>"; };
 		8AED867357BE1EDA089D07E15AFA2C0D /* ChameleonFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChameleonFramework-dummy.m"; sourceTree = "<group>"; };
-		8B8FAB0D627B17EDE1366984278705D9 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMBProgressHUD.a; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BB8A15DAC880F26E1CA25CB3F676BF9 /* libSESlideTableViewCell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSESlideTableViewCell.a; path = libSESlideTableViewCell.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B8FAB0D627B17EDE1366984278705D9 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BB8A15DAC880F26E1CA25CB3F676BF9 /* libSESlideTableViewCell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSESlideTableViewCell.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8B6837FD8F843BC4A64FC97E1D997B /* VWWCoreLocationWhenInUsePermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWCoreLocationWhenInUsePermission.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWCoreLocationWhenInUsePermission.h; sourceTree = "<group>"; };
 		8D968F3FA37D677D8B68DF38D21F9C4E /* VWWPermissionTitleTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWPermissionTitleTableViewCell.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionTitleTableViewCell.h; sourceTree = "<group>"; };
 		8E1259D9628EEFA2FDF389EEB530C1C7 /* VWWRemindersPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWRemindersPermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWRemindersPermission.m; sourceTree = "<group>"; };
 		8EBFD062D8D9821B074D5717C0C62018 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
 		8FBD7AA0343A26A31D1E8C4ED4975B64 /* DeviceUtil-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DeviceUtil-dummy.m"; sourceTree = "<group>"; };
 		8FFA943B6D053A7F025C03A3B9057D3D /* VTAcknowledgementsViewController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = VTAcknowledgementsViewController.bundle; sourceTree = "<group>"; };
-		91D2AA976CE55157B3E280FC5C9D5394 /* libVWWPermissionKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libVWWPermissionKit.a; path = libVWWPermissionKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		91D2AA976CE55157B3E280FC5C9D5394 /* libVWWPermissionKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVWWPermissionKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9865007D0B900776A8D24AFCBF71A3F2 /* VWWCoreLocationWhenInUsePermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWCoreLocationWhenInUsePermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWCoreLocationWhenInUsePermission.m; sourceTree = "<group>"; };
 		98FE32B0A8359B6D5A76338F72D7A811 /* NotificationBackgroundErrorIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundErrorIcon@2x.png"; path = "Pod/Assets/NotificationBackgroundErrorIcon@2x.png"; sourceTree = "<group>"; };
 		99FBBD19AC952274E3933F4F9C13B636 /* UIAppearance+Swift.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAppearance+Swift.m"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.m"; sourceTree = "<group>"; };
 		9B356E33C316E330EF2DA517F1456739 /* VWWCoreLocationAlwaysPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWCoreLocationAlwaysPermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWCoreLocationAlwaysPermission.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E7415A47B4355C7037E4B771A879FA4 /* arrow-top@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrow-top@2x.png"; path = "MPCoachMarks/arrows/arrow-top@2x.png"; sourceTree = "<group>"; };
 		9FAEDEDB9CC56705D55F85733FEF09CE /* TSMessageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSMessageView.h; path = Pod/Classes/TSMessageView.h; sourceTree = "<group>"; };
 		A0EEF472E13B9AFD60AFD3F52EE9A283 /* VWWPermissionsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWPermissionsViewController.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionsViewController.m; sourceTree = "<group>"; };
 		A1F49B55C523F14DA116B7860BBC47A0 /* ChameleonEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonEnums.h; path = "Pod/Classes/Objective-C/ChameleonEnums.h"; sourceTree = "<group>"; };
 		A4D07045D5EFE2135EC43807E1B341FE /* SESlideTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SESlideTableViewCell.h; path = SESlideTableViewCell/lib/SESlideTableViewCell.h; sourceTree = "<group>"; };
 		A7DD626F97232FE935C6D989E543DD84 /* arrow-down.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrow-down.png"; path = "MPCoachMarks/arrows/arrow-down.png"; sourceTree = "<group>"; };
-		A8C24AC5FBAF3FEA58B71B832040DB7A /* libTSMessages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libTSMessages.a; path = libTSMessages.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A95ED6D6C677E4CC95679D0AA30912FB /* libBTBalloon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libBTBalloon.a; path = libBTBalloon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8C24AC5FBAF3FEA58B71B832040DB7A /* libTSMessages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTSMessages.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A95ED6D6C677E4CC95679D0AA30912FB /* libBTBalloon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBTBalloon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD07AD6B0C1C2E73B2F5DC9184E89A8 /* GBVersionTracking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GBVersionTracking.xcconfig; sourceTree = "<group>"; };
 		AFCFD57F808BAE528E242742C5FE1254 /* UIColor+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Chameleon.h"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.h"; sourceTree = "<group>"; };
 		B1D1C85EA920F637A4385887609EA9E4 /* VWWCalendarsPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VWWCalendarsPermission.m; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWCalendarsPermission.m; sourceTree = "<group>"; };
-		B276D205273C817768FDB6B6B109FF3B /* libUIDeviceIdentifier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libUIDeviceIdentifier.a; path = libUIDeviceIdentifier.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B276D205273C817768FDB6B6B109FF3B /* libUIDeviceIdentifier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUIDeviceIdentifier.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5584D048B7F33DD9594B8A6560459A5 /* TSMessages-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSMessages-dummy.m"; sourceTree = "<group>"; };
 		B562E9CC4DFFA7E25513513E69291D54 /* VWWPermissionsViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = VWWPermissionsViewController.xib; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWPermissionsViewController.xib; sourceTree = "<group>"; };
 		B7C1EA85DB1BB354DB1E2E04DA0C7921 /* DeviceUtil.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DeviceUtil.xcconfig; sourceTree = "<group>"; };
@@ -438,12 +438,12 @@
 		D91C662A6B2699FEB267E1B75BD9424E /* UIAppearance+Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAppearance+Swift.h"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.h"; sourceTree = "<group>"; };
 		DA98F0A5445625B9AA3C420D31F543EF /* UIDeviceIdentifier-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIDeviceIdentifier-prefix.pch"; sourceTree = "<group>"; };
 		DC5ED60A8806AFD8B81E80A1D09F6960 /* UINavigationController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Chameleon.m"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.m"; sourceTree = "<group>"; };
-		DD13607C343B5CCF5F7D883679A05DA0 /* DeviceUtil.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = DeviceUtil.bundle; path = "DeviceUtil-DeviceUtil.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD13607C343B5CCF5F7D883679A05DA0 /* DeviceUtil.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviceUtil.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBF9DAB31F9FED183D22FD2C1104C20 /* Pods-VBall ScoreMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VBall ScoreMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		DF347DBF55F628366E4F4A071E7ED237 /* VWWCoreMotionPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VWWCoreMotionPermission.h; path = VWWPermissionKit/VWWPermissionKit/VWWPermissionManager/VWWCoreMotionPermission.h; sourceTree = "<group>"; };
 		E2CA1BFBF77C20AB2FF000EF41B7E963 /* HexColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HexColor.h; path = Classes/HexColor.h; sourceTree = "<group>"; };
 		E3DD14EF8088D60E97CCDECEC5B7CDA0 /* NotificationBackgroundWarning@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundWarning@2x.png"; path = "Pod/Assets/NotificationBackgroundWarning@2x.png"; sourceTree = "<group>"; };
-		E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* libPureLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPureLayout.a; path = libPureLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* libPureLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPureLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF4545E29E958DE65E1E2DCCE456CD1 /* TSMessageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TSMessageView.m; path = Pod/Classes/TSMessageView.m; sourceTree = "<group>"; };
 		F0E64E5AB6AF9DD0C0B32E9DA402B38E /* UIDeviceHardware.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIDeviceHardware.m; path = UIDeviceIdentifier/UIDeviceHardware.m; sourceTree = "<group>"; };
 		F0FD49AA6FD12DBCE35C1DE4F993CFE9 /* TSMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TSMessage.m; path = Pod/Classes/TSMessage.m; sourceTree = "<group>"; };
@@ -583,7 +583,6 @@
 				FA721BC57659AD18AA14CCC1996B937E /* Resources */,
 				E9799177609FF8DFAC210A8E207E66BC /* Support Files */,
 			);
-			name = DeviceUtil;
 			path = DeviceUtil;
 			sourceTree = "<group>";
 		};
@@ -610,7 +609,6 @@
 				345211F8F276BF202504A588BBF1FC71 /* Resources */,
 				E8BE8A7029E0778529E69367EBFCAA07 /* Support Files */,
 			);
-			name = MPCoachMarks;
 			path = MPCoachMarks;
 			sourceTree = "<group>";
 		};
@@ -648,7 +646,6 @@
 				83C7D70FF25A9D6AAF8E5A145A6FE022 /* Resources */,
 				3F96CECDEE90504E3BF068050A6F318B /* Support Files */,
 			);
-			name = VTAcknowledgementsViewController;
 			path = VTAcknowledgementsViewController;
 			sourceTree = "<group>";
 		};
@@ -664,7 +661,6 @@
 				AEDEFAF2C2A7545A5BD5196098032189 /* Resources */,
 				BCCDD96F0392EC461D0562971554E9CF /* Support Files */,
 			);
-			name = TSMessages;
 			path = TSMessages;
 			sourceTree = "<group>";
 		};
@@ -719,7 +715,6 @@
 				F0E64E5AB6AF9DD0C0B32E9DA402B38E /* UIDeviceHardware.m */,
 				F8465A22622D9409C85F5ECC6C1B8308 /* Support Files */,
 			);
-			name = UIDeviceIdentifier;
 			path = UIDeviceIdentifier;
 			sourceTree = "<group>";
 		};
@@ -761,7 +756,6 @@
 				714192525145532242AFB1F2E8163CDD /* BTBalloonArrow.m */,
 				D1DB37DE69A7DB22EB376D907E811FCB /* Support Files */,
 			);
-			name = BTBalloon;
 			path = BTBalloon;
 			sourceTree = "<group>";
 		};
@@ -815,7 +809,6 @@
 				587503D88444F093F51768EDDD08262B /* Resources */,
 				4EA7A7457CDFD7E3A7D1461EA4CCF5A0 /* Support Files */,
 			);
-			name = VWWPermissionKit;
 			path = VWWPermissionKit;
 			sourceTree = "<group>";
 		};
@@ -849,7 +842,6 @@
 				5F4EBC57B04AB78557D91406EAF5C695 /* HexColor.m */,
 				B20891D63C5A8C8530729BCBBD8EC1F1 /* Support Files */,
 			);
-			name = HexColors;
 			path = HexColors;
 			sourceTree = "<group>";
 		};
@@ -884,7 +876,6 @@
 				C549C03336B5628A03E3512F8C155116 /* MBProgressHUD.m */,
 				CD1C76CE77A54461433B700105CDCB68 /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1021,7 +1012,6 @@
 				7385CA24A7F1508416CFD321B220E5FE /* PureLayoutDefines.h */,
 				E930209477C572F994C305720B129653 /* Support Files */,
 			);
-			name = PureLayout;
 			path = PureLayout;
 			sourceTree = "<group>";
 		};
@@ -1066,7 +1056,6 @@
 				56A60F1CCBC5718D510751413210768B /* SESlideTableViewCell.m */,
 				7877A0AA32E6AA9BD53E522407E3E7E5 /* Support Files */,
 			);
-			name = SESlideTableViewCell;
 			path = SESlideTableViewCell;
 			sourceTree = "<group>";
 		};
@@ -1077,7 +1066,6 @@
 				BE47252928F303F371D8389751CD4E18 /* GBVersionTracking.m */,
 				E894C8433281F00A82F3922AC5A8E63D /* Support Files */,
 			);
-			name = GBVersionTracking;
 			path = GBVersionTracking;
 			sourceTree = "<group>";
 		};
@@ -1087,7 +1075,6 @@
 				EBE55AF190FE7201F364F17D01464DCD /* Default */,
 				B68CD53C99E86370194C14C9B3C9306A /* Support Files */,
 			);
-			name = ChameleonFramework;
 			path = ChameleonFramework;
 			sourceTree = "<group>";
 		};
@@ -1566,7 +1553,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1905,13 +1892,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AAD07AD6B0C1C2E73B2F5DC9184E89A8 /* GBVersionTracking.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/GBVersionTracking/GBVersionTracking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1929,13 +1915,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39D535C498EFA94D285D2FABDC58DE5D /* TSMessages.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/TSMessages/TSMessages-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1954,13 +1939,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 758639F9622E239987C823ABAB1F6703 /* BTBalloon.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/BTBalloon/BTBalloon-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1978,13 +1962,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 768A6AC091BD5A91920FCEA3A8A0558B /* MBProgressHUD.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2002,13 +1985,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39D535C498EFA94D285D2FABDC58DE5D /* TSMessages.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/TSMessages/TSMessages-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2030,7 +2012,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DeviceUtil";
 				INFOPLIST_FILE = "Target Support Files/DeviceUtil/ResourceBundle-DeviceUtil-DeviceUtil-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = DeviceUtil;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2065,6 +2047,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2092,8 +2075,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -2103,13 +2085,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4A32D39650BC3D5E52E381A3D148EC18 /* HexColors.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/HexColors/HexColors-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2127,13 +2108,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF6EDBC0C5ADCB1BE9BAC6E3E5A18A3E /* SESlideTableViewCell.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/SESlideTableViewCell/SESlideTableViewCell-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2151,13 +2131,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AAD07AD6B0C1C2E73B2F5DC9184E89A8 /* GBVersionTracking.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/GBVersionTracking/GBVersionTracking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2176,14 +2155,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 640F19A8B16AA508AAFD6170EA4E3F47 /* UIDeviceIdentifier.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/UIDeviceIdentifier/UIDeviceIdentifier-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2201,13 +2179,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AAD07AD6B0C1C2E73B2F5DC9184E89A8 /* GBVersionTracking.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/GBVersionTracking/GBVersionTracking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2229,7 +2206,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BTBalloon";
 				INFOPLIST_FILE = "Target Support Files/BTBalloon/ResourceBundle-BTBalloon-BTBalloon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = BTBalloon;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2242,13 +2219,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D40F203E3AB4BF56B4AB4175F5FB2EF2 /* VWWPermissionKit.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/VWWPermissionKit/VWWPermissionKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2267,14 +2243,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7B3D906F092B38233214752327B738C9 /* MPCoachMarks.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MPCoachMarks/MPCoachMarks-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2293,13 +2268,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B7C1EA85DB1BB354DB1E2E04DA0C7921 /* DeviceUtil.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/DeviceUtil/DeviceUtil-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2317,13 +2291,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FFE99B471EB0A1B24BE766819C936BD3 /* VTAcknowledgementsViewController.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/VTAcknowledgementsViewController/VTAcknowledgementsViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2344,7 +2317,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DeviceUtil";
 				INFOPLIST_FILE = "Target Support Files/DeviceUtil/ResourceBundle-DeviceUtil-DeviceUtil-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = DeviceUtil;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2357,14 +2330,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 640F19A8B16AA508AAFD6170EA4E3F47 /* UIDeviceIdentifier.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/UIDeviceIdentifier/UIDeviceIdentifier-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2383,13 +2355,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4A32D39650BC3D5E52E381A3D148EC18 /* HexColors.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/HexColors/HexColors-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2408,13 +2379,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7624E22FE513FFABECF1C01463CB085F /* ChameleonFramework.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/ChameleonFramework/ChameleonFramework-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2432,13 +2402,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38E8354E84F891E26C1C5C6361380356 /* PureLayout.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2457,13 +2426,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7624E22FE513FFABECF1C01463CB085F /* ChameleonFramework.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/ChameleonFramework/ChameleonFramework-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2482,13 +2450,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38E8354E84F891E26C1C5C6361380356 /* PureLayout.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2528,6 +2495,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2555,8 +2523,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -2566,13 +2533,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D40F203E3AB4BF56B4AB4175F5FB2EF2 /* VWWPermissionKit.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/VWWPermissionKit/VWWPermissionKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2590,13 +2556,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B7C1EA85DB1BB354DB1E2E04DA0C7921 /* DeviceUtil.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/DeviceUtil/DeviceUtil-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2615,13 +2580,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF6EDBC0C5ADCB1BE9BAC6E3E5A18A3E /* SESlideTableViewCell.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/SESlideTableViewCell/SESlideTableViewCell-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2640,14 +2604,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7B3D906F092B38233214752327B738C9 /* MPCoachMarks.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MPCoachMarks/MPCoachMarks-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2665,13 +2628,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 758639F9622E239987C823ABAB1F6703 /* BTBalloon.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/BTBalloon/BTBalloon-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2690,13 +2652,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 768A6AC091BD5A91920FCEA3A8A0558B /* MBProgressHUD.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2715,14 +2676,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 640F19A8B16AA508AAFD6170EA4E3F47 /* UIDeviceIdentifier.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/UIDeviceIdentifier/UIDeviceIdentifier-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2741,13 +2701,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF6EDBC0C5ADCB1BE9BAC6E3E5A18A3E /* SESlideTableViewCell.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/SESlideTableViewCell/SESlideTableViewCell-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2767,7 +2726,6 @@
 			baseConfigurationReference = DDBF9DAB31F9FED183D22FD2C1104C20 /* Pods-VBall ScoreMaster.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2790,7 +2748,6 @@
 			baseConfigurationReference = 332C39E9D3B35923C472A208EA3F066C /* Pods-VBall ScoreMaster.distribution.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2817,7 +2774,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BTBalloon";
 				INFOPLIST_FILE = "Target Support Files/BTBalloon/ResourceBundle-BTBalloon-BTBalloon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = BTBalloon;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2831,13 +2788,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4A32D39650BC3D5E52E381A3D148EC18 /* HexColors.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/HexColors/HexColors-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2859,7 +2815,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BTBalloon";
 				INFOPLIST_FILE = "Target Support Files/BTBalloon/ResourceBundle-BTBalloon-BTBalloon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = BTBalloon;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2872,13 +2828,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 758639F9622E239987C823ABAB1F6703 /* BTBalloon.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/BTBalloon/BTBalloon-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2897,13 +2852,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D40F203E3AB4BF56B4AB4175F5FB2EF2 /* VWWPermissionKit.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/VWWPermissionKit/VWWPermissionKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2922,13 +2876,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FFE99B471EB0A1B24BE766819C936BD3 /* VTAcknowledgementsViewController.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/VTAcknowledgementsViewController/VTAcknowledgementsViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2948,7 +2901,6 @@
 			baseConfigurationReference = 0C1E4E89BAFDA5E8EFEEE6AD88A5CB7C /* Pods-VBall ScoreMaster.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2971,13 +2923,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FFE99B471EB0A1B24BE766819C936BD3 /* VTAcknowledgementsViewController.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/VTAcknowledgementsViewController/VTAcknowledgementsViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -2996,13 +2947,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39D535C498EFA94D285D2FABDC58DE5D /* TSMessages.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/TSMessages/TSMessages-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3024,7 +2974,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DeviceUtil";
 				INFOPLIST_FILE = "Target Support Files/DeviceUtil/ResourceBundle-DeviceUtil-DeviceUtil-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = DeviceUtil;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -3060,6 +3010,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -3102,14 +3053,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7B3D906F092B38233214752327B738C9 /* MPCoachMarks.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MPCoachMarks/MPCoachMarks-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3128,13 +3078,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7624E22FE513FFABECF1C01463CB085F /* ChameleonFramework.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/ChameleonFramework/ChameleonFramework-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3153,13 +3102,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38E8354E84F891E26C1C5C6361380356 /* PureLayout.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3178,13 +3126,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B7C1EA85DB1BB354DB1E2E04DA0C7921 /* DeviceUtil.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/DeviceUtil/DeviceUtil-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3203,13 +3150,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 768A6AC091BD5A91920FCEA3A8A0558B /* MBProgressHUD.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";

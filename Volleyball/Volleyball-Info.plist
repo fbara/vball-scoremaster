@@ -21,7 +21,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>660</string>
+	<string>683</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -30,6 +30,8 @@
 		<false/>
 	</dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This app does not use bluetooth.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>This app does not use bluetooth.</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>This app does not user your calendar.</string>
