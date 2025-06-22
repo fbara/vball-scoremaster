@@ -4,7 +4,17 @@
 //
 //  Created by Frank Bara on 5/4/14.
 //  Copyright (c) 2014 BaraLabs, LLC. All rights reserved.
+//
 
+/**
+ @file VolleyBallViewController.m
+ @brief Main view controller for the Volleyball scoring app.
+ 
+ This controller manages the primary user interface for tracking volleyball match scores,
+ including setting and updating team names, scores, actions, and handling user interactions
+ such as gestures, button presses, and notifications. It also supports color schemes, 3D Touch shortcuts,
+ and sending score updates via SMS.
+ */
 
 #import "VolleyBallViewController.h"
 #import "DefaultScoreViewController.h"
@@ -17,42 +27,90 @@
 @import StoreKit;
 @import UIKit;
 
+/// Embed segue identifier for home score container
 NSString* const EMBED_HOME = @"embedHome";
+
+/// Embed segue identifier for visitor score container
 NSString* const EMBED_VISITOR = @"embedVisitor";
+
+/// Current home team score value
 int currHomeScore = 0;
+
+/// Current visitor team score value
 int currVisitorScore = 0;
+
+/// Current second action count for right action
 int currSecondAction = 0;
+
+/// Current first action count for left action
 int currFirstAction = 0;
+
+/// Message label for home team
 NSString* msgHome = @"HOME";
+
+/// Message label for visitor team
 NSString* msgVisitor = @"VISITOR";
+
+/// Text message content to be sent via SMS
 NSString* textMessage;
+
+/// Screenshot image placeholder (not currently used)
 UIImage* screenImage;
+
+/// iTunes app store identifier for the app
 static NSString* const kiTunesID = @"886670213";
-// Score number font size for each device
+
+/// Font size for score numbers on iPad devices
 CGFloat const ipadScoreFont = 220.0f;
+
+/// Font size for score numbers on iPhone devices
 CGFloat const iphoneScoreFont = 118.0f;
+
+/// Current selected color scheme name
 NSString* colorScheme;
+
+/// Social media message content placeholder
 NSString *socialMessage;
+
+/// Total number of past games won by home team
 int totalPastGamesHome;
+
+/// Total number of past games won by visitor team
 int totalPastGamesVisitor;
+
+/// Context pointer for right action name KVO (not used here)
 static void * rightContext = &rightContext;
+
+/// Context pointer for left action name KVO (not used here)
 static void * leftContext = &leftContext;
 
-
 @interface VolleyBallViewController ()  {
-    // Instance variable to store all products returned from iTunes Connect
+    /// Array holding all available in-app purchase products from iTunes Connect
     NSArray* _products;
 }
 
+/// PageViewController managing the home team score views
 @property (weak, atomic) UIPageViewController* homePageViewController;
+
+/// PageViewController managing the visitor team score views
 @property (weak, atomic) UIPageViewController* visitorPageViewController;
+
+/// URL for BaraLabs website used in social sharing links
 @property (weak, nonatomic) NSURL* baralabsURL;
+
+/// Previewing context for 3D Touch peek and pop (if enabled)
 @property (nonatomic, strong)id previewingContext;
-//@property (weak, nonatomic) IBOutlet UIButton *rightActionNameButton;
-//@property (weak, nonatomic) IBOutlet UIButton *leftActionNameButton;
+
+/// Button to trigger new game or set (IBOutlet connected in storyboard)
 @property (weak, nonatomic) IBOutlet UIButton *gameButton;
+
+/// UILabel showing the past name of the visiting team
 @property (weak, nonatomic) IBOutlet UILabel *visitingTeamPastName;
+
+/// UILabel showing the past name of the home team
 @property (weak, nonatomic) IBOutlet UILabel *homeTeamPastName;
+
+/// UIStackView containing the right action name labels and buttons
 @property (weak, nonatomic) IBOutlet UIStackView *rightActionNameStackView;
 
 @end
@@ -61,7 +119,14 @@ static void * leftContext = &leftContext;
 
 #pragma mark - Initialize Screen
 
-// Called first, before the main view controller is loaded
+/**
+ @brief Called before the main view controller is loaded, assigns embedded page view controllers.
+ 
+ @param segue The UIStoryboardSegue triggering the embedding.
+ @param sender The object initiating the segue.
+ 
+ Sets up references to the embedded home and visitor PageViewControllers used for displaying scores.
+ */
 - (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:EMBED_HOME]) {
@@ -73,7 +138,12 @@ static void * leftContext = &leftContext;
     }
 }
 
-// Called second, after the segue's are setup
+/**
+ @brief Called after the view has been loaded, initializes UI elements and gesture recognizers.
+ 
+ Sets initial URLs, resets game scores and team names, configures delegates and data sources,
+ installs swipe gesture recognizers for score containers, and registers notifications.
+ */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -82,22 +152,22 @@ static void * leftContext = &leftContext;
 
     // TODO: Update tutorial?
     // Check if this is the first time the app has run.
-    // If so, run tutorial.  If not, don't run turorial.
+    // If so, run tutorial.  If not, don't run tutorial.
 //    if ([GBVersionTracking isFirstLaunchEver] ||
 //        [GBVersionTracking isFirstLaunchForVersion]) {
 //        [self performSegueWithIdentifier:@"showTutorial" sender:self];
 //    }
 
+    // Reset all game scores, names, and past games
     [self resetGameAndNames];
 
-    // Set Delegate's and DataSource's
-
+    // Set delegates and data sources for both score PageViewControllers
     self.visitorPageViewController.dataSource = self;
     self.visitorPageViewController.delegate = self;
     self.homePageViewController.dataSource = self;
     self.homePageViewController.delegate = self;
 
-    // Create bar button item and add them to the navigation bar
+    // Create bar button item and add it to the navigation bar for Settings
     UIBarButtonItem* settingsButton = [[UIBarButtonItem alloc] initWithTitle:@"Settings"
                                          style:UIBarButtonItemStylePlain
                                         target:self
@@ -114,7 +184,7 @@ static void * leftContext = &leftContext;
     homeSwipeGesture.delegate = self;
     [_homeTeamContainer addGestureRecognizer:homeSwipeGesture];
 
-    // Create the same thing for the visitor team container
+    // Create the same swipe gesture for the visitor team container
     UISwipeGestureRecognizer* visitorSwipeGesture =
         [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                   action:@selector(handleSwipe:)];
@@ -123,68 +193,63 @@ static void * leftContext = &leftContext;
     [_vistingTeamContainer addGestureRecognizer:visitorSwipeGesture];
     
     /*! Loop through all the gesture recognizers on each of the pageview
-   * controllers and when you locate either the tap or pan recognizers, set them to require
-   * the appropriate swipe gesture to fail before they'll recognize their gesture.
-   */
-
-    for (UIGestureRecognizer *gesture in _homePageViewController.view
-             .gestureRecognizers) {
-        {
-            [gesture requireGestureRecognizerToFail:homeSwipeGesture];
-        }
-
-        {
-            [gesture requireGestureRecognizerToFail:homeSwipeGesture];
-        }
+     * controllers and when you locate either the tap or pan recognizers, set them to require
+     * the appropriate swipe gesture to fail before they'll recognize their gesture.
+     */
+    for (UIGestureRecognizer *gesture in _homePageViewController.view.gestureRecognizers) {
+        [gesture requireGestureRecognizerToFail:homeSwipeGesture];
     }
 
-    for (UIGestureRecognizer *gesture in _visitorPageViewController.view
-             .gestureRecognizers) {
-        {
-            [gesture requireGestureRecognizerToFail:visitorSwipeGesture];
-        }
-
-        {
-            [gesture requireGestureRecognizerToFail:visitorSwipeGesture];
-        }
+    for (UIGestureRecognizer *gesture in _visitorPageViewController.view.gestureRecognizers) {
+        [gesture requireGestureRecognizerToFail:visitorSwipeGesture];
     }
 
-    // Get the Action Names
+    // Load the action names from user defaults and display them
     [self loadActionNames];
     
+    // Register to update displayed action names when notified
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(getMainActionNames)
                                                  name:@"updateActionNames"
                                                object:nil];
-    // Register for notifications from SettingsTableViewController
+    // Register for notifications from SettingsTableViewController to update view
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(viewWillAppear:)
                                                  name:@"SettingsDone"
                                                object:nil];
     
-    //Reset total game counts
+    // Reset total game counts for past matches
     totalPastGamesHome = 0;
     totalPastGamesVisitor = 0;
-
 }
 
+/**
+ @brief Called just before the view appears on screen, updates UI to current settings.
+ 
+ @param animated Indicates if the appearance is animated.
+ 
+ Refreshes scoreview fonts and colors depending on device type and color scheme,
+ reloads action names, and sets up dynamic quick shortcuts.
+ */
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:TRUE];
     
+    // Observe content size changes for home team name label to adjust layout if needed
     [self.homeTeamName addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:NULL];
+    
+    // Register to update displayed action names when notified (added again for safety)
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(getMainActionNames)
                                                  name:@"updateActionNames"
                                                object:nil];
-    // Register for notifications from SettingsTableViewController
+    // Register for notifications from SettingsTableViewController to update view
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(viewWillAppear:)
                                                  name:@"SettingsDone"
                                                object:nil];
 
-    // Update the scoreview's colors in case they were changed in Settings
-    // Initiaize all the UI elements depending on the device (font=188/118)
+    // Update the scoreview's colors and fonts depending on device type
     if (IS_IPAD()) {
         [self initializeHomeScore:currHomeScore fontSize:ipadScoreFont];
         [self initializeVisitorScore:currVisitorScore fontSize:ipadScoreFont];
@@ -193,11 +258,18 @@ static void * leftContext = &leftContext;
         [self initializeHomeScore:currHomeScore fontSize:iphoneScoreFont];
     }
 
+    // Reload action names from user defaults
     [self loadActionNames];
+    
+    // Setup home screen quick action shortcuts
     [self setupDynamicShortcuts];
-
 }
 
+/**
+ @brief Called after the view lays out its subviews, adjusts colors for appearance mode.
+ 
+ Checks the current user interface style and updates colors accordingly for dark or light mode.
+ */
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
@@ -209,11 +281,25 @@ static void * leftContext = &leftContext;
     }
 }
 
+/**
+ @brief Called before the view disappears, removes observers.
+ 
+ @param animated Indicates if the disappearance is animated.
+ 
+ Removes the contentSize observer on the home team name label to prevent leaks.
+ */
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.homeTeamName removeObserver:self forKeyPath:@"contentSize"];
 }
 
+/**
+ @brief Triggered when the Settings button in the navigation bar is tapped.
+ 
+ @param sender The UIBarButtonItem that triggered the action.
+ 
+ Performs a segue to the settings view controller on the main thread.
+ */
 - (IBAction)goToSettings:(UIBarButtonItem *)sender
 {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -222,6 +308,12 @@ static void * leftContext = &leftContext;
     
 }
 
+/**
+ @brief Initializes past game score labels and resets colors.
+ 
+ Sets all past score labels to zero and applies color formatting based on current color scheme.
+ Resets total past games counters.
+ */
 - (void)initializePastGames
 {
     // TODO: Update for iPad
@@ -247,6 +339,14 @@ static void * leftContext = &leftContext;
     totalPastGamesHome = 0;
 }
 
+/**
+ @brief Initializes the home team score PageViewController with given score and font size.
+ 
+ @param score The initial score to display.
+ @param scoreSize The font size for the score label.
+ 
+ Configures the home team's score view controller, including fonts and colors for iPad devices.
+ */
 - (void)initializeHomeScore:(int)score fontSize:(CGFloat)scoreSize
 {
     self.homeColor = [self colorHomeScoreView];
@@ -263,6 +363,14 @@ static void * leftContext = &leftContext;
     [self.homePageViewController setViewControllers:@[homeScoreViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
 
+/**
+ @brief Initializes the visitor team score PageViewController with given score and font size.
+ 
+ @param score The initial score to display.
+ @param scoreSize The font size for the score label.
+ 
+ Configures the visitor team's score view controller, including fonts and colors for iPad devices.
+ */
 - (void)initializeVisitorScore:(int)score fontSize:(CGFloat)scoreSize
 {
     self.visitorColor = [self colorVisitorScoreView];
@@ -278,6 +386,15 @@ static void * leftContext = &leftContext;
     [self.visitorPageViewController setViewControllers:@[visitorScoreViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
 
+/**
+ @brief Creates and returns a DefaultScoreViewController with given score, background color, and font size.
+ 
+ @param score The score to display on the view controller.
+ @param color The background color for the score view.
+ @param scoreSize The font size for the score number.
+ 
+ @return A newly created DefaultScoreViewController initialized with the specified parameters.
+ */
 - (DefaultScoreViewController*)createViewControllersForScore:(int)score withColor:(UIColor*)color fontSize:(CGFloat)scoreSize
 {
     // Create a new scoreViewController and initialize it with 'nil',
@@ -294,6 +411,14 @@ static void * leftContext = &leftContext;
 
 #pragma mark - Color Settings
 
+/**
+ @brief Retrieves and applies the color scheme for the home team's score view.
+ 
+ @return UIColor representing the home team's background color.
+ 
+ Reads the saved color from user defaults or defaults to blue color,
+ updates the home team name and past name label backgrounds and text colors accordingly.
+ */
 - (UIColor*)colorHomeScoreView
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
@@ -314,7 +439,14 @@ static void * leftContext = &leftContext;
     return colorHome;
 }
 
-// TODO: Update for changes to trait collection
+/**
+ @brief Retrieves and applies the color scheme for the visitor team's score view.
+ 
+ @return UIColor representing the visitor team's background color.
+ 
+ Reads the saved color from user defaults or defaults to orange color,
+ updates the visitor team name and past name label backgrounds and text colors accordingly.
+ */
 - (UIColor*)colorVisitorScoreView
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
@@ -336,18 +468,30 @@ static void * leftContext = &leftContext;
     return colorVisitor;
 }
 
+/**
+ @brief Updates UI colors and images to match dark mode appearance.
+ 
+ Changes relevant button images and updates past score colors for dark mode,
+ and saves current color setting to user defaults.
+ */
 - (void)showDarkMode {
     UIImage *matchImage = [UIImage imageNamed:@"NewGameWhite.png"];
     [self.matchButton setImage:matchImage forState:UIControlStateNormal];
     
-   UIImage *gameImage = [UIImage imageNamed:@"NewMatch3White.png"];
-   [self.gameButton setImage:gameImage forState:UIControlStateNormal];
+    UIImage *gameImage = [UIImage imageNamed:@"NewMatch3White.png"];
+    [self.gameButton setImage:gameImage forState:UIControlStateNormal];
     [self changePastScoreColors:FlatRed loser:FlatYellow];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@"Dark" forKey:@"colorSetting"];
 }
 
+/**
+ @brief Updates UI colors and images to match light mode appearance.
+ 
+ Changes relevant button images and updates past score colors for light mode,
+ and saves current color setting to user defaults.
+ */
 - (void)showLightMode {
     UIImage *matchImage = [UIImage imageNamed:@"NewGame.png"];
     [self.matchButton setImage:matchImage forState:UIControlStateNormal];
@@ -360,7 +504,15 @@ static void * leftContext = &leftContext;
     [defaults setObject:@"Light" forKey:@"colorSetting"];
 }
 
-
+/**
+ @brief Changes the colors of the past score labels to indicate winner and loser.
+ 
+ @param winTeam UIColor for the team that won the set.
+ @param loseTeam UIColor for the team that lost the set.
+ 
+ Compares each past game score pair and highlights the winning team's score in red
+ and the losing team's score in the specified losing color.
+ */
 - (void)changePastScoreColors:(UIColor *)winTeam loser:(UIColor *)loseTeam
 {
     //After the main screen changes colors, this evaluates all the past scores to determine
@@ -399,6 +551,12 @@ static void * leftContext = &leftContext;
     }
 }
 
+/**
+ @brief Resets game state including scores, team names, and action counters.
+ 
+ Clears current scores and action numbers, sets team names to empty,
+ and resets total past games counters to zero. Also initializes past game labels.
+ */
 - (void)resetGameAndNames
 {
     // Resets Game, Team Names, and Action Name values to 0
@@ -409,9 +567,9 @@ static void * leftContext = &leftContext;
     currSecondAction = 0;
     currHomeScore = 0;
     currVisitorScore = 0;
-	  self.homeTeamName.text = @"";
+    self.homeTeamName.text = @"";
     self.homeTeamPastName.text = self.homeTeamName.text;
-	  self.visitingTeamName.text = @"";
+    self.visitingTeamName.text = @"";
     self.visitingTeamPastName.text = self.visitingTeamName.text;
     totalPastGamesVisitor = 0;
     totalPastGamesHome = 0;
@@ -419,8 +577,15 @@ static void * leftContext = &leftContext;
     [self initializePastGames];
 }
 
+/**
+ @brief Called when trait collection changes, updates UI for dark/light mode changes.
+ 
+ @param previousTraitCollection The previous trait collection before the change.
+ 
+ Handles changes in user interface style, such as dark mode toggling,
+ and adjusts the UI accordingly.
+ */
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-    // called whenever the user has changed device appearance settings, like Dark Mode
     [super traitCollectionDidChange:previousTraitCollection];
     
     if (previousTraitCollection.userInterfaceStyle != UITraitCollection.currentTraitCollection.userInterfaceStyle) {
@@ -434,10 +599,13 @@ static void * leftContext = &leftContext;
     }
 }
 
-
-
 #pragma mark - UI Elements
 
+/**
+ @brief Loads the action names from user defaults and updates the UI labels accordingly.
+ 
+ If an action name is not set, displays "Not Selected" as placeholder text.
+ */
 - (void)loadActionNames
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
@@ -462,9 +630,15 @@ static void * leftContext = &leftContext;
 
 #pragma mark - UIGestureRecognizer Delegate Method
 
-// Force all gestures to be handled simultaneously.
-// This will allow the Swipes and PageViewController's Pan/Tap gestures to
-// coexsist and function correctly.
+/**
+ @brief Allows all gesture recognizers to recognize gestures simultaneously.
+ 
+ @param gestureRecognizer The gesture recognizer requesting to recognize simultaneously.
+ @param otherGestureRecognizer The other gesture recognizer involved.
+ @return YES to allow multiple gesture recognizers at once.
+ 
+ This enables swipe gestures and page view controller pan/tap gestures to coexist and function correctly.
+ */
 - (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     return YES;
@@ -472,10 +646,13 @@ static void * leftContext = &leftContext;
 
 #pragma mark - UISwipeGestureRecognizers
 
-/*!
- * @discussion Handle the swipe gesture to swap positions of scoreviews
- * @param recognizer UIGestureRecognizer to indicate what type of gesture is
- * being sent
+/**
+ @discussion Handles swipe gestures on the home and visitor score containers to swap their positions.
+ 
+ @param recognizer The UISwipeGestureRecognizer that triggered this action.
+ 
+ Animates the swapping of the home and visitor team score containers, team name labels,
+ and past score labels to visually switch the side of the teams.
  */
 - (IBAction)handleSwipe:(UISwipeGestureRecognizer*)recognizer
 {
@@ -523,12 +700,26 @@ static void * leftContext = &leftContext;
 #pragma mark - UILongPressGestureRecognizers
 #pragma mark - Reset Action Numbers to 0
 
+/**
+ @brief IBAction triggered when the send message button is pressed.
+ 
+ @param sender The UIButton sending the action.
+ 
+ Sends a text message with the current scores and actions without changing any values.
+ */
 - (IBAction)sendInstantMessage:(UIButton*)sender
 {
     // Send a text message without changing the Action numbers
     [self sendSMS];
 }
 
+/**
+ @brief Handles long press gesture on the left action number label to show reset menu.
+ 
+ @param recognizer UILongPressGestureRecognizer that detected the long press.
+ 
+ If the left action number is non-zero, presents a UIMenuController with options to reset to zero or cancel.
+ */
 - (IBAction)leftActionLongPress:(UILongPressGestureRecognizer*)recognizer
 {
     if (recognizer.state == UIGestureRecognizerStateBegan) {
@@ -552,6 +743,13 @@ static void * leftContext = &leftContext;
     }
 }
 
+/**
+ @brief Handles long press gesture on the right action number label to show reset menu.
+ 
+ @param recognizer UILongPressGestureRecognizer that detected the long press.
+ 
+ If the right action number is non-zero, presents a UIMenuController with options to reset to zero or cancel.
+ */
 - (IBAction)rightActionLongPress:(UILongPressGestureRecognizer*)recognizer
 {
     if (recognizer.state == UIGestureRecognizerStateBegan) {
@@ -575,21 +773,41 @@ static void * leftContext = &leftContext;
     }
 }
 
+/**
+ @brief Resets the left action number label to zero.
+ 
+ Invoked from UIMenuController action.
+ */
 - (void)resetLeftToZero
 {
     self.leftActionNameNumber.text = @"0";
 }
 
+/**
+ @brief Resets the right action number label to zero.
+ 
+ Invoked from UIMenuController action.
+ */
 - (void)resetRightToZero
 {
     self.rightActionNameNumber.text = @"0";
 }
 
+/**
+ @brief Dummy method to enable display of UIMenuController items.
+ 
+ This method intentionally does nothing and is required for the cancel menu item.
+ */
 - (void)leaveNumberAsIs
 {
     // Dummy method to allow UIMenuItems to be visible
 }
 
+/**
+ @brief Indicates this view controller can become first responder.
+ 
+ @return YES always to allow UIMenuController to work.
+ */
 - (BOOL)canBecomeFirstResponder
 {
     return YES;
@@ -597,16 +815,27 @@ static void * leftContext = &leftContext;
 
 #pragma mark - Button Presses
 
+/**
+ @brief Called from dynamic shortcut to simulate pressing the Game button.
+ */
 - (void)gamePressedFromShortcut {
     [self gamePressed:self.gameButton];
 }
 
+/**
+ @brief Called from dynamic shortcut to simulate pressing the Match button.
+ */
 - (void)matchPressedFromShortcut {
     [self newMatch:self.matchButton];
 }
 
-/*!
- *  What happens when 'Game' number is touched
+/**
+ @brief IBAction triggered when the Game button is pressed.
+ 
+ @param sender The UIButton triggering the action.
+ 
+ Advances the current set/game, updates past score labels and colors, resets scores for new set,
+ and starts a new match if the set number exceeds limit.
  */
 - (IBAction)gamePressed:(UIButton*)sender
 {
@@ -750,8 +979,13 @@ static void * leftContext = &leftContext;
     currVisitorScore = 0;
 }
 
-/*
- *  What happens when right Action number is touched
+/**
+ @brief IBAction triggered when the right action number is pressed.
+ 
+ @param sender The UIButton triggering the action.
+ 
+ Increments the number displayed for the right action, loops back to zero after 99,
+ updates the current second action count, and sends a text message update.
  */
 - (IBAction)rightActionPressed:(UIButton*)sender
 {
@@ -775,13 +1009,16 @@ static void * leftContext = &leftContext;
     [self sendSMS];
 }
 
-/*!
- *  What happens when left Action number is touched
+/**
+ @brief IBAction triggered when the left action number is pressed.
+ 
+ @param sender The UIButton triggering the action.
+ 
+ Increments the number displayed for the left action, loops back to zero after 99,
+ updates the current first action count, and sends a text message update.
  */
 - (IBAction)leftActionPressed:(UIButton*)sender
 {
-    
-
     // Get current number and add 1
     int lableNum = [self.leftActionNameNumber.text intValue];
     if (lableNum == 99) {
@@ -801,6 +1038,12 @@ static void * leftContext = &leftContext;
     [self sendSMS];
 }
 
+/**
+ @brief Starts a new match by resetting scores, games, and requesting review prompt if needed.
+ 
+ Initializes UI elements based on device type, resets game state,
+ and requests app store review if the user is eligible.
+ */
 - (void)startNewMatch
 {
     // Initiaize all the UI elements, depending on the device, for the start
@@ -813,8 +1056,6 @@ static void * leftContext = &leftContext;
         [self initializeVisitorScore:0 fontSize:118];
     }
     
-    
-    
     // Determine if review prompt should be shown
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults boolForKey:@"showPrompt"]) {
@@ -826,6 +1067,14 @@ static void * leftContext = &leftContext;
     //[self initializePastGames];
 }
 
+/**
+ @brief IBAction triggered when the user taps the New Match button.
+ 
+ @param sender The UIButton triggering the action.
+ 
+ Presents an alert confirming if the user wants to reset the match.
+ If confirmed, starts a new match and dismisses the alert.
+ */
 - (IBAction)newMatch:(UIButton *)sender {
     // TODO: Verify if TAG_MATCH is still needed.
 //#define TAG_MATCH 1
@@ -840,28 +1089,36 @@ static void * leftContext = &leftContext;
     [alert addAction:no];
     [alert addAction:yes];
     
-   // Get the active VC
+    // Get the active view controller to present the alert
     UIViewController *activeVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     if ([activeVC isKindOfClass:[UINavigationController class]]) {
         activeVC = [(UINavigationController *)activeVC visibleViewController];
     }
     [activeVC presentViewController:alert animated:YES completion:nil];
-    
 }
 
 #pragma mark - Social Accounts
 
+/**
+ @brief Enables social media buttons by disabling both Twitter and Facebook options.
+ 
+ Currently sets Twitter and Facebook enable flags to "Off" in user defaults.
+ */
 - (void)enableSocialButtons
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
      //TODO: Change for 3.8 - ADD
     [defaults setObject:@"Off" forKey:@"enableTwitter"];
     [defaults setObject:@"Off" forKey:@"enableFacebook"];
-
 }
 
 #pragma mark - 3D Touch
 
+/**
+ @brief Checks if 3D Touch capability is available on the device.
+ 
+ @return YES if device supports 3D Touch, NO otherwise.
+ */
 - (BOOL)checkFor3DTouch {
     BOOL is3DTouchAvail = NO;
     if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)] && (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)) {
@@ -870,6 +1127,11 @@ static void * leftContext = &leftContext;
     return is3DTouchAvail;
 }
 
+/**
+ @brief Sets up quick action shortcuts for the app icon.
+ 
+ Adds shortcuts for starting a new match and starting a new set/game.
+ */
 - (void)setupDynamicShortcuts {
     UIApplicationShortcutItem *newMatch = [[UIApplicationShortcutItem alloc] initWithType:@"$(PRODUCT_BUNDLE_IDENTIFIER).NewMatch"
                                                                            localizedTitle:NSLocalizedString(@"New Match", @"Start a new match")
@@ -886,7 +1148,16 @@ static void * leftContext = &leftContext;
     [UIApplication sharedApplication].shortcutItems = @[newMatch, newGame];
     
 }
-// TODO: Previewing Context Doesn't work inside StackView
+
+/**
+ @brief Provides view controller for 3D Touch previewing (peek).
+ 
+ @param previewingContext The previewing context requesting the preview controller.
+ @param location The location of the touch in the source view.
+ @return The view controller to preview at the given location or nil if none.
+ 
+ Currently disabled and returns nil.
+ */
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
     //TODO: Showing menu in wrong location
     //Check if we're not already displaying the view controller
@@ -922,6 +1193,14 @@ static void * leftContext = &leftContext;
     return nil;
 }
 
+/**
+ @brief Commits view controller to display after 3D Touch peek and pop.
+ 
+ @param previewingContext The previewing context.
+ @param viewControllerToCommit The view controller to show.
+ 
+ Pushes the view controller onto the navigation stack.
+ */
 - (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
     self.definesPresentationContext = TRUE;
     [self.navigationController showViewController:viewControllerToCommit sender:self];
@@ -941,6 +1220,11 @@ static void * leftContext = &leftContext;
 //    }
 //}
 
+/**
+ @brief Updates main action names from user defaults when notified.
+ 
+ Reads the updates from user defaults and refreshes the UI labels and numbers accordingly.
+ */
 - (void)getMainActionNames
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
@@ -972,11 +1256,25 @@ static void * leftContext = &leftContext;
 
 #pragma mark - Text Messages & Alerts
 
+/**
+ @brief Delegate method called when the message compose view controller finishes sending or cancelling.
+ 
+ @param controller The MFMessageComposeViewController instance.
+ @param result The result of the message compose (sent, cancelled, failed).
+ 
+ Dismisses the message compose view controller after completion.
+ */
 - (void)messageComposeViewController: (MFMessageComposeViewController*)controller didFinishWithResult:(MessageComposeResult)result
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/**
+ @brief Sends an SMS message with the current match and action details if notifications are enabled.
+ 
+ Checks user defaults for notification settings and phone number,
+ creates and presents the MFMessageComposeViewController with the appropriate message body.
+ */
 - (void)sendSMS
 {
     // Check if text messages should be sent
@@ -992,7 +1290,7 @@ static void * leftContext = &leftContext;
             NSString* notificationNumber = [defaults stringForKey:@"phoneNumberForNotification"];
 
             [textComposer setRecipients:[NSArray arrayWithObjects:notificationNumber, nil]];
-            // Create new message
+            // Create new message body depending on notification type
             NSString* smsMessage;
             if ([[self teamOrPlayer] isEqualToString:@"Player"]) {
                 smsMessage = [self createPlayerMessageToSend];
@@ -1004,13 +1302,20 @@ static void * leftContext = &leftContext;
             
             [textComposer setBody:smsMessage];
         
-            // Show text message screen
+            // Present the text message view controller
             [self presentViewController:textComposer animated:YES completion:nil];
             
         }
     } // No messages to be sent, exit
 }
 
+/**
+ @brief Creates a formatted text message string for player notifications.
+ 
+ @return NSString containing the player message.
+ 
+ Includes player name, current scores, and action counts in the message.
+ */
 - (NSString *)createPlayerMessageToSend
 {
     // Clear the contents of the text message before creating a new one
@@ -1029,6 +1334,13 @@ static void * leftContext = &leftContext;
     return textMessage;
 }
 
+/**
+ @brief Creates a formatted text message string for team notifications.
+ 
+ @return NSString containing the team message.
+ 
+ Includes current set scores and total match wins.
+ */
 - (NSString *)createTeamMessageToSend
 {
     // Clear the contents of the text message before creating a new one
@@ -1050,6 +1362,11 @@ static void * leftContext = &leftContext;
     return textMessage;
 }
 
+/**
+ @brief Returns a blank message string.
+ 
+ @return Empty NSString.
+ */
 - (NSString *)createBlankMessageToSend
 {
     // Clear the contents of the text message before creating a new one
@@ -1059,6 +1376,11 @@ static void * leftContext = &leftContext;
     return textMessage;
 }
 
+/**
+ @brief Returns the type of notifications enabled (Player, Team, or Blank).
+ 
+ @return NSString representing notification type.
+ */
 - (NSString *)teamOrPlayer
 {
     NSString *type;
@@ -1073,6 +1395,13 @@ static void * leftContext = &leftContext;
 
 #pragma mark - UIPageViewControllerDataSource
 
+/**
+ @brief Returns the view controller after the provided view controller in the PageViewController.
+ 
+ @param pageViewController The page view controller requesting this information.
+ @param viewController The currently visible view controller.
+ @return The next view controller with incremented score or nil if maximum reached.
+ */
 - (UIViewController*)pageViewController: (UIPageViewController*)pageViewController viewControllerAfterViewController:(UIViewController*)viewController
 {
     // Cast the viewController as a ScoreViewController so we can act on its
@@ -1114,6 +1443,13 @@ static void * leftContext = &leftContext;
     return newViewController;
 }
 
+/**
+ @brief Returns the view controller before the provided view controller in the PageViewController.
+ 
+ @param pageViewController The page view controller requesting this information.
+ @param viewController The currently visible view controller.
+ @return The previous view controller with decremented score or nil if minimum reached.
+ */
 - (UIViewController*)pageViewController:(UIPageViewController*)pageViewController viewControllerBeforeViewController:(UIViewController*)viewController
 {
     // Cast the viewController as a ScoreViewController so we can act on its
@@ -1156,6 +1492,16 @@ static void * leftContext = &leftContext;
     return newViewController;
 }
 
+/**
+ @brief Called when the PageViewController finishes animating a page transition.
+ 
+ @param pageViewController The page view controller sending the message.
+ @param finished Whether the animation finished.
+ @param previousViewControllers The view controllers visible before transition.
+ @param completed Whether the page transition was completed.
+ 
+ Updates the current score and background color for either home or visitor score controllers after animation.
+ */
 - (void)pageViewController:(UIPageViewController*)pageViewController
          didFinishAnimating:(BOOL)finished
     previousViewControllers:(NSArray*)previousViewControllers
@@ -1188,22 +1534,33 @@ static void * leftContext = &leftContext;
 //    self.homeTeamName.text = textView.text;
 //}
 
-
-
 #pragma mark - UITextFieldDelegate
 
-// Update the past team names whenever the main text field is updated
+/**
+ @brief Updates the visitor team's past name label when visitor name field is edited.
+ 
+ @param sender The UITextField that provided the new visitor name.
+ */
 - (IBAction)visitorNameEntered:(UITextField *)sender {
     self.visitingTeamPastName.text = sender.text;
 }
 
+/**
+ @brief Updates the home team's past name label when home name field is edited.
+ 
+ @param sender The UITextField that provided the new home name.
+ */
 - (IBAction)homeNameEntered:(UITextField *)sender {
     self.homeTeamPastName.text = sender.text;
 }
 
-
-
-
+/**
+ @brief Called when any text field finishes editing.
+ 
+ @param textField The UITextField that ended editing.
+ 
+ Trims whitespace and resigns first responder to dismiss keyboard.
+ */
 - (void)textFieldDidEndEditing:(UITextField*)textField
 {
     // After entering team name, on either side, and tapping 'Done' or
@@ -1213,12 +1570,24 @@ static void * leftContext = &leftContext;
     [textField resignFirstResponder];
 }
 
+/**
+ @brief Called when the return key is pressed on the keyboard while editing a text field.
+ 
+ @param textField The UITextField currently being edited.
+ @return YES to allow the text field to resign first responder.
+ */
 - (BOOL)textFieldShouldReturn:(UITextField*)textField
 {
     [textField resignFirstResponder];
     return YES;
 }
 
+/**
+ @brief Called when touches begin on the view, dismisses keyboard if active.
+ 
+ @param touches The set of UITouch instances.
+ @param event The UIEvent associated with the touches.
+ */
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
     [self.view endEditing:YES];
@@ -1227,6 +1596,11 @@ static void * leftContext = &leftContext;
 
 #pragma mark - Memory Mgmt
 
+/**
+ @brief Called when the app receives a memory warning.
+ 
+ Releases any resources that can be recreated.
+ */
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -1234,3 +1608,4 @@ static void * leftContext = &leftContext;
 }
 
 @end
+
